@@ -1,0 +1,31 @@
+<header>
+  <!-- Appbar -->
+  <div class="mdui-appbar <% if (theme.appbar.fixed.enable === true) { %>mdui-appbar-fixed <% if (theme.appbar.fixed.scroll_hide === true) { %>mdui-appbar-scroll-hide<% } %><% } %>">
+    <div class="mdui-toolbar mdui-color-theme">
+      <a id="toggle" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+      <a class="mdui-typo-title" <% if (theme.typinyin.title === true) { %>id="title-typinyin"<% } %>><%= config.title %></a>
+      <% if (theme.theme.chang_theme === true) { %>
+        <div class="mdui-toolbar-spacer"></div>
+        <a class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#theme'}"><i class="mdui-icon material-icons">&#xe3b7;</i></a>
+      <% } %>
+    </div>
+  </div>
+  <!--Drawer -->
+  <div class="mdui-drawer" id="drawer">
+    <!-- Userview -->
+    <%- partial('partials/drawer/userview') %>
+    <div class="mdui-panel" mdui-panel>
+      <ul class="mdui-list" mdui-collapse="{accordion: <%= theme.drawer.accordion %>}">
+        <!-- Menu -->
+        <%- partial('partials/drawer/main_list') %>
+        <!-- Pages -->
+        <%- partial('partials/drawer/pages/list') %>
+        <%- partial('partials/drawer/pages/collapse') %>
+        <!-- Holiday -->
+        <%- partial('partials/drawer/holiday') %>
+        <!-- Counter -->
+        <%- partial('partials/drawer/counter') %>
+      </ul>
+    </div>
+  </div>
+</header>

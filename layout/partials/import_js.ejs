@@ -1,0 +1,81 @@
+<js>
+  <!-- Dynamic Title -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      function d() {
+        document.title = document[b] ? "<%= theme.dynamic_title %>" : a
+      }
+      var b, c, a = document.title;
+      "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c =
+        "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
+    });
+  </script>
+
+  <!-- Typinyin -->
+  <% if (theme.typinyin.title === true) { %>
+    <%- partial('typinyin/title') %>
+  <% } %>
+  <!-- Drawer -->
+  <script type="text/javascript">
+    var drawer = new mdui.Drawer('#drawer');
+    document.getElementById('toggle').addEventListener('click', function() {
+      drawer.toggle();
+    });
+  </script>
+
+
+  <!-- FAB -->
+  <% if (theme.smoothscroll === true) { %>
+  <script type="text/javascript">
+    $(function() {
+      $("#toTop").scrollToTop(750);
+    });
+    $('#fab-top').on('click', function() {
+      toTop.click();
+    });
+  </script>
+  <% } %>
+
+<!-- Theme -->
+<% if (theme.theme.chang_theme === true) { %>
+  <script type="text/javascript">
+    var $body = $('body');
+    if (typeof $.cookie('website-theme-primary') === 'undefined') {
+      $(document).ready(function() {
+        document.getElementById("primary-<%= theme.theme.primary_color %>").checked = true
+      });
+    } else {
+      $(document).ready(function() {
+        document.getElementById('primary-' + $.cookie('website-theme-primary')).checked = true
+      });
+      $body.removeClass('mdui-theme-primary-<%= theme.theme.primary_color %>');
+      $body.addClass('mdui-theme-primary-' + $.cookie('website-theme-primary'));
+    };
+    if (typeof $.cookie('website-theme-accent') === 'undefined') {
+      $(document).ready(function() {
+        document.getElementById("accent-<%= theme.theme.accent_color %>").checked = true
+      });
+    } else {
+      $(document).ready(function() {
+        document.getElementById('accent-' + $.cookie('website-theme-accent')).checked = true
+      });
+      $body.removeClass('mdui-theme-accent-<%= theme.theme.accent_color %>');
+      $body.addClass('mdui-theme-accent-' + $.cookie('website-theme-accent'));
+    };
+    if ($.cookie('website-theme-layout') === 'dark') {
+      $body.addClass('mdui-theme-layout-dark');
+      $(document).ready(function() {
+        document.getElementById("layout-dark").checked = true
+      });
+    } else {
+      $(document).ready(function() {
+        <% if (theme.theme.layout === 'dark') { %>
+          document.getElementById("layout-dark").checked = true
+        <% } else { %>
+          document.getElementById("layout-light").checked = true
+        <% } %>
+      });
+    };
+  </script>
+<% } %>
+</js>

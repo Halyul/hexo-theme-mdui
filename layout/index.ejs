@@ -1,0 +1,12 @@
+<br />
+<% if( (page.current == 1) && (is_home()) ) { %>
+  <div class="mdui-row">
+    <%-partial('partials/index_head_left')%>
+    <%-partial('partials/index_head_right')%>
+  </div>
+<% } %>
+<% page.posts.each(function(post) { %>
+  <%-partial('partials/posts', { post: post })%>
+<% }); %>
+
+<%-partial('partials/pagination')%>

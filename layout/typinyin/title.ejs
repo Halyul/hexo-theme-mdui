@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  window.onload = function() {
+    var title = new Typinyin();
+    title.attach('#title-typinyin'); // 绑定元素
+    title.setOptions({
+      sentences: [{
+        ch: ["新年", "快乐", "！"],
+        py: ["xinnian ", "kuaile", "！"],
+      }, {
+        ch: ["Halyul", "祝您", "鸡年", "大吉", "吧", {pause: 200}, {del: 1}],
+        py: ["Halyul", "zhunin", "jinian", "daji", "ba"],
+      }, {
+        ch: ["Halyul", {pause: 1250} /* 暂停1500毫秒 */ , "的", "小占", {pause: 200}, {del: 1} /* 删除两个字符 */ , "站"],
+        py: ["Halyul", "", "de", "xiaozan", "", "", "zhan"],
+      }, {
+        ch: ["Halyul's website"],
+        py: ["Halyul's webbbbbbbb\b\b\b\b\b\b\bsite"], // 用"\b" 来删除一个字符
+      }, {
+        ch: ["Never ", "do ", "a ", "dreamer."],
+        py: ["Never ", "doooooooo\b\b\b\b\b\b\b ", "a ", "dreamer."],
+      }], // 需要输入的句子
+      startDelay: 500, // 启动延时，以毫秒记
+      typeSpeed: 100, // 打字速度，以毫秒记
+      pause: 1000, // 每一句话打完后的停顿时间，以毫秒记
+      backSpeed: 60, // 删除文字的速度，以毫秒记
+      cursorChar: "|", // 光标字符
+      loop: true, // 是否循环播放
+    });
+    title.init(); // 初始化并开始打字
+  }
+</script>
