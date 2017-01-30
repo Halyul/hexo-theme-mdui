@@ -1,57 +1,56 @@
-
 <div class="mdui-fab-wrapper" mdui-fab="{trigger: '<%= theme.fab.trigger %>'}" <% if (typeof page.current === 'number' && typeof page.total === 'number') { %>mdui-tooltip="{content: '<%=page.current%>', position: 'left'}"<% } %>>
-  <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
-    <i class="mdui-icon material-icons">
-      <%- theme.fab.main.first_icon %>
-    </i>
-    <i class="mdui-icon mdui-fab-opened material-icons">
-      <%- theme.fab.main.second_icon %>
-    </i>
-  </button>
-
-  <div class="mdui-fab-dial">
-    <a href="#top">
-      <button id="fab-top" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.top.color %>">
+    <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
         <i class="mdui-icon material-icons">
-            <%- theme.fab.top.icon %>
+            <%- theme.fab.main.first_icon %>
         </i>
-      </button>
-    </a>
+        <i class="mdui-icon mdui-fab-opened material-icons">
+            <%- theme.fab.main.second_icon %>
+        </i>
+    </button>
 
-    <% if (page.prev_link) { %>
-      <a href="<%=url_for(page.prev_link)%>">
-        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.prev.color %>">
-          <i class="mdui-icon material-icons">
-              <%- theme.fab.prev.icon %>
-          </i>
-        </button>
-      </a>
-    <% } else if (page.prev && page.prev.path) { %>
-      <a href="<%=url_for(page.prev.path)%>">
-        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.prev.color %>">
-          <i class="mdui-icon material-icons">
-              <%- theme.fab.prev.icon %>
-          </i>
-        </button>
-      </a>
-    <% } %>
+    <div class="mdui-fab-dial">
+        <a href="#top">
+            <button id="fab-top" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.top.color %>">
+                <i class="mdui-icon material-icons">
+                    <%- theme.fab.top.icon %>
+                </i>
+            </button>
+        </a>
 
-    <% if (page.next_link) { %>
-      <a href="<%=url_for(page.next_link)%>">
-        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.next.color %>">
-          <i class="mdui-icon material-icons">
-              <%- theme.fab.next.icon %>
-          </i>
-        </button>
-      </a>
-    <% } else if (page.next && page.next.path) { %>
-        <a href="<%=url_for(page.next.path)%>">
-        <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.next.color %>">
-          <i class="mdui-icon material-icons">
-              <%- theme.fab.next.icon %>
-          </i>
-        </button>
-      </a>
-    <% } %>
-  </div>
+        <% if (page.prev_link) { %>
+            <a href="<%=url_for(page.prev_link)%>">
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.prev.color %>">
+                    <i class="mdui-icon material-icons">
+                        <%- theme.fab.prev.icon %>
+                    </i>
+                </button>
+            </a>
+        <% } else if (page.prev && page.prev.path) { %>
+            <a href="<%=url_for(page.prev.path)%>">
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.prev.color %>">
+                    <i class="mdui-icon material-icons">
+                        <%- theme.fab.prev.icon %>
+                    </i>
+                </button>
+            </a>
+        <% } %>
+
+        <% if (page.next_link) { %>
+            <a href="<%=url_for(page.next_link)%>">
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.next.color %>">
+                    <i class="mdui-icon material-icons">
+                        <%- theme.fab.next.icon %>
+                    </i>
+                </button>
+            </a>
+        <% } else if (page.next && page.next.path) { %>
+            <a href="<%=url_for(page.next.path)%>">
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.next.color %>">
+                    <i class="mdui-icon material-icons">
+                        <%- theme.fab.next.icon %>
+                    </i>
+                </button>
+            </a>
+        <% } %>
+    </div>
 </div>

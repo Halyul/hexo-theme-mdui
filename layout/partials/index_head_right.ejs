@@ -1,6 +1,6 @@
 
-  <div class="mdui-col-sm-5 mdui-col-xs-12">
-    <div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
+  <div class="mdui-col-sm-3 mdui-col-xs-12">
+    <div class="mdui-card" style="overflow: visible;">
       <% if(theme.index_head_right.userview === "top") { %>
         <div class="mdui-card-header">
           <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
@@ -9,33 +9,41 @@
         </div>
       <% } %>
 
-      <div class="mdui-card-media">
-        <img src="<%= theme.index_head_right.img %>"/>
-      </div>
-
-      <% if(theme.index_head_right.userview === "bottom") { %>
-        <div class="mdui-card-actions">
-          <div class="mdui-row">
-            <div class="mdui-col-xs-9">
-              <div class="mdui-textfield mdui-textfield-expandable">
-                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
-                <input class="mdui-textfield-input" type="text"/>
-                <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
-              </div>
-            </div>
-            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true'}"><i class="mdui-icon material-icons">&#xe5d4;</i></button>
-            <ul class="mdui-menu mdui-menu-cascade" id="share-menu">
-              <%- partial('partials/menu/share_menu') %>
-            </ul>
-            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#pages-menu', covered: 'true'}"><i class="mdui-icon material-icons">&#xe8eb;</i></button>
-              <ul class="mdui-menu mdui-menu-cascade" id="pages-menu">
-                <%- partial('partials/menu/pages/list') %>
-                <li class="mdui-divider"></li>
-                <%- partial('partials/menu/pages/collapse') %>
-              </ul>
-          </div>
+        <div class="mdui-card-media" style="padding: 25%">
+            <img src="<%= theme.index_head_right.img %>"/>
         </div>
-      <% } %>
+
+        <% if(theme.index_head_right.userview === "bottom") { %>
+            <div class="mdui-card-actions">
+                <div class="mdui-row">
+                    <div class="mdui-col-xs-8">
+                        <div class="mdui-textfield mdui-textfield-expandable">
+                            <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
+                                <i class="mdui-icon material-icons">&#xe8b6;</i>
+                            </button>
+                            <input class="mdui-textfield-input" type="text"/>
+                            <button class="mdui-textfield-close mdui-btn mdui-btn-icon">
+                                <i class="mdui-icon material-icons">&#xe5cd;</i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true'}">
+                        <i class="mdui-icon material-icons">&#xe5d4;</i>
+                    </button>
+                    <ul class="mdui-menu" id="share-menu">
+                        <%- partial('partials/menu/index_share_menu') %>
+                    </ul>
+                    <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#pages-menu', covered: 'true'}">
+                        <i class="mdui-icon material-icons">&#xe8eb;</i>
+                    </button>
+                    <ul class="mdui-menu mdui-menu-cascade" id="pages-menu">
+                        <%- partial('partials/menu/pages/list') %>
+                        <li class="mdui-divider"></li>
+                        <%- partial('partials/menu/pages/collapse') %>
+                    </ul>
+                </div>
+            </div>
+        <% } %>
 
     </div>
-  </div>
+</div>
