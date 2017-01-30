@@ -10,7 +10,6 @@ head:
     keywords:
     hitokoto: "lwl12"
 
-
 dynamic_title: "喵喵喵"
 
 appbar:
@@ -176,8 +175,18 @@ index_head_left:
 index_head_right:
   userview: "bottom"
   gradient: ""
-  img: "/img/logo.png"
+  img: "https://blog.halyul.cc/img/doge.gif"
   subtitle: "Never do a dreamer"
+
+share_menu:
+  article_rss:
+  weibo: true
+  twitter: true
+  facebook: true
+  googleplus: true
+  linkedin: true
+  qq: true
+  telegram: true
 
 # userview: "top", "bottom", "center"
 # title: "img-top", "img-bottom", "card-center", "card-top"
@@ -185,6 +194,10 @@ post:
   userview: "bottom"
   title: "img-bottom"
   gradient: ""
+  entry_excerpt: 80
+  img_color: "#536DFE"
+
+qrcode: true
 
 copyright:
   blog_start_year: "2016"
