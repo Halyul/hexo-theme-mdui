@@ -179,6 +179,16 @@ index_head_right:
   img: "/img/logo.png"
   subtitle: "Never do a dreamer"
 
+share_menu:
+  article_rss:
+  weibo: true
+  twitter: true
+  facebook: true
+  googleplus: true
+  linkedin: true
+  qq: true
+  telegram: true
+
 # userview: "top", "bottom", "center"
 # title: "img-top", "img-bottom", "card-center", "card-top"
 post:
