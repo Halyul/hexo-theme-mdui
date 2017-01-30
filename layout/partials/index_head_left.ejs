@@ -1,6 +1,6 @@
 
   <div class="mdui-col-sm-7 mdui-col-xs-12">
-    <div class="mdui-card" style="margin-bottom: 16px;">
+    <div class="mdui-card mdui-card-left">
       <% if(theme.index_head_left.userview === "top") { %>
         <div class="mdui-card-header">
           <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
@@ -15,8 +15,7 @@
         </div>
       <% } %>
 
-      <div class="mdui-card-media">
-        <img src="<%= theme.index_head_left.img %>"/>
+      <div class="mdui-card-media title-covered" style="background-image: url(<%= theme.index_head_left.img %>)">
 
         <div class="mdui-card-media-covered <% if(theme.index_head_left.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.index_head_left.title === "img-top") { %>mdui-card-media-covered-top<% } %>">
           <% if(theme.index_head_left.title === "img-bottom") { %>

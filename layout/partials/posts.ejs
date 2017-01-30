@@ -1,4 +1,4 @@
-<div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
+<div class="mdui-card" style="margin-bottom: 16px;overflow: visible;display: flex;flex-direction: column;height: 400px;">
 
   <% if(theme.post.userview === "top") { %>
     <div class="mdui-card-header">
@@ -20,8 +20,7 @@
     </div>
   <% } %>
 
-  <div class="mdui-card-media">
-    <img src="<%= post.thumbnail %>" style="height: 223px;"/>
+  <div class="mdui-card-media title-covered" style="background-image: url(<%= post.thumbnail %>)">
 
     <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === "img-top") { %>mdui-card-media-covered-top<% } %>">
       <% if(theme.post.title === "img-bottom") { %>
@@ -74,7 +73,7 @@
     <% if(post.excerpt) { %>
             <%- strip_html(post.excerpt) %>
         <% } else { %>
-            <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
+            <%- strip_html(truncate(post.content)) %>
         <% } %>
   </div>
 

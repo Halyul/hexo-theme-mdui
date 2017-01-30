@@ -128,3 +128,26 @@ footer.page-footer {
 .slider .indicators .indicator-item.active {
     background-color: #4CAF50;
 }
+
+.title-covered {
+    background-color: #ff4081;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-origin: padding-box;
+    background-attachment: scroll;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.index-head-card {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.index-head-card .mdui-card-left {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
