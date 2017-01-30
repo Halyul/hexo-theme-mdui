@@ -185,6 +185,7 @@ post:
   userview: "bottom"
   title: "img-bottom"
   gradient: ""
+  entry_excerpt: 80
 
 qrcode: true
 
