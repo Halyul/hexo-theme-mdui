@@ -28,18 +28,7 @@
       <button class="mdui-btn mdui-btn-icon mdui-text-color-white"><i class="mdui-icon material-icons">&#xe80d;</i></button>
     </div>
     <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === "img-top") { %>mdui-card-media-covered-top<% } %>">
-      <% if(theme.post.title === "img-bottom") { %>
-        <div class="mdui-card-primary mdui-typo">
-          <div class="mdui-card-primary-title"><%=page.title%></div>
-          <div class="mdui-card-primary-subtitle">
-            <%- list_categories(page.categories, {
-              show_count: false,
-              style: 'none'
-            }) %>
-          </div>
-          </div>
-      <% } %>
-      <% if(theme.post.title === "img-top") { %>
+      <% if(theme.post.title === "img-bottom" || theme.post.title === "img-top") { %>
         <div class="mdui-card-primary mdui-typo">
           <div class="mdui-card-primary-title"><%=page.title%></div>
           <div class="mdui-card-primary-subtitle">
