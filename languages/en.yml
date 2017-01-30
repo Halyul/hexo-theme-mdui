@@ -10,6 +10,7 @@ post:
     newer: "Newer"
     private: "Private post, temporarily hidden"
     qrcode: "Read this article on other device"
+    comment: "Show comments"
 share:
     article_rss: "Article RSS"
     comment_rss: "Comment RSS"

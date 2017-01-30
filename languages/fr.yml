@@ -10,6 +10,7 @@ post:
     newer: "Récent"
     private: "Article privé, caché temporairement"
     qrcode: "Lire cet article depuis un autre appareil"
+    comment: "Show comments"
 share:
     article_rss: "Flux RSS des articles"
     comment_rss: "Flux RSS des commentaires"
