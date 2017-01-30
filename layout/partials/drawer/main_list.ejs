@@ -1,6 +1,6 @@
 <!-- Homepage -->
 <li class="mdui-list-item mdui-ripple <% if (theme.drawer.menu.homepage.bg_color) { %>mdui-color-<%= theme.drawer.menu.homepage.bg_color %><% } %>">
-<a href="<%= config.root %>" target="_self" class="mdui-list-item-content">
+  <a href="<%= config.root %>" target="_self" class="mdui-list-item-content">
     <i class="mdui-icon material-icons <% if (theme.drawer.menu.homepage.color) { %>mdui-text-color-<%= theme.drawer.menu.homepage.color %><% } %> <% if(theme.drawer.menu.homepage.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
         <% if(theme.drawer.menu.homepage.icon) { %>
             <%- theme.drawer.menu.homepage.icon %>
@@ -19,8 +19,34 @@
             <%= __('sidebar.homepage') %>
         <% } %>
     </span>
-</a>
+  </a>
 </li>
+
+<!-- Archive -->
+<% if(theme.drawer.menu.archive.enable === true) { %>
+  <li class="mdui-list-item mdui-ripple <% if (theme.drawer.menu.archive.bg_color) { %>mdui-color-<%= theme.drawer.menu.archive.bg_color %><% } %>">
+    <a href="/archives" target="_self" class="mdui-list-item-content">
+      <i class="mdui-icon material-icons <% if (theme.drawer.menu.archive.color) { %>mdui-text-color-<%= theme.drawer.menu.archive.color %><% } %> <% if(theme.drawer.menu.archive.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
+          <% if(theme.drawer.menu.archive.icon) { %>
+              <%- theme.drawer.menu.archive.icon %>
+          <% } %>
+      </i>
+      <span <% if (theme.drawer.menu.archive.text_color) { %>class="mdui-text-color-<%= theme.drawer.menu.archive.text_color %>"<% } %>>
+          <% if(theme.drawer.menu.archive.icon) { %>
+              &emsp;
+          <% } %>
+          <% if(theme.drawer.menu.archive.fix === true) { %>
+              &nbsp;
+          <% } %>
+          <% if(theme.drawer.menu.archive.title) { %>
+              <%= theme.drawer.menu.archive.title %>
+          <% } else {%>
+              <%= __('sidebar.article_num') %>
+          <% } %>
+      </span>
+    </a>
+  </li>
+<% } %>
 
 <!-- Archives -->
 <% if(theme.drawer.menu.archives.enable === true) { %>
@@ -103,6 +129,3 @@
             </div>
         </div>
     <% } %>
-
-    <li class="mdui-divider"></li>
-    <div class="mdui-typo-caption">&emsp;<%= theme.drawer.subtitle %></div>

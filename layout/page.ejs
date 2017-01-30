@@ -1,6 +1,9 @@
 <% if(page.layout == 'tags') { %>
     <!-- Tags Cloud -->
-    <%- partial('widget/page-tagcloud') %>
+    <%- partial('widget/page_tagcloud') %>
+<% } else if(page.layout == 'links') { %>
+    <!-- Single Links Page -->
+    <%- partial('widget/page_links') %>
 <% } else {%>
     <article id="page">
         <h1><%= page.title %></h1>

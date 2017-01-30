@@ -25,7 +25,7 @@
                     </i>
                 </button>
             </a>
-        <% } else if (page.prev && page.prev.path) { %>
+        <% } else if (page.prev) { %>
             <a href="<%=url_for(page.prev.path)%>">
                 <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.prev.color %>">
                     <i class="mdui-icon material-icons">
@@ -43,7 +43,7 @@
                     </i>
                 </button>
             </a>
-        <% } else if (page.next && page.next.path) { %>
+        <% } else if (page.next) { %>
             <a href="<%=url_for(page.next.path)%>">
                 <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-<%- theme.fab.next.color %>">
                     <i class="mdui-icon material-icons">
