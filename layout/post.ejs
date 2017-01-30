@@ -71,8 +71,17 @@
     <% } %>
 
     <div class="mdui-card-actions">
-      <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">&#xe892;</i></button>
-      <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">&#xe1b1;</i></button>
+      <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+        <ul class="mdui-menu" id="share-menu">
+          <%- partial('partials/menu/share_menu') %>
+        </ul>
+      <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}"><i class="mdui-icon material-icons">&#xe892;</i></button>
+        <ul class="mdui-menu" id="tags-menu">
+          <%- partial('partials/menu/tags_menu') %>
+        </ul>
+        <% if(theme.qrcode == true) { %>
+          <%- partial('partials/menu/qr_menu') %>
+        <% } %>
     </div>
 
   <!-- 卡片的内容 -->

@@ -186,6 +186,8 @@ post:
   title: "img-bottom"
   gradient: ""
 
+qrcode: true
+
 copyright:
   blog_start_year: "2016"
 

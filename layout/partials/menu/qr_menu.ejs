@@ -1,0 +1,7 @@
+<button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#qr-menu', covered: 'true', align: 'right'}"><i class="mdui-icon material-icons">&#xe1b1;</i></button>
+  <ul class="mdui-menu" id="qr-menu">
+    <li class="mdui-menu-item"><a class="mdui-ripple"><%= __('post.qrcode') %></a></li>
+    <img class="mdui-img-fluid" src="<%- qrcode(url, {
+      margin: 2
+    }) %>">
+  </ul>
