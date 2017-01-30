@@ -1,12 +1,21 @@
-<div class="mdui-col-sm-7 mdui-col-xs-12">
-    <div class="mdui-card" style="margin-bottom: 16px;">
-        <% if(theme.index_head_left.userview === "top") { %>
-            <div class="mdui-card-header">
-                <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-                <div class="mdui-card-header-title"><%= config.author %></div>
-                <div class="mdui-card-header-subtitle"><%- theme.index_head_left.subtitle %></div>
-            </div>
-        <% } %>
+
+  <div class="mdui-col-sm-7 mdui-col-xs-12">
+    <div class="mdui-card mdui-card-left">
+      <% if(theme.index_head_left.userview === "top") { %>
+        <div class="mdui-card-header">
+          <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+          <div class="mdui-card-header-title"><%= config.author %></div>
+          <div class="mdui-card-header-subtitle"><%- theme.index_head_left.subtitle %></div>
+        </div>
+      <% } %>
+
+      <% if(theme.index_head_left.title === "card-top") { %>
+        <div class="mdui-card-primary mdui-typo">
+          <div class="mdui-card-primary-title"><%- theme.index_head_left.slogan %></div>
+        </div>
+      <% } %>
+
+      <div class="mdui-card-media title-covered" style="background-image: url(<%= theme.index_head_left.img %>)">
 
         <% if(theme.index_head_left.title === "card-top") { %>
             <div class="mdui-card-primary mdui-typo">
