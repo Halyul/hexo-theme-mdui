@@ -1,8 +1,7 @@
 <div class="mdui-container">
   <div class="mdui-card mdui-hoverable">
     <div class="mdui-card-actions">
-      <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>&emsp;联系我</button>
-      <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#about-theme'}"><i class="mdui-icon material-icons">&#xe88f;</i>&emsp;关于本主题</button>
+      <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>&emsp;<%= __('footer.contact_me_button') %></button>
     </div>
     <div class="mdui-card-content">
       <div class=" mdui-text-center mdui-typo">
@@ -19,15 +18,8 @@
   </div>
 </div>
 <br>
-<div class="mdui-dialog" id="about-theme">
-  <div class="mdui-dialog-title">关于本主题-Version: 0.0.1 experimental</div>
-  <div class="mdui-dialog-content mdui-typo">本主题基于<a href="//www.mdui.org">MDUI</a>前端，并加入一些来自<a href="//materializecss.com">Materialize</a>前端的特性打造而成。</div>
-  <div class="mdui-dialog-actions">
-    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>本王知道了！</button>
-  </div>
-</div>
 <div class="mdui-dialog" id="contact">
-  <div class="mdui-dialog-title">我的联系方式：</div>
+  <div class="mdui-dialog-title"><%= __('footer.contact_me_title') %></div>
   <div class="mdui-dialog-content">
     <div class="mdui-list">
       <% for (var i in theme.sns){ %>
@@ -36,6 +28,6 @@
     </div>
   </div>
   <div class="mdui-dialog-actions">
-    <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-close><%= __('footer.close') %></button>
   </div>
 </div>

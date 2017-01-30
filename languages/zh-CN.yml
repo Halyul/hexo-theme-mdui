@@ -26,3 +26,7 @@ title:
 misc:
     home: "主页"
     theme: "主题"
+footer:
+  contact_me_button: "联系我"
+  contact_me_title: "我的联系方式"
+  close: "关闭"
