@@ -1,12 +1,13 @@
-<div class="mdui-col-sm-5 mdui-col-xs-12">
-    <div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
-        <% if(theme.index_head_right.userview === "top") { %>
-            <div class="mdui-card-header">
-                <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-                <div class="mdui-card-header-title"><%= config.author %></div>
-                <div class="mdui-card-header-subtitle"><%- theme.index_head_right.subtitle %></div>
-            </div>
-        <% } %>
+
+  <div class="mdui-col-sm-5 mdui-col-xs-12">
+    <div class="mdui-card" style="overflow: visible;">
+      <% if(theme.index_head_right.userview === "top") { %>
+        <div class="mdui-card-header">
+          <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+          <div class="mdui-card-header-title"><%= config.author %></div>
+          <div class="mdui-card-header-subtitle"><%- theme.index_head_right.subtitle %></div>
+        </div>
+      <% } %>
 
         <div class="mdui-card-media">
             <img src="<%= theme.index_head_right.img %>"/>
