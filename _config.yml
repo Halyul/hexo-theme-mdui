@@ -176,7 +176,7 @@ index_head_left:
 index_head_right:
   userview: "bottom"
   gradient: ""
-  img: "/img/logo.png"
+  img: "https://blog.halyul.cc/img/doge.gif"
   subtitle: "Never do a dreamer"
 
 share_menu:
