@@ -10,7 +10,6 @@ head:
     keywords:
     hitokoto: "lwl12"
 
-
 dynamic_title: "喵喵喵"
 
 appbar:
@@ -196,6 +195,7 @@ post:
   title: "img-bottom"
   gradient: ""
   entry_excerpt: 80
+  img_color: "#536DFE"
 
 qrcode: true
 

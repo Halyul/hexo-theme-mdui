@@ -75,22 +75,15 @@
             </div>
         </div>
     <% } %>
-    <div class="mdui-row">
+
       <div class="mdui-card-content">
-        <div class="mdui-col-xs-9">
-          <% if(post.excerpt) { %>
-              <%- strip_html(post.excerpt) %>
-            <% } else { %>
-              <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
-            <% } %>
-        </div>
-        <div class="mdui-col-xs-3">
-        <a href="<%= url_for(post.path) %>" target="_self">
-            <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-float-right" mdui-tooltip="{content: '<%= __('post.continue') %>', position: 'bottom'}"><i class="mdui-icon material-icons">&#xe5c8;</i></button>
-        </a>
-        </div>
+        <% if(post.excerpt) { %>
+            <%- strip_html(post.excerpt) %>
+          <% } else { %>
+            <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
+          <% } %>
+          <a href="<%= url_for(post.path) %>" target="_self"><button class="mdui-btn mdui-btn-dense mdui-btn-icon mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-float-right" mdui-tooltip="{content: '<%= __('post.continue') %>', position: 'bottom'}"><i class="mdui-icon material-icons">&#xe5c8;</i></button></a>
       </div>
-    </div>
 
     <% if(theme.post.userview === "bottom") { %>
         <div class="mdui-card-header">

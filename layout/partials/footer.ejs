@@ -1,33 +1,42 @@
 <div class="mdui-container">
     <div class="mdui-card mdui-hoverable">
-        <div class="mdui-card-actions">
-            <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#contact'}">
-                <i class="mdui-icon material-icons">&#xe87c;</i>&emsp;<%= __('footer.contact_me_button') %></button>
-        </div>
         <div class="mdui-card-content">
-            <div class=" mdui-text-center mdui-typo">
-                <script type="text/javascript">
-                    copyright = new Date();
-                    update = copyright.getFullYear();
-                    document.write("Copyright © <% if (theme.copyright.blog_start_year > 0) { %><%= theme.copyright.blog_start_year %> - <% } %>" + update);
-                </script>
-                <%= config.author %>.<br>
-                Powered by
-                <a href="http://hexo.io">Hexo</a>.<br>
-                Theme -
-                <a href="//halyul.cc">MDUI</a>
+            <div class="mdui-row mdui-valign">
+              <div class="mdui-col-xs-4">
+                <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>&emsp;<%= __('footer.contact_me_button') %></button>
+              </div>
+              <div class="mdui-col-xs-4">
+                <div class="mdui-text-center mdui-typo">
+                    <script type="text/javascript">
+                        copyright = new Date();
+                        update = copyright.getFullYear();
+                        document.write("Copyright © <% if (theme.copyright.blog_start_year > 0) { %><%= theme.copyright.blog_start_year %> - <% } %>" + update + " <%= config.author %>.");
+                    </script>
+                </div>
+              </div>
+              <div class="mdui-col-xs-4">
+                <div class="mdui-text-center mdui-typo">
+                  Powered by <a href="http://hexo.io">Hexo</a>.<br>
+                  Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
     </div>
 </div>
 <br>
 <div class="mdui-dialog" id="contact">
-    <div class="mdui-dialog-title"><%= __('footer.contact_me_title') %></div>
+    <div class="mdui-dialog-title">
+        <%= __('footer.contact_me_title') %>
+    </div>
     <div class="mdui-dialog-content">
         <div class="mdui-list">
             <% for (var i in theme.sns){ %>
-                <a href="<%= theme.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple"><%= i %></a>
-            <% } %>
+                <a href="<%= theme.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple">
+                    <%= i %>
+                </a>
+                <% } %>
         </div>
     </div>
     <div class="mdui-dialog-actions">

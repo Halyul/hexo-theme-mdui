@@ -2,22 +2,35 @@
 <div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
 
     <% if(theme.post.userview === "top") { %>
-        <div class="mdui-card-header">
+      <div class="mdui-card-header">
+        <div class="mdui-row">
+          <div class="mdui-col-xs-8">
             <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
             <div class="mdui-card-header-title"><%= config.author %></div>
             <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
+          </div>
+          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
+            <i class="mdui-icon material-icons">&#xe80d;</i>
+          </button>
+          <ul class="mdui-menu" id="share-menu">
+            <%- partial('partials/menu/post_share_menu') %>
+          </ul>
+          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
+            <i class="mdui-icon material-icons">&#xe892;</i>
+          </button>
+          <ul class="mdui-menu" id="tags-menu">
+            <%- partial('partials/menu/tags_menu') %>
+          </ul>
+          <% if(theme.qrcode == true) { %>
+            <%- partial('partials/menu/qr_menu') %>
+          <% } %>
         </div>
+      </div>
     <% } %>
 
     <% if(theme.post.title === "card-top") { %>
         <div class="mdui-card-primary mdui-typo">
             <div class="mdui-card-primary-title"><%=page.title%></div>
-            <div class="mdui-card-primary-subtitle">
-                <%- list_categories(page.categories, {
-                  show_count: false,
-                  style: 'none'
-                }) %>
-            </div>
         </div>
     <% } %>
 
@@ -32,62 +45,70 @@
             <% if(theme.post.title === "img-bottom" || theme.post.title === "img-top") { %>
                 <div class="mdui-card-primary mdui-typo">
                     <div class="mdui-card-primary-title"><%=page.title%></div>
-                    <div class="mdui-card-primary-subtitle">
-                        <%- list_categories(page.categories, {
-                          show_count: false,
-                          style: 'none'
-                        }) %>
-                    </div>
                 </div>
             <% } %>
         </div>
     </div>
 
     <% if(theme.post.userview === "center") { %>
-        <div class="mdui-card-header">
+      <div class="mdui-card-header">
+        <div class="mdui-row">
+          <div class="mdui-col-xs-8">
             <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
             <div class="mdui-card-header-title"><%= config.author %></div>
             <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
+          </div>
+          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
+            <i class="mdui-icon material-icons">&#xe80d;</i>
+          </button>
+          <ul class="mdui-menu" id="share-menu">
+            <%- partial('partials/menu/post_share_menu') %>
+          </ul>
+          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
+            <i class="mdui-icon material-icons">&#xe892;</i>
+          </button>
+          <ul class="mdui-menu" id="tags-menu">
+            <%- partial('partials/menu/tags_menu') %>
+          </ul>
+          <% if(theme.qrcode == true) { %>
+            <%- partial('partials/menu/qr_menu') %>
+          <% } %>
         </div>
+      </div>
     <% } %>
 
     <% if(theme.post.title === "card-center") { %>
         <div class="mdui-card-primary mdui-typo">
             <div class="mdui-card-primary-title"><%=page.title%></div>
-            <div class="mdui-card-primary-subtitle">
-                <%- list_categories(page.categories, {
-                  show_count: false,
-                  style: 'none'
-                }) %>
-            </div>
         </div>
     <% } %>
 
     <% if(theme.post.userview === "bottom") { %>
         <div class="mdui-card-header">
-            <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-            <div class="mdui-card-header-title"><%= config.author %></div>
-            <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
+          <div class="mdui-row">
+            <div class="mdui-col-xs-8">
+              <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+              <div class="mdui-card-header-title"><%= config.author %></div>
+              <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
+            </div>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
+              <i class="mdui-icon material-icons">&#xe80d;</i>
+            </button>
+            <ul class="mdui-menu" id="share-menu">
+              <%- partial('partials/menu/post_share_menu') %>
+            </ul>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
+              <i class="mdui-icon material-icons">&#xe892;</i>
+            </button>
+            <ul class="mdui-menu" id="tags-menu">
+              <%- partial('partials/menu/tags_menu') %>
+            </ul>
+            <% if(theme.qrcode == true) { %>
+              <%- partial('partials/menu/qr_menu') %>
+            <% } %>
+          </div>
         </div>
     <% } %>
-
-    <div class="mdui-card-actions">
-        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
-            <i class="mdui-icon material-icons">&#xe80d;</i>
-        </button>
-        <ul class="mdui-menu" id="share-menu">
-            <%- partial('partials/menu/post_share_menu') %>
-        </ul>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
-            <i class="mdui-icon material-icons">&#xe892;</i>
-        </button>
-        <ul class="mdui-menu" id="tags-menu">
-            <%- partial('partials/menu/tags_menu') %>
-        </ul>
-        <% if(theme.qrcode == true) { %>
-            <%- partial('partials/menu/qr_menu') %>
-        <% } %>
-    </div>
 
     <div class="mdui-card-content mdui-typo">
         <%-page.content%>

@@ -16,3 +16,12 @@
     }
 
 </style>
+<% if(theme.post.img_color) { %>
+  <!-- Img unloaded color -->
+  <style>
+    .title-covered {
+      background-color: <%= theme.post.img_color %> !important;
+    }
+
+  </style>
+<% } %>
