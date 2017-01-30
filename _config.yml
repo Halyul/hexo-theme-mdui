@@ -38,6 +38,7 @@ drawer:
     date: 12/29/2016 23:00:00
     progress_bar: true
   menu:
+    divider:
     homepage:
       icon: "&#xe88a;"
       title: ""
@@ -66,68 +67,86 @@ drawer:
       fix: true
       text_color:
       bg_color:
+    archive:
+      enable: true
+      icon: "&#xe54b;"
+      title: ""
+      circle: true
+      color: "red"
+      arrow:
+      fix:
+      text_color:
+      bg_color:
 
 pages:
-    list:
-      Todo List:
-        link: "/todo"
-        icon: "&#xe86d;"
-        circle: true
-        color: "red"
-        fix:
-        text_color:
-        bg_color:
-      TEST:
-        link: "/todo"
-        icon: "&#xe86d;"
-        circle: true
-        color: "red"
-        fix:
-        text_color:
-        bg_color:
-      Tag Cloud:
-        link: "/tags"
-        icon: "&#xe892;"
-        circle: true
-        color: "red"
-        fix:
-        text_color:
-        bg_color:
+  list:
+    Tag Cloud:
+      link: "/tags"
+      icon: "&#xe892;"
+      circle: true
+      color: "red"
+      fix:
+      text_color:
+      bg_color:
+    Links:
+      link: "/links"
+      icon: "&#xe0ba;"
+      circle: true
+      color: "red"
+      fix:
+      text_color:
+      bg_color:
+    Todo List:
+      link: "/todo"
+      icon: "&#xe86d;"
+      circle: true
+      color: "red"
+      fix:
+      text_color:
+      bg_color:
+    TEST:
+      link: "/todo"
+      icon: "&#xe86d;"
+      circle: true
+      color: "red"
+      fix:
+      text_color:
+      bg_color:
 
-    collapse:
-      Todo List:
-        links:
-          test1:
-            link: "/test"
-            text_color:
-            bg_color:
-          test2:
-            link: "/test2"
-            text_color:
-            bg_color:
-        icon: "&#xe86d;"
-        circle: true
-        color: "red"
-        arrow:
-        fix: true
-        text_color:
-        bg_color:
-      TEST:
-        links:
-          test1:
-            link: "/test"
-            text_color:
-            bg_color:
-          test2:
-            link: "/test2"
-            text_color:
-            bg_color:
-        icon: "&#xe86d;"
-        circle: true
-        color: "red"
-        fix: true
-        text_color:
-        bg_color:
+  collapse:
+    Todo List:
+      links:
+        test1:
+          link: "/test"
+          text_color:
+          bg_color:
+        test2:
+          link: "/test2"
+          text_color:
+          bg_color:
+      icon: "&#xe86d;"
+      circle: true
+      color: "red"
+      arrow:
+      fix: true
+      text_color:
+      bg_color:
+    TEST:
+      links:
+        test1:
+          link: "/test"
+          text_color:
+          bg_color:
+        test2:
+          link: "/test2"
+          text_color:
+          bg_color:
+      icon: "&#xe86d;"
+      circle: true
+      color: "red"
+      fix: true
+      text_color:
+      bg_color:
 
 background:
   color:

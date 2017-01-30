@@ -22,13 +22,23 @@
             <ul class="mdui-list" mdui-collapse="{accordion: <%= theme.drawer.accordion %>}">
                 <!-- Menu -->
                 <%- partial('partials/drawer/main_list') %>
+                <li class="mdui-divider"></li>
+                <div class="mdui-typo-caption">&emsp;<%= theme.drawer.subtitle %></div>
                 <!-- Pages -->
                 <%- partial('partials/drawer/pages/list') %>
                 <%- partial('partials/drawer/pages/collapse') %>
+                <% if (theme.drawer.counter.enable === true || theme.drawer.holiday.enable === true) { %>
+                  <li class="mdui-divider"></li>
+                <% } %>
                 <!-- Holiday -->
                 <%- partial('partials/drawer/holiday') %>
                 <!-- Counter -->
                 <%- partial('partials/drawer/counter') %>
+                <% if (theme.drawer.menu.divider === true) { %>
+                  <li class="mdui-divider"></li>
+                <% } %>
+                <!-- About theme -->
+                <%- partial('partials/drawer/about_theme') %>
             </ul>
         </div>
     </div>
