@@ -1,13 +1,14 @@
 <% if (theme.drawer.holiday.enable === true) { %>
-<li class="mdui-list-item mdui-ripple">
-  <div class="mdui-list-item-content mdui-text-center <% if (theme.drawer.holiday.text_color) { %>mdui-text-color-<%= theme.drawer.holiday.text_color %><% } %> <% if (theme.drawer.holiday.bg_color) { %>mdui-color-<%= theme.drawer.holiday.bg_color %><% } %>">
-    <% if(theme.drawer.holiday.text) { %>
-      <% if(Array.isArray(theme.drawer.holiday.text)) { %>
-        <%- theme.drawer.holiday.text.join('<br>') %>
-      <% } else { %>
-        <%= theme.drawer.holiday.text %>
-      <% } %>
-    <% } %>
-  </div>
-</li>
+    <li class="mdui-list-item mdui-ripple">
+        <div
+            class="mdui-list-item-content mdui-text-center <% if (theme.drawer.holiday.text_color) { %>mdui-text-color-<%= theme.drawer.holiday.text_color %><% } %> <% if (theme.drawer.holiday.bg_color) { %>mdui-color-<%= theme.drawer.holiday.bg_color %><% } %>">
+            <% if(theme.drawer.holiday.text) { %>
+                <% if(Array.isArray(theme.drawer.holiday.text)) { %>
+                    <%- theme.drawer.holiday.text.join('<br>') %>
+                <% } else { %>
+                    <%= theme.drawer.holiday.text %>
+                <% } %>
+            <% } %>
+        </div>
+    </li>
 <% } %>
