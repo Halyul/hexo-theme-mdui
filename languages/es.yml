@@ -10,6 +10,7 @@ post:
     newer: "Más nuevo"
     private: "Mensajes privados, ocultar temporalmente"
     qrcode: "Lea este artículo en otro dispositivo"
+    comment: "Show comments"
 share:
     article_rss: "Artículo RSS"
     comment_rss: "Comentario RSS"

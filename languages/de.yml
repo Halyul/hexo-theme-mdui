@@ -10,6 +10,7 @@ post:
     newer: "Neuren"
     private: "Private Beiträge sind temporär verborgen"
     qrcode: "Lesen Sie diesen Artikel auf anderem Gerät"
+    comment: "Show comments"
 share:
     article_rss: "Artikel als RSS"
     comment_rss: "Kommentare als RSS"

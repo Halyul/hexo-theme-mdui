@@ -10,6 +10,7 @@ post:
     newer: "Baru"
     private: "Siaran peribadi, disembunyikan buat sementara"
     qrcode: "Baca artikel ini pada peranti lain"
+    comment: "Show comments"
 share:
     article_rss: "RSS Artikel"
     comment_rss: "RSS Ulasan"
