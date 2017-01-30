@@ -1,102 +1,94 @@
-<div class="mdui-card" style="margin-bottom: 16px;overflow: visible;display: flex;flex-direction: column;height: 400px;">
+<div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
 
-    <% if(theme.post.userview === "top") { %>
-        <div class="mdui-card-header">
-            <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-            <div class="mdui-card-header-title"><%= config.author %></div>
-            <div class="mdui-card-header-subtitle"><%= date(post.date, 'MMM DD, YYYY') %></div>
-        </div>
-    <% } %>
+  <% if(theme.post.userview === "top") { %>
+    <div class="mdui-card-header">
+      <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+      <div class="mdui-card-header-title"><%= config.author %></div>
+      <div class="mdui-card-header-subtitle"><%= date(post.date, 'MMM DD, YYYY') %></div>
+    </div>
+  <% } %>
 
-    <% if(theme.post.title === "card-top") { %>
-        <div class="mdui-card-primary mdui-typo">
-            <div class="mdui-card-primary-title">
-                <a href="<%= url_for(post.path) %>" class="mdui-text-color-theme-text"><%= post.title %></a>
-            </div>
-            <div class="mdui-card-primary-subtitle">
-                <%- list_categories(post.categories, {
-                  show_count: false,
-                  style: 'none'
-                }) %>
-            </div>
-        </div>
-    <% } %>
-
-  <div class="mdui-card-media title-covered" style="background-image: url(<%= post.thumbnail %>)">
-
-        <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === " img-top") { %>mdui-card-media-covered-top<% } %>">
-            <% if(theme.post.title === "img-bottom") { %>
-                <div class="mdui-card-primary mdui-typo">
-                    <div class="mdui-card-primary-title">
-                        <a href="<%= url_for(post.path) %>" class="mdui-text-color-white"><%= post.title %></a>
-                    </div>
-                    <div class="mdui-card-primary-subtitle">
-                        <%- list_categories(post.categories, {
-                          show_count: false,
-                          style: 'none'
-                        }) %>
-                    </div>
-                </div>
-            <% } %>
-            <% if(theme.post.title === "img-top") { %>
-                <div class="mdui-card-primary mdui-typo">
-                    <div class="mdui-card-primary-title">
-                        <a href="<%= url_for(post.path) %>" class="mdui-text-color-white"><%= post.title %></a>
-                    </div>
-                    <div class="mdui-card-primary-subtitle">
-                        <%- list_categories(post.categories, {
-                          show_count: false,
-                          style: 'none'
-                        }) %>
-                    </div>
-                </div>
-            <% } %>
+  <% if(theme.post.title === "card-top") { %>
+    <div class="mdui-card-primary mdui-typo">
+      <div class="mdui-card-primary-title"><a href="<%= url_for(post.path) %>" class="mdui-text-color-theme-text"><%= post.title %></a></div>
+      <div class="mdui-card-primary-subtitle">
+        <%- list_categories(post.categories, {
+            show_count: false,
+            style: 'none'
+            }) %>
         </div>
     </div>
+  <% } %>
 
-    <% if(theme.post.userview === "center") { %>
-        <div class="mdui-card-header">
-            <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-            <div class="mdui-card-header-title"><%= config.author %></div>
-            <div class="mdui-card-header-subtitle"><%= date(post.date, 'MMM DD, YYYY') %></div>
-        </div>
-    <% } %>
+  <div class="mdui-card-media">
+    <img src="<%= post.thumbnail %>" style="height: 223px;"/>
 
-    <% if(theme.post.title === "card-center") { %>
+    <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === "img-top") { %>mdui-card-media-covered-top<% } %>">
+      <% if(theme.post.title === "img-bottom") { %>
         <div class="mdui-card-primary mdui-typo">
-            <div class="mdui-card-primary-title">
-                <a href="<%= url_for(post.path) %>" class="mdui-text-color-theme-text"><%= post.title %></a>
-            </div>
-            <div class="mdui-card-primary-subtitle">
-                <%- list_categories(post.categories, {
-                  show_count: false,
-                  style: 'none'
-                }) %>
-            </div>
-        </div>
-    <% } %>
-    <div class="mdui-row">
-      <div class="mdui-card-content">
-        <div class="mdui-col-xs-9">
-          <% if(post.excerpt) { %>
-              <%- strip_html(post.excerpt) %>
-            <% } else { %>
-              <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
-            <% } %>
-        </div>
-        <div class="mdui-col-xs-3">
-        <a href="<%= url_for(post.path) %>" target="_self">
-            <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-float-right" mdui-tooltip="{content: '<%= __('post.continue') %>', position: 'bottom'}"><i class="mdui-icon material-icons">&#xe5c8;</i></button>
-        </a>
-        </div>
-      </div>
+          <div class="mdui-card-primary-title"><a href="<%= url_for(post.path) %>" class="mdui-text-color-white"><%= post.title %></a></div>
+          <div class="mdui-card-primary-subtitle">
+            <%- list_categories(post.categories, {
+              show_count: false,
+              style: 'none'
+            }) %>
+          </div>
+          </div>
+      <% } %>
+      <% if(theme.post.title === "img-top") { %>
+        <div class="mdui-card-primary mdui-typo">
+          <div class="mdui-card-primary-title"><a href="<%= url_for(post.path) %>" class="mdui-text-color-white"><%= post.title %></a></div>
+          <div class="mdui-card-primary-subtitle">
+            <%- list_categories(post.categories, {
+              show_count: false,
+              style: 'none'
+            }) %>
+          </div>
+          </div>
+      <% } %>
     </div>
+  </div>
 
-    <% if(theme.post.userview === "bottom") { %>
-        <div class="mdui-card-header">
-          <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-          <div class="mdui-card-header-title"><%= config.author %></div>
-          <div class="mdui-card-header-subtitle"><%= date(post.date, 'MMM DD, YYYY') %></div>
+  <% if(theme.post.userview === "center") { %>
+    <div class="mdui-card-header">
+      <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+      <div class="mdui-card-header-title"><%= config.author %></div>
+      <div class="mdui-card-header-subtitle"><%= date(post.date, 'MMM DD, YYYY') %></div>
+    </div>
+  <% } %>
+
+  <% if(theme.post.title === "card-center") { %>
+    <div class="mdui-card-primary mdui-typo">
+      <div class="mdui-card-primary-title"><a href="<%= url_for(post.path) %>" class="mdui-text-color-theme-text"><%= post.title %></a></div>
+      <div class="mdui-card-primary-subtitle">
+        <%- list_categories(post.categories, {
+            show_count: false,
+            style: 'none'
+            }) %>
         </div>
-    <% } %>
+    </div>
+  <% } %>
+
+  <!-- 卡片的内容 -->
+  <div class="mdui-card-content">
+    <% if(post.excerpt) { %>
+            <%- strip_html(post.excerpt) %>
+        <% } else { %>
+            <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
+        <% } %>
+  </div>
+
+  <!-- 卡片的按钮 -->
+  <div class="mdui-card-actions">
+    <a href="<%= url_for(post.path) %>" target="_self"><button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent"><%= __('post.continue') %></button></a>
+    <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">&#xe5cf;</i></button>
+  </div>
+
+  <% if(theme.post.userview === "bottom") { %>
+    <div class="mdui-card-header">
+      <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+      <div class="mdui-card-header-title"><%= config.author %></div>
+      <div class="mdui-card-header-subtitle"><%= date(post.date, 'MMM DD, YYYY') %></div>
+    </div>
+  <% } %>
 </div>

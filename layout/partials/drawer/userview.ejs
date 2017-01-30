@@ -1,15 +1,14 @@
 <div class="mdui-hidden-md-up">
-    <div class="mdui-card-header-drawer">
-        <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
+  <div class="mdui-card-header-drawer">
+    <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>" />
+  </div>
+  <div class="mdui-grid-tile">
+    <img src="<%= theme.userview.bgimg %>" />
+    <div class="mdui-grid-tile-actions mdui-grid-tile-actions-gradient">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title"><%= config.author %></div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">&#xe0be;</i><%= theme.userview.email %></div>
+      </div>
     </div>
-    <div class="mdui-grid-tile">
-        <img src="<%= theme.userview.bgimg %>"/>
-        <div class="mdui-grid-tile-actions mdui-grid-tile-actions-gradient">
-            <div class="mdui-grid-tile-text">
-                <div class="mdui-grid-tile-title"><%= config.author %></div>
-                <div class="mdui-grid-tile-subtitle">
-                    <i class="mdui-icon material-icons">&#xe0be;</i><%= theme.userview.email %></div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

@@ -1,108 +1,107 @@
 <!-- Homepage -->
 <li class="mdui-list-item mdui-ripple <% if (theme.drawer.menu.homepage.bg_color) { %>mdui-color-<%= theme.drawer.menu.homepage.bg_color %><% } %>">
-<a href="<%= config.root %>" target="_self" class="mdui-list-item-content">
+  <a href="<%= config.root %>" target="_self" class="mdui-list-item-content">
     <i class="mdui-icon material-icons <% if (theme.drawer.menu.homepage.color) { %>mdui-text-color-<%= theme.drawer.menu.homepage.color %><% } %> <% if(theme.drawer.menu.homepage.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
-        <% if(theme.drawer.menu.homepage.icon) { %>
-            <%- theme.drawer.menu.homepage.icon %>
-        <% } %>
+      <% if(theme.drawer.menu.homepage.icon) { %>
+        <%- theme.drawer.menu.homepage.icon %>
+      <% } %>
     </i>
     <span <% if (theme.drawer.menu.homepage.text_color) { %>class="mdui-text-color-<%= theme.drawer.menu.homepage.text_color %>"<% } %>>
-        <% if(theme.drawer.menu.homepage.icon) { %>
-            &emsp;
-        <% } %>
-        <% if(theme.drawer.menu.homepage.fix === true) { %>
-            &nbsp;
-        <% } %>
-        <% if(theme.drawer.menu.homepage.title) { %>
-            <%= theme.drawer.menu.homepage.title %>
-        <% } else {%>
-            <%= __('sidebar.homepage') %>
-        <% } %>
+      <% if(theme.drawer.menu.homepage.icon) { %>
+        &emsp;
+      <% } %>
+      <% if(theme.drawer.menu.homepage.fix === true) { %>
+        &nbsp;
+      <% } %>
+      <% if(theme.drawer.menu.homepage.title) { %>
+        <%= theme.drawer.menu.homepage.title %>
+      <% } else {%>
+        <%= __('sidebar.homepage') %>
+      <% } %>
     </span>
-</a>
+  </a>
 </li>
 
 <!-- Archives -->
 <% if(theme.drawer.menu.archives.enable === true) { %>
-<div class="mdui-collapse-item">
+  <div class="mdui-collapse-item">
     <div class="mdui-collapse-item-header mdui-list-item mdui-ripple <% if (theme.drawer.menu.archives.bg_color) { %>mdui-color-<%= theme.drawer.menu.archives.bg_color %><% } %>">
-        <i
-            class="mdui-list-item-icon mdui-icon material-icons <% if (theme.drawer.menu.archives.color) { %>mdui-text-color-<%= theme.drawer.menu.archives.color %><% } %> <% if(theme.drawer.menu.archives.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
-            <% if(theme.drawer.menu.archives.icon) { %>
-                <%- theme.drawer.menu.archives.icon %>
-            <% } %>
+      <i class="mdui-list-item-icon mdui-icon material-icons <% if (theme.drawer.menu.archives.color) { %>mdui-text-color-<%= theme.drawer.menu.archives.color %><% } %> <% if(theme.drawer.menu.archives.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
+        <% if(theme.drawer.menu.archives.icon) { %>
+            <%- theme.drawer.menu.archives.icon %>
+          <% } %>
         </i>
         <div class="mdui-list-item-content <% if (theme.drawer.menu.archives.text_color) { %>mdui-text-color-<%= theme.drawer.menu.archives.text_color %><% } %>">
-            <% if(theme.drawer.menu.archives.fix === true) { %>
-                &nbsp;
-            <% } %>
-            <% if(theme.drawer.menu.archives.title) { %>
-                <%= theme.drawer.menu.archives.title %>
-            <% } else {%>
-                <%= __('sidebar.archive') %>
-            <% } %>
-        </div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">
-            <% if(theme.drawer.menu.archives.arrow) { %>
-                <%= theme.drawer.menu.archives.arrow %>
-            <% } else {%>
-                &#xe313;
-            <% } %>
-        </i>
+        <% if(theme.drawer.menu.archives.fix === true) { %>
+          &nbsp;
+        <% } %>
+        <% if(theme.drawer.menu.archives.title) { %>
+          <%= theme.drawer.menu.archives.title %>
+        <% } else {%>
+          <%= __('sidebar.archive') %>
+        <% } %>
+      </div>
+      <i class="mdui-collapse-item-arrow mdui-icon material-icons">
+        <% if(theme.drawer.menu.archives.arrow) { %>
+          <%= theme.drawer.menu.archives.arrow %>
+        <% } else {%>
+          &#xe313;
+        <% } %>
+      </i>
     </div>
     <div class="mdui-collapse-item-body mdui-list">
-        <a>
-            <%- list_archives({
+      <a>
+        <%- list_archives({
           show_count: true,
           amount: 5,
           class: 'mdui-list-item mdui-ripple',
           style: 'none',
           separator: '</a><a>'
         }) %>
-        </div>
-    </div>
+      </div>
+  </div>
 <% } %>
 
 <!-- Categories -->
 <% if(theme.drawer.menu.categories.enable === true) { %>
-    <div class="mdui-collapse-item ">
-        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple <% if (theme.drawer.menu.categories.bg_color) { %>mdui-color-<%= theme.drawer.menu.categories.bg_color %><% } %>">
-            <i
-                class="mdui-list-item-icon mdui-icon material-icons <% if (theme.drawer.menu.categories.color) { %>mdui-text-color-<%= theme.drawer.menu.categories.color %><% } %> <% if(theme.drawer.menu.categories.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
-                <% if(theme.drawer.menu.categories.icon) { %>
-                    <%- theme.drawer.menu.categories.icon %>
-                <% } %>
-            </i>
-            <div class="mdui-list-item-content <% if (theme.drawer.menu.categories.text_color) { %>mdui-text-color-<%= theme.drawer.menu.categories.text_color %><% } %>">
-                <% if(theme.drawer.menu.categories.fix === true) { %>
-                    &nbsp;
-                <% } %>
-                <% if(theme.drawer.menu.categories.title) { %>
-                    <%= theme.drawer.menu.categories.title %>
-                <% } else {%>
-                    <%= __('title.category') %>
-                <% } %>
-            </div>
-            <i class="mdui-collapse-item-arrow mdui-icon material-icons">
-                <% if(theme.drawer.menu.categories.arrow) { %>
-                    <%= theme.drawer.menu.categories.arrow %>
-                <% } else {%>
-                    &#xe313;
-                <% } %>
-            </i>
-        </div>
-        <div class="mdui-collapse-item-body mdui-list">
-            <a>
-                <%- list_categories({
+  <div class="mdui-collapse-item ">
+    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple <% if (theme.drawer.menu.categories.bg_color) { %>mdui-color-<%= theme.drawer.menu.categories.bg_color %><% } %>">
+      <i class="mdui-list-item-icon mdui-icon material-icons <% if (theme.drawer.menu.categories.color) { %>mdui-text-color-<%= theme.drawer.menu.categories.color %><% } %> <% if(theme.drawer.menu.categories.circle === true) { %>mdui-list-item-avatar mdui-color-theme<% } %>">
+        <% if(theme.drawer.menu.categories.icon) { %>
+            <%- theme.drawer.menu.categories.icon %>
+          <% } %>
+        </i>
+        <div class="mdui-list-item-content <% if (theme.drawer.menu.categories.text_color) { %>mdui-text-color-<%= theme.drawer.menu.categories.text_color %><% } %>">
+        <% if(theme.drawer.menu.categories.fix === true) { %>
+          &nbsp;
+        <% } %>
+        <% if(theme.drawer.menu.categories.title) { %>
+          <%= theme.drawer.menu.categories.title %>
+        <% } else {%>
+          <%= __('title.category') %>
+        <% } %>
+      </div>
+      <i class="mdui-collapse-item-arrow mdui-icon material-icons">
+        <% if(theme.drawer.menu.categories.arrow) { %>
+          <%= theme.drawer.menu.categories.arrow %>
+        <% } else {%>
+          &#xe313;
+        <% } %>
+      </i>
+    </div>
+    <div class="mdui-collapse-item-body mdui-list">
+      <a>
+        <%- list_categories({
             show_count: true,
             amount: 5,
             class: 'mdui-list-item mdui-ripple',
             style: 'none',
             separator: '</a><a>'
         }) %>
-            </div>
-        </div>
-    <% } %>
+      </div>
+  </div>
+<% } %>
 
-    <li class="mdui-divider"></li>
-    <div class="mdui-typo-caption">&emsp;<%= theme.drawer.subtitle %></div>
+
+<li class="mdui-divider"></li>
+<div class="mdui-typo-caption">&emsp;<%= theme.drawer.subtitle %></div>

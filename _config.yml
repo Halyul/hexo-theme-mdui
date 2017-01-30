@@ -176,18 +176,8 @@ index_head_left:
 index_head_right:
   userview: "bottom"
   gradient: ""
-  img: "https://blog.halyul.cc/img/doge.gif"
+  img: "/img/logo.png"
   subtitle: "Never do a dreamer"
-
-share_menu:
-  article_rss:
-  weibo: true
-  twitter: true
-  facebook: true
-  googleplus: true
-  linkedin: true
-  qq: true
-  telegram: true
 
 # userview: "top", "bottom", "center"
 # title: "img-top", "img-bottom", "card-center", "card-top"
@@ -195,9 +185,6 @@ post:
   userview: "bottom"
   title: "img-bottom"
   gradient: ""
-  entry_excerpt: 80
-
-qrcode: true
 
 copyright:
   blog_start_year: "2016"
