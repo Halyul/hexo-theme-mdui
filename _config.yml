@@ -11,7 +11,7 @@ head:
     hitokoto: ""
 
 # You can use whatever you like
-dynamic_title: 
+dynamic_title:
 
 appbar:
   fixed:
@@ -134,9 +134,7 @@ index_head_left:
 
 index_head_right:
   userview:
-  gradient:
   img: "/img/logo.png"
-  subtitle:
 
 share_menu:
   article_rss:
