@@ -125,9 +125,15 @@
         </div>
     <% } %>
 
-    <div class="mdui-card-content mdui-typo">
-        <%-page.content%>
-    </div>
+    <% if(page.layout === "private") { %>
+      <div class="mdui-card-content mdui-typo">
+        <%= __('post.private') %>
+      </div>
+    <% } else { %>
+      <div class="mdui-card-content mdui-typo">
+        <%- page.content %>
+      </div>
+    <% } %>
 
     <div class="mdui-typo">
         <hr/>
