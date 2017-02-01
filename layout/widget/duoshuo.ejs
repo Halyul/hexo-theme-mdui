@@ -10,7 +10,7 @@
         color: <%= theme.post.img_color %> !important;
     }
 </style>
-<div id="comments" class="mdui-card-content">
+<div id="comments" class="mdui-card-content mdui-hidden">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
         data-thread-key="<% theme.comment.duoshuo_thread_key_type === 'id' ? page.id : page.path %>"
@@ -19,3 +19,9 @@
     </div>
     <!-- 多说评论框 end -->
 </div>
+<script>
+$(document).on('click', '#show-comment', function () {
+  $("#comments").removeClass("mdui-hidden")
+  $("#show-comment-container").addClass("mdui-hidden")
+});
+</script>
