@@ -136,5 +136,10 @@
     <div class="mdui-card-actions">
         <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center"><%= __('post.comment') %></button>
     </div>
+
+    <!-- Post Comments -->
+    <% if(page.comment !== false) { %>
+      <%- partial('partials/comment') %>
+    <% } %>
 </div>
 <%-partial('partials/pagination')%>

@@ -189,7 +189,6 @@ index_head_left:
   gradient: ""
   slogan: "<script>lwlhitokoto()</script>"
   img: "https://api.i-meto.com/bing"
-  subtitle: "Never do a dreamer"
 
 index_head_right:
   userview: "bottom"
@@ -241,6 +240,12 @@ busuanzi:
     all_site_uv: true
     post_pv: true
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+
+comment:
+    use: duoshuo
+    shortname: halyul
+    duoshuo_thread_key_type: path
+    duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
 
 # 文章和评论分开放 用tab选项卡/底部导航栏
 # 路径指示器
