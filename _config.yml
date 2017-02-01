@@ -1,16 +1,17 @@
-
 # html lang
-language: zh-CN
+language:
 
 # Head info
+# hitokoto: "lwl12", "i-meto"
 head:
     favicon: "/img/favicon.ico"
     high_res_favicon: "/img/favicon.ico"
     apple_touch_icon: "/img/favicon.ico"
     keywords:
-    hitokoto: "lwl12"
+    hitokoto: ""
 
-dynamic_title: "喵喵喵"
+# You can use whatever you like
+dynamic_title: 
 
 appbar:
   fixed:
@@ -22,28 +23,27 @@ userview:
   bgimg: "/img/bg.png"
   email: "example@example.com"
 
+# icon value from mdui.org
 # text_color = theme, red, red-900
 drawer:
   accordion: "false"
   subtitle: "????"
   holiday:
-    enable: true
+    enable:
     text:
-      - "新年快乐！"
-      - "在此Halyul祝您鸡年大吉！"
     text_color: "red"
     bg_color:
   counter:
-    enable: true
-    date: 12/29/2016 23:00:00
-    progress_bar: true
+    enable:
+    date:
+    progress_bar:
   menu:
     divider:
     homepage:
       icon: "&#xe88a;"
-      title: ""
+      title:
       circle: true
-      color: "red"
+      color:
       fix:
       text_color:
       bg_color:
@@ -52,7 +52,7 @@ drawer:
       icon: "&#xe156;"
       title: ""
       circle: true
-      color: "red"
+      color:
       arrow:
       fix: true
       text_color:
@@ -60,9 +60,9 @@ drawer:
     categories:
       enable: true
       icon: "&#xe86d;"
-      title: ""
+      title:
       circle: true
-      color: "red"
+      color:
       arrow:
       fix: true
       text_color:
@@ -70,9 +70,9 @@ drawer:
     archive:
       enable: true
       icon: "&#xe54b;"
-      title: ""
+      title:
       circle: true
-      color: "red"
+      color:
       arrow:
       fix:
       text_color:
@@ -80,80 +80,16 @@ drawer:
 
 pages:
   list:
-    Tag Cloud:
-      link: "/tags"
-      icon: "&#xe892;"
-      circle: true
-      color: "red"
-      fix:
-      text_color:
-      bg_color:
-    Links:
-      link: "/links"
-      icon: "&#xe0ba;"
-      circle: true
-      color: "red"
-      fix:
-      text_color:
-      bg_color:
-    Todo List:
-      link: "/todo"
-      icon: "&#xe86d;"
-      circle: true
-      color: "red"
-      fix:
-      text_color:
-      bg_color:
-    TEST:
-      link: "/todo"
-      icon: "&#xe86d;"
-      circle: true
-      color: "red"
-      fix:
-      text_color:
-      bg_color:
 
   collapse:
-    Todo List:
-      links:
-        test1:
-          link: "/test"
-          text_color:
-          bg_color:
-        test2:
-          link: "/test2"
-          text_color:
-          bg_color:
-      icon: "&#xe86d;"
-      circle: true
-      color: "red"
-      arrow:
-      fix: true
-      text_color:
-      bg_color:
-    TEST:
-      links:
-        test1:
-          link: "/test"
-          text_color:
-          bg_color:
-        test2:
-          link: "/test2"
-          text_color:
-          bg_color:
-      icon: "&#xe86d;"
-      circle: true
-      color: "red"
-      fix: true
-      text_color:
-      bg_color:
+
 
 background:
   color:
   img:
 
 typinyin:
-  title: true
+  title:
 
 theme:
   layout:
@@ -192,24 +128,24 @@ fab:
 index_head_left:
   userview: "bottom"
   title: "img-bottom"
-  gradient: ""
-  slogan: "<script>lwlhitokoto()</script>"
-  img: "https://api.i-meto.com/bing"
+  gradient:
+  slogan:
+  img: "/img/bg.png"
 
 index_head_right:
-  userview: "bottom"
-  gradient: ""
-  img: "https://blog.halyul.cc/img/doge.gif"
-  subtitle: "Never do a dreamer"
+  userview:
+  gradient:
+  img: "/img/logo.png"
+  subtitle:
 
 share_menu:
   article_rss:
-  weibo: true
-  twitter: true
-  facebook: true
+  weibo:
+  twitter:
+  facebook:
   googleplus: true
-  linkedin: true
-  qq: true
+  linkedin:
+  qq:
   telegram: true
 
 # userview: "top", "bottom", "center"
@@ -224,39 +160,20 @@ post:
 qrcode: true
 
 copyright:
-  blog_start_year: "2016"
+  blog_start_year:
 
 sns:
-  Email:
-    link: "mailto:halyul@halyul.cc"
-  并不存在的Facebook:
-    link: "www.facebook.com/halyul"
-  Github:
-    link: "github.com/halyul"
-  404的Google Plus:
-    link: "plus.google.com/u/0/109529410449534581819"
-  链接已重置的Twitter:
-    link: "twitter.com/HalyulXu"
-  我的微博:
-    link: "weibo.com/halyul"
+
 
 # Busuanzi 不蒜子 Views
 busuanzi:
-    enable: true
-    all_site_uv: true
-    post_pv: true
+    enable:
+    all_site_uv:
+    post_pv:
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 comment:
-    use: duoshuo
-    shortname: halyul
+    use:
+    shortname:
     duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
-
-# 文章和评论分开放 用tab选项卡/底部导航栏
-# 路径指示器
-# 卡片缩略图有问题
-# 恢复默认主题有BUG
-# 文章卡片颜色自定义
-# index_head_left添加slider样式, 更换title subtitle样式（用viosey主题
-# 卡片悬浮

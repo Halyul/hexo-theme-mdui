@@ -1,15 +1,17 @@
 <js>
-  <!-- Dynamic Title -->
-  <script type="text/javascript">
-    $(document).ready(function() {
-      function d() {
-        document.title = document[b] ? "<%= theme.dynamic_title %>" : a
-      }
-      var b, c, a = document.title;
-      "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c =
-        "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
-    });
-  </script>
+  <% if (theme.dynamic_title) { %>
+    <!-- Dynamic Title -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        function d() {
+          document.title = document[b] ? "<%= theme.dynamic_title %>" : a
+        }
+        var b, c, a = document.title;
+        "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c =
+          "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
+        });
+    </script>
+  <% } %>
 
   <!-- Typinyin -->
   <% if (theme.typinyin.title === true) { %>
