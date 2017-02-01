@@ -167,7 +167,13 @@ pace:
 
 smoothscroll: true
 
-# 文章上一页有问题
+# Search Systems
+# Available value:
+#     swiftype | google | local
+search:
+    use: local
+    swiftype_key:
+
 fab:
   trigger: "hover"
   main:

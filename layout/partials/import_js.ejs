@@ -78,6 +78,28 @@
   </script>
 <% } %>
 
+<!-- Swiftye -->
+<% if( theme.search.use === 'swiftype' ) { %>
+    <%- partial('widget/search-swiftype-js') %>
+<% } %>
+
+<!-- Local Search-->
+<% if( theme.search.use === 'local' ) { %>
+    <%- partial('widget/search-local-js') %>
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = '<%= config.search.path %>';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+<% } %>
+
 <% if(theme.busuanzi.enable === true) { %>
   <script async src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>

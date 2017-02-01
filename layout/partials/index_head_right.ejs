@@ -15,17 +15,6 @@
 
         <% if(theme.index_head_right.userview === "bottom") { %>
           <div class="mdui-card-actions">
-            <div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
-              <button class="mdui-textfield-icon mdui-btn mdui-btn-icon">
-                <i class="mdui-icon material-icons">&#xe8b6;</i>
-              </button>
-              <input class="mdui-textfield-input" type="text"/>
-              <button class="mdui-textfield-close mdui-btn mdui-btn-icon">
-                <i class="mdui-icon material-icons">&#xe5cd;</i>
-              </button>
-              </div>
-          </div>
-          <div class="mdui-card-actions">
             <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true'}">
               <i class="mdui-icon material-icons">&#xe80d;</i>
             </button>
@@ -40,8 +29,13 @@
               <li class="mdui-divider"></li>
               <%- partial('partials/menu/pages/collapse') %>
             </ul>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#search-menu'}">
+              <i class="mdui-icon material-icons">&#xe8b6;</i>
+            </button>
+            <ul class="mdui-menu" id="search-menu">
+              <%- partial('partials/menu/index_search_menu') %>
+            </ul>
           </div>
         <% } %>
-
     </div>
 </div>
