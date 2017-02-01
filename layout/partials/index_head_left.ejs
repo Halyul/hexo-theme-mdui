@@ -4,7 +4,15 @@
         <div class="mdui-card-header">
           <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
           <div class="mdui-card-header-title"><%= config.author %></div>
-          <div class="mdui-card-header-subtitle"><%- theme.index_head_left.subtitle %></div>
+          <% if(theme.busuanzi.enable === true) { %>
+            <% if(theme.busuanzi.all_site_uv === true) { %>
+              <div class="mdui-card-header-subtitle">
+                <span id="busuanzi_value_site_uv"></span>&nbsp;<%= __("post.views") %>
+              </div>
+            <% } %>
+          <% } else { %>
+            <div class="mdui-card-primary-title"><%- theme.index_head_left.subtitle %></div>
+          <% } %>
         </div>
       <% } %>
 
@@ -31,10 +39,18 @@
       </div>
 
       <% if(theme.index_head_left.userview === "center") { %>
-        <div class="mdui-card-header">
+        <div class="mdui-card-header" id="busuanzi_container_site_uv">
           <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
           <div class="mdui-card-header-title"><%= config.author %></div>
-          <div class="mdui-card-header-subtitle"><%- theme.index_head_left.subtitle %></div>
+          <% if(theme.busuanzi.enable === true) { %>
+            <% if(theme.busuanzi.all_site_uv === true) { %>
+              <div class="mdui-card-header-subtitle">
+                <span id="busuanzi_value_site_uv"></span>&nbsp;<%= __("post.views") %>
+              </div>
+            <% } %>
+          <% } else { %>
+            <div class="mdui-card-primary-title"><%- theme.index_head_left.subtitle %></div>
+          <% } %>
         </div>
       <% } %>
 
@@ -48,7 +64,15 @@
         <div class="mdui-card-header">
           <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
           <div class="mdui-card-header-title"><%= config.author %></div>
-          <div class="mdui-card-header-subtitle"><%- theme.index_head_left.subtitle %></div>
+          <% if(theme.busuanzi.enable === true) { %>
+            <% if(theme.busuanzi.all_site_uv === true) { %>
+              <div class="mdui-card-header-subtitle">
+                <span id="busuanzi_value_site_uv"></span>&nbsp;<%= __("post.views") %>
+              </div>
+            <% } %>
+          <% } else { %>
+            <div class="mdui-card-primary-title"><%- theme.index_head_left.subtitle %></div>
+          <% } %>
         </div>
       <% } %>
     </div>
