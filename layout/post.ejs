@@ -4,7 +4,7 @@
     <% if(theme.post.userview === "top") { %>
       <div class="mdui-card-header">
         <div class="mdui-row">
-          <div class="mdui-col-xs-8">
+          <div class="mdui-col-xs-5">
             <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
             <div class="mdui-card-header-title"><%= config.author %></div>
             <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
@@ -31,20 +31,28 @@
     <% if(theme.post.title === "card-top") { %>
         <div class="mdui-card-primary mdui-typo">
             <div class="mdui-card-primary-title"><%=page.title%></div>
+            <% if(theme.busuanzi.enable === true) { %>
+              <% if(theme.busuanzi.post_pv === true) { %>
+                <div class="mdui-card-primary-subtitle" id="busuanzi_container_page_pv">
+                  <span id="busuanzi_value_page_pv"></span>&nbsp;<%= __('post.views') %>
+                </div>
+              <% } %>
+            <% } %>
         </div>
     <% } %>
 
     <div class="mdui-card-media title-covered " style="background-image: url(<%- page.thumbnail %>);height:223px">
-
-        <div class="mdui-card-menu">
-            <button class="mdui-btn mdui-btn-icon mdui-text-color-white">
-                <i class="mdui-icon material-icons">&#xe80d;</i>
-            </button>
-        </div>
         <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === " img-top") { %>mdui-card-media-covered-top<% } %>">
             <% if(theme.post.title === "img-bottom" || theme.post.title === "img-top") { %>
                 <div class="mdui-card-primary mdui-typo">
                     <div class="mdui-card-primary-title"><%=page.title%></div>
+                    <% if(theme.busuanzi.enable === true) { %>
+                      <% if(theme.busuanzi.post_pv === true) { %>
+                        <div class="mdui-card-primary-subtitle" id="busuanzi_container_page_pv">
+                          <span id="busuanzi_value_page_pv"></span>&nbsp;<%= __('post.views') %>
+                        </div>
+                      <% } %>
+                    <% } %>
                 </div>
             <% } %>
         </div>
@@ -53,7 +61,7 @@
     <% if(theme.post.userview === "center") { %>
       <div class="mdui-card-header">
         <div class="mdui-row">
-          <div class="mdui-col-xs-8">
+          <div class="mdui-col-xs-5">
             <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
             <div class="mdui-card-header-title"><%= config.author %></div>
             <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
@@ -80,13 +88,20 @@
     <% if(theme.post.title === "card-center") { %>
         <div class="mdui-card-primary mdui-typo">
             <div class="mdui-card-primary-title"><%=page.title%></div>
+            <% if(theme.busuanzi.enable === true) { %>
+              <% if(theme.busuanzi.post_pv === true) { %>
+                <div class="mdui-card-primary-subtitle" id="busuanzi_container_page_pv">
+                  <span id="busuanzi_value_page_pv"></span>&nbsp;<%= __('post.views') %>
+                </div>
+              <% } %>
+            <% } %>
         </div>
     <% } %>
 
     <% if(theme.post.userview === "bottom") { %>
         <div class="mdui-card-header">
           <div class="mdui-row">
-            <div class="mdui-col-xs-8">
+            <div class="mdui-col-xs-5">
               <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
               <div class="mdui-card-header-title"><%= config.author %></div>
               <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
@@ -110,16 +125,27 @@
         </div>
     <% } %>
 
-    <div class="mdui-card-content mdui-typo">
-        <%-page.content%>
-    </div>
+    <% if(page.layout === "private") { %>
+      <div class="mdui-card-content mdui-typo">
+        <%= __('post.private') %>
+      </div>
+    <% } else { %>
+      <div class="mdui-card-content mdui-typo">
+        <%- page.content %>
+      </div>
+    <% } %>
 
     <div class="mdui-typo">
         <hr/>
     </div>
 
-    <div class="mdui-card-actions">
-        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center"><%= __('post.comment') %></button>
+    <div class="mdui-card-actions" id="show-comment-container">
+        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="show-comment"><%= __('post.comment') %></button>
     </div>
+
+    <!-- Post Comments -->
+    <% if(page.comment !== false) { %>
+      <%- partial('partials/comment') %>
+    <% } %>
 </div>
 <%-partial('partials/pagination')%>

@@ -1,15 +1,17 @@
 <js>
-  <!-- Dynamic Title -->
-  <script type="text/javascript">
-    $(document).ready(function() {
-      function d() {
-        document.title = document[b] ? "<%= theme.dynamic_title %>" : a
-      }
-      var b, c, a = document.title;
-      "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c =
-        "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
-    });
-  </script>
+  <% if (theme.dynamic_title) { %>
+    <!-- Dynamic Title -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        function d() {
+          document.title = document[b] ? "<%= theme.dynamic_title %>" : a
+        }
+        var b, c, a = document.title;
+        "undefined" != typeof document.hidden ? (b = "hidden", c = "visibilitychange") : "undefined" != typeof document.mozHidden ? (b = "mozHidden", c = "mozvisibilitychange") : "undefined" != typeof document.webkitHidden && (b = "webkitHidden", c =
+          "webkitvisibilitychange"), ("undefined" != typeof document.addEventListener || "undefined" != typeof document[b]) && document.addEventListener(c, d, !1)
+        });
+    </script>
+  <% } %>
 
   <!-- Typinyin -->
   <% if (theme.typinyin.title === true) { %>
@@ -76,5 +78,55 @@
       });
     };
   </script>
+<% } %>
+
+<!-- Swiftye -->
+<% if( theme.search.use === 'swiftype' ) { %>
+    <%- partial('widget/search-swiftype-js') %>
+<% } %>
+
+<!-- Local Search-->
+<% if( theme.search.use === 'local' ) { %>
+    <%- partial('widget/search-local-js') %>
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = '<%= config.search.path %>';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+<% } %>
+
+<% if(theme.busuanzi.enable === true) { %>
+  <script async src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
+<% } %>
+
+<% if(theme.comment.use == "duoshuo") { %>
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: '<%= theme.comment.shortname %>'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = '<%= theme.comment.duoshuo_embed_js_url %>';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+<% } %>
+
+<% if(theme.comment.use === 'disqus') { %>
+    <!-- 使用 DISQUS js 代码 -->
+    <script id="dsq-count-scr" src="//<%= theme.comment.shortname %>.disqus.com/count.js" async></script>
 <% } %>
 </js>
