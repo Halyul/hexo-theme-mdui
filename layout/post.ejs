@@ -4,7 +4,7 @@
     <% if(theme.post.userview === "top") { %>
       <div class="mdui-card-header">
         <div class="mdui-row">
-          <div class="mdui-col-xs-5">
+          <div class="mdui-col-xs-6">
             <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
             <div class="mdui-card-header-title"><%= config.author %></div>
             <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
@@ -61,7 +61,7 @@
     <% if(theme.post.userview === "center") { %>
       <div class="mdui-card-header">
         <div class="mdui-row">
-          <div class="mdui-col-xs-5">
+          <div class="mdui-col-xs-6">
             <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
             <div class="mdui-card-header-title"><%= config.author %></div>
             <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
@@ -101,7 +101,7 @@
     <% if(theme.post.userview === "bottom") { %>
         <div class="mdui-card-header">
           <div class="mdui-row">
-            <div class="mdui-col-xs-5">
+            <div class="mdui-col-xs-6">
               <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
               <div class="mdui-card-header-title"><%= config.author %></div>
               <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
@@ -142,6 +142,9 @@
     </div>
     <div class="mdui-card-actions" id="show-comment-container">
         <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="show-comment"><%= __('post.comment') %></button>
+    </div>
+    <div class="mdui-card-actions mdui-hidden" id="hide-comment-container">
+        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="hide-comment"><%= __('post.comment') %></button>
     </div>
       <%- partial('partials/comment') %>
     <% } %>

@@ -26,7 +26,7 @@ userview:
 # icon value from mdui.org
 # text_color = theme, red, red-900
 drawer:
-  accordion: "false"
+  accordion: false
   subtitle: "????"
   holiday:
     enable:
@@ -171,7 +171,7 @@ busuanzi:
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 comment:
-    use: false
-    shortname:
+    use: disqus
+    shortname:  halyul
     duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"

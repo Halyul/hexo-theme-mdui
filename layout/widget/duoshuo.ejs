@@ -21,7 +21,13 @@
 </div>
 <script>
 $(document).on('click', '#show-comment', function () {
-  $("#comments").removeClass("mdui-hidden")
-  $("#show-comment-container").addClass("mdui-hidden")
+  $("#comments").removeClass("mdui-hidden");
+  $("#hide-comment-container").removeClass("mdui-hidden");
+  $("#show-comment-container").addClass("mdui-hidden");
+});
+$(document).on('click', '#hide-comment', function () {
+  $("#comments").addClass("mdui-hidden");
+  $("#hide-comment-container").addClass("mdui-hidden");
+  $("#show-comment-container").removeClass("mdui-hidden");
 });
 </script>
