@@ -133,7 +133,7 @@ index_head_left:
   img: "/img/bg.png"
 
 index_head_right:
-  userview:
+  userview: "bottom"
   img: "/img/logo.png"
 
 share_menu:

@@ -1,3 +1,11 @@
+<% if(post.layout === "announcement") { %>
+    <div class="mdui-typo">
+        <blockquote>
+            <%- post.content %>
+            <footer><%= date(post.date, 'MMM DD, YYYY') %> - <%= config.author %></footer>
+        </blockquote>
+    </div>
+<% } else { %>
 <div class="mdui-card" style="margin-bottom: 16px;overflow: visible;display: flex;flex-direction: column;min-height:  400px;">
 
     <% if(theme.post.userview === "top") { %>
@@ -97,3 +105,4 @@
         </div>
     <% } %>
 </div>
+<% } %>

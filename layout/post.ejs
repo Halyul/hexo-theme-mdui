@@ -1,4 +1,7 @@
 <br/>
+<% if(page.layout === "announcement") { %>
+    <%- partial('partials/announcement') %>
+<% } else { %>
 <div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
 
     <% if(theme.post.userview === "top") { %>
@@ -41,7 +44,7 @@
         </div>
     <% } %>
 
-    <div class="mdui-card-media title-covered " style="background-image: url(<%- page.thumbnail %>);height:223px">
+    <div class="mdui-card-media title-covered " style="background-image: url(<%- page.thumbnail %>)">
         <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === " img-top") { %>mdui-card-media-covered-top<% } %>">
             <% if(theme.post.title === "img-bottom" || theme.post.title === "img-top") { %>
                 <div class="mdui-card-primary mdui-typo">
@@ -150,3 +153,4 @@
     <% } %>
 </div>
 <%-partial('partials/pagination')%>
+<% } %>
