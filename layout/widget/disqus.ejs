@@ -15,6 +15,12 @@ $(document).on('click', '#show-comment', function () {
           (d.head || d.body).appendChild(s);
       })();
   },1500);
-  $("#show-comment-container").addClass("mdui-hidden")
+  $("#hide-comment-container").removeClass("mdui-hidden");
+  $("#show-comment-container").addClass("mdui-hidden");
+});
+$(document).on('click', '#hide-comment', function () {
+  $("#disqus-comment").addClass("mdui-hidden")
+  $("#hide-comment-container").addClass("mdui-hidden");
+  $("#show-comment-container").removeClass("mdui-hidden");
 });
 </script>

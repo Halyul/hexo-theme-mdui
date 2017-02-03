@@ -12,6 +12,7 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
 }
 
 /* Drawer userview */
+
 .mdui-card-header-drawer {
     position: absolute;
     z-index: 1000;
@@ -20,7 +21,9 @@ body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-do
     padding: 16px
 }
 
+
 /* Footer */
+
 body {
     display: flex;
     min-height: 100vh;
@@ -147,11 +150,12 @@ footer.page-footer {
     flex-wrap: wrap;
 }
 
-.index-head-card > div {
+.index-head-card>div {
     margin-bottom: 16px;
 }
 
-.index-head-card .mdui-card-left,.index-head-card .mdui-card-right {
+.index-head-card .mdui-card-left,
+.index-head-card .mdui-card-right {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -160,7 +164,13 @@ footer.page-footer {
 }
 
 @media (min-width: 600px) {
-    .index-head-card .mdui-card-left,.index-head-card .mdui-card-right {
+    .index-head-card .mdui-card-left,
+    .index-head-card .mdui-card-right {
         min-height: 200px;
     }
+}
+
+.mdui-typo table {
+    display: block;
+    overflow: auto;
 }
