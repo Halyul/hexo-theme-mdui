@@ -4,6 +4,9 @@
 <% } else if(page.layout == 'links') { %>
     <!-- Single Links Page -->
     <%- partial('widget/page_links') %>
+<% } else if(page.layout == 'gallery') { %>
+    <!-- Single Gallery Page -->
+    <%- partial('widget/page_gallery') %>
 <% } else {%>
     <article id="page">
         <h1><%= page.title %></h1>
