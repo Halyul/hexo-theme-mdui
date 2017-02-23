@@ -8,3 +8,11 @@
   });
   </script>
 <% } %>
+<script type="text/javascript">
+  $(document).on('click', 'a[name="snackbar"]', function () {
+    mdui.snackbar({
+      message: '这里..不可以..',
+      timeout: 1000
+    });
+  });
+</script>

@@ -1,12 +1,10 @@
 <ul class="mdui-menu" id="menu-pages">
-  <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">
-      Preview
-    </a>
-  </li>
-  <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">
-      Download
-    </a>
-  </li>
+  <% for (var i in theme.pages) { %>
+    <li class="mdui-menu-item">
+        <a href="<%= theme.pages[i].link %>" title="<%= i %>" class="mdui-ripple">
+          <i class="mdui-menu-item-icon mdui-icon material-icons"><%- theme.pages[i].icon %></i>
+          <%= i %>
+        </a>
+    </li>
+  <% } %>
 </ul>

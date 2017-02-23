@@ -11,7 +11,7 @@ head:
 # color
 color:
   primary_color: "indigo"
-  accent_color: "deep-orange"
+  accent_color: "blue"
   layout: ""
 
 # appbar
@@ -31,14 +31,17 @@ index:
 copyright:
   start_year: 2016
 
+pages:
+  Test1:
+    link: "test1"
+    icon: "&#xe84d;"
+  Test2:
+    link: "test1"
+    icon: "&#xeb3b;"
+  Test3:
+    link: "test1"
+    icon: "&#xe851;"
+
 sns:
   Twitter: "https://twitter.com"
   Facebook: "https://facebook.com"
-
-
-# main menu navigation
-menu:
-  Home: /
-  About: /about
-  Contact: /contact
-  Archives: /archives

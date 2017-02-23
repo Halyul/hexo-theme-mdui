@@ -1,0 +1,32 @@
+
+<%
+var categoriesList = list_categories({ show_count: false }),
+  tagsList = list_tags({ show_count: false }),
+  archivesList = list_archives({ show_count: false });
+%>
+
+<div class="mdui-tab mdui-tab-full-width mdui-color-theme mdui-shadow-2" mdui-tab>
+  <a href="#tab-categories" class="mdui-ripple">Categories</a>
+  <a href="#tab-tags" class="mdui-ripple">Tags</a>
+</div>
+
+
+  <aside>
+    <h2>Categories</h2>
+    <% if (categoriesList) { %>
+      <%-categoriesList%>
+    <% } else { %>
+      <p>None.</p>
+    <% } %>
+  </aside>
+  <br>
+
+  <aside>
+    <h2>Tags</h2>
+    <% if (tagsList) { %>
+      <%-tagsList%>
+    <% } else { %>
+      <p>None.</p>
+    <% } %>
+  </aside>
+  <br>

@@ -1,4 +1,4 @@
 <% page.posts.each(function(post) { %>
     <%-partial('partials/posts', { post: post })%>
 <% }); %>
-<%-partial('partials/index_pagination', {base: url_for(config.root), show: theme.index.show })%>
+<%-partial('partials/pagination', {base: url_for(config.root), show: theme.index.show })%>

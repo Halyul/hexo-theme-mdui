@@ -25,6 +25,17 @@ main {
     color: inherit;
 }
 
+.appbar-menu-fix {
+  overflow: visible;
+}
+
+/* 添加在<a>中 */
+.menu-badge {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
 span.badge {
     min-width: 3rem;
     padding: 0 6px;

@@ -1,25 +1,47 @@
-<ul class="mdui-menu" id="menu-archives">
+<ul class="mdui-menu mdui-menu-cascade appbar-menu-fix"  id="menu-archives">
   <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">
-      <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe417;</i>Preview
+    <a href="<%= config.root %>archives" class="mdui-ripple menu-badge">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe149;</i>
+      Archives
+      <div style="flex-grow:1"></div>
+      <span class="badge new mdui-color-theme-accent" data-badge-caption="">
+        <script type="text/javascript">
+          total = <%= config.per_page %> * <%= page.total %>;
+          document.write(total);
+        </script>
+      </span>
     </a>
   </li>
   <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">
-      <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe2c4;</i>Download
+    <a class="mdui-ripple">
+      Categories
+      <span class="mdui-menu-item-more"></span>
     </a>
+    <ul class="mdui-menu mdui-menu-cascade">
+      <% site.categories.map(function(category){  %>
+        <li class="mdui-menu-item">
+          <a href="<%= config.root %>categories/<%= category.name %>/" class="mdui-ripple menu-badge">
+            <%= category.name %>
+            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
   </li>
-  <li class="mdui-divider"></li>
   <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple" style="display: flex;
-align-content: center;">
-      Remove
-      <span class="new badge">1</span>
+    <a class="mdui-ripple">
+      Tags
+      <span class="mdui-menu-item-more"></span>
     </a>
-  </li>
-  <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">
-      <i class="mdui-menu-item-icon"></i>Empty
-    </a>
+    <ul class="mdui-menu mdui-menu-cascade">
+      <% site.tags.map(function(tag){  %>
+        <li class="mdui-menu-item">
+          <a href="<%= config.root %>tags/<%= tag.name %>/" class="mdui-ripple menu-badge">
+            <%= tag.name %>
+            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
   </li>
 </ul>
