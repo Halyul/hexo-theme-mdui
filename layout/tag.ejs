@@ -1,14 +1,14 @@
 
-<div id="category">
-  <h1><%=page.category%></h1>
+<div id="tag">
+  <h1><%=page.tag%></h1>
   <% page.posts.each(function(article) { %>
-    <div class="category-item">
+    <div class="tag-item">
       <% if (article.link) { %>
         <a href="<%=url_for(article.link)%>" target="_blank">
           <%=article.title || 'No Title'%>
         </a>
       <% } else { %>
-        <a href="<%=url_for(article.path)%>">
+        <a href="<%=url_for(article.link)%>">
           <%=article.title || 'No Title'%>
         </a>
       <% } %>

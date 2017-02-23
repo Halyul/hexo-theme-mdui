@@ -1,177 +1,44 @@
 # html lang
-language:
+language: en
 
-# Head info
-# hitokoto: "lwl12", "i-meto"
+# HTML head
 head:
-    favicon: "/img/favicon.ico"
-    high_res_favicon: "/img/favicon.ico"
-    apple_touch_icon: "/img/favicon.ico"
-    keywords:
-    hitokoto: ""
+  favicon: /img/favicon.png
+  high_res_favicon: /img/favicon.png
+  apple_touch_icon: /img/favicon.png
+  keywords:
 
-# You can use whatever you like
-dynamic_title:
+# color
+color:
+  primary_color: "indigo"
+  accent_color: "deep-orange"
+  layout: ""
 
+# appbar
 appbar:
-  fixed:
-    enable: true
-    scroll_hide:
+  title: "TITLE"
 
-userview:
-  avatar: "/img/avatar.png"
-  bgimg: "/img/bg.png"
-  email: "example@example.com"
-
-# icon value from mdui.org
-# text_color = theme, red, red-900
-drawer:
-  accordion: false
-  subtitle: "????"
-  holiday:
-    enable:
-    text:
-    text_color: "red"
-    bg_color:
-  counter:
-    enable:
-    date:
-    progress_bar:
-  menu:
-    divider:
-    homepage:
-      icon: "&#xe88a;"
-      title:
-      circle: true
-      color:
-      fix:
-      text_color:
-      bg_color:
-    archives:
-      enable: true
-      icon: "&#xe156;"
-      title: ""
-      circle: true
-      color:
-      arrow:
-      fix: true
-      text_color:
-      bg_color:
-    categories:
-      enable: true
-      icon: "&#xe86d;"
-      title:
-      circle: true
-      color:
-      arrow:
-      fix: true
-      text_color:
-      bg_color:
-    archive:
-      enable: true
-      icon: "&#xe54b;"
-      title:
-      circle: true
-      color:
-      arrow:
-      fix:
-      text_color:
-      bg_color:
-
-pages:
-  list:
-
-  collapse:
-
-
-background:
-  color:
-  img:
-
-typinyin:
-  title:
-
-theme:
-  layout:
-  primary_color: indigo
-  accent_color: indigo
-  chang_theme: true
-
-pace:
-  style: center-atom
-  color: "#3F51B5"
-
-smoothscroll: true
-
-# Search Systems
-# Available value:
-#     swiftype | google | local
-search:
-    use: local
-    swiftype_key:
-
-fab:
-  trigger: "hover"
-  main:
-    first_icon: "&#xe145;"
-    second_icon: "&#xe14c;"
-  top:
-    color: "pink"
-    icon: "&#xe316;"
-  prev:
-    color: "red"
-    icon: "&#xe314;"
-  next:
-    color: "orange"
-    icon: "&#xe315;"
-
-index_head_left:
-  userview: "bottom"
-  title: "img-bottom"
-  gradient:
-  slogan:
-  img: "/img/bg.png"
-
-index_head_right:
-  userview: "bottom"
-  img: "/img/logo.png"
-
-share_menu:
-  article_rss:
-  weibo:
-  twitter:
-  facebook:
-  googleplus: true
-  linkedin:
-  qq:
-  telegram: true
-
-# userview: "top", "bottom", "center"
-# title: "img-top", "img-bottom", "card-center", "card-top"
+# post settings
 post:
-  userview: "bottom"
-  title: "img-bottom"
-  gradient: ""
-  entry_excerpt: 80
-  img_color: "#536DFE"
+  entry_excerpt: 50
 
-qrcode: true
+# pagination
+# github@zllovesuki
+index:
+  show: 2
 
+# footer
 copyright:
-  blog_start_year:
+  start_year: 2016
 
 sns:
+  Twitter: "https://twitter.com"
+  Facebook: "https://facebook.com"
 
 
-# Busuanzi 不蒜子 Views
-busuanzi:
-    enable:
-    all_site_uv:
-    post_pv:
-    busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
-
-comment:
-    use: disqus
-    shortname:  halyul
-    duoshuo_thread_key_type: path
-    duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
+# main menu navigation
+menu:
+  Home: /
+  About: /about
+  Contact: /contact
+  Archives: /archives
