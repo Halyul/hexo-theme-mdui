@@ -34,6 +34,12 @@ share_menu:
   telegram: true
 
 qr_code:
+
+comment:
+    use: 
+    shortname:
+    duoshuo_thread_key_type: path
+    duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
 # pagination
 # github@zllovesuki
 index:

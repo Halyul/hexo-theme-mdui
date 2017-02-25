@@ -1,0 +1,39 @@
+<% if(theme.comment.use === 'duoshuo') { %>
+<%- css('css/duoshuo.min') %>
+<div id="comments" class="mdui-card-content">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread"
+      data-thread-key="<% theme.comment.duoshuo_thread_key_type === 'id' ? page.id : page.path %>"
+      data-url="<%- config.url + config.root + page.path %>"
+      data-title="<%= page.title %>">
+  </div>
+  <!-- 多说评论框 end -->
+</div>
+<% } %>
+
+<% if(theme.comment.use === 'disqus') { %>
+    <!-- 使用 DISQUS -->
+    <div id="disqus-comment" class="mdui-card-content">
+      <div id="disqus_thread"></div>
+    </div>
+    <style>
+        #disqus-comment{
+            padding: 2pc;
+        }
+    </style>
+    <script>
+  setTimeout(function() {
+      var disqus_config = function () {
+          this.page.url = '<%- config.url + url_for(path) %>';  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document;
+          var s = d.createElement('script');
+          s.src = '//<%= theme.comment.shortname %>.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', + new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  },1500);
+</script>
+<% } %>
