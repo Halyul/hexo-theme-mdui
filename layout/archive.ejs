@@ -4,5 +4,5 @@
   <% page.posts.each(function(post) { %>
       <%-partial('partials/posts', { post: post })%>
   <% }); %>
-  <%-partial('partials/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/' + page.month + '/', show: theme.index.show })%>
+  <%-partial('partials/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.index.show })%>
 <% } %>

@@ -20,8 +20,18 @@ appbar:
 
 # post settings
 post:
+  avatar: /img/avatar.png
   entry_excerpt: 50
 
+share_menu:
+  article_rss:
+  weibo:
+  twitter:
+  facebook:
+  googleplus: true
+  linkedin:
+  qq:
+  telegram: true
 # pagination
 # github@zllovesuki
 index:

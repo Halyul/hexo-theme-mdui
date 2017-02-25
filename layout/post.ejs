@@ -1,7 +1,43 @@
-
-<article id="post">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
-</article>
-
+<div class="mdui-row">
+  <div class="mdui-col-xs-12 mdui-col-sm-10">
+    <div class="mdui-card card-bottom-fix menu-fix">
+      <div class="mdui-card-media">
+        <img src="<%- page.thumbnail %>"/>
+      </div>
+      <div class="mdui-card-primary">
+        <div class="mdui-row">
+          <div class="mdui-col-xs-8">
+            <div class="mdui-card-primary-title"><%=page.title%></div>
+            <div class="mdui-card-primary-subtitle"><%= date(page.date, 'MMM DD, YYYY') %> - <%= config.author %></div>
+          </div>
+          <div class="mdui-col-xs-4">
+            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-more'}">
+              <i class="mdui-icon material-icons">&#xe5d4;</i>
+            </button>
+            <%- partial('partials/menu/more') %>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-share'}">
+              <i class="mdui-icon material-icons">&#xe80d;</i>
+            </button>
+            <%- partial('partials/menu/share') %>
+            <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
+              <i class="mdui-icon material-icons">&#xe337;</i>
+            </button>
+            <%- partial('partials/menu/qrcode') %>
+          </div>
+        </div>
+      </div>
+      <div class="mdui-card-content mdui-typo no-padding-top">
+        <%-page.content%>
+      </div>
+    </div>
+  </div>
+  <div class="mdui-col-sm-2 mdui-hidden-xs">
+    <div class="mdui-card">
+      toc
+    </div>
+  </div>
+</div>
+<div class="mdui-card card-bottom-fix">
+  comment
+</div>
 <%-partial('partials/post_pagination')%>

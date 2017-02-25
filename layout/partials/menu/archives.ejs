@@ -1,20 +1,17 @@
-<ul class="mdui-menu mdui-menu-cascade appbar-menu-fix"  id="menu-archives">
+<ul class="mdui-menu mdui-menu-cascade menu-fix"  id="menu-archives">
   <li class="mdui-menu-item">
     <a href="<%= config.root %>archives" class="mdui-ripple menu-badge">
       <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe149;</i>
       Archives
       <div style="flex-grow:1"></div>
-      <span class="badge new mdui-color-theme-accent" data-badge-caption="">
-        <script type="text/javascript">
-          total = <%= config.per_page %> * <%= page.total %>;
-          document.write(total);
-        </script>
-      </span>
+      <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= site.posts.length %></span>
     </a>
   </li>
   <li class="mdui-menu-item">
-    <a class="mdui-ripple">
+    <a class="mdui-ripple menu-badge">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe86e;</i>
       Categories
+      <div style="flex-grow:1"></div>
       <span class="mdui-menu-item-more"></span>
     </a>
     <ul class="mdui-menu mdui-menu-cascade">
@@ -29,8 +26,10 @@
     </ul>
   </li>
   <li class="mdui-menu-item">
-    <a class="mdui-ripple">
+    <a class="mdui-ripple menu-badge">
+      <i class="mdui-menu-item-icon mdui-icon ion-pricetags"></i>
       Tags
+      <div style="flex-grow:1"></div>
       <span class="mdui-menu-item-more"></span>
     </a>
     <ul class="mdui-menu mdui-menu-cascade">

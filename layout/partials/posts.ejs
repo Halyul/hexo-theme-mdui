@@ -13,7 +13,7 @@
     <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
   </div>
   <div class="mdui-card-actions no-text-decoration">
-  <% site.categories.map(function(category){  %>
+  <% post.categories.map(function(category){  %>
     <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
       <div class="mdui-chip mdui-typo">
         <span class="mdui-chip-icon">
