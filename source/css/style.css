@@ -20,16 +20,30 @@ main {
     padding-bottom: 0px;
 }
 
+.no-margin-bottom ol {
+  margin-bottom: 0px;
+}
+
+.mdui-typo li ol, .mdui-typo li ul {
+  margin: 0px;
+}
+
 .no-text-decoration {
     text-decoration: none;
     color: inherit;
 }
 
 .menu-fix {
-  overflow: visible;
+    overflow: visible;
+}
+
+.mdui-typo table {
+    display: block;
+    overflow: auto;
 }
 
 /* 添加在<a>中 */
+
 .menu-badge {
     display: flex !important;
     align-items: center;

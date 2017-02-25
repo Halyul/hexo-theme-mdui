@@ -1,15 +1,3 @@
-<ul class="mdui-menu" id="menu-toc">
-  <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">Refresh</a>
-  </li>
-  <li class="mdui-menu-item" disabled>
-    <a href="javascript:;">Help & feedback</a>
-  </li>
-  <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">Settings</a>
-  </li>
-  <li class="mdui-divider"></li>
-  <li class="mdui-menu-item">
-    <a href="javascript:;" class="mdui-ripple">Sign out</a>
-  </li>
+<ul class="mdui-menu mdui-typo no-margin-bottom" id="menu-toc">
+  <%- toc(page.content, {list_number: false}) %>
 </ul>

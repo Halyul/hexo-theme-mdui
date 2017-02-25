@@ -19,10 +19,12 @@
               <i class="mdui-icon material-icons">&#xe80d;</i>
             </button>
             <%- partial('partials/menu/share') %>
+            <% if(theme.qrcode == true) { %>
             <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
               <i class="mdui-icon material-icons">&#xe337;</i>
             </button>
             <%- partial('partials/menu/qrcode') %>
+            <% } %>
           </div>
         </div>
       </div>
@@ -32,8 +34,8 @@
     </div>
   </div>
   <div class="mdui-col-sm-2 mdui-hidden-xs">
-    <div class="mdui-card">
-      toc
+    <div class="mdui-card mdui-typo no-margin-bottom">
+      <%- toc(page.content, {list_number: false}) %>
     </div>
   </div>
 </div>

@@ -31,9 +31,11 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
     <% } %>
     <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages'}">Pages</button>
     <%- partial('partials/menu/pages') %>
+    <% if (is_post()) { %>
     <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-sm-up" mdui-menu="{target: '#menu-toc'}">
       <i class="mdui-icon material-icons">&#xe242;</i>
     </button>
     <%- partial('partials/menu/toc') %>
+    <% } %>
   </div>
 </div>
