@@ -1,5 +1,7 @@
 <div class="mdui-card card-bottom-fix">
-  <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
+  <% if (post.thumbnail !== undefined) { %>
+    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
+  <% } %>
   <div class="mdui-card-primary mdui-typo">
     <div class="mdui-card-primary-title">
       <a href="<%= url_for(post.path) %>">

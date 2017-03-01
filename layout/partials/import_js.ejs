@@ -54,6 +54,6 @@
 
   <% if(theme.comment.use === 'disqus') { %>
       <!-- 使用 DISQUS js 代码 -->
-      <script id="dsq-count-scr" src="//<%= theme.comment.shortname %>.disqus.com/count.js" async></script>
+      <script id="dsq-count-scr" src="//<%= theme.comment.shortname %>.disqus.com/count.js" async onerror="document.write('DISQUS loading failed!')"></script>
   <% } %>
 <% } %>

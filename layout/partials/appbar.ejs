@@ -21,7 +21,7 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
       </button>
     <% } %>
     <a href="<%= config.root %>" class="mdui-typo-headline"><%= theme.appbar.title %></a>
-    <% if (!is_post()) { %>
+    <% if (is_home() || is_archive() || is_year() || is_category() || is_tag()) { %>
     <a class="mdui-typo-title"><%= pageTitle %></a>
     <% } %>
     <div class="mdui-toolbar-spacer"></div>

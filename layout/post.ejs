@@ -1,5 +1,7 @@
 <div class="mdui-card card-bottom-fix menu-fix">
-  <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
+  <% if (page.thumbnail !== undefined) { %>
+    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
+  <% } %>
   <div class="mdui-card-primary">
     <div class="mdui-row">
       <div class="mdui-col-xs-8">
