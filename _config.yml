@@ -36,8 +36,8 @@ share_menu:
 qr_code:
 
 comment:
-    use: 
-    shortname:
+    use: disqus
+    shortname: halyul
     duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
 # pagination
