@@ -32,6 +32,14 @@
 </div>
 <% if (theme.comment.use === 'disqus' || theme.comment.use === 'duoshuo') { %>
 <div class="mdui-card card-bottom-fix">
+  <div class="mdui-card-actions" id="show-comment-container">
+    <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="show-comment">
+      Show Comments from <%= theme.comment.use %>
+    </button>
+  </div>
+  <div class="mdui-card-actions mdui-hidden" id="hide-comment-container">
+    <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="hide-comment">Hide Comments</button>
+  </div>
   <%- partial('partials/comment') %>
 </div>
 <% } %>
