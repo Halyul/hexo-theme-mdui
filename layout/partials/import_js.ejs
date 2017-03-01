@@ -1,6 +1,12 @@
 <!-- Import JS -->
 <%- js("js/jquery-3.1.1.min") %>
 <%- js("js/mdui.min") %>
+<%- js("js/jquery.smooth-scroll.min") %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('a').smoothScroll();
+  });
+</script>
 <% if (!is_home()) { %>
   <script type="text/javascript">
   $(document).on('click', '#back', function() {

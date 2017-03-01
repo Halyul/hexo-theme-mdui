@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
 <%-partial('partials/head')%>
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>">
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
 <%- partial('partials/appbar') %>
 <%- partial('partials/drawer') %>
 <main class="mdui-container">

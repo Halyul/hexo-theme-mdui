@@ -21,16 +21,20 @@ main {
 }
 
 .no-margin-bottom ol {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .mdui-typo li ol, .mdui-typo li ul {
-  margin: 0px;
+    margin: 0px;
 }
 
 .no-text-decoration {
     text-decoration: none;
     color: inherit;
+}
+
+.auto-width {
+    width: auto;
 }
 
 .post-media {
@@ -54,6 +58,7 @@ main {
     display: block;
     overflow: auto;
 }
+
 
 /* 添加在<a>中 */
 

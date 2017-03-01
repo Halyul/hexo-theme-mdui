@@ -1,7 +1,3 @@
-
-<article id="page">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
-</article>
-
-<%-partial('partials/pagination')%>
+<% if (page.layout === 'links') { %>
+  <%- partial('widget/page_links') %>
+<% } %>

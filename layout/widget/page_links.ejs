@@ -1,0 +1,21 @@
+<div class="mdui-row">
+  <% if (site.data.links) { %>
+    <% for (var i in site.data.links) { %>
+      <div class="mdui-col-xs-12 mdui-col-sm-4">
+        <div class="mdui-card" style="margin-bottom: 16px;">
+          <ul class="mdui-list" style="padding: 8px;">
+            <a href="<%= site.data.links[i].link %>" title="<%= i %>" target="_blank">
+              <li class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-avatar"><img src="<%= site.data.links[i].avatar %>" alt="<%= i %>"/></div>
+                <div class="mdui-list-item-content">
+                  <div class="mdui-list-item-title"><%= i %></div>
+                  <div class="mdui-list-item-text mdui-list-item-one-line"><span class="mdui-text-color-theme-text"><%= site.data.links[i].descr %></span></div>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    <% } %>
+  <% } %>
+</div>
