@@ -24,20 +24,19 @@ post:
   entry_excerpt: 50
 
 share_menu:
-  article_rss:
-  weibo:
-  twitter:
-  facebook:
+  weibo: true
+  twitter: true
+  facebook: true
   googleplus: true
-  linkedin:
-  qq:
+  linkedin: true
+  qq: true
   telegram: true
 
 qr_code:
 
 comment:
     use:
-    shortname: 
+    shortname:
     duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
 # pagination
@@ -63,3 +62,22 @@ pages:
 sns:
   Twitter: "https://twitter.com"
   Facebook: "https://facebook.com"
+
+# Translations
+translations:
+  archive: '归档'
+  archives: '归档'
+  categories: '分类'
+  index: '首页'
+  pages: '页面'
+  tag: '标签'
+  tags: '标签'
+  years: '年份'
+  share_menu:
+    facebook: '分享到脸书'
+    googleplus: '分享到Google+'
+    linkedin: '分享到领英'
+    qq: '分享到QQ'
+    telegram: '分享到Telegram'
+    twitter: '分享到推特'
+    weibo: '分享到微博'

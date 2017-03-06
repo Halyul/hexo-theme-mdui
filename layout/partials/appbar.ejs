@@ -1,7 +1,7 @@
 <%
 var pageTitle = page.title || '';
-if (is_home()) pageTitle = 'Index';
-if (is_archive()) pageTitle = 'Archives';
+if (is_home()) pageTitle = theme.translations.index;
+if (is_archive()) pageTitle = theme.translations.archives;
 if (is_tag()) pageTitle = page.tag;
 if (is_category()) pageTitle = page.category;
 if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
@@ -26,10 +26,10 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
     <% } %>
     <div class="mdui-toolbar-spacer"></div>
     <% if (!is_archive() || is_year()) { %>
-      <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-archives', covered: true}">Archives</button>
+      <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-archives', covered: true}"><%= theme.translations.archives %></button>
       <%- partial('partials/menu/archives') %>
     <% } %>
-    <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages'}">Pages</button>
+    <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages'}"><%= theme.translations.pages %></button>
     <%- partial('partials/menu/pages') %>
   </div>
 </div>

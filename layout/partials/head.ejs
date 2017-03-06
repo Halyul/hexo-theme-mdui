@@ -1,9 +1,9 @@
 <%
 var pageTitle = page.title || '';
-if (is_home()) pageTitle = 'Index';
-if (is_archive()) pageTitle = 'Archives';
-if (is_tag()) pageTitle = 'Tag: ' + page.tag;
-if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_home()) pageTitle = theme.translations.index;
+if (is_archive()) pageTitle = theme.translations.archives;
+if (is_tag()) pageTitle = theme.translations.tag + ': ' + page.tag;
+if (is_category()) pageTitle = theme.translations.archive + ': ' + page.category;
 if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
 if (is_year()) pageTitle += ': ' + page.year;
 pageTitle += ' | ' + config.title;

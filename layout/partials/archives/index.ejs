@@ -9,9 +9,9 @@ site.posts.sort('date').reverse().forEach(function(post){
 });
 %>
 <div class="mdui-tab mdui-tab-full-width mdui-color-theme mdui-shadow-2" mdui-tab>
-  <a href="#tab-categories" class="mdui-ripple">Categories</a>
-  <a href="#tab-tags" class="mdui-ripple">Tags</a>
-  <a href="#tab-years" class="mdui-ripple">Years</a>
+  <a href="#tab-categories" class="mdui-ripple"><%= theme.translations.categories %></a>
+  <a href="#tab-tags" class="mdui-ripple"><%= theme.translations.tags %></a>
+  <a href="#tab-years" class="mdui-ripple"><%= theme.translations.years %></a>
 </div>
 
 <div id="tab-categories" class="mdui-p-a-2">
