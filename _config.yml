@@ -12,7 +12,7 @@ head:
 color:
   primary_color: "indigo"
   accent_color: "blue"
-  layout: ""
+  layout:
 
 # appbar
 appbar:
@@ -23,7 +23,7 @@ post:
   avatar: /img/avatar.png
   entry_excerpt: 50
 
-share_menu:
+share_menu: #false
   weibo: true
   twitter: true
   facebook: true
@@ -48,6 +48,13 @@ index:
 copyright:
   start_year: 2016
 
+# Plugins
+busuanzi: #false
+    enable: true
+    all_site_uv: true
+    post_pv: true
+    busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+
 pages:
   Test1:
     link: "test1"
@@ -65,23 +72,25 @@ sns:
 
 # Translations
 translations:
-  archive: '归档'
-  archives: '归档'
-  categories: '分类'
-  index: '首页'
-  pages: '页面'
-  tag: '标签'
-  tags: '标签'
-  years: '年份'
+  archive: 'Archive'
+  archives: 'Archives'
+  category: 'Category'
+  categories: 'Categories'
+  index: 'Index'
+  pages: 'Pages'
+  tag: 'Tag'
+  tags: 'Tags'
+  years: 'Year'
+  busuanzi_views: 'Views: '
   footer:
-    contact_me: '联系我'
-    how_to_contact_me: '如何联系我'
-    close: '关闭'
+    contact_me: 'Contact Me'
+    how_to_contact_me: 'How to contact me'
+    close: 'close'
   share_menu:
-    facebook: '分享到脸书'
-    googleplus: '分享到Google+'
-    linkedin: '分享到领英'
-    qq: '分享到QQ'
-    telegram: '分享到Telegram'
-    twitter: '分享到推特'
-    weibo: '分享到微博'
+    facebook: 'Share to Facebook'
+    googleplus: 'Share to Google+'
+    linkedin: 'Share to Linkedin'
+    qq: 'Share to QQ'
+    telegram: 'Share to Telegram'
+    twitter: 'Share to Twitter'
+    weibo: 'Share to Weibo'

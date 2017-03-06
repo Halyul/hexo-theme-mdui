@@ -3,7 +3,7 @@ var pageTitle = page.title || '';
 if (is_home()) pageTitle = theme.translations.index;
 if (is_archive()) pageTitle = theme.translations.archives;
 if (is_tag()) pageTitle = theme.translations.tag + ': ' + page.tag;
-if (is_category()) pageTitle = theme.translations.archive + ': ' + page.category;
+if (is_category()) pageTitle = theme.translations.category + ': ' + page.category;
 if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
 if (is_year()) pageTitle += ': ' + page.year;
 pageTitle += ' | ' + config.title;
@@ -54,7 +54,13 @@ pageTitle += ' | ' + config.title;
   <%- css("css/mdui.min") %>
   <%- css("css/style") %>
   <%- css("css/ionicons.min") %>
-
   <%- js("js/jquery-3.1.1.min") %>
+
+  <!-- Custom Head -->
+  <% if (site.data.head) { %>
+    <% for (var i in site.data.head) { %>
+        <%- site.data.head[i] %>
+    <% } %>
+  <% } %>
 
 </head>
