@@ -1,16 +1,61 @@
 <% if(theme.comment.use === 'duoshuo') { %>
-    <!-- 使用多说评论 -->
-    <%- partial('widget/duoshuo') %>
+<%- css('css/duoshuo.min') %>
+<div id="comments" class="mdui-card-content mdui-hidden">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="<% theme.comment.duoshuo_thread_key_type === 'id' ? page.id : page.path %>"
+        data-url="<%- config.url + config.root + page.path %>"
+        data-title="<%= page.title %>">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+<script>
+$(document).on('click', '#show-comment', function () {
+  $("#comments").removeClass("mdui-hidden");
+  $("#hide-comment-container").removeClass("mdui-hidden");
+  $("#show-comment-container").addClass("mdui-hidden");
+});
+$(document).on('click', '#hide-comment', function () {
+  $("#comments").addClass("mdui-hidden");
+  $("#hide-comment-container").addClass("mdui-hidden");
+  $("#show-comment-container").removeClass("mdui-hidden");
+});
+</script>
 <% } %>
 
 <% if(theme.comment.use === 'disqus') { %>
     <!-- 使用 DISQUS -->
     <div id="disqus-comment" class="mdui-card-content mdui-hidden">
-        <%- partial('widget/disqus') %>
+      <div id="disqus_thread"></div>
     </div>
     <style>
         #disqus-comment{
             padding: 2pc;
         }
     </style>
+    <script>
+      setTimeout(function() {
+        var disqus_config = function () {
+          this.page.url = '<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document;
+          var s = d.createElement('script');
+          s.src = '//<%= theme.comment.shortname %>.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', + new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+      },1500);
+      $(document).on('click', '#show-comment', function () {
+        $("#disqus-comment").removeClass("mdui-hidden");
+        $("#hide-comment-container").removeClass("mdui-hidden");
+        $("#show-comment-container").addClass("mdui-hidden");
+      });
+      $(document).on('click', '#hide-comment', function () {
+        $("#disqus-comment").addClass("mdui-hidden")
+        $("#hide-comment-container").addClass("mdui-hidden");
+        $("#show-comment-container").removeClass("mdui-hidden");
+      });
+    </script>
 <% } %>

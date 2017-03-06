@@ -1,29 +1,3 @@
-/* Pace.js
-body > :not(.pace),body:before,body:after {
-  -webkit-transition:opacity .4s ease-in-out;
-  -moz-transition:opacity .4s ease-in-out;
-  -o-transition:opacity .4s ease-in-out;
-  -ms-transition:opacity .4s ease-in-out;
-  transition:opacity .4s ease-in-out
-}
-
-body:not(.pace-done) > :not(.pace),body:not(.pace-done):before,body:not(.pace-done):after {
-  opacity:0
-}
-
-/* Drawer userview */
-
-.mdui-card-header-drawer {
-    position: absolute;
-    z-index: 1000;
-    height: 72px;
-    box-sizing: border-box;
-    padding: 16px
-}
-
-
-/* Footer */
-
 body {
     display: flex;
     min-height: 100vh;
@@ -34,105 +8,36 @@ main {
     flex: 1 0 auto;
 }
 
-footer.page-footer {
-    padding-top: 20px;
+.card-bottom-fix {
+    margin-bottom: 16px;
 }
 
-
-/* Slider */
-
-.slider {
-    position: relative;
-    height: 400px;
-    width: 100%;
+.no-padding-top {
+    padding-top: 0px !important;
 }
 
-.slider.fullscreen {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.no-padding-bottom {
+    padding-bottom: 0px;
 }
 
-.slider.fullscreen ul.slides {
-    height: 100%;
+.no-margin-bottom ol {
+    margin-bottom: 0px;
 }
 
-.slider.fullscreen ul.indicators {
-    z-index: 2;
-    bottom: 30px;
+.mdui-typo li ol, .mdui-typo li ul {
+    margin: 0px;
 }
 
-.slider .slides {
-    background-color: #9e9e9e;
-    margin: 0;
-    height: 400px;
+.no-text-decoration {
+    text-decoration: none;
+    color: inherit;
 }
 
-.slider .slides li {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: inherit;
-    overflow: hidden;
+.auto-width {
+    width: auto;
 }
 
-.slider .slides li img {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.slider .slides li .caption {
-    color: #fff;
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    width: 70%;
-    opacity: 0;
-}
-
-.slider .slides li .caption p {
-    color: #e0e0e0;
-}
-
-.slider .slides li.active {
-    z-index: 2;
-}
-
-.slider .indicators {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-}
-
-.slider .indicators .indicator-item {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    height: 16px;
-    width: 16px;
-    margin: 0 12px;
-    background-color: #e0e0e0;
-    transition: background-color .3s;
-    border-radius: 50%;
-}
-
-.slider .indicators .indicator-item.active {
-    background-color: #4CAF50;
-}
-
-.title-covered {
+.post-media {
     background-color: #ff4081;
     background-repeat: repeat;
     background-position: 50% 50%;
@@ -145,32 +50,102 @@ footer.page-footer {
     min-height: 200px;
 }
 
-.index-head-card {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.index-head-card>div {
-    margin-bottom: 16px;
-}
-
-.index-head-card .mdui-card-left,
-.index-head-card .mdui-card-right {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 400px;
-}
-
-@media (min-width: 600px) {
-    .index-head-card .mdui-card-left,
-    .index-head-card .mdui-card-right {
-        min-height: 200px;
-    }
+.menu-fix {
+    overflow: visible;
 }
 
 .mdui-typo table {
     display: block;
     overflow: auto;
+}
+
+
+/* 添加在<a>中 */
+
+.menu-badge {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+span.badge {
+    min-width: 3rem;
+    padding: 0 6px;
+    margin-left: 14px;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 22px;
+    height: 22px;
+    color: #757575;
+    float: right;
+    box-sizing: border-box;
+}
+
+span.badge.new {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #26a69a;
+    border-radius: 2px;
+}
+
+span.badge.new:after {
+    content: " new";
+}
+
+span.badge[data-badge-caption]::after {
+    content: " " attr(data-badge-caption);
+}
+
+nav ul a span.badge {
+    display: inline-block;
+    float: none;
+    margin-left: 4px;
+    line-height: 22px;
+    height: 22px;
+}
+
+.collection-item span.badge {
+    margin-top: calc(0.75rem - 11px);
+}
+
+.collapsible span.badge {
+    margin-top: calc(1.5rem - 11px);
+}
+
+.side-nav span.badge {
+    margin-top: calc(24px - 11px);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+}
+
+.pagination li {
+    display: inline-block;
+    border-radius: 2px;
+    text-align: center;
+    vertical-align: top;
+    height: 30px;
+}
+
+.pagination li a {
+    color: #444;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.pagination li i {
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .pagination {
+        width: 100%;
+    }
 }

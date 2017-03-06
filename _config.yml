@@ -1,177 +1,96 @@
 # html lang
-language:
+language: en
 
-# Head info
-# hitokoto: "lwl12", "i-meto"
+# HTML head
 head:
-    favicon: "/img/favicon.ico"
-    high_res_favicon: "/img/favicon.ico"
-    apple_touch_icon: "/img/favicon.ico"
-    keywords:
-    hitokoto: ""
+  favicon: /img/favicon.png
+  high_res_favicon: /img/favicon.png
+  apple_touch_icon: /img/favicon.png
+  keywords:
 
-# You can use whatever you like
-dynamic_title:
-
-appbar:
-  fixed:
-    enable: true
-    scroll_hide:
-
-userview:
-  avatar: "/img/avatar.png"
-  bgimg: "/img/bg.png"
-  email: "example@example.com"
-
-# icon value from mdui.org
-# text_color = theme, red, red-900
-drawer:
-  accordion: false
-  subtitle: "????"
-  holiday:
-    enable:
-    text:
-    text_color: "red"
-    bg_color:
-  counter:
-    enable:
-    date:
-    progress_bar:
-  menu:
-    divider:
-    homepage:
-      icon: "&#xe88a;"
-      title:
-      circle: true
-      color:
-      fix:
-      text_color:
-      bg_color:
-    archives:
-      enable: true
-      icon: "&#xe156;"
-      title: ""
-      circle: true
-      color:
-      arrow:
-      fix: true
-      text_color:
-      bg_color:
-    categories:
-      enable: true
-      icon: "&#xe86d;"
-      title:
-      circle: true
-      color:
-      arrow:
-      fix: true
-      text_color:
-      bg_color:
-    archive:
-      enable: true
-      icon: "&#xe54b;"
-      title:
-      circle: true
-      color:
-      arrow:
-      fix:
-      text_color:
-      bg_color:
-
-pages:
-  list:
-
-  collapse:
-
-
-background:
-  color:
-  img:
-
-typinyin:
-  title:
-
-theme:
+# color
+color:
+  primary_color: "indigo"
+  accent_color: "blue"
   layout:
-  primary_color: indigo
-  accent_color: indigo
-  chang_theme: true
 
-pace:
-  style: center-atom
-  color: "#3F51B5"
+# appbar
+appbar:
+  title: "TITLE"
 
-smoothscroll: true
+# post settings
+post:
+  avatar: /img/avatar.png
+  entry_excerpt: 50
 
-# Search Systems
-# Available value:
-#     swiftype | google | local
-search:
-    use: local
-    swiftype_key:
-
-fab:
-  trigger: "hover"
-  main:
-    first_icon: "&#xe145;"
-    second_icon: "&#xe14c;"
-  top:
-    color: "pink"
-    icon: "&#xe316;"
-  prev:
-    color: "red"
-    icon: "&#xe314;"
-  next:
-    color: "orange"
-    icon: "&#xe315;"
-
-index_head_left:
-  userview: "bottom"
-  title: "img-bottom"
-  gradient:
-  slogan:
-  img: "/img/bg.png"
-
-index_head_right:
-  userview: "bottom"
-  img: "/img/logo.png"
-
-share_menu:
-  article_rss:
-  weibo:
-  twitter:
-  facebook:
+share_menu: #false
+  weibo: true
+  twitter: true
+  facebook: true
   googleplus: true
-  linkedin:
-  qq:
+  linkedin: true
+  qq: true
   telegram: true
 
-# userview: "top", "bottom", "center"
-# title: "img-top", "img-bottom", "card-center", "card-top"
-post:
-  userview: "bottom"
-  title: "img-bottom"
-  gradient: ""
-  entry_excerpt: 80
-  img_color: "#536DFE"
-
-qrcode: true
-
-copyright:
-  blog_start_year:
-
-sns:
-
-
-# Busuanzi 不蒜子 Views
-busuanzi:
-    enable:
-    all_site_uv:
-    post_pv:
-    busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+qr_code:
 
 comment:
-    use: disqus
-    shortname:  halyul
+    use:
+    shortname:
     duoshuo_thread_key_type: path
     duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
+# pagination
+# github@zllovesuki
+index:
+  show: 2
+
+# footer
+copyright:
+  start_year: 2016
+
+# Plugins
+busuanzi: #false
+    enable: true
+    all_site_uv: true
+    post_pv: true
+    busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+
+pages:
+  Test1:
+    link: "test1"
+    icon: "&#xe84d;"
+  Test2:
+    link: "test1"
+    icon: "&#xeb3b;"
+  Test3:
+    link: "test1"
+    icon: "&#xe851;"
+
+sns:
+  Twitter: "https://twitter.com"
+  Facebook: "https://facebook.com"
+
+# Translations
+translations:
+  archive: 'Archive'
+  archives: 'Archives'
+  category: 'Category'
+  categories: 'Categories'
+  index: 'Index'
+  pages: 'Pages'
+  tag: 'Tag'
+  tags: 'Tags'
+  years: 'Year'
+  busuanzi_views: 'Views: '
+  footer:
+    contact_me: 'Contact Me'
+    how_to_contact_me: 'How to contact me'
+    close: 'close'
+  share_menu:
+    facebook: 'Share to Facebook'
+    googleplus: 'Share to Google+'
+    linkedin: 'Share to Linkedin'
+    qq: 'Share to QQ'
+    telegram: 'Share to Telegram'
+    twitter: 'Share to Twitter'
+    weibo: 'Share to Weibo'

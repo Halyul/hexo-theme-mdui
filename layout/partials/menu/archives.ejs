@@ -1,0 +1,46 @@
+<ul class="mdui-menu mdui-menu-cascade menu-fix"  id="menu-archives">
+  <li class="mdui-menu-item">
+    <a href="<%= config.root %>archives" class="mdui-ripple menu-badge">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe149;</i>
+      <%= theme.translations.archives %>
+      <div style="flex-grow:1"></div>
+      <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= site.posts.length %></span>
+    </a>
+  </li>
+  <li class="mdui-menu-item">
+    <a class="mdui-ripple menu-badge">
+      <i class="mdui-menu-item-icon mdui-icon material-icons">&#xe86e;</i>
+      <%= theme.translations.categories %>
+      <div style="flex-grow:1"></div>
+      <span class="mdui-menu-item-more"></span>
+    </a>
+    <ul class="mdui-menu mdui-menu-cascade">
+      <% site.categories.map(function(category){  %>
+        <li class="mdui-menu-item">
+          <a href="<%= config.root %>categories/<%= category.name %>/" class="mdui-ripple menu-badge">
+            <%= category.name %>
+            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </li>
+  <li class="mdui-menu-item">
+    <a class="mdui-ripple menu-badge">
+      <i class="mdui-menu-item-icon mdui-icon ion-pricetags"></i>
+      <%= theme.translations.tags %>
+      <div style="flex-grow:1"></div>
+      <span class="mdui-menu-item-more"></span>
+    </a>
+    <ul class="mdui-menu mdui-menu-cascade">
+      <% site.tags.map(function(tag){  %>
+        <li class="mdui-menu-item">
+          <a href="<%= config.root %>tags/<%= tag.name %>/" class="mdui-ripple menu-badge">
+            <%= tag.name %>
+            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </li>
+</ul>

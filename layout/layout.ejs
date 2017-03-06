@@ -1,37 +1,14 @@
 <!DOCTYPE html>
-<html lang="<%= config.language %>">
-    <% if(page.layout == 'gallery') { %>
-        <!-- Single Gallery Page -->
-        <%- partial('widget/page_gallery') %>
-    <% } else {%>
-        <%- partial('partials/head') %>
-        
-        <body id="top">
-            <!-- Pace -->
-            <script type="text/javascript">
-                var $body = $('body');
-                Pace.track(function() {
-                    $body.addClass("<% if (theme.theme.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-theme-primary-<%= theme.theme.primary_color %> mdui-theme-accent-<%= theme.theme.accent_color %> <% if (theme.appbar.fixed.enable === true) { %>mdui-appbar-with-toolbar<% } %> mdui-drawer-body-left");
-                });
-            </script>
-            <a href="#top" id="toTop"></a>
-            <%- partial('partials/css_pace') %>
-            <%- partial('partials/body_header') %>
-            <main class="mdui-container">
-                <%- body %>
-            </main>
-
-            <%- partial('partials/import_js') %>
-
-            <% if (theme.theme.chang_theme === true) { %>
-                <%- partial('partials/import_change_theme') %>
-            <% } %>
-
-            <%- partial('partials/config_css') %>
-        </body>
-        <div class="mdui-divider"></div>
-        <footer class="page-footer">
-            <%- partial('partials/footer') %>
-        </footer>
-    <% } %>
+<html lang="<%=config.language%>">
+<%-partial('partials/head')%>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
+<%- partial('partials/appbar') %>
+<%- partial('partials/drawer') %>
+<main class="mdui-container">
+  <br />
+  <%- body %>
+</main>
+</body>
+<%- partial('partials/footer') %>
+<%- partial('partials/import_js') %>
 </html>

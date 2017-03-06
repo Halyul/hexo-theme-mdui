@@ -1,156 +1,80 @@
-<br/>
-<% if(page.layout === "announcement") { %>
-    <%- partial('partials/announcement') %>
-<% } else { %>
-<div class="mdui-card" style="margin-bottom: 16px;overflow: visible;">
-
-    <% if(theme.post.userview === "top") { %>
-      <div class="mdui-card-header">
-        <div class="mdui-row">
-          <div class="mdui-col-xs-6">
-            <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-            <div class="mdui-card-header-title"><%= config.author %></div>
-            <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
-          </div>
-          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
-            <i class="mdui-icon material-icons">&#xe80d;</i>
-          </button>
-          <ul class="mdui-menu" id="share-menu">
-            <%- partial('partials/menu/post_share_menu') %>
-          </ul>
-          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
-            <i class="mdui-icon material-icons">&#xe892;</i>
-          </button>
-          <ul class="mdui-menu" id="tags-menu">
-            <%- partial('partials/menu/tags_menu') %>
-          </ul>
-          <% if(theme.qrcode == true) { %>
-            <%- partial('partials/menu/qr_menu') %>
-          <% } %>
-        </div>
+<div class="mdui-card card-bottom-fix menu-fix">
+  <% if (page.thumbnail !== undefined) { %>
+    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
+  <% } %>
+  <div class="mdui-card-primary">
+    <div class="mdui-row">
+      <div class="mdui-col-xs-8">
+        <div class="mdui-card-primary-title"><%=page.title%></div>
+        <div class="mdui-card-primary-subtitle"><%= date(page.date, 'MMM DD, YYYY') %> - <%= config.author %></div>
       </div>
-    <% } %>
-
-    <% if(theme.post.title === "card-top") { %>
-        <div class="mdui-card-primary mdui-typo">
-            <div class="mdui-card-primary-title"><%=page.title%></div>
-            <% if(theme.busuanzi.enable === true) { %>
-              <% if(theme.busuanzi.post_pv === true) { %>
-                <div class="mdui-card-primary-subtitle" id="busuanzi_container_page_pv">
-                  <span id="busuanzi_value_page_pv"></span>&nbsp;<%= __('post.views') %>
-                </div>
-              <% } %>
-            <% } %>
-        </div>
-    <% } %>
-
-    <div class="mdui-card-media title-covered " style="background-image: url(<%- page.thumbnail %>)">
-        <div class="mdui-card-media-covered <% if(theme.post.gradient === true) { %>mdui-card-media-covered-gradient<% } %> <% if(theme.post.title === " img-top") { %>mdui-card-media-covered-top<% } %>">
-            <% if(theme.post.title === "img-bottom" || theme.post.title === "img-top") { %>
-                <div class="mdui-card-primary mdui-typo">
-                    <div class="mdui-card-primary-title"><%=page.title%></div>
-                    <% if(theme.busuanzi.enable === true) { %>
-                      <% if(theme.busuanzi.post_pv === true) { %>
-                        <div class="mdui-card-primary-subtitle" id="busuanzi_container_page_pv">
-                          <span id="busuanzi_value_page_pv"></span>&nbsp;<%= __('post.views') %>
-                        </div>
-                      <% } %>
-                    <% } %>
-                </div>
-            <% } %>
-        </div>
+      <div class="mdui-col-xs-4">
+        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-more'}">
+          <i class="mdui-icon material-icons">&#xe5d4;</i>
+        </button>
+        <%- partial('partials/menu/more') %>
+        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
+          <i class="mdui-icon material-icons">&#xe80d;</i>
+        </button>
+        <%- partial('partials/menu/post_share') %>
+        <% if(theme.qrcode == true) { %>
+        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
+          <i class="mdui-icon material-icons">&#xe337;</i>
+        </button>
+        <%- partial('partials/menu/qrcode') %>
+        <% } %>
+      </div>
     </div>
-
-    <% if(theme.post.userview === "center") { %>
-      <div class="mdui-card-header">
-        <div class="mdui-row">
-          <div class="mdui-col-xs-6">
-            <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-            <div class="mdui-card-header-title"><%= config.author %></div>
-            <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
-          </div>
-          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
-            <i class="mdui-icon material-icons">&#xe80d;</i>
-          </button>
-          <ul class="mdui-menu" id="share-menu">
-            <%- partial('partials/menu/post_share_menu') %>
-          </ul>
-          <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
-            <i class="mdui-icon material-icons">&#xe892;</i>
-          </button>
-          <ul class="mdui-menu" id="tags-menu">
-            <%- partial('partials/menu/tags_menu') %>
-          </ul>
-          <% if(theme.qrcode == true) { %>
-            <%- partial('partials/menu/qr_menu') %>
-          <% } %>
-        </div>
-      </div>
-    <% } %>
-
-    <% if(theme.post.title === "card-center") { %>
-        <div class="mdui-card-primary mdui-typo">
-            <div class="mdui-card-primary-title"><%=page.title%></div>
-            <% if(theme.busuanzi.enable === true) { %>
-              <% if(theme.busuanzi.post_pv === true) { %>
-                <div class="mdui-card-primary-subtitle" id="busuanzi_container_page_pv">
-                  <span id="busuanzi_value_page_pv"></span>&nbsp;<%= __('post.views') %>
-                </div>
-              <% } %>
-            <% } %>
-        </div>
-    <% } %>
-
-    <% if(theme.post.userview === "bottom") { %>
-        <div class="mdui-card-header">
-          <div class="mdui-row">
-            <div class="mdui-col-xs-6">
-              <img class="mdui-card-header-avatar" src="<%= theme.userview.avatar %>"/>
-              <div class="mdui-card-header-title"><%= config.author %></div>
-              <div class="mdui-card-header-subtitle"><%= date(page.date, 'MMM DD, YYYY') %></div>
-            </div>
-            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#share-menu', covered: 'true', align: 'right'}">
-              <i class="mdui-icon material-icons">&#xe80d;</i>
-            </button>
-            <ul class="mdui-menu" id="share-menu">
-              <%- partial('partials/menu/post_share_menu') %>
-            </ul>
-            <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#tags-menu', covered: 'true', align: 'right'}">
-              <i class="mdui-icon material-icons">&#xe892;</i>
-            </button>
-            <ul class="mdui-menu" id="tags-menu">
-              <%- partial('partials/menu/tags_menu') %>
-            </ul>
-            <% if(theme.qrcode == true) { %>
-              <%- partial('partials/menu/qr_menu') %>
-            <% } %>
-          </div>
-        </div>
-    <% } %>
-
-    <% if(page.layout === "private") { %>
-      <div class="mdui-card-content mdui-typo">
-        <%= __('post.private') %>
-      </div>
-    <% } else { %>
-      <div class="mdui-card-content mdui-typo">
-        <%- page.content %>
-      </div>
-    <% } %>
-
-    <!-- Post Comments -->
-    <% if(theme.comment.use === "duoshuo" || theme.comment.use === "disqus") { %>
+  </div>
+  <div class="mdui-card-content mdui-typo no-padding-top">
+    <%-page.content%>
+  </div>
+  <div class="mdui-card-content no-padding-top">
     <div class="mdui-typo">
-        <hr/>
+      <hr/>
     </div>
-    <div class="mdui-card-actions" id="show-comment-container">
-        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="show-comment"><%= __('post.comment') %></button>
+    <div class="mdui-row">
+      <div class="mdui-col-xs-6">
+        <h2><%= theme.translations.tags %></h2>
+        <% page.tags.map(function(tag){  %>
+          <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
+            <div class="mdui-chip mdui-typo">
+              <span class="mdui-chip-icon">
+                <i class="mdui-icon ion-pricetags"></i>
+              </span>
+              <span class="mdui-chip-title"><%= tag.name %></span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+      <div class="mdui-col-xs-6">
+        <h2><%= theme.translations.categories %></h2>
+        <% page.categories.map(function(category){  %>
+          <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
+            <div class="mdui-chip mdui-typo">
+              <span class="mdui-chip-icon">
+                <i class="mdui-icon material-icons">&#xe169;</i>
+              </span>
+              <span class="mdui-chip-title"><%= category.name %></span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
     </div>
-    <div class="mdui-card-actions mdui-hidden" id="hide-comment-container">
-        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="hide-comment"><%= __('post.comment') %></button>
-    </div>
-      <%- partial('partials/comment') %>
-    <% } %>
+  </div>
 </div>
-<%-partial('partials/pagination')%>
+<% if (theme.comment.use === 'disqus' || theme.comment.use === 'duoshuo') { %>
+<div class="mdui-card card-bottom-fix mdui-color-white">
+  <div class="mdui-card-actions" id="show-comment-container">
+    <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="show-comment">
+      Show Comments from <%= theme.comment.use %>
+    </button>
+  </div>
+  <div class="mdui-card-actions mdui-hidden" id="hide-comment-container">
+    <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="hide-comment">Hide Comments</button>
+  </div>
+  <%- partial('partials/comment') %>
+</div>
 <% } %>
+<%-partial('partials/post_pagination')%>
+<%-partial('partials/fab/post')%>

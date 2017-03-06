@@ -1,5 +1,8 @@
-<br/>
-<% page.posts.each(function(post) { %>
-    <%-partial('partials/posts', { post: post })%>
-<% }); %>
-<%-partial('partials/pagination')%>
+<% if (!is_year()) { %>
+<%- partial('partials/archives/index.ejs') %>
+<% } else { %>
+  <% page.posts.each(function(post) { %>
+      <%-partial('partials/posts', { post: post })%>
+  <% }); %>
+  <%-partial('partials/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.index.show })%>
+<% } %>
