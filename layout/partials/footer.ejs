@@ -7,7 +7,9 @@
       <div class="mdui-card-content">
         <div class="mdui-row mdui-valign mdui-hidden-xs">
           <div class="mdui-col-xs-4">
-            <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>Contact Me</button>
+            <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>
+              <%= theme.translations.footer.contact_me %>
+            </button>
           </div>
           <div class="mdui-col-xs-4">
             <div class="mdui-text-center mdui-typo">
@@ -27,7 +29,9 @@
           </div>
           <div class="mdui-row mdui-hidden-sm-up">
             <div class="mdui-col-xs-12">
-              <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>Contact Me</button>
+              <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>
+                <%= theme.translations.footer.contact_me %>
+              </button>
             </div>
             <div class="mdui-col-xs-12">
               <div class="mdui-text-center mdui-typo">
@@ -52,7 +56,7 @@
   <br>
   <div class="mdui-dialog" id="contact">
     <div class="mdui-dialog-title">
-      How to contact me
+      <%= theme.translations.footer.how_to_contact_me %>
     </div>
     <div class="mdui-dialog-content no-padding-bottom">
       <div class="mdui-list">
@@ -64,7 +68,9 @@
       </div>
     </div>
     <div class="mdui-dialog-actions">
-      <button class="mdui-btn mdui-ripple" mdui-dialog-close>Close</button>
+      <button class="mdui-btn mdui-ripple" mdui-dialog-close>
+        <%= theme.translations.footer.close %>
+      </button>
     </div>
   </div>
 </footer>

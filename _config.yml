@@ -73,6 +73,10 @@ translations:
   tag: '标签'
   tags: '标签'
   years: '年份'
+  footer:
+    contact_me: '联系我'
+    how_to_contact_me: '如何联系我'
+    close: '关闭'
   share_menu:
     facebook: '分享到脸书'
     googleplus: '分享到Google+'
