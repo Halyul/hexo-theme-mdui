@@ -44,24 +44,16 @@
   });
 </script>
   <% if(theme.comment.use == "duoshuo") { %>
-      <!-- 多说公共 js 代码 start -->
-      <script type="text/javascript">
-          var duoshuoQuery = {
-              short_name: '<%= theme.comment.shortname %>',
-              theme: 'none'
-          };
-          (function() {
-              var ds = document.createElement('script');
-              ds.type = 'text/javascript';
-              ds.async = true;
-              ds.src = '<%= theme.comment.duoshuo_embed_js_url %>';
-              ds.charset = 'UTF-8';
-              (document.getElementsByTagName('head')[0]
-               || document.getElementsByTagName('body')[0]).appendChild(ds);
-          })();
-      </script>
-      <!-- 多说公共 js 代码 end -->
-      <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: '<%= theme.comment.shortname %>',
+            theme: 'none'
+        };
+    </script>
+    <%- js("js/embed.min.js") %>
+    <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js"></script>
+    <!-- 多说公共 js 代码 end -->
   <% } %>
 
   <% if(theme.comment.use === 'disqus') { %>

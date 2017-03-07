@@ -1,6 +1,7 @@
 <% if(theme.comment.use === 'duoshuo') { %>
+</div>
 <%- css('css/duoshuo.min') %>
-<div id="comments" class="mdui-card-content mdui-hidden">
+<div id="comments" class="mdui-hidden card-bottom-fix">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
         data-thread-key="<% theme.comment.duoshuo_thread_key_type === 'id' ? page.id : page.path %>"
@@ -24,10 +25,12 @@ $(document).on('click', '#hide-comment', function () {
 <% } %>
 
 <% if(theme.comment.use === 'disqus') { %>
+  <div class="mdui-card card-bottom-fix mdui-color-white">
     <!-- 使用 DISQUS -->
     <div id="disqus-comment" class="mdui-card-content mdui-hidden">
       <div id="disqus_thread"></div>
     </div>
+  </div>
     <style>
         #disqus-comment{
             padding: 2pc;
