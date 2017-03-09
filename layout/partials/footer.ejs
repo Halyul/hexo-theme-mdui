@@ -61,7 +61,7 @@
     <div class="mdui-dialog-content no-padding-bottom">
       <div class="mdui-list">
         <% for (var i in theme.sns){ %>
-          <a href="<%= theme.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple">
+          <a href="<%= theme.sns[i] %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
             <%= i %>
           </a>
         <% } %>
