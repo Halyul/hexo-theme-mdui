@@ -1,11 +1,7 @@
 <!-- Import JS -->
 <%- js("js/mdui.min") %>
 <%- js("js/jquery.smooth-scroll.min") %>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('a').smoothScroll();
-  });
-</script>
+<%- js("js/js.min") %>
 <% if (theme.busuanzi.enable === true) { %>
   <script src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
