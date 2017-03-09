@@ -1,5 +1,5 @@
-<% if (page.layout === 'links') { %>
-  <%- partial('widget/page_links') %>
+<% if (page.layout === 'friends') { %>
+  <%- partial('widget/page_friends') %>
 <% } else { %>
   <div class="mdui-card card-bottom-fix menu-fix">
     <% if (page.thumbnail !== undefined) { %>
@@ -19,7 +19,7 @@
           <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-share'}">
             <i class="mdui-icon material-icons">&#xe80d;</i>
           </button>
-          <%- partial('partials/menu/share') %>
+          <%- partial('partials/menu/post_share') %>
           <% if(theme.qrcode == true) { %>
           <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
             <i class="mdui-icon material-icons">&#xe337;</i>
