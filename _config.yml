@@ -1,8 +1,11 @@
+# CDN server
+location:
+
 # HTML head
 head:
-  favicon: /img/favicon.png
-  high_res_favicon: /img/favicon.png
-  apple_touch_icon: /img/favicon.png
+  favicon: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
+  high_res_favicon: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
+  apple_touch_icon: https://gravatar.com/userimage/113938008/0ffede3b011b3a1725a0bae6b2db2c72.png?size=200
   keywords:
 
 # color
@@ -13,11 +16,11 @@ color:
 
 # appbar
 appbar:
-  title: "TITLE"
+  title:
 
 # post settings
 post:
-  avatar: /img/avatar.png
+  # avatar: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
   entry_excerpt: 50
 
 share_menu: #false
@@ -29,64 +32,62 @@ share_menu: #false
   qq: true
   telegram: true
 
-qr_code:
+qr_code: true
 
 comment:
     use:
     shortname:
-    duoshuo_thread_key_type: path
+    provider:
+
 # pagination
 # github@zllovesuki
 index:
   show: 2
 
 # footer
-copyright:
+footer:
   start_year: 2016
+  ICP:
 
 # Plugins
 busuanzi: #false
-    enable: true
     all_site_uv: true
     post_pv: true
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 pages:
-  Test1:
-    link: "test1"
-    icon: "&#xe84d;"
-  Test2:
-    link: "test1"
-    icon: "&#xeb3b;"
-  Test3:
-    link: "test1"
-    icon: "&#xe851;"
+  友链:
+    link: "/friends"
+    icon: "&#xe0ba;"
+  申请友链:
+    link: "/apply-for-link"
+    icon: "&#xe7fe;"
 
-sns:
-  Twitter: "https://twitter.com"
-  Facebook: "https://facebook.com"
+sns: false
+
 
 # Translations
 translations:
-  archive: 'Archive'
-  archives: 'Archives'
-  category: 'Category'
-  categories: 'Categories'
-  index: 'Index'
-  pages: 'Pages'
-  tag: 'Tag'
-  tags: 'Tags'
-  years: 'Year'
-  busuanzi_views: 'Views: '
+  # archive: '归档'
+  archives: '归档'
+  category: '分类'
+  categories: '分类'
+  index: '首页'
+  pages: '页面'
+  tag: '标签'
+  tags: '标签'
+  years: '年份'
+  busuanzi_views: '浏览量: '
   footer:
-    contact_me: 'Contact Me'
-    how_to_contact_me: 'How to contact me'
-    close: 'close'
+    contact_me: '联系我'
+    how_to_contact_me: '如何联系我'
+    close: '本王知道了'
   share_menu:
-    facebook: 'Share to Facebook'
-    googleplus: 'Share to Google+'
-    linkedin: 'Share to Linkedin'
-    qq: 'Share to QQ'
-    telegram: 'Share to Telegram'
-    twitter: 'Share to Twitter'
-    weibo: 'Share to Weibo'
+    facebook: '分享到Facebook'
+    googleplus: '分享到Google+'
+    linkedin: '分享到Linkedin'
+    qq: '分享到QQ'
+    telegram: '分享到Telegram'
+    twitter: '分享到Twitter'
+    weibo: '分享到Weibo'
+  snackbar: '这里...不可以...'

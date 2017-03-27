@@ -1,23 +1,17 @@
-<% if(theme.comment.use === 'duoshuo') { %>
-</div>
-<%- css('css/duoshuo.min') %>
-<div id="comments" class="mdui-hidden card-bottom-fix">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread"
-        data-thread-key="<% theme.comment.duoshuo_thread_key_type === 'id' ? page.id : page.path %>"
-        data-url="<%- config.url + config.root + page.path %>"
-        data-title="<%= page.title %>">
+<% if(theme.comment.use === 'custom') { %>
+  <div class="mdui-card card-bottom-fix mdui-color-white mdui-hidden" id="custom-comment">
+    <div class="mdui-card-content">
+      <%-partial('../custom/custom_comment')%>
     </div>
-    <!-- 多说评论框 end -->
-</div>
+  </div>
 <script>
 $(document).on('click', '#show-comment', function () {
-  $("#comments").removeClass("mdui-hidden");
+  $("#custom-comment").removeClass("mdui-hidden");
   $("#hide-comment-container").removeClass("mdui-hidden");
   $("#show-comment-container").addClass("mdui-hidden");
 });
 $(document).on('click', '#hide-comment', function () {
-  $("#comments").addClass("mdui-hidden");
+  $("#custom-comment").addClass("mdui-hidden");
   $("#hide-comment-container").addClass("mdui-hidden");
   $("#show-comment-container").removeClass("mdui-hidden");
 });
@@ -25,17 +19,12 @@ $(document).on('click', '#hide-comment', function () {
 <% } %>
 
 <% if(theme.comment.use === 'disqus') { %>
-  <div class="mdui-card card-bottom-fix mdui-color-white">
+  <div class="mdui-card card-bottom-fix mdui-color-white mdui-hidden">
     <!-- 使用 DISQUS -->
-    <div id="disqus-comment" class="mdui-card-content mdui-hidden">
+    <div id="disqus-comment" class="mdui-card-content">
       <div id="disqus_thread"></div>
     </div>
   </div>
-    <style>
-        #disqus-comment{
-            padding: 2pc;
-        }
-    </style>
     <script>
       setTimeout(function() {
         var disqus_config = function () {

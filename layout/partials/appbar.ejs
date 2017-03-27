@@ -20,7 +20,11 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
         <i class="mdui-icon material-icons">&#xe5d2;</i>
       </button>
     <% } %>
-    <a href="<%= config.root %>" class="mdui-typo-headline"><%= theme.appbar.title %></a>
+    <% if (theme.appbar.title) { %>
+      <a href="<%= config.root %>" class="mdui-typo-headline">
+        <%= theme.appbar.title %>
+      </a>
+    <% } %>
     <% if (is_home() || is_archive() || is_year() || is_category() || is_tag()) { %>
     <a class="mdui-typo-title"><%= pageTitle %></a>
     <% } %>

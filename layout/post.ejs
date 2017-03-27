@@ -1,4 +1,4 @@
-<div class="mdui-card card-bottom-fix menu-fix">
+<div class="mdui-card card-bottom-fix menu-fix posts-animate">
   <% if (page.thumbnail !== undefined) { %>
     <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
   <% } %>
@@ -30,54 +30,68 @@
     <%-page.content%>
   </div>
   <div class="mdui-card-content no-padding-top">
-    <div class="mdui-typo">
-      <hr/>
-    </div>
-    <div class="mdui-row">
-      <div class="mdui-col-xs-6">
-        <h2><%= theme.translations.tags %></h2>
-        <% page.tags.map(function(tag){  %>
-          <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
-            <div class="mdui-chip mdui-typo">
-              <span class="mdui-chip-icon">
-                <i class="mdui-icon ion-pricetags"></i>
-              </span>
-              <span class="mdui-chip-title"><%= tag.name %></span>
-            </div>
-          </a>
-        <% }) %>
+    <% if (page.tags || page.categories) { %>
+      <div class="mdui-typo">
+        <hr/>
       </div>
-      <div class="mdui-col-xs-6">
-        <h2><%= theme.translations.categories %></h2>
-        <% page.categories.map(function(category){  %>
-          <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
-            <div class="mdui-chip mdui-typo">
-              <span class="mdui-chip-icon">
-                <i class="mdui-icon material-icons">&#xe169;</i>
-              </span>
-              <span class="mdui-chip-title"><%= category.name %></span>
-            </div>
-          </a>
-        <% }) %>
-      </div>
+      <div class="mdui-row">
+        <% if (page.tags) { %>
+        <div class="mdui-col-xs-6">
+          <h2><%= theme.translations.tags %></h2>
+          <% page.tags.map(function(tag){  %>
+            <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
+              <div class="mdui-chip mdui-typo">
+                <span class="mdui-chip-icon">
+                  <i class="mdui-icon ion-pricetags"></i>
+                </span>
+                <span class="mdui-chip-title"><%= tag.name %></span>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+        <% } %>
+        <% if (page.categories) { %>
+        <div class="mdui-col-xs-6">
+          <h2><%= theme.translations.categories %></h2>
+          <% page.categories.map(function(category){  %>
+            <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
+              <div class="mdui-chip mdui-typo">
+                <span class="mdui-chip-icon">
+                  <i class="mdui-icon material-icons">&#xe169;</i>
+                </span>
+                <span class="mdui-chip-title"><%= category.name %></span>
+              </div>
+            </a>
+          <% }) %>
+        </div>
+        <% } %>
     </div>
-    <% if (theme.comment.use === 'disqus' || theme.comment.use === 'duoshuo') { %>
+    <% } %>
+    <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
       <div class="mdui-typo">
         <hr/>
       </div>
       <div class="mdui-card-actions" id="show-comment-container">
         <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="show-comment">
-          Show Comments from <%= theme.comment.use %>
+          <% if (theme.comment.use === 'custom') { %>
+            Show Comments from <%= theme.comment.provider %>
+          <% } else { %>
+            Show Comments from <%= theme.comment.use %>
+          <% } %>
         </button>
       </div>
       <div class="mdui-card-actions mdui-hidden" id="hide-comment-container">
-        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="hide-comment">Hide Comments</button>
+        <button class="mdui-btn mdui-ripple mdui-ripple-white mdui-color-theme-accent mdui-center" id="hide-comment">
+          Hide Comments
+        </button>
       </div>
     <% } %>
   </div>
 </div>
-<% if (theme.comment.use === 'disqus' || theme.comment.use === 'duoshuo') { %>
+<% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
   <%- partial('partials/comment') %>
 <% } %>
-<%-partial('partials/post_pagination')%>
+<% if (!is_page()) { %>
+  <%-partial('partials/post_pagination')%>
+<% }%>
 <%-partial('partials/fab/post')%>
