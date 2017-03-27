@@ -16,11 +16,11 @@ color:
 
 # appbar
 appbar:
-  title:
+  title: "TITLE"
 
 # post settings
 post:
-  # avatar: /img/favicon.png
+  # avatar: /img/avatar.png
   entry_excerpt: 50
 
 share_menu: #false
@@ -56,40 +56,42 @@ busuanzi: #false
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 pages:
-  友链:
-    link: "/friends"
-    icon: "&#xe0ba;"
-  申请友链:
-    link: "/apply-for-link"
-    icon: "&#xe7fe;"
+  Test1:
+    link: "test1"
+    icon: "&#xe84d;"
+  Test2:
+    link: "test1"
+    icon: "&#xeb3b;"
+  Test3:
+    link: "test1"
+    icon: "&#xe851;"
 
 sns:
   Twitter: "https://twitter.com"
   Facebook: "https://facebook.com"
 
-
 # Translations
 translations:
-  # archive: '归档'
-  archives: '归档'
-  category: '分类'
-  categories: '分类'
-  index: '首页'
-  pages: '页面'
-  tag: '标签'
-  tags: '标签'
-  years: '年份'
-  busuanzi_views: '浏览量: '
+  # archive: 'Archive'
+  archives: 'Archives'
+  category: 'Category'
+  categories: 'Categories'
+  index: 'Index'
+  pages: 'Pages'
+  tag: 'Tag'
+  tags: 'Tags'
+  years: 'Year'
+  busuanzi_views: 'Views: '
   footer:
-    contact_me: '联系我'
-    how_to_contact_me: '如何联系我'
-    close: '本王知道了'
+    contact_me: 'Contact Me'
+    how_to_contact_me: 'How to contact me'
+    close: 'close'
   share_menu:
-    facebook: '分享到Facebook'
-    googleplus: '分享到Google+'
-    linkedin: '分享到Linkedin'
-    qq: '分享到QQ'
-    telegram: '分享到Telegram'
-    twitter: '分享到Twitter'
-    weibo: '分享到Weibo'
-  snackbar: '这里...不可以...'
+    facebook: 'Share to Facebook'
+    googleplus: 'Share to Google+'
+    linkedin: 'Share to Linkedin'
+    qq: 'Share to QQ'
+    telegram: 'Share to Telegram'
+    twitter: 'Share to Twitter'
+    weibo: 'Share to Weibo'
+  snackbar: 'Oops! Nothing happened.'
