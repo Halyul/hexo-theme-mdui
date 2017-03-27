@@ -95,3 +95,5 @@ translations:
     twitter: 'Share to Twitter'
     weibo: 'Share to Weibo'
   snackbar: 'Oops! Nothing happened.'
+  show_comments_from: 'Show comments from '
+  hide_comments: 'Hide comments'
