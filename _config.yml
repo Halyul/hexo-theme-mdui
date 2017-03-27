@@ -3,9 +3,9 @@ location:
 
 # HTML head
 head:
-  favicon: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
-  high_res_favicon: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
-  apple_touch_icon: https://gravatar.com/userimage/113938008/0ffede3b011b3a1725a0bae6b2db2c72.png?size=200
+  favicon: /img/favicon.png
+  high_res_favicon: /img/favicon.png
+  apple_touch_icon: /img/favicon.png
   keywords:
 
 # color
@@ -20,7 +20,7 @@ appbar:
 
 # post settings
 post:
-  # avatar: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
+  # avatar: /img/favicon.png
   entry_excerpt: 50
 
 share_menu: #false
@@ -32,7 +32,7 @@ share_menu: #false
   qq: true
   telegram: true
 
-qr_code: true
+qr_code:
 
 comment:
     use:
@@ -46,7 +46,7 @@ index:
 
 # footer
 footer:
-  start_year: 2016
+  start_year:
   ICP:
 
 # Plugins
@@ -63,7 +63,9 @@ pages:
     link: "/apply-for-link"
     icon: "&#xe7fe;"
 
-sns: false
+sns:
+  Twitter: "https://twitter.com"
+  Facebook: "https://facebook.com"
 
 
 # Translations
