@@ -19,27 +19,29 @@ $(document).on('click', '#hide-comment', function () {
 <% } %>
 
 <% if(theme.comment.use === 'disqus') { %>
-  <div class="mdui-card card-bottom-fix mdui-color-white mdui-hidden">
+  <div class="mdui-card card-bottom-fix mdui-color-white">
     <!-- 使用 DISQUS -->
-    <div id="disqus-comment" class="mdui-card-content">
+    <div id="disqus-comment" class="mdui-card-content mdui-hidden">
       <div id="disqus_thread"></div>
     </div>
   </div>
     <script>
-      setTimeout(function() {
-        var disqus_config = function () {
-          this.page.url = '<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
-          this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-          var d = document;
-          var s = d.createElement('script');
-          s.src = '//<%= theme.comment.shortname %>.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', + new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-      },1500);
+      var comment_flag = false;
       $(document).on('click', '#show-comment', function () {
+        if (!comment_flag) {
+          var disqus_config = function () {
+            this.page.url = '<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//<%= theme.comment.shortname %>.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            comment_flag = true;
+        };
         $("#disqus-comment").removeClass("mdui-hidden");
         $("#hide-comment-container").removeClass("mdui-hidden");
         $("#show-comment-container").addClass("mdui-hidden");
