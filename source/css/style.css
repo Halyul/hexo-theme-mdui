@@ -1,3 +1,6 @@
+/*!
+ * Copyright 2017 Halyul
+ */
 body {
     display: flex;
     min-height: 100vh;
@@ -148,4 +151,33 @@ nav ul a span.badge {
     .pagination {
         width: 100%;
     }
+}
+
+/*!
+ * Copyright © CodePen@Bennett Feely
+ */
+
+.posts-animate {
+  animation:fly-in-from-left .5s 1s ease both;
+  transform-origin:top left;
+}
+
+.posts-animate:nth-child(even){
+  animation-name:fly-in-from-right;
+  animation-delay:1.1s;
+  transform-origin:top right;
+}
+
+@keyframes fly-in-from-left {
+  from {
+    transform:translateY(15rem) rotate(15deg);
+    opacity:0;
+  }
+}
+
+@keyframes fly-in-from-right {
+  from {
+    transform:translateY(15rem) rotate(-15deg);
+    opacity:0;
+  }
 }

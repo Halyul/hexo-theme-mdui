@@ -1,5 +1,5 @@
-# html lang
-language: en
+# CDN server
+location:
 
 # HTML head
 head:
@@ -20,7 +20,7 @@ appbar:
 
 # post settings
 post:
-  avatar: /img/avatar.png
+  # avatar: /img/avatar.png
   entry_excerpt: 50
 
 share_menu: #false
@@ -37,20 +37,20 @@ qr_code:
 comment:
     use:
     shortname:
-    duoshuo_thread_key_type: path
-    duoshuo_embed_js_url: "https://static.duoshuo.com/embed.js"
+    provider:
+
 # pagination
 # github@zllovesuki
 index:
   show: 2
 
 # footer
-copyright:
-  start_year: 2016
+footer:
+  start_year:
+  ICP:
 
 # Plugins
 busuanzi: #false
-    enable: true
     all_site_uv: true
     post_pv: true
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
@@ -72,7 +72,7 @@ sns:
 
 # Translations
 translations:
-  archive: 'Archive'
+  # archive: 'Archive'
   archives: 'Archives'
   category: 'Category'
   categories: 'Categories'
@@ -94,3 +94,4 @@ translations:
     telegram: 'Share to Telegram'
     twitter: 'Share to Twitter'
     weibo: 'Share to Weibo'
+  snackbar: 'Oops! Nothing happened.'

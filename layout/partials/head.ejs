@@ -48,14 +48,20 @@ pageTitle += ' | ' + config.title;
   <meta property="og:title" content="<% if (pageTitle) { %><%= pageTitle %> | <% } %><%= config.title %>">
   <meta property="og:description" content="<%= config.description %>">
 
-  <!--[if lte IE 9]> <link rel="stylesheet" href="/css/ie-blocker.css"> <% if(config.language == "zh-CN") { %> <script src="/js/ie-blocker.zhCN.js"></script> <% } else { %> <script src="/js/ie-blocker.en.js"></script> <% } %> <![endif]-->
+  <!-- Cache -->
+  <meta http-equiv="Cache-Control" content="max-age=7200" />
+  <meta http-equiv="Expires" content="Fri, 29 Dec 2017 23:00:00 GMT" />
 
   <!-- Import CSS -->
   <%- css("css/mdui.min") %>
-  <%- css("css/style") %>
-  <%- css("css/ionicons.min") %>
-  <%- js("js/jquery-3.1.1.min") %>
-
+  <%- css("css/style.min") %>
+  <% if (theme.location === 'cn') { %>
+    <link type="text/css" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+  <% } else { %>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" />
+  <% } %>
   <!-- Custom Head -->
   <% if (site.data.head) { %>
     <% for (var i in site.data.head) { %>

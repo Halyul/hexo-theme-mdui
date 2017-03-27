@@ -1,76 +1,138 @@
-<footer>
-  <div class="mdui-typo">
-    <hr/>
-  </div>
-  <div class="mdui-container">
-    <div class="mdui-card mdui-hoverable">
-      <div class="mdui-card-content">
-        <div class="mdui-row mdui-valign mdui-hidden-xs">
-          <div class="mdui-col-xs-4">
-            <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>
-              <%= theme.translations.footer.contact_me %>
-            </button>
-          </div>
-          <div class="mdui-col-xs-4">
-            <div class="mdui-text-center mdui-typo">
-              <script type="text/javascript">
-                copyright = new Date();
-                update = copyright.getFullYear();
-                document.write("Copyright © <% if (theme.copyright.start_year > 0) { %><%= theme.copyright.start_year %> - <% } %>" + update + " <%= config.author %>");
-              </script>
-            </div>
-            </div>
+<% if (theme.sns !== false) { %>
+  <footer>
+    <div class="mdui-typo">
+      <hr/>
+    </div>
+    <div class="mdui-container">
+      <div class="mdui-card mdui-hoverable">
+        <div class="mdui-card-content">
+          <div class="mdui-row mdui-valign mdui-hidden-xs">
             <div class="mdui-col-xs-4">
-              <div class="mdui-text-center mdui-typo">
-                Powered by <a href="http://hexo.io">Hexo</a><br>
-                Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
-              </div>
-            </div>
-          </div>
-          <div class="mdui-row mdui-hidden-sm-up">
-            <div class="mdui-col-xs-12">
               <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>
                 <%= theme.translations.footer.contact_me %>
               </button>
             </div>
-            <div class="mdui-col-xs-12">
+            <div class="mdui-col-xs-4">
               <div class="mdui-text-center mdui-typo">
                 <script type="text/javascript">
                   copyright = new Date();
                   update = copyright.getFullYear();
-                  document.write("Copyright © <% if (theme.copyright.start_year > 0) { %><%= theme.copyright.start_year %> - <% } %>" + update + " <%= config.author %>");
+                  document.write("Copyright © <% if (theme.footer.start_year > 0) { %><%= theme.footer.start_year %> - <% } %>" + update + " <%= config.author %>");
                 </script>
               </div>
+              <% if (theme.footer.ICP) { %>
+                <div class="mdui-text-center" onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.ICP %></div>
+              <% } %>
             </div>
-            <div class="mdui-col-xs-12">
-              <div class="mdui-text-center mdui-typo">
-                Powered by <a href="http://hexo.io">Hexo</a><br>
-                Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
+              <div class="mdui-col-xs-4">
+                <div class="mdui-text-center mdui-typo">
+                  Powered by <a href="http://hexo.io">Hexo</a><br>
+                  Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-row mdui-hidden-sm-up">
+              <div class="mdui-col-xs-12">
+                <button class="mdui-btn mdui-ripple mdui-center" mdui-dialog="{target: '#contact'}"><i class="mdui-icon material-icons">&#xe87c;</i>
+                  <%= theme.translations.footer.contact_me %>
+                </button>
+              </div>
+              <div class="mdui-col-xs-12">
+                <div class="mdui-text-center mdui-typo">
+                  <script type="text/javascript">
+                    copyright = new Date();
+                    update = copyright.getFullYear();
+                    document.write("Copyright © <% if (theme.footer.start_year > 0) { %><%= theme.footer.start_year %> - <% } %>" + update + " <%= config.author %>");
+                  </script>
+                </div>
+                <% if (theme.ICP) { %>
+                  <div class="mdui-text-center mdui-typo" onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.ICP %></div>
+                <% } %>
+              </div>
+              <div class="mdui-col-xs-12">
+                <div class="mdui-text-center mdui-typo">
+                  Powered by <a href="http://hexo.io">Hexo</a><br>
+                  Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <div class="mdui-dialog" id="contact">
-    <div class="mdui-dialog-title">
-      <%= theme.translations.footer.how_to_contact_me %>
-    </div>
-    <div class="mdui-dialog-content no-padding-bottom">
-      <div class="mdui-list">
-        <% for (var i in theme.sns){ %>
-          <a href="<%= theme.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple">
-            <%= i %>
-          </a>
-        <% } %>
+    <br>
+    <div class="mdui-dialog" id="contact">
+      <div class="mdui-dialog-title">
+        <%= theme.translations.footer.how_to_contact_me %>
+      </div>
+      <div class="mdui-dialog-content no-padding-bottom">
+        <div class="mdui-list">
+          <% for (var i in theme.sns){ %>
+            <a href="<%= theme.sns[i] %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
+              <%= i %>
+            </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close>
+          <%= theme.translations.footer.close %>
+        </button>
       </div>
     </div>
-    <div class="mdui-dialog-actions">
-      <button class="mdui-btn mdui-ripple" mdui-dialog-close>
-        <%= theme.translations.footer.close %>
-      </button>
+  </footer>
+<% } else { %>
+  <footer>
+    <div class="mdui-typo">
+      <hr/>
     </div>
-  </div>
-</footer>
+    <div class="mdui-container">
+      <div class="mdui-card mdui-hoverable">
+        <div class="mdui-card-content">
+          <div class="mdui-row mdui-valign mdui-hidden-xs">
+            <div class="mdui-col-xs-6">
+              <div class="mdui-text-center mdui-typo">
+                <script type="text/javascript">
+                  copyright = new Date();
+                  update = copyright.getFullYear();
+                  document.write("Copyright © <% if (theme.footer.start_year > 0) { %><%= theme.footer.start_year %> - <% } %>" + update + " <%= config.author %>");
+                </script>
+              </div>
+              <% if (theme.footer.ICP) { %>
+                <div class="mdui-text-center" onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.ICP %></div>
+              <% } %>
+            </div>
+              <div class="mdui-col-xs-6">
+                <div class="mdui-text-center mdui-typo">
+                  Powered by <a href="http://hexo.io">Hexo</a><br>
+                  Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
+                </div>
+              </div>
+            </div>
+            <div class="mdui-row mdui-hidden-sm-up">
+              <div class="mdui-col-xs-12">
+                <div class="mdui-text-center mdui-typo">
+                  <script type="text/javascript">
+                    copyright = new Date();
+                    update = copyright.getFullYear();
+                    document.write("Copyright © <% if (theme.footer.start_year > 0) { %><%= theme.footer.start_year %> - <% } %>" + update + " <%= config.author %>");
+                  </script>
+                </div>
+                <% if (theme.ICP) { %>
+                  <div class="mdui-text-center mdui-typo" onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.ICP %></div>
+                <% } %>
+              </div>
+              <div class="mdui-col-xs-12">
+                <div class="mdui-text-center mdui-typo">
+                  Powered by <a href="http://hexo.io">Hexo</a><br>
+                  Theme - <a href="//github.com/Halyul/hexo-theme-mdui">MDUI</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </footer>
+<% } %>
