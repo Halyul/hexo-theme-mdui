@@ -1,3 +1,7 @@
+<% if (theme.style.scheme === '1') { %>
+  <%-partial('partials/1/back_actions_card')%>
+<% } %>
+
 <% page.posts.each(function(post) { %>
     <%-partial('partials/share/posts', { post: post })%>
 <% }); %>

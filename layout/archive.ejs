@@ -1,6 +1,10 @@
 <% if (!is_year()) { %>
-<%- partial('partials/share/archives/index.ejs') %>
+  <%- partial('partials/share/archives/index.ejs') %>
 <% } else { %>
+  <% if (theme.style.scheme === '1') { %>
+    <%-partial('partials/1/back_actions_card')%>
+  <% } %>
+  
   <% page.posts.each(function(post) { %>
       <%-partial('partials/share/posts', { post: post })%>
   <% }); %>

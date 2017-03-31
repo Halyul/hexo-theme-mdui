@@ -6,14 +6,14 @@ if (is_tag()) pageTitle = page.tag;
 if (is_category()) pageTitle = page.category;
 if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
 %>
-<div class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
+<div class="mdui-appbar mdui-appbar-fixed mdui-hidden" id="mdui-appbar">
   <div class="mdui-toolbar mdui-color-theme">
     <% if (is_home()) { %>
       <button class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">&#xe5d2;</i>
       </button>
     <% } else { %>
-      <button class="mdui-btn mdui-btn-icon mdui-hidden-xs-down" id="back">
+      <button class="mdui-btn mdui-btn-icon mdui-hidden-xs-down back-button">
         <i class="mdui-icon material-icons">&#xe5c4;</i>
       </button>
       <button class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-drawer="{target: '#drawer'}">
@@ -25,22 +25,22 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
         <%= theme.appbar.title %>
       </a>
     <% } %>
-    <% if (is_home() || is_archive() || is_year() || is_category() || is_tag()) { %>
-    <a class="mdui-typo-title"><%= pageTitle %></a>
+    <% if (!is_post()) { %>
+      <a class="mdui-typo-title"><%= pageTitle %></a>
     <% } %>
     <div class="mdui-toolbar-spacer"></div>
     <% if (!is_archive() || is_year()) { %>
       <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-archives', covered: true}"><%= theme.translations.archives %></button>
-      <%- partial('menu/archives') %>
+      <%- partial('../share/menu/archives') %>
     <% } %>
     <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages'}"><%= theme.translations.pages %></button>
-    <%- partial('menu/pages') %>
+    <%- partial('../share/menu/pages') %>
     <% if (is_home()) { %>
       <% if (theme.share_menu !== false) { %>
         <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#menu-index-share'}">
           <i class="mdui-icon material-icons">&#xe80d;</i>
         </button>
-        <%- partial('menu/index_share') %>
+        <%- partial('../share/menu/index_share') %>
       <% } %>
     <% } %>
   </div>

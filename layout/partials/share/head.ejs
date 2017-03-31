@@ -55,8 +55,8 @@ pageTitle += ' | ' + config.title;
   <!-- Import CSS -->
   <%- css("css/mdui.min") %>
 
-  <% if (theme.style === '1') { %>
-    <%- css("css/1/style.min") %>
+  <% if (theme.style.scheme === '1') { %>
+    <%- css("css/1/style") %>
   <% } else { %>
     <%- css("css/0/style.min") %>
   <% } %>
