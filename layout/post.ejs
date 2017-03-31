@@ -1,4 +1,7 @@
 <div class="mdui-card card-bottom-fix menu-fix posts-animate">
+  <% if (theme.style.scheme === '1') { %>
+    <%-partial('partials/1/card_actions/post')%>
+  <% } %>
   <% if (page.thumbnail !== undefined) { %>
     <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
   <% } %>
@@ -12,16 +15,16 @@
         <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-more'}">
           <i class="mdui-icon material-icons">&#xe5d4;</i>
         </button>
-        <%- partial('partials/menu/more') %>
+        <%- partial('partials/share/menu/more') %>
         <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
           <i class="mdui-icon material-icons">&#xe80d;</i>
         </button>
-        <%- partial('partials/menu/post_share') %>
+        <%- partial('partials/share/menu/post_share') %>
         <% if(theme.qrcode == true) { %>
         <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
           <i class="mdui-icon material-icons">&#xe337;</i>
         </button>
-        <%- partial('partials/menu/qrcode') %>
+        <%- partial('partials/share/menu/qrcode') %>
         <% } %>
       </div>
     </div>
@@ -89,9 +92,9 @@
   </div>
 </div>
 <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
-  <%- partial('partials/comment') %>
+  <%- partial('partials/share/comment') %>
 <% } %>
 <% if (!is_page()) { %>
-  <%-partial('partials/post_pagination')%>
+  <%-partial('partials/share/post_pagination')%>
 <% }%>
-<%-partial('partials/fab/post')%>
+<%-partial('partials/share/fab/post')%>

@@ -1,15 +1,24 @@
 <!-- Import JS -->
 <% if (theme.location === 'cn') { %>
+  <script type="text/javascript" src="//cdn.bootcss.com/outdated-browser/1.1.3/outdatedbrowser.min.js"></script>
   <script type="text/javascript" src="//cdn.bootcss.com/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
 <% } else { %>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.3/outdatedbrowser.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
 <% } %>
 <%- js("js/mdui.min") %>
-<%- js("js/js.min") %>
+
+<% if (theme.style.scheme === '1') { %>
+  <%- js("js/1/js.min") %>
+<% } else { %>
+  <%- js("js/0/js.min") %>
+<% } %>
+
+
 <% if (theme.busuanzi !== false) { %>
   <script src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
-<% if (is_home()) { %>
+<% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag()) { %>
   <script type="text/javascript">
     var fab_index = new mdui.Headroom('#fab_index', {
       pinnedClass: 'fab',
@@ -19,7 +28,7 @@
 <% } %>
 <% if (!is_home()) { %>
   <script type="text/javascript">
-  $(document).on('click', '#back', function() {
+  $(document).on('click', '.back-button', function() {
       window.history.back();
   });
   </script>
@@ -34,7 +43,7 @@
     });
   </script>
 <% } %>
-<% if (is_post() || is_page()) { %>
+<% if (!is_home() || !is_archive() || !is_year() || !is_month() || !is_category() || !is_tag()) { %>
   <script type="text/javascript">
     $(document).ready(function(){
       if($(".toc").length == 0)

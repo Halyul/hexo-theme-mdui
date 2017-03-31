@@ -1,8 +1,13 @@
 <% if (!is_year()) { %>
-<%- partial('partials/archives/index.ejs') %>
+  <%- partial('partials/share/archives/index.ejs') %>
 <% } else { %>
+  <% if (theme.style.scheme === '1') { %>
+    <%-partial('partials/1/back_actions_card')%>
+  <% } %>
+  
   <% page.posts.each(function(post) { %>
-      <%-partial('partials/posts', { post: post })%>
+      <%-partial('partials/share/posts', { post: post })%>
   <% }); %>
-  <%-partial('partials/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.index.show })%>
+  <%-partial('partials/share/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.index.show })%>
 <% } %>
+<%-partial('partials/share/fab/index')%>

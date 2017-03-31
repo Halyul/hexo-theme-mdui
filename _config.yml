@@ -1,12 +1,19 @@
 # CDN server
 location:
 
+# style
+style:
+  scheme:
+  bg_img: /img/bg.png
+  avatar: /img/avatar.png
+  slogan: "I'm your slogan!"
+
 # HTML head
 head:
   favicon: /img/favicon.png
   high_res_favicon: /img/favicon.png
   apple_touch_icon: /img/favicon.png
-  keywords:
+  keywords: blog, hexo, mdui
 
 # color
 color:
@@ -16,23 +23,22 @@ color:
 
 # appbar
 appbar:
-  title: "TITLE"
+  title: "Title"
 
 # post settings
 post:
-  # avatar: /img/avatar.png
-  entry_excerpt: 50
+  entry_excerpt: 80
 
 share_menu: #false
-  weibo: true
+  weibo: false
   twitter: true
   facebook: true
   googleplus: true
   linkedin: true
-  qq: true
-  telegram: true
+  qq: false
+  telegram: false
 
-qr_code:
+qr_code: false
 
 comment:
     use:
@@ -46,7 +52,7 @@ index:
 
 # footer
 footer:
-  start_year:
+  since:
   ICP:
 
 # Plugins
@@ -57,18 +63,18 @@ busuanzi: #false
 
 pages:
   Test1:
-    link: "test1"
-    icon: "&#xe84d;"
+    link: "/myfriends"
+    icon: "&#xe0ba;"
   Test2:
-    link: "test1"
-    icon: "&#xeb3b;"
+    link: "/apply-for-link"
+    icon: "&#xe7f0;"
   Test3:
-    link: "test1"
-    icon: "&#xe851;"
+    link: "/timeline"
+    icon: "home"
 
 sns:
-  Twitter: "https://twitter.com"
-  Facebook: "https://facebook.com"
+  Twitter: https://twitter.com
+  Facebook: https://facebook.com
 
 # Translations
 translations:
@@ -80,12 +86,13 @@ translations:
   pages: 'Pages'
   tag: 'Tag'
   tags: 'Tags'
-  years: 'Year'
+  years: 'Years'
+  go_to_prev_page: 'Return'
   busuanzi_views: 'Views: '
   footer:
-    contact_me: 'Contact Me'
+    contact_me: 'Contact me'
     how_to_contact_me: 'How to contact me'
-    close: 'close'
+    close: 'Close'
   share_menu:
     facebook: 'Share to Facebook'
     googleplus: 'Share to Google+'
