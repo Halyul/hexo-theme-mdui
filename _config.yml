@@ -3,17 +3,17 @@ location:
 
 # style
 style:
-  scheme: '1'
-  bg_img: https://bestwallpaperhd.com/wp-content/uploads/2016/02/Google-IO-Plane-Design.jpg
-  avatar: https://gravatar.com/userimage/113938008/0ffede3b011b3a1725a0bae6b2db2c72.png?size=200
-  slogan: "Never do a dreamer."
+  scheme:
+  bg_img: /img/bg.png
+  avatar: /img/avatar.png
+  slogan: "I'm your slogan!"
 
 # HTML head
 head:
-  favicon: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
-  high_res_favicon: https://gravatar.com/userimage/113938008/e65085ec5e08a13de79873206f0c76fa.png?size=200
-  apple_touch_icon: https://gravatar.com/userimage/113938008/0ffede3b011b3a1725a0bae6b2db2c72.png?size=200
-  keywords: halyul, blog
+  favicon: /img/favicon.png
+  high_res_favicon: /img/favicon.png
+  apple_touch_icon: /img/favicon.png
+  keywords: blog, hexo, mdui
 
 # color
 color:
@@ -23,26 +23,26 @@ color:
 
 # appbar
 appbar:
-  title: "Halyul的博客"
+  title: "Title"
 
 # post settings
 post:
   entry_excerpt: 80
 
 share_menu: #false
-  weibo: true
+  weibo: false
   twitter: true
   facebook: true
   googleplus: true
   linkedin: true
-  qq: true
-  telegram: true
+  qq: false
+  telegram: false
 
-qr_code: true
+qr_code: false
 
 comment:
-    use: disqus
-    shortname: halyul
+    use:
+    shortname:
     provider:
 
 # pagination
@@ -52,7 +52,7 @@ index:
 
 # footer
 footer:
-  since: 2016
+  since:
   ICP:
 
 # Plugins
@@ -62,48 +62,45 @@ busuanzi: #false
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 pages:
-  友情链接:
-    link: "/friends"
+  Test1:
+    link: "/myfriends"
     icon: "&#xe0ba;"
-  申请友链:
+  Test2:
     link: "/apply-for-link"
     icon: "&#xe7f0;"
+  Test3:
+    link: "/timeline"
+    icon: "home"
 
 sns:
-  Email(请手动更换#): "mailto:admin#halyul.com"
-  QQ(如果你想找我，你是找得到的~(≧▽≦)/~) : "data:,NTVjNDZmMDRkOTA1NDcwMDU1MjQ2MzBjOTJlNGM2M2Q="
-  Github(弱鸡的我并没有多少repo): "https://github.com/Halyul"
+  Twitter: https://twitter.com
+  Facebook: https://facebook.com
 
 # Translations
 translations:
   # archive: 'Archive'
-  archives: '归档'
-  category: '分类'
-  categories: '分类'
-  index: '首页'
-  pages: '页面'
-  tag: '标签'
-  tags: '标签'
-  years: '年份'
-  go_to_prev_page: '返回上一页'
-  busuanzi_views: '浏览量: '
+  archives: 'Archives'
+  category: 'Category'
+  categories: 'Categories'
+  index: 'Index'
+  pages: 'Pages'
+  tag: 'Tag'
+  tags: 'Tags'
+  years: 'Years'
+  go_to_prev_page: 'Return'
+  busuanzi_views: 'Views: '
   footer:
-    contact_me: '联系我'
-    how_to_contact_me: '如何联系我'
-    close: '本王知道了'
+    contact_me: 'Contact me'
+    how_to_contact_me: 'How to contact me'
+    close: 'Close'
   share_menu:
-    facebook: '分享到Facebook'
-    googleplus: '分享到Google+'
-    linkedin: '分享到Linkedin'
-    qq: '分享到QQ'
-    telegram: '分享到Telegram'
-    twitter: '分享到Twitter'
-    weibo: '分享到Weibo'
-  snackbar: '不可以..这里不可以..'
-  show_comments_from: '显示评论：'
-  hide_comments: '隐藏评论'
-  outdated_browser:
-    title: '你的浏览器已经过气辣！'
-    line_one: '赶紧升级你的浏览器吧！'
-    link: '立刻升级！'
-    close: '哼！本王才不升级'
+    facebook: 'Share to Facebook'
+    googleplus: 'Share to Google+'
+    linkedin: 'Share to Linkedin'
+    qq: 'Share to QQ'
+    telegram: 'Share to Telegram'
+    twitter: 'Share to Twitter'
+    weibo: 'Share to Weibo'
+  snackbar: 'Oops! Nothing happened.'
+  show_comments_from: 'Show comments from '
+  hide_comments: 'Hide comments'
