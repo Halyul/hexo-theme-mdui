@@ -104,3 +104,8 @@ translations:
   snackbar: 'Oops! Nothing happened.'
   show_comments_from: 'Show comments from '
   hide_comments: 'Hide comments'
+  outdated_browser:
+    title: 'Your browser is out-of-date!'
+    line_one: 'Update your browser to view this website correctly. '
+    link: 'Update my browser now '
+    close: 'Close'
