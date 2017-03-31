@@ -49,14 +49,6 @@
       {
         $("#button-toc").addClass("mdui-hidden");
       };
-      <% if (page.primary_color) { %>
-        $('body').removeClass('mdui-theme-primary-<%= theme.color.primary_color %>');
-        $('body').addClass('mdui-theme-primary-<%= page.primary_color %>');
-      <% } %>
-      <% if (page.accent_color) { %>
-        $('body').removeClass('mdui-theme-accent-<%= theme.color.accent_color %>');
-        $('body').addClass('mdui-theme-accent-<%= page.accent_color %>');
-      <% } %>
     });
   </script>
 
