@@ -1,5 +1,5 @@
-<% var primary_color = ['red','pink','puple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey'];
-  var accent_color = ['red','pink','puple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange'];
+<% var primary_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey'];
+  var accent_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange'];
   var primary_num = Math.floor(Math.random() * primary_color.length);
   var accent_num = Math.floor(Math.random() * accent_color.length);
 %>
@@ -8,13 +8,9 @@
 <%-partial('partials/share/head')%>
 <% if (theme.style.scheme === '1') { %>
   <% if (theme.color.random === 'gobal') { %>
-    <body class="mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
+    <body class="mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
   <% } else if (theme.color.random === 'post' && is_post()) { %>
-    <% if (page.primary_color || page.accent_color) { %>
       <body class="mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-    <% } else { %>
-      <body class="mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-    <% } %>
   <% } else { %>
     <body class="mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
   <% } %>
