@@ -23,15 +23,19 @@ $(window).scroll(function() {
 });
 var flag = false;
 var x = 0;
+function appbar() {
+  var x = $(".style-1-card-actions").offset().top - $(document).scrollTop();
+  if (x < 0) {
+      if (!flag) {
+          $('#mdui-appbar').removeClass('mdui-hidden');
+          flag = true;
+      }
+  } else if (flag) {
+      $('#mdui-appbar').addClass('mdui-hidden');
+      flag = false;
+  };
+};
 $(window).scroll(function() {
-    var x = $(".style-1-card-actions").offset().top - $(document).scrollTop();
-    if (x < 0) {
-        if (!flag) {
-            $('#mdui-appbar').removeClass('mdui-hidden');
-            flag = true;
-        }
-    } else if (flag) {
-        $('#mdui-appbar').addClass('mdui-hidden');
-        flag = false;
-    };
+    appbar();
 });
+appbar();

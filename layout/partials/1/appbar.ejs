@@ -25,9 +25,7 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
         <%= theme.appbar.title %>
       </a>
     <% } %>
-    <% if (!is_post()) { %>
-      <a class="mdui-typo-title"><%= pageTitle %></a>
-    <% } %>
+    <span class="mdui-typo-title mdui-hidden-xs"><%= pageTitle %></span>
     <div class="mdui-toolbar-spacer"></div>
     <% if (!is_archive() || is_year()) { %>
       <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-archives', covered: true}"><%= theme.translations.archives %></button>
