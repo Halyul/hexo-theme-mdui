@@ -8,3 +8,8 @@ outdatedBrowser({
     lowerThan: 'transform',
     languagePath: ''
 });
+$(".contact-me-button").hover(function(){
+    $(this).removeClass("mdui-typo-caption-opacity");
+    },function(){
+    $(this).addClass("mdui-typo-caption-opacity");
+});

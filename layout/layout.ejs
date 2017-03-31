@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
-<%-partial('partials/head')%>
+<%-partial('partials/share/head')%>
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-<%- partial('partials/appbar') %>
-<%- partial('partials/drawer') %>
+<%- partial('partials/share/appbar') %>
+<%- partial('partials/share/drawer') %>
 <main class="mdui-container">
   <br />
   <%- body %>
@@ -14,6 +14,10 @@
   <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= theme.translations.outdated_browser.close %>">&times;</a></p>
 </div>
 </body>
-<%- partial('partials/footer') %>
-<%- partial('partials/import_js') %>
+<%- partial('partials/share/footer') %>
+<% if (theme.style === '1') { %>
+  <%- partial('partials/1/import_js') %>
+<% } else { %>
+  <%- partial('partials/0/import_js') %>
+<% } %>
 </html>

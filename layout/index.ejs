@@ -1,5 +1,5 @@
 <% page.posts.each(function(post) { %>
-    <%-partial('partials/posts', { post: post })%>
+    <%-partial('partials/share/posts', { post: post })%>
 <% }); %>
-<%-partial('partials/pagination', {base: url_for(config.root), show: theme.index.show })%>
-<%-partial('partials/fab/index')%>
+<%-partial('partials/share/pagination', {base: url_for(config.root), show: theme.index.show })%>
+<%-partial('partials/share/fab/index')%>

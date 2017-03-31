@@ -1,6 +1,9 @@
 # CDN server
 location:
 
+# style
+style: '0'
+
 # HTML head
 head:
   favicon: /img/favicon.png
@@ -46,7 +49,7 @@ index:
 
 # footer
 footer:
-  start_year:
+  since:
   ICP:
 
 # Plugins
