@@ -1,4 +1,4 @@
-<div class="mdui-card card-bottom-fix posts-animate">
+<div class="mdui-card card-bottom-fix posts-animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
   <div class="mdui-card-primary mdui-typo">
     <div class="mdui-card-primary-title">
       <a href="<%= url_for(post.path) %>">

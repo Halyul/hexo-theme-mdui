@@ -7,6 +7,7 @@ style:
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
+  hoverable: true
 
 # HTML head
 head:
@@ -110,3 +111,10 @@ translations:
     line_one: 'Update your browser to view this website correctly. '
     link: 'Update my browser now '
     close: 'Close'
+
+# Vendors
+vendors:
+  mdui_min_css: 
+  mdui_min_js:
+  style_min_css:
+  js_min_js:
