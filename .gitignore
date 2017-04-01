@@ -2,4 +2,4 @@
 _config.halyul.yml
 custom_comment.ejs
 custom_head.ejs
-custom_footer.ejs
+custom_js.ejs
