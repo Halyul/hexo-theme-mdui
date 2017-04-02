@@ -12,26 +12,32 @@
   <div class="mdui-card-content no-padding-top">
     <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
   </div>
-  <div class="mdui-card-actions no-text-decoration">
-  <% post.categories.map(function(category){  %>
-    <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
-      <div class="mdui-chip mdui-typo">
-        <span class="mdui-chip-icon">
-          <i class="mdui-icon material-icons">&#xe169;</i>
-        </span>
-        <span class="mdui-chip-title"><%= category.name %></span>
-      </div>
-    </a>
-  <% }) %>
-  <% post.tags.map(function(tag){  %>
-    <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
-      <div class="mdui-chip mdui-typo">
-        <span class="mdui-chip-icon">
-          <i class="mdui-icon ion-pricetags"></i>
-        </span>
-        <span class="mdui-chip-title"><%= tag.name %></span>
-      </div>
-    </a>
-  <% }) %>
-  </div>
+  <% if (post.tag !== false || post.category !== false) { %>
+    <div class="mdui-card-actions no-text-decoration">
+      <% if (post.category !== false) { %>
+        <% post.categories.map(function(category){  %>
+          <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
+            <div class="mdui-chip mdui-typo">
+              <span class="mdui-chip-icon">
+                <i class="mdui-icon material-icons">&#xe169;</i>
+              </span>
+              <span class="mdui-chip-title"><%= category.name %></span>
+            </div>
+          </a>
+        <% }) %>
+      <% } %>
+      <% if (post.tag !== false) { %>
+        <% post.tags.map(function(tag){  %>
+          <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
+            <div class="mdui-chip mdui-typo">
+              <span class="mdui-chip-icon">
+                <i class="mdui-icon ion-pricetags"></i>
+              </span>
+              <span class="mdui-chip-title"><%= tag.name %></span>
+            </div>
+          </a>
+        <% }) %>
+      <% } %>
+    </div>
+  <% } %>
 </div>

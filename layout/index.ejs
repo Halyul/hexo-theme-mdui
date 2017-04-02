@@ -3,7 +3,9 @@
 <% } %>
 
 <% page.posts.each(function(post) { %>
-    <%-partial('partials/share/posts', { post: post })%>
+  <% if(!(theme.post.topPost && post.top)) { %>
+    <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
+  <% } %>
 <% }); %>
 <%-partial('partials/share/pagination', {base: url_for(config.root), show: theme.index.show })%>
 <%-partial('partials/share/fab/index')%>
