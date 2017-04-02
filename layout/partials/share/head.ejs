@@ -22,7 +22,11 @@ pageTitle += ' | ' + config.title;
   <meta http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: primary_color }) %>">
+  <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
+    <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: primary_color }) %>">
+  <% } else { %>
+    <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: false }) %>">
+  <% } %>
 
   <meta name="author" content="<%= config.author %>">
   <meta name="description" content="<%= config.description %>">

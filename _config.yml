@@ -21,7 +21,7 @@ color:
   primary_color: "indigo"
   accent_color: "blue"
   layout:
-  random: 'post'
+  random: 
 
 # appbar
 appbar:
