@@ -7,8 +7,8 @@
 <html lang="<%=config.language%>">
 <%-partial('partials/share/head')%>
 <% if (theme.style.scheme === '1') { %>
-  <% if (theme.color.random === 'gobal' || theme.color.random === 'post') { %>
-    <% if (theme.color.random === 'gobal') { %>
+  <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
+    <% if (theme.color.random === 'global') { %>
       <body class="mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
     <% } else if (theme.color.random === 'post' && is_post()) { %>
         <body class="mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
@@ -22,7 +22,7 @@
     <%- body %>
   </main>
 <% } else { %>
-  <% if (theme.color.random === 'gobal') { %>
+  <% if (theme.color.random === 'global') { %>
     <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
   <% } else if (theme.color.random === 'post' && is_post()) { %>
     <% if (page.primary_color || page.accent_color) { %>
@@ -51,7 +51,7 @@
 
 <%- partial('partials/share/import_js') %>
 <% if (theme.color.layout !== 'dark') { %>
-  <% if (theme.color.random === 'gobal' || (theme.color.random === 'post' && is_post() && page.primary_color === undefined)) { %>
+  <% if (theme.color.random === 'global' || (theme.color.random === 'post' && is_post() && page.primary_color === undefined)) { %>
     <% primary_color_hex = ['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4','#00BCD4','#009688','#4CAF50','#8BC34A','#CDDC39','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E','#607D8B'];
     %>
     <script>
