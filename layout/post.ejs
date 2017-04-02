@@ -35,43 +35,49 @@
     <%-page.content%>
   </div>
   <div class="mdui-card-content no-padding-top">
-    <% if (page.tag || page.category) { %>
-        <div class="mdui-typo">
-          <hr/>
-        </div>
-        <div class="mdui-row">
-          <% if (page.tag !== false) { %>
-            <div class="mdui-col-xs-6">
-              <h2><%= theme.translations.tags %></h2>
-              <% page.tags.map(function(tag){  %>
-                <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
-                  <div class="mdui-chip mdui-typo">
-                    <span class="mdui-chip-icon">
-                      <i class="mdui-icon ion-pricetags"></i>
-                    </span>
-                    <span class="mdui-chip-title"><%= tag.name %></span>
-                  </div>
-                </a>
-              <% }) %>
-            </div>
-          <% } %>
-          <% if (page.category !== false) { %>
-          <div class="mdui-col-xs-6">
-            <h2><%= theme.translations.categories %></h2>
-            <% page.categories.map(function(category){  %>
-              <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
-                <div class="mdui-chip mdui-typo">
-                  <span class="mdui-chip-icon">
-                    <i class="mdui-icon material-icons">&#xe169;</i>
-                  </span>
-                  <span class="mdui-chip-title"><%= category.name %></span>
-                </div>
-              </a>
-            <% }) %>
+    <% if (page.tag !== false || page.category !== false) { %>
+      <% if (page.tags || page.categories) { %>
+          <div class="mdui-typo">
+            <hr/>
           </div>
-        <% } %>
-      </div>
+          <div class="mdui-row">
+            <% if (page.tag !== false) { %>
+              <% if (page.tags) { %>
+                <div class="mdui-col-xs-6">
+                  <h2><%= theme.translations.tags %></h2>
+                  <% page.tags.map(function(tag){  %>
+                    <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
+                      <div class="mdui-chip mdui-typo">
+                        <span class="mdui-chip-icon">
+                          <i class="mdui-icon ion-pricetags"></i>
+                        </span>
+                        <span class="mdui-chip-title"><%= tag.name %></span>
+                      </div>
+                    </a>
+                  <% }) %>
+                </div>
+              <% } %>
+            <% } %>
+            <% if (page.category !== false) { %>
+              <% if (page.categories) { %>
+              <div class="mdui-col-xs-6">
+                <h2><%= theme.translations.categories %></h2>
+                <% page.categories.map(function(category){  %>
+                  <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
+                    <div class="mdui-chip mdui-typo">
+                      <span class="mdui-chip-icon">
+                        <i class="mdui-icon material-icons">&#xe169;</i>
+                      </span>
+                      <span class="mdui-chip-title"><%= category.name %></span>
+                    </div>
+                  </a>
+                <% }) %>
+              </div>
+            <% } %>
+          <% } %>
+        </div>
       <% } %>
+    <% } %>
     <% if (page.comment !== false) { %>
       <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
         <div class="mdui-typo">
