@@ -30,8 +30,10 @@ appbar:
 # post settings
 post:
   entry_excerpt: 80
+  # topPost: true
 
 share_menu: #false
+  rss: true
   weibo: false
   twitter: true
   facebook: true
@@ -96,6 +98,7 @@ translations:
     how_to_contact_me: 'How to contact me'
     close: 'Close'
   share_menu:
+    rss: 'Article RSS'
     facebook: 'Share to Facebook'
     googleplus: 'Share to Google+'
     linkedin: 'Share to Linkedin'
@@ -114,7 +117,7 @@ translations:
 
 # Vendors
 vendors:
-  mdui_min_css: 
+  mdui_min_css:
   mdui_min_js:
   style_min_css:
   js_min_js:

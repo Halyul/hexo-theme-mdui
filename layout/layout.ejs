@@ -1,11 +1,15 @@
-<% var primary_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
-  var accent_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange'];
-  var primary_num = Math.floor(Math.random() * primary_color.length);
-  var accent_num = Math.floor(Math.random() * accent_color.length);
-%>
+<% if (theme.style.scheme === '1') { %>
+  <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
+    <% var primary_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+      var accent_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange'];
+      var primary_num = Math.floor(Math.random() * primary_color.length);
+      var accent_num = Math.floor(Math.random() * accent_color.length);
+    %>
+  <% } %>
+<% } %>
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
-<%-partial('partials/share/head')%>
+<%-partial('partials/share/head', { primary_color: primary_color[primary_num] })%>
 <% if (theme.style.scheme === '1') { %>
   <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
     <% if (theme.color.random === 'global') { %>
@@ -48,18 +52,7 @@
   <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= theme.translations.outdated_browser.close %>">&times;</a></p>
 </div>
 <%- partial('partials/share/footer') %>
-
 <%- partial('partials/share/import_js') %>
-<% if (theme.color.layout !== 'dark') { %>
-  <% if (theme.color.random === 'global' || (theme.color.random === 'post' && is_post() && page.primary_color === undefined)) { %>
-    <% primary_color_hex = ['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4','#00BCD4','#009688','#4CAF50','#8BC34A','#CDDC39','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E','#607D8B'];
-    %>
-    <script>
-      $('meta[name="theme-color"]').attr('content','<%= primary_color_hex[primary_num] %>')
-    </script>
-  <% } %>
-<% } %>
-
 </body>
 
 </html>
