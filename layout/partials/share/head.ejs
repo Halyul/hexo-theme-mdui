@@ -25,7 +25,7 @@ pageTitle += ' | ' + config.title;
   <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
     <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: primary_color }) %>">
   <% } else { %>
-    <meta name="theme-color" content="<%= partial('judge/primary_color_hex') %>">
+    <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: false }) %>">
   <% } %>
 
   <meta name="author" content="<%= config.author %>">
