@@ -1,10 +1,36 @@
-<ul class="mdui-menu" id="menu-pages">
+<ul class="mdui-menu mdui-menu-cascade menu-fix" id="menu-pages">
   <% for (var i in theme.pages) { %>
-    <li class="mdui-menu-item">
-        <a href="<%= theme.pages[i].link %>" title="<%= i %>" class="mdui-ripple">
+    <% if (theme.pages[i].cascade === true) { %>
+      <li class="mdui-menu-item">
+        <a class="mdui-ripple">
           <i class="mdui-menu-item-icon mdui-icon material-icons"><%- theme.pages[i].icon %></i>
           <%= i %>
+          <span class="mdui-menu-item-more"></span>
         </a>
-    </li>
+        <ul class="mdui-menu mdui-menu-cascade">
+          <% for (var x in theme.pages[i].pages) { %>
+            <li class="mdui-menu-item">
+              <a href="<%= theme.pages[i].pages[x].link %>" class="mdui-ripple" target="_blank">
+                <i class="mdui-menu-item-icon mdui-icon material-icons"><%- theme.pages[i].pages[x].icon %></i>
+                <%= x %>
+                <% if (theme.pages[i].pages[x].helper) { %>
+                  <span class="mdui-menu-item-helper"><%= theme.pages[i].pages[x].helper %></span>
+                <% } %>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+      </li>
+    <% } else { %>
+      <li class="mdui-menu-item">
+        <a href="<%= theme.pages[i].link %>" title="<%= i %>" class="mdui-ripple" target="_blank">
+          <i class="mdui-menu-item-icon mdui-icon material-icons"><%- theme.pages[i].icon %></i>
+          <%= i %>
+          <% if (theme.pages[i].helper) { %>
+            <span class="mdui-menu-item-helper"><%= theme.pages[i].helper %></span>
+          <% } %>
+        </a>
+      </li>
+    <% } %>
   <% } %>
 </ul>

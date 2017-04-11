@@ -31,7 +31,7 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
       <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-archives', covered: true}"><%= theme.translations.archives %></button>
       <%- partial('../share/menu/archives') %>
     <% } %>
-    <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages'}"><%= theme.translations.pages %></button>
+    <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages', covered: true}"><%= theme.translations.pages %></button>
     <%- partial('../share/menu/pages') %>
     <% if (is_home()) { %>
       <% if (theme.share_menu !== false) { %>
