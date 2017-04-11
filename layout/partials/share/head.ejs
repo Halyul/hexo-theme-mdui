@@ -51,6 +51,11 @@ pageTitle += ' | ' + config.title;
   <meta http-equiv="Cache-Control" content="max-age=7200" />
   <meta http-equiv="Expires" content="Fri, 29 Dec 2017 23:00:00 GMT" />
 
+  <% if (theme.service_woker === 'pwa') { %>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+  <% } %>
+
   <!-- Import CSS -->
   <% if(theme.vendors.mdui_min_css) { %>
     <link type="text/css" rel="stylesheet" href="<%= theme.vendors.mdui_min_css %>" />
