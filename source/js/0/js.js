@@ -2,11 +2,28 @@ console.info("\u7248\u6743\u6240\u6709\uff0c\u7ffb\u7248\u5fc5\u7a76\uff01\u000d
 $(document).ready(function() {
     $('a').smoothScroll();
 });
-outdatedBrowser({
-    bgColor: '#f25648',
-    color: '#ffffff',
-    lowerThan: 'transform',
-    languagePath: ''
+//event listener: DOM ready
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+//call plugin function after DOM ready
+addLoadEvent(function(){
+    outdatedBrowser({
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'transform',
+        languagePath: 'your_path/outdatedbrowser/lang/en.html'
+    })
 });
 $(".contact-me-button").hover(function(){
     $(this).removeClass("mdui-typo-caption-opacity");
