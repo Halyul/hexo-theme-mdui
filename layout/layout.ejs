@@ -44,7 +44,7 @@
   <% } %>
 
   <%- partial('partials/0/appbar') %>
-  <main class="mdui-container">
+  <main class="mdui-container" style="z-index: 2001;">
     <br />
     <%- body %>
   </main>
@@ -57,6 +57,7 @@
   <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= theme.translations.outdated_browser.close %>">&times;</a></p>
 </div>
 <%- partial('partials/share/footer') %>
+<%- partial('partials/share/dialogs') %>
 <%- partial('partials/share/import_js') %>
 </body>
 

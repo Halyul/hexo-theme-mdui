@@ -34,51 +34,59 @@
   <div class="mdui-card-content mdui-typo no-padding-top">
     <%-page.content%>
   </div>
-  <div class="mdui-card-content no-padding-top">
-    <% if (page.tag !== false || page.category !== false) { %>
-      <% if (page.tags || page.categories) { %>
-          <div class="mdui-typo">
-            <hr/>
-          </div>
-          <div class="mdui-row">
-            <% if (page.tag !== false) { %>
-              <% if (page.tags) { %>
+  <% if (page.tag !== false || page.category !== false || theme.post.donate !==false) { %>
+    <div class="mdui-card-content no-padding-top">
+      <% if (theme.post.donate !==false) { %>
+        <div class="mdui-valign">
+          <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center" mdui-tooltip="{content: '<%= theme.translations.donate %>'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon ion-beer"></i></button>
+        </div>
+      <% } %>
+
+      <% if (page.tag !== false || page.category !== false) { %>
+        <% if (page.tags || page.categories) { %>
+            <div class="mdui-typo">
+              <hr/>
+            </div>
+            <div class="mdui-row">
+              <% if (page.tag !== false) { %>
+                <% if (page.tags) { %>
+                  <div class="mdui-col-xs-6">
+                    <h2><%= theme.translations.tags %></h2>
+                    <% page.tags.map(function(tag){  %>
+                      <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
+                        <div class="mdui-chip mdui-typo">
+                          <span class="mdui-chip-icon">
+                            <i class="mdui-icon ion-pricetags"></i>
+                          </span>
+                          <span class="mdui-chip-title"><%= tag.name %></span>
+                        </div>
+                      </a>
+                    <% }) %>
+                  </div>
+                <% } %>
+              <% } %>
+              <% if (page.category !== false) { %>
+                <% if (page.categories) { %>
                 <div class="mdui-col-xs-6">
-                  <h2><%= theme.translations.tags %></h2>
-                  <% page.tags.map(function(tag){  %>
-                    <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
+                  <h2><%= theme.translations.categories %></h2>
+                  <% page.categories.map(function(category){  %>
+                    <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
                       <div class="mdui-chip mdui-typo">
                         <span class="mdui-chip-icon">
-                          <i class="mdui-icon ion-pricetags"></i>
+                          <i class="mdui-icon material-icons">&#xe169;</i>
                         </span>
-                        <span class="mdui-chip-title"><%= tag.name %></span>
+                        <span class="mdui-chip-title"><%= category.name %></span>
                       </div>
                     </a>
                   <% }) %>
                 </div>
               <% } %>
             <% } %>
-            <% if (page.category !== false) { %>
-              <% if (page.categories) { %>
-              <div class="mdui-col-xs-6">
-                <h2><%= theme.translations.categories %></h2>
-                <% page.categories.map(function(category){  %>
-                  <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
-                    <div class="mdui-chip mdui-typo">
-                      <span class="mdui-chip-icon">
-                        <i class="mdui-icon material-icons">&#xe169;</i>
-                      </span>
-                      <span class="mdui-chip-title"><%= category.name %></span>
-                    </div>
-                  </a>
-                <% }) %>
-              </div>
-            <% } %>
           <% } %>
         </div>
       <% } %>
-    <% } %>
-  </div>
+    </div>
+  <% } %>
 </div>
 <% if (page.comment !== false) { %>
   <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>

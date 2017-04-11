@@ -52,26 +52,6 @@
         </div>
       </div>
     </div>
-
-    <div class="mdui-dialog" id="contact-dialog">
-      <div class="mdui-dialog-title">
-        <%= theme.translations.footer.how_to_contact_me %>
-      </div>
-      <div class="mdui-dialog-content no-padding-bottom">
-        <div class="mdui-list">
-          <% for (var i in theme.sns){ %>
-            <a href="<%= theme.sns[i] %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
-              <%= i %>
-            </a>
-          <% } %>
-        </div>
-      </div>
-      <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple" mdui-dialog-close>
-          <%= theme.translations.footer.close %>
-        </button>
-      </div>
-    </div>
     <br />
   </footer>
 <% } else { %>

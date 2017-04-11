@@ -31,6 +31,8 @@ appbar:
 post:
   entry_excerpt: 80
   # topPost: true
+  donate:
+    wechat: /img/avatar.png
 
 share_menu: #false
   rss: false
@@ -47,7 +49,7 @@ qr_code: false
 comment:
     use:
     shortname:
-    provider: 
+    provider:
 
 # pagination
 # github@zllovesuki
@@ -107,6 +109,7 @@ translations:
     twitter: 'Share to Twitter'
     weibo: 'Share to Weibo'
   snackbar: 'Oops! Nothing happened.'
+  donate: 'Buy me a beer?'
   comments: 'Comments'
   outdated_browser:
     title: 'Your browser is out-of-date!'

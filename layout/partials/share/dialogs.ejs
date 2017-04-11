@@ -1,0 +1,36 @@
+<% if (theme.post.donate !==false) { %>
+  <div class="mdui-dialog" id="donateDialog">
+    <div class="mdui-dialog-title"><%= theme.translations.donate %></div>
+    <div class="mdui-dialog-content no-padding-bottom">
+      <div class="mdui-list">
+        <% for (var x in theme.post.donate){ %>
+          <a href="<%= theme.post.donate[x] %>" title="<%= x %>" class="mdui-list-item mdui-ripple" target="_blank">
+            <%= x %>
+          </a>
+        <% } %>
+      </div>
+    </div>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-close>cancel</button>
+    </div>
+  </div>
+<% } %>
+<div class="mdui-dialog" id="contact-dialog">
+  <div class="mdui-dialog-title">
+    <%= theme.translations.footer.how_to_contact_me %>
+  </div>
+  <div class="mdui-dialog-content no-padding-bottom">
+    <div class="mdui-list">
+      <% for (var i in theme.sns){ %>
+        <a href="<%= theme.sns[i] %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
+          <%= i %>
+        </a>
+      <% } %>
+    </div>
+  </div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple" mdui-dialog-close>
+      <%= theme.translations.footer.close %>
+    </button>
+  </div>
+</div>
