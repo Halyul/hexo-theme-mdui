@@ -18,9 +18,8 @@ pageTitle += ' | ' + config.title;
   <link rel="apple-touch-icon" href="<%= theme.head.apple_touch_icon %>">
 
   <!-- Meta & Info -->
-  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
     <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: primary_color }) %>">
@@ -33,20 +32,11 @@ pageTitle += ' | ' + config.title;
   <meta name="keywords" content="<%= theme.head.keywords %>">
 
   <!--iOS -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <meta name="apple-mobile-web-app-title" content="Title">
+  <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="480">
-
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
 
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="<%= config.url %>">
