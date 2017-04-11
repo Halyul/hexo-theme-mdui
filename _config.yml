@@ -33,6 +33,7 @@ post:
   # topPost: true
   donate:
     wechat: /img/avatar.png
+    paypay: 'https://paypal.com'
 
 share_menu: #false
   rss: false

@@ -66,6 +66,10 @@ main {
     flex-grow: 1;
 }
 
+.toc {
+  padding-right: 1em;
+}
+
 .menu-fix {
     overflow: visible;
 }
