@@ -8,7 +8,15 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.3/outdatedbrowser.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/js/lightgallery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/js/lightgallery.min.js"></script>
+<% } %>
+
+<% if (theme.service_woker === true) { %>
+  <script>
+    if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 <% } %>
 
 <% if(theme.vendors.mdui_min_js) { %>

@@ -68,6 +68,8 @@ busuanzi: #false
     post_pv: true
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
+service_woker: false
+
 pages:
   Test1:
     link: "/myfriends"
