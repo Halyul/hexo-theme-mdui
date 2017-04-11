@@ -1,55 +1,36 @@
-<% if(theme.comment.use === 'custom') { %>
-  <div class="mdui-card card-bottom-fix mdui-color-white mdui-hidden <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="custom-comment">
-    <div class="mdui-card-content">
-      <%-partial('../../custom/custom_comment')%>
-    </div>
-  </div>
-<script>
-$(document).on('click', '#show-comment', function () {
-  $("#custom-comment").removeClass("mdui-hidden");
-  $("#hide-comment-container").removeClass("mdui-hidden");
-  $("#show-comment-container").addClass("mdui-hidden");
-});
-$(document).on('click', '#hide-comment', function () {
-  $("#custom-comment").addClass("mdui-hidden");
-  $("#hide-comment-container").addClass("mdui-hidden");
-  $("#show-comment-container").removeClass("mdui-hidden");
-});
-</script>
-<% } %>
+<div class="mdui-panel card-bottom-fix posts-animate" mdui-panel>
 
-<% if(theme.comment.use === 'disqus') { %>
-  <div class="mdui-card card-bottom-fix mdui-color-white <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
-    <!-- 使用 DISQUS -->
-    <div id="disqus-comment" class="mdui-card-content mdui-hidden">
-      <div id="disqus_thread"></div>
+  <div class="mdui-panel-item">
+    <div class="mdui-panel-item-header">
+      <div class="mdui-panel-item-title"><%= theme.translations.comments %></div>
+      <% if (theme.comment.provider) { %>
+        <div class="mdui-panel-item-summary"><%= theme.comment.provider %></div>
+      <% } %>
+      <i class="mdui-panel-item-arrow mdui-icon material-icons">&#xe313;</i>
+    </div>
+    <div class="mdui-panel-item-body">
+
+      <% if(theme.comment.use === 'custom') { %>
+        <%-partial('../../custom/custom_comment')%>
+      <% } %>
+
+      <% if(theme.comment.use === 'disqus') { %>
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_config = function () {
+        this.page.url = '<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = '//<%= theme.comment.shortname %>.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <% } %>
     </div>
   </div>
-    <script>
-      var comment_flag = false;
-      $(document).on('click', '#show-comment', function () {
-        if (!comment_flag) {
-          var disqus_config = function () {
-            this.page.url = '<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-          };
-          (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document;
-            var s = d.createElement('script');
-            s.src = '//<%= theme.comment.shortname %>.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-            comment_flag = true;
-        };
-        $("#disqus-comment").removeClass("mdui-hidden");
-        $("#hide-comment-container").removeClass("mdui-hidden");
-        $("#show-comment-container").addClass("mdui-hidden");
-      });
-      $(document).on('click', '#hide-comment', function () {
-        $("#disqus-comment").addClass("mdui-hidden")
-        $("#hide-comment-container").addClass("mdui-hidden");
-        $("#show-comment-container").removeClass("mdui-hidden");
-      });
-    </script>
-<% } %>
+
+</div>

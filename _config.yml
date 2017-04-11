@@ -21,7 +21,7 @@ color:
   primary_color: "indigo"
   accent_color: "blue"
   layout:
-  random: 
+  random:
 
 # appbar
 appbar:
@@ -33,7 +33,7 @@ post:
   # topPost: true
 
 share_menu: #false
-  rss: true
+  rss: false
   weibo: false
   twitter: true
   facebook: true
@@ -47,7 +47,7 @@ qr_code: false
 comment:
     use:
     shortname:
-    provider:
+    provider: 
 
 # pagination
 # github@zllovesuki
@@ -107,8 +107,7 @@ translations:
     twitter: 'Share to Twitter'
     weibo: 'Share to Weibo'
   snackbar: 'Oops! Nothing happened.'
-  show_comments_from: 'Show comments from '
-  hide_comments: 'Hide comments'
+  comments: 'Comments'
   outdated_browser:
     title: 'Your browser is out-of-date!'
     line_one: 'Update your browser to view this website correctly. '
