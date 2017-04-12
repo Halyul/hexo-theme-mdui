@@ -1,6 +1,6 @@
 # style
 style:
-  scheme: 
+  scheme:
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -65,7 +65,7 @@ busuanzi: #false
     post_pv: true
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
-service_woker: 'pwa'
+service_woker:
 
 pages:
   Test1:
@@ -133,6 +133,7 @@ translations:
     line_one: 'Update your browser to view this website correctly. '
     link: 'Update my browser now '
     close: 'Close'
+  gallery_button_text: 'Enter gallery'
 
 # Vendors
 vendors:

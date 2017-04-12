@@ -59,6 +59,12 @@
 <%- partial('partials/share/footer') %>
 <%- partial('partials/share/dialogs') %>
 <%- partial('partials/share/import_js') %>
+<% if (page.layout === 'gallery') { %>
+  <%- partial('widget/page_gallery') %>
+  <% if (page.vimeo_video === true) { %>
+    <script type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+  <% } %>
+<% } %>
 </body>
 
 </html>

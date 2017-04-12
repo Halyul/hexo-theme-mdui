@@ -31,9 +31,16 @@
       </div>
     </div>
   </div>
-  <div class="mdui-card-content mdui-typo no-padding-top">
+  <div class="mdui-card-content mdui-typo no-padding-top" id="post">
     <%-page.content%>
   </div>
+
+  <% if (page.layout === 'gallery') { %>
+    <div class="mdui-card-content no-padding-top mdui-valign">
+      <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-center" id="post-gallery"><%= page.button_text || theme.translations.gallery_button_text %></button>
+    </div>
+  <% } %>
+
   <% if (page.tag !== false || page.category !== false || theme.post.donate !==false) { %>
     <div class="mdui-card-content no-padding-top">
       <% if (theme.post.donate !==false) { %>
