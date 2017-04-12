@@ -6,7 +6,7 @@
   %>
 <% } %>
 <!DOCTYPE html>
-<html lang="<%=config.language%>">
+<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
 <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
   <%-partial('partials/share/head', { primary_color: primary_color[primary_num] })%>
 <% } else { %>
