@@ -3,6 +3,7 @@
 
 A hexo theme base on [mdui front end](https://github.com/zdhxiong/mdui)
 
+Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 ## Contents 目录
 
 - [General 概括](#general-概括)
@@ -11,8 +12,6 @@ A hexo theme base on [mdui front end](https://github.com/zdhxiong/mdui)
 - [Docs 文档](#docs-文档)
 - [Contributing 贡献](#contributing-贡献)
 - [License 许可证](#license-许可证)
-- [Render 渲染](#render-渲染)
-- [Changelog 开发日志](https://material.viosey.com/changelog/)
 
 ## General 概括
 
@@ -31,7 +30,7 @@ A hexo theme base on [mdui front end](https://github.com/zdhxiong/mdui)
 
 [MDUI 主题中文文档](https://blog.halyul.cc/2017/03/23/mdui-doc/)
 
->[Docs Markdown Files](https://github.com/Halyul/hexo-theme-mdui-docs)
+>[Docs Markdown Files](https://github.com/Halyul/theme-mdui-docs)
 
 
 ## Contributing 贡献
@@ -42,7 +41,7 @@ All kinds of contributions (enhancements, new features, documentation & code imp
 
 ## License 许可证
 
-[![license](https://img.shields.io/github/license/viosey/hexo-theme-material.svg?style=flat-square)](https://github.com/Halyul/hexo-theme-mdui/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/Halyul/hexo-theme-mdui.svg?style=flat-square)](https://github.com/Halyul/hexo-theme-mdui/blob/master/LICENSE)
 
 Open sourced under the GPL v3.0 license.
 
