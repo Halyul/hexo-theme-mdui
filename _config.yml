@@ -1,6 +1,9 @@
+# CDN for mathjax
+location:
+
 # style
 style:
-  scheme:
+  scheme: '1'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -126,7 +129,9 @@ translations:
     twitter: 'Share to Twitter'
     weibo: 'Share to Weibo'
   snackbar: 'Oops! Nothing happened.'
-  donate: 'Buy me a beer?'
+  donate:
+    button: 'Buy me a beer?'
+    close: 'cancel'
   comments: 'Comments'
   outdated_browser:
     title: 'Your browser is out-of-date!'
@@ -134,6 +139,7 @@ translations:
     link: 'Update my browser now '
     close: 'Close'
   gallery_button_text: 'Enter gallery'
+  disqus_no_script: 'Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>'
 
 # Vendors
 vendors:
