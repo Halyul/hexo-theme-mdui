@@ -57,30 +57,10 @@ pageTitle += ' | ' + config.title;
   <% } %>
 
   <!-- Import CSS -->
-  <% if(theme.vendors.mdui_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.mdui_min_css %>" />
-  <% } else { %>
-    <%- css("css/mdui.min") %>
-  <% } %>
-
   <% if(theme.vendors.style_min_css) { %>
     <link type="text/css" rel="stylesheet" href="<%= theme.vendors.style_min_css %>" />
   <% } else { %>
-    <% if (theme.style.scheme === '1') { %>
-      <%- css("css/1/style") %>
-    <% } else { %>
-      <%- css("css/0/style.min") %>
-    <% } %>
-  <% } %>
-
-  <% if (theme.location === 'cn') { %>
-    <link type="text/css" href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-    <link type="text/css" href="//cdn.bootcss.com/outdated-browser/1.1.3/outdatedbrowser.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet">
-  <% } else { %>
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.3/outdatedbrowser.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/css/lightgallery.min.css" />
+    <%- css("css/style.min") %>
   <% } %>
 
   <!-- Custom Head -->

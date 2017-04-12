@@ -1,14 +1,8 @@
 <!-- Import JS -->
-<% if (theme.location === 'cn') { %>
-  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.bootcss.com/outdated-browser/1.1.3/outdatedbrowser.min.js"></script>
-  <script type="text/javascript" src="https://cdn.bootcss.com/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
-  <script src="https://cdn.bootcss.com/lightgallery/1.3.9/js/lightgallery.min.js"></script>
+<% if(theme.vendors.js_min_js) { %>
+  <script type="text/javascript" src="<%= theme.vendors.mdui_min_js %>"></script>
 <% } else { %>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.3/outdatedbrowser.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.3.9/js/lightgallery.min.js"></script>
+  <%- js("js/js.min") %>
 <% } %>
 
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
@@ -17,22 +11,6 @@
      navigator.serviceWorker.register('/sw.js');
     }
   </script>
-<% } %>
-
-<% if(theme.vendors.mdui_min_js) { %>
-  <script type="text/javascript" src="<%= theme.vendors.mdui_min_js %>"></script>
-<% } else { %>
-  <%- js("js/mdui.min") %>
-<% } %>
-
-<% if(theme.vendors.js_min_js) { %>
-  <script type="text/javascript" src="<%= theme.vendors.js_min_js %>"></script>
-<% } else { %>
-  <% if (theme.style.scheme === '1') { %>
-    <%- js("js/1/js.min") %>
-  <% } else { %>
-    <%- js("js/0/js.min") %>
-  <% } %>
 <% } %>
 
 <% if (theme.busuanzi !== false) { %>
@@ -91,6 +69,12 @@
   <% if (page.mathjax) { %>
     <%- partial('../../widget/mathjax') %>
   <% } %>
+<% } %>
+
+<% if (theme.style.scheme === '1') { %>
+  <%- partial("../1/import_js") %>
+<% } else { %>
+  <%- partial("../0/import_js") %>
 <% } %>
 
 <!-- Custom javascript -->

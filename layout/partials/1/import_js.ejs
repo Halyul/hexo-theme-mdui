@@ -1,0 +1,28 @@
+<script>
+var img = $("#backgroundImg");
+$(window).scroll(function() {
+    var imgMaxOffset = img.height() - img.parent().height();
+    var scrollHeight = $(document).scrollTop();
+    var maxScrollHeight = $(document).height() - $(window).height();
+    var scroll = scrollHeight / maxScrollHeight;
+    img.css("transform", "translateY(" + imgMaxOffset * scroll * -1 + "px)")
+});
+var flag = false;
+var x = 0;
+function appbar() {
+  var x = $(".style-1-card-actions").offset().top - $(document).scrollTop();
+  if (x < 0) {
+      if (!flag) {
+          $('#mdui-appbar').removeClass('mdui-hidden');
+          flag = true;
+      }
+  } else if (flag) {
+      $('#mdui-appbar').addClass('mdui-hidden');
+      flag = false;
+  };
+};
+$(window).scroll(function() {
+    appbar();
+});
+appbar();
+</script>
