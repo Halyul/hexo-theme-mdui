@@ -22,6 +22,7 @@ color:
   accent_color: "blue"
   layout:
   random:
+  bg_color:
 
 # appbar
 appbar:
