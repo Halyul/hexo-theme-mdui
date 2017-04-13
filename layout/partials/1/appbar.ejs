@@ -8,16 +8,13 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
 %>
 <div class="mdui-appbar mdui-appbar-fixed mdui-hidden" id="mdui-appbar">
   <div class="mdui-toolbar mdui-color-theme">
-    <% if (is_home()) { %>
-      <button class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-drawer="{target: '#drawer'}">
+    <% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag()) { %>
+      <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">&#xe5d2;</i>
       </button>
     <% } else { %>
-      <button class="mdui-btn mdui-btn-icon mdui-hidden-xs-down back-button">
+      <button class="mdui-btn mdui-btn-icon back-button">
         <i class="mdui-icon material-icons">&#xe5c4;</i>
-      </button>
-      <button class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-drawer="{target: '#drawer'}">
-        <i class="mdui-icon material-icons">&#xe5d2;</i>
       </button>
     <% } %>
     <% if (theme.appbar.title) { %>
@@ -25,14 +22,9 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
         <%= theme.appbar.title %>
       </a>
     <% } %>
+    <span class="appbar-border-line mdui-hidden-xs"></span>
     <span class="mdui-typo-title mdui-hidden-xs"><%= pageTitle %></span>
     <div class="mdui-toolbar-spacer"></div>
-    <% if (!is_archive() || is_year()) { %>
-      <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-archives', covered: true}"><%= theme.translations.archives %></button>
-      <%- partial('../share/menu/archives') %>
-    <% } %>
-    <button class="mdui-btn mdui-ripple mdui-hidden-xs" mdui-menu="{target: '#menu-pages', covered: true}"><%= theme.translations.pages %></button>
-    <%- partial('../share/menu/pages') %>
     <% if (is_home()) { %>
       <% if (theme.share_menu !== false) { %>
         <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#menu-index-share'}">
@@ -41,5 +33,9 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
         <%- partial('../share/menu/index_share') %>
       <% } %>
     <% } %>
+    <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
+      <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+    </div>
+    <%- partial('../share/menu/userview') %>
   </div>
 </div>

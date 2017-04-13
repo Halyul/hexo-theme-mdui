@@ -41,7 +41,7 @@
     });
   </script>
 <% } %>
-<% if (!is_home() || !is_archive() || !is_year() || !is_month() || !is_category() || !is_tag()) { %>
+<% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag()) { %>
   <script type="text/javascript">
     $(document).ready(function(){
       if($(".toc").length == 0)
@@ -52,7 +52,7 @@
   </script>
 
   <script>
-  $('img').click(function() {
+  $('#post img').click(function() {
     var img_src = $(this).attr('src');
     var img_alt = $(this).attr('alt');
     $(this).lightGallery({

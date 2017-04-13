@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: '1'
+  scheme:
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -22,7 +22,7 @@ color:
   accent_color: "blue"
   layout:
   random:
-  bg_color:
+  bg_color: "#eeeeee"
 
 # appbar
 appbar:
@@ -75,11 +75,9 @@ pages:
   Test1:
     link: "/myfriends"
     icon: "&#xe0ba;"
-    helper: '1235'
   Test2:
     link: "/apply-for-link"
     icon: "&#xe7f0;"
-    helper: '6789'
   Test3:
     link: "/timeline"
     icon: "home"
@@ -90,11 +88,9 @@ pages:
       TEST1:
         link: "/myfriends"
         icon: "&#xe5ca;"
-        helper: '123'
       TEST2:
         link: "/timeline"
         icon: "home"
-        helper: '456'
       Test3:
         link: "/timeline"
         icon: "home"
@@ -116,7 +112,7 @@ translations:
   years: 'Years'
   go_to_prev_page: 'Return'
   busuanzi_views: 'Views: '
-  footer:
+  userview:
     contact_me: 'Contact me'
     how_to_contact_me: 'How to contact me'
     close: 'Close'

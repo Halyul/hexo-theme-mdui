@@ -1,6 +1,6 @@
 <% if (theme.post.donate !==false) { %>
   <div class="mdui-dialog" id="donateDialog">
-    <div class="mdui-dialog-title"><%= theme.translations.donate %></div>
+    <div class="mdui-dialog-title"><%= theme.translations.donate.button %></div>
     <div class="mdui-dialog-content no-padding-bottom">
       <div class="mdui-list">
         <% for (var x in theme.post.donate){ %>
@@ -15,9 +15,9 @@
     </div>
   </div>
 <% } %>
-<div class="mdui-dialog" id="contact-dialog">
+<div class="mdui-dialog" id="contactDialog">
   <div class="mdui-dialog-title">
-    <%= theme.translations.footer.how_to_contact_me %>
+    <%= theme.translations.userview.how_to_contact_me %>
   </div>
   <div class="mdui-dialog-content no-padding-bottom">
     <div class="mdui-list">
@@ -30,7 +30,7 @@
   </div>
   <div class="mdui-dialog-actions">
     <button class="mdui-btn mdui-ripple" mdui-dialog-close>
-      <%= theme.translations.footer.close %>
+      <%= theme.translations.userview.close %>
     </button>
   </div>
 </div>
