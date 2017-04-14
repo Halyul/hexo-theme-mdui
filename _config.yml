@@ -137,6 +137,11 @@ translations:
     close: 'Close'
   gallery_button_text: 'Enter gallery'
   disqus_no_script: 'Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>'
+  post_pagination:
+    newer: 'Newer Post'
+    older: 'Older Post'
+    no_newer: 'No More Newer Post'
+    no_older: 'No More Older Post'
 
 # Vendors
 vendors:
