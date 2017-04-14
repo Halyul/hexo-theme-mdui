@@ -142,3 +142,4 @@ translations:
 vendors:
   style_min_css:
   js_min_js:
+  outdatedbrowser_min_js:

@@ -1,3 +1,30 @@
+/*!--------------------------------------------------------------------
+STYLES "Outdated Browser"
+Version:    1.1.2 - 2015
+author:     Burocratik
+website:    http://www.burocratik.com
+* @preserve
+-----------------------------------------------------------------------*/
+#outdated{
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 170px;
+    text-align: center; text-transform: uppercase; z-index:1500;
+    background-color: #f25648; color: #ffffff;
+}
+* html #outdated{position: absolute;}
+#outdated h6{font-size: 25px; line-height: 25px; margin: 30px 0 10px;}
+#outdated p{font-size: 12px; line-height: 12px; margin: 0;}
+#outdated #btnUpdateBrowser{
+    display: block; position: relative; padding: 10px 20px; margin: 30px auto 0; width: 230px; /*need for IE*/
+    color: #ffffff; text-decoration: none; border: 2px solid #ffffff; cursor: pointer;
+}
+#outdated #btnUpdateBrowser:hover{color: #f25648; background-color:#ffffff;}
+#outdated .last{position: absolute; top: 10px; right: 25px; width: 20px; height: 20px;}
+#outdated .last[dir='rtl']{right: auto !important; left: 25px !important;}
+#outdated #btnCloseUpdateBrowser{
+    display: block; position: relative; width: 100%; height: 100%;
+    text-decoration: none; color: #ffffff; font-size: 36px; line-height: 36px;
+}
+
 /*!
  * mdui v0.1.2 (http://mdui.org)
  * Copyright 2016-2017 zdhxiong
@@ -17622,88 +17649,6 @@ body:not(.mdui-support-touch) .mdui-menu::-webkit-scrollbar-thumb {
     content: "\f30c";
 }
 
-
-/*!--------------------------------------------------------------------
-STYLES "Outdated Browser"
-Version:    1.1.2 - 2015
-author:     Burocratik
-website:    http://www.burocratik.com
-* @preserve
------------------------------------------------------------------------*/
-
-#outdated {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 170px;
-    text-align: center;
-    text-transform: uppercase;
-    z-index: 1500;
-    background-color: #f25648;
-    color: #ffffff;
-}
-
-* html #outdated {
-    position: absolute;
-}
-
-#outdated h6 {
-    font-size: 25px;
-    line-height: 25px;
-    margin: 30px 0 10px;
-}
-
-#outdated p {
-    font-size: 12px;
-    line-height: 12px;
-    margin: 0;
-}
-
-#outdated #btnUpdateBrowser {
-    display: block;
-    position: relative;
-    padding: 10px 20px;
-    margin: 30px auto 0;
-    width: 230px;
-    /*need for IE*/
-    color: #ffffff;
-    text-decoration: none;
-    border: 2px solid #ffffff;
-    cursor: pointer;
-}
-
-#outdated #btnUpdateBrowser:hover {
-    color: #f25648;
-    background-color: #ffffff;
-}
-
-#outdated .last {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    width: 20px;
-    height: 20px;
-}
-
-#outdated .last[dir='rtl'] {
-    right: auto !important;
-    left: 25px !important;
-}
-
-#outdated #btnCloseUpdateBrowser {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 36px;
-    line-height: 36px;
-}
-
-
 /*! lightgallery - v1.3.9 - 2017-02-05
 * http://sachinchoolur.github.io/lightGallery/
 * Copyright (c) 2017 Sachin N; Licensed GPLv3 */
@@ -19658,7 +19603,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     transition: transform 1s cubic-bezier(0, 0, 0.25, 1) 0s, opacity 0.1s ease 0s, -webkit-transform 1s cubic-bezier(0, 0, 0.25, 1) 0s;
 }
 
-
 /*!
  * Copyright 2017 Halyul
  */
@@ -20106,10 +20050,10 @@ span.badge[data-badge-caption]::after {
         opacity: 0;
     }
 }
-/* MDUI v0.1.2 from Line 1 to Line 11821
- * ionicons v2.0.1 from Line 11823 to Line 13302
- * outdated browser v1.1.3 from Line 13304 to Line 13329
- * Light Gallery v1.3.9 from Line 13331 to Line 14303
- * Light Gallery Transitions v1.3.9 from Line 14305 to Line 15083
- * Theme style from Line 15085to Line 15401
+/* Outdated Browser v1.1.2 from Line 1 to Line 26
+ * MDUI v0.1.2 from Line 28 to Line 14684
+ * ionicons v2.0.1 from Line 14686 to Line 17650
+ * Light Gallery v1.3.9 from Line 17652 to Line 18676
+ * Light Gallery Transitions v1.3.9 from Line 18678 to Line 19604
+ * Theme style from Line 19606 to the end
  */
