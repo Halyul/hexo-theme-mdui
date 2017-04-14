@@ -15296,221 +15296,6 @@ return jQuery;
 
 !function(a){"function"==typeof define&&define.amd?define(["jquery"],a):a("object"==typeof module&&module.exports?require("jquery"):jQuery)}(function(a){var b="2.1.2",c={},d={exclude:[],excludeWithin:[],offset:0,direction:"top",delegateSelector:null,scrollElement:null,scrollTarget:null,beforeScroll:function(){},afterScroll:function(){},easing:"swing",speed:400,autoCoefficient:2,preventDefault:!0},e=function(b){var c=[],d=!1,e=b.dir&&"left"===b.dir?"scrollLeft":"scrollTop";return this.each(function(){var b=a(this);if(this!==document&&this!==window)return!document.scrollingElement||this!==document.documentElement&&this!==document.body?void(b[e]()>0?c.push(this):(b[e](1),d=b[e]()>0,d&&c.push(this),b[e](0))):(c.push(document.scrollingElement),!1)}),c.length||this.each(function(){this===document.documentElement&&"smooth"===a(this).css("scrollBehavior")&&(c=[this]),c.length||"BODY"!==this.nodeName||(c=[this])}),"first"===b.el&&c.length>1&&(c=[c[0]]),c},f=/^([\-\+]=)(\d+)/;a.fn.extend({scrollable:function(a){var b=e.call(this,{dir:a});return this.pushStack(b)},firstScrollable:function(a){var b=e.call(this,{el:"first",dir:a});return this.pushStack(b)},smoothScroll:function(b,c){if(b=b||{},"options"===b)return c?this.each(function(){var b=a(this),d=a.extend(b.data("ssOpts")||{},c);a(this).data("ssOpts",d)}):this.first().data("ssOpts");var d=a.extend({},a.fn.smoothScroll.defaults,b),e=function(b){var c=function(a){return a.replace(/(:|\.|\/)/g,"\\$1")},e=this,f=a(this),g=a.extend({},d,f.data("ssOpts")||{}),h=d.exclude,i=g.excludeWithin,j=0,k=0,l=!0,m={},n=a.smoothScroll.filterPath(location.pathname),o=a.smoothScroll.filterPath(e.pathname),p=location.hostname===e.hostname||!e.hostname,q=g.scrollTarget||o===n,r=c(e.hash);if(r&&!a(r).length&&(l=!1),g.scrollTarget||p&&q&&r){for(;l&&j<h.length;)f.is(c(h[j++]))&&(l=!1);for(;l&&k<i.length;)f.closest(i[k++]).length&&(l=!1)}else l=!1;l&&(g.preventDefault&&b.preventDefault(),a.extend(m,g,{scrollTarget:g.scrollTarget||r,link:e}),a.smoothScroll(m))};return null!==b.delegateSelector?this.off("click.smoothscroll",b.delegateSelector).on("click.smoothscroll",b.delegateSelector,e):this.off("click.smoothscroll").on("click.smoothscroll",e),this}});var g=function(a){var b={relative:""},c="string"==typeof a&&f.exec(a);return"number"==typeof a?b.px=a:c&&(b.relative=c[1],b.px=parseFloat(c[2])||0),b};a.smoothScroll=function(b,d){if("options"===b&&"object"==typeof d)return a.extend(c,d);var e,f,h,i,j=g(b),k={},l=0,m="offset",n="scrollTop",o={},p={};j.px?e=a.extend({link:null},a.fn.smoothScroll.defaults,c):(e=a.extend({link:null},a.fn.smoothScroll.defaults,b||{},c),e.scrollElement&&(m="position","static"===e.scrollElement.css("position")&&e.scrollElement.css("position","relative")),d&&(j=g(d))),n="left"===e.direction?"scrollLeft":n,e.scrollElement?(f=e.scrollElement,j.px||/^(?:HTML|BODY)$/.test(f[0].nodeName)||(l=f[n]())):f=a("html, body").firstScrollable(e.direction),e.beforeScroll.call(f,e),k=j.px?j:{relative:"",px:a(e.scrollTarget)[m]()&&a(e.scrollTarget)[m]()[e.direction]||0},o[n]=k.relative+(k.px+l+e.offset),h=e.speed,"auto"===h&&(i=Math.abs(o[n]-f[n]()),h=i/e.autoCoefficient),p={duration:h,easing:e.easing,complete:function(){e.afterScroll.call(e.link,e)}},e.step&&(p.step=e.step),f.length?f.stop().animate(o,p):e.afterScroll.call(e.link,e)},a.smoothScroll.version=b,a.smoothScroll.filterPath=function(a){return a=a||"",a.replace(/^\//,"").replace(/(?:index|default).[a-zA-Z]{3,4}$/,"").replace(/\/$/,"")},a.fn.smoothScroll.defaults=d});
 
-/*!--------------------------------------------------------------------
-JAVASCRIPT "Outdated Browser"
-Version:    1.1.2 - 2015
-author:     Burocratik
-website:    http://www.burocratik.com
-* @preserve
------------------------------------------------------------------------*/
-var outdatedBrowser = function(options) {
-
-    //Variable definition (before ajax)
-    var outdated = document.getElementById("outdated");
-
-    // Default settings
-    this.defaultOpts = {
-        bgColor: '#f25648',
-        color: '#ffffff',
-        lowerThan: 'transform',
-        languagePath: '../outdatedbrowser/lang/en.html'
-    }
-
-    if (options) {
-        //assign css3 property to IE browser version
-        if (options.lowerThan == 'IE8' || options.lowerThan == 'borderSpacing') {
-            options.lowerThan = 'borderSpacing';
-        } else if (options.lowerThan == 'IE9' || options.lowerThan == 'boxShadow') {
-            options.lowerThan = 'boxShadow';
-        } else if (options.lowerThan == 'IE10' || options.lowerThan == 'transform' || options.lowerThan == '' || typeof options.lowerThan === "undefined") {
-            options.lowerThan = 'transform';
-        } else if (options.lowerThan == 'IE11' || options.lowerThan == 'borderImage') {
-            options.lowerThan = 'borderImage';
-        }
-        //all properties
-        this.defaultOpts.bgColor = options.bgColor;
-        this.defaultOpts.color = options.color;
-        this.defaultOpts.lowerThan = options.lowerThan;
-        this.defaultOpts.languagePath = options.languagePath;
-
-        bkgColor = this.defaultOpts.bgColor;
-        txtColor = this.defaultOpts.color;
-        cssProp = this.defaultOpts.lowerThan;
-        languagePath = this.defaultOpts.languagePath;
-    } else {
-        bkgColor = this.defaultOpts.bgColor;
-        txtColor = this.defaultOpts.color;
-        cssProp = this.defaultOpts.lowerThan;
-        languagePath = this.defaultOpts.languagePath;
-    } //end if options
-
-
-    //Define opacity and fadeIn/fadeOut functions
-    var done = true;
-
-    function function_opacity(opacity_value) {
-        outdated.style.opacity = opacity_value / 100;
-        outdated.style.filter = 'alpha(opacity=' + opacity_value + ')';
-    }
-
-    // function function_fade_out(opacity_value) {
-    //     function_opacity(opacity_value);
-    //     if (opacity_value == 1) {
-    //         outdated.style.display = 'none';
-    //         done = true;
-    //     }
-    // }
-
-    function function_fade_in(opacity_value) {
-        function_opacity(opacity_value);
-        if (opacity_value == 1) {
-            outdated.style.display = 'block';
-        }
-        if (opacity_value == 100) {
-            done = true;
-        }
-    }
-
-    //check if element has a particular class
-    // function hasClass(element, cls) {
-    //     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-    // }
-
-    var supports = ( function() {
-        var div = document.createElement('div');
-        var vendors = 'Khtml Ms O Moz Webkit'.split(' ');
-        var len = vendors.length;
-
-        return function(prop) {
-            if (prop in div.style) return true;
-
-            prop = prop.replace(/^[a-z]/, function(val) {
-                return val.toUpperCase();
-            });
-
-            while (len--) {
-                if (vendors[len] + prop in div.style) {
-                    return true;
-                }
-            }
-            return false;
-        };
-    } )();
-
-    //if browser does not supports css3 property (transform=default), if does > exit all this
-    if (!supports('' + cssProp + '')) {
-        if (done && outdated.style.opacity !== '1') {
-            done = false;
-            for (var i = 1; i <= 100; i++) {
-                setTimeout(( function(x) {
-                    return function() {
-                        function_fade_in(x);
-                    };
-                } )(i), i * 8);
-            }
-        }
-    } else {
-        return;
-    } //end if
-
-    //Check AJAX Options: if languagePath == '' > use no Ajax way, html is needed inside <div id="outdated">
-    if (languagePath === ' ' || languagePath.length == 0) {
-        startStylesAndEvents();
-    } else {
-        grabFile(languagePath);
-    }
-
-    //events and colors
-    function startStylesAndEvents() {
-        var btnClose = document.getElementById("btnCloseUpdateBrowser");
-        var btnUpdate = document.getElementById("btnUpdateBrowser");
-
-        //check settings attributes
-        outdated.style.backgroundColor = bkgColor;
-        //way too hard to put !important on IE6
-        outdated.style.color = txtColor;
-        outdated.children[0].style.color = txtColor;
-        outdated.children[1].style.color = txtColor;
-
-        //check settings attributes
-        btnUpdate.style.color = txtColor;
-        // btnUpdate.style.borderColor = txtColor;
-        if (btnUpdate.style.borderColor) {
-            btnUpdate.style.borderColor = txtColor;
-        }
-        btnClose.style.color = txtColor;
-
-        //close button
-        btnClose.onmousedown = function() {
-            outdated.style.display = 'none';
-            return false;
-        };
-
-        //Override the update button color to match the background color
-        btnUpdate.onmouseover = function() {
-            this.style.color = bkgColor;
-            this.style.backgroundColor = txtColor;
-        };
-        btnUpdate.onmouseout = function() {
-            this.style.color = txtColor;
-            this.style.backgroundColor = bkgColor;
-        };
-    } //end styles and events
-
-
-    // IF AJAX with request ERROR > insert english default
-    var ajaxEnglishDefault = '<h6>Your browser is out-of-date!</h6>'
-        + '<p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>'
-        + '<p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>';
-
-
-    //** AJAX FUNCTIONS - Bulletproof Ajax by Jeremy Keith **
-    function getHTTPObject() {
-        var xhr = false;
-        if (window.XMLHttpRequest) {
-            xhr = new XMLHttpRequest();
-        } else if (window.ActiveXObject) {
-            try {
-                xhr = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch ( e ) {
-                try {
-                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch ( e ) {
-                    xhr = false;
-                }
-            }
-        }
-        return xhr;
-    }//end function
-
-    function grabFile(file) {
-        var request = getHTTPObject();
-        if (request) {
-            request.onreadystatechange = function() {
-                displayResponse(request);
-            };
-            request.open("GET", file, true);
-            request.send(null);
-        }
-        return false;
-    } //end grabFile
-
-    function displayResponse(request) {
-        var insertContentHere = document.getElementById("outdated");
-        if (request.readyState == 4) {
-            if (request.status == 200 || request.status == 304) {
-                insertContentHere.innerHTML = request.responseText;
-            } else {
-                insertContentHere.innerHTML = ajaxEnglishDefault;
-            }
-            startStylesAndEvents();
-        }
-        return false;
-    }//end displayResponse
-
-////////END of outdatedBrowser function
-};
-
 /*! lightgallery - v1.3.9 - 2017-02-05
 * http://sachinchoolur.github.io/lightGallery/
 * Copyright (c) 2017 Sachin N; Licensed GPLv3 */
@@ -18831,29 +18616,6 @@ console.info("\u7248\u6743\u6240\u6709\uff0c\u7ffb\u7248\u5fc5\u7a76\uff01\u000d
 $(document).ready(function() {
     $('a').smoothScroll();
 });
-//event listener: DOM ready
-function addLoadEvent(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            if (oldonload) {
-                oldonload();
-            }
-            func();
-        }
-    }
-}
-//call plugin function after DOM ready
-addLoadEvent(function(){
-    outdatedBrowser({
-        bgColor: '#f25648',
-        color: '#ffffff',
-        lowerThan: 'transform',
-        languagePath: 'your_path/outdatedbrowser/lang/en.html'
-    })
-});
 $(".contact-me-button").hover(function() {
     $(this).removeClass("mdui-typo-caption-opacity");
 }, function() {
@@ -18863,14 +18625,13 @@ $(".contact-me-button").hover(function() {
  /* jQuery v3.1.1 from Line 1 to Line 10216
  * MDUI v0.1.2 from Line 10218 to Line 15288
  * jQuery smooth scroll v2.1.2 from Line 15290 to Line 15297
- * Outdated Browser v1.1.3 from Line 15299 to Line 15512
- * Light Gallery v1.3.9 from Line 15514 to Line 16868
- * Light Gallery Thumbnail v1.0.3 from Line 16870 to Line 17342
- * Light Gallery Autoplay v1.0.4 from Line 17344 to Line 17549
- * Light Gallery Video v1.0.1 from Line 17551 to Line 17862
- * Light Gallery Fullscreen v1.0.1 from Line 17864 to Line 17979
- * Light Gallery Zoom v1.0.4 from Line 17981 to Line 18511
- * Light Gallery Hash v1.0.1 from Line 18513 to Line 18605
- * jQuery Mousewheel Control v3.1.13 from Line 18607 to Line 18827
- * Theme Script from Line 18829 to Line 18861
+ * Light Gallery v1.3.9 from Line 15299 to Line 16868
+ * Light Gallery Thumbnail v1.0.3 from Line 16655 to Line 17217
+ * Light Gallery Autoplay v1.0.4 from Line 17219 to Line 17334
+ * Light Gallery Video v1.0.1 from Line 17336 to Line 17647
+ * Light Gallery Fullscreen v1.0.1 from Line 17649 to Line 17764
+ * Light Gallery Zoom v1.0.4 from Line 17766 to Line 18296
+ * Light Gallery Hash v1.0.1 from Line 18298 to Line 18390
+ * jQuery Mousewheel Control v3.1.13 from Line 18392 to Line 18612
+ * Theme Script from Line 18614 to the end
  */
