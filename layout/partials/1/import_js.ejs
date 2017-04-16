@@ -14,10 +14,12 @@ function appbar() {
   if (x < 0) {
       if (!flag) {
           $('#mdui-appbar').removeClass('mdui-hidden');
+          $('body').addClass('mdui-appbar-with-toolbar');
           flag = true;
       }
   } else if (flag) {
       $('#mdui-appbar').addClass('mdui-hidden');
+      $('body').removeClass('mdui-appbar-with-toolbar');
       flag = false;
   };
 };
