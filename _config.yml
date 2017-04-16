@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: 
+  scheme:
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -112,6 +112,9 @@ translations:
   years: 'Years'
   go_to_prev_page: 'Return'
   busuanzi_views: 'Views: '
+  posts:
+    header: 'Something that I have posted'
+    public: 'Public'
   userview:
     contact_me: 'Contact me'
     how_to_contact_me: 'How to contact me'

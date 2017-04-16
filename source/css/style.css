@@ -19750,7 +19750,7 @@ main {
     padding: 0 16px;
 }
 
-.drawer-spacer {
+.drawer-spacer, .posts-card-header-spacer {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
@@ -19788,6 +19788,86 @@ main {
     -ms-flex: none;
         flex: none;
     margin: 5px 0 24px 24px;
+}
+
+.posts-container {
+    max-width: 530px;
+    min-width: 280px;
+}
+
+.posts-header {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 14px 16px 6px;
+    text-align: left;
+}
+
+.posts-card-header {
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+      flex: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
+.posts-card-header .content {
+    font-weight: 500;
+    margin-right: 16px;
+    padding: 0 0 0 2px;
+    white-space: nowrap;
+    -webkit-box-flex: auto;
+    -webkit-flex: auto;
+    flex: auto;
+}
+
+.posts-card-header .content .username {
+    margin-left: 6px;
+    max-width: 100%;
+    white-space: nowrap;
+    float: left;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.posts-card-header .content .arrow {
+    width: 18px;
+    height: 18px;
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    flex: none;
+}
+
+.mdui-card:hover .posts-card-header .date {
+    display: none;
+}
+
+.posts-card-header .buttons {
+    display: none;
+    opacity: .54;
+}
+
+.mdui-card:hover .posts-card-header .buttons {
+    display: inherit;
+}
+
+.posts-card-content {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 16px 16px;
+  word-wrap: break-word;
+}
+
+.posts-card-bottom {
+  margin: 16px 8px;
 }
 
 .post-media {

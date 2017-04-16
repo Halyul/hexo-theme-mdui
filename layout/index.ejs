@@ -1,11 +1,15 @@
 <% if (theme.style.scheme === '1') { %>
   <%-partial('partials/1/first_card')%>
 <% } %>
-
-<% page.posts.each(function(post) { %>
-  <% if(!(theme.post.topPost && post.top)) { %>
-    <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
-  <% } %>
-<% }); %>
+<div class="posts-container mdui-center">
+  <div class="posts-header">
+    <%= theme.translations.posts.header %>
+  </div>
+  <% page.posts.each(function(post) { %>
+    <% if(!(theme.post.topPost && post.top)) { %>
+      <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
+    <% } %>
+  <% }); %>
+</div>
 <%-partial('partials/share/pagination', {base: url_for(config.root), show: theme.index.show })%>
 <%-partial('partials/share/fab/index')%>
