@@ -39,15 +39,13 @@
       </div>
     <% } else { %>
       <div class="mdui-list no-padding">
-        <a href="<%= config.root %>archives">
-          <li class="mdui-list-item mdui-ripple">
-            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
-            <div class="mdui-list-item-content">
-              <%= theme.translations.archives %>
-              <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= site.posts.length %></span>
-            </div>
-          </li>
-        </a>
+        <li class="mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
+          <div class="mdui-list-item-content">
+            <%= theme.translations.archives %>
+            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= site.posts.length %></span>
+          </div>
+        </li>
       </div>
     <% } %>
     <% if (!is_archive()) { %>
@@ -80,6 +78,30 @@
                 <%= tag.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
+              </a>
+            <% }) %>
+          </div>
+        </div>
+        <div class="mdui-collapse-item">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
+            <div class="mdui-list-item-content"><%= theme.translations.years %></div>
+            <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+          </div>
+          <div class="mdui-collapse-item-body mdui-list">
+            <%
+            var years = {};
+            site.posts.sort('date').reverse().forEach(function(post){
+              var year = post.date.year()
+              if(years[year]===undefined){
+                years[year] = [];
+              }
+              years[year].push(post);
+            });
+            %>
+            <% Object.keys(years).reverse().forEach(function(year){  %>
+              <a href="<%= config.root %>archives/<%= year %>/" class="mdui-list-item mdui-ripple">
+                <%= year %>
               </a>
             <% }) %>
           </div>
