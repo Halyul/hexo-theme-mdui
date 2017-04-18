@@ -6,6 +6,6 @@
     <%-partial('partials/share/posts', { post: post })%>
 <% }); %>
 
-<%-partial('partials/share/pagination', {base: url_for(config.root) +  'categories/' + page.category + '/', show: theme.index.show })%>
+<%-partial('partials/share/pagination', {base: url_for(config.root) +  'categories/' + page.category + '/', show: theme.pagination })%>
 
 <%-partial('partials/share/fab/index')%>

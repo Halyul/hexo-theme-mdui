@@ -28,6 +28,9 @@ color:
 appbar:
   title: "Title"
 
+index:
+  welcome: "Welcome to my blog~"
+
 # post settings
 post:
   entry_excerpt: 80
@@ -55,8 +58,7 @@ comment:
 
 # pagination
 # github@zllovesuki
-index:
-  show: 2
+pagination: 2
 
 # footer
 footer:

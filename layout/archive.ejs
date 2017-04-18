@@ -4,10 +4,10 @@
   <% if (theme.style.scheme === '1') { %>
     <%-partial('partials/1/back_actions_card')%>
   <% } %>
-  
+
   <% page.posts.each(function(post) { %>
       <%-partial('partials/share/posts', { post: post })%>
   <% }); %>
-  <%-partial('partials/share/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.index.show })%>
+  <%-partial('partials/share/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.pagination })%>
 <% } %>
 <%-partial('partials/share/fab/index')%>

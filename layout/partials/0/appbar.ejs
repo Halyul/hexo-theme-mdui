@@ -25,14 +25,6 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
     <span class="appbar-border-line mdui-hidden-xs"></span>
     <span class="mdui-typo-title mdui-hidden-xs"><%= pageTitle %></span>
     <div class="mdui-toolbar-spacer"></div>
-    <% if (is_home()) { %>
-      <% if (theme.share_menu !== false) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-menu="{target: '#menu-index-share'}">
-          <i class="mdui-icon material-icons">&#xe80d;</i>
-        </button>
-        <%- partial('../share/menu/index_share') %>
-      <% } %>
-    <% } %>
     <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
       <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
     </div>

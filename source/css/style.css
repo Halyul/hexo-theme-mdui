@@ -19797,7 +19797,7 @@ main {
     text-align: left;
 }
 
-.posts-card-header, .posts-card-actions {
+.posts-card-header, .posts-card-actions, .index-welcome {
   -webkit-box-flex: auto;
   -ms-flex: auto;
       flex: auto;
@@ -19881,7 +19881,7 @@ main {
     margin: 16px 8px;
 }
 
-.posts-card-actions .mdui-chip, .posts-card-actions .mdui-chip-icon {
+.posts-card-actions .mdui-chip, .posts-card-actions .mdui-chip-icon, .index-welcome .mdui-chip, .index-welcome .mdui-chip-icon {
     background: #eeeeee;
 }
 
