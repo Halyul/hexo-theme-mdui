@@ -8,7 +8,7 @@
       </div>
       <div class="mdui-typo-body-1-opacity"><%= theme.translations.posts.public %></div>
     </div>
-    <div class="posts-card-header-spacer"></div>
+    <div class="flex-spacer"></div>
     <div class="mdui-valign">
       <div class="mdui-typo-caption-opacity date"><%= date(post.date, 'MMM DD, YYYY') %></div>
       <div class="buttons">
@@ -17,12 +17,41 @@
       </div>
     </div>
   </div>
+  <div class="posts-card-title">
+    <%= post.title %>
+  </div>
+  <div class="posts-card-line">
+    <div class="mdui-divider"></div>
+  </div>
   <div class="posts-card-content">
     <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
   </div>
-  <div class="posts-card-bottom">
-    
-  </div>
+  <% if (page.thumbnail || page.thumbnail_p) { %>
+    <div class="mdui-card-media">
+      <img src="<%= page.thumbnail || page.thumbnail_p %>"/>
+    </div>
+  <% } %>
+  <% if (post.tag !== false || post.category !== false) { %>
+    <div class="posts-card-actions">
+      <% if (page.category !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon material-icons mdui-text-color-black-icon">&#xe149;</i></span>
+        </div>
+        <div class="content mdui-text-color-theme-text">
+          categories here
+        </div>
+      <% } %>
+      <div class="flex-spacer"></div>
+      <% if (page.tag !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon ion-pricetags"></i></span>
+        </div>
+        <div class="content mdui-text-color-theme-text">
+          tags here
+        </div>
+      <% } %>
+    </div>
+  <% } %>
 
   <!--<div class="mdui-card-primary mdui-typo">
     <div class="mdui-card-primary-title">

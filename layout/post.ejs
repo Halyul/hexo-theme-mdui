@@ -2,10 +2,8 @@
   <% if (theme.style.scheme === '1') { %>
     <%-partial('partials/1/card_actions/post')%>
   <% } %>
-  <% if (theme.style.scheme !== '1') { %>
-    <% if (page.thumbnail || page.thumbnail_p) { %>
-      <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail || page.thumbnail_p %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
-    <% } %>
+  <% if (page.thumbnail || page.thumbnail_p) { %>
+    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail || page.thumbnail_p %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
   <% } %>
   <div class="mdui-card-primary">
     <div class="mdui-row">

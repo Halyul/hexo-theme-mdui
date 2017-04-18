@@ -19735,12 +19735,6 @@ main {
             flex-direction: column;
 }
 
-.menu-userview-content-spacer {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-}
-
 .menu-userview-content .mdui-typo-body-1 {
     margin-bottom: 1px;
 }
@@ -19750,7 +19744,7 @@ main {
     padding: 0 16px;
 }
 
-.drawer-spacer, .posts-card-header-spacer {
+.flex-spacer {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
@@ -19803,7 +19797,7 @@ main {
     text-align: left;
 }
 
-.posts-card-header {
+.posts-card-header, .posts-card-actions {
   -webkit-box-flex: auto;
   -ms-flex: auto;
       flex: auto;
@@ -19859,15 +19853,46 @@ main {
     display: inherit;
 }
 
-.posts-card-content {
-  font-size: 14px;
-  line-height: 20px;
-  margin: 0 16px 16px;
-  word-wrap: break-word;
+.posts-card-title {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0 16px 16px;
+    line-height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    max-height: 56px;
 }
 
-.posts-card-bottom {
-  margin: 16px 8px;
+.posts-card-line {
+    margin: 0 16px;
+}
+
+.posts-card-content {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 16px;
+    word-wrap: break-word;
+}
+
+.posts-card-actions {
+    margin: 16px 8px;
+}
+
+.posts-card-actions .mdui-chip, .posts-card-actions .mdui-chip-icon {
+    background: #eeeeee;
+}
+
+.posts-card-actions .mdui-chip {
+    margin: 0 8px;
+}
+
+.posts-card-actions .content {
+    line-height: 36px;
+    font-size: 12px;
+    margin-right: 6px;
 }
 
 .post-media {
