@@ -1,7 +1,4 @@
 <% if (site.data.friends) { %>
-  <% if (theme.style.scheme === '1') { %>
-    <%-partial('partials/1/back_actions_card')%>
-  <% } %>
   <div class="mdui-row">
     <% for (var i in site.data.friends) { %>
       <% if (site.data.friends[i].down !== true) { %>
@@ -23,5 +20,5 @@
       <% } %>
     <% } %>
   </div>
-  <%-partial('../partials/share/fab/index')%>
+  <%-partial('../partials/fab/index')%>
 <% } %>

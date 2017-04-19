@@ -98,15 +98,9 @@ addLoadEvent(function(){
 
   <!-- MathJax Load-->
   <% if (page.mathjax) { %>
-    <%- partial('../../widget/mathjax') %>
+    <%- partial('../widget/mathjax') %>
   <% } %>
 <% } %>
 
-<% if (theme.style.scheme === '1') { %>
-  <%- partial("../1/import_js") %>
-<% } else { %>
-  <%- partial("../0/import_js") %>
-<% } %>
-
 <!-- Custom javascript -->
-<%-partial('../../custom/custom_js')%>
+<%-partial('../custom/custom_js')%>

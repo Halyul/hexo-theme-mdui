@@ -26,9 +26,9 @@
   <div class="posts-card-content">
     <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
   </div>
-  <% if (page.thumbnail || page.thumbnail_p) { %>
+  <% if (page.thumbnail) { %>
     <div class="mdui-card-media">
-      <img src="<%= page.thumbnail || page.thumbnail_p %>"/>
+      <img src="<%= page.thumbnail %>"/>
     </div>
   <% } %>
   <% if (post.tag !== false || post.category !== false) { %>

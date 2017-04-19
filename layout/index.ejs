@@ -1,8 +1,5 @@
-<% if (theme.style.scheme === '1') { %>
-  <%-partial('partials/1/first_card')%>
-<% } %>
 <div class="posts-container column-3">
-  
+
 </div>
 <div id="content-list">
     <% page.posts.each(function(post,index) {%>
@@ -18,7 +15,7 @@
             </div>
             <div class="flex-spacer"></div>
             <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
-            <%- partial('partials/share/menu/index_share') %>
+            <%- partial('partials/menu/index_share') %>
           </div>
         </div>
         <% }%>
@@ -28,11 +25,11 @@
           </div>
         <% } %>
         <% if(!(theme.post.topPost && post.top)) { %>
-          <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
+          <%-partial('partials/posts', { post: post, index: true, pin: false })%>
         <% } %>
         </div>
       <% }); %>
     </div>
 <%- js("js/list") %>
-<%-partial('partials/share/pagination', {base: url_for(config.root), show: theme.pagination })%>
-<%-partial('partials/share/fab/index')%>
+<%-partial('partials/pagination', {base: url_for(config.root), show: theme.pagination })%>
+<%-partial('partials/fab/index')%>

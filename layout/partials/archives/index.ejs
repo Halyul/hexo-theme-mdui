@@ -9,9 +9,6 @@ site.posts.sort('date').reverse().forEach(function(post){
 });
 %>
   <div class="mdui-shadow-4" >
-    <% if (theme.style.scheme === '1') { %>
-      <%-partial('../../1/card_actions/archives')%>
-    <% } %>
     <div class="mdui-tab mdui-tab-full-width mdui-color-theme" mdui-tab>
       <a href="#tab-categories" class="mdui-ripple"><%= theme.translations.categories %></a>
       <a href="#tab-tags" class="mdui-ripple"><%= theme.translations.tags %></a>

@@ -1,9 +1,6 @@
 <div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
-  <% if (theme.style.scheme === '1') { %>
-    <%-partial('partials/1/card_actions/post')%>
-  <% } %>
-  <% if (page.thumbnail || page.thumbnail_p) { %>
-    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail || page.thumbnail_p %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
+  <% if (page.thumbnail) { %>
+    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
   <% } %>
   <div class="mdui-card-primary">
     <div class="mdui-row">
@@ -15,16 +12,16 @@
         <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-more'}">
           <i class="mdui-icon material-icons">&#xe5d4;</i>
         </button>
-        <%- partial('partials/share/menu/more') %>
+        <%- partial('partials/menu/more') %>
         <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
           <i class="mdui-icon material-icons">&#xe80d;</i>
         </button>
-        <%- partial('partials/share/menu/post_share') %>
+        <%- partial('partials/menu/post_share') %>
         <% if(theme.qrcode == true) { %>
         <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
           <i class="mdui-icon material-icons">&#xe337;</i>
         </button>
-        <%- partial('partials/share/menu/qrcode') %>
+        <%- partial('partials/menu/qrcode') %>
         <% } %>
       </div>
     </div>
@@ -95,10 +92,10 @@
 </div>
 <% if (page.comment !== false) { %>
   <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
-    <%- partial('partials/share/comment') %>
+    <%- partial('partials/comment') %>
   <% } %>
 <% } %>
 <% if (!is_page()) { %>
-  <%-partial('partials/share/post_pagination')%>
+  <%-partial('partials/post_pagination')%>
 <% }%>
-<%-partial('partials/share/fab/post')%>
+<%-partial('partials/fab/post')%>

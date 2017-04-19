@@ -1,11 +1,7 @@
-<% if (theme.style.scheme === '1') { %>
-  <%-partial('partials/1/back_actions_card')%>
-<% } %>
-
 <% page.posts.each(function(post) { %>
-    <%-partial('partials/share/posts', { post: post })%>
+    <%-partial('partials/posts', { post: post })%>
 <% }); %>
 
-<%-partial('partials/share/pagination', {base: url_for(config.root) +  'categories/' + page.category + '/', show: theme.pagination })%>
+<%-partial('partials/pagination', {base: url_for(config.root) +  'categories/' + page.category + '/', show: theme.pagination })%>
 
-<%-partial('partials/share/fab/index')%>
+<%-partial('partials/fab/index')%>

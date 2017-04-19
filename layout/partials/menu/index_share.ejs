@@ -1,4 +1,15 @@
-<ul class="mdui-menu" id="menu-first-card-share">
+<ul class="mdui-menu" id="menu-index-share">
+
+<% if (theme.busuanzi !== false) { %>
+  <% if(theme.busuanzi.all_site_uv === true) { %>
+    <li class="mdui-menu-item" id="busuanzi_container_page_pv">
+      <a class="mdui-ripple menu-badge">
+        <%= theme.translations.busuanzi_views %>
+        <span class="badge" id="busuanzi_value_site_uv"></span>
+      </a>
+    </li>
+  <% } %>
+<% } %>
 
 <% if(theme.share_menu.rss === true) { %>
   <li class="mdui-menu-item">
@@ -42,7 +53,7 @@
 
 <% if(theme.share_menu.telegram === true) { %>
   <li class="mdui-menu-item">
-      <a href="https://telegram.me/share/url?url=<%- config.url + config.root %>&text=<%= config.title %>" target="_blank" class="mdui-ripple">
+      <a href="https://telegram.me/url?url=<%- config.url + config.root %>&text=<%= config.title %>" target="_blank" class="mdui-ripple">
           <%= theme.translations.share_menu.telegram %>
       </a>
   </li>
@@ -58,7 +69,7 @@
 
 <% if(theme.share_menu.weibo === true) { %>
   <li class="mdui-menu-item">
-      <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= config.title %>&url=<%- config.url + config.root %>&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+      <a href="http://service.weibo.com/share.php?appkey=&title=<%= config.title %>&url=<%- config.url + config.root %>&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
           <%= theme.translations.share_menu.weibo %>
       </a>
   </li>

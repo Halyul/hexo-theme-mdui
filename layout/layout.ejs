@@ -8,56 +8,38 @@
 <!DOCTYPE html>
 <html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
 <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-  <%-partial('partials/share/head', { primary_color: primary_color[primary_num] })%>
+  <%-partial('partials/head', { primary_color: primary_color[primary_num] })%>
 <% } else { %>
-  <%-partial('partials/share/head')%>
+  <%-partial('partials/head')%>
 <% } %>
 
-<% if (theme.style.scheme === '1') { %>
-  <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-    <% if (theme.color.random === 'global') { %>
-      <body class="mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-    <% } else if (theme.color.random === 'post' && is_post()) { %>
-        <body class="mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-    <% } else { %>
-      <body class="mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-    <% } %>
+<% if (theme.color.random === 'global') { %>
+  <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
+<% } else if (theme.color.random === 'post' && is_post()) { %>
+  <% if (page.primary_color || page.accent_color) { %>
+    <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
   <% } else { %>
-    <body class=" mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %>" id="top">
-  <% } %>
-  <%- partial('partials/1/appbar') %>
-  <%- partial('partials/1/parallax_card') %>
-  <main class="mdui-center style-1-top style-1-container">
-    <%- body %>
-  </main>
-<% } else { %>
-  <% if (theme.color.random === 'global') { %>
     <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
-  <% } else if (theme.color.random === 'post' && is_post()) { %>
-    <% if (page.primary_color || page.accent_color) { %>
-      <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
-    <% } else { %>
-      <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
-    <% } %>
-  <% } else { %>
-    <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
   <% } %>
-
-  <%- partial('partials/0/appbar') %>
-  <main>
-    <br />
-    <%- body %>
-  </main>
+<% } else { %>
+  <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark') { %>mdui-theme-layout-dark<% } %> mdui-drawer-body-left" id="top">
 <% } %>
 
-<%- partial('partials/share/drawer') %>
+<%- partial('partials/appbar') %>
+
+<main>
+  <br />
+  <%- body %>
+</main>
+
+<%- partial('partials/drawer') %>
 <div id="outdated" style="z-index: 99999;">
   <h6><%= theme.translations.outdated_browser.title %></h6>
   <p><%= theme.translations.outdated_browser.line_one %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= theme.translations.outdated_browser.link %></a></p>
   <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= theme.translations.outdated_browser.close %>">&times;</a></p>
 </div>
-<%- partial('partials/share/dialogs') %>
-<%- partial('partials/share/import_js') %>
+<%- partial('partials/dialogs') %>
+<%- partial('partials/import_js') %>
 <% if (page.layout === 'gallery') { %>
   <%- partial('widget/page_gallery') %>
   <% if (page.vimeo_video === true) { %>
