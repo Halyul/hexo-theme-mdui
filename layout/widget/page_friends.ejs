@@ -1,10 +1,30 @@
+<div>
+  <div class="friends-title">
+    <%= theme.translations.friends_title %>
+  </div>
+</div>
 <% if (site.data.friends) { %>
   <div class="mdui-row">
     <% for (var i in site.data.friends) { %>
       <% if (site.data.friends[i].down !== true) { %>
-        <div class="mdui-col-xs-12 mdui-col-sm-6 mdui-col-md-4">
-          <div class="mdui-card" style="margin-bottom: 16px;">
-            <ul class="mdui-list" style="padding: 8px;">
+        <div class="mdui-col-xs-6 mdui-col-md-6 mdui-col-lg-3">
+          <div class="mdui-card friends-container">
+            <a href="<%= site.data.friends[i].link %>" target="_blank" class="content">
+              <img class="avatar" src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/>
+              <div class="name mdui-text-color-theme-text">
+                <%= i %>
+              </div>
+              <div class="descr mdui-text-color-theme-text">
+                <%= site.data.friends[i].descr %>
+              </div>
+              <div class="spacer"></div>
+              <div class="mdui-card-actions no-padding">
+                <button class="mdui-btn mdui-ripple mdui-btn-block mdui-text-color-theme-accent">action 1</button>
+              </div>
+            </a>
+
+
+            <!--<ul class="mdui-list" style="padding: 8px;">
               <a href="<%= site.data.friends[i].link %>" title="<%= i %>" target="_blank">
                 <li class="mdui-list-item mdui-ripple">
                   <div class="mdui-list-item-avatar"><img src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/></div>
@@ -14,7 +34,8 @@
                   </div>
                 </li>
               </a>
-            </ul>
+            </ul>-->
+
           </div>
         </div>
       <% } %>

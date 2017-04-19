@@ -147,6 +147,7 @@ translations:
     button: 'Buy me a beer?'
     close: 'cancel'
   comments: 'Comments'
+  friends_title: 'HI~~'
   outdated_browser:
     title: 'Your browser is out-of-date!'
     line_one: 'Update your browser to view this website correctly. '

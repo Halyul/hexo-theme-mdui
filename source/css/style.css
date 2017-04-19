@@ -20060,6 +20060,64 @@ span.badge[data-badge-caption]::after {
   }
 }
 
+.friends-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 32px 16px 0;
+    white-space: nowrap;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.friends-container {
+    margin-top: 16px;
+}
+
+.friends-container a {
+    text-decoration: none;
+}
+
+.friends-container .content {
+    text-align: center;
+    padding: 0 16px;
+}
+
+.friends-container .content .avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin: 24px auto 12px;
+    display: block;
+    width: 90px;
+    height: 90px;
+}
+
+.friends-container .content .name {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    max-height: 40px;
+}
+
+.friends-container .content .descr {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.friends-container .content .spacer {
+  height: 36px;
+}
+
 /* Outdated Browser v1.1.2 from Line 1 to Line 26
  * MDUI v0.1.2 from Line 28 to Line 14684
  * ionicons v2.0.1 from Line 14686 to Line 17650
