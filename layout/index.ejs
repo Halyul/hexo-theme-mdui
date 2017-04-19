@@ -2,9 +2,7 @@
   <%-partial('partials/1/first_card')%>
 <% } %>
 <div class="posts-container column-3">
-  <div>
-    
-  </div>
+  
 </div>
 <div id="content-list">
     <% page.posts.each(function(post,index) {%>
@@ -23,11 +21,13 @@
             <%- partial('partials/share/menu/index_share') %>
           </div>
         </div>
-        <div class="posts-header">
-          <%= theme.translations.posts.header %>
-        </div>
-        <% }
-        if(!(theme.post.topPost && post.top)) { %>
+        <% }%>
+        <% if(index <= 2){ %>
+          <div class="posts-header">
+            <%= theme.translations.posts.header %>
+          </div>
+        <% } %>
+        <% if(!(theme.post.topPost && post.top)) { %>
           <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
         <% } %>
         </div>
