@@ -6,8 +6,6 @@
 
     var columns = [document.createElement("div"), document.createElement("div"), document.createElement("div")];
 
-    columns[1].classList.add("animate-else");
-
     var level = 4;
 
     var sm = 1;

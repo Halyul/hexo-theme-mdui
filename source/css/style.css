@@ -19786,6 +19786,10 @@ main {
     margin: 5px 0 24px 24px;
 }
 
+#content-list {
+    display: none;
+}
+
 .posts-container {
     display: flex;
     flex-wrap: wrap;
@@ -20131,67 +20135,6 @@ span.badge[data-badge-caption]::after {
 
 /* Style 1 end */
 
-/*!
- * Copyright © CodePen@Bennett Feely
- */
-
-.posts-animate {
-    -webkit-transform-origin: top left;
-    transform-origin: top left;
-    -webkit-animation: fly-in-from-left .5s 1s ease both;
-    animation: fly-in-from-left .5s 1s ease both;
-}
-
-.posts-animate:nth-child(even) {
-    -webkit-transform-origin: top right;
-    transform-origin: top right;
-    -webkit-animation-name: fly-in-from-right;
-    animation-name: fly-in-from-right;
-    -webkit-animation-delay: 1.1s;
-    animation-delay: 1.1s;
-}
-
-.animate-else .posts-animate {
-    -webkit-animation: fly-in-from-right .5s 1s ease both;
-    animation: fly-in-from-right .5s 1s ease both;
-}
-
-.animate-else .posts-animate:nth-child(even) {
-    -webkit-animation-name: fly-in-from-left;
-    animation-name: fly-in-from-left;
-}
-
-@-webkit-keyframes fly-in-from-left {
-    from {
-        -webkit-transform: translateY(15rem) rotate(15deg);
-        transform: translateY(15rem) rotate(15deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fly-in-from-left {
-    from {
-        -webkit-transform: translateY(15rem) rotate(15deg);
-        transform: translateY(15rem) rotate(15deg);
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes fly-in-from-right {
-    from {
-        -webkit-transform: translateY(15rem) rotate(-15deg);
-        transform: translateY(15rem) rotate(-15deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fly-in-from-right {
-    from {
-        -webkit-transform: translateY(15rem) rotate(-15deg);
-        transform: translateY(15rem) rotate(-15deg);
-        opacity: 0;
-    }
-}
 /* Outdated Browser v1.1.2 from Line 1 to Line 26
  * MDUI v0.1.2 from Line 28 to Line 14684
  * ionicons v2.0.1 from Line 14686 to Line 17650
@@ -20199,7 +20142,3 @@ span.badge[data-badge-caption]::after {
  * Light Gallery Transitions v1.3.9 from Line 18678 to Line 19604
  * Theme style from Line 19606 to the end
  */
-
-#content-list {
-    display: none;
-}
