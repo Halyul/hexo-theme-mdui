@@ -77,6 +77,18 @@ pages:
   Test1:
     link: "/myfriends"
     icon: "&#xe0ba;"
+  Test99:
+    link: "/myfriends"
+    icon: "&#xe0ba;"
+  Test8:
+    link: "/myfriends"
+    icon: "&#xe0ba;"
+  Test877:
+    link: "/myfriends"
+    icon: "&#xe0ba;"
+  Test8234:
+    link: "/myfriends"
+    icon: "&#xe0ba;"
   Test2:
     link: "/apply-for-link"
     icon: "&#xe7f0;"

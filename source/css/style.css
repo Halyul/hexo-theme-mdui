@@ -19764,11 +19764,13 @@ main {
 }
 
 .mdui-drawer-close {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-120%);
+    transform: translateX(-120%);
 }
 
 .drawer-content {
+    height: 0;
+    overflow: auto;
   -webkit-box-flex: 1;
     box-flex: 1;
     -ms-flex-positive: 1;
@@ -19785,8 +19787,28 @@ main {
 }
 
 .posts-container {
-    max-width: 530px;
-    min-width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.posts-container > div {
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+
+.posts-container.column-3 > div {
+    width: 33%;
+}
+
+.posts-container.column-2 > div {
+    width: 50%;
+}
+
+.posts-container.column-1 > div {
+    width: 100%;
+    padding: 0px;
 }
 
 .posts-header {
@@ -20028,8 +20050,8 @@ span.badge[data-badge-caption]::after {
 
 @media (max-width: 1023px) {
   .mdui-drawer {
-      -webkit-transform: translateX(-100%);
-      transform: translateX(-100%);
+      -webkit-transform: translateX(-120%);
+      transform: translateX(-120%);
       width: 300px;
   }
 }
@@ -20167,3 +20189,7 @@ span.badge[data-badge-caption]::after {
  * Light Gallery Transitions v1.3.9 from Line 18678 to Line 19604
  * Theme style from Line 19606 to the end
  */
+
+#content-list {
+    display: none;
+}

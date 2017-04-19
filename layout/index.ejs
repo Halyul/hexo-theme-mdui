@@ -1,28 +1,38 @@
 <% if (theme.style.scheme === '1') { %>
   <%-partial('partials/1/first_card')%>
 <% } %>
-<div class="posts-container mdui-center">
-  <div class="mdui-card" style="overflow: visible;">
-    <div class="mdui-card-header index-welcome">
-      <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>" style="margin-right: 8px;"/>
-      <div class="mdui-valign">
-        <div class="mdui-typo-subheading-opacity">
-          <%= theme.index.welcome %>
-        </div>
-      </div>
-      <div class="flex-spacer"></div>
-      <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
-      <%- partial('partials/share/menu/index_share') %>
-    </div>
+<div class="posts-container column-3">
+  <div>
+    
   </div>
-  <div class="posts-header">
-    <%= theme.translations.posts.header %>
-  </div>
-  <% page.posts.each(function(post) { %>
-    <% if(!(theme.post.topPost && post.top)) { %>
-      <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
-    <% } %>
-  <% }); %>
 </div>
+<div id="content-list">
+    <% page.posts.each(function(post,index) {%>
+      <div class="content-item">
+      <% if(index === 0){ %>
+        <div class="mdui-card" style="overflow: visible;">
+          <div class="mdui-card-header index-welcome">
+            <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>" style="margin-right: 8px;"/>
+            <div class="mdui-valign">
+              <div class="mdui-typo-subheading-opacity">
+                <%= theme.index.welcome %>
+              </div>
+            </div>
+            <div class="flex-spacer"></div>
+            <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+            <%- partial('partials/share/menu/index_share') %>
+          </div>
+        </div>
+        <div class="posts-header">
+          <%= theme.translations.posts.header %>
+        </div>
+        <% }
+        if(!(theme.post.topPost && post.top)) { %>
+          <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
+        <% } %>
+        </div>
+      <% }); %>
+    </div>
+<%- js("js/list") %>
 <%-partial('partials/share/pagination', {base: url_for(config.root), show: theme.pagination })%>
 <%-partial('partials/share/fab/index')%>
