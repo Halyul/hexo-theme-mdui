@@ -20151,6 +20151,16 @@ span.badge[data-badge-caption]::after {
     animation-delay: 1.1s;
 }
 
+.animate-else .posts-animate {
+    -webkit-animation: fly-in-from-right .5s 1s ease both;
+    animation: fly-in-from-right .5s 1s ease both;
+}
+
+.animate-else .posts-animate:nth-child(even) {
+    -webkit-animation-name: fly-in-from-left;
+    animation-name: fly-in-from-left;
+}
+
 @-webkit-keyframes fly-in-from-left {
     from {
         -webkit-transform: translateY(15rem) rotate(15deg);
