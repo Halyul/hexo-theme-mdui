@@ -1,4 +1,4 @@
-<div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
+<div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="index">
   <div class="mdui-card-header posts-card-header">
     <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
     <div class="content mdui-valign">
@@ -12,8 +12,8 @@
     <div class="mdui-valign">
       <div class="mdui-typo-caption-opacity date"><%= date(post.date, 'MMM DD, YYYY') %></div>
       <div class="buttons">
-        <a href="<%= url_for(post.path) %>" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-        <button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+        <a href="<%= url_for(post.path) %>" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple mdui-btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-btn-dense"><i class="mdui-icon material-icons">&#xe80d;</i></button>
       </div>
     </div>
   </div>
@@ -26,14 +26,14 @@
   <div class="posts-card-content">
     <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
   </div>
-  <% if (page.thumbnail) { %>
+  <% if (post.thumbnail) { %>
     <div class="mdui-card-media">
-      <img src="<%= page.thumbnail %>"/>
+      <img src="<%= post.thumbnail %>"/>
     </div>
   <% } %>
   <% if (post.tag !== false || post.category !== false) { %>
     <div class="posts-card-actions">
-      <% if (page.category !== false) { %>
+      <% if (post.category !== false) { %>
         <div class="mdui-chip">
           <span class="mdui-chip-icon"><i class="mdui-icon material-icons mdui-text-color-black-icon">&#xe149;</i></span>
         </div>
@@ -42,7 +42,7 @@
         </div>
       <% } %>
       <div class="flex-spacer"></div>
-      <% if (page.tag !== false) { %>
+      <% if (post.tag !== false) { %>
         <div class="mdui-chip">
           <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon ion-pricetags"></i></span>
         </div>

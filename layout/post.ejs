@@ -1,14 +1,17 @@
-<div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
-  <% if (page.thumbnail) { %>
-    <div class="mdui-card-media post-media" style="background-image: url(<%= page.thumbnail %>);background-color: <%- partial('judge/accent_color_hex') %>"></div>
-  <% } %>
-  <div class="mdui-card-primary">
-    <div class="mdui-row">
-      <div class="mdui-col-xs-8">
-        <div class="mdui-card-primary-title"><%=page.title%></div>
-        <div class="mdui-card-primary-subtitle"><%= date(page.date, 'MMM DD, YYYY') %> - <%= config.author %></div>
+<div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="post">
+  <div class="mdui-card-header posts-card-header">
+    <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
+    <div class="content mdui-valign">
+      <span class="username"><%= config.author %></span>
+      <div class="arrow">
+        <svg viewBox="0 0 48 48"><path d="M20 14l10 10-10 10z"></path></svg>
       </div>
-      <div class="mdui-col-xs-4">
+      <div class="mdui-typo-body-1-opacity"><%= theme.translations.posts.public %></div>
+    </div>
+    <div class="flex-spacer"></div>
+    <div class="mdui-valign">
+      <div class="mdui-typo-caption-opacity date"><%= date(page.date, 'MMM DD, YYYY') %></div>
+      <div class="buttons">
         <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-more'}">
           <i class="mdui-icon material-icons">&#xe5d4;</i>
         </button>
@@ -17,7 +20,7 @@
           <i class="mdui-icon material-icons">&#xe80d;</i>
         </button>
         <%- partial('partials/menu/post_share') %>
-        <% if(theme.qrcode == true) { %>
+        <% if(theme.post.qr_code === true) { %>
         <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
           <i class="mdui-icon material-icons">&#xe337;</i>
         </button>
@@ -26,7 +29,18 @@
       </div>
     </div>
   </div>
-  <div class="mdui-card-content mdui-typo no-padding-top" id="post">
+  <div class="posts-card-title">
+    <%= page.title %>
+  </div>
+  <% if (page.thumbnail) { %>
+    <div class="mdui-card-media">
+      <img src="<%= page.thumbnail %>"/>
+    </div>
+  <% } %>
+  <div class="posts-card-line">
+    <div class="mdui-divider"></div>
+  </div>
+  <div class="posts-card-content mdui-typo" id="post-content">
     <%-page.content%>
   </div>
 
@@ -37,65 +51,41 @@
   <% } %>
 
   <% if (page.tag !== false || page.category !== false || theme.post.donate !==false) { %>
-    <div class="mdui-card-content no-padding-top">
+    <div class="posts-card-actions">
       <% if (theme.post.donate !==false) { %>
-        <div class="mdui-valign">
-          <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center" mdui-tooltip="{content: '<%= theme.translations.donate.button %>'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon ion-beer"></i></button>
+        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= theme.translations.donate.button %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon ion-beer"></i></button>
+      <% } %>
+      <div class="flex-spacer"></div>
+      <% if (page.category !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon material-icons mdui-text-color-black-icon">&#xe149;</i></span>
+        </div>
+        <div class="content mdui-text-color-theme-text">
+          categories here
         </div>
       <% } %>
-
-      <% if (page.tag !== false || page.category !== false) { %>
-        <% if (page.tags || page.categories) { %>
-            <div class="mdui-typo">
-              <hr/>
-            </div>
-            <div class="mdui-row">
-              <% if (page.tag !== false) { %>
-                <% if (page.tags) { %>
-                  <div class="mdui-col-xs-6">
-                    <h2><%= theme.translations.tags %></h2>
-                    <% page.tags.map(function(tag){  %>
-                      <a href="<%= config.root %>tags/<%= tag.name %>/" class="no-text-decoration">
-                        <div class="mdui-chip mdui-typo">
-                          <span class="mdui-chip-icon">
-                            <i class="mdui-icon ion-pricetags"></i>
-                          </span>
-                          <span class="mdui-chip-title"><%= tag.name %></span>
-                        </div>
-                      </a>
-                    <% }) %>
-                  </div>
-                <% } %>
-              <% } %>
-              <% if (page.category !== false) { %>
-                <% if (page.categories) { %>
-                <div class="mdui-col-xs-6">
-                  <h2><%= theme.translations.categories %></h2>
-                  <% page.categories.map(function(category){  %>
-                    <a href="<%= config.root %>categories/<%= category.name %>/" class="no-text-decoration">
-                      <div class="mdui-chip mdui-typo">
-                        <span class="mdui-chip-icon">
-                          <i class="mdui-icon material-icons">&#xe169;</i>
-                        </span>
-                        <span class="mdui-chip-title"><%= category.name %></span>
-                      </div>
-                    </a>
-                  <% }) %>
-                </div>
-              <% } %>
-            <% } %>
-          <% } %>
+      <% if (page.tag !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon ion-pricetags"></i></span>
+        </div>
+        <div class="content mdui-text-color-theme-text">
+          tags here
         </div>
       <% } %>
     </div>
   <% } %>
+  <div class="posts-card-line">
+    <div class="mdui-divider"></div>
+  </div>
+  <div class="post-comment">
+    <% if (page.comment !== false) { %>
+      <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
+        <%- partial('partials/comment') %>
+      <% } %>
+    <% } %>
+  </div>
 </div>
-<% if (page.comment !== false) { %>
-  <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
-    <%- partial('partials/comment') %>
-  <% } %>
-<% } %>
-<% if (!is_page()) { %>
+<div style="margin: 0 16px 0 16px;">
   <%-partial('partials/post_pagination')%>
-<% }%>
+</div>
 <%-partial('partials/fab/post')%>

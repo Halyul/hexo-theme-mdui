@@ -19626,7 +19626,6 @@ main {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
-    padding-top: 16px;
 }
 
 .card-bottom-fix {
@@ -19795,6 +19794,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
+    margin-top: 16px
 }
 
 .posts-container > div {
@@ -19875,16 +19875,19 @@ main {
     flex: none;
 }
 
-.mdui-card:hover .posts-card-header .date {
+#index:hover .posts-card-header .date {
     display: none;
 }
 
-.posts-card-header .buttons {
-    display: none;
+.posts-card-header .buttons .mdui-btn {
     opacity: .54;
 }
 
-.mdui-card:hover .posts-card-header .buttons {
+#index .posts-card-header .buttons {
+    display: none;
+}
+
+#index:hover .posts-card-header .buttons {
     display: inherit;
 }
 
@@ -19930,19 +19933,20 @@ main {
     margin-right: 6px;
 }
 
-.post-media {
-    box-sizing: border-box;
-    min-height: 200px;
-    border-radius: 2px 2px 0 0;
-    background-color: #ff4081;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: 50% 50%;
-    background-origin: padding-box;
-    background-size: cover;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
+#post {
+    width: calc(75% - 16px);
+    margin: 16px 0 16px 16px;
+}
+
+@media (max-width: 599px) {
+  #post {
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+}
+
+.post-comment {
+    padding: 12px 16px;
 }
 
 .toc {

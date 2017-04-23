@@ -38,6 +38,7 @@ post:
   donate:
     wechat: /img/avatar.png
     paypay: 'https://paypal.com'
+  qr_code: true
 
 share_menu: #false
   rss: false
@@ -49,12 +50,9 @@ share_menu: #false
   qq: false
   telegram: false
 
-qr_code: false
-
 comment:
     use:
     shortname:
-    provider:
 
 # pagination
 # github@zllovesuki
@@ -124,7 +122,6 @@ translations:
   tag: 'Tag'
   tags: 'Tags'
   years: 'Years'
-  go_to_prev_page: 'Return'
   busuanzi_views: 'Views: '
   posts:
     header: 'Something that I have posted'
@@ -143,10 +140,10 @@ translations:
     twitter: 'Share to Twitter'
     weibo: 'Share to Weibo'
   snackbar: 'Oops! Nothing happened.'
+  qr_code: "Article QR Code"
   donate:
     button: 'Buy me a beer?'
     close: 'cancel'
-  comments: 'Comments'
   friends_title: 'HI~~'
   outdated_browser:
     title: 'Your browser is out-of-date!'

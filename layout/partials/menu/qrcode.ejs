@@ -1,8 +1,8 @@
 <ul class="mdui-menu" id="menu-qrcode">
-  <li class="mdui-menu-item">
-        <a class="mdui-ripple"><%= __('post.qrcode') %></a>
-    </li>
+  <li class="mdui-list-item mdui-ripple" style="cursor: auto">
+    <%= theme.translations.qr_code %>
+  </li>
     <img class="mdui-img-fluid" src="<%- qrcode(url, {
       margin: 2
-    }) %>">
+    }) %>" style="cursor: auto">
 </ul>
