@@ -17,8 +17,8 @@
       </div>
     </div>
   </div>
-  <div class="posts-card-title">
-    <%= post.title %>
+  <div class="posts-card-title mdui-typo">
+    <a href="<%= url_for(post.path) %>" target="_self"><%= post.title %></a>
   </div>
   <div class="posts-card-line">
     <div class="mdui-divider"></div>
