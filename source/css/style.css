@@ -19626,6 +19626,7 @@ main {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
+    padding-top: 16px;
 }
 
 .card-bottom-fix {
@@ -20068,10 +20069,15 @@ span.badge[data-badge-caption]::after {
   }
 }
 
+#friends-page {
+    max-width: 530px;
+    margin: 0 auto;
+}
+
 .friends-title {
     font-size: 16px;
     font-weight: 500;
-    margin: 32px 16px 0;
+    margin: 16px 16px 0;
     white-space: nowrap;
     -webkit-flex-shrink: 1;
     flex-shrink: 1;
@@ -20123,7 +20129,13 @@ span.badge[data-badge-caption]::after {
 }
 
 .friends-container .content .spacer {
-  height: 36px;
+    height: 36px;
+}
+
+@media only screen and (min-width: 1024px) {
+    #friends-page {
+        max-width: 1084px;
+    }
 }
 
 /* Outdated Browser v1.1.2 from Line 1 to Line 26
