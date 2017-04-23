@@ -19815,6 +19815,14 @@ main {
     padding: 0px;
 }
 
+.column-2 .content-item:nth-child(2) .posts-header {
+    display: none;
+}
+
+.column-1 .content-item:nth-child(n+2) .posts-header {
+    display: none;
+}
+
 .posts-header {
     font-size: 12px;
     font-weight: 400;
