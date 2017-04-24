@@ -19971,6 +19971,106 @@ main {
     overflow: auto;
 }
 
+#archives {
+    text-align: center;
+    max-width: 740px;
+}
+
+@media only screen and (min-width: 440px) {
+  #archives {
+      margin: 0 auto;
+      width: 95%;
+  }
+}
+
+@media (min-width: 500px) {
+  #archives {
+      width: 95%;
+  }
+}
+
+@media (min-width: 650px) {
+  #archives {
+    width: 85%;
+  }
+}
+
+#backgroundImg {
+     width: 100%;
+     height: 25vh;
+     background-repeat: no-repeat;
+     background-position: 50% 50%;
+     background-size: cover;
+     background-origin: padding-box;
+     background-attachment: scroll;
+}
+
+#archives .header .content .avatar {
+    width: 60px;
+    margin-top: -30px;
+}
+
+#archives .header .content .name {
+    margin-top: 16px;
+    word-break: break-word;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#archives .header .content .slogan {
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+#archives .header .content button {
+    margin-top: 24px;
+}
+
+@media only screen and (min-width: 1024px) {
+  #archives {
+      max-width: 1084px;
+  }
+  #archives .header, #archives .header #backgroundImg {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+  }
+  #archives .header {
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+  }
+  #archives .header .content {
+      height: 60px;
+      margin-top: -108px;
+      padding: 24px;
+      -webkit-box-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      box-orient: horizontal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  }
+  #backgroundImg {
+       height: 50vh;
+  }
+  #archives .header .content .avatar {
+      margin-top: 0px;
+  }
+  #archives .header .content .info {
+      margin-left: 24px;
+  }
+  #archives .header .content .name {
+      margin-top: 0px;
+      color: #fff;
+  }
+  #archives .header .content .slogan {
+      margin-top: 8px;
+      color: #fff;
+  }
+}
 
 /* 添加在<a>中 */
 

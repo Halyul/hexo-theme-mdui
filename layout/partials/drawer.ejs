@@ -39,13 +39,15 @@
       </div>
     <% } else { %>
       <div class="mdui-list no-padding">
-        <li class="mdui-list-item mdui-ripple">
-          <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
-          <div class="mdui-list-item-content">
-            <%= theme.translations.archives %>
-            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= site.posts.length %></span>
-          </div>
-        </li>
+        <a href="<%= config.root %>archives">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
+            <div class="mdui-list-item-content">
+              <%= theme.translations.archives %>
+              <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= site.posts.length %></span>
+            </div>
+          </li>
+        </a>
       </div>
     <% } %>
     <% if (!is_archive()) { %>
