@@ -19916,7 +19916,8 @@ main {
 }
 
 .posts-card-actions {
-    margin: 16px 8px;
+    margin: 16px 8px 0 8px;
+    padding-bottom: 16px;
 }
 
 .posts-card-actions .mdui-chip, .posts-card-actions .mdui-chip-icon, .index-welcome .mdui-chip, .index-welcome .mdui-chip-icon {
@@ -19934,8 +19935,8 @@ main {
 }
 
 #post {
-    width: calc(75% - 16px);
-    margin: 16px 0 16px 16px;
+    width: calc(75% - 24px);
+    margin: 16px 16px 16px 8px;
 }
 
 @media (max-width: 599px) {
@@ -19955,6 +19956,10 @@ main {
 
 #post img {
     cursor: pointer;
+}
+
+#post.no-toc {
+    margin: 16px auto;
 }
 
 .menu-fix {

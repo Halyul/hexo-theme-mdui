@@ -74,18 +74,21 @@
       <% } %>
     </div>
   <% } %>
-  <div class="posts-card-line">
-    <div class="mdui-divider"></div>
-  </div>
-  <div class="post-comment">
-    <% if (page.comment !== false) { %>
-      <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
+  <% if (page.comment !== false) { %>
+    <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
+      <div class="posts-card-line">
+        <div class="mdui-divider"></div>
+      </div>
+      <div class="post-comment">
         <%- partial('partials/comment') %>
-      <% } %>
+      </div>
     <% } %>
-  </div>
+  <% } %>
 </div>
-<div style="margin: 0 16px 0 16px;">
+<!--<div id="card-toc">
+  nothing here
+</div>-->
+<div style="margin: 0 16px 16px 16px;height: 36px;">
   <%-partial('partials/post_pagination')%>
 </div>
 <%-partial('partials/fab/post')%>

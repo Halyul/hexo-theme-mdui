@@ -2,8 +2,8 @@
 
 </div>
 <div id="content-list">
-    <% page.posts.each(function(post,index) {%>
-      <div class="content-item">
+  <% page.posts.each(function(post,index) {%>
+    <div class="content-item">
       <% if(index === 0){ %>
         <div class="mdui-card" style="overflow: visible;">
           <div class="mdui-card-header index-welcome">
@@ -18,18 +18,17 @@
             <%- partial('partials/menu/index_share') %>
           </div>
         </div>
-        <% }%>
-        <% if(index <= 2){ %>
-          <div class="posts-header">
-            <%= theme.translations.posts.header %>
-          </div>
-        <% } %>
-        <% if(!(theme.post.topPost && post.top)) { %>
-          <%-partial('partials/posts', { post: post, index: true, pin: false })%>
-        <% } %>
+      <% } %>
+      <% if(index <= 2) { %>
+        <div class="posts-header">
+          <%= theme.translations.posts.header %>
         </div>
-      <% }); %>
+      <% } %>
+      <% if(!(theme.post.topPost && post.top)) { %>
+        <%-partial('partials/posts', { post: post, index: true, pin: false })%>
+      <% } %>
     </div>
-<%- js("js/list") %>
+  <% }); %>
+</div>
 <%-partial('partials/pagination', {base: url_for(config.root), show: theme.pagination })%>
 <%-partial('partials/fab/index')%>
