@@ -15,6 +15,9 @@
     </div>
   </div>
 <% } %>
+<% if (theme.about_me === true) { %>
+  <%- partial('../widget/about_me_dialog') %>
+<% } %>
 <div class="mdui-dialog" id="contactDialog">
   <div class="mdui-dialog-title">
     <%= theme.translations.userview.how_to_contact_me %>

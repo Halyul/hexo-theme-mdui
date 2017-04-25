@@ -71,6 +71,8 @@ busuanzi: #false
 
 service_woker:
 
+about_me: true
+
 pages:
   Test1:
     link: "/myfriends"
@@ -116,6 +118,7 @@ translations:
   archive:
     post: 'Post'
     posts: 'Posts'
+    about: 'About'
   archives: 'Archives'
   category: 'Category'
   categories: 'Categories'

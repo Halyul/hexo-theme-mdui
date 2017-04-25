@@ -49,7 +49,9 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
       <% } %>
       <span class="mdui-typo-title"><%= config.author %></span>
       <div class="mdui-toolbar-spacer"></div>
-      <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up">about</button>
+      <% if (theme.about_me === true) { %>
+        <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up" mdui-dialog="{target: '#aboutmeDialog'}"><%= theme.translations.archive.about %></button>
+      <% } %>
       <div class="appbar-userview mdui-valign mdui-hidden-sm-down" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>

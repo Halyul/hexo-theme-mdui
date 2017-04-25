@@ -20226,6 +20226,12 @@ span.badge[data-badge-caption]::after {
   }
 }
 
+#aboutmeDialog.mdui-dialog {
+    background-color: transparent;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
 #friends-page {
     max-width: 530px;
     margin: 0 auto;
