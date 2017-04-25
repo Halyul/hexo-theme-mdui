@@ -8,7 +8,7 @@
     <div class="mdui-row">
       <% for (var i in site.data.friends) { %>
         <% if (site.data.friends[i].down !== true) { %>
-          <div class="mdui-col-xs-6 mdui-col-sm-6 mdui-col-md-3">
+          <div class="mdui-col-xs-6 mdui-col-md-3">
             <div class="mdui-card friends-container">
               <a href="<%= site.data.friends[i].link %>" target="_blank" class="content">
                 <img class="avatar" src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/>

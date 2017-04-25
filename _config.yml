@@ -113,7 +113,9 @@ sns:
 
 # Translations
 translations:
-  # archive: 'Archive'
+  archive:
+    post: 'Post'
+    posts: 'Posts'
   archives: 'Archives'
   category: 'Category'
   categories: 'Categories'
