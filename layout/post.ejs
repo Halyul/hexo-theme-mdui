@@ -85,9 +85,14 @@
     <% } %>
   <% } %>
 </div>
-<!--<div id="card-toc">
-  nothing here
-</div>-->
+<div id="card-toc">
+  <%- toc(page.content, {
+            class: 'post-toc',
+            list_number: true,
+            style: 'max-height:80vh; overflow-y:scroll;'
+        }) %>
+</div>
+<%- js("js/toc") %>
 <div style="margin: 0 16px 16px 16px;height: 36px;">
   <%-partial('partials/post_pagination')%>
 </div>

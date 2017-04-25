@@ -19937,12 +19937,22 @@ main {
 #post {
     width: calc(75% - 24px);
     margin: 16px 16px 16px 8px;
+    display: inline-block;
+}
+
+#card-toc {
+    width: calc(25% - 4px);
+    display: inline-block;
+    vertical-align: top;
 }
 
 @media (max-width: 599px) {
   #post {
     width: 100%;
     margin: 0 0 16px 0;
+  }
+  #card-toc {
+    display: none;
   }
 }
 
