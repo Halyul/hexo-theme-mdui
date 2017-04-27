@@ -19634,6 +19634,7 @@ span.badge[data-badge-caption]::after {
     width: auto;
     overflow: auto;
     height: 100%;
+    max-height: 100%;
 }
 
 @media (min-width: 600px) {
@@ -19698,6 +19699,13 @@ span.badge[data-badge-caption]::after {
 
 #aboutmeDialog .card-others .item {
     margin-top: 24px;
+    display: flex;
+}
+
+#aboutmeDialog .card-others .item .img {
+    margin: auto 24px auto 0;
+    height: 46px;
+    width: 46px;
 }
 
 #aboutmeDialog .card-others .item .iTitle {
@@ -19707,13 +19715,79 @@ span.badge[data-badge-caption]::after {
     opacity: .54;
 }
 
+#aboutmeDialog .card-others .item .iContent, #aboutmeDialog .card-others .item.link .iTitle, #aboutmeDialog .card-others .item .iContent_1  {
+    opacity: .87;
+}
+
 #aboutmeDialog .card-others .item .iContent, #aboutmeDialog .card-others .mdui-collapse-item-header .mdui-list-item-content  {
     font-weight: 400;
     font-size: 16px;
 }
 
+#aboutmeDialog .card-others .item .iContent_1  {
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#aboutmeDialog .card-others .item.link {
+    cursor: pointer;
+}
+
+#aboutmeDialog .card-others .item.link .img, #aboutmeDialog .card-others .item .icon {
+    margin: auto 20px auto 0;
+    height: 24px;
+    width: 24px;
+}
+
+#aboutmeDialog .card-others .item.link .iTitle {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+#aboutmeDialog .card-others .item.link .iContent {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 4px;
+    opacity: .54;
+}
+
+#aboutmeDialog .card-others .item.one-line {
+    height: 46px;
+}
+
+#aboutmeDialog .card-others .item.one-line .iTitle {
+    margin: auto 0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#aboutmeDialog .card-others .item.one-line .iContent {
+    display: none;
+}
+
+#aboutmeDialog .card-others .item.one-line .iContent_1 {
+    display: none;
+}
+
 #aboutmeDialog .card-others .mdui-collapse-item-body {
     padding: 0 24px;
+}
+
+@media (max-width: 528px) {
+  #aboutmeDialog .card-others {
+    margin: 8px;
+  }
+  #aboutmeDialog .card-others .item .s_img {
+      margin: auto 32px auto 0;
+  }
+  #aboutmeDialog .card-others .main {
+      padding: 16px 16px 0 16px;
+  }
+  #aboutmeDialog .card-others .mdui-collapse-item-body {
+      padding: 0 16px;
+  }
 }
 
 #aboutmeDialog .card-others .mdui-collapse-item-header {
