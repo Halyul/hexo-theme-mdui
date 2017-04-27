@@ -19322,7 +19322,6 @@ main {
     background-color: transparent;
     overflow-y: scroll;
     height: 75%;
-    padding-bottom: 64px;
     box-sizing: border-box;
 }
 
@@ -19330,18 +19329,8 @@ main {
     width:0
 }
 
-#card-toc ol {
-  display: block;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 16px;
-}
-
-#card-toc a {
-  text-decoration: none;
-  color: inherit;
+#card-toc ul ul {
+    padding-left: 16px;
 }
 
 @media (max-width: 599px) {
@@ -19362,7 +19351,7 @@ main {
     padding-right: 1em;
 }
 
-#blog-post img {
+#post-content img {
     cursor: pointer;
 }
 

@@ -1,68 +1,73 @@
-var _ = require('lodash'),
-  util = require('util');
+'use strict';
 
-var rHeadingAll = /<h(\d)(.*?)>(.+?)<\/h\d>/g,
-  rHeading = /<h(\d).*id="(.+?)".*>(.+?)<\/h\d>/;
+var cheerio;
 
-module.exports = function(str, options){
-  var options = _.extend({
-    class: 'toc',
-  }, options);
+function tocHelper(str, options) {
+  options = options || {};
 
-  var headings = str.match(rHeadingAll),
-    data = [],
-    result = '<ul class="mdui-list ' + options.class + '" mdui-collapse="{accordion: true}">',
-    lastNumber = {},
-    firstLevel = 0,
-    lastLevel = 0;
+  if (!cheerio) cheerio = require('cheerio');
+
+  var $ = cheerio.load(str);
+  var headingsMaxDepth = options.hasOwnProperty('max_depth') ? options.max_depth : 6;
+  var headingsSelector = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].slice(0, headingsMaxDepth).join(',');
+  var headings = $(headingsSelector);
 
   if (!headings.length) return '';
 
-  for (var i = 1; i <= 6; i++){
-    lastNumber[i] = 0;
-  }
+  var className = options.class || 'toc';
+  var listNumber = options.hasOwnProperty('list_number') ? options.list_number : true;
+  var result = '<ul class="mdui-list ' + className + '" mdui-collapse="{accordion: true}">';
+  var lastNumber = [0, 0, 0, 0, 0, 0];
+  var firstLevel = 0;
+  var lastLevel = 0;
+  var i = 0;
 
-  headings.forEach(function(heading, i){
-    if (!rHeading.test(heading)) return;
+  headings.each(function() {
+    var level = +this.name[1];
+    var id = $(this).attr('id');
+    var text = $(this).text();
 
-    var match = heading.match(rHeading);
+    lastNumber[level - 1]++;
 
-    data.push({
-      level: +match[1],
-      id: match[2],
-      text: match[3]
-    });
-  });
-
-  data.forEach(function(item){
-    var level = item.level,
-      number = '';
-
-    if (!firstLevel){
-      firstLevel = level;
-      lastLevel = level;
-    }
-
-    lastNumber[level]++;
-
-    for (var i = level + 1; i <= 6; i++){
+    for (i = level; i <= 5; i++) {
       lastNumber[i] = 0;
     }
 
-    for (var i = level; i < lastLevel; i++){
-      result += '</ul>';
+    if (firstLevel) {
+      for (i = level; i < lastLevel; i++) {
+        result += '</a></ul>';
+      }
+
+      if (level > lastLevel) {
+        result += '<ul class="mdui-list-dense ' + className + '-child">';
+      } else {
+        result += '</a>';
+      }
+    } else {
+      firstLevel = level;
     }
 
-    if (level > lastLevel) result += '<ul class="mdui-list mdui-list-dense">'
+     result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" href="#' + id + '">';
 
-    result += '<a class="mdui-list-item mdui-ripple ' + options.class + '-link" href="#' + item.id + '">' +
-        number + item.text +
-      '</a>';
+    if (listNumber) {
+      result += '<span class="' + className + '-number">';
+
+      for (i = firstLevel - 1; i < level; i++) {
+        result += lastNumber[i] + '.';
+      }
+      result += '<span class="' + className + '-text">' + text + '</span>';
+
+      result += '</span></a>';
+    }
 
     lastLevel = level;
   });
 
-  result += '</ul>';
+  for (i = firstLevel - 1; i < lastLevel; i++) {
+    result += '</a></ul>';
+  }
 
   return result;
-};
+}
+
+module.exports = tocHelper;
