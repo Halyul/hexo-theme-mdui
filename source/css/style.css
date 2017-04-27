@@ -19166,11 +19166,22 @@ main {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin-top: 16px
+    margin: 16px auto 0 auto;
+    width: 100%;
+}
+
+@media only screen and (min-width: 860px) {
+    .posts-container {
+        width: 90%;
+    }
+}
+
+.posts-container .mdui-card {
+    max-width: 530px;
 }
 
 .posts-container > div {
-    padding: 0px 20px;
+    padding: 0px 8px;
     box-sizing: border-box;
 }
 
@@ -19189,11 +19200,11 @@ main {
 }
 
 .column-2 .content-item:nth-child(2) .posts-header {
-    display: none;
+    display: none !important;
 }
 
 .column-1 .content-item:nth-child(n+2) .posts-header {
-    display: none;
+    display: none !important;
 }
 
 .posts-header {
