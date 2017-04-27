@@ -1,5 +1,9 @@
-<div class="mdui-drawer drawer-container" id="drawer">
-  <div class="drawer-head mdui-valign mdui-hidden-md-up">
+<div class="mdui-drawer drawer-container <% if (is_category() || is_tag() || is_year()) { %>mdui-drawer-full-height mdui-drawer-close drawer-shadow<% } %>" id="drawer"
+  <% if (is_category() || is_tag() || is_year()) { %>
+    style="background-color: #fff;width: 300px;"
+  <% } %>
+>
+  <div class="drawer-head mdui-valign <% if (!is_category() && !is_tag() && !is_year()) { %>mdui-hidden-md-up<% } %>">
     <div class="mdui-typo-title-opacity"><%= theme.appbar.title %></div>
     <div class="flex-spacer"></div>
     <button class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer-close><i class="mdui-icon material-icons">&#xe314;</i></button>
