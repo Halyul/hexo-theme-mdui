@@ -20248,6 +20248,19 @@ span.badge[data-badge-caption]::after {
     background-color: transparent;
     border-radius: 2px;
     box-shadow: none;
+    min-width: 0px;
+    max-width: 528px;
+    width: auto;
+}
+
+#aboutmeDialog .card1 {
+    padding-bottom: 24px;
+}
+
+#aboutmeDialog .card1 .avatar {
+    border: 2px solid #fff;
+    height: 128px;
+    margin-top: -64px;
 }
 
 #friends-page {
