@@ -20260,18 +20260,23 @@ span.badge[data-badge-caption]::after {
     min-width: 0px;
     max-width: 528px;
     width: auto;
-    overflow-y: scroll;
+    overflow: visible;
 }
 
 #aboutmeDialog .card1 {
+    padding-top: 70px;
     padding-bottom: 24px;
+    overflow: visible;
 }
 
 #aboutmeDialog .card1 .avatar {
     border: 2px solid #fff;
     height: 128px;
     width: 128px;
-    margin-top: -66px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateY(-50%) translateX(-50%);
 }
 
 #aboutmeDialog .card1 .content .name {
