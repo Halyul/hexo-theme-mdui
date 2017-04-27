@@ -19945,11 +19945,11 @@ main {
     display: inline-block;
     vertical-align: top;
     position: fixed;
-    padding: 8px 16px 8px 0;
+    margin: 16px 16px 8px 0;
     list-style: none;
     background-color: transparent;
     overflow-y: scroll;
-    height: 100%;
+    height: 75%;
     padding-bottom: 64px;
     box-sizing: border-box;
 }
