@@ -93,9 +93,9 @@ addLoadEvent(function(){
 <% } %>
 <% if (!is_home()) { %>
   <script type="text/javascript">
-  $(document).on('click', '.back-button', function() {
-      window.history.back();
-  });
+    $(document).on('click', '.back-button', function() {
+        window.history.back();
+    });
   </script>
 <% } %>
 <% if (!is_post() && theme.translations.snackbar && page.total > 1) { %>
@@ -169,6 +169,17 @@ addLoadEvent(function(){
   <% if (page.mathjax) { %>
     <%- partial('../widget/mathjax') %>
   <% } %>
+<% } %>
+
+<% if (theme.about_me === true && is_archive()) { %>
+  <script>
+    $(document).on('open.mdui.dialog', '#aboutmeDialog', function() {
+        $('html').css('overflow-y', 'hidden');
+    });
+    $(document).on('close.mdui.dialog', '#aboutmeDialog', function() {
+        $('html').css('overflow-y', 'auto');
+    });
+  </script>
 <% } %>
 
 <!-- Custom javascript -->

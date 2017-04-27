@@ -1,5 +1,5 @@
 <div class="mdui-dialog" id="aboutmeDialog">
-  <div class="mdui-card mdui-color-theme card1">
+  <div class="mdui-card mdui-color-theme card1 card-bottom-fix">
     <img class="mdui-img-circle avatar mdui-center" src="<%= theme.style.avatar %>"/>
     <div class="content">
       <div class="name mdui-text-center">
@@ -19,4 +19,24 @@
       </div>
     </div>
   </div>
+  <div class="mdui-card card2">
+    <div class="content">
+      <div class="name mdui-text-center">
+        <%= config.author %>
+      </div>
+      <div class="others mdui-text-center">
+        <div class="slogan">
+          <%= theme.style.slogan %>
+        </div>
+        <% if (theme.style.about_others !== false) { %>
+          <div class="items">
+            <% theme.style.about_others.forEach(function(item) { %>
+                <div><%= item %></div>
+            <% }); %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
 </div>

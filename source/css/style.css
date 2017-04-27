@@ -20260,6 +20260,7 @@ span.badge[data-badge-caption]::after {
     min-width: 0px;
     max-width: 528px;
     width: auto;
+    overflow-y: scroll;
 }
 
 #aboutmeDialog .card1 {
