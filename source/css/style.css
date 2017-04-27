@@ -20270,6 +20270,10 @@ span.badge[data-badge-caption]::after {
   }
 }
 
+#aboutmeDialog .card-bottom-fix {
+    margin-bottom: 8px;
+}
+
 #aboutmeDialog .card1 {
     padding-top: 70px;
     padding-bottom: 24px;
@@ -20309,6 +20313,52 @@ span.badge[data-badge-caption]::after {
 #aboutmeDialog .card1 .content .others .items {
     margin-top: 12px;
     padding: 0 16px;
+}
+
+#aboutmeDialog .card-others .main {
+    padding: 24px 24px 0px 24px;
+}
+
+#aboutmeDialog .card-others .title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#aboutmeDialog .card-others .item {
+    margin-top: 24px;
+}
+
+#aboutmeDialog .card-others .item .iTitle {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 8px;
+    opacity: .54;
+}
+
+#aboutmeDialog .card-others .item .iContent, #aboutmeDialog .card-others .mdui-collapse-item-header .mdui-list-item-content  {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#aboutmeDialog .card-others .mdui-collapse-item-body {
+    padding: 0 24px;
+}
+
+#aboutmeDialog .card-others .mdui-collapse-item-header {
+    height: 64px;
+}
+
+#aboutmeDialog .card-others .mdui-collapse-item-header .mdui-collapse-item-arrow {
+    height: 24px;
+    margin: auto 20px auto 24px;
+}
+
+#aboutmeDialog .card-others .mdui-collapse-item.hide-more span[moreButton-more] {
+  display: none;
+}
+
+#aboutmeDialog .card-others .mdui-collapse-item.hide-less span[moreButton-less] {
+  display: none;
 }
 
 #friends-page {

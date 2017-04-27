@@ -3,14 +3,10 @@ location:
 
 # style
 style:
-  scheme:
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
   hoverable: true
-  about_others:
-    - '1'
-    - '2'
 
 # HTML head
 head:

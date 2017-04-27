@@ -7,36 +7,69 @@
         <%= config.author %>
       </div>
       <div class="others mdui-text-center">
-        <div class="slogan">
-          <%= theme.style.slogan %>
-        </div>
-        <% if (theme.style.about_others !== false) { %>
-          <div class="items">
-            <% theme.style.about_others.forEach(function(item) { %>
-                <div><%= item %></div>
-            <% }); %>
-          </div>
+        <% for (var i in site.data.about) { %>
+          <% if (i === 'slogan') { %>
+            <% if ( site.data.about[i] === true) { %>
+              <div class="slogan">
+                <%= theme.style.slogan %>
+              </div>
+            <% } %>
+          <% } %>
+          <% if (i === 'others') { %>
+            <div class="items">
+              <% site.data.about[i].forEach(function(item) { %>
+                  <div><%= item %></div>
+              <% }); %>
+            </div>
+          <% } %>
         <% } %>
       </div>
     </div>
   </div>
-  <div class="mdui-card card2 card-bottom-fix">
-    <div class="content">
-      <div class="name mdui-text-center">
-        <%= config.author %>
-      </div>
-      <div class="others mdui-text-center">
-        <div class="slogan">
-          <%= theme.style.slogan %>
-        </div>
-        <% if (theme.style.about_others !== false) { %>
-          <div class="items">
-            <% theme.style.about_others.forEach(function(item) { %>
-                <div><%= item %></div>
-            <% }); %>
+  <% for (var x in site.data.about) { %>
+    <% if (x !== 'others' && x !=='slogan') { %>
+      <div class="mdui-card card-bottom-fix card-others">
+        <div class="main">
+          <div class="title">
+            <%= x %>
           </div>
-        <% } %>
+          <div class="content">
+            <% for (var y in site.data.about[x].main) { %>
+              <div class="item">
+                <div class="iTitle">
+                  <%= y %>
+                </div>
+                <div class="iContent">
+                  <%= site.data.about[x].main[y].content %>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+        <div class="mdui-collapse mdui-list no-padding" mdui-collapse="{accordion: true}">
+          <div class="mdui-collapse-item hide-less" id="aboutmeCollapse">
+            <div class="mdui-collapse-item-body">
+            <% for (var z in site.data.about[x].more) { %>
+              <div class="item">
+                <div class="iTitle">
+                  <%= z %>
+                </div>
+                <div class="iContent">
+                  <%= site.data.about[x].more[z].content %>
+                </div>
+              </div>
+            <% } %>
+            </div>
+            <div class="mdui-divider" style="margin-top: 24px;"></div>
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <div class="mdui-collapse-item-arrow">
+                <i class="mdui-icon material-icons">&#xe313;</i>
+              </div>
+              <div class="mdui-list-item-content"><span moreButton-more>More</span><span moreButton-less>Less</span></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    <% } %>
+  <% } %>
 </div>

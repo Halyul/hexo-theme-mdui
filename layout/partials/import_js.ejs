@@ -171,13 +171,24 @@ addLoadEvent(function(){
   <% } %>
 <% } %>
 
+<script>
+  $(document).on('open.mdui.dialog', '.mdui-dialog', function() {
+      $('html').css('overflow-y', 'hidden');
+  });
+  $(document).on('close.mdui.dialog', '.mdui-dialog', function() {
+      $('html').css('overflow-y', 'auto');
+  });
+</script>
+
 <% if (theme.about_me === true && is_archive()) { %>
   <script>
-    $(document).on('open.mdui.dialog', '.mdui-dialog', function() {
-        $('html').css('overflow-y', 'hidden');
+    $(document).on('open.mdui.collapse', '.mdui-collapse-item', function() {
+        $(this).addClass('hide-more');
+        $(this).removeClass('hide-less');
     });
-    $(document).on('close.mdui.dialog', '.mdui-dialog', function() {
-        $('html').css('overflow-y', 'auto');
+    $(document).on('close.mdui.collapse', '#aboutmeCollapse', function() {
+      $(this).removeClass('hide-more');
+      $(this).addClass('hide-less');
     });
   </script>
 <% } %>
