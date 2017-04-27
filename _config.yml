@@ -35,8 +35,12 @@ post:
   entry_excerpt: 80
   # topPost: true
   donate:
-    wechat: /img/avatar.png
-    paypay: 'https://paypal.com'
+    wechat:
+      link: /img/avatar.png
+      fa: 'fa-wechat'
+    paypay:
+      link: 'https://paypal.com'
+      fa: 'fa-paypal'
   qr_code: true
 
 share_menu: #false
@@ -75,42 +79,51 @@ about_me: true
 pages:
   Test1:
     link: "/myfriends"
-    icon: "&#xe0ba;"
+    md: "&#xe0ba;"
   Test99:
     link: "/myfriends"
-    icon: "&#xe0ba;"
+    md: "&#xe0ba;"
   Test8:
     link: "/myfriends"
-    icon: "&#xe0ba;"
+    md: "&#xe0ba;"
   Test877:
     link: "/myfriends"
-    icon: "&#xe0ba;"
+    md: "&#xe0ba;"
   Test8234:
     link: "/myfriends"
-    icon: "&#xe0ba;"
+    md: "&#xe0ba;"
   Test2:
     link: "/apply-for-link"
-    icon: "&#xe7f0;"
+    fa: "fa-child"
   Test3:
     link: "/timeline"
-    icon: "home"
+    md: "home"
   Test4:
     cascade: true
-    icon: 'home'
+    md: 'home'
     pages:
       TEST1:
         link: "/myfriends"
-        icon: "&#xe5ca;"
+        md: "&#xe5ca;"
       TEST2:
         link: "/timeline"
-        icon: "home"
+        md: "home"
       Test3:
         link: "/timeline"
-        icon: "home"
+        md: "home"
 
 sns:
-  Twitter: https://twitter.com
-  Facebook: https://facebook.com
+  Twitter:
+    link: https://twitter.com
+    fa: 'fa-twitter'
+  Facebook:
+    link: https://facebook.com
+    null_icon: true
+  TEST:
+    link: https://facebook.com
+    md: "&#xe168;"
+  TEST1:
+    link: https://facebook.com
 
 # Translations
 translations:
