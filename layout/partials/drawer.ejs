@@ -27,7 +27,7 @@
         </a>
       </div>
     <% } %>
-    <% if (is_archive()) { %>
+    <% if (!is_year() && is_archive()) { %>
       <div class="mdui-list no-padding-top">
         <li class="mdui-list-item mdui-ripple">
           <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe149;</i>
@@ -50,9 +50,9 @@
         </a>
       </div>
     <% } %>
-    <% if (!is_archive()) { %>
+    <% if (!is_archive() || is_year()) { %>
       <div class="mdui-list no-padding-top" mdui-collapse="{accordion: true}" mdui-collapse>
-        <div class="mdui-collapse-item">
+        <div class="mdui-collapse-item <% if (is_category()) { %>mdui-collapse-item-open<% } %>">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
             <div class="mdui-list-item-content"><%= theme.translations.categories %></div>
@@ -68,7 +68,7 @@
             <% }) %>
           </div>
         </div>
-        <div class="mdui-collapse-item">
+        <div class="mdui-collapse-item <% if (is_tag()) { %>mdui-collapse-item-open<% } %>">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
             <div class="mdui-list-item-content"><%= theme.translations.tags %></div>
@@ -84,7 +84,7 @@
             <% }) %>
           </div>
         </div>
-        <div class="mdui-collapse-item">
+        <div class="mdui-collapse-item <% if (is_year()) { %>mdui-collapse-item-open<% } %>">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
             <div class="mdui-list-item-content"><%= theme.translations.years %></div>

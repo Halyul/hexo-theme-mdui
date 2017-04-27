@@ -53,7 +53,7 @@ addLoadEvent(function(){
       pinnedClass: 'fab',
       unpinnedClass: 'mdui-fab-hide'
     });
-    <% if (!is_archive()) { %>
+    <% if (!is_archive() || is_year()) { %>
       (function() {
         var items = document.querySelectorAll("#content-list .content-item");
         var list = document.querySelector(".posts-container");

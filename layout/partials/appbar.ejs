@@ -4,9 +4,9 @@ if (is_home()) pageTitle = theme.translations.index;
 if (is_archive()) pageTitle = theme.translations.archives;
 if (is_tag()) pageTitle = page.tag;
 if (is_category()) pageTitle = page.category;
-if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle = page.year;
 %>
-<% if (!is_archive()) { %>
+<% if (!is_archive() || is_year()) { %>
   <div class="mdui-appbar mdui-appbar-fixed">
     <div class="mdui-toolbar mdui-color-theme">
       <% if (is_home() || is_year() || is_month() || is_category() || is_tag()) { %>
@@ -32,7 +32,7 @@ if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
       <%- partial('menu/userview') %>
     </div>
   </div>
-<% } else if (is_archive()) { %>
+<% } else if (is_archive() && !is_year()) { %>
   <div class="mdui-appbar mdui-appbar-fixed">
     <div class="mdui-toolbar mdui-color-theme">
       <button class="mdui-btn mdui-btn-icon mdui-hidden-md-up" mdui-drawer="{target: '#drawer'}">

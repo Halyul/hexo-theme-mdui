@@ -4,8 +4,7 @@ if (is_home()) pageTitle = theme.translations.index;
 if (is_archive()) pageTitle = theme.translations.archives;
 if (is_tag()) pageTitle = theme.translations.tag + ': ' + page.tag;
 if (is_category()) pageTitle = theme.translations.category + ': ' + page.category;
-if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
-if (is_year()) pageTitle += ': ' + page.year;
+if (is_year()) pageTitle = page.year;
 pageTitle += ' | ' + config.title;
 %>
 <head>
