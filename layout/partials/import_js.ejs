@@ -121,14 +121,14 @@ addLoadEvent(function(){
         function doWork(){
             listens.forEach(function(value,index){
                 value[1]();
-                $(value[0]).removeClass("on");
+                $(value[0]).removeClass("mdui-list-item-active");
             })
             $((listens[listens.reduce(function(r,v,index){
                 if(v[2] == true){
                     return index;
                 }
                 else return r;
-            },undefined)] || [])[0]).addClass("on");
+            },undefined)] || [])[0]).addClass("mdui-list-item-active");
 
         }
         var listens = [];
