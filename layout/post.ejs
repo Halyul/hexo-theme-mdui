@@ -53,7 +53,7 @@
   <% if (page.tag !== false || page.category !== false || theme.post.donate !==false) { %>
     <div class="posts-card-actions">
       <% if (theme.post.donate !==false) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= theme.translations.donate.button %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon ion-beer"></i></button>
+        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= theme.translations.donate.button %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer"></i></button>
       <% } %>
       <div class="flex-spacer"></div>
       <% if (page.category !== false) { %>
@@ -66,7 +66,7 @@
       <% } %>
       <% if (page.tag !== false) { %>
         <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon ion-pricetags"></i></span>
+          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
         </div>
         <div class="content mdui-text-color-theme-text">
           tags here
