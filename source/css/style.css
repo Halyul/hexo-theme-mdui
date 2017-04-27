@@ -19624,12 +19624,30 @@ span.badge[data-badge-caption]::after {
     overflow: auto;
     height: 100%;
     max-height: 100%;
+    position: absolute;
 }
 
 @media (min-width: 600px) {
   #aboutmeDialog.mdui-dialog {
       max-height: 100%;
   }
+}
+
+#aboutmeDialog #aboutmeAppbar {
+    position: fixed;
+    top: 0;
+}
+
+#aboutmeDialog #aboutmeAppbar .avatar {
+    height: 40px;
+    width: 40px;
+    margin: 8px 0 8px 20px;
+}
+
+#aboutmeDialog #aboutmeAppbar .title {
+    font-size: 20px;
+    padding: 0 16px;
+    font-weight: 400;
 }
 
 #aboutmeDialog .card-bottom-fix {

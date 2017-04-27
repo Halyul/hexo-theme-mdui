@@ -190,6 +190,16 @@ addLoadEvent(function(){
       $(this).removeClass('hide-more');
       $(this).addClass('hide-less');
     });
+    var card_flag = false;
+    $('#aboutmeDialog').scroll(function() {
+        if (!card_flag && $('#cardLocation').position().top < 0) {
+          $('#aboutmeAppbar').removeClass('mdui-hidden');
+          card_flag = true;
+        } else if (card_flag && $('#cardLocation').position().top > 0) {
+          $('#aboutmeAppbar').addClass('mdui-hidden');
+          card_flag = false;
+        };
+    });
   </script>
 <% } %>
 

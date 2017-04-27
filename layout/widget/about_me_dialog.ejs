@@ -1,4 +1,15 @@
 <div class="mdui-dialog" id="aboutmeDialog">
+  <!--<div id="aboutmeAppbar" class="mdui-hidden mdui-toolbar mdui-color-theme">
+    <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
+  </div>-->
+  <div class="mdui-appbar mdui-appbar-fixed" id="aboutmeAppbar">
+    <div class="mdui-toolbar mdui-color-theme">
+      <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
+      <div class="title">
+        <%= config.author %>
+      </div>
+    </div>
+  </div>
   <div style="height: 224px;"></div>
   <div class="mdui-card mdui-color-theme card1 card-bottom-fix">
     <img class="mdui-img-circle avatar mdui-center" src="<%= theme.style.avatar %>"/>
@@ -26,6 +37,7 @@
       </div>
     </div>
   </div>
+  <div id="cardLocation"></div>
   <% for (var x in site.data.about) { %>
     <% if (x !== 'others' && x !=='slogan') { %>
       <div class="mdui-card card-bottom-fix card-others">
