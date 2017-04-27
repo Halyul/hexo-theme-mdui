@@ -20268,7 +20268,33 @@ span.badge[data-badge-caption]::after {
 #aboutmeDialog .card1 .avatar {
     border: 2px solid #fff;
     height: 128px;
-    margin-top: -64px;
+    width: 128px;
+    margin-top: -66px;
+}
+
+#aboutmeDialog .card1 .content .name {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 16px;
+    padding: 0 16px;
+}
+
+#aboutmeDialog .card1 .content .others {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-top: 16px;
+    width: 100%;
+}
+
+#aboutmeDialog .card1 .content .others .slogan {
+    margin-top: 6px;
+    padding: 0 16px;
+}
+
+#aboutmeDialog .card1 .content .others .items {
+    margin-top: 12px;
+    padding: 0 16px;
 }
 
 #friends-page {
