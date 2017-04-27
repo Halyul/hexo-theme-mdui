@@ -173,10 +173,10 @@ addLoadEvent(function(){
 
 <% if (theme.about_me === true && is_archive()) { %>
   <script>
-    $(document).on('open.mdui.dialog', '#aboutmeDialog', function() {
+    $(document).on('open.mdui.dialog', '.mdui-dialog', function() {
         $('html').css('overflow-y', 'hidden');
     });
-    $(document).on('close.mdui.dialog', '#aboutmeDialog', function() {
+    $(document).on('close.mdui.dialog', '.mdui-dialog', function() {
         $('html').css('overflow-y', 'auto');
     });
   </script>
