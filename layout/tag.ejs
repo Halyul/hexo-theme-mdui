@@ -4,21 +4,6 @@
 <div id="content-list">
   <% page.posts.each(function(post,index) {%>
     <div class="content-item">
-        <% if(index === 0){ %>
-        <div class="mdui-card" style="overflow: visible;">
-          <div class="mdui-card-header index-welcome">
-            <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>" style="margin-right: 8px;"/>
-            <div class="mdui-valign">
-              <div class="mdui-typo-subheading-opacity">
-                <%= theme.index.welcome %>
-              </div>
-            </div>
-            <div class="flex-spacer"></div>
-            <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple" mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
-            <%- partial('partials/menu/index_share') %>
-          </div>
-        </div>
-      <% } %>
       <% if(index <= 2) { %>
         <div class="posts-header">
           <%= theme.translations.posts.header %>
