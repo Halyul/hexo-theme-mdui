@@ -20260,7 +20260,14 @@ span.badge[data-badge-caption]::after {
     min-width: 0px;
     max-width: 528px;
     width: auto;
-    overflow: visible;
+    overflow: auto;
+    height: 100%;
+}
+
+@media (min-width: 600px) {
+  #aboutmeDialog.mdui-dialog {
+      max-height: 100%;
+  }
 }
 
 #aboutmeDialog .card1 {
