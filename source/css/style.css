@@ -19948,6 +19948,14 @@ main {
     padding: 8px 16px 8px 0;
     list-style: none;
     background-color: transparent;
+    overflow-y: scroll;
+    height: 100%;
+    padding-bottom: 64px;
+    box-sizing: border-box;
+}
+
+#card-toc::-webkit-scrollbar{
+    width:0
 }
 
 #card-toc ol {
