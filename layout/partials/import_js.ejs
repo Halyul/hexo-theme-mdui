@@ -107,10 +107,11 @@ addLoadEvent(function(){
 <% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag()) { %>
   <script type="text/javascript">
     $(document).ready(function(){
-      if($(".toc").length == 0)
+      if($(".toc").length == 0 || $("#card-toc").length == 0)
       {
         $("#button-toc").addClass("mdui-hidden");
-        $("#post").addClass("no-toc")
+        $("#card-toc").addClass("mdui-hidden");
+        $("#blog-post").addClass("no-toc")
       };
     });
     window.addEventListener("load",function(){
@@ -161,8 +162,8 @@ addLoadEvent(function(){
   })
   </script>
 
-  <!-- MathJax Load-->
   <% if (page.mathjax) { %>
+    <!-- MathJax Load-->
     <%- partial('../widget/mathjax') %>
   <% } %>
 <% } %>

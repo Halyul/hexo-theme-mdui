@@ -5,7 +5,8 @@ if (is_archive()) pageTitle = theme.translations.archives;
 if (is_tag()) pageTitle = theme.translations.tag + ': ' + page.tag;
 if (is_category()) pageTitle = theme.translations.category + ': ' + page.category;
 if (is_year()) pageTitle = page.year;
-pageTitle += ' | ' + config.title;
+if (page.path === 'search/index.html') pageTitle = theme.translations.search.text;
+pageTitle += ' - ' + config.title;
 %>
 <head>
   <meta charset="UTF-8">

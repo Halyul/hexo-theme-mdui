@@ -140,6 +140,9 @@ translations:
   tags: 'Tags'
   years: 'Years'
   busuanzi_views: 'Views: '
+  search:
+    text: 'Search'
+    explore: 'Explore'
   posts:
     header: 'Something that I have posted'
     public: 'Public'
