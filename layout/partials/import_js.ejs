@@ -149,20 +149,6 @@ addLoadEvent(function(){
     })
   </script>
 
-  <script>
-  $$('#post-content img').on('click', function () {
-    var img_src = $$(this).attr('src');
-    var img_alt = $$(this).attr('alt');
-    $(this).lightGallery({
-      dynamic: true,
-      dynamicEl: [{
-        "src": img_src,
-        'subHtml': "<p>" + img_alt + "</p>"
-        }],
-    });
-  });
-  </script>
-
   <% if (page.mathjax) { %>
     <!-- MathJax Load-->
     <%- partial('../widget/mathjax') %>

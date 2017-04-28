@@ -19,7 +19,7 @@ head:
 color:
   primary_color: "indigo"
   accent_color: "blue"
-  layout: 
+  layout:
   random:
   bg_color: "#eeeeee"
 
@@ -172,7 +172,6 @@ translations:
     line_one: 'Update your browser to view this website correctly. '
     link: 'Update my browser now '
     close: 'Close'
-  gallery_button_text: 'Enter gallery'
   disqus_no_script: 'Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>'
   post_pagination:
     newer: 'Newer Post'
