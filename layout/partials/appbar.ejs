@@ -8,7 +8,7 @@ if (is_year()) pageTitle = page.year;
 if (page.path === 'search/index.html') pageTitle = theme.translations.search.text;
 %>
 <% if ((!is_archive() || is_year()) && page.path !== 'search/index.html' ) { %>
-  <div class="mdui-appbar mdui-appbar-fixed" id="appbar">
+  <div class="mdui-appbar mdui-appbar-fixed" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
       <% if (is_home() || is_year() || is_month() || is_category() || is_tag()) { %>
         <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
@@ -53,7 +53,7 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
     </div>
   </div>
 <% } else if ((is_archive() && !is_year()) && page.path !== 'search/index.html') { %>
-  <div class="mdui-appbar mdui-appbar-fixed" id="appbar">
+  <div class="mdui-appbar mdui-appbar-fixed" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
       <button class="mdui-btn mdui-btn-icon mdui-hidden-md-up" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">&#xe5d2;</i>
@@ -87,7 +87,7 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
     </div>
   </div>
 <% } else if (page.path === 'search/index.html') { %>
-  <div class="mdui-appbar mdui-appbar-fixed" id="appbar">
+  <div class="mdui-appbar mdui-appbar-fixed" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
       <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">&#xe5d2;</i>

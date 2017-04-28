@@ -33,7 +33,7 @@ addLoadEvent(function(){
 <% if(theme.vendors.js_min_js) { %>
   <script type="text/javascript" src="<%= theme.vendors.js_min_js %>"></script>
 <% } else { %>
-  <%- js("js/js.min") %>
+  <%- js("js/js") %>
 <% } %>
 
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>

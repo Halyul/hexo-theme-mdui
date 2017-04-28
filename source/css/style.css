@@ -12257,7 +12257,7 @@ body.side-content {
   padding-left: 30%;
 }
 
-body #appbar button.style-fix {
+body #blog-appbar button.style-fix {
   display: none;
 }
 
@@ -12332,24 +12332,24 @@ body #appbar button.style-fix {
     padding-top: 0;
     padding-left: 0;
   }
-  body.style-fix #appbar {
+  body.style-fix #blog-appbar {
     box-shadow: none;
   }
-  body.style-fix #appbar .mdui-color-theme {
+  body.style-fix #blog-appbar .mdui-color-theme {
     color: #000 !important;
     background-color: rgba(0, 0, 0, .1) !important;
   }
-  body.side-content #appbar .appbar-border-line, body.side-content #appbar .mdui-typo-headline, body.side-content #appbar .appbar-userview {
+  body.side-content #blog-appbar .appbar-border-line, body.side-content #blog-appbar .mdui-typo-headline, body.side-content #blog-appbar .appbar-userview {
     display: none !important;
   }
-  body.side-content #appbar .mdui-typo-title {
+  body.side-content #blog-appbar .mdui-typo-title {
     display: none;
     width: 100%;
   }
-  body.side-content #appbar button.style-fix, body #appbar.style-fix .mdui-typo-title {
+  body.side-content #blog-appbar button.style-fix, body #blog-appbar.style-fix .mdui-typo-title {
     display: inherit !important;
   }
-  body.side-content #appbar .mdui-toolbar-spacer {
+  body.side-content #blog-appbar .mdui-toolbar-spacer {
     height: inherit;
   }
   #side-content {
@@ -12831,7 +12831,7 @@ span.badge[data-badge-caption]::after {
   }
 }
 
-#appbar .search {
+#blog-appbar .search {
   line-height: normal;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12855,11 +12855,11 @@ span.badge[data-badge-caption]::after {
       flex-grow: 1;
 }
 
-#appbar .search .icon {
+#blog-appbar .search .icon {
   margin: auto 8px;
 }
 
-#appbar .search .text {
+#blog-appbar .search .text {
   font-size: 16px;
   margin: auto;
   -webkit-box-flex: 1;
@@ -12870,7 +12870,7 @@ span.badge[data-badge-caption]::after {
       flex-shrink: 0;
 }
 
-#appbar .search .text input {
+#blog-appbar .search .text input {
   width: 100%;
   color: #fff;
   border: 0;
@@ -12878,15 +12878,15 @@ span.badge[data-badge-caption]::after {
   background: none;
 }
 
-#appbar .search .text input::-webkit-input-placeholder {
+#blog-appbar .search .text input::-webkit-input-placeholder {
   color: #fff;
 }
 
-#appbar .search .text input:-ms-input-placeholder {
+#blog-appbar .search .text input:-ms-input-placeholder {
   color: #fff;
 }
 
-#appbar .search .text input::placeholder {
+#blog-appbar .search .text input::placeholder {
   color: #fff;
 }
 
