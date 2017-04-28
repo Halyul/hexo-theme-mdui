@@ -19561,7 +19561,7 @@ body #appbar button.style-fix {
     color: #000 !important;
     background-color: rgba(0,0,0,0.1) !important;
   }
-  body.side-content #appbar .appbar-border-line, body.side-content #appbar .mdui-typo-headline, body #appbar .appbar-userview {
+  body.side-content #appbar .appbar-border-line, body.side-content #appbar .mdui-typo-headline, body.side-content #appbar .appbar-userview {
     display: none !important;
   }
   body.side-content #appbar .mdui-typo-title {
