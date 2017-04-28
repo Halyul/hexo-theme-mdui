@@ -19561,17 +19561,17 @@ body #appbar button.style-fix {
     color: #000 !important;
     background-color: rgba(0,0,0,0.1) !important;
   }
-  body #appbar .appbar-border-line, body #appbar .mdui-typo-headline, body #appbar .appbar-userview {
+  body.side-content #appbar .appbar-border-line, body.side-content #appbar .mdui-typo-headline, body #appbar .appbar-userview {
     display: none !important;
   }
-  body #appbar .mdui-typo-title {
+  body.side-content #appbar .mdui-typo-title {
       display: none;
       width: 100%;
   }
-  body #appbar button.style-fix, body #appbar.style-fix .mdui-typo-title {
+  body.side-content #appbar button.style-fix, body #appbar.style-fix .mdui-typo-title {
       display: inherit !important;
   }
-  body #appbar .mdui-toolbar-spacer {
+  body.side-content #appbar .mdui-toolbar-spacer {
       height: inherit;
   }
   #side-content {

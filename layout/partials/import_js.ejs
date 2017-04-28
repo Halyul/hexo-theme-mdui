@@ -170,9 +170,11 @@ addLoadEvent(function(){
 <script>
   $(document).on('open.mdui.dialog', '.mdui-dialog', function() {
       $('html').css('overflow-y', 'hidden');
+      $('body').removeClass('drawer-overlay-none');
   });
   $(document).on('close.mdui.dialog', '.mdui-dialog', function() {
       $('html').css('overflow-y', 'auto');
+      $('body').addClass('drawer-overlay-none');
   });
 </script>
 
