@@ -234,6 +234,17 @@ addLoadEvent(function(){
           content_flag = false;
         };
     });
+    $('.toTop').click(function() {
+      $('#toTop').click();
+    });
+  </script>
+<% } %>
+
+<% if (page.path === 'search/index.html') { %>
+  <script>
+    $('#search-input').click(function() {
+      $('#toTop').click();
+    });
   </script>
 <% } %>
 
