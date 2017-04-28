@@ -19,7 +19,7 @@ head:
 color:
   primary_color: "indigo"
   accent_color: "blue"
-  layout:
+  layout: 
   random:
   bg_color: "#eeeeee"
 

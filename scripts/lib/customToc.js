@@ -16,7 +16,7 @@ function tocHelper(str, options) {
 
   var className = options.class || 'toc';
   var listNumber = options.hasOwnProperty('list_number') ? options.list_number : true;
-  var result = '<ul class="mdui-list ' + className + '" mdui-collapse="{accordion: true}">';
+  var result = '<ul class="mdui-list ' + className + '">';
   var lastNumber = [0, 0, 0, 0, 0, 0];
   var firstLevel = 0;
   var lastLevel = 0;
