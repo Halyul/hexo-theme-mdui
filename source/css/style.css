@@ -19475,6 +19475,151 @@ main {
     word-break: break-all;
 }
 
+body.side-content {
+    padding-left: 30%;
+}
+
+body #appbar button.style-fix {
+    display: none;
+}
+
+#side-content {
+    width: 30%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+}
+
+@media only screen and (min-width: 1280px) {
+    body.side-content {
+        padding-left: 24%;
+    }
+    #side-content {
+        width: 24%;
+    }
+}
+
+@media (min-width: 1500px) {
+  body.side-content {
+      padding-left: 368px;
+  }
+  #side-content {
+      width: 368px;
+  }
+}
+
+#side-content .mdui-grid-tile {
+    margin-bottom: 0;
+}
+
+#side-content .content {
+    margin: 0 32px;
+    padding-bottom: 24px;
+    text-align: center;
+}
+
+#side-content .content .avatar {
+    border: #fff 1px solid;
+    height: 48px;
+    width: 48px;
+    margin-top: -25px;
+    position: relative;
+}
+
+#side-content .content .author {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#side-content .content .name {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px;
+    max-height: 105px;
+    margin-bottom: -6px;
+}
+
+#side-content .content .length {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 14px;
+    opacity: .54;
+}
+
+@media (max-width: 860px) {
+  body.side-content {
+      padding-left: 0;
+      padding-top: 0;
+  }
+  body.style-fix #appbar {
+    box-shadow: none;
+  }
+  body.style-fix #appbar .mdui-color-theme {
+    color: #000 !important;
+    background-color: rgba(0,0,0,0.1) !important;
+  }
+  body #appbar .appbar-border-line, body #appbar .mdui-typo-headline, body #appbar .appbar-userview {
+    display: none !important;
+  }
+  body #appbar .mdui-typo-title {
+      display: none;
+      width: 100%;
+  }
+  body #appbar button.style-fix, body #appbar.style-fix .mdui-typo-title {
+      display: inherit !important;
+  }
+  body #appbar .mdui-toolbar-spacer {
+      height: inherit;
+  }
+  #side-content {
+      width: 100%;
+      height: auto;
+      position: inherit;
+  }
+  #side-content .mdui-grid-tile-actions {
+      display: none;
+  }
+}
+
+@media (max-width: 859px) and (min-width: 660px) {
+  #side-content .content {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 859px) and (min-width: 370px) {
+  #side-content .bg {
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 30%;
+    height: 30vw;
+    max-height: 250px;
+    min-height: 200px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  #side-content .content {
+    margin: 0 24px;
+    text-align: left;
+  }
+  #side-content .content .author {
+      width: 50px;
+  }
+}
+
 @media only screen and (min-width: 440px) {
   #archives {
       margin: 0 auto;

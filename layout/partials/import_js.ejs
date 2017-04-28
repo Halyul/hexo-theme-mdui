@@ -49,10 +49,6 @@ addLoadEvent(function(){
 <% } %>
 <% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag()) { %>
   <script type="text/javascript">
-    var fab_index = new mdui.Headroom('#fab_index', {
-      pinnedClass: 'fab',
-      unpinnedClass: 'mdui-fab-hide'
-    });
     <% if (!is_archive() || is_year()) { %>
       (function() {
         var items = document.querySelectorAll("#content-list .content-item");
@@ -198,6 +194,41 @@ addLoadEvent(function(){
         } else if (card_flag && $('#cardLocation').position().top > 0) {
           $('#aboutmeAppbar').addClass('mdui-hidden');
           card_flag = false;
+        };
+    });
+  </script>
+<% } %>
+
+<% if (is_category() || is_tag() || is_year()) { %>
+  <script>
+    var postsCount = $('.posts-container div').children('.content-item').length;
+    if (postsCount === 1) {
+      var postsText = '<%= theme.translations.archive.post %>';
+    } else if (postsCount > 1) {
+      var postsText = '<%= theme.translations.archive.posts %>';
+    }
+    $('#postsCount').text(postsCount + ' ' + postsText);
+    function styleChanging() {
+      var hide = new mdui.Headroom('#appbar');
+      var windowWidth = window.innerWidth, toLeftWidth = 860;
+      if (windowWidth < toLeftWidth) {
+        hide.enable();
+      } else {
+        hide.disable();
+      }
+    };
+    styleChanging();
+    var content_flag = false;
+    $(window).scroll(function() {
+        var contentLocation = $('#contentLocation').offset().top - $(document).scrollTop() - 56;
+        if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
+          $('#appbar').addClass('style-fix');
+          $('body').removeClass('style-fix');
+          content_flag = true;
+        } else if (content_flag && contentLocation > 0 && window.innerWidth < 860) {
+          $('#appbar').removeClass('style-fix');
+          $('body').addClass('style-fix');
+          content_flag = false;
         };
     });
   </script>

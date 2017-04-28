@@ -1,0 +1,27 @@
+<% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+  var num = Math.floor(Math.random() * color.length);
+%>
+<div id="side-content" class="mdui-color-<%= color[num] %>">
+  <div class="mdui-grid-tile">
+    <div class="bg">
+      <img src="/img/bg.png"/>
+    </div>
+    <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
+      <div class="flex-spacer"></div>
+      <div class="mdui-grid-tile-buttons">
+        <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
+    <div class="author mdui-text-center">
+      <%= config.author %>
+    </div>
+    <div class="name">
+      <%= page.category %>
+    </div>
+    <div class="length" id="postsCount"></div>
+  </div>
+</div>
+<div id="contentLocation"></div>
