@@ -76,6 +76,8 @@ service_woker:
 
 about_me: true
 
+random_pics: 25
+
 pages:
   Test1:
     link: "/myfriends"

@@ -1,10 +1,11 @@
 <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
   var num = Math.floor(Math.random() * color.length);
+  var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
 <div id="side-content" class="mdui-color-<%= color[num] %>">
   <div class="mdui-grid-tile">
     <div class="bg">
-      <img src="/img/bg.png"/>
+      <img src="<%= url_for(config.root) + 'img/random/randompic_' + randomPic + '.jpg' %>" />
     </div>
     <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
       <div class="flex-spacer"></div>
