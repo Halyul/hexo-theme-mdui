@@ -37,10 +37,10 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
             <%= theme.translations.search.text %>
           </div>
         </div>
-        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year()) { %>toTop<% } %>"></div>
+        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year()) { %>toTop<% } %> mdui-hidden-sm-up"></div>
       <% } else { %>
         <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year()) { %>toTop<% } %>"></div>
-        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-xs-down" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-xs" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
       <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-sm-up <% if (is_category() || is_tag() || is_year()) { %>mdui-hidden<% } %>" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
