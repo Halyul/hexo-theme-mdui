@@ -25,7 +25,7 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
         </a>
         <span class="appbar-border-line mdui-hidden-xs"></span>
       <% } %>
-      <span class="mdui-typo-title <% if (!is_category() && !is_tag() && !is_year()) { %>mdui-hidden-xs<% } %> <% if (is_category() || is_tag() || is_year()) { %>toTop<% } %>">
+      <span class="mdui-typo-title <% if (!is_category() && !is_tag() && !is_year()) { %>mdui-hidden-xs<% } %> <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>">
         <%= pageTitle %>
       </span>
       <% if (is_home() || is_year() || is_month() || is_category() || is_tag()) { %>
@@ -37,9 +37,9 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
             <%= theme.translations.search.text %>
           </div>
         </div>
-        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year()) { %>toTop<% } %> mdui-hidden-sm-up"></div>
+        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
       <% } else { %>
-        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year()) { %>toTop<% } %>"></div>
+        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
         <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-xs" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
       <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-sm-up <% if (is_category() || is_tag() || is_year()) { %>mdui-hidden<% } %>" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>

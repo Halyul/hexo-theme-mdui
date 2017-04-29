@@ -11779,6 +11779,10 @@ html {
   overflow-x: hidden;
 }
 
+.toTop {
+    height: inherit;
+}
+
 .card-bottom-fix {
   margin-bottom: 16px;
 }
@@ -12876,6 +12880,9 @@ span.badge[data-badge-caption]::after {
   border: 0;
   outline: none;
   background: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 #blog-appbar .search .text input::-webkit-input-placeholder {

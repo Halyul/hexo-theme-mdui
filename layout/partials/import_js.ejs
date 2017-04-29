@@ -164,6 +164,12 @@ addLoadEvent(function(){
       $$('html').css('overflow-y', 'auto');
       $$('body').addClass('drawer-overlay-none');
   });
+  $$(function () {
+    smoothScroll.init({
+      selector: 'a',
+      offset: 60
+    });
+  });
 </script>
 
 <% if (theme.about_me === true && is_archive()) { %>
@@ -199,7 +205,7 @@ addLoadEvent(function(){
     }
     $$('#postsCount').text(postsCount + ' ' + postsText);
     function styleChanging() {
-      var hide = new mdui.Headroom('#appbar');
+      var hide = new mdui.Headroom('#blog-appbar');
       var windowWidth = window.innerWidth, toLeftWidth = 860;
       if (windowWidth < toLeftWidth) {
         hide.enable();
@@ -213,15 +219,20 @@ addLoadEvent(function(){
       var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       var contentLocation = $$('#contentLocation').offset().top - scrollTop - 56;
       if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-        $$('#appbar').addClass('style-fix');
+        $$('#blog-appbar').addClass('style-fix');
         $$('body').removeClass('style-fix');
         content_flag = true;
       } else if (content_flag && contentLocation > 0 && window.innerWidth < 860) {
-        $$('#appbar').removeClass('style-fix');
+        $$('#blog-appbar').removeClass('style-fix');
         $$('body').addClass('style-fix');
         content_flag = false;
       };
     });
+  </script>
+<% } %>
+
+<% if (is_post() || is_category() || is_tag() || is_year()) { %>
+  <script>
     $$('.toTop').on('click', function () {
       $$('#toTop').trigger('click');
     });
