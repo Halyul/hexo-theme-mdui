@@ -3,10 +3,20 @@
     <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
     <div class="content mdui-valign">
       <span class="username"><%= config.author %></span>
-      <div class="arrow">
-        <svg viewBox="0 0 48 48"><path d="M20 14l10 10-10 10z"></path></svg>
+      <div class="arrow mdui-text-center mdui-text-color-theme-accent">
+        <i class="mdui-icon material-icons">&#xe037;</i>
       </div>
-      <div class="mdui-typo-body-1-opacity"><%= theme.translations.posts.public %></div>
+      <div class="mdui-typo-body-1-opacity mdui-typo">
+        <% if (post.category !== false) { %>
+          <% post.categories.map(function(category){  %>
+            <a href="<%= config.root %>categories/<%= category.name %>/">
+              <span><%= category.name %></span>
+            </a>
+          <% }) %>
+        <% } else { %>
+          <%= theme.translations.posts.public %>
+        <% } %>
+      </div>
     </div>
     <div class="flex-spacer"></div>
     <div class="mdui-valign">
@@ -30,25 +40,18 @@
       <img src="<%= post.thumbnail %>"/>
     </div>
   <% } %>
-  <% if (post.tag !== false || post.category !== false) { %>
+  <% if (post.tag !== false) { %>
     <div class="posts-card-actions">
-      <% if (post.category !== false) { %>
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon material-icons mdui-text-color-black-icon">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-text-color-theme-text">
-          categories here
-        </div>
-      <% } %>
-      <div class="flex-spacer"></div>
-      <% if (post.tag !== false) { %>
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-text-color-theme-text">
-          tags here
-        </div>
-      <% } %>
+      <div class="mdui-chip">
+        <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span>
+      </div>
+      <div class="content mdui-typo">
+        <% post.tags.map(function(tag){  %>
+          <a href="<%= config.root %>tags/<%= tag.name %>/">
+            <span><%= tag.name %></span>
+          </a>
+        <% }) %>
+      </div>
     </div>
   <% } %>
 </div>

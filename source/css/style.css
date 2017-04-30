@@ -12041,6 +12041,10 @@ html {
       flex: none;
 }
 
+.posts-card-header .content .arrow i {
+  font-size: 3.75px;
+}
+
 #index:hover .posts-card-header .date {
   display: none;
 }
@@ -12094,7 +12098,7 @@ html {
   margin: 0 8px;
 }
 
-.posts-card-actions .content {
+.posts-card-actions .content a {
   font-size: 12px;
   line-height: 36px;
   margin-right: 6px;
