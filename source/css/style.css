@@ -5123,22 +5123,6 @@ body {
     font-size: 15px;
   }
 }
-body *::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background: transparent;
-}
-body *::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, .2);
-}
-body.mdui-theme-layout-dark *::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  background: transparent;
-}
-body.mdui-theme-layout-dark *::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, .3);
-}
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -12135,10 +12119,6 @@ html {
   background-color: transparent;
 }
 
-#card-toc::-webkit-scrollbar {
-  width: 0;
-}
-
 #card-toc ul ul {
   padding-left: 16px;
 }
@@ -12571,7 +12551,6 @@ span.badge[data-badge-caption]::after {
 }
 
 #aboutmeDialog.mdui-dialog {
-  position: absolute;
   overflow: auto;
   width: auto;
   min-width: 0;
@@ -12589,18 +12568,26 @@ span.badge[data-badge-caption]::after {
   }
 }
 
-#aboutmeDialog #aboutmeAppbar {
-  position: fixed;
-  top: 0;
+#aboutmeAppbar {
+  display: none;
+  min-width: 0;
+  max-width: 528px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#aboutmeDialog #aboutmeAppbar .avatar {
+#aboutmeAppbar.style-fix {
+  z-index: 9999;
+  display: inherit;
+}
+
+#aboutmeAppbar .avatar {
   width: 40px;
   height: 40px;
   margin: 8px 0 8px 20px;
 }
 
-#aboutmeDialog #aboutmeAppbar .title {
+#aboutmeAppbar .title {
   font-size: 20px;
   font-weight: 400;
   padding: 0 16px;
@@ -12614,6 +12601,7 @@ span.badge[data-badge-caption]::after {
   overflow: visible;
   padding-top: 70px;
   padding-bottom: 24px;
+  margin-top: 224px;
 }
 
 #aboutmeDialog .card1 .avatar {

@@ -178,17 +178,29 @@ addLoadEvent(function(){
         $$(this).addClass('hide-more');
         $$(this).removeClass('hide-less');
     });
-    $$(document).on('close.mdui.collapse', '#aboutmeCollapse', function() {
+    $$(document).on('close.mdui.collapse', '.mdui-collapse-item', function() {
       $$(this).removeClass('hide-more');
       $$(this).addClass('hide-less');
     });
     var card_flag = false;
     $$('#aboutmeDialog').on('scroll', function() {
       if (!card_flag && $$('#cardLocation').position().top < 0) {
-        $$('#aboutmeAppbar').removeClass('mdui-hidden');
+        $$('#aboutmeAppbar').addClass('style-fix');
         card_flag = true;
       } else if (card_flag && $$('#cardLocation').position().top > 0) {
-        $$('#aboutmeAppbar').addClass('mdui-hidden');
+        $$('#aboutmeAppbar').removeClass('style-fix');
+        card_flag = false;
+      };
+    });
+    $$(document).on('open.mdui.dialog', '#aboutmeDialog', function() {
+      if (!card_flag && $$('#cardLocation').position().top < 0) {
+        $$('#aboutmeAppbar').addClass('style-fix');
+        card_flag = true;
+      };
+    });
+    $$(document).on('close.mdui.dialog', '#aboutmeDialog', function() {
+      if (card_flag && $$('#cardLocation').position().top < 0) {
+        $$('#aboutmeAppbar').removeClass('style-fix');
         card_flag = false;
       };
     });
