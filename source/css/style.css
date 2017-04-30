@@ -12100,6 +12100,10 @@ html {
   margin-right: 6px;
 }
 
+#menu-qrcode .mdui-list-item:hover {
+  background-color: transparent;
+}
+
 #blog-post {
   display: inline-block;
   width: calc(75% - 24px);
