@@ -1,11 +1,11 @@
 <%
 var pageTitle = page.title || '';
-if (is_home()) pageTitle = theme.translations.index;
-if (is_archive()) pageTitle = theme.translations.archives;
-if (is_tag()) pageTitle = theme.translations.tag + ': ' + page.tag;
-if (is_category()) pageTitle = theme.translations.category + ': ' + page.category;
+if (is_home()) pageTitle = __('global.index');
+if (is_archive()) pageTitle = __('global.archives');
+if (is_tag()) pageTitle = __('global.tag') + ': ' + page.tag;
+if (is_category()) pageTitle = __('global.category') + ': ' + page.category;
 if (is_year()) pageTitle = page.year;
-if (page.path === 'search/index.html') pageTitle = theme.translations.search.text;
+if (page.path === 'search/index.html') pageTitle = __('search.text');
 pageTitle += ' - ' + config.title;
 %>
 <head>

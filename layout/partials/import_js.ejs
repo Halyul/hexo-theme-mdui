@@ -94,11 +94,11 @@ addLoadEvent(function(){
     });
   </script>
 <% } %>
-<% if (!is_post() && theme.translations.snackbar && page.total > 1) { %>
+<% if (!is_post() && page.total > 1) { %>
   <script type="text/javascript">
     $$(document).on('click', 'a[name="snackbar"]', function () {
       mdui.snackbar({
-        message: '<%= theme.translations.snackbar %>',
+        message: '<%= __('global.snackbar') %>',
         timeout: 1000
       });
     });
@@ -211,9 +211,9 @@ addLoadEvent(function(){
   <script>
     var postsCount = $$('.posts-container div').children('.content-item').length;
     if (postsCount === 1) {
-      var postsText = '<%= theme.translations.archive.post %>';
+      var postsText = '<%= __('archive.post') %>';
     } else if (postsCount > 1) {
-      var postsText = '<%= theme.translations.archive.posts %>';
+      var postsText = '<%= __('archive.posts') %>';
     }
     $$('#postsCount').text(postsCount + ' ' + postsText);
     function styleChanging() {

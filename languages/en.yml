@@ -1,0 +1,50 @@
+global:
+  archives: 'Archives'
+  category: 'Category'
+  categories: 'Categories'
+  index: 'Index'
+  pages: 'Pages'
+  tag: 'Tag'
+  tags: 'Tags'
+  years: 'Years'
+  busuanzi_views: 'Views: '
+  snackbar: 'Oops! Nothing happened.'
+archive:
+  post: 'Post'
+  posts: 'Posts'
+  about: 'About'
+posts:
+  header: 'Something that I have posted'
+  public: 'Public'
+  qr_code: "Article QR Code"
+  donate:
+    button: 'Buy me a beer?'
+    close: 'cancel'
+  disqus_no_script: 'Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>'
+  pagination:
+    newer: 'Newer Post'
+    older: 'Older Post'
+    no_newer: 'No More Newer Post'
+    no_older: 'No More Older Post'
+search:
+  text: 'Search'
+  explore: 'Explore'
+share_menu:
+  rss: 'Article RSS'
+  facebook: 'Share to Facebook'
+  googleplus: 'Share to Google+'
+  linkedin: 'Share to Linkedin'
+  qq: 'Share to QQ'
+  telegram: 'Share to Telegram'
+  twitter: 'Share to Twitter'
+  weibo: 'Share to Weibo'
+userview:
+  contact_me: 'Contact me'
+  how_to_contact_me: 'How to contact me'
+  close: 'Close'
+friends_title: 'HI~~'
+outdated_browser:
+  title: 'Your browser is out-of-date!'
+  line_one: 'Update your browser to view this website correctly. '
+  link: 'Update my browser now '
+  close: 'Close'

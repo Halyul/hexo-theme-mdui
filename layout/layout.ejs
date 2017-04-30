@@ -38,9 +38,9 @@
 
 <%- partial('partials/drawer') %>
 <div id="outdated" style="z-index: 99999;">
-  <h6><%= theme.translations.outdated_browser.title %></h6>
-  <p><%= theme.translations.outdated_browser.line_one %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= theme.translations.outdated_browser.link %></a></p>
-  <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= theme.translations.outdated_browser.close %>">&times;</a></p>
+  <h6><%= __('outdated_browser.title')  %></h6>
+  <p><%= __('outdated_browser.line_one') %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= __('outdated_browser.link') %></a></p>
+  <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= __('outdated_browser.close') %>">&times;</a></p>
 </div>
 <%- partial('partials/dialogs') %>
 <%- partial('partials/import_js') %>

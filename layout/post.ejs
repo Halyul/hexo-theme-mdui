@@ -14,7 +14,7 @@
             </a>
           <% }) %>
         <% } else { %>
-          <%= theme.translations.posts.public %>
+          <%= __('posts.public') %>
         <% } %>
       </div>
     </div>
@@ -57,7 +57,7 @@
   <% if (page.tag !== false || theme.post.donate !==false) { %>
     <div class="posts-card-actions">
       <% if (theme.post.donate !==false) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= theme.translations.donate.button %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
       <% } %>
       <div class="flex-spacer"></div>
       <% if (page.tag !== false) { %>

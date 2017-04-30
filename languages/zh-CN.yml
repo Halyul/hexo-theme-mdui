@@ -1,0 +1,50 @@
+global:
+  archives: '归档'
+  category: '分类'
+  categories: '分类'
+  index: '首页'
+  pages: '页面'
+  tag: '标签'
+  tags: '标签'
+  years: '年份'
+  busuanzi_views: '浏览量: '
+  snackbar: '额...啥都没发生'
+archive:
+  post: '文章'
+  posts: '文章'
+  about: '关于'
+posts:
+  header: '我的文章'
+  public: '公开'
+  qr_code: "文章二维码"
+  donate:
+    button: '打赏我一个吧'
+    close: '才不呢'
+  disqus_no_script: '请启用JavaScript以查看<a href="https://disqus.com/?ref_noscript">来自Disqus的评论</a>'
+  pagination:
+    newer: '新的文章'
+    older: '旧的文章'
+    no_newer: '没有更新的文章辣'
+    no_older: '没有更旧的文章辣'
+search:
+  text: '搜索'
+  explore: '探索'
+share_menu:
+  rss: '文章RSS'
+  facebook: '分享到Facebook'
+  googleplus: '分享到Google+'
+  linkedin: '分享到Linkedin'
+  qq: '分享到QQ'
+  telegram: '分享到Telegram'
+  twitter: '分享到Twitter'
+  weibo: '分享到微博'
+userview:
+  contact_me: '联系我'
+  how_to_contact_me: '如何联系我'
+  close: '关闭'
+friends_title: '你好哇～'
+outdated_browser:
+  title: '你的浏览器一直过气辣！'
+  line_one: '赶紧升级浏览器来访问本站吧！'
+  link: '现在就去'
+  close: '关闭'

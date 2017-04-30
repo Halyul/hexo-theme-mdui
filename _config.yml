@@ -127,58 +127,6 @@ sns:
   TEST1:
     link: https://facebook.com
 
-# Translations
-translations:
-  archive:
-    post: 'Post'
-    posts: 'Posts'
-    about: 'About'
-  archives: 'Archives'
-  category: 'Category'
-  categories: 'Categories'
-  index: 'Index'
-  pages: 'Pages'
-  tag: 'Tag'
-  tags: 'Tags'
-  years: 'Years'
-  busuanzi_views: 'Views: '
-  search:
-    text: 'Search'
-    explore: 'Explore'
-  posts:
-    header: 'Something that I have posted'
-    public: 'Public'
-  userview:
-    contact_me: 'Contact me'
-    how_to_contact_me: 'How to contact me'
-    close: 'Close'
-  share_menu:
-    rss: 'Article RSS'
-    facebook: 'Share to Facebook'
-    googleplus: 'Share to Google+'
-    linkedin: 'Share to Linkedin'
-    qq: 'Share to QQ'
-    telegram: 'Share to Telegram'
-    twitter: 'Share to Twitter'
-    weibo: 'Share to Weibo'
-  snackbar: 'Oops! Nothing happened.'
-  qr_code: "Article QR Code"
-  donate:
-    button: 'Buy me a beer?'
-    close: 'cancel'
-  friends_title: 'HI~~'
-  outdated_browser:
-    title: 'Your browser is out-of-date!'
-    line_one: 'Update your browser to view this website correctly. '
-    link: 'Update my browser now '
-    close: 'Close'
-  disqus_no_script: 'Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>'
-  post_pagination:
-    newer: 'Newer Post'
-    older: 'Older Post'
-    no_newer: 'No More Newer Post'
-    no_older: 'No More Older Post'
-
 # Vendors
 vendors:
   style_min_css:

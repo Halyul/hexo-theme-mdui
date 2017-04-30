@@ -25,14 +25,14 @@ site.posts.sort('date').reverse().forEach(function(post){
       </div>
       <div class="flex-spacer mdui-hidden-sm-down"></div>
         <% if (theme.about_me === true) { %>
-          <button class="mdui-btn mdui-ripple mdui-text-color-white-icon mdui-hidden-sm-down" mdui-dialog="{target: '#aboutmeDialog'}"><%= theme.translations.archive.about %></button>
+          <button class="mdui-btn mdui-ripple mdui-text-color-white-icon mdui-hidden-sm-down" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
         <% } %>
-      <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= theme.translations.userview.contact_me %></button>
+      <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= __('userview.contact_me') %></button>
     </div>
   </div>
   <div class="items">
     <div class="title mdui-text-color-theme-secondary">
-      <%= theme.translations.categories %>
+      <%= __('global.categories') %>
     </div>
     <div class="container mdui-row">
       <% site.categories.map(function(category){  %>
@@ -51,9 +51,9 @@ site.posts.sort('date').reverse().forEach(function(post){
                 <div class="category"><%= category.name %></div>
                 <div class="length">
                   <% if (category.length === 1) { %>
-                    <%= category.length + ' ' + theme.translations.archive.post %>
+                    <%= category.length + ' ' + __('archive.post') %>
                   <% } else { %>
-                    <%= category.length + ' ' + theme.translations.archive.posts %>
+                    <%= category.length + ' ' + __('archive.post') %>
                   <% } %>
                 </div>
               </div>
@@ -65,7 +65,7 @@ site.posts.sort('date').reverse().forEach(function(post){
   </div>
   <div class="items">
     <div class="title mdui-text-color-theme-secondary">
-      <%= theme.translations.tags %>
+      <%= __('global.tags') %>
     </div>
     <div class="container mdui-row">
       <% site.tags.map(function(tag){  %>
@@ -84,9 +84,9 @@ site.posts.sort('date').reverse().forEach(function(post){
                 <div class="category"><%= tag.name %></div>
                 <div class="length">
                   <% if (tag.length === 1) { %>
-                    <%= tag.length + ' ' + theme.translations.archive.post %>
+                    <%= tag.length + ' ' + __('archive.post') %>
                   <% } else { %>
-                    <%= tag.length + ' ' + theme.translations.archive.posts %>
+                    <%= tag.length + ' ' + __('archive.posts') %>
                   <% } %>
                 </div>
               </div>
@@ -98,7 +98,7 @@ site.posts.sort('date').reverse().forEach(function(post){
   </div>
   <div class="items">
     <div class="title mdui-text-color-theme-secondary">
-      <%= theme.translations.years %>
+      <%= __('global.years') %>
     </div>
     <div class="container mdui-row">
       <% Object.keys(years).reverse().forEach(function(year){  %>
