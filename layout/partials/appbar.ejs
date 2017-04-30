@@ -28,21 +28,16 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
       <span class="mdui-typo-title <% if (!is_category() && !is_tag() && !is_year()) { %>mdui-hidden-xs<% } %> <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>">
         <%= pageTitle %>
       </span>
-      <% if (is_home() || is_year() || is_month() || is_category() || is_tag()) { %>
-        <div class="search mdui-hidden-xs" onclick="window.open('<%= config.root + 'search' %>', '_self');">
-          <div class="icon">
-            <i class="mdui-icon material-icons">&#xe8b6;</i>
-          </div>
-          <div class="text">
-            <%= theme.translations.search.text %>
-          </div>
+      <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <div class="icon">
+          <i class="mdui-icon material-icons">&#xe8b6;</i>
         </div>
-        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
-      <% } else { %>
-        <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
-        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-xs" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
-      <% } %>
-      <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-sm-up <% if (is_category() || is_tag() || is_year()) { %>mdui-hidden<% } %>" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <div class="text">
+          <%= theme.translations.search.text %>
+        </div>
+      </div>
+      <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
+      <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>
@@ -68,7 +63,7 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
         <span class="appbar-border-line mdui-hidden-sm-down"></span>
       <% } %>
       <span class="mdui-typo-title"><%= config.author %></span>
-      <div class="search mdui-hidden-xs" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+      <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
         <div class="icon">
           <i class="mdui-icon material-icons">&#xe8b6;</i>
         </div>

@@ -160,22 +160,22 @@
         <% } %>
       </div>
     <% } %>
-    <div class="drawer-footer">
-      <div class="mdui-typo mdui-typo-caption-opacity">
-        Powered by <a href="http://hexo.io">Hexo</a>
+  </div>
+  <div class="drawer-footer">
+    <div class="mdui-typo mdui-typo-caption-opacity">
+      Powered by <a href="http://hexo.io">Hexo</a>
+      <br />
+      Theme - <a href="//github.com/Halyul/hexo-theme-mdui">Halyul/MDUI</a>
+      <br />
+      <script type="text/javascript">
+        copyright = new Date();
+        update = copyright.getFullYear();
+        document.write("Copyright © <% if (theme.footer.since > 0) { %><%= theme.footer.since %> - <% } %>" + update + " <%= config.author %>");
+      </script>
+      <% if (theme.footer.ICP) { %>
         <br />
-        Theme - <a href="//github.com/Halyul/hexo-theme-mdui">Halyul/MDUI</a>
-        <br />
-        <script type="text/javascript">
-          copyright = new Date();
-          update = copyright.getFullYear();
-          document.write("Copyright © <% if (theme.footer.since > 0) { %><%= theme.footer.since %> - <% } %>" + update + " <%= config.author %>");
-        </script>
-        <% if (theme.footer.ICP) { %>
-          <br />
-          <span onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.footer.ICP %></span>
-        <% } %>
-      </div>
+        <span onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.footer.ICP %></span>
+      <% } %>
     </div>
   </div>
 </div>

@@ -12356,6 +12356,9 @@ body #blog-appbar button.style-fix {
   body.side-content #blog-appbar .mdui-toolbar-spacer {
     height: inherit;
   }
+  body.side-content #blog-appbar .search-button {
+    display: none;
+  }
   #side-content {
     position: inherit;
     width: 100%;
@@ -12897,6 +12900,11 @@ span.badge[data-badge-caption]::after {
   color: #fff;
 }
 
+@media only screen and (max-width: 600px) {
+  #blog-appbar .search {
+    margin: 0 12px;
+  }
+}
 
 /* Outdated Browser v1.1.2 from Line 1 to Line 26
  * MDUI v0.1.2 from Line 28 to Line 14684
