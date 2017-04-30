@@ -1,16 +1,5 @@
 <ul class="mdui-menu" id="menu-index-share">
 
-<% if (theme.busuanzi !== false) { %>
-  <% if(theme.busuanzi.all_site_uv === true) { %>
-    <li class="mdui-menu-item" id="busuanzi_container_page_pv">
-      <a class="mdui-ripple menu-badge">
-        <%= theme.translations.busuanzi_views %>
-        <span class="badge" id="busuanzi_value_site_uv"></span>
-      </a>
-    </li>
-  <% } %>
-<% } %>
-
 <% if(theme.share_menu.rss === true) { %>
   <li class="mdui-menu-item">
       <a href="<%= config.root + config.feed.path %>" target="_blank" class="mdui-ripple">

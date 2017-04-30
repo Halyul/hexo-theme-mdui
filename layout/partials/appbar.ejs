@@ -38,6 +38,10 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
       </div>
       <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
       <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+      <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
+        <i class="mdui-icon material-icons">&#xe417;</i>
+      </button>
+      <%- partial('menu/index_more') %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>
@@ -79,6 +83,10 @@ if (page.path === 'search/index.html') pageTitle = theme.translations.search.tex
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>
       <%- partial('menu/userview') %>
+      <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
+        <i class="mdui-icon material-icons">&#xe417;</i>
+      </button>
+      <%- partial('menu/index_more') %>
     </div>
   </div>
 <% } else if (page.path === 'search/index.html') { %>
