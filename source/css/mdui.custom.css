@@ -3,7 +3,7 @@
  * Copyright 2016-2017 zdhxiong
  * Licensed under MIT
  * 
- * Included modules:          material-icons,roboto,typo,headroom,divider,media,ripple,button,fab,grid,toolbar,appbar,card,subheader,grid_list,list,drawer,dialog,shadow,tooltip,snackbar,chip,menu,collapse
+ * Included modules:          typo,headroom,divider,media,ripple,button,fab,grid,toolbar,appbar,card,subheader,grid_list,list,drawer,dialog,shadow,tooltip,snackbar,chip,menu,collapse
  * Included primary colors:   amber,blue,blue-grey,brown,cyan,deep-orange,deep-purple,green,grey,indigo,light-blue,light-green,lime,orange,pink,purple,red,teal,yellow
  * Included accent colors:    amber,blue,cyan,deep-orange,deep-purple,green,indigo,light-blue,light-green,lime,orange,pink,purple,red,teal,yellow
  * Included color degrees:    50,100,200,300,400,500,600,700,800,900,a100,a200,a400,a700
@@ -5123,124 +5123,6 @@ body.mdui-locked {
   vertical-align: middle;
 
   direction: ltr;
-}
-/**
- * =============================================================================
- * ************   Material Icons   ************
- * =============================================================================
- *
- * https://github.com/google/material-design-icons/
- * v3.0.1
- */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../icons/material-icons/MaterialIcons-Regular.woff2) format('woff2'), url(../icons/material-icons/MaterialIcons-Regular.woff) format('woff');
-}
-.material-icons {
-  font-family: 'Material Icons';
-  /* Support for all WebKit browsers. */
-
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  -webkit-font-feature-settings: 'liga';
-     -moz-font-feature-settings: 'liga';
-          font-feature-settings: 'liga';
-}
-/**
- * =============================================================================
- * ************   Roboto 字体   ************
- * =============================================================================
- */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('../fonts/roboto/Roboto-Thin.woff2') format('woff2'), url('../fonts/roboto/Roboto-Thin.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 100;
-
-  src: local('Roboto ThinItalic'), local('Roboto-ThinItalic'), url('../fonts/roboto/Roboto-ThinItalic.woff2') format('woff2'), url('../fonts/roboto/Roboto-ThinItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-
-  src: local('Roboto Light'), local('Roboto-Light'), url('../fonts/roboto/Roboto-Light.woff2') format('woff2'), url('../fonts/roboto/Roboto-Light.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 300;
-
-  src: local('Roboto LightItalic'), local('Roboto-LightItalic'), url('../fonts/roboto/Roboto-LightItalic.woff2') format('woff2'), url('../fonts/roboto/Roboto-LightItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'), url('../fonts/roboto/Roboto-Regular.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-
-  src: local('Roboto RegularItalic'), local('Roboto-RegularItalic'), url('../fonts/roboto/Roboto-RegularItalic.woff2') format('woff2'), url('../fonts/roboto/Roboto-RegularItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-
-  src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/roboto/Roboto-Medium.woff2') format('woff2'), url('../fonts/roboto/Roboto-Medium.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 500;
-
-  src: local('Roboto MediumItalic'), local('Roboto-MediumItalic'), url('../fonts/roboto/Roboto-MediumItalic.woff2') format('woff2'), url('../fonts/roboto/Roboto-MediumItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-
-  src: local('Roboto Bold'), local('Roboto-Bold'), url('../fonts/roboto/Roboto-Bold.woff2') format('woff2'), url('../fonts/roboto/Roboto-Bold.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 700;
-
-  src: local('Roboto BoldItalic'), local('Roboto-BoldItalic'), url('../fonts/roboto/Roboto-BoldItalic.woff2') format('woff2'), url('../fonts/roboto/Roboto-BoldItalic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-
-  src: local('Roboto Black'), local('Roboto-Black'), url('../fonts/roboto/Roboto-Black.woff2') format('woff2'), url('../fonts/roboto/Roboto-Black.woff') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 900;
-
-  src: local('Roboto BlackItalic'), local('Roboto-BlackItalic'), url('../fonts/roboto/Roboto-BlackItalic.woff2') format('woff2'), url('../fonts/roboto/Roboto-BlackItalic.woff') format('woff');
 }
 /**
  * =============================================================================
