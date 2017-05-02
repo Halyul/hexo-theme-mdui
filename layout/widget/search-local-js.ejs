@@ -16,6 +16,7 @@
                     // perform local searching
                     datas.forEach(function(data) {
                         if(typeof data.title === "undefined")return
+                        if(typeof data.content === "undefined")return
                         var isMatch = true;
                         var content_index = [];
                         var data_title = data.title.trim().toLowerCase();
