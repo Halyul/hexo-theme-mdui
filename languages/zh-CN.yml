@@ -29,6 +29,7 @@ posts:
 search:
   text: '搜索'
   explore: '探索'
+  footer: '看起来已经没有了'
 share_menu:
   rss: '文章RSS'
   facebook: '分享到Facebook'

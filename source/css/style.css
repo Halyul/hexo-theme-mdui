@@ -12908,18 +12908,24 @@ span.badge[data-badge-caption]::after {
   }
 }
 
-/* Outdated Browser v1.1.2 from Line 1 to Line 26
- * MDUI v0.1.2 from Line 28 to Line 14684
- * Theme style from Line 19606 to the end
- */
-
-.search-result .search-keyword {
-  font-weight: 900;
-}
-
-.search-result {
+#search .result {
     max-height: 300px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: pre;
 }
+
+#search .footer {
+    margin: 16px;
+}
+
+@media only screen and (min-width: 601px) {
+  #search .footer {
+      margin: 32px;
+  }
+}
+
+/* Outdated Browser v1.1.2 from Line 1 to Line 26
+ * MDUI v0.1.2 from Line 28 to Line 14684
+ * Theme style from Line 19606 to the end
+ */

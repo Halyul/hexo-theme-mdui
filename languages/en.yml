@@ -29,6 +29,7 @@ posts:
 search:
   text: 'Search'
   explore: 'Explore'
+  footer: "It looks like you've reached the end."
 share_menu:
   rss: 'Article RSS'
   facebook: 'Share to Facebook'

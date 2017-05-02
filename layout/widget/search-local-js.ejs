@@ -65,7 +65,7 @@
                             '<div class="posts-card-title mdui-typo">'+
                             '<a href="' + data_url + '" target="_self">' + data_title + '</a>'+
                             '</div>'+'<div class="posts-card-line">'+
-                            '<div class="mdui-divider"></div>'+'</div>'+'<div class="posts-card-content">';
+                            '<div class="mdui-divider"></div>'+'</div>'+'<div class="posts-card-content mdui-typo">';
 
                             var content = data.content.trim().replace(/<[^>]+>/g, '');
                             if (first_occur >= 0) {
@@ -85,9 +85,9 @@
                                 // highlight all keywords
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, 'gi');
-                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                    match_content = match_content.replace(regS, '<strong><mark>'+keyword+'</mark></strong>');
                                 })
-                                str += '<p class="search-result">' + match_content + '...</p>';
+                                str += '<p class="result">' + match_content + '...</p>';
                             }
 
                             str+= '</div></div></div>'
@@ -96,7 +96,7 @@
                     $resultContent.innerHTML = str;
                     window.postListCleanUpdate();
                 });
-           
+
         })
     }
 </script>
