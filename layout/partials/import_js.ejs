@@ -4,6 +4,8 @@
 <% } else { %>
   <%- js("js/outdatedbrowser.min") %>
 <% } %>
+<%- js("js/es6-promise.min") %>
+<%- js("js/fetch") %>
 <script>
 //event listener: DOM ready
 function addLoadEvent(func) {
@@ -47,7 +49,7 @@ addLoadEvent(function(){
 <% if (theme.busuanzi !== false) { %>
   <script src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
-<% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag()) { %>
+<% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag() || page.path === 'search/index.html') { %>
   <script type="text/javascript">
     <% if (!is_archive() || is_year()) { %>
       (function() {
@@ -59,6 +61,14 @@ addLoadEvent(function(){
         var column1Width = 1024;
         var column2Width = 1400;
         list.innerHTML = "";
+        function cleanUpdate() {
+          items = document.querySelectorAll("#content-list .content-item");
+          list.innerHTML = '';
+          columns = [document.createElement("div"), document.createElement("div"), document.createElement("div")];
+          level = 4;
+          updateList();
+        }
+        window.postListCleanUpdate = cleanUpdate;
         function getColumnNums() {
           if (document.body.clientWidth <= column1Width) {
             return 1
@@ -257,6 +267,15 @@ addLoadEvent(function(){
       $$('#toTop').trigger('click');
     });
   </script>
+
+  <%-partial('widget/search-local-js')%>
+  <script>
+    $$(document).ready(function () {
+      var path = '/<%= config.search.path %>';
+      searchFunc(path, 'search-input');
+    });
+  </script>
+
 <% } %>
 
 <!-- Custom javascript -->

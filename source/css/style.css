@@ -12909,3 +12909,14 @@ span.badge[data-badge-caption]::after {
  * MDUI v0.1.2 from Line 28 to Line 14684
  * Theme style from Line 19606 to the end
  */
+
+.search-result .search-keyword {
+  font-weight: 900;
+}
+
+.search-result {
+    max-height: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
