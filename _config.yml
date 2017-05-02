@@ -3,8 +3,8 @@ location:
 
 # style
 style:
-  bg_img: /img/bg.png
-  avatar: /img/avatar.png
+  bg_img: img/bg.png
+  avatar: img/avatar.png
   slogan: "I'm your slogan!"
   hoverable: true
 

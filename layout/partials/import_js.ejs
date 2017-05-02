@@ -41,7 +41,7 @@ addLoadEvent(function(){
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
   <script>
     if ('serviceWorker' in navigator) {
-     navigator.serviceWorker.register('/sw.js');
+     navigator.serviceWorker.register('<%= config.root + 'sw.js' %>');
     }
   </script>
 <% } %>
@@ -271,7 +271,7 @@ addLoadEvent(function(){
   <%-partial('widget/search-local-js')%>
   <script>
     $$(document).ready(function () {
-      var path = '/<%= config.search.path %>';
+      var path = '<%= config.root + config.search.path %>';
       searchFunc(path, 'search-input');
     });
   </script>

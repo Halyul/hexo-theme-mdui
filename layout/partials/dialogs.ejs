@@ -24,7 +24,7 @@
     </div>
   </div>
 <% } %>
-<% if (theme.about_me === true && is_archive()) { %>
+<% if (theme.about_me === true && is_archive() && !is_year()) { %>
   <%- partial('../widget/about_me_dialog') %>
 <% } %>
 <div class="mdui-dialog" id="contactDialog">

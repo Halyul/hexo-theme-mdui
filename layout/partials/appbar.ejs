@@ -43,7 +43,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       </button>
       <%- partial('menu/index_more') %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= config.root + theme.style.avatar %>"/>
       </div>
       <%- partial('menu/userview') %>
       <% if (is_category() || is_tag() || is_year()) { %>
@@ -80,7 +80,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
       <% } %>
       <div class="appbar-userview mdui-valign mdui-hidden-sm-down" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= config.root + theme.style.avatar %>"/>
       </div>
       <%- partial('menu/userview') %>
       <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
@@ -111,7 +111,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         </div>
       </div>
       <div class="appbar-userview mdui-valign mdui-hidden-xs" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= config.root + theme.style.avatar %>"/>
       </div>
       <%- partial('menu/userview') %>
     </div>

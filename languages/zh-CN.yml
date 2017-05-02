@@ -10,8 +10,8 @@ global:
   busuanzi_views: '浏览量: '
   snackbar: '额...啥都没发生'
 archive:
-  post: '文章'
-  posts: '文章'
+  post: '篇文章'
+  posts: '篇文章'
   about: '关于'
 posts:
   header: '我的文章'
