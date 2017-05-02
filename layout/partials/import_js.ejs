@@ -37,6 +37,12 @@ addLoadEvent(function(){
   <%- js("js/js") %>
 <% } %>
 
+<script>
+  $$(document).ready(function () {
+      toTop();
+  });
+</script>
+
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
   <script>
     if ('serviceWorker' in navigator) {
