@@ -7,15 +7,7 @@
         <i class="mdui-icon material-icons">&#xe037;</i>
       </div>
       <div class="mdui-typo-body-1-opacity mdui-typo">
-        <% if (page.category !== false) { %>
-          <% page.categories.map(function(category){  %>
-            <a href="<%= config.root %>categories/<%= category.name %>/">
-              <span><%= category.name %></span>
-            </a>
-          <% }) %>
-        <% } else { %>
-          <%= __('posts.public') %>
-        <% } %>
+        <%= __('posts.public') %>
       </div>
     </div>
     <div class="flex-spacer"></div>
@@ -54,23 +46,10 @@
     <%-page.content%>
   </div>
 
-  <% if (page.tag !== false || theme.post.donate !== false) { %>
+  <% if (theme.post.donate !== false) { %>
     <div class="posts-card-actions">
       <% if (theme.post.donate !==false) { %>
         <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
-      <% } %>
-      <div class="flex-spacer"></div>
-      <% if (page.tag !== false) { %>
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          <% page.tags.map(function(tag){  %>
-            <a href="<%= config.root %>tags/<%= tag.name %>/">
-              <span><%= tag.name %></span>
-            </a>
-          <% }) %>
-        </div>
       <% } %>
     </div>
   <% } %>
