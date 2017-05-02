@@ -12045,6 +12045,10 @@ html {
   font-size: 3.75px;
 }
 
+.posts-card-header .content .mdui-typo-body-1-opacity a, .posts-card-actions .content a {
+  margin-right: 6px;
+}
+
 #index:hover .posts-card-header .date {
   display: none;
 }
@@ -12101,7 +12105,6 @@ html {
 .posts-card-actions .content a {
   font-size: 12px;
   line-height: 36px;
-  margin-right: 6px;
 }
 
 #menu-qrcode .mdui-list-item:hover {
