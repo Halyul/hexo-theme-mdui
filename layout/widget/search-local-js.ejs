@@ -57,8 +57,8 @@
 
                             if(typeof data.categories !== 'undefined')
                             data.categories.forEach(function(category){
-                                str += '<a href="<%= config.root %>categories/' + category.name + '/">'
-                                '<span>' + category.name + '</span></a>';
+                                str += '<a href="<%= config.root %>categories/' + category + '/">'
+                                '<span>' + category + '</span></a>';
                             });
 
                             str += '</div>'+'</div>'+'<div class="flex-spacer"></div>'+'</div>'+
