@@ -47,22 +47,33 @@
                         if (isMatch) {
                             str += '<div class="content-item"><div class="mdui-card card-bottom-fix mdui-hoverable mdui-center" id="index">'+
                             '<div class="mdui-card-header posts-card-header">'+
-                            '<img class="mdui-card-header-avatar" src="/img/avatar.png">'+
+                            '<img class="mdui-card-header-avatar" src="<%= config.root + theme.style.avatar %>">'+
                             '<div class="content mdui-valign">'+
-                            '<span class="username"><%= config.author %></span>'+
-                            '<div class="arrow mdui-text-center mdui-text-color-theme-accent">'+
-                            '<i class="mdui-icon material-icons">&#xe037;</i>'+
+                            '<span class="username"><%= config.author %></span>';
+
+                            // icon
+                            if(typeof data.categories !== 'undefined')
+                            str += '<div class="arrow mdui-text-center mdui-text-color-theme-accent">';
+                            else {
+                              str +=  '<div class="arrow mdui-text-center">';
+                            };
+                            '<div class="arrow mdui-text-center mdui-text-color-theme-accent">';
+
+                            str += '<i class="mdui-icon material-icons">&#xe037;</i>'+
                             '</div>'+
                             '<div class="mdui-typo-body-1-opacity mdui-typo">';
 
+                            //post category
                             if(typeof data.categories !== 'undefined')
                             data.categories.forEach(function(category){
-                                str += '<a href="<%= config.root %>categories/' + category + '/">'
-                                '<span>' + category + '</span></a>';
-                            });
+                                str += '<a href="<%= config.root %>categories/' + category + '/"><span>' + category + '</span></a>';
+                            })
+                            else {
+                              str +=  '<%= __('posts.public') %>';
+                            };
 
-                            str += '</div>'+'</div>'+'<div class="flex-spacer"></div>'+'</div>'+
-                            '<div class="posts-card-title mdui-typo">'+
+                            // post title
+                            str += '</div>'+'</div>'+'<div class="flex-spacer"></div>'+'</div>'+'<div class="posts-card-title mdui-typo">'+
                             '<a href="' + data_url + '" target="_self">' + data_title + '</a>'+
                             '</div>'+'<div class="posts-card-line">'+
                             '<div class="mdui-divider"></div>'+'</div>'+'<div class="posts-card-content mdui-typo">';
@@ -90,7 +101,17 @@
                                 str += '<p class="result">' + match_content + '...</p>';
                             }
 
-                            str+= '</div></div></div>'
+                            str+= '</div>';
+
+                            // post tag
+                            if(typeof data.tags !== 'undefined') {
+                              str += '<div class="posts-card-actions"><div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span></div><div class="content mdui-typo">';
+                              data.tags.forEach(function(tag){
+                                  str += '<a href="<%= config.root %>tags/' + tag + '/"><span>' + tag + '</span></a>';
+                              });
+                              str += '</div></div>';
+                            }
+                            str += '</div>';
                         }
                     });
                     $resultContent.innerHTML = str;

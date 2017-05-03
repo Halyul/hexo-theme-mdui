@@ -3,7 +3,7 @@
     <img class="mdui-card-header-avatar" src="<%= config.root + theme.style.avatar %>"/>
     <div class="content mdui-valign">
       <span class="username"><%= config.author %></span>
-      <div class="arrow mdui-text-center mdui-text-color-theme-accent">
+      <div class="arrow mdui-text-center <% if (post.category !== false) { %>mdui-text-color-theme-accent<% } %>">
         <i class="mdui-icon material-icons">&#xe037;</i>
       </div>
       <div class="mdui-typo-body-1-opacity mdui-typo">

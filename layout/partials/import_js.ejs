@@ -194,11 +194,11 @@ addLoadEvent(function(){
 
 <% if (page.path === 'search/index.html') { %>
   <script>
-    $$('#search-input').on('click', function () {
-      $$('#toTop').trigger('click');
+    $$('div.search').on('click', function () {
+      smoothScroll.animateScroll( 0 );
     });
   </script>
-  <%-partial('widget/search-local-js')%>
+  <%-partial('widget/search_local_js')%>
   <script>
     $$(document).ready(function () {
       var path = '<%= config.root + config.search.path %>';
