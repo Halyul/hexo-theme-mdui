@@ -7550,7 +7550,7 @@ function toTop() {
     $$('#toTop').removeClass('mdui-fab-hide');
   } else {
     $$('#toTop').addClass('mdui-fab-hide');
-  }
+  };
 };
 
 /* mdui v0.2.0 from Line 1 to Line

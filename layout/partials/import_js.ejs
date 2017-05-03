@@ -95,6 +95,7 @@ addLoadEvent(function(){
           columns.forEach(function(value) {
             list.appendChild(value)
           })
+          toTop();
         }
         window.addEventListener("resize", updateList);
         updateList();
