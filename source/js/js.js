@@ -7543,15 +7543,5 @@ $$(document).on('close.mdui.dialog', '#aboutmeDialog', function() {
   };
 });
 
-function toTop() {
-  var windowHeight = $$(window).height();
-  var htmlHeight = $$('html').height();
-  if (windowHeight < htmlHeight) {
-    $$('#toTop').removeClass('mdui-fab-hide');
-  } else {
-    $$('#toTop').addClass('mdui-fab-hide');
-  };
-};
-
 /* mdui v0.2.0 from Line 1 to Line
 */

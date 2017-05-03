@@ -38,8 +38,19 @@ addLoadEvent(function(){
 <% } %>
 
 <script>
-  $$(document).ready(function () {
-      toTop();
+  var pageFlag = false;
+  var fab = new mdui.Fab('#toTop');
+  fab.hide();
+  $$(window).on('scroll', function() {
+    var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var pageLocation = $$('#top').offset().top - bodyTop;
+    if (!pageFlag && pageLocation < 0) {
+      fab.show();
+      pageFlag = true;
+    } else if (pageFlag && pageLocation >= 0) {
+      fab.hide();
+      pageFlag = false;
+    }
   });
 </script>
 
@@ -95,7 +106,6 @@ addLoadEvent(function(){
           columns.forEach(function(value) {
             list.appendChild(value)
           })
-          toTop();
         }
         window.addEventListener("resize", updateList);
         updateList();
@@ -165,6 +175,20 @@ addLoadEvent(function(){
       var postsText = '<%= __('archive.posts') %>';
     }
     $$('#postsCount').text(postsCount + ' ' + postsText);
+    var content_flag = false;
+    $$(window).on('scroll', function() {
+      var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      var contentLocation = $$('#contentLocation').offset().top - scrollTop - 56;
+      if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
+        $$('#blog-appbar').addClass('style-fix');
+        $$('body').removeClass('style-fix');
+        content_flag = true;
+      } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
+        $$('#blog-appbar').removeClass('style-fix');
+        $$('body').addClass('style-fix');
+        content_flag = false;
+      };
+    });
     function styleChanging() {
       var hide = new mdui.Headroom('#blog-appbar');
       var windowWidth = window.innerWidth, toLeftWidth = 860;
@@ -175,20 +199,6 @@ addLoadEvent(function(){
       }
     };
     styleChanging();
-    var content_flag = false;
-    $$(window).on('scroll', function() {
-      var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      var contentLocation = $$('#contentLocation').offset().top - scrollTop - 56;
-      if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-        $$('#blog-appbar').addClass('style-fix');
-        $$('body').removeClass('style-fix');
-        content_flag = true;
-      } else if (content_flag && contentLocation > 0 && window.innerWidth < 860) {
-        $$('#blog-appbar').removeClass('style-fix');
-        $$('body').addClass('style-fix');
-        content_flag = false;
-      };
-    });
   </script>
 <% } %>
 
