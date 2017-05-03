@@ -24,9 +24,7 @@
           <%= __('posts.header') %>
         </div>
       <% } %>
-      <% if(!(theme.post.topPost && post.top)) { %>
-        <%-partial('partials/posts', { post: post, index: true, pin: false })%>
-      <% } %>
+      <%-partial('partials/posts', { post: post })%>
     </div>
   <% }); %>
 </div>
