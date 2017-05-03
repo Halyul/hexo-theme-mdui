@@ -7482,7 +7482,7 @@ $$(document).on('click', 'button.back-button', function() {
 
 /* post toc */
 $$(document).ready(function(){
-  if($$("button.toc").length == 0 || $$("div#card-toc").length == 0)
+  if($$("ul#menu-toc").children().length == 0 && $$("div#card-toc").children().length == 0)
   {
     $$("button#button-toc").addClass("mdui-hidden");
     $$("div#card-toc").addClass("mdui-hidden");
