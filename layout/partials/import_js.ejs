@@ -43,7 +43,7 @@ addLoadEvent(function(){
   fab.hide();
   $$(window).on('scroll', function() {
     var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var pageLocation = $$('#top').offset().top - bodyTop;
+    var pageLocation = $$('div#top').offset().top - bodyTop;
     if (!pageFlag && pageLocation < 0) {
       fab.show();
       pageFlag = true;
@@ -69,8 +69,8 @@ addLoadEvent(function(){
   <script type="text/javascript">
     <% if (!is_archive() || is_year()) { %>
       (function() {
-        var items = document.querySelectorAll("#content-list .content-item");
-        var list = document.querySelector(".posts-container");
+        var items = document.querySelectorAll("div#content-list .content-item");
+        var list = document.querySelector("div.posts-container");
         var columns = [document.createElement("div"), document.createElement("div"), document.createElement("div")];
         var level = 4;
         var sm = 1;
@@ -78,7 +78,7 @@ addLoadEvent(function(){
         var column2Width = 1400;
         list.innerHTML = "";
         function cleanUpdate() {
-          items = document.querySelectorAll("#content-list .content-item");
+          items = document.querySelectorAll("div#content-list .content-item");
           list.innerHTML = '';
           columns = [document.createElement("div"), document.createElement("div"), document.createElement("div")];
           level = 4;
@@ -140,7 +140,7 @@ addLoadEvent(function(){
 
         }
         var listens = [];
-        var links = document.querySelectorAll(".post-toc-link");
+        var links = document.querySelectorAll("a.post-toc-link");
         Array.prototype.forEach.call(links,function(value,index){
             var id = (value.getAttribute("href") || "#").slice(1);
             var element = document.getElementById(id);
@@ -168,29 +168,29 @@ addLoadEvent(function(){
 
 <% if (is_category() || is_tag() || is_year()) { %>
   <script>
-    var postsCount = $$('.posts-container div').children('.content-item').length;
+    var postsCount = $$('div.posts-container div').children('div.content-item').length;
     if (postsCount === 1) {
       var postsText = '<%= __('archive.post') %>';
     } else if (postsCount > 1) {
       var postsText = '<%= __('archive.posts') %>';
     }
-    $$('#postsCount').text(postsCount + ' ' + postsText);
+    $$('div#postsCount').text(postsCount + ' ' + postsText);
     var content_flag = false;
     $$(window).on('scroll', function() {
       var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      var contentLocation = $$('#contentLocation').offset().top - scrollTop - 56;
+      var contentLocation = $$('div#contentLocation').offset().top - scrollTop - 56;
       if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-        $$('#blog-appbar').addClass('style-fix');
+        $$('div#blog-appbar').addClass('style-fix');
         $$('body').removeClass('style-fix');
         content_flag = true;
       } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-        $$('#blog-appbar').removeClass('style-fix');
+        $$('div#blog-appbar').removeClass('style-fix');
         $$('body').addClass('style-fix');
         content_flag = false;
       };
     });
     function styleChanging() {
-      var hide = new mdui.Headroom('#blog-appbar');
+      var hide = new mdui.Headroom('div#blog-appbar');
       var windowWidth = window.innerWidth, toLeftWidth = 860;
       if (windowWidth < toLeftWidth) {
         hide.enable();

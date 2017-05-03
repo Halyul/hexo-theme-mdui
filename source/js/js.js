@@ -7476,17 +7476,17 @@ console.info("\u7248\u6743\u6240\u6709\uff0c\u7ffb\u7248\u5fc5\u7a76\uff01\u000d
 var $$ = mdui.JQ;
 
 /* post back button */
-$$(document).on('click', '.back-button', function() {
+$$(document).on('click', 'button.back-button', function() {
     window.history.back();
 });
 
 /* post toc */
 $$(document).ready(function(){
-  if($$(".toc").length == 0 || $$("#card-toc").length == 0)
+  if($$("button.toc").length == 0 || $$("div#card-toc").length == 0)
   {
-    $$("#button-toc").addClass("mdui-hidden");
-    $$("#card-toc").addClass("mdui-hidden");
-    $$("#blog-post").addClass("no-toc")
+    $$("button#button-toc").addClass("mdui-hidden");
+    $$("div#card-toc").addClass("mdui-hidden");
+    $$("div#blog-post").addClass("no-toc")
   };
 });
 
@@ -7508,37 +7508,37 @@ $$(document).ready(function () {
   });
 });
 $$('.toTop').on('click', function () {
-  $$('#toTop').trigger('click');
+  $$('button#toTop').trigger('click');
 });
 
 /* aboutme dialog */
-$$(document).on('open.mdui.collapse', '.mdui-collapse-item', function() {
+$$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
     $$(this).addClass('hide-more');
     $$(this).removeClass('hide-less');
 });
-$$(document).on('close.mdui.collapse', '.mdui-collapse-item', function() {
+$$(document).on('close.mdui.collapse', 'div.mdui-collapse-item', function() {
   $$(this).removeClass('hide-more');
   $$(this).addClass('hide-less');
 });
 var card_flag = false;
-$$('#aboutmeDialog').on('scroll', function() {
-  if (!card_flag && $$('#cardLocation').position().top < 0) {
-    $$('#aboutmeAppbar').addClass('style-fix');
+$$('div#aboutmeDialog').on('scroll', function() {
+  if (!card_flag && $$('div#cardLocation').position().top < 0) {
+    $$('div#aboutmeAppbar').addClass('style-fix');
     card_flag = true;
-  } else if (card_flag && $$('#cardLocation').position().top > 0) {
-    $$('#aboutmeAppbar').removeClass('style-fix');
+  } else if (card_flag && $$('div#cardLocation').position().top > 0) {
+    $$('div#aboutmeAppbar').removeClass('style-fix');
     card_flag = false;
   };
 });
-$$(document).on('open.mdui.dialog', '#aboutmeDialog', function() {
-  if (!card_flag && $$('#cardLocation').position().top < 0) {
-    $$('#aboutmeAppbar').addClass('style-fix');
+$$(document).on('open.mdui.dialog', 'div#aboutmeDialog', function() {
+  if (!card_flag && $$('div#cardLocation').position().top < 0) {
+    $$('div#aboutmeAppbar').addClass('style-fix');
     card_flag = true;
   };
 });
-$$(document).on('close.mdui.dialog', '#aboutmeDialog', function() {
-  if (card_flag && $$('#cardLocation').position().top < 0) {
-    $$('#aboutmeAppbar').removeClass('style-fix');
+$$(document).on('close.mdui.dialog', 'div#aboutmeDialog', function() {
+  if (card_flag && $$('div#cardLocation').position().top < 0) {
+    $$('div#aboutmeAppbar').removeClass('style-fix');
     card_flag = false;
   };
 });
