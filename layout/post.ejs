@@ -50,7 +50,12 @@
   <div class="posts-card-line">
     <div class="mdui-divider"></div>
   </div>
-  <div class="posts-card-content mdui-typo" id="post-content">
+  <div class="posts-card-content mdui-typo
+    <%= theme.post.prism.theme %>
+    <% if (theme.post.prism.line_number === true && theme.post.prism.theme) { %>
+      line-number
+    <% } %>
+  " id="post-content">
     <%-page.content%>
   </div>
 

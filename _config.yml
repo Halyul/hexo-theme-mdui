@@ -33,7 +33,11 @@ index:
 # post settings
 post:
   entry_excerpt: 80
-  # topPost: true
+  qr_code: true
+  # prism themes: default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight
+  prism:
+    theme:
+    line_number:
   donate:
     wechat:
       link: /img/avatar.png
@@ -41,7 +45,6 @@ post:
     paypay:
       link: 'https://paypal.com'
       fa: 'fa-paypal'
-  qr_code: true
 
 share_menu: #false
   rss: false
