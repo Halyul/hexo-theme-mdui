@@ -17697,6 +17697,11 @@ html {
   }
 }
 
+#archives .header .content {
+  position: relative;
+  z-index: 1;
+}
+
 #archives .header .content .avatar {
   width: 60px;
   margin-top: -30px;
@@ -17927,6 +17932,7 @@ body #blog-appbar button.style-fix {
   }
   #archives .header {
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+    overflow: hidden;
   }
   #archives .header .content {
     display: -webkit-box;

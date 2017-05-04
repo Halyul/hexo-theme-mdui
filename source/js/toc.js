@@ -4,15 +4,20 @@ window.addEventListener("load",function(){
             value[1]();
             $(value[0]).removeClass("mdui-list-item-active");
         })
-        $((listens[listens.reduce(function(r,v,index){
+        let actionToc = (listens[listens.reduce(function(r,v,index){
             if(v[2] == true){
                 return index;
             }
             else return r;
-        },undefined)] || [])[0]).addClass("mdui-list-item-active");
-
+        },undefined)] || [])[0];
+        actionToc.classList.add("mdui-list-item-active");
+        showToc(actionToc);
+    }
+    function showToc(toc) {
+        console.log(list.scrollTop);
     }
     var listens = [];
+    var list = document.querySelector('ul.post-toc');
     var links = document.querySelectorAll(".post-toc-link");
     Array.prototype.forEach.call(links,function(value,index){
         var id = (value.getAttribute("href") || "#").slice(1);

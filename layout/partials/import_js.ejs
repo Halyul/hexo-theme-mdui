@@ -45,6 +45,15 @@ addLoadEvent(function(){
   </script>
 <% } %>
 
+<% if (is_archive()) { %>
+  <script>
+    window.addEventListener("scroll", function(){
+       document.querySelector('#archives .bg .mdui-img-fluid.mdui-img-rounded')
+        .style.transform = 'translateY(' + document.body.scrollTop * 0.4 + 'px)';
+    })
+  </script>
+<% } %>
+
 <% if (theme.busuanzi !== false) { %>
   <script src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
@@ -112,17 +121,27 @@ addLoadEvent(function(){
         function doWork(){
             listens.forEach(function(value,index){
                 value[1]();
-                $$(value[0]).removeClass("mdui-list-item-active");
+                value[0].classList.remove("mdui-list-item-active");
             })
-            $$((listens[listens.reduce(function(r,v,index){
+            let actionToc = (listens[listens.reduce(function(r,v,index){
                 if(v[2] == true){
                     return index;
                 }
                 else return r;
-            },undefined)] || [])[0]).addClass("mdui-list-item-active");
-
+            },undefined)] || [])[0] || listens[0][0];
+            actionToc.classList.add("mdui-list-item-active");
+            showToc(actionToc);
+        }
+        function showToc(toc) {
+            let offsetTop = toc.getClientRects()[0].top - cardToc.getClientRects()[0].top - 40;
+            let offsetBottom = toc.getClientRects()[0].bottom - cardToc.getClientRects()[0].bottom + 40;
+            let offset = 0;
+            if (offsetTop < 0)offset = offsetTop;
+            if (offsetBottom > 0)offset = offsetBottom;
+            cardToc.scrollTop += offset;
         }
         var listens = [];
+        var cardToc = document.querySelector('#card-toc');
         var links = document.querySelectorAll("a.post-toc-link");
         Array.prototype.forEach.call(links,function(value,index){
             var id = (value.getAttribute("href") || "#").slice(1);
