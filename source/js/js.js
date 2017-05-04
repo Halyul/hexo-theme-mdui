@@ -7476,72 +7476,99 @@ console.info("\u7248\u6743\u6240\u6709\uff0c\u7ffb\u7248\u5fc5\u7a76\uff01\u000d
 var $$ = mdui.JQ;
 
 /* post back button */
-$$(document).on('click', 'button.back-button', function() {
-    window.history.back();
-});
+(function() {
+  $$(document).on('click', 'button.back-button', function() {
+      window.history.back();
+  });
+})();
 
 /* post toc */
-$$(document).ready(function(){
-  if($$("ul#menu-toc").children().length == 0 && $$("div#card-toc").children().length == 0)
-  {
-    $$("button#button-toc").addClass("mdui-hidden");
-    $$("div#card-toc").addClass("mdui-hidden");
-    $$("div#blog-post").addClass("no-toc")
-  };
-});
+(function() {
+  $$(document).ready(function(){
+    if($$("ul#menu-toc").children().length == 0 && $$("div#card-toc").children().length == 0)
+    {
+      $$("button#button-toc").addClass("mdui-hidden");
+      $$("div#card-toc").addClass("mdui-hidden");
+      $$("div#blog-post").addClass("no-toc")
+    };
+  });
+})();
 
 /* global dialog */
-$$(document).on('open.mdui.dialog', '.mdui-dialog', function() {
-    $$('html').css('overflow-y', 'hidden');
-    $$('body').removeClass('drawer-overlay-none');
-});
-$$(document).on('close.mdui.dialog', '.mdui-dialog', function() {
-    $$('html').css('overflow-y', 'auto');
-    $$('body').addClass('drawer-overlay-none');
-});
+(function() {
+  $$(document).on('open.mdui.dialog', '.mdui-dialog', function() {
+      $$('html').css('overflow-y', 'hidden');
+      $$('body').removeClass('drawer-overlay-none');
+  });
+  $$(document).on('close.mdui.dialog', '.mdui-dialog', function() {
+      $$('html').css('overflow-y', 'auto');
+      $$('body').addClass('drawer-overlay-none');
+  });
+})();
 
 /* smooth scroll */
-$$(document).ready(function () {
-  smoothScroll.init({
-    selector: 'a',
-    offset: 60
+(function() {
+  $$(document).ready(function () {
+    smoothScroll.init({
+      selector: 'a',
+      offset: 60
+    });
   });
-});
-$$('.toTop').on('click', function () {
-  $$('button#toTop').trigger('click');
-});
+  $$('.toTop').on('click', function () {
+    $$('button#toTop').trigger('click');
+  });
+})();
 
 /* aboutme dialog */
-$$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
-    $$(this).addClass('hide-more');
-    $$(this).removeClass('hide-less');
-});
-$$(document).on('close.mdui.collapse', 'div.mdui-collapse-item', function() {
-  $$(this).removeClass('hide-more');
-  $$(this).addClass('hide-less');
-});
-var card_flag = false;
-$$('div#aboutmeDialog').on('scroll', function() {
-  if (!card_flag && $$('div#cardLocation').position().top < 0) {
-    $$('div#aboutmeAppbar').addClass('style-fix');
-    card_flag = true;
-  } else if (card_flag && $$('div#cardLocation').position().top > 0) {
-    $$('div#aboutmeAppbar').removeClass('style-fix');
-    card_flag = false;
-  };
-});
-$$(document).on('open.mdui.dialog', 'div#aboutmeDialog', function() {
-  if (!card_flag && $$('div#cardLocation').position().top < 0) {
-    $$('div#aboutmeAppbar').addClass('style-fix');
-    card_flag = true;
-  };
-});
-$$(document).on('close.mdui.dialog', 'div#aboutmeDialog', function() {
-  if (card_flag && $$('div#cardLocation').position().top < 0) {
-    $$('div#aboutmeAppbar').removeClass('style-fix');
-    card_flag = false;
-  };
-});
+(function() {
+  $$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
+      $$(this).addClass('hide-more');
+      $$(this).removeClass('hide-less');
+  });
+  $$(document).on('close.mdui.collapse', 'div.mdui-collapse-item', function() {
+    $$(this).removeClass('hide-more');
+    $$(this).addClass('hide-less');
+  });
+  var cardFlag = false;
+  $$('div#aboutmeDialog').on('scroll', function() {
+    if (!cardFlag && $$('div#cardLocation').position().top < 0) {
+      $$('div#aboutmeAppbar').addClass('style-fix');
+      cardFlag = true;
+    } else if (cardFlag && $$('div#cardLocation').position().top >= 0) {
+      $$('div#aboutmeAppbar').removeClass('style-fix');
+      cardFlag = false;
+    };
+  });
+  $$(document).on('open.mdui.dialog', 'div#aboutmeDialog', function() {
+    if (!cardFlag && $$('div#cardLocation').position().top < 0) {
+      $$('div#aboutmeAppbar').addClass('style-fix');
+      cardFlag = true;
+    };
+  });
+  $$(document).on('close.mdui.dialog', 'div#aboutmeDialog', function() {
+    if (cardFlag && $$('div#cardLocation').position().top < 0) {
+      $$('div#aboutmeAppbar').removeClass('style-fix');
+      cardFlag = false;
+    };
+  });
+})();
 
+/* fab */
+(function() {
+  var pageFlag = false;
+  var fab = new mdui.Fab('#toTop');
+  fab.hide();
+  $$(window).on('scroll', function() {
+    var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var pageLocation = $$('div#top').offset().top - bodyTop;
+    if (!pageFlag && pageLocation < 0) {
+      fab.show();
+      pageFlag = true;
+    } else if (pageFlag && pageLocation >= 0) {
+      fab.hide();
+      pageFlag = false;
+    }
+  });
+})()
 /* mdui v0.2.0 from Line 1 to Line
 */
