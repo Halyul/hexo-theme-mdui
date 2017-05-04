@@ -17766,6 +17766,65 @@ html {
   word-break: break-all;
 }
 
+@media only screen and (min-width: 440px) {
+  #archives {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #archives .items .title {
+    margin: 32px 0 16px 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #archives {
+    max-width: 1084px;
+  }
+  #archives .header, #archives .header .mdui-img-fluid {
+    border-radius: 2px;
+  }
+  #archives .header {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+    overflow: hidden;
+  }
+  #archives .header .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    margin-top: -108px;
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -ms-flex-direction: row;
+    background-color: transparent !important;
+  }
+  #archives .header .content .avatar {
+    margin-top: 0;
+  }
+  #archives .header .content .info {
+    margin-left: 24px;
+  }
+  #archives .header .content .name {
+    margin-top: 0;
+    color: #fff;
+  }
+  #archives .header .content .slogan {
+    margin-top: 8px;
+    color: #fff;
+  }
+  #archives .items .title {
+    margin: 32px 0 24px 0;
+  }
+}
+
 body.side-content {
   padding-left: 30%;
 }
@@ -17912,65 +17971,6 @@ body #blog-appbar button.style-fix {
     width: 50px;
   }
 }
-
-@media only screen and (min-width: 440px) {
-  #archives {
-    width: 95%;
-    margin: 0 auto;
-  }
-  #archives .items .title {
-    margin: 32px 0 16px 0;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #archives {
-    max-width: 1084px;
-  }
-  #archives .header, #archives .header .mdui-img-fluid {
-    border-radius: 2px;
-  }
-  #archives .header {
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
-    overflow: hidden;
-  }
-  #archives .header .content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    height: 60px;
-    margin-top: -108px;
-    padding: 24px;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
-    -webkit-box-flex: auto;
-    -ms-flex: auto;
-    flex: auto;
-    -webkit-box-orient: horizontal;
-    box-orient: horizontal;
-    -ms-flex-direction: row;
-  }
-  #archives .header .content .avatar {
-    margin-top: 0;
-  }
-  #archives .header .content .info {
-    margin-left: 24px;
-  }
-  #archives .header .content .name {
-    margin-top: 0;
-    color: #fff;
-  }
-  #archives .header .content .slogan {
-    margin-top: 8px;
-    color: #fff;
-  }
-  #archives .items .title {
-    margin: 32px 0 24px 0;
-  }
-}
-
 
 /* 添加在<a>中 */
 
