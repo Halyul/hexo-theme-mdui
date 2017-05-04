@@ -1,5 +1,7 @@
 <% if (page.layout === 'friends') { %>
   <%- partial('widget/page_friends') %>
+<% } else if (page.layout === 'galleries') { %>
+  <%- partial('widget/page_galleries') %>
 <% } else { %>
   <%- partial('page_layout') %>
 <% } %>

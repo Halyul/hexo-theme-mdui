@@ -30,7 +30,7 @@ site.posts.sort('date').reverse().forEach(function(post){
       <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= __('userview.contact_me') %></button>
     </div>
   </div>
-  <div class="items">
+  <div class="items mdui-container-fluid">
     <div class="title mdui-text-color-theme-secondary">
       <%= __('global.categories') %>
     </div>
@@ -63,7 +63,7 @@ site.posts.sort('date').reverse().forEach(function(post){
     <% }) %>
     </div>
   </div>
-  <div class="items">
+  <div class="items mdui-container-fluid">
     <div class="title mdui-text-color-theme-secondary">
       <%= __('global.tags') %>
     </div>
@@ -96,7 +96,7 @@ site.posts.sort('date').reverse().forEach(function(post){
       <% }) %>
     </div>
   </div>
-  <div class="items">
+  <div class="items mdui-container-fluid">
     <div class="title mdui-text-color-theme-secondary">
       <%= __('global.years') %>
     </div>

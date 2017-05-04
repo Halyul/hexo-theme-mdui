@@ -17774,6 +17774,7 @@ body #blog-appbar button.style-fix {
   left: 0;
   width: 30%;
   height: 100%;
+  z-index: 99;
 }
 
 @media only screen and (min-width: 1280px) {
@@ -18425,16 +18426,65 @@ span.badge[data-badge-caption]::after {
   white-space: pre;
 }
 
-#search .footer {
+#search .footer, #galleries .footer {
   margin: 16px;
 }
 
 @media only screen and (min-width: 601px) {
-  #search .footer {
+  #search .footer, #galleries .footer {
     margin: 32px;
   }
 }
 
+div#blog-appbar .logo {
+  margin-left: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+div#galleries {
+  margin: 4px auto 0 auto;
+}
+
+div#galleries .container {
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+div#galleries .container .item {
+  width: calc(50% - 2px);
+  height: auto;
+}
+
+@media only screen and (min-width: 440px) {
+  div#galleries {
+    margin: 16px auto 0 auto;
+    padding: 0;
+    width: 95%;
+  }
+  div#galleries .container .item {
+    max-width: 257px;
+    width: calc(50% - 8px);
+  }
+}
+
+@media (min-width: 500px) {
+  div#galleries {
+    width: 92%;
+  }
+}
+
+@media (min-width: 650px) {
+  div#galleries {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  div#galleries .container {
+    max-width: 1084px;
+  }
+}
 
 /* Outdated Browser v1.1.2 from Line 1 to Line 26
  * MDUI v0.1.2 from Line 28 to Line 14684

@@ -3,14 +3,15 @@
   var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
 <div id="side-content" class="mdui-color-<%= color[num] %>">
-  <div class="mdui-grid-tile">
+  <div class="mdui-grid-tile" style="overflow: visible;">
     <div class="bg">
       <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
     </div>
     <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
       <div class="flex-spacer"></div>
       <div class="mdui-grid-tile-buttons">
-        <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-page-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+        <%- partial('../menu/page_share') %>
       </div>
     </div>
   </div>
