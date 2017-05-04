@@ -11,10 +11,10 @@ site.posts.sort('date').reverse().forEach(function(post){
 <div id="archives">
   <div class="header">
     <div class="bg">
-      <img class="mdui-img-fluid mdui-img-rounded" src="<%= config.root + theme.style.bg_img %>"/>
+      <img class="mdui-img-fluid mdui-img-rounded" src="<%= theme.style.bg_img %>"/>
     </div>
     <div class="content" style="background-color: <%= theme.color.bg_color %>">
-      <img class="mdui-img-circle avatar" src="<%= config.root + theme.style.avatar %>"/>
+      <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
       <div class="info">
         <div class="name">
           <%= config.author %>
@@ -47,7 +47,7 @@ site.posts.sort('date').reverse().forEach(function(post){
                 <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
               </div>
               <div class="content">
-                <img class="mdui-img-circle avatar" src="<%= config.root + theme.style.avatar %>" />
+                <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
                 <div class="category"><%= category.name %></div>
                 <div class="length">
                   <% if (category.length === 1) { %>
@@ -80,7 +80,7 @@ site.posts.sort('date').reverse().forEach(function(post){
                 <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
               </div>
               <div class="content">
-                <img class="mdui-img-circle avatar" src="<%= config.root + theme.style.avatar %>" />
+                <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
                 <div class="category"><%= tag.name %></div>
                 <div class="length">
                   <% if (tag.length === 1) { %>
@@ -113,7 +113,7 @@ site.posts.sort('date').reverse().forEach(function(post){
                 <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
               </div>
               <div class="content no-length">
-                <img class="mdui-img-circle avatar" src="<%= config.root + theme.style.avatar %>" />
+                <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
                 <div class="category"><%= year %></div>
               </div>
             </div>
