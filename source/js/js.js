@@ -8275,9 +8275,9 @@
 });
 
 /*!
- * smooth-scroll v10.3.1: Animate scrolling to anchor links
+ * smooth-scroll v11.0.2: Animate scrolling to anchor links
  * (c) 2017 Chris Ferdinandi
- * MIT License
+ * GPL-3.0 License
  * http://github.com/cferdinandi/smooth-scroll
  */
 
@@ -8303,12 +8303,19 @@
 
 	// Default settings
 	var defaults = {
+		// Selectors
 		selector: '[data-scroll]',
 		selectorHeader: null,
+
+		// Speed & Easing
 		speed: 500,
-		easing: 'easeInOutCubic',
 		offset: 0,
-		callback: function () {}
+		easing: 'easeInOutCubic',
+		easingPatterns: {},
+
+		// Callback API
+		before: function () {},
+		after: function () {}
 	};
 
 
@@ -8493,20 +8500,28 @@
 	 * @param {Number} time Time animation should take to complete
 	 * @returns {Number}
 	 */
-	var easingPattern = function ( type, time ) {
+	var easingPattern = function ( settings, time ) {
 		var pattern;
-		if ( type === 'easeInQuad' ) pattern = time * time; // accelerating from zero velocity
-		if ( type === 'easeOutQuad' ) pattern = time * (2 - time); // decelerating to zero velocity
-		if ( type === 'easeInOutQuad' ) pattern = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
-		if ( type === 'easeInCubic' ) pattern = time * time * time; // accelerating from zero velocity
-		if ( type === 'easeOutCubic' ) pattern = (--time) * time * time + 1; // decelerating to zero velocity
-		if ( type === 'easeInOutCubic' ) pattern = time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
-		if ( type === 'easeInQuart' ) pattern = time * time * time * time; // accelerating from zero velocity
-		if ( type === 'easeOutQuart' ) pattern = 1 - (--time) * time * time * time; // decelerating to zero velocity
-		if ( type === 'easeInOutQuart' ) pattern = time < 0.5 ? 8 * time * time * time * time : 1 - 8 * (--time) * time * time * time; // acceleration until halfway, then deceleration
-		if ( type === 'easeInQuint' ) pattern = time * time * time * time * time; // accelerating from zero velocity
-		if ( type === 'easeOutQuint' ) pattern = 1 + (--time) * time * time * time * time; // decelerating to zero velocity
-		if ( type === 'easeInOutQuint' ) pattern = time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * (--time) * time * time * time * time; // acceleration until halfway, then deceleration
+
+		// Default Easing Patterns
+		if ( settings.easing === 'easeInQuad' ) pattern = time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutQuad' ) pattern = time * (2 - time); // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutQuad' ) pattern = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
+		if ( settings.easing === 'easeInCubic' ) pattern = time * time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutCubic' ) pattern = (--time) * time * time + 1; // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutCubic' ) pattern = time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
+		if ( settings.easing === 'easeInQuart' ) pattern = time * time * time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutQuart' ) pattern = 1 - (--time) * time * time * time; // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutQuart' ) pattern = time < 0.5 ? 8 * time * time * time * time : 1 - 8 * (--time) * time * time * time; // acceleration until halfway, then deceleration
+		if ( settings.easing === 'easeInQuint' ) pattern = time * time * time * time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutQuint' ) pattern = 1 + (--time) * time * time * time * time; // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutQuint' ) pattern = time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * (--time) * time * time * time * time; // acceleration until halfway, then deceleration
+
+		// Custom Easing Patterns
+		if ( settings.easingPatterns[settings.easing] ) {
+			pattern = settings.easingPatterns[settings.easing]( time );
+		}
+
 		return pattern || time; // no easing, no acceleration
 	};
 
@@ -8642,7 +8657,7 @@
 				adjustFocus( anchor, endLocation, isNum );
 
 				// Run callback after animation complete
-				animateSettings.callback( anchor, toggle );
+				animateSettings.after( anchor, toggle );
 
 			}
 		};
@@ -8655,7 +8670,7 @@
 			timeLapsed += 16;
 			percentage = ( timeLapsed / parseInt(animateSettings.speed, 10) );
 			percentage = ( percentage > 1 ) ? 1 : percentage;
-			position = startLocation + ( distance * easingPattern(animateSettings.easing, percentage) );
+			position = startLocation + ( distance * easingPattern(animateSettings, percentage) );
 			root.scrollTo( 0, Math.floor(position) );
 			stopAnimateScroll(position, endLocation, animationInterval);
 		};
@@ -8676,6 +8691,9 @@
 		if ( root.pageYOffset === 0 ) {
 			root.scrollTo( 0, 0 );
 		}
+
+		// Run callback before animation starts
+		animateSettings.before( anchor, toggle );
 
 		// Start scrolling animation
 		startAnimateScroll();
