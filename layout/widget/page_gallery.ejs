@@ -14,21 +14,11 @@
       <% } %>
     </div>
   </div>
-  <div class="container" id="animated-thumbnials">
-    <a href="/img/bg.png" data-sub-html="<span author><%= config.author %></span><%= ' • ' + __('posts.public') %><div descr>test</div>">
-      <img src="/img/bg.png" class="mdui-img-fluid"/>
-    </a>
-    <a href="https://lh3.googleusercontent.com/7Mh3mKtK0k8uW_4tljoiJ9EGJ1RdvIWtpwhsmIE6WiuXHNl07Zhj0GjIvmTyHNFgNSDNtPUeSjoebg=w138-h220-rw">
-      <img src="https://lh3.googleusercontent.com/7Mh3mKtK0k8uW_4tljoiJ9EGJ1RdvIWtpwhsmIE6WiuXHNl07Zhj0GjIvmTyHNFgNSDNtPUeSjoebg=w138-h220-rw" class="mdui-img-fluid"/>
-    </a>
-    <a href="https://lh3.googleusercontent.com/6CjnZJ4go9UPLOO7x5C-ylEUJn5za9uKwdsCN05kLLYJGyC596mAUzyu5e5bAd5fsOaE1NS_xdYnTA=w666-h220-rw">
-      <img src="https://lh3.googleusercontent.com/6CjnZJ4go9UPLOO7x5C-ylEUJn5za9uKwdsCN05kLLYJGyC596mAUzyu5e5bAd5fsOaE1NS_xdYnTA=w666-h220-rw" class="mdui-img-fluid"/>
-    </a>
-    <a href="https://lh3.googleusercontent.com/--FZhgE0wTms7L29-l8tGA3Xm3oEwIoo148Y2u_MuoALchuvM2zq5hbPQHsXNiA6V10zUOZRQvDpyg=w293-h220-rw">
-      <img src="https://lh3.googleusercontent.com/--FZhgE0wTms7L29-l8tGA3Xm3oEwIoo148Y2u_MuoALchuvM2zq5hbPQHsXNiA6V10zUOZRQvDpyg=w293-h220-rw" class="mdui-img-fluid"/>
-    </a>
-    <a href="https://lh3.googleusercontent.com/Ffg2-WpzHNLcaMYSahStKfNYJu8UL7RhqJMS2m_GC6yxiasAsQ4Z4kp0vc7-1IYRTy5VE7ersD1AnUI=w330-h220-rw">
-      <img src="https://lh3.googleusercontent.com/Ffg2-WpzHNLcaMYSahStKfNYJu8UL7RhqJMS2m_GC6yxiasAsQ4Z4kp0vc7-1IYRTy5VE7ersD1AnUI=w330-h220-rw" class="mdui-img-fluid"/>
-    </a>
+  <div class="container" id="gallery-container">
+    <% for (var i in page.photos) { %>
+      <a href="<%= page.photos[i].img %>" data-sub-html="<span author><%= config.author %></span><%= ' • ' + i %><% if (page.photos[i].descr) { %><div descr><%= page.photos[i].descr %></div><% } %>">
+        <img src="<%= page.photos[i].thumb || page.photos[i].img %>" class="mdui-img-fluid"/>
+      </a>
+    <% } %>
   </div>
 </div>
