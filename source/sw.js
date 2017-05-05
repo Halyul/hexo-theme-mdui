@@ -1,5 +1,5 @@
 'use strict';
-const version = 'v20170411';
+const version = 'v20170505';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = false;
 const offlineResources = [
@@ -9,10 +9,9 @@ const offlineResources = [
 ];
 
 const ignoreFetch = [
-    /https?:\/\/cdn.bootcss.com\//,
     /https?:\/\/busuanzi.ibruce.info\//,
-    /https?:\/\/cdnjs.cloudflare.com\//,
     /https?:\/\/dn-lbstatics.qbox.me\//,
+    /https?:\/\/fonts.gstatic.com\//,
 ];
 
 function onInstall(event) {
