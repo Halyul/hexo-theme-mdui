@@ -66,7 +66,7 @@ pageTitle += ' - ' + config.title;
   <!-- Custom Head -->
   <%-partial('../custom/custom_head')%>
 
-  <% if (theme.color.bg_color && page.layout !== 'galleries') { %>
+  <% if (theme.color.bg_color && page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
     <style>
       body {
         background-color: <%= theme.color.bg_color %>;

@@ -115,7 +115,7 @@ addLoadEvent(function(){
     });
   </script>
 <% } %>
-<% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag()) { %>
+<% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.layout !== 'galleries' && page.layout !== 'gallery') { %>
   <script type="text/javascript">
     window.addEventListener("load",function(){
         function doWork(){
@@ -217,7 +217,44 @@ addLoadEvent(function(){
       searchFunc(path, 'search-input');
     });
   </script>
+<% } %>
 
+<% if (page.layout === 'galleries') { %>
+  <script>
+    (function() {
+      var galleryFlag = false;
+      $$(window).on('scroll', function() {
+        var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        var pageLocation = $$('div#top').offset().top - bodyTop;
+        if (!galleryFlag && pageLocation < 0) {
+          $$('div#blog-appbar').removeClass('mdui-shadow-0');
+          galleryFlag = true;
+        } else if (galleryFlag && pageLocation >= 0) {
+          $$('div#blog-appbar').addClass('mdui-shadow-0');
+          galleryFlag = false;
+        }
+      });
+    })();
+  </script>
+<% } %>
+
+<% if (page.layout === 'gallery') { %>
+  <script>
+    (function() {
+      var galleryFlag = false;
+      $$(window).on('scroll', function() {
+        var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        var pageLocation = $$('div#top').offset().top - bodyTop;
+        if (!galleryFlag && pageLocation < 0) {
+          $$('div#blog-appbar').removeClass('mdui-shadow-0 gallery-fix');
+          galleryFlag = true;
+        } else if (galleryFlag && pageLocation >= 0) {
+          $$('div#blog-appbar').addClass('mdui-shadow-0 gallery-fix');
+          galleryFlag = false;
+        }
+      });
+    })();
+  </script>
 <% } %>
 
 <!-- Custom javascript -->

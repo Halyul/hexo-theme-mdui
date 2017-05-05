@@ -3,16 +3,16 @@ location:
 
 # style
 style:
-  bg_img: img/bg.png
-  avatar: img/avatar.png
+  bg_img: /img/bg.png
+  avatar: /img/avatar.png
   slogan: "I'm your slogan!"
   hoverable: true
 
 # HTML head
 head:
-  favicon: img/favicon.png
-  high_res_favicon: img/favicon.png
-  apple_touch_icon: img/favicon.png
+  favicon: /img/favicon.png
+  high_res_favicon: /img/favicon.png
+  apple_touch_icon: /img/favicon.png
   keywords: blog, hexo, mdui
 
 # color

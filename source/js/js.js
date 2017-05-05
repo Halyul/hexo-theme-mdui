@@ -10899,7 +10899,7 @@ var $$ = mdui.JQ;
 
 /* post back button */
 (function() {
-  $$(document).on('click', 'button.back-button', function() {
+  $$(document).on('click', 'button[back]', function() {
       window.history.back();
   });
 })();
@@ -10991,6 +10991,6 @@ var $$ = mdui.JQ;
       pageFlag = false;
     }
   });
-})()
+})();
 /* mdui v0.2.0 from Line 1 to Line
 */

@@ -1,0 +1,18 @@
+<div id="gallery">
+  <div class="header">
+    <div class="title mdui-text-color-theme-text">
+      <%= page.title %>
+    </div>
+    <div class="descr mdui-text-color-theme-secondary">
+      <% if (page.logo) { %>
+        <img class="mdui-img-circle logo" src="<%= page.logo %>"/>
+      <% } %>
+      <% if (page.descr) { %>
+        <div class="mdui-valign"><%= page.descr %></div>
+      <% } else { %>
+        <div class="mdui-valign"><%= date(page.date, 'MMM DD, YYYY') + ' • ' + __('posts.public') %></div>
+      <% } %>
+    </div>
+  </div>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
