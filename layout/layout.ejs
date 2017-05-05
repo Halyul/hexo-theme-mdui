@@ -36,7 +36,7 @@
   <%- body %>
 </main>
 
-<% if (page.layout !== 'galleries'  || page.layout !== 'gallery') { %>
+<% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
   <%- partial('partials/drawer') %>
 <% } %>
 
