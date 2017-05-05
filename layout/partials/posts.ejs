@@ -40,18 +40,26 @@
       <img src="<%= post.thumbnail %>"/>
     </div>
   <% } %>
-  <% if (post.tag !== false) { %>
+  <% if (post.tag !== false || post.pinned === true) { %>
     <div class="posts-card-actions">
-      <div class="mdui-chip">
-        <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span>
-      </div>
-      <div class="content mdui-typo">
-        <% post.tags.map(function(tag){  %>
-          <a href="<%= config.root %>tags/<%= tag.name %>/">
-            <span><%= tag.name %></span>
-          </a>
-        <% }) %>
-      </div>
+      <% if (post.tag !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span>
+        </div>
+        <div class="content mdui-typo">
+          <% post.tags.map(function(tag){  %>
+            <a href="<%= config.root %>tags/<%= tag.name %>/">
+              <span><%= tag.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      <% } %>
+      <% if (post.pinned === true) { %>
+        <div class="flex-spacer"></div>
+        <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
+          <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
+        </div>
+      <% } %>
     </div>
   <% } %>
 </div>

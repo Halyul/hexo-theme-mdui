@@ -17,6 +17,7 @@ posts:
   header: 'Something that I have posted'
   public: 'Public'
   qr_code: "Article QR Code"
+  pinned: 'Pinned'
   donate:
     button: 'Buy me a beer?'
     close: 'cancel'
