@@ -1,0 +1,18 @@
+<% if (page.prev) { %>
+  <a href="<%=url_for(page.prev.path)%>" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple mdui-btn-raised mdui-float-left" mdui-tooltip="{content: '<%= __('posts.pagination.newer') %>', position: 'right'}">
+    <i class="mdui-icon material-icons">&#xe5cb;</i>
+  </a>
+<% } else { %>
+  <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple mdui-btn-raised mdui-float-left" mdui-tooltip="{content: '<%= __('posts.pagination.newer') %>', position: 'right'}" disabled>
+    <i class="mdui-icon material-icons">&#xe5cb;</i>
+  </button>
+<% } %>
+<% if (page.next) { %>
+  <a href="<%=url_for(page.next.path)%>" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple mdui-btn-raised mdui-float-right" mdui-tooltip="{content: '<%= __('posts.pagination.older') %>', position: 'left'}">
+    <i class="mdui-icon material-icons">&#xe5cc;</i>
+  </a>
+<% } else { %>
+  <button class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple mdui-btn-raised mdui-float-right" mdui-tooltip="{content: '<%= __('posts.pagination.older') %>', position: 'left'}" disabled>
+    <i class="mdui-icon material-icons">&#xe5cc;</i>
+  </button>
+<% } %>

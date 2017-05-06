@@ -1,9 +1,8 @@
-# CDN server
+# CDN for mathjax
 location:
 
 # style
 style:
-  scheme: '1'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -21,19 +20,33 @@ color:
   primary_color: "indigo"
   accent_color: "blue"
   layout:
-  random: 
+  random:
+  bg_color: "#eeeeee"
 
 # appbar
 appbar:
   title: "Title"
 
+index:
+  welcome: "Welcome to my blog~"
+
 # post settings
 post:
   entry_excerpt: 80
-  # topPost: true
+  qr_code: false
+  prism:
+    theme:
+    line_number:
+  donate:
+    wechat:
+      link: /img/avatar.png
+      fa: 'fa-wechat'
+    paypay:
+      link: 'https://paypal.com'
+      fa: 'fa-paypal'
 
 share_menu: #false
-  rss: true
+  rss: false
   weibo: false
   twitter: true
   facebook: true
@@ -42,17 +55,13 @@ share_menu: #false
   qq: false
   telegram: false
 
-qr_code: false
-
 comment:
     use:
     shortname:
-    provider:
 
 # pagination
 # github@zllovesuki
-index:
-  show: 2
+pagination: 2
 
 # footer
 footer:
@@ -65,59 +74,63 @@ busuanzi: #false
     post_pv: true
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
+service_woker:
+
+about_me: false
+
+random_pics: 25
+
 pages:
   Test1:
     link: "/myfriends"
-    icon: "&#xe0ba;"
+    md: "&#xe0ba;"
+  Test99:
+    link: "/myfriends"
+    md: "&#xe0ba;"
+  Test8:
+    link: "/myfriends"
+    md: "&#xe0ba;"
+  Test877:
+    link: "/myfriends"
+    md: "&#xe0ba;"
+  Test8234:
+    link: "/myfriends"
+    md: "&#xe0ba;"
   Test2:
     link: "/apply-for-link"
-    icon: "&#xe7f0;"
+    fa: "fa-child"
   Test3:
     link: "/timeline"
-    icon: "home"
+    md: "home"
+  Test4:
+    cascade: true
+    md: 'home'
+    pages:
+      TEST1:
+        link: "/myfriends"
+        md: "&#xe5ca;"
+      TEST2:
+        link: "/timeline"
+        md: "home"
+      Test3:
+        link: "/timeline"
+        md: "home"
 
 sns:
-  Twitter: https://twitter.com
-  Facebook: https://facebook.com
-
-# Translations
-translations:
-  # archive: 'Archive'
-  archives: 'Archives'
-  category: 'Category'
-  categories: 'Categories'
-  index: 'Index'
-  pages: 'Pages'
-  tag: 'Tag'
-  tags: 'Tags'
-  years: 'Years'
-  go_to_prev_page: 'Return'
-  busuanzi_views: 'Views: '
-  footer:
-    contact_me: 'Contact me'
-    how_to_contact_me: 'How to contact me'
-    close: 'Close'
-  share_menu:
-    rss: 'Article RSS'
-    facebook: 'Share to Facebook'
-    googleplus: 'Share to Google+'
-    linkedin: 'Share to Linkedin'
-    qq: 'Share to QQ'
-    telegram: 'Share to Telegram'
-    twitter: 'Share to Twitter'
-    weibo: 'Share to Weibo'
-  snackbar: 'Oops! Nothing happened.'
-  show_comments_from: 'Show comments from '
-  hide_comments: 'Hide comments'
-  outdated_browser:
-    title: 'Your browser is out-of-date!'
-    line_one: 'Update your browser to view this website correctly. '
-    link: 'Update my browser now '
-    close: 'Close'
+  Twitter:
+    link: https://twitter.com
+    fa: 'fa-twitter'
+  Facebook:
+    link: https://facebook.com
+    null_icon: true
+  TEST:
+    link: https://facebook.com
+    md: "&#xe168;"
+  TEST1:
+    link: https://facebook.com
 
 # Vendors
 vendors:
-  mdui_min_css:
-  mdui_min_js:
   style_min_css:
   js_min_js:
+  outdatedbrowser_min_js:

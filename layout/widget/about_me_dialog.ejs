@@ -1,0 +1,140 @@
+<div class="mdui-appbar mdui-appbar-fixed" id="aboutmeAppbar">
+  <div class="mdui-toolbar mdui-color-theme">
+    <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
+    <div class="title">
+      <%= config.author %>
+    </div>
+  </div>
+</div>
+<div class="mdui-dialog" id="aboutmeDialog">
+  <div class="mdui-card mdui-color-theme card1 card-bottom-fix">
+    <img class="mdui-img-circle avatar mdui-center" src="<%= theme.style.avatar %>"/>
+    <div class="content">
+      <div class="name mdui-text-center">
+        <%= config.author %>
+      </div>
+      <div class="others mdui-text-center">
+        <% for (var i in site.data.about) { %>
+          <% if (i === 'slogan') { %>
+            <% if ( site.data.about[i] === true) { %>
+              <div class="slogan">
+                <%= theme.style.slogan %>
+              </div>
+            <% } %>
+          <% } %>
+          <% if (i === 'others') { %>
+            <div class="items">
+              <% site.data.about[i].forEach(function(item) { %>
+                  <div><%= item %></div>
+              <% }); %>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div id="cardLocation"></div>
+  <% for (var x in site.data.about) { %>
+    <% if (x !== 'others' && x !=='slogan') { %>
+      <div class="mdui-card card-bottom-fix card-others">
+        <div class="main">
+          <div class="title">
+            <%= x %>
+          </div>
+          <div class="content">
+            <% for (var y in site.data.about[x].main) { %>
+              <div class="item <% if (site.data.about[x].main[y].link) { %>link<% } %> <% if (site.data.about[x].main[y].one_line === true) { %>one-line mdui-valign<% } %>"
+                <% if (site.data.about[x].main[y].link) { %>
+                  onclick="window.open('<%= site.data.about[x].main[y].link %>', '_blank');"
+                <% } %>
+              >
+                <% if (site.data.about[x].main[y].s_img || site.data.about[x].main[y].c_img || site.data.about[x].main[y].fa || site.data.about[x].main[y].md || site.data.about[x].main[y].null_icon === true) { %>
+                  <% if (site.data.about[x].main[y].s_img || site.data.about[x].main[y].c_img) { %>
+                    <div class="img">
+                      <img class="<% if (site.data.about[x].main[y].s_img) { %>mdui-img-fluid<% } %><% if (site.data.about[x].main[y].c_img) { %>mdui-img-fluid mdui-img-circle<% } %>" src="<%= site.data.about[x].main[y].s_img || site.data.about[x].main[y].c_img %>"/>
+                    </div>
+                  <% } %>
+                  <% if (site.data.about[x].main[y].fa || site.data.about[x].main[y].md || site.data.about[x].main[y].null_icon === true) { %>
+                    <div class="icon">
+                    <% if (site.data.about[x].main[y].fa) { %>
+                      <i class="mdui-icon fa <%= site.data.about[x].main[y].fa %> mdui-text-center mdui-text-color-theme-icon"></i>
+                    <% } %>
+                    <% if (site.data.about[x].main[y].md) { %>
+                      <i class="mdui-icon material-icons mdui-text-color-theme-icon"><%- site.data.about[x].main[y].md %></i>
+                    <% } %>
+                    <% if (site.data.about[x].main[y].null_icon === true) { %>
+                      <span style="width: 24px;height: 24px;"></span>
+                    <% } %>
+                    </div>
+                  <% } %>
+                <% } %>
+                <div style="width: 100%;height: inherit;" <% if (site.data.about[x].main[y].one_line === true) { %>class="mdui-valign"<% } %>>
+                  <div class="iTitle">
+                    <%= y %>
+                  </div>
+                  <div class="iContent">
+                    <%= site.data.about[x].main[y].content %>
+                  </div>
+                  <% if (site.data.about[x].main[y].content_1) { %>
+                    <div class="iContent_1">
+                      <%= site.data.about[x].main[y].content_1 %>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+        <div class="mdui-collapse mdui-list no-padding" mdui-collapse="{accordion: true}">
+          <div class="mdui-collapse-item hide-less">
+            <div class="mdui-collapse-item-body">
+            <% for (var z in site.data.about[x].more) { %>
+              <div class="item <% if (site.data.about[x].more[z].link) { %>link<% } %> <% if (site.data.about[x].more[z].one_line === true) { %>one-line<% } %>"
+                <% if (site.data.about[x].more[z].link) { %>
+                  onclick="window.open('<%= site.data.about[x].more[z].link %>', '_blank');"
+                <% } %>
+              >
+              <% if (site.data.about[x].more[z].s_img || site.data.about[x].more[z].c_img || site.data.about[x].more[z].fa || site.data.about[x].more[z].md || site.data.about[x].more[z].null_icon === true) { %>
+                <% if (site.data.about[x].more[z].s_img || site.data.about[x].more[z].c_img) { %>
+                  <div class="img">
+                    <img class="<% if (site.data.about[x].more[z].s_img) { %>mdui-img-fluid<% } %><% if (site.data.about[x].more[z].c_img) { %>mdui-img-fluid mdui-img-circle<% } %>" src="<%= site.data.about[x].more[z].s_img || site.data.about[x].more[z].c_img %>"/>
+                  </div>
+                <% } %>
+                <% if (site.data.about[x].more[z].fa || site.data.about[x].more[z].md || site.data.about[x].more[z].null_icon === true) { %>
+                  <div class="icon">
+                  <% if (site.data.about[x].more[z].fa) { %>
+                    <i class="mdui-icon fa <%= site.data.about[x].more[z].fa %> mdui-text-center mdui-text-color-theme-icon"></i>
+                  <% } %>
+                  <% if (site.data.about[x].more[z].md) { %>
+                    <i class="mdui-icon material-icons mdui-text-color-theme-icon"><%- site.data.about[x].more[z].md %></i>
+                  <% } %>
+                  <% if (site.data.about[x].more[z].null_icon === true) { %>
+                    <span style="width: 24px;height: 24px;"></span>
+                  <% } %>
+                  </div>
+                <% } %>
+              <% } %>
+                <div style="width: 100%;height: inherit;" <% if (site.data.about[x].more[z].one_line === true) { %>class="mdui-valign"<% } %>>
+                  <div class="iTitle">
+                    <%= z %>
+                  </div>
+                  <div class="iContent">
+                    <%= site.data.about[x].more[z].content %>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+            </div>
+            <div class="mdui-divider" style="margin-top: 24px;"></div>
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+              <div class="mdui-collapse-item-arrow">
+                <i class="mdui-icon material-icons">&#xe313;</i>
+              </div>
+              <div class="mdui-list-item-content"><span moreButton-more>More</span><span moreButton-less>Less</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  <% } %>
+</div>

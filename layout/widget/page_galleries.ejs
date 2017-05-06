@@ -1,0 +1,29 @@
+<div id="galleries" class="mdui-container-fluid">
+  <div class="container">
+    <div class="mdui-row">
+      <% for (var i in site.data.galleries) { %>
+        <div class="mdui-col-xs-6 mdui-col-md-3">
+          <a href="<%= site.data.galleries[i].link %>" target="_self" class="no-text-decoration item">
+            <div class="mdui-grid-tile card-bottom-fix">
+              <div class="bg" style="background-image: url(<%= site.data.galleries[i].bg %>)"></div>
+              <div class="mdui-grid-tile-actions no-padding-top">
+                <div class="mdui-grid-tile-text">
+                  <% if (site.data.galleries[i].logo) { %>
+                    <img class="mdui-img-circle logo" src="<%= site.data.galleries[i].logo %>"/>
+                  <% } %>
+                  <div class="mdui-grid-tile-title"><%= i %></div>
+                  <div class="mdui-grid-tile-subtitle mdui-text-color-theme-secondary"><%= site.data.galleries[i].descr %></div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
+    <div class="footer">
+      <div class="mdui-text-center mdui-text-color-theme-text">
+        <%= __('search.footer') %>
+      </div>
+    </div>
+  </div>
+</div>

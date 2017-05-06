@@ -1,10 +1,14 @@
-<% if (theme.style.scheme === '1') { %>
-  <%-partial('partials/1/back_actions_card')%>
-<% } %>
-<% page.posts.each(function(post) { %>
-    <%-partial('partials/share/posts', { post: post })%>
-<% }); %>
+<div class="posts-container column-3">
 
-<%-partial('partials/share/pagination', {base: url_for(config.root) +  'tags/' + page.tag + '/', show: theme.index.show })%>
+</div>
+<div id="content-list">
+  <% page.posts.each(function(post,index) {%>
+    <div class="content-item">
+      <%-partial('partials/posts', { post: post })%>
+    </div>
+  <% }); %>
+</div>
 
-<%-partial('partials/share/fab/index')%>
+<%-partial('partials/pagination', {base: url_for(config.root) +  'tags/' + page.tag + '/', show: theme.pagination })%>
+
+<%-partial('partials/fab/index')%>

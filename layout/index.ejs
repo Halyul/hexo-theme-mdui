@@ -1,11 +1,25 @@
-<% if (theme.style.scheme === '1') { %>
-  <%-partial('partials/1/first_card')%>
-<% } %>
+<div class="posts-container column-3">
 
-<% page.posts.each(function(post) { %>
-  <% if(!(theme.post.topPost && post.top)) { %>
-    <%-partial('partials/share/posts', { post: post, index: true, pin: false })%>
-  <% } %>
-<% }); %>
-<%-partial('partials/share/pagination', {base: url_for(config.root), show: theme.index.show })%>
-<%-partial('partials/share/fab/index')%>
+</div>
+<div id="content-list">
+  <%
+    var index = 0;
+    var posts = page.posts.filter(function(post){
+      if (post.pinned) {%>
+        <%-partial('partials/index_post_card', { index: index, post })%>
+
+        <%
+        index++;
+        return false;
+      }
+      return true;
+    })
+  %>
+  <% posts.forEach(function(post) {%>
+      <%-partial('partials/index_post_card', { index: index, post })%>
+  <%
+    index++;
+  }); %>
+</div>
+<%-partial('partials/pagination', {base: url_for(config.root), show: theme.pagination })%>
+<%-partial('partials/fab/index')%>

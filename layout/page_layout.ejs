@@ -1,0 +1,75 @@
+<div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
+  <div class="mdui-card-header posts-card-header">
+    <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
+    <div class="content mdui-valign">
+      <span class="username"><%= config.author %></span>
+      <div class="arrow mdui-text-center mdui-text-color-theme-accent">
+        <i class="mdui-icon material-icons">&#xe037;</i>
+      </div>
+      <div class="mdui-typo-body-1-opacity mdui-typo">
+        <%= __('posts.public') %>
+      </div>
+    </div>
+    <div class="flex-spacer"></div>
+    <div class="mdui-valign">
+      <div class="mdui-typo-caption-opacity date"><%= date(page.date, 'MMM DD, YYYY') %></div>
+      <div class="buttons">
+        <!--<button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-more'}">
+          <i class="mdui-icon material-icons">&#xe417;</i>
+        </button>-->
+        <%- partial('partials/menu/post_more') %>
+        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
+          <i class="mdui-icon material-icons">&#xe80d;</i>
+        </button>
+        <%- partial('partials/menu/post_share') %>
+        <% if(theme.post.qr_code === true) { %>
+        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
+          <i class="mdui-icon material-icons">&#xe337;</i>
+        </button>
+        <%- partial('partials/menu/qrcode') %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="posts-card-title">
+    <%= page.title %>
+  </div>
+  <% if (page.thumbnail) { %>
+    <div class="mdui-card-media">
+      <img src="<%= page.thumbnail %>"/>
+    </div>
+  <% } %>
+  <div class="posts-card-line">
+    <div class="mdui-divider"></div>
+  </div>
+  <div class="posts-card-content mdui-typo" id="post-content">
+    <%-page.content%>
+  </div>
+
+  <% if (theme.post.donate !== false) { %>
+    <div class="posts-card-actions">
+      <% if (theme.post.donate !==false) { %>
+        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+      <% } %>
+    </div>
+  <% } %>
+  <% if (page.comment !== false) { %>
+    <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
+      <div class="posts-card-line">
+        <div class="mdui-divider"></div>
+      </div>
+      <div class="post-comment">
+        <%- partial('partials/comment') %>
+      </div>
+    <% } %>
+  <% } %>
+</div>
+<div id="card-toc">
+  <%- customToc(page.content, {
+            class: 'post-toc'
+        }) %>
+</div>
+<div style="margin: 0 16px 16px 16px;height: 36px;">
+  <%-partial('partials/post_pagination')%>
+</div>
+<%-partial('partials/fab/post')%>

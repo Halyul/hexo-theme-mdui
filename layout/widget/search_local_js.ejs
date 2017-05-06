@@ -1,0 +1,123 @@
+<script>
+    var searchFunc = function(path, search_id) {
+        'use strict';
+        fetch(path).then(function(res){
+            return res.json();
+        }).then(function(datas){
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.querySelector("[searchResult]");
+                $input.addEventListener('input', function() {
+                    var str='';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = '';
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        if(typeof data.title === "undefined")return
+                        if(typeof data.content === "undefined")return
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,'').toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title !== '' && data_content !== '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+
+                        if (isMatch) {
+                            str += '<div class="content-item"><div class="mdui-card card-bottom-fix mdui-hoverable mdui-center" id="index">'+
+                            '<div class="mdui-card-header posts-card-header">'+
+                            '<img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>">'+
+                            '<div class="content mdui-valign">'+
+                            '<span class="username"><%= config.author %></span>';
+
+                            // icon
+                            if(typeof data.categories !== 'undefined')
+                            str += '<div class="arrow mdui-text-center mdui-text-color-theme-accent">';
+                            else {
+                              str +=  '<div class="arrow mdui-text-center">';
+                            };
+                            '<div class="arrow mdui-text-center mdui-text-color-theme-accent">';
+
+                            str += '<i class="mdui-icon material-icons">&#xe037;</i>'+
+                            '</div>'+
+                            '<div class="mdui-typo-body-1-opacity mdui-typo">';
+
+                            //post category
+                            if(typeof data.categories !== 'undefined')
+                            data.categories.forEach(function(category){
+                                str += '<a href="<%= config.root %>categories/' + category + '/"><span>' + category + '</span></a>';
+                            })
+                            else {
+                              str +=  '<%= __('posts.public') %>';
+                            };
+
+                            // post title
+                            str += '</div>'+'</div>'+'<div class="flex-spacer"></div>'+'</div>'+'<div class="posts-card-title mdui-typo">'+
+                            '<a href="' + data_url + '" target="_self">' + data_title + '</a>'+
+                            '</div>'+'<div class="posts-card-line">'+
+                            '<div class="mdui-divider"></div>'+'</div>'+'<div class="posts-card-content mdui-typo">';
+
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<strong><mark>'+keyword+'</mark></strong>');
+                                })
+                                str += '<p class="result">' + match_content + '...</p>';
+                            }
+
+                            str+= '</div>';
+
+                            // post tag
+                            if(typeof data.tags !== 'undefined') {
+                              str += '<div class="posts-card-actions"><div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span></div><div class="content mdui-typo">';
+                              data.tags.forEach(function(tag){
+                                  str += '<a href="<%= config.root %>tags/' + tag + '/"><span>' + tag + '</span></a>';
+                              });
+                              str += '</div></div>';
+                            }
+                            str += '</div>';
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                    window.postListCleanUpdate();
+                });
+
+        })
+    }
+</script>

@@ -1,0 +1,125 @@
+<%
+var years = {};
+site.posts.sort('date').reverse().forEach(function(post){
+  var year = post.date.year()
+  if(years[year]===undefined){
+    years[year] = [];
+  }
+  years[year].push(post);
+});
+%>
+<div id="archives">
+  <div class="header">
+    <div class="bg">
+      <img class="mdui-img-fluid mdui-img-rounded" src="<%= theme.style.bg_img %>"/>
+    </div>
+    <div class="content" style="background-color: <%= theme.color.bg_color %>">
+      <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
+      <div class="info">
+        <div class="name">
+          <%= config.author %>
+        </div>
+        <div class="slogan">
+          <%= theme.style.slogan %>
+        </div>
+      </div>
+      <div class="flex-spacer mdui-hidden-sm-down"></div>
+        <% if (theme.about_me === true) { %>
+          <button class="mdui-btn mdui-ripple mdui-text-color-white-icon mdui-hidden-sm-down" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
+        <% } %>
+      <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= __('userview.contact_me') %></button>
+    </div>
+  </div>
+  <div class="items mdui-container-fluid">
+    <div class="title mdui-text-color-theme-secondary">
+      <%= __('global.categories') %>
+    </div>
+    <div class="container mdui-row">
+      <% site.categories.map(function(category){  %>
+        <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+          var num = Math.floor(Math.random() * color.length);
+          var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+        %>
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="<%= config.root %>categories/<%= category.name %>/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-<%= color[num] %>">
+              <div class="mdui-card-media">
+                <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
+                <div class="category"><%= category.name %></div>
+                <div class="length">
+                  <% if (category.length === 1) { %>
+                    <%= category.length + ' ' + __('archive.post') %>
+                  <% } else { %>
+                    <%= category.length + ' ' + __('archive.post') %>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+    <% }) %>
+    </div>
+  </div>
+  <div class="items mdui-container-fluid">
+    <div class="title mdui-text-color-theme-secondary">
+      <%= __('global.tags') %>
+    </div>
+    <div class="container mdui-row">
+      <% site.tags.map(function(tag){  %>
+        <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+          var num = Math.floor(Math.random() * color.length);
+          var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+        %>
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="<%= config.root %>tags/<%= tag.name %>/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-<%= color[num] %>">
+              <div class="mdui-card-media">
+                <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
+              </div>
+              <div class="content">
+                <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
+                <div class="category"><%= tag.name %></div>
+                <div class="length">
+                  <% if (tag.length === 1) { %>
+                    <%= tag.length + ' ' + __('archive.post') %>
+                  <% } else { %>
+                    <%= tag.length + ' ' + __('archive.posts') %>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  <div class="items mdui-container-fluid">
+    <div class="title mdui-text-color-theme-secondary">
+      <%= __('global.years') %>
+    </div>
+    <div class="container mdui-row">
+      <% Object.keys(years).reverse().forEach(function(year){  %>
+        <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+          var num = Math.floor(Math.random() * color.length);
+          var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+        %>
+        <div class="mdui-col-xs-6 mdui-col-md-3 item">
+          <a href="<%= config.root %>archives/<%= year %>/" target="_self" class="no-text-decoration">
+            <div class="mdui-card card-bottom-fix mdui-color-<%= color[num] %>">
+              <div class="mdui-card-media">
+                <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
+              </div>
+              <div class="content no-length">
+                <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
+                <div class="category"><%= year %></div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>

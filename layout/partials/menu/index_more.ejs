@@ -1,0 +1,12 @@
+<ul class="mdui-menu" id="menu-index-more">
+  <% if (theme.busuanzi !== false) { %>
+    <% if(theme.busuanzi.post_pv === true) { %>
+      <li class="mdui-menu-item" id="busuanzi_container_page_pv">
+        <a class="mdui-ripple menu-badge">
+          <%= __('global.busuanzi_views') %>
+          <span class="badge" id="busuanzi_value_page_pv"></span>
+        </a>
+      </li>
+    <% } %>
+  <% } %>
+</ul>
