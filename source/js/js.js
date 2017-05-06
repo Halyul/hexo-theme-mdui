@@ -10501,6 +10501,16 @@ var $$ = mdui.JQ;
   });
 })();
 
+/* drawer */
+(function() {
+  $$(document).on('open.mdui.drawer', '#drawer', function() {
+      $$('html').css('overflow-y', 'hidden');
+  });
+  $$(document).on('close.mdui.drawer', '#drawer', function() {
+      $$('html').css('overflow-y', 'auto');
+  });
+})();
+
 /* fab */
 (function() {
   var pageFlag = false;
@@ -10518,5 +10528,16 @@ var $$ = mdui.JQ;
     }
   });
 })();
-/* mdui v0.2.0 from Line 1 to Line
+
+/* mdui v0.2.0 from Line 1 to Line 5340
+ * Light Gallery from Line 5342 to Line 6945
+ * lg hash from Line 6947 to Line 7042
+ * lg zoom from Line 7045 to Line 7612
+ * lg fullscreen from Line 7614 to Line 7738
+ * lg video from Line 7740 to Line 8058
+ * lg autoplay from Line 8060to Line 8275
+ * smooth scroll v11.02 from Line 8277 to Line 8877
+ * es6 promise from Line 8879 to Line 10036
+ * fetch.js from Line 10038 to Line 10419
+ * Theme script from Line 10421 to the end
 */

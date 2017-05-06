@@ -33,8 +33,7 @@ index:
 # post settings
 post:
   entry_excerpt: 80
-  qr_code: true
-  # prism themes: default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight
+  qr_code: false
   prism:
     theme:
     line_number:
@@ -77,7 +76,7 @@ busuanzi: #false
 
 service_woker:
 
-about_me: true
+about_me: false
 
 random_pics: 25
 

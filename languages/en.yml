@@ -44,7 +44,8 @@ userview:
   contact_me: 'Contact me'
   how_to_contact_me: 'How to contact me'
   close: 'Close'
-friends_title: 'HI~~'
+friends:
+  visit: 'Visit'
 outdated_browser:
   title: 'Your browser is out-of-date!'
   line_one: 'Update your browser to view this website correctly. '

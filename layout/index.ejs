@@ -2,16 +2,15 @@
 
 </div>
 <div id="content-list">
-  <% 
+  <%
     var index = 0;
     var posts = page.posts.filter(function(post){
       if (post.pinned) {%>
         <%-partial('partials/index_post_card', { index: index, post })%>
-        
+
         <%
         index++;
         return false;
-        console.log(1)
       }
       return true;
     })

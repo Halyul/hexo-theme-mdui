@@ -11,6 +11,7 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 - [Quick start 快速开始](#quick-start-快速开始)
 - [Docs 文档](#docs-文档)
 - [Contributing 贡献](#contributing-贡献)
+- [Contributor 奉献者](#contributor-贡献者)
 - [License 许可证](#license-许可证)
 
 ## General 概括
@@ -39,6 +40,17 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。期待您的 `Pull Request`。
+
+## Contributor 贡献者
+[Halyul@Github](https://github.com/Halyul)
+- The whold theme 整个主题
+
+[EYHN@Github](https://github.com/EYHN)
+- posts list.js 文章排列js
+- toc hightlight toc高亮
+- search 搜索
+- image parallax 视差图片
+- some css improvement css样式修正
 
 ## License 许可证
 
