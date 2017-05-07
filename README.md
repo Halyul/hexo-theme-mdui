@@ -11,7 +11,7 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 - [Quick start 快速开始](#quick-start-快速开始)
 - [Docs 文档](#docs-文档)
 - [Contributing 贡献](#contributing-贡献)
-- [Contributor 奉献者](#contributor-贡献者)
+- [Contributor 贡献者](#contributor-贡献者)
 - [License 许可证](#license-许可证)
 
 ## General 概括
