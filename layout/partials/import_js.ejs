@@ -1,6 +1,6 @@
 <!-- Import JS -->
 <% if(theme.vendors.outdatedbrowser_min_js) { %>
-  <script type="text/javascript" src="<%= theme.vendors.outdatedbrowser_min_js %>"></script>
+  <script type="text/javascript" src="<%= theme.vendors.outdatedbrowser_min_js %>?version=v20170507"></script>
 <% } else { %>
   <%- js("js/outdatedbrowser.min") %>
 <% } %>
@@ -32,9 +32,9 @@ addLoadEvent(function(){
 </script>
 
 <% if(theme.vendors.js_min_js) { %>
-  <script type="text/javascript" src="<%= theme.vendors.js_min_js %>"></script>
+  <script type="text/javascript" src="<%= theme.vendors.js_min_js %>?version=v20170507"></script>
 <% } else { %>
-  <%- js("js/js.min") %>
+  <%- js("js/js-v20170507") %>
 <% } %>
 
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
@@ -159,7 +159,20 @@ addLoadEvent(function(){
         })
         doWork();
         window.addEventListener("scroll",doWork)
-    })
+    });
+    $$('#post-content img').on('click', function () {
+      $$('#drawer').css('z-index', '1000');
+      var img_src = $$(this).attr('src');
+      var img_alt = $$(this).attr('alt');
+      lightGallery(this, {
+        dynamic: true,
+        counter: false,
+        dynamicEl: [{
+          "src": img_src,
+          'subHtml': "<span author><%= config.author %></span><%= ' • ' + __('posts.public') %><div descr>" + img_alt + "</div>"
+          }],
+      });
+    });
   </script>
 
   <% if (page.mathjax === true) { %>

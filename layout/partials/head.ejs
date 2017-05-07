@@ -58,9 +58,9 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.style_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.style_min_css %>" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.style_min_css %>?version=v20170507" />
   <% } else { %>
-    <%- css("css/style.min") %>
+    <%- css("css/style-v20170507") %>
   <% } %>
 
   <!-- Custom Head -->

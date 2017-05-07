@@ -15746,6 +15746,11 @@ html {
   flex-grow: 1;
 }
 
+.drawer-fix {
+  width: 300px;
+  background-color: #fff;
+}
+
 .drawer-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16146,10 +16151,12 @@ html {
   #archives .header .content .name {
     margin-top: 0;
     color: #fff;
+    text-align: left;
   }
   #archives .header .content .slogan {
     margin-top: 8px;
     color: #fff;
+    text-align: left;
   }
   #archives .items .title {
     margin: 32px 0 24px 0;
@@ -16927,6 +16934,10 @@ div#gallery .container a img {
   }
 }
 
+.lg-outer {
+    z-index: 5050;
+}
+
 .lg-toolbar {
   background-color: transparent;
   background-image: -webkit-linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0.4));
@@ -16936,6 +16947,13 @@ div#gallery .container a img {
 .lg .mdui-btn-icon {
   width: 48px;
   height: 48px;
+  color: rgba(255,255,255,.54);
+}
+
+.mdui-theme-layout-dark .lg .mdui-btn-icon {
+  width: 48px;
+  height: 48px;
+  color: rgba(0,0,0,.54);
 }
 
 #lg-counter {
