@@ -31,6 +31,9 @@ appbar:
 index:
   welcome: "Welcome to my blog~"
 
+index:
+  welcome: "Welcome to my blog~"
+
 # post settings
 post:
   entry_excerpt: 80
