@@ -26,6 +26,7 @@ color:
 # appbar
 appbar:
   title: "Title"
+  search: true
 
 index:
   welcome: "Welcome to my blog~"

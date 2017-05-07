@@ -28,16 +28,20 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <span class="mdui-typo-title <% if (!is_category() && !is_tag() && !is_year()) { %>mdui-hidden-xs<% } %> <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>">
         <%= pageTitle %>
       </span>
-      <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
-        <div class="icon">
-          <i class="mdui-icon material-icons">&#xe8b6;</i>
+      <% if (theme.appbar.search === true) { %>
+        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+          <div class="icon">
+            <i class="mdui-icon material-icons">&#xe8b6;</i>
+          </div>
+          <div class="text">
+            <%= __('search.text') %>
+          </div>
         </div>
-        <div class="text">
-          <%= __('search.text') %>
-        </div>
-      </div>
+      <% } %>
       <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
-      <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+      <% if (theme.appbar.search === true) { %>
+        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+      <% } %>
       <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
         <i class="mdui-icon material-icons">&#xe417;</i>
       </button>
@@ -67,14 +71,16 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         <span class="appbar-border-line mdui-hidden-sm-down"></span>
       <% } %>
       <span class="mdui-typo-title"><%= config.author %></span>
-      <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
-        <div class="icon">
-          <i class="mdui-icon material-icons">&#xe8b6;</i>
+      <% if (theme.appbar.search === true) { %>
+        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+          <div class="icon">
+            <i class="mdui-icon material-icons">&#xe8b6;</i>
+          </div>
+          <div class="text">
+            <%= __('search.text') %>
+          </div>
         </div>
-        <div class="text">
-          <%= __('search.text') %>
-        </div>
-      </div>
+      <% } %>
       <div class="mdui-toolbar-spacer"></div>
       <% if (theme.about_me === true) { %>
         <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
@@ -89,7 +95,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <%- partial('menu/index_more') %>
     </div>
   </div>
-<% } else if (page.path === 'search/index.html') { %>
+<% } else if (page.path === 'search/index.html' && theme.appbar.search === true) { %>
   <div class="mdui-appbar mdui-appbar-fixed" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
       <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#drawer'}">

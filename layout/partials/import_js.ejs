@@ -217,7 +217,7 @@ addLoadEvent(function(){
   </script>
 <% } %>
 
-<% if (page.path === 'search/index.html') { %>
+<% if (page.path === 'search/index.html' && theme.appbar.search === true) { %>
   <script>
     $$('div.search').on('click', function () {
       smoothScroll.animateScroll( 0 );
