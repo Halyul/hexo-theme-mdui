@@ -287,5 +287,26 @@ addLoadEvent(function(){
   </script>
 <% } %>
 
+<script>
+(function(){
+  function a_OR_img(url) {
+    return new Promise(function (resolve,reject) {
+      imageObject = new Image();
+      imageObject.src = url;
+      imageObject.addEventListener("load",resolve.bind(this,imageObject));
+      imageObject.addEventListener("error",reject.bind(this,url));
+    }).then(function(res) {
+      return res;
+    }).catch(function(res) {
+      var dom = document.createElement('a')
+      dom.href = res
+      return dom;
+    })
+  }
+  window.a_OR_img = a_OR_img;
+
+})()
+</script>
+
 <!-- Custom javascript -->
 <%-partial('../custom/custom_js')%>
