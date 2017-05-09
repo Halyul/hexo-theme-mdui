@@ -15770,6 +15770,8 @@ html {
 }
 
 .drawer-content {
+  display: flex;
+  flex-direction: column;
   overflow: auto;
   height: 0;
   -webkit-box-flex: 1;
