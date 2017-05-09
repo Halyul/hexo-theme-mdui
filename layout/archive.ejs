@@ -11,6 +11,6 @@
       </div>
     <% }); %>
   </div>
-  <%-partial('partials/pagination', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.pagination })%>
+  <%-partial('partials/pagination/index', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.pagination })%>
 <% } %>
 <%-partial('partials/fab/index')%>

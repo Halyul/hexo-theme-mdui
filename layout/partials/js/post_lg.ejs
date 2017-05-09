@@ -1,0 +1,15 @@
+<script>
+  $$('#post-content img').on('click', function() {
+    $$('#drawer').css('z-index', '1000');
+    var img_src = $$(this).attr('src');
+    var img_alt = $$(this).attr('alt');
+    lightGallery(this, {
+      dynamic: true,
+      counter: false,
+      dynamicEl: [{
+        "src": img_src,
+        'subHtml': "<span author><%= config.author %></span><%= ' • ' + __('posts.public') %><div descr>" + img_alt + "</div>"
+      }],
+    });
+  });
+</script>

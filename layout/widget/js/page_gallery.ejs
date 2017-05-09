@@ -1,0 +1,228 @@
+<% if (page.lg.vimeo_video === true) { %>
+  <script type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+  <% } %>
+    <script>
+      (function() {
+        var galleryFlag = false;
+        $$(window).on('scroll', function() {
+          var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          var pageLocation = $$('div#top').offset().top - bodyTop;
+          if (!galleryFlag && pageLocation < 0) {
+            $$('div#blog-appbar').removeClass('mdui-shadow-0 gallery-fix');
+            galleryFlag = true;
+          } else if (galleryFlag && pageLocation >= 0) {
+            $$('div#blog-appbar').addClass('mdui-shadow-0 gallery-fix');
+            galleryFlag = false;
+          }
+        });
+      })();
+      lightGallery(document.getElementById('gallery-container'), {
+        <%
+      // gallery plugin setting
+    %>
+        <% if (page.lg.mode) { %>
+        mode: '<%= page.lg.mode %>',
+        <% } %>
+        <% if (page.lg.cssEasing) { %>
+        cssEasing: '<%= page.lg.cssEasing %>',
+        <% } %>
+        <% if (page.lg.speed) { %>
+        speed: <%= page.lg.speed %>,
+        <% } %>
+        <% if (page.lg.height) { %>
+        height: '<%= page.lg.height %>',
+        <% } %>
+        <% if (page.lg.width) { %>
+        width: '<%= page.lg.width %>',
+        <% } %>
+        <% if (page.lg.addClass) { %>
+        addClass: '<%= page.lg.addClass %>',
+        <% } %>
+        <% if (page.lg.startClass) { %>
+        startClass: '<%= page.lg.startClass %>',
+        <% } %>
+        <% if (page.lg.backdropDuration) { %>
+        backdropDuration: <%= page.lg.backdropDuration %>,
+        <% } %>
+        <% if (page.lg.hideBarsDelay) { %>
+        hideBarsDelay: <%= page.lg.hideBarsDelay %>,
+        <% } %>
+        <% if (page.lg.useLeft === true) { %>
+        useLeft: true,
+        <% } %>
+        <% if (page.lg.closable === false) { %>
+        closable: false,
+        <% } %>
+        <% if (page.lg.loop === false) { %>
+        loop: false,
+        <% } %>
+        <% if (page.lg.escKey === false) { %>
+        escKey: false,
+        <% } %>
+        <% if (page.lg.keyPress === false) { %>
+        keyPress: false,
+        <% } %>
+        <% if (page.lg.controls === false) { %>
+        controls: false,
+        <% } %>
+        <% if (page.lg.slideEndAnimatoin === false) { %>
+        slideEndAnimatoin: false,
+        <% } %>
+        <% if (page.lg.hideControlOnEnd === true) { %>
+        hideControlOnEnd: true,
+        <% } %>
+        <% if (page.lg.getCaptionFromTitleOrAlt === false) { %>
+        getCaptionFromTitleOrAlt: false,
+        <% } %>
+        <% if (page.lg.preload) { %>
+        preload: <%= page.lg.preload %>,
+        <% } %>
+        <% if (page.lg.showAfterLoad === false) { %>
+        showAfterLoad: false,
+        <% } %>
+        <% if (page.lg.nextHtml) { %>
+        nextHtml: '<%= page.lg.nextHtml %>',
+        <% } %>
+        <% if (page.lg.prevHtml) { %>
+        prevHtml: '<%= page.lg.prevHtml %>',
+        <% } %>
+        <% if (page.lg.index) { %>
+        index: <%= page.lg.index %>,
+        <% } %>
+        <% if (page.lg.iframeMaxWidth) { %>
+        iframeMaxWidth: '<%= page.lg.iframeMaxWidth %>',
+        <% } %>
+        <% if (page.lg.download === false) { %>
+        download: false,
+        <% } %>
+        <% if (page.lg.counter === false) { %>
+        counter: false,
+        <% } %>
+        <% if (page.lg.swipeThreshold) { %>
+        swipeThreshold: <%= page.lg.swipeThreshold %>,
+        <% } %>
+        <% if (page.lg.enableDrag === false) { %>
+        enableDrag: false,
+        <% } %>
+        <% if (page.lg.enableTouch === false) { %>
+        enableTouch: false,
+        <% } %>
+        <%
+    // thumbnial plugin settings
+    %>
+        <% if (page.lg.thumbnail === false) { %>
+        thumbnail: false,
+        <% } %>
+        <% if (page.lg.animateThumb === false) { %>
+        animateThumb: false,
+        <% } %>
+        <% if (page.lg.currentPagerPosition) { %>
+        currentPagerPosition: '<%= page.lg.currentPagerPosition %>',
+        <% } %>
+        <% if (page.lg.thumbWidth) { %>
+        thumbWidth: <%= page.lg.thumbWidth %>,
+        <% } %>
+        <% if (page.lg.thumbContHeight) { %>
+        thumbContHeight: <%= page.lg.thumbContHeight %>,
+        <% } %>
+        <% if (page.lg.thumbMargin) { %>
+        thumbMargin: <%= page.lg.thumbMargin %>,
+        <% } %>
+        <% if (page.lg.showThumbByDefault === false) { %>
+        showThumbByDefault: false,
+        <% } %>
+        <% if (page.lg.toogleThumb === false) { %>
+        toogleThumb: false,
+        <% } %>
+        <% if (page.lg.pullCaptionUp === false) { %>
+        pullCaptionUp: false,
+        <% } %>
+        <% if (page.lg.enableThumbDrag === false) { %>
+        enableThumbDrag: false,
+        <% } %>
+        <% if (page.lg.enableThumbSwipe === false) { %>
+        enableThumbSwipe: false,
+        <% } %>
+        <% if (page.lg.loadYoutubeThumbnail === false) { %>
+        loadYoutubeThumbnail: false,
+        <% } %>
+        <% if (page.lg.youtubeThumbSize) { %>
+        youtubeThumbSize: <%= page.lg.youtubeThumbSize %>,
+        <% } %>
+        <% if (page.lg.loadVimeoThumbnail === false) { %>
+        loadVimeoThumbnail: false,
+        <% } %>
+        <% if (page.lg.vimeoThumbSize) { %>
+        vimeoThumbSize: <%= page.lg.vimeoThumbSize %>,
+        <% } %>
+        <% if (page.lg.loadDailymotionThumbnail === false) { %>
+        loadDailymotionThumbnail: false,
+        <% } %>
+        <%
+    // autoplay plugin settings
+    %>
+        <% if (page.lg.autoplay === false) { %>
+        autoplay: false,
+        <% } %>
+        <% if (page.lg.pause) { %>
+        pause: <%= page.lg.pause %>,
+        <% } %>
+        <% if (page.lg.progressBar === false) { %>
+        progressBar: false,
+        <% } %>
+        <% if (page.lg.fourceAutoplay === true) { %>
+        fourceAutoplay: true,
+        <% } %>
+        <% if (page.lg.autoplayControls === false) { %>
+        autoplayControls: false,
+        <% } %>
+        <%
+     /* video plugin setting
+      * untested
+      * no videojs supported
+      */
+    %>
+        <% if (page.lg.videoMaxWidth) { %>
+        videoMaxWidth: '<%= page.lg.videoMaxWidth %>',
+        <% } %>
+        <% if (page.lg.youtubePlayerParams) { %>
+        youtubePlayerParams: <%= page.lg.youtubePlayerParams %>,
+        <% } %>
+        <% if (page.lg.vimeoPlayerParams) { %>
+        vimeoPlayerParams: <%= page.lg.vimeoPlayerParams %>,
+        <% } %>
+        <% if (page.lg.dailymotionPlayerParams) { %>
+        dailymotionPlayerParams: <%= page.lg.dailymotionPlayerParams %>,
+        <% } %>
+        <% if (page.lg.vkPlayerParams) { %>
+        vkPlayerParams: <%= page.lg.vkPlayerParams %>,
+        <% } %>
+        <%
+    // fullscreen plugin setting
+    %>
+        <% if (page.lg.fullScreen === false) { %>
+        fullScreen: false,
+        <% } %>
+        <%
+    // zoom plugin settings
+    %>
+        <% if (page.lg.zoom === false) { %>
+        zoom: false,
+        <% } %>
+        <% if (page.lg.scale) { %>
+        scale: <%= page.lg.speed %>,
+        <% } %>
+        <% if (page.lg.enableZoomAfter) { %>
+        enableZoomAfter: <%= page.lg.enableZoomAfter %>,
+        <% } %>
+        <% if (page.lg.actualSize === false) { %>
+        actualSize: false,
+        <% } %>
+        <%
+    // hash plugin setting
+    %>
+        <% if (page.lg.hash === false) { %>
+        hash: false,
+        <% } %>
+      });
+    </script>
