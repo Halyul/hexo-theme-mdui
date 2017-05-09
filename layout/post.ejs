@@ -26,12 +26,12 @@
           <i class="mdui-icon material-icons">&#xe417;</i>
         </button>-->
         <%- partial('partials/menu/post_more') %>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
+        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
           <i class="mdui-icon material-icons">&#xe80d;</i>
         </button>
         <%- partial('partials/menu/post_share') %>
         <% if(theme.post.qr_code === true) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
+        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
           <i class="mdui-icon material-icons">&#xe337;</i>
         </button>
         <%- partial('partials/menu/qrcode') %>
@@ -62,7 +62,7 @@
   <% if (page.tag !== false || theme.post.donate !== false) { %>
     <div class="posts-card-actions">
       <% if (theme.post.donate !==false) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
+        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
       <% } %>
       <div class="flex-spacer"></div>
       <% if (page.tag !== false) { %>

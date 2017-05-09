@@ -5847,14 +5847,14 @@
 
         // Create controlls
         if (this.s.controls && this.items.length > 1) {
-            controls = '<div class="lg-actions">' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-prev mdui-ripple mdui-text-color-theme-icon"><i class="mdui-icon material-icons">&#xe314;</i></button>' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-next mdui-ripple mdui-text-color-theme-icon"><i class="mdui-icon material-icons">&#xe315;</i></button>' + '</div>';
+            controls = '<div class="lg-actions">' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-prev mdui-ripple mdui-ripple-white mdui-text-color-theme-icon"><i class="mdui-icon material-icons">&#xe314;</i></button>' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-next mdui-ripple mdui-ripple-white mdui-text-color-theme-icon"><i class="mdui-icon material-icons">&#xe315;</i></button>' + '</div>';
         }
 
         if (this.s.appendSubHtmlTo === '.lg-sub-html') {
             subHtmlCont = '<div class="lg-sub-html"></div>';
         }
 
-        template = '<div class="lg-outer ' + this.s.addClass + ' ' + this.s.startClass + '">' + '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' + '<div class="lg-inner">' + list + '</div>' + '<div class="lg-toolbar group">' + '<button class="mdui-btn mdui-btn-icon lg-close"><i class="mdui-icon material-icons">&#xe5c4;</i></button>' + '</div>' + controls + subHtmlCont + '</div>' + '</div>';
+        template = '<div class="lg-outer ' + this.s.addClass + ' ' + this.s.startClass + '">' + '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' + '<div class="lg-inner">' + list + '</div>' + '<div class="lg-toolbar group">' + '<button class="mdui-btn mdui-ripple mdui-ripple-white mdui-btn-icon lg-close"><i class="mdui-icon material-icons">&#xe5c4;</i></button>' + '</div>' + controls + subHtmlCont + '</div>' + '</div>';
 
         document.body.insertAdjacentHTML('beforeend', template);
         this.outer = document.querySelector('.lg-outer');
@@ -5915,7 +5915,7 @@
         }, this.s.backdropDuration);
 
         if (this.s.download) {
-            this.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="mdui-btn mdui-btn-icon mdui-ripple lg-download mdui-float-right"><i class="mdui-icon material-icons">&#xe2c4;</i></a>');
+            this.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white lg-download mdui-float-right"><i class="mdui-icon material-icons">&#xe2c4;</i></a>');
         }
 
         // Store the current scroll top value to scroll back after closing the gallery..
@@ -7119,10 +7119,10 @@
     Zoom.prototype.init = function () {
 
         var _this = this;
-        var zoomIcons = '<button id="lg-zoom-in" class="mdui-btn mdui-btn-icon mdui-ripple mdui-float-right"><i class="mdui-icon material-icons">&#xe8ff;</i></button><button id="lg-zoom-out" class="mdui-btn mdui-btn-icon mdui-ripple mdui-float-right"><i class="mdui-icon material-icons">&#xe900;</i></button>';
+        var zoomIcons = '<button id="lg-zoom-in" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon material-icons">&#xe8ff;</i></button><button id="lg-zoom-out" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon material-icons">&#xe900;</i></button>';
 
         if (_this.core.s.actualSize) {
-            zoomIcons += '<button id="lg-actual-size" class="mdui-btn mdui-btn-icon mdui-ripple mdui-float-right"><i class="mdui-icon material-icons">&#xe432;</i></button>';
+            zoomIcons += '<button id="lg-actual-size" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon material-icons">&#xe432;</i></button>';
         }
 
         if (_this.core.s.useLeftForZoom) {
@@ -7670,7 +7670,7 @@
             if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled && !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
                 return;
             } else {
-                fullScreen = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-float-right lg-fullscreen"><i class="mdui-icon material-icons fullscreen">&#xe5d0;</i><i class="mdui-icon material-icons fullscreen_exit">&#xe5d1;</i></button>';
+                fullScreen = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right lg-fullscreen"><i class="mdui-icon material-icons fullscreen">&#xe5d0;</i><i class="mdui-icon material-icons fullscreen_exit">&#xe5d1;</i></button>';
                 this.core.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', fullScreen);
                 this.fullScreen();
             }
@@ -8210,7 +8210,7 @@
     // Manage autoplay via play/stop buttons
     Autoplay.prototype.controls = function () {
         var _this = this;
-        var _html = '<button class="mdui-btn mdui-btn-icon mdui-ripple lg-autoplay-button mdui-float-right"><i class="mdui-icon material-icons play">&#xe039;</i><i class="mdui-icon material-icons pause">&#xe036;</i></button>';
+        var _html = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white lg-autoplay-button mdui-float-right"><i class="mdui-icon material-icons play">&#xe039;</i><i class="mdui-icon material-icons pause">&#xe036;</i></button>';
 
         // Append autoplay controls
         _this.core.outer.querySelector(this.core.s.appendAutoplayControlsTo).insertAdjacentHTML('beforeend', _html);

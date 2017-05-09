@@ -18,12 +18,12 @@
           <i class="mdui-icon material-icons">&#xe417;</i>
         </button>-->
         <%- partial('partials/menu/post_more') %>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
+        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-post-share'}">
           <i class="mdui-icon material-icons">&#xe80d;</i>
         </button>
         <%- partial('partials/menu/post_share') %>
         <% if(theme.post.qr_code === true) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
+        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
           <i class="mdui-icon material-icons">&#xe337;</i>
         </button>
         <%- partial('partials/menu/qrcode') %>
