@@ -118,6 +118,7 @@ addLoadEvent(function(){
 <% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.layout !== 'galleries' && page.layout !== 'gallery') { %>
   <script type="text/javascript">
     window.addEventListener("load",function(){
+        var timer;
         function doWork(){
             listens.forEach(function(value,index){
                 value[1]();
@@ -138,11 +139,22 @@ addLoadEvent(function(){
             let offset = 0;
             if (offsetTop < 0)offset = offsetTop;
             if (offsetBottom > 0)offset = offsetBottom;
-            cardToc.scrollTop += offset;
+            var targetTop = Math.max(0,Math.min(cardToc.scrollTop + offset,toclist.offsetHeight - cardToc.offsetHeight));
+            clearInterval(timer);
+            timer = setInterval(function(){
+              var now	= cardToc.scrollTop;
+              var speed = (targetTop - now) / 10;
+              speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+              if(Math.abs(now - targetTop) < 1){
+                clearInterval(timer);
+              }
+              cardToc.scrollTop = now + speed;
+          }, 30);
         }
         var listens = [];
         var cardToc = document.querySelector('#card-toc');
         var links = document.querySelectorAll("a.post-toc-link");
+        var toclist = document.querySelector("#card-toc > ul");
         Array.prototype.forEach.call(links,function(value,index){
             var id = (value.getAttribute("href") || "#").slice(1);
             var element = document.getElementById(id);
