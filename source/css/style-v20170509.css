@@ -5797,6 +5797,7 @@ body.mdui-locked {
 .mdui-divider-inset-light,
 .mdui-divider-inset-dark {
   height: 1px;
+  min-height: 1px;
   margin: -1px 0 0 0;
   border: none;
 }
