@@ -2,8 +2,8 @@
 THEME_PATH=$PWD
 CSS=$PWD/source/css
 JS=$PWD/source/js
-CSS_CURRENT=$(find $CSS/*.css)
-JS_CURRENT=$(find $JS/*.js)
+CSS_CURRENT=$(find $CSS/style-v*.css)
+JS_CURRENT=$(find $JS/js-v*.js)
 CSS_FILES=$PWD/source/css/files
 JS_FILES=$PWD/source/js/files
 DATE=$(date +%Y%m%d)
