@@ -12,7 +12,7 @@ cd $CSS
 rm $CSS_CURRENT
 
 cd $CSS_FILES
-minify outdatedbrowser.css mdui.custom.css lightgallery.css lg-transitions.css prism-themes.css main.css --output ../style-v$DATE.min.css
+minify outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css main.css --output ../style-v$DATE.min.css
 
 cd $JS
 rm $JS_CURRENT
