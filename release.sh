@@ -27,7 +27,7 @@ rm $JS_CURRENT
 source $THEME_PATH/tmp_js.sh
 
 cd $JS_FILES
-minify mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-video.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js main.js --output ../js-v$DATE.min.js
+minify mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js main.js --output ../js-v$DATE.min.js
 
 cd $PARTIALS
 sed -i "s/$HEAD_CURRENT/style-v$DATE.min/" head.ejs
