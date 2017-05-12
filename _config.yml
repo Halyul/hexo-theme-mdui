@@ -79,6 +79,8 @@ service_woker:
 
 about_me: false
 
+pace: true
+
 random_pics: 25
 
 pages:
@@ -135,3 +137,5 @@ vendors:
   style_min_css:
   js_min_js:
   outdatedbrowser_min_js:
+  pace_min_js:
+  pace_style_css:

@@ -73,4 +73,17 @@ pageTitle += ' - ' + config.title;
       }
     </style>
   <% } %>
+
+  <% if (theme.pace === true) { %>
+    <% if(theme.vendors.pace_min_js) { %>
+      <script type="text/javascript" src="<%= theme.vendors.pace_min_js %>?version=v20170512"></script>
+    <% } else { %>
+      <%- js("js/pace.min") %>
+    <% } %>
+    <% if(theme.vendors.pace_style_css) { %>
+      <link type="text/css" rel="stylesheet" href="<%= theme.vendors.pace_style_css %>?version=v20170512" />
+    <% } else { %>
+      <%- css("css/pace-style") %>
+    <% } %>
+  <% } %>
 </head>

@@ -1,9 +1,9 @@
 <% if (page.lg.vimeo_video === true) { %>
   <script type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
-  <% } %>
-    <script>
-      (function() {
-        var galleryFlag = false;
+<% } %>
+<script>
+  (function() {
+    var galleryFlag = false;
         $$(window).on('scroll', function() {
           var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
           var pageLocation = $$('div#top').offset().top - bodyTop;
@@ -15,11 +15,11 @@
             galleryFlag = false;
           }
         });
-      })();
-      lightGallery(document.getElementById('gallery-container'), {
+    })();
+    lightGallery(document.getElementById('gallery-container'), {
         <%
-      // gallery plugin setting
-    %>
+          // gallery plugin setting
+        %>
         <% if (page.lg.mode) { %>
         mode: '<%= page.lg.mode %>',
         <% } %>
@@ -225,4 +225,4 @@
         hash: false,
         <% } %>
       });
-    </script>
+</script>
