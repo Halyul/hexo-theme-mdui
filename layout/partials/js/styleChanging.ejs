@@ -1,9 +1,9 @@
 <script>
   var postsCount = $$('div.posts-container div').children('div.content-item').length;
   if (postsCount === 1) {
-    var postsText = '<%= __('archive.post ') %>';
+    var postsText = '<%= __('archive.post') %>';
   } else if (postsCount > 1) {
-    var postsText = '<%= __('archive.posts ') %>';
+    var postsText = '<%= __('archive.posts') %>';
   };
   $$('div#postsCount').text(postsCount + ' ' + postsText);
   var content_flag = false;

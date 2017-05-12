@@ -24,6 +24,7 @@ source $THEME_PATH/tmp_fonts.sh
 
 cd $CSS_FILES
 uglifycss outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css main.css --output ../style-v$DATE.min.css
+cssnano ../style-v$DATE.min.css ../style-v$DATE.min.css
 uglifycss fonts.css --output ../fonts-v$DATE.min.css
 
 cd $JS

@@ -33,10 +33,6 @@
   </script>
 <% } %>
 
-<% if (is_category() || is_tag() || is_year()) { %>
-  <%- partial('js/styleChanging') %>
-<% } %>
-
 <% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag() || page.path === 'search/index.html') { %>
   <%- partial('js/list') %>
 <% } %>
@@ -61,6 +57,10 @@
     <!-- MathJax Load-->
     <%- partial('../widget/mathjax') %>
   <% } %>
+<% } %>
+
+<% if (is_category() || is_tag() || is_year()) { %>
+  <%- partial('js/styleChanging') %>
 <% } %>
 
 <% if (page.path === 'search/index.html' && theme.appbar.search === true) { %>
