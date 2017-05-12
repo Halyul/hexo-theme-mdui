@@ -79,7 +79,7 @@ service_woker:
 
 about_me: false
 
-pace: true
+pace: false
 
 random_pics: 25
 
@@ -134,6 +134,7 @@ sns:
 
 # Vendors
 vendors:
+  fonts_min_css:
   style_min_css:
   js_min_js:
   outdatedbrowser_min_js:
