@@ -320,6 +320,10 @@ html {
   -ms-flex-direction: column;
 }
 
+#drawer .mdui-divider {
+  min-height: 1px;
+}
+
 .mdui-drawer-close {
   -webkit-transform: translateX(-120%);
   transform: translateX(-120%);
