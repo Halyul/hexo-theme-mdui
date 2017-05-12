@@ -28,8 +28,14 @@ pageTitle += ' - ' + config.title;
   <% } %>
 
   <meta name="author" content="<%= config.author %>">
-  <meta name="description" content="<%= config.description %>">
-  <meta name="keywords" content="<%= theme.head.keywords %>">
+  <% if(page.description) { %>
+      <meta name="description" itemprop="description" content="<%= page.description %>">
+  <% } else if(page.excerpt){ %>
+      <meta name="description" content="<%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %>">
+  <% } else if (config.description){ %>
+      <meta name="description" content="<%= config.description %>">
+  <% } %>
+  <meta name="keywords" content="<%= theme.head.keywords %><% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %>">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
@@ -45,7 +51,16 @@ pageTitle += ' - ' + config.title;
   <meta property="og:url" content="<%= config.url %>">
   <meta property="og:type" content="blog">
   <meta property="og:title" content="<% if (pageTitle) { %><%= pageTitle %> | <% } %><%= config.title %>">
-  <meta property="og:description" content="<%= config.description %>">
+  <meta property="og:image" content="<%= theme.head.high_res_favicon %>" />
+  <% if(page.description) { %>
+        <meta property="og:description" content="<%= page.description %>">
+    <% } else if(page.excerpt){ %>
+        <meta property="og:description" content="<%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %>">
+    <% } else if (config.description){ %>
+        <meta property="og:description" content="<%= config.description %>">
+    <% } %>
+
+    <% if(page.tags && page.tags.each) { page.tags.each(function(tag){ %><meta property="og:article:tag" content="<%= tag.name %>"> <% })} %>
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
