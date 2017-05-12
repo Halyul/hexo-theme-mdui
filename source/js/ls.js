@@ -23,7 +23,7 @@
     }
     return val
   };
-  versionString = "/*" + mduiVersion + "*/";
+  versionString = "/*" + releaseDate + "*/";
   lsloader.clean = function() {
     try {
       var keys = [];
