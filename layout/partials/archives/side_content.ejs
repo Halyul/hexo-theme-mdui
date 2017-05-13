@@ -2,7 +2,7 @@
   var num = Math.floor(Math.random() * color.length);
   var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
-<div id="side-content" class="mdui-color-<%= color[num] %>">
+<div id="side-content" class="mdui-color-<%= color[num] %> animate">
   <div class="mdui-grid-tile" style="overflow: visible;">
     <div class="bg">
       <img src="<%= config.root + 'img/random/randompic_' + randomPic + '.jpg' %>" />
