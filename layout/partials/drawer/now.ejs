@@ -1,0 +1,27 @@
+<div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close" id="drawer">
+  <div class="userview" style="background-image: url(<%= theme.style.bg_img %>)">
+    <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
+    <div class="flex-spacer"></div>
+    <div class="bottom">
+      <div class="info">
+        <div class="author">
+          <%= config.author %>
+        </div>
+        <div class="email">
+          <%= theme.style.email %>
+        </div>
+      </div>
+      <div class="flex-spacer"></div>
+      <div class="mdui-valign">
+        <button class="mdui-btn mdui-btn-icon mdui-ripple">
+          <i class="mdui-icon">
+            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 10l5 5 5-5z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

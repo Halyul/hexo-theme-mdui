@@ -45,11 +45,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
         <i class="mdui-icon material-icons">&#xe417;</i>
       </button>
-      <%- partial('menu/index_more') %>
+      <%- partial('../menu/index_more') %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>
-      <%- partial('menu/userview') %>
+      <%- partial('../menu/userview') %>
       <% if (is_category() || is_tag() || is_year()) { %>
         <button class="mdui-btn mdui-ripple mdui-btn-icon style-fix"><i class="mdui-icon material-icons">&#xe80d;</i></button>
       <% } %>
@@ -88,11 +88,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
         <i class="mdui-icon material-icons">&#xe417;</i>
       </button>
-      <%- partial('menu/index_more') %>
+      <%- partial('../menu/index_more') %>
       <div class="appbar-userview mdui-valign mdui-hidden-sm-down" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>
-      <%- partial('menu/userview') %>
+      <%- partial('../menu/userview') %>
     </div>
   </div>
 <% } else if (page.path === 'search/index.html' && theme.appbar.search === true) { %>
@@ -120,7 +120,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <div class="appbar-userview mdui-valign mdui-hidden-xs" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
       </div>
-      <%- partial('menu/userview') %>
+      <%- partial('../menu/userview') %>
     </div>
   </div>
 <% } else if (page.layout === 'galleries' || page.layout === 'gallery') { %>
@@ -143,13 +143,13 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-page-share'}">
         <i class="mdui-icon material-icons">&#xe80d;</i>
       </button>
-      <%- partial('../partials/menu/page_share') %>
+      <%- partial('../menu/page_share') %>
       <% if (page.layout !== 'gallery') { %>
         <span class="appbar-border-line mdui-hidden-xs"></span>
         <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
           <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
         </div>
-        <%- partial('menu/userview') %>
+        <%- partial('../menu/userview') %>
       <% } %>
     </div>
   </div>

@@ -2,34 +2,44 @@
 THEME_PATH=$PWD
 CSS=$PWD/source/css
 JS=$PWD/source/js
-CSS_CURRENT=$(find $CSS/style-v*.css)
-FONTS_CURRENT=$(find $CSS/fonts-v*.css)
-JS_CURRENT=$(find $JS/js-v*.js)
-CSS_FILES=$PWD/source/css/files
-JS_FILES=$PWD/source/js/files
-DATE=$(date +%Y%m%d)
 PARTIALS=$THEME_PATH/layout/partials
 
+CSS_PLUS_CURRENT=$(find $CSS/style-plus-v*.css)
+CSS_NOW_CURRENT=$(find $CSS/style-now-v*.css)
+FONTS_CURRENT=$(find $CSS/fonts-v*.css)
+JS_PLUS_CURRENT=$(find $JS/js-plus-v*.js)
+JS_NOW_CURRENT=$(find $JS/js-now-v*.js)
+
+CSS_FILES=$PWD/source/css/files
+JS_FILES=$PWD/source/js/files
+
+DATE=$(date +%Y%m%d)
+
 cd $CSS
-find style-v*.css > $THEME_PATH/tmp.sh
-sed -i "s/style-v//" $THEME_PATH/tmp.sh
+find style-plus-v*.css > $THEME_PATH/tmp.sh
+sed -i "s/style-plus-v//" $THEME_PATH/tmp.sh
 sed -i "s/.min.css//" $THEME_PATH/tmp.sh
 sed -i "s/^/CURRENT=/" $THEME_PATH/tmp.sh
 source $THEME_PATH/tmp.sh
 
 # delete old files
-rm $CSS_CURRENT
-rm $JS_CURRENT
+rm $CSS_PLUS_CURRENT $CSS_NOW_CURRENT
+rm $JS_PLUS_CURRENT $JS_NOW_CURRENT
 rm $FONTS_CURRENT
 
 cd $CSS_FILES
-uglifycss outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css main.css --output ../style-v$DATE.min.css
-cssnano ../style-v$DATE.min.css ../style-v$DATE.min.css
+uglifycss outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css plus.css --output ../style-plus-v$DATE.min.css
+cssnano ../style-plus-v$DATE.min.css ../style-plus-v$DATE.min.css
+
+uglifycss outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css now.css --output ../style-now-v$DATE.min.css
+cssnano ../style-now-v$DATE.min.css ../style-now-v$DATE.min.css
 # fonts
 uglifycss fonts.css --output ../fonts-v$DATE.min.css
 
 cd $JS_FILES
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js main.js --output ../js-v$DATE.min.js
+uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js plus.js --output ../js-plus-v$DATE.min.js
+
+uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js now.js --output ../js-now-v$DATE.min.js
 
 cd $PARTIALS
 sed -i "s/$CURRENT/$DATE/" head.ejs

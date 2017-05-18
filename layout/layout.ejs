@@ -13,22 +13,25 @@
   <%-partial('partials/head')%>
 <% } %>
 
-<% if (theme.color.random === 'global') { %>
-  <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
-<% } else if (theme.color.random === 'post' && is_post()) { %>
-  <% if (page.primary_color || page.accent_color) { %>
-    <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
+<% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
+  <% if (theme.style.scheme === 'now') { %>
+    <%- partial('partials/body/now', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
   <% } else { %>
-    <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
+    <%- partial('partials/body/plus', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
   <% } %>
 <% } else { %>
-  <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
+  <% if (theme.style.scheme === 'now') { %>
+    <%- partial('partials/body/now') %>
+  <% } else { %>
+    <%- partial('partials/body/plus') %>
+  <% } %>
 <% } %>
+
 <div id="top"></div>
 
 <%- partial('partials/appbar') %>
 
-<% if (is_category() || is_tag() || is_year()) { %>
+<% if ((is_category() || is_tag() || is_year()) && theme.style.scheme !== 'now') { %>
   <%- partial('partials/archives/side_content') %>
 <% } %>
 
