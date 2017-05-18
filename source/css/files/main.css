@@ -1590,7 +1590,7 @@ div#gallery .container a img {
   transform: translateZ(0);
 }
 
-#blog-post.animate, .posts-container.animate, #archives.animate, #friends-page.animate, #galleries.animate, #gallery.animate {
+#blog-post.animate, .posts-container.animate, #card-toc.animate, #archives.animate, #friends-page.animate, #galleries.animate, #gallery.animate {
   -webkit-animation: post .3s cubic-bezier(0.0,0.0,0.2,1);
   animation: post .3s cubic-bezier(0.0,0.0,0.2,1);
 }

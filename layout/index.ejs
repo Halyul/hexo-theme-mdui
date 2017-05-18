@@ -1,25 +1,5 @@
-<div class="posts-container column-3 animate">
-
-</div>
-<div id="content-list">
-  <%
-    var index = 0;
-    var posts = page.posts.filter(function(post){
-      if (post.pinned) {%>
-        <%-partial('partials/index_post_card', { index: index, post })%>
-
-        <%
-        index++;
-        return false;
-      }
-      return true;
-    })
-  %>
-  <% posts.forEach(function(post) {%>
-      <%-partial('partials/index_post_card', { index: index, post })%>
-  <%
-    index++;
-  }); %>
-</div>
-<%-partial('partials/pagination/index', {base: url_for(config.root), show: theme.pagination })%>
-<%-partial('partials/fab/index')%>
+<% if (theme.style.scheme === 'now') { %>
+  <%- partial('partials/index/now') %>
+<% } else { %>
+  <%- partial('partials/index/plus') %>
+<% } %>

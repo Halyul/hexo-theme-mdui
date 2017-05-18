@@ -9,7 +9,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
 pageTitle += ' - ' + config.title;
 %>
 <head>
-  <script>window.releaseDate = "20170513"</script>
+  <script>window.releaseDate = "20170518"</script>
   <meta charset="UTF-8">
   <title><%= pageTitle %></title>
 
@@ -78,14 +78,14 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170513" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170518" />
   <% } else { %>
-    <%- css("css/fonts-v20170513.min") %>
+    <%- css("css/fonts-v20170518.min") %>
   <% } %>
   <% if(theme.vendors.style_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.style_min_css %>?version=v20170513" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.style_min_css %>?version=v20170518" />
   <% } else { %>
-    <%- cssLsload("css/style-v20170513.min") %>
+    <%- cssLsload("css/style-v20170518.min") %>
   <% } %>
 
   <!-- Custom Head -->
@@ -101,12 +101,12 @@ pageTitle += ' - ' + config.title;
 
   <% if (theme.pace === true) { %>
     <% if(theme.vendors.pace_min_js) { %>
-      <script type="text/javascript" src="<%= theme.vendors.pace_min_js %>?version=v20170513"></script>
+      <script type="text/javascript" src="<%= theme.vendors.pace_min_js %>?version=v20170518"></script>
     <% } else { %>
       <%- jsLsload("js/pace.min") %>
     <% } %>
     <% if(theme.vendors.pace_style_css) { %>
-      <link type="text/css" rel="stylesheet" href="<%= theme.vendors.pace_style_css %>?version=v20170513" />
+      <link type="text/css" rel="stylesheet" href="<%= theme.vendors.pace_style_css %>?version=v20170518" />
     <% } else { %>
       <%- cssLsload("css/pace-style") %>
     <% } %>
