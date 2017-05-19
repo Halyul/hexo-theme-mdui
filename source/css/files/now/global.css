@@ -1,0 +1,46 @@
+html {
+  overflow-x: hidden;
+}
+
+.toTop {
+  height: inherit;
+}
+
+.card-bottom-fix {
+  margin-bottom: 16px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.no-margin-bottom ol {
+  margin-bottom: 0;
+}
+
+.mdui-typo li ol, .mdui-typo li ul {
+  margin: 0;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+  color: inherit;
+}
+
+.auto-width {
+  width: auto;
+}
+
+.flex-spacer {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}

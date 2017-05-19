@@ -1,0 +1,76 @@
+/* drawer */
+#drawer.mdui-drawer {
+  z-index: 2050;
+  width: 300px;
+  -webkit-transform: translateX(-120%);
+  transform: translateX(-120%);
+}
+
+#drawer.mdui-drawer-close {
+  -webkit-transform: translateX(-120%);
+  transform: translateX(-120%);
+}
+
+#drawer img.background {
+  position: absolute;
+  z-index: -1;
+}
+
+#drawer .userview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+}
+
+#drawer .userview .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
+#drawer .userview {
+  padding: 16px 16px 8px;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll;
+  box-sizing: border-box;
+  flex-grow: 1;
+  height: 160px;
+}
+
+#drawer .userview img.avatar {
+  width: 64px;
+  height: 64px;
+}
+
+#drawer .userview .bottom .info {
+  display: inline-block;
+}
+
+#drawer .userview .bottom .info .author {
+  margin-top: 16px;
+}
+
+#drawer .userview .bottom .info .email {
+  margin-top: 4px;
+}
+
+@media (min-width: 1024px) {
+  body.mdui-drawer-body-left {
+      padding-left: 300px;
+  }
+}

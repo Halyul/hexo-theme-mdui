@@ -31,6 +31,10 @@
 
 <%- partial('partials/appbar') %>
 
+<% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
+  <%- partial('partials/drawer') %>
+<% } %>
+
 <% if ((is_category() || is_tag() || is_year()) && theme.style.scheme !== 'now') { %>
   <%- partial('partials/archives/side_content') %>
 <% } %>
@@ -38,10 +42,6 @@
 <main>
   <%- body %>
 </main>
-
-<% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
-  <%- partial('partials/drawer') %>
-<% } %>
 
 <div id="outdated" style="z-index: 9999;">
   <h6><%= __('outdated_browser.title')  %></h6>
