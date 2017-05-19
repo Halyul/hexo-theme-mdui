@@ -1,9 +1,1 @@
-<script>
-  $$(window).on('scroll', function () {
-    var imgMaxOffset = $$("#parallaxImg").height() - $$("#parallaxImg").parent().height();
-    var scrollHeight = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var maxScrollHeight = $$(document).height() - $$(window).height();
-    var scroll = scrollHeight / maxScrollHeight;
-    $$("#parallaxImg").css("transform","translateY(" + imgMaxOffset * scroll * -1 + "px)")
-  })
-</script>
+

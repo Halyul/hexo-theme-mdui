@@ -1,12 +1,29 @@
-#index .parallax {
-  height: 32vh;
+#index .faviconImg {
+  margin-right: auto;
+  margin-left: auto;
+  width: 12%;
+  height: auto;
+  margin-bottom: 16px;
 }
-#index .parallax #parallaxImg {
-  width: 100%;
-  height: 150%;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-origin: padding-box;
-  background-attachment: scroll;
+
+#index #search, #posts {
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  #index .faviconImg {
+    width: 16%;
+  }
+  #index #search, #posts {
+    width: 95%;
+  }
+}
+
+#index #search .mdui-toolbar {
+  overflow: visible;
+}
+
+#index #search .mdui-toolbar .mdui-toolbar-spacer {
+  height: 100%;
 }

@@ -14,6 +14,10 @@
   border-radius: 3px;
 }
 
+.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {
+  background-color: white;
+}
+
 #blog-appbar button span {
   top: 11px;
   left: 3px;

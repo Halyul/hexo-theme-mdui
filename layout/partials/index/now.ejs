@@ -1,6 +1,32 @@
 <div id="index">
-  <div class="parallax">
-    <div id="parallaxImg" style="background-image: url('<%= theme.style.parallax_img %>')"></div>
+  <div class="faviconImg">
+    <img class="mdui-img-fluid" src="<%= theme.head.high_res_favicon %>" />
+  </div>
+  <div id="search">
+    <div class="mdui-toolbar mdui-color-theme mdui-shadow-2">
+      <div class="mdui-toolbar-spacer mdui-ripple"></div>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple"  mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+      <%- partial('../menu/index_share') %>
+    </div>
   </div>
 </div>
-<BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR /><BR />
+<div id="posts">
+  <%
+    var index = 0;
+    var posts = page.posts.filter(function(post) {
+      if (post.pinned) {
+  %>
+        <%-partial('../posts', { index: index, post })%>
+      <%
+        index++;
+        return false;
+      }
+      return true;
+    })
+  %>
+  <% posts.forEach(function(post) {%>
+      <%-partial('../posts', { index: index, post })%>
+  <%
+    index++;
+  }); %>
+</div>
