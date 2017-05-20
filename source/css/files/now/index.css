@@ -23,8 +23,21 @@
   }
 }
 
+#index #search {
+  height: 56px;
+}
+
+#index #search .mdui-toolbar.fixedTop {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+}
+
 #index #search .mdui-toolbar {
   overflow: visible;
+  z-index: 100;
 }
 
 #index #search .mdui-toolbar .mdui-toolbar-spacer {

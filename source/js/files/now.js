@@ -72,13 +72,3 @@ $$('#drawer-button').on('click', function (e) {
     $$('button#toTop').trigger('click');
   });
 })();
-
-/* drawer */
-(function() {
-  $$(document).on('open.mdui.drawer', '#drawer', function() {
-      $$('html').css('overflow-y', 'hidden');
-  });
-  $$(document).on('close.mdui.drawer', '#drawer', function() {
-      $$('html').css('overflow-y', 'auto');
-  });
-})();
