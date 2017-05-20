@@ -3,6 +3,7 @@ console.info("\u7248\u6743\u6240\u6709\uff0c\u7ffb\u7248\u5fc5\u7a76\uff01\u000d
 
 var $$ = mdui.JQ;
 
+/* appbar button */
 $$(document).on('open.mdui.drawer', '#drawer', function (e) {
   $$('#appbar-drawer').addClass('back');
 });
@@ -10,3 +11,26 @@ $$(document).on('open.mdui.drawer', '#drawer', function (e) {
 $$(document).on('close.mdui.drawer', '#drawer', function (e) {
   $$('#appbar-drawer').removeClass('back');
 });
+
+/* drawer */
+$$('#drawer-button').on('click', function (e) {
+    $$(this).toggleClass('pages');
+});
+
+/* fab */
+(function() {
+  var pageFlag = false;
+  var fab = new mdui.Fab('#toTop');
+  fab.hide();
+  $$(window).on('scroll', function() {
+    var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var pageLocation = $$('div#top').offset().top - bodyTop;
+    if (!pageFlag && pageLocation < 0) {
+      fab.show();
+      pageFlag = true;
+    } else if (pageFlag && pageLocation >= 0) {
+      fab.hide();
+      pageFlag = false;
+    }
+  });
+})();

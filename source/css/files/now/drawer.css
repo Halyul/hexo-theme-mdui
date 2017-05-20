@@ -11,12 +11,47 @@
   transform: translateX(-120%);
 }
 
-#drawer img.background {
-  position: absolute;
-  z-index: -1;
+#drawer .userview {
+  height: 160px;
+  width: 100%;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll;
 }
 
-#drawer .userview {
+#drawer .userview .overlay {
+  position: relative;
+  height: 100%;
+  background: rgba(0,0,0,.2);
+}
+
+#drawer .userview .overlay .avatar {
+  width: 64px;
+  height: 64px;
+  margin: 16px;
+}
+
+#drawer .userview .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#drawer .userview .overlay .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
+#drawer .userview .overlay .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,44 +64,34 @@
   -ms-flex-direction: column;
 }
 
-#drawer .userview .bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: row;
-  -ms-flex: auto;
-  flex: auto;
-  -webkit-box-orient: horizontal;
-  -ms-flex-direction: row;
+#drawer .userview .info {
+  margin-left: 16px;
 }
 
-#drawer .userview {
-  padding: 16px 16px 8px;
-  background-repeat: repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-origin: padding-box;
-  background-attachment: scroll;
-  box-sizing: border-box;
-  flex-grow: 1;
-  height: 160px;
+#drawer .userview .author {
+  font-size: 16px;
+  font-weight: 500;
 }
 
-#drawer .userview img.avatar {
-  width: 64px;
-  height: 64px;
+#drawer .userview .info .slogan {
+  font-size: 12px;
+  margin: 4px 0;
 }
 
-#drawer .userview .bottom .info {
-  display: inline-block;
+#drawer .userview .overlay .button {
+  width: 48px;
 }
 
-#drawer .userview .bottom .info .author {
-  margin-top: 16px;
+#drawer .userview .overlay .button .mdui-btn.pages i {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-#drawer .userview .bottom .info .email {
-  margin-top: 4px;
+#drawer .userview .overlay .button .mdui-btn {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
