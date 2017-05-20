@@ -35,3 +35,50 @@ $$('#drawer-button').on('click', function (e) {
     }
   });
 })();
+
+/* post toc */
+(function() {
+  $$(document).ready(function(){
+    if($$("ul#menu-toc").children().length == 0 && $$("div#card-toc").children().length == 0)
+    {
+      $$("button#button-toc").addClass("mdui-hidden");
+      $$("div#card-toc").addClass("mdui-hidden");
+      $$("div#blog-post").addClass("no-toc")
+    };
+  });
+})();
+
+/* global dialog */
+(function() {
+  $$(document).on('open.mdui.dialog', '.mdui-dialog', function() {
+      $$('html').css('overflow-y', 'hidden');
+      $$('body').removeClass('drawer-overlay-none');
+  });
+  $$(document).on('close.mdui.dialog', '.mdui-dialog', function() {
+      $$('html').css('overflow-y', 'auto');
+      $$('body').addClass('drawer-overlay-none');
+  });
+})();
+
+/* smooth scroll */
+(function() {
+  $$(document).ready(function () {
+    smoothScroll.init({
+      selector: 'a',
+      offset: 60
+    });
+  });
+  $$('.toTop').on('click', function () {
+    $$('button#toTop').trigger('click');
+  });
+})();
+
+/* drawer */
+(function() {
+  $$(document).on('open.mdui.drawer', '#drawer', function() {
+      $$('html').css('overflow-y', 'hidden');
+  });
+  $$(document).on('close.mdui.drawer', '#drawer', function() {
+      $$('html').css('overflow-y', 'auto');
+  });
+})();

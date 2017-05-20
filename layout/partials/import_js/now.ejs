@@ -1,1 +1,21 @@
+<% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery') { %>
+  <%- partial('../js/toc') %>
+  <%- partial('../js/post_lg') %>
+  <%- partial('../js/donte_judge') %>
 
+  <% if (page.mathjax === true) { %>
+    <!-- MathJax Load-->
+    <%- partial('../../widget/mathjax') %>
+  <% } %>
+<% } %>
+
+<% if (page.total > 1) { %>
+  <script type="text/javascript">
+    $$(document).on('click', 'a[name="snackbar"]', function () {
+      mdui.snackbar({
+        message: '<%= __('global.snackbar') %>',
+        timeout: 1000
+      });
+    });
+  </script>
+<% } %>
