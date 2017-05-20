@@ -1,8 +1,4 @@
 /* appbar */
-#blog-appbar {
-  position: absolute;
-}
-
 #blog-appbar button span, #blog-appbar button span:before, #blog-appbar button span:after {
   transition: all .3s ease;
   -webkit-transition: all .3s ease;

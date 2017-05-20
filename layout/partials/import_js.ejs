@@ -1,18 +1,18 @@
 <!-- Import JS -->
 <% if(theme.vendors.outdatedbrowser_min_js) { %>
-  <script type="text/javascript" src="<%= theme.vendors.outdatedbrowser_min_js %>?version=v20170519"></script>
+  <script type="text/javascript" src="<%= theme.vendors.outdatedbrowser_min_js %>?version=v20170520"></script>
 <% } else { %>
   <%- jsLsload("js/outdatedbrowser.min") %>
 <% } %>
 <%- partial('js/outdatedbrowswe') %>
 
 <% if(theme.vendors.js_min_js) { %>
-  <script type="text/javascript" src="<%= theme.vendors.js_min_js %>?version=v20170519"></script>
+  <script type="text/javascript" src="<%= theme.vendors.js_min_js %>?version=v20170520"></script>
 <% } else { %>
   <% if (theme.style.scheme === 'now') { %>
-    <%- jsLsload("js/js-now-v20170519.min") %>
+    <%- jsLsload("js/js-now-v20170520.min") %>
   <% } else { %>
-    <%- jsLsload("js/js-plus-v20170519.min") %>
+    <%- jsLsload("js/js-plus-v20170520.min") %>
   <% } %>
 <% } %>
 
