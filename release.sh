@@ -36,7 +36,7 @@ uglifycss external.min.css plus.min.css --output ../style-plus-v$DATE.min.css
 
 cssnano ../style-plus-v$DATE.min.css ../style-plus-v$DATE.min.css
 
-uglifycss now/fonts.css now/global.css now/appbar.css now/drawer.css now/index.css now/posts.css --output now.min.css
+uglifycss now/fonts.css now/global.css now/appbar.css now/drawer.css now/index.css now/post.css now/posts.css --output now.min.css
 
 uglifycss external.min.css now.min.css --output ../style-now-v$DATE.min.css
 

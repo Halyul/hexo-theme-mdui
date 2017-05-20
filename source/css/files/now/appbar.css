@@ -10,10 +10,6 @@
   border-radius: 3px;
 }
 
-.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {
-  background-color: white;
-}
-
 #blog-appbar button span {
   top: 11px;
   left: 3px;
@@ -54,4 +50,82 @@
 #blog-appbar button.back span:before, #blog-appbar button.back span:after {
   width: 13px;
   left: 8px;
+}
+
+#blog-appbar .search {
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 720px;
+  height: 48px;
+  margin-right: 36px;
+  margin-left: 48px;
+  cursor: text;
+  opacity: .75;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .15);
+  -webkit-box-align: center;
+  box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+#blog-appbar .search .icon {
+  margin: auto 8px;
+}
+
+#blog-appbar .search .text {
+  font-size: 16px;
+  margin: auto;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+#blog-appbar .search .text input {
+  width: 100%;
+  color: #fff;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+#blog-appbar .search .text input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#blog-appbar .search .text input:-ms-input-placeholder {
+  color: #fff;
+}
+
+#blog-appbar .search .text input::placeholder {
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  #blog-appbar .search {
+    margin: 0 12px;
+  }
+}
+
+/* color settings */
+
+.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {
+  background-color: white;
+}
+
+.mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:after {
+  background-color: white;
 }
