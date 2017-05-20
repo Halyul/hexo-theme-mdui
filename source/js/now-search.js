@@ -2,6 +2,7 @@ window.addEventListener('load', function () {
   var searchBtn = document.querySelector("#search-btn");
   var search = document.querySelector("#search");
   var toolbar = document.querySelector("#search > div");
+  var searchCover = document.querySelector("#search-cover");
   var mode = 'idle';
   var open = false;
   function fixAtTop() {
@@ -65,7 +66,13 @@ window.addEventListener('load', function () {
   }
   searchBtn.addEventListener('click', function() {
     fixAtTop();
+    searchCover.classList.add('active');
     mode = 'ctrl';
+  })
+  searchCover.addEventListener('click', function() {
+    disFixAtTop();
+    searchCover.classList.remove('active');
+    mode = 'idle';
   })
   window.addEventListener('scroll', function() {
     if (mode === 'idle') {
