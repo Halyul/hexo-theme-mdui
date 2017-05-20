@@ -15,6 +15,7 @@ $$(document).on('close.mdui.drawer', '#drawer', function (e) {
 /* drawer */
 $$('#drawer-button').on('click', function (e) {
     $$(this).toggleClass('pages');
+    $$('#drawer').toggleClass('pages');
 });
 
 /* fab */
