@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
       toolbar.style.position = '';
       toolbar.style.top = '';
       toolbar.style.left = '';
-    },30)
+    },10)
   }
   function disFixAtTop () {
     if (!open) return;
@@ -35,14 +35,25 @@ window.addEventListener('load', function () {
     var left = search.offsetLeft;
     var width = search.offsetWidth;
     var height = search.offsetHeight;
-    toolbar.style.height = height + 'px';
-    toolbar.style.width = width + 'px';
-    toolbar.style.top = top + 'px';
+    var nowTop = sTop;
+    var nowLeft = sLeft;
+    var nowWidth = toolbar.offsetWidth;
+    var nowHeight = toolbar.offsetHeight;
+    toolbar.style.height = nowHeight + 'px';
+    toolbar.style.width = nowWidth + 'px';
+    toolbar.style.top = nowTop + 'px';
     toolbar.style.position = 'absolute';
-    toolbar.style.left = left + 'px';
-    toolbar.style.transition = 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms';
+    toolbar.style.left = nowLeft + 'px';
     toolbar.classList.remove('fixedTop');
     open = false;
+    setTimeout(function() {
+      toolbar.style.transition = 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms';
+      toolbar.style.height = height + 'px';
+      toolbar.style.width = width + 'px';
+      toolbar.style.top = top + 'px';
+      toolbar.style.position = 'absolute';
+      toolbar.style.left = left + 'px';
+    },10)
     setTimeout(function() {
       toolbar.style.height = '';
       toolbar.style.width = '';
@@ -62,16 +73,14 @@ window.addEventListener('load', function () {
       var top = search.offsetTop - sTop;
       if (!open && top < 0) {
         fixAtTop();
-        console.log('fixAtTop')
       } else if (open && top > 0) {
         disFixAtTop();
-        console.log('disFixAtTop')
       }
     }
   })
   var searchBar = {
-    fixAtTop,
-    disFixAtTop
+    fixAtTop: fixAtTop,
+    disFixAtTop: disFixAtTop
   }
   window.searchBar = searchBar;
 });

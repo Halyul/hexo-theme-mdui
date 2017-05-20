@@ -37,7 +37,7 @@
 
 #index #search .mdui-toolbar {
   overflow: visible;
-  z-index: 100;
+  z-index: 9999;
 }
 
 #index #search .mdui-toolbar .mdui-toolbar-spacer {
