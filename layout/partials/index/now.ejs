@@ -30,3 +30,5 @@
     index++;
   }); %>
 </div>
+<%-partial('../pagination/index', {base: url_for(config.root), show: theme.pagination })%>
+<%-partial('../fab/index')%>
