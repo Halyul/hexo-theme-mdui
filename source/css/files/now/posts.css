@@ -1,4 +1,4 @@
-#blog-post .posts-card-header, #blog-post .posts-card-actions {
+#posts .posts-header, .posts-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,147 +11,58 @@
   -ms-flex-direction: row;
 }
 
-#blog-post .posts-card-header .content {
+#posts .posts-header {
+  height: 54px;
+}
+
+#posts .posts-header .content {
   font-weight: 500;
   margin-right: 16px;
-  padding: 0 0 0 2px;
+  padding: 0 0 0 16px;
   white-space: nowrap;
   -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto;
+  opacity: .87;
 }
 
-#blog-post .posts-card-header .content .username {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  float: left;
-  max-width: 100%;
-  margin-left: 6px;
-  white-space: nowrap;
+#posts .posts-header .mdui-card-header-avatar {
+  width: 24px;
+  height: 24px;
 }
 
-#blog-post .posts-card-header .content .arrow {
-  width: 18px;
-  height: 18px;
-  -webkit-box-flex: none;
-  -ms-flex: none;
-  flex: none;
-}
-
-#blog-post .posts-card-header .content .arrow i {
-  font-size: 12px;
-}
-
-#blog-post .posts-card-header .content .mdui-typo-body-1-opacity a, #blog-post .posts-card-actions .content a {
-  margin-right: 6px;
-}
-
-#blog-post .posts-card-header .buttons .mdui-btn {
+#posts .posts-header a.mdui-btn {
   opacity: .54;
 }
 
-#blog-post .posts-card-title {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 28px;
-  display: -webkit-box;
-  overflow: hidden;
-  max-height: 56px;
-  margin: 0 16px 16px;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+#posts .posts-header a.mdui-btn.btn-dense {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
 }
 
-#blog-post .posts-card-line {
-  margin: 0 16px;
+#posts .posts-header a.mdui-btn.btn-dense i {
+    font-size: 16px;
 }
 
-#blog-post .posts-card-content {
-  font-size: 14px;
-  line-height: 20px;
-  margin: 16px;
-  word-wrap: break-word;
+#posts .posts-title {
+  font-weight: 400;
 }
 
-#blog-post .posts-card-actions {
-  margin: 16px 8px 0 8px;
-  padding-bottom: 16px;
+#posts .posts-strip {
+  opacity: .54;
+  letter-spacing: 0;
 }
 
-#blog-post .posts-card-actions .mdui-chip, #blog-post .posts-card-actions .mdui-chip-icon {
-  background: #eee;
-}
-
-#blog-post .posts-card-actions .mdui-chip {
-  margin: 0 8px;
-}
-
-#blog-post .posts-card-actions .content a {
-  font-size: 12px;
-  line-height: 36px;
-}
-
-#menu-qrcode .mdui-list-item:hover {
-  background-color: transparent;
-}
-
-#blog-post {
-  display: inline-block;
-  width: calc(75% - 24px);
-  margin: 16px;
-}
-
-#card-toc {
-  position: fixed;
-  display: inline-block;
-  overflow-y: scroll;
-  box-sizing: border-box;
-  width: calc(25% - 16px);
-  height: 75%;
-  margin: 16px 16px 8px 0;
-  list-style: none;
-  vertical-align: top;
-  background-color: transparent;
-}
-
-#card-toc ul ul {
-  padding-left: 16px;
-}
-
-@media (max-width: 599px) {
-  #blog-post {
-    width: 100%;
-    margin: 0 0 16px 0;
-  }
-  #card-toc {
-    display: none;
-  }
-}
-
-.post-comment {
-  padding: 12px 16px;
-}
-
-.toc {
-  padding-right: 1em;
-}
-
-#post-content img {
-  cursor: pointer;
-}
-
-#blog-post.no-toc {
-  display: inherit;
-  margin: 16px auto;
-}
-
-.menu-fix {
-  overflow: visible;
-}
-
-.mdui-typo table {
-  display: block;
-  overflow: auto;
+#posts .posts-thumbnail {
+  margin-left: 16px;
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  min-height: 64px;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll;
 }

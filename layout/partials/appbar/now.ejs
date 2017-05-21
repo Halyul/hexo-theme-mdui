@@ -25,11 +25,13 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           <span></span>
         </i>
       </button>
-      <span class="mdui-typo-title">
-        <%= pageTitle %>
-      </span>
+      <% if (theme.appbar.title) { %>
+        <a href="<%= config.root %>" class="mdui-typo-headline">
+          <%= theme.appbar.title %>
+        </a>
+      <% } %>
       <% if (theme.appbar.search === true) { %>
-        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <div class="search mdui-hidden-xs" onclick="window.open('<%= config.root + 'search' %>', '_self');">
           <div class="icon">
             <i class="mdui-icon material-icons">&#xe8b6;</i>
           </div>
@@ -38,9 +40,9 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           </div>
         </div>
       <% } %>
-      <div class="flex-spacer"></div>
+      <div class="flex-spacer mdui-hidden-sm"></div>
       <% if (theme.appbar.search === true) { %>
-        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
         <i class="mdui-icon material-icons">&#xe417;</i>

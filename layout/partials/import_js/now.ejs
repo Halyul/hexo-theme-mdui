@@ -7,6 +7,28 @@
     <!-- MathJax Load-->
     <%- partial('../../widget/mathjax') %>
   <% } %>
+
+  <script>
+    /* post appbar */
+    (function() {
+      var pageFlag = false;
+      var appbar = new mdui.Headroom('#blog-appbar');
+      appbar.disable();
+      $$(window).on('scroll', function() {
+        var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        var pageLocation = $$('div#top').offset().top - bodyTop;
+        if (!pageFlag && pageLocation < 0) {
+          $$('#blog-appbar').removeClass('mdui-shadow-0');
+          appbar.enable();
+          pageFlag = true;
+        } else if (pageFlag && pageLocation >= 0) {
+          $$('#blog-appbar').addClass('mdui-shadow-0');
+          appbar.disable();
+          pageFlag = false;
+        }
+      });
+    })();
+  </script>
 <% } %>
 
 <% if (page.total > 1) { %>

@@ -1,4 +1,8 @@
 /* appbar */
+#blog-appbar.mdui-appbar-fixed {
+  transition: padding .3s cubic-bezier(0,0,.2,1);
+}
+
 #blog-appbar button span, #blog-appbar button span:before, #blog-appbar button span:after {
   transition: all .3s ease;
   -webkit-transition: all .3s ease;
@@ -117,6 +121,12 @@
 @media only screen and (max-width: 600px) {
   #blog-appbar .search {
     margin: 0 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.mdui-drawer-body-left #blog-appbar.mdui-appbar-fixed, body.mdui-drawer-body-left #index #search .mdui-toolbar.fixedTop {
+    padding-left: 300px;
   }
 }
 
