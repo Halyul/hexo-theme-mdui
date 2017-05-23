@@ -1,3 +1,56 @@
+#blog-appbar button span, #blog-appbar button span:before, #blog-appbar button span:after {
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  position: absolute;
+  background-color: black;
+  width: 18px;
+  height: 2px;
+  border-radius: 3px;
+}
+
+#blog-appbar button span {
+  top: 11px;
+  left: 3px;
+}
+
+#blog-appbar button.back span {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+}
+
+#blog-appbar button span:before {
+  content: '';
+  top: -5px;
+  left: 0;
+}
+
+#blog-appbar button.back span:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  top: -4px;
+}
+
+#blog-appbar button span:after {
+  content: '';
+  top: 5px;
+  left: 0;
+}
+
+#blog-appbar button.back span:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  top: 4px;
+}
+
+#blog-appbar button.back span:before, #blog-appbar button.back span:after {
+  width: 13px;
+  left: 8px;
+}
+
 .appbar-border-line {
   height: 32px;
   border-left: 1px solid rgba(255, 255, 255, .2);
@@ -147,4 +200,14 @@ div#blog-appbar .logo {
   margin-left: 12px;
   width: 24px;
   height: 24px;
+}
+
+/* color settings */
+
+.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {
+  background-color: white;
+}
+
+.mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:after {
+  background-color: white;
 }

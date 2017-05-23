@@ -1,5 +1,14 @@
-<div class="mdui-color-theme post-bg-color"></div>
-<div class="post-header mdui-color-theme">
+
+  <div class="post-bg-color
+    <% if (theme.style.scheme === 'now') { %>
+      mdui-color-theme
+    <% } %>
+  "></div>
+<div class="post-header
+  <% if (theme.style.scheme === 'now') { %>
+    mdui-color-theme
+  <% } %>
+">
   <div class="post-header-container">
     <div class="post-title mdui-text-truncate"><%= page.title %></div>
     <div class="post-actions">
@@ -25,9 +34,6 @@
           <img src="<%= page.thumbnail %>"/>
         </div>
       <% } %>
-      <div class="posts-card-line">
-        <div class="mdui-divider"></div>
-      </div>
       <div class="posts-card-content mdui-typo no-margin
         <%= theme.post.prism.theme %>
         <% if (theme.post.prism.line_number === true && theme.post.prism.theme) { %>

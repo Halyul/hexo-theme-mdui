@@ -5,10 +5,6 @@
     width: 100%;
 }
 
-#blog-post .posts-card-line {
-  margin: 0 16px;
-}
-
 #blog-post .posts-card-content {
   font-size: 14px;
   line-height: 20px;

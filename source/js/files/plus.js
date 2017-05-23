@@ -81,16 +81,6 @@ var $$ = mdui.JQ;
   });
 })();
 
-/* drawer */
-(function() {
-  $$(document).on('open.mdui.drawer', '#drawer', function() {
-      $$('html').css('overflow-y', 'hidden');
-  });
-  $$(document).on('close.mdui.drawer', '#drawer', function() {
-      $$('html').css('overflow-y', 'auto');
-  });
-})();
-
 /* fab */
 (function() {
   var pageFlag = false;
