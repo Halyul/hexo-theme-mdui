@@ -8,7 +8,7 @@
 <% } %>
 
 <% if (is_home() || is_archive() || is_year() || is_month() || is_category() || is_tag() || page.path === 'search/index.html') { %>
-  <%- partial('../js/list') %>
+  <%- partial('../js/plus/list') %>
 <% } %>
 
 <% if (page.total > 1) { %>
@@ -34,7 +34,7 @@
 <% } %>
 
 <% if (is_category() || is_tag() || is_year()) { %>
-  <%- partial('../js/styleChanging') %>
+  <%- partial('../js/plus/styleChanging') %>
 <% } %>
 
 <% if (page.path === 'search/index.html' && theme.appbar.search === true) { %>
