@@ -1,5 +1,4 @@
-<% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
-  var num = Math.floor(Math.random() * color.length);
+<%
   var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
 <div class="posts">
@@ -25,7 +24,7 @@
         </div>
       </div>
       <div class="flex-spacer"></div>
-      <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/randompic_' + randomPic + '.jpg' %>)">
+      <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)">
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
-
+<%
+  var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+%>
   <div class="post-bg-color
     <% if (theme.style.scheme === 'now') { %>
       mdui-color-theme
@@ -29,11 +31,9 @@
 <div class="post-container">
   <div class="post-adjust">
     <div class="mdui-card card-bottom-fix menu-fix animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
-      <% if (page.thumbnail) { %>
-        <div class="mdui-card-media">
-          <img src="<%= page.thumbnail %>"/>
-        </div>
-      <% } %>
+      <div class="mdui-card-media">
+        <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+      </div>
       <div class="posts-card-content mdui-typo no-margin
         <%= theme.post.prism.theme %>
         <% if (theme.post.prism.line_number === true && theme.post.prism.theme) { %>

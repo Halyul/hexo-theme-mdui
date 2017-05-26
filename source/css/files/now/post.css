@@ -112,7 +112,8 @@
   }
   #card-toc {
     width: 256px;
-    height: calc(64% - 128px);
+    height: auto;
+    max-height: calc(64% - 128px);
     margin-left: 32px;
   }
 }
