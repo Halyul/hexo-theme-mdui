@@ -1,7 +1,8 @@
 /*!
- * mdui v0.2.0 (http://mdui.org) - Custom Build
+ * mdui v0.2.1 (https://mdui.org) - Custom Build
  * Copyright 2016-2017 zdhxiong
  * Licensed under MIT
+ */
 /* jshint ignore:start */
 ;(function (window, document, undefined) {
   'use strict';
@@ -4860,7 +4861,7 @@
         var menuHeightTemp = menuHeight;
 
         // 简单菜单比窗口高时，限制菜单高度
-        if (!_this.$menu.hasClass('mdui-menu-cascade')) {
+        if (!_this.isCascade) {
           if (menuHeight + gutter * 2 > windowHeight) {
             menuHeightTemp = windowHeight - gutter * 2;
             _this.$menu.height(menuHeightTemp);

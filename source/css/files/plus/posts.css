@@ -57,7 +57,7 @@
   text-align: left;
 }
 
-.posts-card-header, .posts-card-actions, .index-welcome, div#gallery .header .descr {
+.posts-card-actions, .index-welcome, div#gallery .header .descr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

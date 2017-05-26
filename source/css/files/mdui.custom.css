@@ -1,7 +1,8 @@
 /*!
- * mdui v0.2.0 (http://mdui.org) - Custom Build
+ * mdui v0.2.1 (https://mdui.org) - Custom Build
  * Copyright 2016-2017 zdhxiong
  * Licensed under MIT
+ */
 /**
  * =============================================================================
  * ************   Color 颜色   ************
@@ -5036,6 +5037,34 @@ body {
     font-size: 15px;
   }
 }
+body *::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+@media (min-width: 1024px) {
+  body *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+}
+body *::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .2);
+}
+body.mdui-theme-layout-dark *::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+@media (min-width: 1024px) {
+  body.mdui-theme-layout-dark *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+}
+body.mdui-theme-layout-dark *::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .3);
+}
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -8558,67 +8587,6 @@ body.mdui-loaded .mdui-drawer {
 }
 .mdui-menu-cascade > .mdui-menu-item .mdui-menu-item-icon {
   width: 40px;
-}
-/* 菜单宽度 */
-.mdui-menu-1x {
-  width: 56px;
-}
-.mdui-menu-cascade .mdui-menu-1x {
-  width: 64px;
-}
-.mdui-menu-2x {
-  width: 112px;
-}
-.mdui-menu-cascade .mdui-menu-2x {
-  width: 128px;
-}
-.mdui-menu-3x {
-  width: 168px;
-}
-.mdui-menu-cascade .mdui-menu-3x {
-  width: 192px;
-}
-.mdui-menu-4x {
-  width: 224px;
-}
-.mdui-menu-cascade .mdui-menu-4x {
-  width: 256px;
-}
-.mdui-menu-5x {
-  width: 280px;
-}
-.mdui-menu-cascade .mdui-menu-5x {
-  width: 320px;
-}
-.mdui-menu-6x {
-  width: 336px;
-}
-.mdui-menu-cascade .mdui-menu-6x {
-  width: 384px;
-}
-.mdui-menu-7x {
-  width: 392px;
-}
-.mdui-menu-cascade .mdui-menu-7x {
-  width: 448px;
-}
-.mdui-menu-8x {
-  width: 448px;
-}
-.mdui-menu-cascade .mdui-menu-8x {
-  width: 512px;
-}
-.mdui-menu-9x {
-  width: 504px;
-}
-.mdui-menu-cascade .mdui-menu-9x {
-  width: 576px;
-}
-.mdui-menu-10x {
-  width: 560px;
-}
-.mdui-menu-cascade .mdui-menu-10x {
-  width: 640px;
 }
 /**
  * =============================================================================

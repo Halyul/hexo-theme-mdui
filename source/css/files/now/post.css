@@ -5,6 +5,19 @@
     width: 100%;
 }
 
+.posts-card-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
 #blog-post .posts-card-content {
   font-size: 14px;
   line-height: 20px;
@@ -207,4 +220,60 @@
 .mdui-typo table {
   display: block;
   overflow: auto;
+}
+
+.post-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
+.post-pagination {
+  height: 96px;
+  padding: 0 72px;
+}
+
+.post-pagination .prev, .post-pagination .next {
+  min-width: calc(50% - 16px);
+  width: calc(50% - 16px);
+  padding: 8px;
+}
+
+.post-pagination .prev .content, .post-pagination .next .content {
+  width: 100%;
+}
+
+@media (max-width: 599px) {
+  .post-pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -ms-flex-direction: column;
+  }
+  .post-pagination {
+    height: auto;
+    padding: 0;
+  }
+  .post-pagination .prev, .post-pagination .next {
+    min-height: 50%;
+    height: 50%;
+    padding: 8px;
+    width: calc(100% - 16px);
+  }
+  .post-pagination .next a.mdui-text-right {
+    text-align: left !important;
+  }
 }
