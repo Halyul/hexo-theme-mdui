@@ -30,13 +30,13 @@ rm $FONTS_CURRENT
 cd $CSS_FILES
 uglifycss outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css --output external.min.css
 
-uglifycss plus/fonts.css plus/global.css plus/appbar.css plus/drawer.css plus/post.css plus/posts.css plus/archives.css plus/dialogs.css plus/page-friends.css plus/page-search.css plus/page-galleries.css plus/page-gallery.css plus/lg.css plus/animate.css --output plus.min.css
+uglifycss plus/global.css plus/appbar.css plus/drawer.css plus/post.css plus/posts.css plus/archives.css plus/dialogs.css plus/page-friends.css plus/page-search.css plus/page-galleries.css plus/page-gallery.css plus/lg.css plus/animate.css --output plus.min.css
 
 uglifycss external.min.css plus.min.css --output ../style-plus-v$DATE.min.css
 
 cssnano ../style-plus-v$DATE.min.css ../style-plus-v$DATE.min.css
 
-uglifycss now/fonts.css now/global.css now/appbar.css now/drawer.css now/index.css now/post.css now/posts.css now/lg.css --output now.min.css
+uglifycss now/global.css now/appbar.css now/drawer.css now/index.css now/post.css now/posts.css now/lg.css --output now.min.css
 
 uglifycss external.min.css now.min.css --output ../style-now-v$DATE.min.css
 
