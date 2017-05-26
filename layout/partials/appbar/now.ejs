@@ -10,7 +10,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
 <% if (is_home()) { %>
   <div class="mdui-appbar animate mdui-shadow-0" id="blog-appbar">
     <div class="mdui-toolbar">
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" id="appbar-drawer" mdui-drawer="{target: '#drawer'}">
+      <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon">
           <span></span>
         </i>
@@ -20,7 +20,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
 <% } else if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery') { %>
   <div class="mdui-appbar animate mdui-shadow-0 mdui-appbar-fixed" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" id="appbar-drawer" mdui-drawer="{target: '#drawer'}">
+      <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon">
           <span></span>
         </i>
