@@ -12,6 +12,7 @@
         } else return r;
       }, undefined)] || [])[0] || listens[0][0];
       actionToc.classList.add("mdui-list-item-active");
+      if(actionToc.getClientRects().length == 0)return;
       showToc(actionToc);
     }
 
