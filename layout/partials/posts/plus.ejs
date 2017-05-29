@@ -12,7 +12,7 @@
     <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
   </div>
   <div class="mdui-card-media">
-    <img src="<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+    <img class="lazyload" data-original="<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
   </div>
   <div class="posts-card-actions">
     <% if (page.category !== false) { %>

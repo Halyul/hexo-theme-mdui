@@ -25,10 +25,8 @@ posts:
   pagination:
     newer: '新的文章'
     older: '旧的文章'
-    no_newer: '没有更新的文章辣'
-    no_older: '没有更旧的文章辣'
 search:
-  text: '搜索'
+  text: '搜索什么...'
   explore: '探索'
   footer: '看起来已经没有了'
 share_menu:

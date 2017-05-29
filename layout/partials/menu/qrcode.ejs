@@ -2,7 +2,7 @@
   <li class="mdui-list-item" style="cursor: auto">
     <%= __('posts.qr_code') %>
   </li>
-    <img class="mdui-img-fluid" src="<%- qrcode(url, {
+    <img class="mdui-img-fluid lazyload" data-original="<%- qrcode(url, {
       margin: 2
     }) %>" style="cursor: auto">
 </ul>

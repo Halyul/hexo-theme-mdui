@@ -2,7 +2,7 @@
   <% if(index === 0 && page.current === 1) { %>
     <div class="mdui-card mdui-center" style="overflow: visible;">
       <div class="mdui-card-header index-welcome">
-        <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>" style="margin-right: 8px;"/>
+        <img class="mdui-card-header-avatar lazyload" data-original="<%= theme.style.avatar %>" style="margin-right: 8px;"/>
         <div class="mdui-valign">
           <div class="mdui-typo-subheading-opacity">
             <%= theme.index.welcome %>

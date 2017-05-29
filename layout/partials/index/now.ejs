@@ -1,6 +1,6 @@
 <div id="index">
   <div class="faviconImg">
-    <img class="mdui-img-fluid" src="<%= theme.head.high_res_favicon %>" />
+    <img class="mdui-img-fluid lazyload" data-original="<%= theme.head.high_res_favicon %>" />
   </div>
   <div id="search">
     <div class="mdui-toolbar mdui-color-theme mdui-shadow-2">
@@ -9,7 +9,9 @@
           <span></span>
         </i>
       </button>
-      <div class="mdui-toolbar-spacer mdui-color-theme mdui-ripple" id="search-btn"></div>
+      <div class="mdui-toolbar-spacer mdui-color-theme mdui-ripple" id="search-btn">
+        <div class="mdui-typo-subheading-opacity" style="padding-left: 16px;"><%= __('search.text') %></div>
+      </div>
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
         <i class="mdui-icon material-icons">&#xe417;</i>
       </button>

@@ -25,10 +25,8 @@ posts:
   pagination:
     newer: 'Newer Post'
     older: 'Older Post'
-    no_newer: 'No More Newer Post'
-    no_older: 'No More Older Post'
 search:
-  text: 'Search'
+  text: 'Search something...'
   explore: 'Explore'
   footer: "It looks like you've reached the end."
 share_menu:

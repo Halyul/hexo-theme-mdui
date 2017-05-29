@@ -13,7 +13,7 @@
           <div class="mdui-col-xs-6 mdui-col-md-3">
             <div class="mdui-card friends-container">
               <a href="<%= site.data.friends[i].link %>" target="_blank" class="content">
-                <img class="avatar" src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/>
+                <img class="avatar lazyload" data-original="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/>
                 <div class="name mdui-text-color-theme-text">
                   <%= i %>
                 </div>
@@ -25,18 +25,6 @@
                   <button class="mdui-btn mdui-ripple mdui-btn-block mdui-text-color-theme-accent"><%= __('friends.visit') %></button>
                 </div>
               </a>
-              <!--<ul class="mdui-list" style="padding: 8px;">
-                <a href="<%= site.data.friends[i].link %>" title="<%= i %>" target="_blank">
-                  <li class="mdui-list-item mdui-ripple">
-                    <div class="mdui-list-item-avatar"><img src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/></div>
-                    <div class="mdui-list-item-content">
-                      <div class="mdui-list-item-title mdui-text-truncate"><%= i %></div>
-                      <div class="mdui-list-item-text mdui-list-item-one-line mdui-text-truncate"><span class="mdui-text-color-theme-text"><%= site.data.friends[i].descr %></span></div>
-                    </div>
-                  </li>
-                </a>
-              </ul>-->
-
             </div>
           </div>
         <% } %>

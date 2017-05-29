@@ -48,9 +48,9 @@ uglifycss fonts.css --output ../fonts-v$DATE.min.css
 rm external.min.css plus.min.css now.min.css
 
 cd $JS_FILES
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js plus.js --output ../js-plus-v$DATE.min.js
+uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js lazyload.js plus.js --output ../js-plus-v$DATE.min.js
 
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js now.js --output ../js-now-v$DATE.min.js
+uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js lazyload.js now.js --output ../js-now-v$DATE.min.js
 
 cd $PARTIALS
 sed -i "s/$CURRENT/$DATE/" head.ejs
