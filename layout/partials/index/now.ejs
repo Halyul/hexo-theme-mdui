@@ -18,10 +18,19 @@
       <%- partial('../menu/index_more') %>
       <button class="mdui-btn mdui-btn-icon mdui-ripple"  mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
       <%- partial('../menu/index_share') %>
+      <div class="search">
+        <div class="icon">
+          <i class="mdui-icon material-icons">&#xe8b6;</i>
+        </div>
+        <div class="text">
+          <input type="text" placeholder="<%= __('search.text') %>" id="search-input"/>
+        </div>
+      </div>
+      <button class="mdui-btn mdui-btn-icon mdui-ripple close" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
     </div>
   </div>
 </div>
-<div id="search-cover"></div>
+<div id="search-cover" searchResult></div>
 <div id="posts">
   <%
     var index = 0;

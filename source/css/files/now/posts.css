@@ -1,4 +1,4 @@
-#posts .posts-header, .posts-content {
+.posts-header, .posts-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,11 +11,11 @@
   -ms-flex-direction: row;
 }
 
-#posts .posts-header {
+.posts-header {
   height: 54px;
 }
 
-#posts .posts-header .content {
+.posts-header .content {
   font-weight: 500;
   margin-right: 16px;
   padding: 0 0 0 16px;
@@ -26,35 +26,35 @@
   opacity: .87;
 }
 
-#posts .posts-header .mdui-card-header-avatar {
+.posts-header .mdui-card-header-avatar {
   width: 24px;
   height: 24px;
 }
 
-#posts .posts-header a.mdui-btn {
+.posts-header a.mdui-btn {
   opacity: .54;
 }
 
-#posts .posts-header a.mdui-btn.btn-dense {
+.posts-header a.mdui-btn.btn-dense {
   width: 24px;
   height: 24px;
   min-width: 24px;
 }
 
-#posts .posts-header a.mdui-btn.btn-dense i {
+.posts-header a.mdui-btn.btn-dense i {
     font-size: 16px;
 }
 
-#posts .posts-title {
+.posts-title {
   font-weight: 400;
 }
 
-#posts .posts-strip {
+.posts-strip {
   opacity: .54;
   letter-spacing: 0;
 }
 
-#posts .posts-thumbnail {
+.posts-thumbnail {
   margin-left: 16px;
   width: 64px;
   min-width: 64px;

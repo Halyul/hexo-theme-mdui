@@ -8,7 +8,7 @@ var myLazyLoad = new LazyLoad({
     elements_selector: ".lazyload"
 });
 
-/* post back button */
+/* back button */
 (function() {
   $$(document).on('click', 'button[back]', function() {
       window.history.back();

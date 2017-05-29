@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: 'no'
+  scheme: 'now'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -71,10 +71,10 @@ footer:
   ICP:
 
 # Plugins
-busuanzi: #false
-    all_site_uv: true
-    post_pv: true
-    busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
+busuanzi: false
+#    all_site_uv: true
+#    post_pv: true
+#    busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 service_woker:
 

@@ -1,4 +1,4 @@
-<% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery') { %>
+<% if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends') { %>
   <%- partial('../js/toc') %>
   <%- partial('../js/post_lg') %>
   <%- partial('../js/donte_judge') %>
@@ -44,4 +44,8 @@
 
 <% if (is_home()) { %>
   <%- partial('../js/now/search') %>
+<% } %>
+
+<% if (page.path === 'search/index.html' && theme.appbar.search === true) { %>
+  <%- partial('../../widget/js/search/now')%>
 <% } %>

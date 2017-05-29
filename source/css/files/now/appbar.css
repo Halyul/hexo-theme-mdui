@@ -77,6 +77,83 @@
   }
 }
 
+.appbar-border-line {
+  height: 32px;
+  border-left: 1px solid rgba(255, 255, 255, .2);
+}
+
+.appbar-userview {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 0 4px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.appbar-userview:hover .appbar-userview-avatar {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.appbar-userview-avatar {
+  width: 24px;
+  height: 24px;
+}
+
+#menu-userview {
+  overflow: visible;
+  width: 353px;
+}
+
+#menu-userview * {
+  line-height: normal;
+}
+
+#menu-userview:before {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  display: inline-block;
+  content: '';
+  border: 0 solid transparent;
+  border-width: 0 10px 10px;
+  border-bottom-color: #fff;
+}
+
+.menu-userview-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
+.menu-userview-avatar {
+  width: 96px;
+  height: 96px;
+  margin-right: 20px;
+}
+
+.menu-userview-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+}
+
+.menu-userview-content .mdui-typo-body-1 {
+  margin-bottom: 1px;
+}
+
 /* color settings */
 
 .mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {

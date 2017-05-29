@@ -16,10 +16,6 @@
   <% } %>
 <% } %>
 
-<% if (theme.busuanzi !== false) { %>
-  <script src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
-<% } %>
-
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
   <script>
     if ('serviceWorker' in navigator) {
@@ -40,6 +36,10 @@
 
 <% if (page.layout === 'gallery') { %>
   <%- partial('../widget/js/page_gallery') %>
+<% } %>
+
+<% if (theme.busuanzi !== false) { %>
+  <script src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
 
 <!-- Custom javascript -->

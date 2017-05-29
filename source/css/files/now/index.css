@@ -14,7 +14,7 @@
   margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   #index .faviconImg {
     width: 16%;
   }
@@ -27,8 +27,16 @@
   height: 56px;
 }
 
-#index #search .drawer-button {
+#index #search .mdui-toolbar .drawer-button, #index #search .mdui-toolbar button.close, #index #search .mdui-toolbar .search {
   display: none;
+}
+
+#index #search .mdui-toolbar.search-cover-active button:not(.close), #index #search .mdui-toolbar.search-cover-active .mdui-toolbar-spacer {
+  display: none;
+}
+
+#index #search .mdui-toolbar.search-cover-active button.close, #index #search .mdui-toolbar.search-cover-active .search {
+  display: inherit;
 }
 
 #index #search .logo {
@@ -62,7 +70,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 0px;
+  top: 56px;
   right: 0px;
   left: 0px;
   background: #fff;
@@ -70,6 +78,7 @@
   z-index: -1;
   pointer-events: none;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  padding-top: 16px;
 }
 
 @media (min-width: 1024px) {
@@ -82,4 +91,83 @@
   z-index: 1499;
   pointer-events: inherit;
   opacity: 0.90;
+}
+
+#index #search .search {
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  margin-left: 14px;
+  cursor: text;
+  border-radius: 3px;
+  -webkit-box-align: center;
+  box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  opacity: 1;
+}
+
+#index #search .search .icon {
+  margin: auto 8px;
+}
+
+#index #search .search .text {
+  font-size: 16px;
+  margin: auto;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+#index #search .search .text input {
+  width: 100%;
+  color: #fff;
+  border: 0;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+#index #search .search .text input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+#index #search .search .text input:-ms-input-placeholder {
+  color: #fff;
+}
+
+#index #search .search .text input::placeholder {
+  color: #fff;
+}
+
+#search-cover .result {
+  max-height: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
+#search-cover .mdui-card {
+  margin: 0 12.5% 16px 12.5%;
+}
+
+@media only screen and (max-width: 599px) {
+  #index #search .search {
+    margin: 0 12px;
+  }
+  #search-cover .mdui-card {
+    margin: 0 2.5% 16px 2.5%;
+  }
 }

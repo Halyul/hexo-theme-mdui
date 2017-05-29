@@ -8,13 +8,20 @@ var myLazyLoad = new LazyLoad({
     elements_selector: ".lazyload"
 });
 
+/* back button */
+(function() {
+  $$(document).on('click', 'button[back]', function() {
+      window.history.back();
+  });
+})();
+
 /* appbar button */
 $$(document).on('open.mdui.drawer', '#drawer', function (e) {
-  $$('#appbar-drawer').addClass('back');
+  $$('.drawer-button').addClass('back');
 });
 
 $$(document).on('close.mdui.drawer', '#drawer', function (e) {
-  $$('#appbar-drawer').removeClass('back');
+  $$('.drawer-button').removeClass('back');
 });
 
 /* drawer */
