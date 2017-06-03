@@ -84,3 +84,37 @@ $$('#drawer-button').on('click', function (e) {
     $$('button#toTop').trigger('click');
   });
 })();
+
+/* aboutme dialog */
+(function() {
+  $$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
+      $$(this).addClass('hide-more');
+      $$(this).removeClass('hide-less');
+  });
+  $$(document).on('close.mdui.collapse', 'div.mdui-collapse-item', function() {
+    $$(this).removeClass('hide-more');
+    $$(this).addClass('hide-less');
+  });
+  var cardFlag = false;
+  $$('div#aboutmeDialog').on('scroll', function() {
+    if (!cardFlag && $$('div#cardLocation').position().top < 0) {
+      $$('div#aboutmeAppbar').addClass('style-fix');
+      cardFlag = true;
+    } else if (cardFlag && $$('div#cardLocation').position().top >= 0) {
+      $$('div#aboutmeAppbar').removeClass('style-fix');
+      cardFlag = false;
+    };
+  });
+  $$(document).on('open.mdui.dialog', 'div#aboutmeDialog', function() {
+    if (!cardFlag && $$('div#cardLocation').position().top < 0) {
+      $$('div#aboutmeAppbar').addClass('style-fix');
+      cardFlag = true;
+    };
+  });
+  $$(document).on('close.mdui.dialog', 'div#aboutmeDialog', function() {
+    if (cardFlag && $$('div#cardLocation').position().top < 0) {
+      $$('div#aboutmeAppbar').removeClass('style-fix');
+      cardFlag = false;
+    };
+  });
+})();

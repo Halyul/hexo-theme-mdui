@@ -1,4 +1,4 @@
-<% if (is_archive()) { %>
+<% if (is_archive() && !is_year()) { %>
   <script>
     window.addEventListener("scroll", function(){
        document.querySelector('#archives .bg .mdui-img-fluid.mdui-img-rounded')
@@ -34,7 +34,7 @@
 <% } %>
 
 <% if (is_category() || is_tag() || is_year()) { %>
-  <%- partial('../js/plus/styleChanging') %>
+  <%- partial('../js/styleChanging') %>
 <% } %>
 
 <% if (page.path === 'search/index.html' && theme.appbar.search === true) { %>

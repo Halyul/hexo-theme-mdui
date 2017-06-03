@@ -1,4 +1,4 @@
-.posts-header, .posts-content {
+.posts-header, .posts-content, .posts-bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,4 +65,22 @@
   background-size: cover;
   background-origin: padding-box;
   background-attachment: scroll;
+}
+
+.posts-bottom {
+  padding: 16px;
+}
+
+.posts-bottom .mdui-chip, .posts-bottom .mdui-chip-icon {
+  background: #eee;
+}
+
+.posts-bottom .mdui-chip {
+  margin-right: 8px;
+}
+
+.posts-bottom .content a {
+  font-size: 12px;
+  line-height: 36px;
+  margin-right: 4px;
 }

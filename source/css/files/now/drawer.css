@@ -118,3 +118,8 @@
       padding-left: 300px;
   }
 }
+
+.drawer-fix {
+    width: 300px;
+    background-color: #fff;
+}

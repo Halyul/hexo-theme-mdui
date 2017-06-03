@@ -1,4 +1,4 @@
-<div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close" id="drawer">
+<div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close <% if (is_category() || is_tag() || is_year()) { %>drawer-fix<% } %>" id="drawer">
   <div class="userview lazyload" data-original="<%= theme.style.bg_img %>">
     <div class="overlay">
       <img class="mdui-img-circle avatar lazyload" data-original="<%= theme.style.avatar %>"/>

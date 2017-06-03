@@ -42,10 +42,13 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% if (theme.appbar.search === true) { %>
         <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
-        <i class="mdui-icon material-icons">&#xe417;</i>
-      </button>
-      <%- partial('../menu/index_more') %>
+      <% if (theme.busuanzi !== false) { %>
+        <% if(theme.busuanzi.post_pv === true) { %>
+          <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
+            <i class="mdui-icon material-icons">&#xe417;</i>
+          </button>
+        <% } %>
+      <% } %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center lazyload" data-original="<%= theme.style.avatar %>"/>
       </div>
@@ -82,10 +85,13 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% if (theme.appbar.search === true) { %>
         <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
-        <i class="mdui-icon material-icons">&#xe417;</i>
-      </button>
-      <%- partial('../menu/index_more') %>
+      <% if (theme.busuanzi !== false) { %>
+        <% if(theme.busuanzi.post_pv === true) { %>
+          <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
+            <i class="mdui-icon material-icons">&#xe417;</i>
+          </button>
+        <% } %>
+      <% } %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center lazyload" data-original="<%= theme.style.avatar %>"/>
       </div>
@@ -122,10 +128,13 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% if (theme.about_me === true) { %>
         <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
       <% } %>
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
-        <i class="mdui-icon material-icons">&#xe417;</i>
-      </button>
-      <%- partial('../menu/index_more') %>
+      <% if (theme.busuanzi !== false) { %>
+        <% if(theme.busuanzi.post_pv === true) { %>
+          <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
+            <i class="mdui-icon material-icons">&#xe417;</i>
+          </button>
+        <% } %>
+      <% } %>
       <div class="appbar-userview mdui-valign mdui-hidden-sm-down" mdui-menu="{target: '#menu-userview', covered: false}">
         <img class="mdui-img-circle appbar-userview-avatar mdui-center lazyload" data-original="<%= theme.style.avatar %>"/>
       </div>

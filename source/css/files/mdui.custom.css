@@ -5037,37 +5037,6 @@ body {
     font-size: 15px;
   }
 }
-body *::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  background: transparent;
-}
-@media (min-width: 1024px) {
-  body *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-}
-body *::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, .2);
-}
-body.mdui-theme-layout-dark *::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  background: transparent;
-}
-@media (min-width: 1024px) {
-  body.mdui-theme-layout-dark *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-}
-body.mdui-theme-layout-dark *::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, .3);
-}
-* {
-  -webkit-tap-highlight-color: transparent;
-}
 /* 锁定屏幕 */
 body.mdui-locked {
   overflow: hidden;

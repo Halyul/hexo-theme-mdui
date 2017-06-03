@@ -201,13 +201,3 @@ div#blog-appbar .logo {
   width: 24px;
   height: 24px;
 }
-
-/* color settings */
-
-.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {
-  background-color: white;
-}
-
-.mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:after {
-  background-color: white;
-}

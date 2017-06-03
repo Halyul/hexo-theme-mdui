@@ -12,9 +12,13 @@
       <div class="mdui-toolbar-spacer mdui-color-theme mdui-ripple" id="search-btn">
         <div class="mdui-typo-subheading-opacity" style="padding-left: 16px;"><%= __('search.text') %></div>
       </div>
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}">
-        <i class="mdui-icon material-icons">&#xe417;</i>
-      </button>
+      <% if (theme.busuanzi !== false) { %>
+        <% if(theme.busuanzi.post_pv === true) { %>
+          <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
+            <i class="mdui-icon material-icons">&#xe417;</i>
+          </button>
+        <% } %>
+      <% } %>
       <%- partial('../menu/index_more') %>
       <button class="mdui-btn mdui-btn-icon mdui-ripple"  mdui-menu="{target: '#menu-index-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
       <%- partial('../menu/index_share') %>

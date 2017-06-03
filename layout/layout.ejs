@@ -35,8 +35,8 @@
   <%- partial('partials/drawer') %>
 <% } %>
 
-<% if ((is_category() || is_tag() || is_year()) && theme.style.scheme !== 'now') { %>
-  <%- partial('partials/archives/plus/side_content') %>
+<% if (is_category() || is_tag() || is_year()) { %>
+  <%- partial('partials/archives/side_content') %>
 <% } %>
 
 <main>
