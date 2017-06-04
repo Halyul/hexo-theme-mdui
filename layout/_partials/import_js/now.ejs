@@ -1,0 +1,56 @@
+<% // js in post and custom page
+  if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends')
+{ %>
+  <%- partial('js/now/appbar') %>
+  <%- partial('js/toc') %>
+  <%- partial('js/post_lg') %>
+  <%- partial('js/donte_judge') %>
+
+  <% if (page.mathjax === true) { %>
+    <!-- MathJax Load-->
+    <%- partial('../../_widget/post_mathjax') %>
+  <% } %>
+
+<% } %>
+
+<% // index pagination toast
+  if (page.total > 1)
+{ %>
+  <script type="text/javascript">
+    $$(document).on('click', 'a[name="snackbar"]', function () {
+      mdui.snackbar({
+        message: '<%= __('global.snackbar') %>',
+        timeout: 1000
+      });
+    });
+  </script>
+<% } %>
+
+<% // archive page parallax background
+  if (is_archive())
+{ %>
+  <script>
+    window.addEventListener("scroll", function(){
+       document.querySelector('#archives .bg .mdui-img-fluid.mdui-img-rounded')
+        .style.transform = 'translateY(' + document.body.scrollTop * 0.4 + 'px)';
+    })
+  </script>
+<% } %>
+
+<% // index toolbar search
+  if (is_home())
+{ %>
+  <%- partial('js/now/search') %>
+<% } %>
+
+<% // appbar style change in category, tag ,year posts page
+  if (is_category() || is_tag() || is_year())
+{ %>
+  <%- partial('js/styleChanging') %>
+<% } %>
+
+<% // js in search page
+  if (page.path === 'search/index.html' && theme.appbar.search === true)
+{ %>
+  <%- partial('../../_widget/js/search/now')%>
+<% } %>

@@ -156,82 +156,28 @@
 
 /* color settings */
 
-.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-amber #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-amber #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-amber #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-blue #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-blue #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-blue #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-blue-grey #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-blue-grey #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-blue-grey #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-brown #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-brown #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-brown #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-cyan #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-cyan #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-cyan #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-deep-orange #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-deep-orange #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-deep-orange #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-deep-purple #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-deep-purple #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-deep-purple #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-green #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-green #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-green #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-grey #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-grey #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-grey #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-light-blue #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-light-blue #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-light-blue #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-light-green #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-light-green #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-light-green #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-lime #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-lime #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-lime #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-orange #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-orange #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-orange #blog-appbar .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-pink #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-pink #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-pink #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-purple #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-purple #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-purple #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-red #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-red #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-red #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
+.mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after,
+.mdui-theme-primary-blue #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-blue #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-blue #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-blue-grey #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-blue-grey #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-blue-grey #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-brown #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-brown #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-brown #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-deep-orange #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-deep-orange #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-deep-orange #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-deep-purple #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-deep-purple #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-deep-purple #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-pink #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-pink #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-pink #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-purple #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-purple #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-purple #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-red #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-red #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-red #blog-appbar .mdui-color-theme button span:after,
 .mdui-theme-primary-teal #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-teal #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-teal #blog-appbar .mdui-color-theme button span:after {
   background-color: #fff;
 }
 
+.mdui-theme-primary-amber #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-amber #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-amber #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-cyan #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-cyan #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-cyan #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-green #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-green #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-green #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-grey #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-grey #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-grey #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-light-blue #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-light-blue #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-light-blue #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-light-green #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-light-green #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-light-green #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-lime #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-lime #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-lime #blog-appbar .mdui-color-theme button span:after,
+.mdui-theme-primary-orange #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-orange #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-orange #blog-appbar .mdui-color-theme button span:after,
 .mdui-theme-primary-yellow #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-yellow #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-yellow #blog-appbar .mdui-color-theme button span:after {
   background-color: #000;
-}
-
-.mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:before, .mdui-theme-primary-indigo #blog-appbar .mdui-color-theme button span:after {
-  background-color: #fff;
 }

@@ -1,11 +1,16 @@
 <%
   var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
-  <div class="post-bg-color
-    <% if (theme.style.scheme === 'now') { %>
-      mdui-color-theme
-    <% } %>
-  "></div>
+<style>
+  .lg-outer .lg-item {
+    background-image: url("<%= config.root + 'img/loading.gif' %>");
+  }
+</style>
+<div class="post-bg-color
+  <% if (theme.style.scheme === 'now') { %>
+    mdui-color-theme
+  <% } %>
+"></div>
 <div class="post-header
   <% if (theme.style.scheme === 'now') { %>
     mdui-color-theme
@@ -19,12 +24,12 @@
         <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
           <i class="mdui-icon material-icons">&#xe337;</i>
           </button>
-          <%- partial('partials/menu/qrcode') %>
+          <%- partial('_partials/menu/qrcode') %>
       <% } %>
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-post-share'}">
         <i class="mdui-icon material-icons">&#xe80d;</i>
       </button>
-      <%- partial('partials/menu/post_share') %>
+      <%- partial('_partials/menu/post_share') %>
     </div>
   </div>
 </div>
@@ -34,7 +39,7 @@
       <div class="mdui-card-media">
         <img class="lazyload" data-original="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>
-      <div class="posts-card-content mdui-typo no-margin
+      <div class="post-content mdui-typo no-margin
         <%= theme.post.prism.theme %>
         <% if (theme.post.prism.line_number === true && theme.post.prism.theme) { %>
           line-number
@@ -44,7 +49,7 @@
       </div>
 
       <% if (page.category !== false || page.tag !== false || theme.post.donate !== false) { %>
-        <div class="posts-card-actions">
+        <div class="posts-info">
           <% if (theme.post.donate !==false) { %>
             <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
           <% } %>
@@ -77,11 +82,11 @@
       <% } %>
       <% if (page.comment !== false) { %>
         <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
-          <div class="posts-card-line">
+          <div class="posts-line">
             <div class="mdui-divider"></div>
           </div>
           <div class="post-comment">
-            <%- partial('partials/comment') %>
+            <%- partial('_partials/comment') %>
           </div>
         <% } %>
       <% } %>
@@ -93,5 +98,5 @@
     </div>
   </div>
 </div>
-<%-partial('partials/pagination/post')%>
-<%-partial('partials/fab/post')%>
+<%-partial('_partials/pagination/post')%>
+<%-partial('_partials/fab/post')%>

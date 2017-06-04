@@ -13,6 +13,8 @@ archive:
   post: 'Post'
   posts: 'Posts'
   about: 'About'
+  more: 'MORE'
+  less: 'LESS'
 posts:
   header: 'Something that I have posted'
   public: 'Public'

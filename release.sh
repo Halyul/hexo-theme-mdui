@@ -2,7 +2,7 @@
 THEME_PATH=$PWD
 CSS=$PWD/source/css
 JS=$PWD/source/js
-PARTIALS=$THEME_PATH/layout/partials
+PARTIALS=$THEME_PATH/layout/_partials
 
 CSS_PLUS_CURRENT=$(find $CSS/style-plus-v*.css)
 CSS_NOW_CURRENT=$(find $CSS/style-now-v*.css)

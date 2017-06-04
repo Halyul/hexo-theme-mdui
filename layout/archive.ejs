@@ -1,5 +1,5 @@
 <% if (!is_year()) { %>
-  <%- partial('partials/archives/index') %>
+  <%- partial('_partials/archives/index') %>
 <% } else { %>
   <div class="posts-container column-3">
 
@@ -7,10 +7,10 @@
   <div id="content-list">
     <% page.posts.each(function(post,index) {%>
       <div class="content-item">
-        <%-partial('partials/posts', { post: post })%>
+        <%-partial('_partials/posts', { post: post })%>
       </div>
     <% }); %>
   </div>
-  <%-partial('partials/pagination/index', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.pagination })%>
+  <%-partial('_partials/pagination/index', {base: url_for(config.root) + 'archives/' + page.year + '/', show: theme.pagination })%>
 <% } %>
-<%-partial('partials/fab/index')%>
+<%-partial('_partials/fab/index')%>

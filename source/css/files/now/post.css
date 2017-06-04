@@ -5,7 +5,7 @@
     width: 100%;
 }
 
-.posts-card-actions {
+.posts-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,26 +18,26 @@
   -ms-flex-direction: row;
 }
 
-#blog-post .posts-card-content {
+#blog-post .post-content {
   font-size: 14px;
   line-height: 20px;
   margin: 16px 0;
   word-wrap: break-word;
 }
 
-#blog-post .posts-card-actions {
+#blog-post .posts-info {
   margin-top: 16px;
 }
 
-#blog-post .posts-card-actions .mdui-chip, #blog-post .posts-card-actions .mdui-chip-icon {
+#blog-post .posts-info .mdui-chip, #blog-post .posts-info .mdui-chip-icon {
   background: #eee;
 }
 
-#blog-post .posts-card-actions .mdui-chip {
+#blog-post .posts-info .mdui-chip {
   margin: 0 8px;
 }
 
-#blog-post .posts-card-actions .content a {
+#blog-post .posts-info .content a {
   font-size: 12px;
   line-height: 36px;
 }

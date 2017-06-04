@@ -5,26 +5,26 @@
     width: 100%;
 }
 
-#blog-post .posts-card-content {
+#blog-post .post-content {
   font-size: 14px;
   line-height: 20px;
   margin: 16px 0;
   word-wrap: break-word;
 }
 
-#blog-post .posts-card-actions {
+#blog-post .posts-info {
   margin-top: 16px;
 }
 
-#blog-post .posts-card-actions .mdui-chip, #blog-post .posts-card-actions .mdui-chip-icon {
+#blog-post .posts-info .mdui-chip, #blog-post .posts-info .mdui-chip-icon {
   background: #eee;
 }
 
-#blog-post .posts-card-actions .mdui-chip {
+#blog-post .posts-info .mdui-chip {
   margin: 0 8px;
 }
 
-#blog-post .posts-card-actions .content a {
+#blog-post .posts-info .content a {
   font-size: 12px;
   line-height: 36px;
 }

@@ -8,35 +8,35 @@
 <!DOCTYPE html>
 <html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
 <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-  <%-partial('partials/head', { primary_color: primary_color[primary_num] })%>
+  <%-partial('_partials/head', { primary_color: primary_color[primary_num] })%>
 <% } else { %>
-  <%-partial('partials/head')%>
+  <%-partial('_partials/head')%>
 <% } %>
 
 <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
   <% if (theme.style.scheme === 'now') { %>
-    <%- partial('partials/body/now', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
+    <%- partial('_partials/body/now', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
   <% } else { %>
-    <%- partial('partials/body/plus', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
+    <%- partial('_partials/body/plus', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
   <% } %>
 <% } else { %>
   <% if (theme.style.scheme === 'now') { %>
-    <%- partial('partials/body/now') %>
+    <%- partial('_partials/body/now') %>
   <% } else { %>
-    <%- partial('partials/body/plus') %>
+    <%- partial('_partials/body/plus') %>
   <% } %>
 <% } %>
 
 <div id="top"></div>
 
-<%- partial('partials/appbar') %>
+<%- partial('_partials/appbar') %>
 
 <% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
-  <%- partial('partials/drawer') %>
+  <%- partial('_partials/drawer') %>
 <% } %>
 
 <% if (is_category() || is_tag() || is_year()) { %>
-  <%- partial('partials/archives/side_content') %>
+  <%- partial('_partials/archives/side_content') %>
 <% } %>
 
 <main>
@@ -48,8 +48,8 @@
   <p><%= __('outdated_browser.line_one') %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= __('outdated_browser.link') %></a></p>
   <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= __('outdated_browser.close') %>">&times;</a></p>
 </div>
-<%- partial('partials/dialogs') %>
-<%- partial('partials/import_js') %>
+<%- partial('_partials/dialogs') %>
+<%- partial('_partials/import_js') %>
 </body>
 
 </html>

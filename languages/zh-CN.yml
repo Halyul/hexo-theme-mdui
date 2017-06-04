@@ -13,6 +13,8 @@ archive:
   post: '篇文章'
   posts: '篇文章'
   about: '关于'
+  more: '更多'
+  less: '更少'
 posts:
   header: '我的文章'
   public: '公开'

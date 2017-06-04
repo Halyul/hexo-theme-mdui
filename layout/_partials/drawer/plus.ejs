@@ -1,0 +1,15 @@
+<div class="mdui-drawer drawer-container
+  <% if (is_category() || is_tag() || is_year()) { %>
+    mdui-drawer-full-height mdui-drawer-close drawer-fix
+  <% } %>
+  <% if (!is_category() || !is_tag() || !is_year()) { %>
+    animate
+  <% } %>" id="drawer">
+  <%- partial('plus/head') %>
+  <div class="mdui-divider"></div>
+  <div class="drawer-content">
+    <%- partial('plus/content') %>
+    <div style="flex-grow: 1;"></div>
+    <%- partial('plus/footer') %>
+  </div>
+</div>

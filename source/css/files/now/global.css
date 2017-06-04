@@ -88,18 +88,6 @@ span.badge[data-badge-caption]::after {
   content: ' ' attr(data-badge-caption);
 }
 
-.collection-item span.badge {
-  margin-top: calc(.75rem - 11px);
-}
-
-.collapsible span.badge {
-  margin-top: calc(1.5rem - 11px);
-}
-
-.side-nav span.badge {
-  margin-top: calc(24px - 11px);
-}
-
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
