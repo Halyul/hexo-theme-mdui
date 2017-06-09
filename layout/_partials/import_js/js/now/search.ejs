@@ -6,11 +6,11 @@ window.addEventListener('load', function () {
   var searchCover = document.querySelector("#search-cover");
   var closeBtn = document.querySelector("#close-button");
   var mode = 'idle';
-  var open = false;
+  var fixtop = false;
   var Timeout = [];
   function fixAtTop() {
     if (Timeout) window.clearTimeout(Timeout);
-    if (open) return;
+    if (fixtop) return;
     var sTop = document.body.scrollTop;
     var sLeft = document.body.scrollLeft;
     var top = search.offsetTop - sTop;
@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
     toolbar.style.top = top + 'px';
     toolbar.style.left = left + 'px';
     toolbar.style.transition = '';
-    open = true;
+    fixtop = true;
     setTimeout(function() {
       toolbar.classList.add('fixedTop');
       toolbar.style.transition = '';
@@ -40,7 +40,7 @@ window.addEventListener('load', function () {
     }, 0)
   }
   function disFixAtTop () {
-    if (!open) return;
+    if (!fixtop) return;
     if (Timeout) window.clearTimeout(Timeout);
     var sTop = document.body.scrollTop;
     var sLeft = document.body.scrollLeft + document.getElementById('blog-appbar').offsetLeft;
@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
     toolbar.style.position = 'absolute';
     toolbar.style.left = nowLeft + 'px';
     toolbar.classList.remove('fixedTop');
-    open = false;
+    fixtop = false;
     setTimeout(function() {
       toolbar.style.transition = 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms';
       toolbar.style.top = top + 'px';
@@ -86,10 +86,11 @@ window.addEventListener('load', function () {
     mode = 'ctrl';
   })
   searchCover.addEventListener('click', function() {
-    disFixAtTop();
+    // disFixAtTop();
     toolbar.classList.remove('search-cover-active');
     searchCover.classList.remove('active');
     mode = 'idle';
+    update();
   })
   closeBtn.addEventListener('click', function() {
     disFixAtTop();
@@ -97,17 +98,18 @@ window.addEventListener('load', function () {
     searchCover.classList.remove('active');
     mode = 'idle';
   })
-  window.addEventListener('scroll', function() {
+  function update() {
     if (mode === 'idle') {
       var sTop = document.body.scrollTop;
       var top = search.offsetTop - sTop;
-      if (!open && top < 0) {
+      if (!fixtop && top < 0) {
         fixAtTop();
-      } else if (open && top > 0) {
+      } else if (fixtop && top > 0) {
         disFixAtTop();
       }
     }
-  })
+  }
+  window.addEventListener('scroll', update);
   var searchBar = {
     fixAtTop: fixAtTop,
     disFixAtTop: disFixAtTop
