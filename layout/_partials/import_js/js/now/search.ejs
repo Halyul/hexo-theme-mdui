@@ -7,7 +7,9 @@ window.addEventListener('load', function () {
   var closeBtn = document.querySelector("#close-button");
   var mode = 'idle';
   var open = false;
+  var Timeout = [];
   function fixAtTop() {
+    if (Timeout) window.clearTimeout(Timeout);
     if (open) return;
     var sTop = document.body.scrollTop;
     var sLeft = document.body.scrollLeft;
@@ -20,30 +22,39 @@ window.addEventListener('load', function () {
     toolbar.style.position = 'fixed';
     toolbar.style.top = top + 'px';
     toolbar.style.left = left + 'px';
+    toolbar.style.transition = '';
     open = true;
     setTimeout(function() {
       toolbar.classList.add('fixedTop');
+      toolbar.style.transition = '';
+      toolbar.style.width = document.getElementById('blog-appbar').clientWidth + 'px';
       toolbar.style.height = '';
-      toolbar.style.width = '';
       toolbar.style.position = '';
       toolbar.style.top = '';
       toolbar.style.left = '';
-    },10)
+      Timeout = setTimeout(function() {
+        toolbar.style.transition = '';
+        toolbar.style.width = '';
+        Timeout = null;
+      },450)
+    }, 0)
   }
   function disFixAtTop () {
     if (!open) return;
+    if (Timeout) window.clearTimeout(Timeout);
     var sTop = document.body.scrollTop;
-    var sLeft = document.body.scrollLeft;
+    var sLeft = document.body.scrollLeft + document.getElementById('blog-appbar').offsetLeft;
     var top = search.offsetTop;
     var left = search.offsetLeft;
     var width = search.offsetWidth;
     var height = search.offsetHeight;
     var nowTop = sTop;
     var nowLeft = sLeft;
-    var nowWidth = toolbar.offsetWidth;
+    var nowWidth = toolbar.style.width || (toolbar.offsetWidth + 'px');
     var nowHeight = toolbar.offsetHeight;
+    toolbar.style.transition = '';
     toolbar.style.height = nowHeight + 'px';
-    toolbar.style.width = nowWidth + 'px';
+    toolbar.style.width = nowWidth;
     toolbar.style.top = nowTop + 'px';
     toolbar.style.position = 'absolute';
     toolbar.style.left = nowLeft + 'px';
@@ -51,20 +62,21 @@ window.addEventListener('load', function () {
     open = false;
     setTimeout(function() {
       toolbar.style.transition = 'all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms';
-      toolbar.style.height = height + 'px';
-      toolbar.style.width = width + 'px';
       toolbar.style.top = top + 'px';
       toolbar.style.position = 'absolute';
       toolbar.style.left = left + 'px';
-    },10)
-    setTimeout(function() {
-      toolbar.style.height = '';
-      toolbar.style.width = '';
-      toolbar.style.position = '';
-      toolbar.style.top = '';
-      toolbar.style.left = '';
-      toolbar.style.transition = '';
-    },450)
+      toolbar.style.height = height + 'px';
+      toolbar.style.width = width + 'px';
+      Timeout = setTimeout(function() {
+        toolbar.style.height = '';
+        toolbar.style.width = '';
+        toolbar.style.position = '';
+        toolbar.style.top = '';
+        toolbar.style.left = '';
+        toolbar.style.transition = '';
+        Timeout = null;
+      },450)
+    }, 0)
   }
   searchBtn.addEventListener('click', function() {
     fixAtTop();
