@@ -1,6 +1,7 @@
 #index {
   margin-bottom: 48px;
 }
+
 #index .faviconImg {
   margin-right: auto;
   margin-left: auto;
@@ -27,11 +28,7 @@
   height: 56px;
 }
 
-#index #search .mdui-toolbar .drawer-button, #index #search .mdui-toolbar button.close, #index #search .mdui-toolbar .search {
-  display: none;
-}
-
-#index #search .mdui-toolbar.search-cover-active button:not(.close), #index #search .mdui-toolbar.search-cover-active .mdui-toolbar-spacer {
+#index #search .mdui-toolbar .drawer-button, #index #search .mdui-toolbar button.close, #index #search .mdui-toolbar .search, #index #search .mdui-toolbar.search-cover-active button:not(.close), #index #search .mdui-toolbar.search-cover-active .mdui-toolbar-spacer  {
   display: none;
 }
 
@@ -54,6 +51,7 @@
   left: 0px;
   top: 0px;
   right: 0px;
+  -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 }
 
@@ -68,7 +66,6 @@
 
 #search-cover {
   position: fixed;
-  width: 100%;
   height: 100%;
   top: 56px;
   right: 0px;
@@ -77,6 +74,7 @@
   opacity: 0;
   z-index: -1;
   pointer-events: none;
+  -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   padding-top: 16px;
 }
@@ -90,7 +88,8 @@
 #search-cover.active {
   z-index: 1499;
   pointer-events: inherit;
-  opacity: 0.90;
+  opacity: 1;
+  background-color: rgba(255,255,255,0.8);
 }
 
 #index #search .search {
@@ -98,7 +97,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 100%;
   margin-left: 14px;
   cursor: text;
@@ -140,15 +140,11 @@
   line-height: 24px;
 }
 
-#index #search .search .text input::-webkit-input-placeholder {
+#index #search .search .text input::-webkit-input-placeholder, #index #search .search .text input::-webkit-input-placeholder {
   color: #fff;
 }
 
 #index #search .search .text input:-ms-input-placeholder {
-  color: #fff;
-}
-
-#index #search .search .text input::placeholder {
   color: #fff;
 }
 
@@ -174,82 +170,28 @@
 
 /* color settings */
 
-.mdui-theme-layout-dark #search button span, .mdui-theme-layout-dark #search button span:before, .mdui-theme-layout-dark #search button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-amber #search .mdui-color-theme button span, .mdui-theme-primary-amber #search .mdui-color-theme button span:before, .mdui-theme-primary-amber #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-blue #search .mdui-color-theme button span, .mdui-theme-primary-blue #search .mdui-color-theme button span:before, .mdui-theme-primary-blue #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-blue-grey #search .mdui-color-theme button span, .mdui-theme-primary-blue-grey #search .mdui-color-theme button span:before, .mdui-theme-primary-blue-grey #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-brown #search .mdui-color-theme button span, .mdui-theme-primary-brown #search .mdui-color-theme button span:before, .mdui-theme-primary-brown #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-cyan #search .mdui-color-theme button span, .mdui-theme-primary-cyan #search .mdui-color-theme button span:before, .mdui-theme-primary-cyan #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-deep-orange #search .mdui-color-theme button span, .mdui-theme-primary-deep-orange #search .mdui-color-theme button span:before, .mdui-theme-primary-deep-orange #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-deep-purple #search .mdui-color-theme button span, .mdui-theme-primary-deep-purple #search .mdui-color-theme button span:before, .mdui-theme-primary-deep-purple #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-green #search .mdui-color-theme button span, .mdui-theme-primary-green #search .mdui-color-theme button span:before, .mdui-theme-primary-green #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-grey #search .mdui-color-theme button span, .mdui-theme-primary-grey #search .mdui-color-theme button span:before, .mdui-theme-primary-grey #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-light-blue #search .mdui-color-theme button span, .mdui-theme-primary-light-blue #search .mdui-color-theme button span:before, .mdui-theme-primary-light-blue #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-light-green #search .mdui-color-theme button span, .mdui-theme-primary-light-green #search .mdui-color-theme button span:before, .mdui-theme-primary-light-green #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-lime #search .mdui-color-theme button span, .mdui-theme-primary-lime #search .mdui-color-theme button span:before, .mdui-theme-primary-lime #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-orange #search .mdui-color-theme button span, .mdui-theme-primary-orange #search .mdui-color-theme button span:before, .mdui-theme-primary-orange #search .mdui-color-theme button span:after {
-  background-color: #000;
-}
-
-.mdui-theme-primary-pink #search .mdui-color-theme button span, .mdui-theme-primary-pink #search .mdui-color-theme button span:before, .mdui-theme-primary-pink #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-purple #search .mdui-color-theme button span, .mdui-theme-primary-purple #search .mdui-color-theme button span:before, .mdui-theme-primary-purple #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
-.mdui-theme-primary-red #search .mdui-color-theme button span, .mdui-theme-primary-red #search .mdui-color-theme button span:before, .mdui-theme-primary-red #search .mdui-color-theme button span:after {
-  background-color: #fff;
-}
-
+.mdui-theme-layout-dark #search button span, .mdui-theme-layout-dark #search button span:before, .mdui-theme-layout-dark #search button span:after,
+.mdui-theme-primary-blue #search .mdui-color-theme button span, .mdui-theme-primary-blue #search .mdui-color-theme button span:before, .mdui-theme-primary-blue #search .mdui-color-theme button span:after,
+.mdui-theme-primary-blue-grey #search .mdui-color-theme button span, .mdui-theme-primary-blue-grey #search .mdui-color-theme button span:before, .mdui-theme-primary-blue-grey #search .mdui-color-theme button span:after,
+.mdui-theme-primary-brown #search .mdui-color-theme button span, .mdui-theme-primary-brown #search .mdui-color-theme button span:before, .mdui-theme-primary-brown #search .mdui-color-theme button span:after,
+.mdui-theme-primary-deep-orange #search .mdui-color-theme button span, .mdui-theme-primary-deep-orange #search .mdui-color-theme button span:before, .mdui-theme-primary-deep-orange #search .mdui-color-theme button span:after,
+.mdui-theme-primary-deep-purple #search .mdui-color-theme button span, .mdui-theme-primary-deep-purple #search .mdui-color-theme button span:before, .mdui-theme-primary-deep-purple #search .mdui-color-theme button span:after,
+.mdui-theme-primary-indigo #search .mdui-color-theme button span, .mdui-theme-primary-indigo #search .mdui-color-theme button span:before, .mdui-theme-primary-indigo #search .mdui-color-theme button span:after,
+.mdui-theme-primary-pink #search .mdui-color-theme button span, .mdui-theme-primary-pink #search .mdui-color-theme button span:before, .mdui-theme-primary-pink #search .mdui-color-theme button span:after,
+.mdui-theme-primary-purple #search .mdui-color-theme button span, .mdui-theme-primary-purple #search .mdui-color-theme button span:before, .mdui-theme-primary-purple #search .mdui-color-theme button span:after,
+.mdui-theme-primary-red #search .mdui-color-theme button span, .mdui-theme-primary-red #search .mdui-color-theme button span:before, .mdui-theme-primary-red #search .mdui-color-theme button span:after,
 .mdui-theme-primary-teal #search .mdui-color-theme button span, .mdui-theme-primary-teal #search .mdui-color-theme button span:before, .mdui-theme-primary-teal #search .mdui-color-theme button span:after {
   background-color: #fff;
 }
 
+.mdui-theme-primary-amber #search .mdui-color-theme button span, .mdui-theme-primary-amber #search .mdui-color-theme button span:before, .mdui-theme-primary-amber #search .mdui-color-theme button span:after,
+.mdui-theme-primary-cyan #search .mdui-color-theme button span, .mdui-theme-primary-cyan #search .mdui-color-theme button span:before, .mdui-theme-primary-cyan #search .mdui-color-theme button span:after,
+.mdui-theme-primary-green #search .mdui-color-theme button span, .mdui-theme-primary-green #search .mdui-color-theme button span:before, .mdui-theme-primary-green #search .mdui-color-theme button span:after,
+.mdui-theme-primary-grey #search .mdui-color-theme button span, .mdui-theme-primary-grey #search .mdui-color-theme button span:before, .mdui-theme-primary-grey #search .mdui-color-theme button span:after,
+.mdui-theme-primary-light-blue #search .mdui-color-theme button span, .mdui-theme-primary-light-blue #search .mdui-color-theme button span:before, .mdui-theme-primary-light-blue #search .mdui-color-theme button span:after,
+.mdui-theme-primary-light-green #search .mdui-color-theme button span, .mdui-theme-primary-light-green #search .mdui-color-theme button span:before, .mdui-theme-primary-light-green #search .mdui-color-theme button span:after,
+.mdui-theme-primary-lime #search .mdui-color-theme button span, .mdui-theme-primary-lime #search .mdui-color-theme button span:before, .mdui-theme-primary-lime #search .mdui-color-theme button span:after,
+.mdui-theme-primary-orange #search .mdui-color-theme button span, .mdui-theme-primary-orange #search .mdui-color-theme button span:before, .mdui-theme-primary-orange #search .mdui-color-theme button span:after,
 .mdui-theme-primary-yellow #search .mdui-color-theme button span, .mdui-theme-primary-yellow #search .mdui-color-theme button span:before, .mdui-theme-primary-yellow #search .mdui-color-theme button span:after {
   background-color: #000;
-}
-
-.mdui-theme-primary-indigo #search .mdui-color-theme button span, .mdui-theme-primary-indigo #search .mdui-color-theme button span:before, .mdui-theme-primary-indigo #search .mdui-color-theme button span:after {
-  background-color: #fff;
 }
