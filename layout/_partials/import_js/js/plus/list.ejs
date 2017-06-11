@@ -1,5 +1,5 @@
-<script type="text/javascript">
-  <% if (!is_archive() || is_year()) { %>
+<% if (!is_archive() || is_year()) { %>
+  <script type="text/javascript">
     (function() {
       var items = document.querySelectorAll("div#content-list .content-item");
       var list = document.querySelector("div.posts-container");
@@ -42,5 +42,5 @@
       window.addEventListener("resize", updateList);
       updateList();
     })()
-  <% } %>
-</script>
+  </script>
+<% } %>

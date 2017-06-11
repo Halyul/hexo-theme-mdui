@@ -24,7 +24,7 @@ source $THEME_PATH/tmp.sh
 
 # delete old files
 rm $CSS_PLUS_CURRENT $CSS_NOW_CURRENT
-rm $JS_PLUS_CURRENT $JS_NOW_CURRENT
+# rm $JS_PLUS_CURRENT $JS_NOW_CURRENT
 rm $FONTS_CURRENT
 
 cd $CSS_FILES
@@ -47,14 +47,14 @@ uglifycss fonts.css --output ../fonts-v$DATE.min.css
 
 rm external.min.css plus.min.css now.min.css
 
-cd $JS_FILES
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js lazyload.js plus.js --output ../js-plus-v$DATE.min.js
+# cd $JS_FILES
+# uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js lazyload.js --output ../js-plus-v$DATE.min.js
 
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js lazyload.js now.js --output ../js-now-v$DATE.min.js
+# uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js lazyload.js --output ../js-now-v$DATE.min.js
 
 cd $PARTIALS
 sed -i "s/$CURRENT/$DATE/" head.ejs
-sed -i "s/$CURRENT/$DATE/" import_js.ejs
+# sed -i "s/$CURRENT/$DATE/" import_js.ejs
 
 cd $THEME_PATH
 rm $THEME_PATH/tmp.sh
