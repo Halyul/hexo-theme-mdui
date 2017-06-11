@@ -5,6 +5,19 @@
     width: 100%;
 }
 
+.posts-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
 #blog-post .post-content {
   font-size: 14px;
   line-height: 20px;

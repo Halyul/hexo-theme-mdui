@@ -14,7 +14,7 @@
   <div class="mdui-card-media">
     <img class="lazyload" data-original="<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
   </div>
-  <div class="posts-info">
+  <div class="posts-bottom">
     <% if (page.category !== false) { %>
       <div class="mdui-chip">
         <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon material-icons mdui-text-center">&#xe149;</i></span>
@@ -40,11 +40,11 @@
       </div>
     <% } %>
     <div class="flex-spacer"></div>
+    <div class="mdui-typo-caption-opacity mdui-valign"><%= date(post.date, 'MMM DD, YYYY') %></div>
     <% if (post.pinned === true) { %>
       <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
         <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
       </div>
     <% } %>
-    <div class="mdui-typo-caption-opacity mdui-valign"><%= date(post.date, 'MMM DD, YYYY') %></div>
   </div>
 </div>
