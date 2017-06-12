@@ -85,19 +85,14 @@ window.addEventListener('load', function () {
     document.getElementById("search-input").focus();
     mode = 'ctrl';
   })
-  searchCover.addEventListener('click', function() {
-    // disFixAtTop();
+  function exitSearch() {
     toolbar.classList.remove('search-cover-active');
     searchCover.classList.remove('active');
     mode = 'idle';
     update();
-  })
-  closeBtn.addEventListener('click', function() {
-    disFixAtTop();
-    toolbar.classList.remove('search-cover-active');
-    searchCover.classList.remove('active');
-    mode = 'idle';
-  })
+  }
+  searchCover.addEventListener('click', exitSearch)
+  closeBtn.addEventListener('click', exitSearch)
   function update() {
     if (mode === 'idle') {
       var sTop = document.body.scrollTop;
@@ -110,6 +105,7 @@ window.addEventListener('load', function () {
     }
   }
   window.addEventListener('scroll', update);
+  update();
   var searchBar = {
     fixAtTop: fixAtTop,
     disFixAtTop: disFixAtTop
