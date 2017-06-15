@@ -278,3 +278,53 @@
     text-align: left !important;
   }
 }
+
+/* color setting */
+.mdui-theme-accent-amber .mdui-typo code {
+  color: #ffd740;
+}
+.mdui-theme-accent-blue .mdui-typo code {
+  color: #448aff;
+}
+.mdui-theme-accent-cyan .mdui-typo code {
+  color: #18ffff;
+}
+.mdui-theme-accent-deep-orange .mdui-typo code {
+  color: #ff6e40;
+}
+.mdui-theme-accent-deep-purple .mdui-typo code {
+  color: #7c4dff;
+}
+.mdui-theme-accent-green .mdui-typo code {
+  color: #69f0ae;
+}
+.mdui-theme-accent-indigo .mdui-typo code {
+  color: #536dfe;
+}
+.mdui-theme-accent-light-blue .mdui-typo code {
+  color: #40c4ff;
+}
+.mdui-theme-accent-light-green .mdui-typo code {
+  color: #b2ff59;
+}
+.mdui-theme-accent-lime .mdui-typo code {
+  color: #eeff41;
+}
+.mdui-theme-accent-orange .mdui-typo code {
+  color: #ffab40;
+}
+.mdui-theme-accent-pink .mdui-typo code {
+  color: #ff4081;
+}
+.mdui-theme-accent-purple .mdui-typo code {
+  color: #e040fb;
+}
+.mdui-theme-accent-red .mdui-typo code {
+  color: #ff5252;
+}
+.mdui-theme-accent-teal .mdui-typo code {
+  color: #64ffda;
+}
+.mdui-theme-accent-yellow .mdui-typo code {
+  color: #ff0;
+}
