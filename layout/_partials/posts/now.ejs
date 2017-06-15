@@ -29,7 +29,11 @@
   <div class="posts-bottom">
     <% if (page.category !== false) { %>
       <div class="mdui-chip">
-        <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon material-icons mdui-text-center">&#xe149;</i></span>
+        <span class="mdui-chip-icon"><i class="mdui-icon
+        <% if (theme.color.layout !== 'dark') { %>
+          mdui-text-color-black-icon
+        <% } %>
+         material-icons mdui-text-center">&#xe149;</i></span>
       </div>
       <div class="content mdui-typo">
         <% post.categories.map(function(category){  %>
@@ -41,7 +45,11 @@
     <% } %>
     <% if (post.tag !== false) { %>
       <div class="mdui-chip">
-        <span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span>
+        <span class="mdui-chip-icon"><i class="mdui-icon
+         <% if (theme.color.layout !== 'dark') { %>
+           mdui-text-color-black-icon
+         <% } %>
+         fa fa-tags mdui-text-center"></i></span>
       </div>
       <div class="content mdui-typo">
         <% post.tags.map(function(tag){  %>

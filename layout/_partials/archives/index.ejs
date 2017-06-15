@@ -13,7 +13,14 @@ site.posts.sort('date').reverse().forEach(function(post){
     <div class="bg">
       <img class="mdui-img-fluid mdui-img-rounded lazyload" data-original="<%= theme.style.bg_img %>"/>
     </div>
-    <div class="content lazyload" style="background-color: <%= theme.color.bg_color %>">
+    <div class="content lazyload" style="
+      background-color:
+      <% if (theme.color.layout === 'dark') { %>
+        #303030;
+      <% } else { %>
+        <%= theme.color.bg_color %>
+      <% } %>
+    ">
       <img class="mdui-img-circle avatar lazyload" data-original="<%= theme.style.avatar %>"/>
       <div class="info">
         <div class="name">

@@ -3,13 +3,25 @@
     <img class="mdui-img-fluid lazyload" data-original="<%= theme.head.high_res_favicon %>" />
   </div>
   <div id="search">
-    <div class="mdui-toolbar mdui-color-theme mdui-shadow-2">
+    <div class="mdui-toolbar
+      <% if (theme.color.layout === 'dark') { %>
+        mdui-color-grey-900
+      <% } else { %>
+        mdui-color-theme
+      <% } %>
+     mdui-shadow-2">
       <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon">
           <span></span>
         </i>
       </button>
-      <div class="mdui-toolbar-spacer mdui-color-theme mdui-ripple" id="search-btn">
+      <div class="mdui-toolbar-spacer
+      <% if (theme.color.layout === 'dark') { %>
+        mdui-color-grey-900
+      <% } else { %>
+        mdui-color-theme
+      <% } %>
+       mdui-ripple" id="search-btn">
         <div class="mdui-typo-subheading-opacity" style="padding-left: 16px;"><%= __('search.text') %></div>
       </div>
       <% if (theme.busuanzi !== false) { %>

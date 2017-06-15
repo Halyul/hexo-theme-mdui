@@ -8,12 +8,20 @@
 </style>
 <div class="post-bg-color
   <% if (theme.style.scheme === 'now') { %>
-    mdui-color-theme
+    <% if (theme.color.layout === 'dark') { %>
+      mdui-color-grey-900
+    <% } else { %>
+      mdui-color-theme
+    <% } %>
   <% } %>
 "></div>
 <div class="post-header
   <% if (theme.style.scheme === 'now') { %>
-    mdui-color-theme
+    <% if (theme.color.layout === 'dark') { %>
+      mdui-color-grey-900
+    <% } else { %>
+      mdui-color-theme
+    <% } %>
   <% } %>
 ">
   <div class="post-header-container">
@@ -91,7 +99,13 @@
         <% } %>
       <% } %>
     </div>
-    <div id="card-toc" class="animate mdui-color-theme">
+    <div id="card-toc" class="animate
+    <% if (theme.color.layout === 'dark') { %>
+      mdui-color-grey-900
+    <% } else { %>
+      mdui-color-theme
+    <% } %>
+    ">
       <%- customToc(page.content, {
                 class: 'post-toc'
             }) %>

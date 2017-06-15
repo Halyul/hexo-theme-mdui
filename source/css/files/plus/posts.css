@@ -103,6 +103,10 @@
   background: #eee;
 }
 
+.mdui-theme-layout-dark .posts-bottom .mdui-chip, .mdui-theme-layout-dark .posts-bottom .mdui-chip-icon, .mdui-theme-layout-dark .index-welcome .mdui-chip, .mdui-theme-layout-dark .index-welcome .mdui-chip-icon {
+  background: #484848;
+}
+
 .posts-bottom .mdui-chip {
   margin: 0 8px;
 }
