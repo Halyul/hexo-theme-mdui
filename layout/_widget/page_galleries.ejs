@@ -5,11 +5,11 @@
         <div class="mdui-col-xs-6 mdui-col-md-3">
           <a href="<%= site.data.galleries[i].link %>" target="_self" class="no-text-decoration item">
             <div class="mdui-grid-tile card-bottom-fix">
-              <div class="bg lazyload" data-original="<%= site.data.galleries[i].bg %>"></div>
+              <div class="bg" src="<%= site.data.galleries[i].bg %>"></div>
               <div class="mdui-grid-tile-actions no-padding-top">
                 <div class="mdui-grid-tile-text">
                   <% if (site.data.galleries[i].logo) { %>
-                    <img class="mdui-img-circle logo lazyload" data-original="<%= site.data.galleries[i].logo %>"/>
+                    <img class="mdui-img-circle logo" src="<%= site.data.galleries[i].logo %>"/>
                   <% } %>
                   <div class="mdui-grid-tile-title"><%= i %></div>
                   <div class="mdui-grid-tile-subtitle mdui-text-color-theme-secondary"><%= site.data.galleries[i].descr %></div>

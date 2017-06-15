@@ -3,7 +3,7 @@
 %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
   <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar lazyload" data-original="<%= theme.style.avatar %>"/>
+    <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
     <div class="content mdui-valign">
       <div class="mdui-typo-body-1-opacity mdui-typo">
         <span><%= config.author %></span>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="flex-spacer"></div>
-    <div class="posts-thumbnail lazyload" data-original="<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"></div>
+    <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
   </div>
   <div class="mdui-divider" style="margin: 0 16px;"></div>
   <div class="posts-bottom">

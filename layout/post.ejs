@@ -45,7 +45,7 @@
   <div class="post-adjust">
     <div class="mdui-card card-bottom-fix menu-fix animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
       <div class="mdui-card-media">
-        <img class="lazyload" data-original="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+        <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>
       <div class="post-content mdui-typo no-margin
         <%= theme.post.prism.theme %>

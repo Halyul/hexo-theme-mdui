@@ -5,7 +5,7 @@
 <div id="side-content" class="mdui-color-<%= color[num] %> animate">
   <div class="mdui-grid-tile" style="overflow: visible;">
     <div class="bg">
-      <img class="lazyload" data-original="<%= config.root + 'img/random/picHD_' + randomPic + '.png' %>" />
+      <img src="<%= config.root + 'img/random/picHD_' + randomPic + '.png' %>" />
     </div>
     <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
       <div class="flex-spacer"></div>
@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="content">
-    <img class="mdui-img-circle avatar lazyload" data-original="<%= theme.style.avatar %>"/>
+    <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>"/>
     <div class="author mdui-text-center">
       <%= config.author %>
     </div>

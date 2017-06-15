@@ -3,11 +3,6 @@ console.info("\u7248\u6743\u6240\u6709\uff0c\u7ffb\u7248\u5fc5\u7a76\uff01\u000d
 
 var $$ = mdui.JQ;
 
-/* lazyload */
-var myLazyLoad = new LazyLoad({
-    elements_selector: ".lazyload"
-});
-
 /* smooth scroll */
 (function() {
   $$(document).ready(function () {
