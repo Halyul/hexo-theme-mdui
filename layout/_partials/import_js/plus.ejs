@@ -1,6 +1,4 @@
-<%- partial('js/share') %>
-
-<script>
+<script type="text/ls-javascript" id="back-button-script">
   /* back button */
   (function() {
     $$(document).on('click', 'button[back]', function() {
@@ -22,7 +20,7 @@
     <%- partial('../../_widget/mathjax') %>
   <% } %>
 
-  <script>
+  <script type="text/ls-javascript" id="post-toc-script">
     /* post toc */
     (function() {
       $$(document).ready(function(){
@@ -40,7 +38,7 @@
 <% // index pagination toast
   if (page.total > 1)
 { %>
-  <script type="text/javascript">
+  <script type="text/ls-javascript" id="snackbar-script">
     $$(document).on('click', 'a[name="snackbar"]', function () {
       mdui.snackbar({
         message: '<%= __('global.snackbar') %>',
@@ -60,7 +58,7 @@
     })
   </script>
   <% if (theme.about_me === true) { %>
-    <script>
+    <script type="text/ls-javascript" id="about-me-dialog-script">
       /* aboutme dialog */
       (function() {
         $$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
@@ -118,23 +116,5 @@
 
 <% // to top fab
   if (is_home() || is_archive() || is_year() || is_category() || is_tag()) { %>
-  <script>
-    /* fab */
-    (function() {
-      var pageFlag = false;
-      var fab = new mdui.Fab('#toTop');
-      fab.hide();
-      $$(window).on('scroll', function() {
-        var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        var pageLocation = $$('div#top').offset().top - bodyTop;
-        if (!pageFlag && pageLocation < 0) {
-          fab.show();
-          pageFlag = true;
-        } else if (pageFlag && pageLocation >= 0) {
-          fab.hide();
-          pageFlag = false;
-        }
-      });
-    })();
-  </script>
+  <%- partial('js/to_top')%>
 <% } %>
