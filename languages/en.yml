@@ -8,7 +8,6 @@ global:
   tags: 'Tags'
   years: 'Years'
   busuanzi_views: 'Views: '
-  snackbar: 'Oops! Nothing happened.'
 archive:
   post: 'Post'
   posts: 'Posts'

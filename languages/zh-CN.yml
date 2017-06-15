@@ -8,7 +8,6 @@ global:
   tags: '标签'
   years: '年份'
   busuanzi_views: '浏览量: '
-  snackbar: '额...啥都没发生'
 archive:
   post: '篇文章'
   posts: '篇文章'

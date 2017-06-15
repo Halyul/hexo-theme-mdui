@@ -95,7 +95,11 @@
 <% // index toolbar search
   if (is_home())
 { %>
-  <%- partial('js/now/search') %>
+  <%- partial('js/now/index_search') %>
+<% } %>
+
+<% if (!is_home() && !is_archive() && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends') { %>
+  <%- partial('js/now/appbar_search') %>
 <% } %>
 
 <% // appbar style change in category, tag ,year posts page

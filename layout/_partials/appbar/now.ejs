@@ -35,18 +35,20 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         </a>
       <% } %>
       <% if (theme.appbar.search === true) { %>
-        <div class="search mdui-hidden-xs" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <div class="search mdui-hidden-xs" onclick="openSearch()" id="search">
           <div class="icon">
             <i class="mdui-icon material-icons">&#xe8b6;</i>
           </div>
           <div class="text">
-            <%= __('search.text') %>
+            <span id="search-text"><%= __('search.text') %></span>
+            <input id="search-input" class="mdui-hidden" type="text" placeholder="<%= __('search.text') %>" id="search-input"/>
           </div>
         </div>
       <% } %>
       <div class="flex-spacer mdui-hidden-sm"></div>
       <% if (theme.appbar.search === true) { %>
-        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
       <% } %>
       <% if (theme.busuanzi !== false) { %>
         <% if(theme.busuanzi.post_pv === true) { %>
@@ -67,34 +69,32 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
             <span></span>
           </i>
         </button>
-        <% if (theme.appbar.title && page.layout === 'friends') { %>
+        <% if (theme.appbar.title) { %>
           <a href="<%= config.root %>" class="mdui-typo-headline">
             <%= theme.appbar.title %>
           </a>
-        <% } else { %>
-          <a href="<%= config.root %>" class="mdui-typo-headline mdui-hidden-sm-down">
-            <%= theme.appbar.title %>
-          </a>
-          <span class="appbar-border-line mdui-hidden-sm-down"></span>
+          <span class="appbar-border-line"></span>
         <% } %>
-        <% if (is_category() || is_tag() || is_year()) {%>
+        <% if (is_category() || is_tag() || is_year() || page.layout === 'friends') {%>
           <span class="mdui-typo-title <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>">
             <%= pageTitle %>
           </span>
         <% } %>
-        <% if (theme.appbar.search === true) { %>
-          <div class="search mdui-hidden-xs" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <% if (theme.appbar.search === true && page.layout !== 'friends') { %>
+          <div class="search mdui-hidden-xs" onclick="openSearch()" id="search">
             <div class="icon">
               <i class="mdui-icon material-icons">&#xe8b6;</i>
             </div>
             <div class="text">
-              <%= __('search.text') %>
+              <span id="search-text"><%= __('search.text') %></span>
+              <input id="search-input" class="mdui-hidden" type="text" placeholder="<%= __('search.text') %>" id="search-input"/>
             </div>
           </div>
         <% } %>
         <div class="flex-spacer mdui-hidden-sm"></div>
         <% if (theme.appbar.search === true) { %>
-          <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+          <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
+          <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
         <% } %>
         <% if (theme.busuanzi !== false) { %>
           <% if(theme.busuanzi.post_pv === true) { %>
@@ -122,16 +122,6 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
             <span class="appbar-border-line mdui-hidden-sm-down"></span>
           <% } %>
           <span class="mdui-typo-title"><%= config.author %></span>
-          <% if (theme.appbar.search === true) { %>
-            <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
-              <div class="icon">
-                <i class="mdui-icon material-icons">&#xe8b6;</i>
-              </div>
-              <div class="text">
-                <%= __('search.text') %>
-              </div>
-            </div>
-          <% } %>
           <div class="mdui-toolbar-spacer"></div>
           <% if (theme.about_me === true) { %>
             <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
@@ -177,4 +167,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% } %>
     </div>
   </div>
+<% } %>
+<% if (!is_home() && !is_archive() && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends') { %>
+  <div id="search-cover" searchResult onclick="closeSearch()"></div>
 <% } %>

@@ -246,7 +246,7 @@ body #blog-appbar button.style-fix {
     padding-top: 0;
     padding-left: 0;
   }
-  body.style-fix #blog-appbar {
+  body.style-fix #blog-appbar, body.style-fix #blog-appbar .mdui-toolbar {
     box-shadow: none;
   }
   body.style-fix #blog-appbar .mdui-color-theme {

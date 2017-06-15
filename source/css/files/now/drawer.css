@@ -6,6 +6,12 @@
   transform: translateX(-120%);
 }
 
+@media (max-width: 380px) {
+  #drawer.mdui-drawer {
+    width: 240px;
+  }
+}
+
 #drawer .content div.pages {
   display: none;
 }

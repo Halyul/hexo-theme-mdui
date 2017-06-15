@@ -1,4 +1,8 @@
 /* appbar */
+#blog-appbar {
+  z-index: 1500;
+}
+
 #blog-appbar.mdui-appbar-fixed .mdui-toolbar {
   transition: margin .3s cubic-bezier(0,0,.2,1);
 }
@@ -40,6 +44,10 @@
   flex-grow: 1;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+#blog-appbar .search .text span {
+  line-height: 24px;
 }
 
 #blog-appbar .search .text input {

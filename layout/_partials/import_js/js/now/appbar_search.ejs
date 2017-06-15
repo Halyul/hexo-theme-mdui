@@ -1,0 +1,32 @@
+<script>
+  var appbar = document.querySelector('#blog-appbar');
+  var toolbar = document.querySelector('#blog-appbar > .mdui-toolbar');
+  var textSpan = document.querySelector('#search-text');
+  var textInput = document.querySelector('#search-input');
+  var closeBtn = document.querySelector('#close-button');
+  var searchCover = document.querySelector('#search-cover');
+  function openSearch() {
+    textSpan.classList.add('mdui-hidden');
+    textInput.classList.remove('mdui-hidden');
+    document.getElementById("search-input").focus();
+    searchCover.classList.add('active');
+    toolbar.classList.add('mdui-shadow-2');
+    closeBtn.classList.remove('mdui-hidden');
+  }
+  function closeSearch() {
+    textSpan.classList.remove('mdui-hidden');
+    textInput.classList.add('mdui-hidden');
+    searchCover.classList.remove('active');
+    closeBtn.classList.add('mdui-hidden');
+
+    var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var pageLocation = $$('div#top').offset().top - bodyTop;
+    if (pageLocation >= 0) {
+      toolbar.classList.remove('mdui-shadow-2');
+    }
+  }
+  function mobileSearch() {
+
+  }
+</script>
+<%- partial('../../../../_widget/js/search/now') %>
