@@ -35,19 +35,6 @@
   </script>
 <% } %>
 
-<% // index pagination toast
-  if (page.total > 1)
-{ %>
-  <script type="text/ls-javascript" id="snackbar-script">
-    $$(document).on('click', 'a[name="snackbar"]', function () {
-      mdui.snackbar({
-        message: '<%= __('global.snackbar') %>',
-        timeout: 1000
-      });
-    });
-  </script>
-<% } %>
-
 <%  // archive page parallax background
   if (is_archive())
 { %>
