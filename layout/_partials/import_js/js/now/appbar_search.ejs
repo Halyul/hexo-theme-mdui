@@ -15,9 +15,9 @@
   var flexSpacer =  document.querySelector('.flex-spacer.mdui-hidden-sm');
 
   function openSearch() {
-    hide(textSpan);
-    show(textInput);
-    show(closeBtn);
+    textSpan.hide();
+    textInput.show();
+    closeBtn.show();
     textInput.focus();
     searchCover.classList.add('active');
     toolbar.classList.add('mdui-shadow-2');
@@ -25,19 +25,19 @@
 
   function mobileSearch() {
     /* mobile */
-    hide(drawerBtn);
-    hide(siteTitle);
-    hide(searchBtn);
-    hide(flexSpacer);
+    drawerBtn.hide();
+    siteTitle.hide();
+    searchBtn.hide();
+    flexSpacer.hide();
     search.classList.remove('mdui-hidden-xs');
     openSearch();
   }
 
   function closeSearch() {
     /* global */
-    show(textSpan)
-    hide(textInput)
-    hide(closeBtn)
+    textSpan.show()
+    textInput.hide()
+    closeBtn.hide()
     searchCover.classList.remove('active');
 
     var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -47,18 +47,18 @@
     }
 
     /* mobile */
-    show(drawerBtn);
-    show(siteTitle);
-    show(searchBtn);
-    show(flexSpacer);
+    drawerBtn.show();
+    siteTitle.show();
+    searchBtn.show();
+    flexSpacer.show();
     search.classList.add('mdui-hidden-xs');
   }
 
-  function hide(e) {
-    e.classList.add('mdui-hidden');
-  }
-  function show(e) {
-    e.classList.remove('mdui-hidden');
-  }
+  Element.prototype.hide = function () {
+    this.classList.add('mdui-hidden');
+  };
+  Element.prototype.show = function () {
+    this.classList.remove('mdui-hidden');
+  };
 </script>
 <%- partial('../../../../_widget/js/search/now') %>
