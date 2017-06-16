@@ -2,10 +2,11 @@
   /* global */
   var appbar = document.querySelector('#blog-appbar');
   var toolbar = document.querySelector('#blog-appbar > .mdui-toolbar');
+  var closeBtn = document.querySelector('#close-button');
   var textSpan = document.querySelector('#search-text');
   var textInput = document.querySelector('#search-input');
-  var closeBtn = document.querySelector('#close-button');
   var searchCover = document.querySelector('#search-cover');
+  var indexMoreBtn = document.querySelector('#index-more');
 
   /* mobile */
   var drawerBtn = document.querySelector('.drawer-button');
@@ -16,6 +17,7 @@
 
   function openSearch() {
     hide(textSpan);
+    hide(indexMoreBtn);
     show(textInput);
     show(closeBtn);
     textInput.focus();
@@ -36,6 +38,7 @@
   function closeSearch() {
     /* global */
     show(textSpan)
+    show(indexMoreBtn)
     hide(textInput)
     hide(closeBtn)
     searchCover.classList.remove('active');
