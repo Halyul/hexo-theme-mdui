@@ -45,7 +45,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           </div>
         </div>
       <% } %>
-      <div class="flex-spacer mdui-hidden-sm"></div>
+      <% if (theme.appbar.search !== true) { %>
+        <div class="flex-spacer"></div>
+      <% } else { %>
+        <div class="flex-spacer mdui-hidden-sm"></div>
+      <% } %>
       <% if (theme.appbar.search === true) { %>
         <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
         <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
@@ -85,7 +89,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
             </div>
           </div>
         <% } %>
-        <div class="flex-spacer mdui-hidden-sm"></div>
+        <% if (theme.appbar.search !== true) { %>
+          <div class="flex-spacer"></div>
+        <% } else { %>
+          <div class="flex-spacer mdui-hidden-sm"></div>
+        <% } %>
         <% if (theme.appbar.search === true) { %>
           <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
           <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>

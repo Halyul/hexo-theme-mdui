@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: 'ow'
+  scheme: 'now'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
