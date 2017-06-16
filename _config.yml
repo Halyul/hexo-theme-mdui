@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: 'nw'
+  scheme: 'now'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -47,12 +47,12 @@ post:
       link: 'https://paypal.com'
       fa: 'fa-paypal'
 
-share_menu:
+share_menu: false
 #  rss: false
 #  weibo: false
 #  twitter: true
 #  facebook: true
-  googleplus: true
+#  googleplus: true
 #  linkedin: true
 #  qq: false
 #  telegram: false
