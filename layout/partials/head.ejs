@@ -1,0 +1,76 @@
+<%
+var pageTitle = page.title || '';
+if (is_home()) pageTitle = __('global.index');
+if (is_archive()) pageTitle = __('global.archives');
+if (is_tag()) pageTitle = __('global.tag') + ': ' + page.tag;
+if (is_category()) pageTitle = __('global.category') + ': ' + page.category;
+if (is_year()) pageTitle = page.year;
+if (page.path === 'search/index.html') pageTitle = __('search.text');
+pageTitle += ' - ' + config.title;
+%>
+<head>
+  <meta charset="UTF-8">
+  <title><%= pageTitle %></title>
+
+  <!-- Favicons -->
+  <link rel="icon shortcut" type="image/ico" href="<%= theme.head.favicon %>">
+  <link rel="icon" sizes="192x192" href="<%= theme.head.high_res_favicon %>">
+  <link rel="apple-touch-icon" href="<%= theme.head.apple_touch_icon %>">
+
+  <!-- Meta & Info -->
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
+    <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: primary_color }) %>">
+  <% } else { %>
+    <meta name="theme-color" content="<%= partial('judge/primary_color_hex', { primary_color: false }) %>">
+  <% } %>
+
+  <meta name="author" content="<%= config.author %>">
+  <meta name="description" content="<%= config.description %>">
+  <meta name="keywords" content="<%= theme.head.keywords %>">
+
+  <!--iOS -->
+  <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="480">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:url" content="<%= config.url %>">
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="<% if (pageTitle) { %><%= pageTitle %> | <% } %><%= config.title %>">
+  <meta property="og:description" content="<%= config.description %>">
+
+  <!-- Cache -->
+  <meta http-equiv="Cache-Control" content="max-age=7200" />
+  <meta http-equiv="Expires" content="Fri, 29 Dec 2017 23:00:00 GMT" />
+
+  <% if (theme.service_woker === 'pwa') { %>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+  <% } %>
+
+  <!-- Import CSS -->
+  <% if(theme.vendors.style_min_css) { %>
+    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.style_min_css %>" />
+  <% } else { %>
+    <%- css("css/style-v20170507.min") %>
+  <% } %>
+
+  <!-- Custom Head -->
+  <%-partial('../custom/custom_head')%>
+
+  <% if (theme.color.bg_color && page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
+    <style>
+      body {
+        background-color: <%= theme.color.bg_color %>;
+      }
+    </style>
+  <% } %>
+</head>
