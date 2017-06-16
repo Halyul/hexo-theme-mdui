@@ -1,4 +1,9 @@
 <script type="text/ls-javascript" id="back-button-script">
+  /* swipable drawer */
+  (function () {
+    var drawer = new mdui.Drawer('#drawer', {swipe: true});
+  })();
+
   /* back button */
   (function() {
     $$(document).on('click', 'button[back]', function() {

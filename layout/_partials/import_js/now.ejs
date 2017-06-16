@@ -1,4 +1,9 @@
 <script type="text/ls-javascript" id="global-script">
+  /* swipable drawer */
+  (function () {
+    var drawer = new mdui.Drawer('#drawer', {swipe: true});
+  })();
+
   /* appbar button */
   $$(document).on('open.mdui.drawer', '#drawer', function (e) {
     $$('.drawer-button').addClass('back');
