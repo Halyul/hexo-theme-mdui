@@ -28,15 +28,7 @@
     <div class="post-title mdui-text-truncate"><%= page.title %></div>
     <div class="post-actions">
       <span><%= date(page.date, 'MMM DD, YYYY') %></span>
-      <% if(theme.post.qr_code === true) { %>
-        <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right mdui-hidden-xs-down" mdui-menu="{target: '#menu-qrcode'}">
-          <i class="mdui-icon material-icons">&#xe337;</i>
-          </button>
-          <%- partial('_partials/menu/qrcode') %>
-      <% } %>
-      <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-post-share'}">
-        <i class="mdui-icon material-icons">&#xe80d;</i>
-      </button>
+      <%- partial('_partials/menu/qrcode') %>
       <%- partial('_partials/menu/post_share') %>
     </div>
   </div>

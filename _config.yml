@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: 'now'
+  scheme: 'nw'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -27,7 +27,7 @@ color:
 # appbar
 appbar:
   title: "Title"
-  search: true
+  search: false
 
 index:
   welcome: "Welcome to my blog~"
@@ -47,15 +47,15 @@ post:
       link: 'https://paypal.com'
       fa: 'fa-paypal'
 
-share_menu: #false
-  rss: false
-  weibo: false
-  twitter: true
-  facebook: true
+share_menu:
+#  rss: false
+#  weibo: false
+#  twitter: true
+#  facebook: true
   googleplus: true
-  linkedin: true
-  qq: false
-  telegram: false
+#  linkedin: true
+#  qq: false
+#  telegram: false
 
 comment:
     use:
@@ -73,12 +73,11 @@ footer:
 # Plugins
 busuanzi: false
 #    all_site_uv: true
-#    post_pv: true
 #    busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 service_woker:
 
-about_me: true
+about_me: false
 
 pace: false
 
