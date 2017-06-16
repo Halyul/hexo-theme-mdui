@@ -50,13 +50,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
         <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
       <% } %>
-      <% if (theme.busuanzi !== false) { %>
-        <% if(theme.busuanzi.post_pv === true) { %>
-          <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
-            <i class="mdui-icon material-icons">&#xe417;</i>
-          </button>
-        <% } %>
-      <% } %>
+      <%- partial('../menu/index_more') %>
     </div>
   </div>
 <% // appbar for friends, category, tag, year page
@@ -96,13 +90,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
           <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
         <% } %>
-        <% if (theme.busuanzi !== false) { %>
-          <% if(theme.busuanzi.post_pv === true) { %>
-            <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
-              <i class="mdui-icon material-icons">&#xe417;</i>
-            </button>
-          <% } %>
-        <% } %>
+        <%- partial('../menu/index_more') %>
       </div>
     </div>
   <% // appbar for archive page
@@ -126,13 +114,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           <% if (theme.about_me === true) { %>
             <button class="mdui-btn mdui-btn-dense mdui-ripple mdui-hidden-md-up" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
           <% } %>
-          <% if (theme.busuanzi !== false) { %>
-            <% if(theme.busuanzi.post_pv === true) { %>
-              <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#menu-index-more'}"  id="busuanzi_container_page_pv">
-                <i class="mdui-icon material-icons">&#xe417;</i>
-              </button>
-            <% } %>
-          <% } %>
+          <%- partial('../menu/index_more') %>
         </div>
       </div>
 <% // appbar for galleries and gallery
@@ -154,6 +136,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <span class="appbar-border-line mdui-hidden-xs"></span>
       <span class="mdui-typo-title"><%= page.title %></span>
       <div class="mdui-toolbar-spacer"></div>
+      <%- partial('../menu/index_more') %>
       <%- partial('../menu/page_share') %>
       <% if (page.layout !== 'gallery') { %>
         <span class="appbar-border-line mdui-hidden-xs"></span>
