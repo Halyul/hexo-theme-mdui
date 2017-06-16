@@ -15,30 +15,30 @@
   var flexSpacer =  document.querySelector('.flex-spacer.mdui-hidden-sm');
 
   function openSearch() {
-    textSpan.classList.add('mdui-hidden');
-    textInput.classList.remove('mdui-hidden');
-    document.getElementById("search-input").focus();
+    hide(textSpan);
+    show(textInput);
+    show(closeBtn);
+    textInput.focus();
     searchCover.classList.add('active');
     toolbar.classList.add('mdui-shadow-2');
-    closeBtn.classList.remove('mdui-hidden');
   }
 
   function mobileSearch() {
     /* mobile */
-    drawerBtn.classList.add('mdui-hidden');
-    siteTitle.classList.add('mdui-hidden');
-    searchBtn.classList.add('mdui-hidden');
-    flexSpacer.classList.add('mdui-hidden');
+    hide(drawerBtn);
+    hide(siteTitle);
+    hide(searchBtn);
+    hide(flexSpacer);
     search.classList.remove('mdui-hidden-xs');
     openSearch();
   }
 
   function closeSearch() {
     /* global */
-    textSpan.classList.remove('mdui-hidden');
-    textInput.classList.add('mdui-hidden');
+    show(textSpan)
+    hide(textInput)
+    hide(closeBtn)
     searchCover.classList.remove('active');
-    closeBtn.classList.add('mdui-hidden');
 
     var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
     var pageLocation = document.querySelector('div#top').offsetTop - bodyTop;
@@ -47,11 +47,18 @@
     }
 
     /* mobile */
-    drawerBtn.classList.remove('mdui-hidden');
-    siteTitle.classList.remove('mdui-hidden');
-    searchBtn.classList.remove('mdui-hidden');
+    show(drawerBtn);
+    show(siteTitle);
+    show(searchBtn);
+    show(flexSpacer);
     search.classList.add('mdui-hidden-xs');
-    flexSpacer.classList.remove('mdui-hidden');
+  }
+
+  function hide(e) {
+    e.classList.add('mdui-hidden');
+  }
+  function show(e) {
+    e.classList.remove('mdui-hidden');
   }
 </script>
 <%- partial('../../../../_widget/js/search/now') %>
