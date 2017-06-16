@@ -10,7 +10,7 @@ pageTitle += ' - ' + config.title;
 %>
 <head>
   <script>
-    window.releaseDate = "20170615"
+    window.releaseDate = "20170616"
     // Delete localstorage with these tags
     window.oldVersion = [
       'dev',
@@ -84,18 +84,18 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170615" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170616" />
   <% } else { %>
-    <%- css("css/fonts-v20170615.min") %>
+    <%- css("css/fonts-v20170616.min") %>
   <% } %>
   <% if(theme.vendors.style_min_css) { %>
     <%- cssLsload({path:(theme.vendors.style_min_css),key:'style_css'}) %>
   <% } else { %>
     <% if (theme.style.scheme === 'now') { %>
-      <%- cssLsload({path:(config.root + 'css/style-now-v20170615.min'),key:'style_css'}) %>
+      <%- cssLsload({path:(config.root + 'css/style-now-v20170616.min'),key:'style_css'}) %>
       <%- css('css/files/now/appbar') %>
     <% } else { %>
-      <%- cssLsload({path:(config.root + 'css/style-plus-v20170615.min'),key:'style_css'}) %>
+      <%- cssLsload({path:(config.root + 'css/style-plus-v20170616.min'),key:'style_css'}) %>
     <% } %>
   <% } %>
 
