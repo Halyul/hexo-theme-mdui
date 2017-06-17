@@ -26,44 +26,46 @@
     <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
   </div>
   <div class="mdui-divider" style="margin: 0 16px;"></div>
-  <div class="posts-bottom">
-    <% if (page.category !== false) { %>
-      <div class="mdui-chip">
-        <span class="mdui-chip-icon"><i class="mdui-icon
-        <% if (theme.color.layout !== 'dark') { %>
-          mdui-text-color-black-icon
-        <% } %>
-         material-icons mdui-text-center">&#xe149;</i></span>
-      </div>
-      <div class="content mdui-typo">
-        <% post.categories.map(function(category){  %>
-          <a href="<%= config.root %>categories/<%= category.name %>/">
-            <span><%= category.name %></span>
-          </a>
-        <% }) %>
-      </div>
-    <% } %>
-    <% if (post.tag !== false) { %>
-      <div class="mdui-chip">
-        <span class="mdui-chip-icon"><i class="mdui-icon
-         <% if (theme.color.layout !== 'dark') { %>
-           mdui-text-color-black-icon
-         <% } %>
-         fa fa-tags mdui-text-center"></i></span>
-      </div>
-      <div class="content mdui-typo">
-        <% post.tags.map(function(tag){  %>
-          <a href="<%= config.root %>tags/<%= tag.name %>/">
-            <span><%= tag.name %></span>
-          </a>
-        <% }) %>
-      </div>
-    <% } %>
-    <div class="flex-spacer"></div>
-    <% if (post.pinned === true) { %>
-      <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
-        <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
-      </div>
-    <% } %>
-  </div>
+  <% if (post.category !== false || post.tag !== false || post.pinned === true) { %>
+    <div class="posts-bottom">
+      <% if (post.category !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon
+          <% if (theme.color.layout !== 'dark') { %>
+            mdui-text-color-black-icon
+          <% } %>
+           material-icons mdui-text-center">&#xe149;</i></span>
+        </div>
+        <div class="content mdui-typo">
+          <% post.categories.map(function(category){  %>
+            <a href="<%= config.root %>categories/<%= category.name %>/">
+              <span><%= category.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      <% } %>
+      <% if (post.tag !== false) { %>
+        <div class="mdui-chip">
+          <span class="mdui-chip-icon"><i class="mdui-icon
+           <% if (theme.color.layout !== 'dark') { %>
+             mdui-text-color-black-icon
+           <% } %>
+           fa fa-tags mdui-text-center"></i></span>
+        </div>
+        <div class="content mdui-typo">
+          <% post.tags.map(function(tag){  %>
+            <a href="<%= config.root %>tags/<%= tag.name %>/">
+              <span><%= tag.name %></span>
+            </a>
+          <% }) %>
+        </div>
+      <% } %>
+      <div class="flex-spacer"></div>
+      <% if (post.pinned === true) { %>
+        <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
+          <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
+        </div>
+      <% } %>
+    </div>
+  <% } %>
 </div>
