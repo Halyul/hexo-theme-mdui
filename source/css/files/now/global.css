@@ -181,3 +181,7 @@ span.badge[data-badge-caption]::after {
 .mdui-toolbar {
   width: auto;
 }
+
+.lg-backdrop {
+  z-index: 1600;
+}
