@@ -138,3 +138,7 @@ span.badge[data-badge-caption]::after {
     transform: translateX(-120%);
   }
 }
+
+.lg-backdrop {
+  z-index: 1600;
+}

@@ -10,7 +10,7 @@ pageTitle += ' - ' + config.title;
 %>
 <head>
   <script>
-    window.mduiVersion = "1.4.0"
+    window.mduiVersion = "1.4.1"
     // Delete localstorage with these tags
     window.oldVersion = [
       'dev',
@@ -19,7 +19,7 @@ pageTitle += ' - ' + config.title;
   <!--
         © HEXO MDUI Theme
         https://github.com/Halyul/hexo-theme-mdui
-        Version: 1.4.0 -->
+        Version: 1.4.1 -->
   <meta charset="UTF-8">
   <title><%= pageTitle %></title>
 
@@ -97,7 +97,6 @@ pageTitle += ' - ' + config.title;
   <% } else { %>
     <% if (theme.style.scheme === 'now') { %>
       <%- cssLsload({path:(config.root + 'css/style-now-v20170617.min'),key:'style_css'}) %>
-      <%- css('css/files/now/appbar') %>
     <% } else { %>
       <%- cssLsload({path:(config.root + 'css/style-plus-v20170617.min'),key:'style_css'}) %>
     <% } %>
