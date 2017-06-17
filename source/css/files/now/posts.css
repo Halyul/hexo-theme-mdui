@@ -1,0 +1,90 @@
+.posts-header, .posts-content, .posts-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
+.posts-header {
+  height: 54px;
+}
+
+.posts-header .content {
+  font-weight: 500;
+  margin-right: 16px;
+  padding: 0 0 0 16px;
+  white-space: nowrap;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  opacity: .87;
+}
+
+.posts-header .mdui-card-header-avatar {
+  width: 24px;
+  height: 24px;
+}
+
+.posts-header a.mdui-btn {
+  opacity: .54;
+}
+
+.posts-header a.mdui-btn.btn-dense {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.posts-header a.mdui-btn.btn-dense i {
+    font-size: 16px;
+}
+
+.posts-title {
+  font-weight: 400;
+}
+
+.posts-strip {
+  opacity: .54;
+  letter-spacing: 0;
+}
+
+.posts-thumbnail {
+  margin-left: 16px;
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  min-height: 64px;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll;
+}
+
+.posts-bottom {
+  padding: 16px;
+}
+
+.posts-bottom .mdui-chip, .posts-bottom .mdui-chip-icon {
+  background: #eee;
+}
+
+.mdui-theme-layout-dark .posts-bottom .mdui-chip, .mdui-theme-layout-dark .posts-bottom .mdui-chip-icon {
+  background: #484848;
+}
+
+.posts-bottom .mdui-chip {
+  margin-right: 8px;
+}
+
+.posts-bottom .content a {
+  font-size: 12px;
+  line-height: 36px;
+  margin-right: 4px;
+}

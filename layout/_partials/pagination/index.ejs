@@ -1,0 +1,105 @@
+<% if (page.total > 1) { %>
+  <ul class="pagination">
+    <% if (page.current != 1) { %>
+    <li class="mdui-ripple">
+      <% if (page.prev_link) { %>
+      <a href="<%=url_for(page.prev_link)%>" class="mdui-text-color-theme-text">
+      <% } else if (page.prev) { %>
+      <a href="<%=url_for(page.prev.path)%>" class="mdui-text-color-theme-text">
+      <% } %>
+        <i class="mdui-icon material-icons">&#xe5cb;</i>
+      </a>
+    </li>
+    <% } else { %>
+    <li>
+      <a class="mdui-text-color-theme-icon-disabled">
+        <i class="mdui-icon material-icons">&#xe5cb;</i>
+      </a>
+    </li>
+    <% } %>
+
+    <% if (page.current - p != 1) { %>
+      <% if (page.current != 1) { %>
+        <li class="mdui-ripple">
+          <a href="<%- base %>" class="mdui-text-color-theme-text">
+            1
+          </a>
+        </li>
+      <% } else { %>
+        <li class="mdui-color-theme-accent">
+          <a class="mdui-text-color-theme-text">1</a>
+        </li>
+      <% } %>
+    <% } %>
+
+    <% if (page.current - show > show) { %>
+      <li class="mdui-ripple mdui-text-color-theme-text">
+        <a class="mdui-text-color-theme-text">..</a>
+      </li>
+    <% } %>
+
+    <% for (var p = show; p > 0; p--) { %>
+      <% if(page.current - p > 0) { %>
+        <% if (page.current - p != 1) { %>
+          <li class="mdui-ripple">
+            <a href="<%- base + config.pagination_dir %>/<%= page.current - p %>/" class="mdui-text-color-theme-text">
+              <%= page.current - p %>
+            </a>
+          </li>
+        <% } %>
+      <% } %>
+    <% } %>
+
+    <% if (page.current - p != 1) { %>
+      <li class="mdui-color-theme-accent">
+        <a class="mdui-text-color-theme-text"><%= page.current %></a>
+      </li>
+    <% } %>
+
+    <% for (var p = 1; p < show + 1; p++) { %>
+      <% if(page.current + p < page.total) { %>
+        <li class="mdui-ripple">
+          <a href="<%- base + config.pagination_dir %>/<%= page.current + p %>/" class="mdui-text-color-theme-text">
+            <%= page.current + p %>
+          </a>
+        </li>
+      <% } %>
+    <% } %>
+
+    <% if (page.total - page.current > show + 1) { %>
+      <li class="mdui-ripple">
+        <a class="mdui-text-color-theme-text" name="snackbar">..</a>
+      </li>
+    <% } %>
+
+    <% if (page.current != page.total) { %>
+      <li class="mdui-ripple">
+        <a href="<%- base + config.pagination_dir %>/<%= page.total %>/" class="mdui-text-color-theme-text">
+          <%= page.total %>
+        </a>
+      </li>
+    <% } %>
+
+    <% if (page.current != page.total) { %>
+      <% if (page.next_link) { %>
+        <li class="mdui-ripple">
+          <a href="<%=url_for(page.next_link)%>" class="mdui-text-color-theme-text">
+            <i class="mdui-icon material-icons">&#xe5cc;</i>
+          </a>
+        </li>
+      <% } else if (page.next) { %>
+        <li>
+          <a class="mdui-text-color-theme-icon-disabled">
+            <i class="mdui-icon material-icons">&#xe5cc;</i>
+          </a>
+        </li>
+      <% } %>
+    <% } else { %>
+      <li>
+        <a class="mdui-text-color-theme-icon-disabled">
+          <i class="mdui-icon material-icons">&#xe5cc;</i>
+        </a>
+      </li>
+    <% } %>
+   </ul>
+<% } %>

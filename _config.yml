@@ -3,6 +3,7 @@ location:
 
 # style
 style:
+  scheme: 'now'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -26,10 +27,7 @@ color:
 # appbar
 appbar:
   title: "Title"
-  search: false
-
-index:
-  welcome: "Welcome to my blog~"
+  search: true
 
 index:
   welcome: "Welcome to my blog~"
@@ -49,15 +47,15 @@ post:
       link: 'https://paypal.com'
       fa: 'fa-paypal'
 
-share_menu: #false
-  rss: false
-  weibo: false
-  twitter: true
-  facebook: true
-  googleplus: true
-  linkedin: true
-  qq: false
-  telegram: false
+share_menu: false
+#  rss: false
+#  weibo: false
+#  twitter: true
+#  facebook: true
+#  googleplus: true
+#  linkedin: true
+#  qq: false
+#  telegram: false
 
 comment:
     use:
@@ -73,7 +71,7 @@ footer:
   ICP:
 
 # Plugins
-busuanzi: #false
+busuanzi:
     all_site_uv: true
     post_pv: true
     busuanzi_pure_mini_js: "//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
@@ -82,7 +80,9 @@ service_woker:
 
 about_me: false
 
-random_pics: 25
+pace: false
+
+random_pics: 44
 
 pages:
   Test1:
@@ -135,6 +135,9 @@ sns:
 
 # Vendors
 vendors:
+  fonts_min_css:
   style_min_css:
   js_min_js:
   outdatedbrowser_min_js:
+  pace_min_js:
+  pace_style_css:

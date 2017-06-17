@@ -8,11 +8,12 @@ global:
   tags: 'Tags'
   years: 'Years'
   busuanzi_views: 'Views: '
-  snackbar: 'Oops! Nothing happened.'
 archive:
   post: 'Post'
   posts: 'Posts'
   about: 'About'
+  more: 'MORE'
+  less: 'LESS'
 posts:
   header: 'Something that I have posted'
   public: 'Public'
@@ -25,10 +26,8 @@ posts:
   pagination:
     newer: 'Newer Post'
     older: 'Older Post'
-    no_newer: 'No More Newer Post'
-    no_older: 'No More Older Post'
 search:
-  text: 'Search'
+  text: 'Search something...'
   explore: 'Explore'
   footer: "It looks like you've reached the end."
 share_menu:

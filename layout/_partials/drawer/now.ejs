@@ -1,0 +1,9 @@
+<div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close
+  <% if (is_category() || is_tag() || is_year()) { %>
+    drawer-fix
+  <% } %>" id="drawer">
+  <%- partial('now/head') %>
+  <%- partial('now/content') %>
+  <div class="flex-spacer"></div>
+  <%- partial('now/footer') %>
+</div>

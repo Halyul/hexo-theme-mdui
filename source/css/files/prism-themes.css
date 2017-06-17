@@ -1,0 +1,1112 @@
+/* prism themes */
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+#post-content.default code[class*="language-"], #post-content.default pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+#post-content.default pre[class*="language-"]::-moz-selection, #post-content.default pre[class*="language-"] ::-moz-selection, #post-content.default code[class*="language-"]::-moz-selection, #post-content.default code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+#post-content.default pre[class*="language-"]::selection, #post-content.default pre[class*="language-"] ::selection, #post-content.default code[class*="language-"]::selection, #post-content.default code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  #post-content.default code[class*="language-"], #post-content.default pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+
+/* Code blocks */
+
+#post-content.default pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+#post-content.default :not(pre)>code[class*="language-"], #post-content.default pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+
+/* Inline code */
+
+#post-content.default :not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+#post-content.default .token.comment, #post-content.default .token.prolog, #post-content.default .token.doctype, #post-content.default .token.cdata {
+  color: slategray;
+}
+
+#post-content.default .token.punctuation {
+  color: #999;
+}
+
+#post-content.default .namespace {
+  opacity: .7;
+}
+
+#post-content.default .token.property, #post-content.default .token.tag, #post-content.default .token.boolean, #post-content.default .token.number, #post-content.default .token.constant, #post-content.default .token.symbol, #post-content.default .token.deleted {
+  color: #905;
+}
+
+#post-content.default .token.selector, #post-content.default .token.attr-name, #post-content.default .token.string, #post-content.default .token.char, #post-content.default .token.builtin, #post-content.default .token.inserted {
+  color: #690;
+}
+
+#post-content.default .token.operator, #post-content.default .token.entity, #post-content.default .token.url, #post-content.default .language-css .token.string, #post-content.default .style .token.string {
+  color: #a67f59;
+  background: hsla(0, 0%, 100%, .5);
+}
+
+#post-content.default .token.atrule, #post-content.default .token.attr-value, #post-content.default .token.keyword {
+  color: #07a;
+}
+
+#post-content.default .token.function {
+  color: #DD4A68;
+}
+
+#post-content.default .token.regex, #post-content.default .token.important, #post-content.default .token.variable {
+  color: #e90;
+}
+
+.#post-content.default token.important, #post-content.default .token.bold {
+  font-weight: bold;
+}
+
+#post-content.default .token.italic {
+  font-style: italic;
+}
+
+#post-content.default .token.entity {
+  cursor: help;
+}
+
+
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+#post-content.coy code[class*="language-"], #post-content.coy pre[class*="language-"] {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+
+/* Code blocks */
+
+#post-content.coy pre[class*="language-"] {
+  position: relative;
+  margin: .5em 0;
+  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+  border-left: 10px solid #358ccb;
+  background-color: #fdfdfd;
+  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+  background-size: 3em 3em;
+  background-origin: content-box;
+  overflow: visible;
+  padding: 0;
+}
+
+#post-content.coy code[class*="language"] {
+  max-height: inherit;
+  height: 100%;
+  padding: 0 1em;
+  display: block;
+  overflow: auto;
+}
+
+
+/* Margin bottom to accomodate shadow */
+
+#post-content.coy :not(pre)>code[class*="language-"], #post-content.coy pre[class*="language-"] {
+  background-color: #fdfdfd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+
+/* Inline code */
+
+#post-content.coy :not(pre)>code[class*="language-"] {
+  position: relative;
+  padding: .2em;
+  border-radius: 0.3em;
+  color: #c92c2c;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline;
+  white-space: normal;
+}
+
+#post-content.coy pre[class*="language-"]:before, #post-content.coy pre[class*="language-"]:after {
+  content: '';
+  z-index: -2;
+  display: block;
+  position: absolute;
+  bottom: 0.75em;
+  left: 0.18em;
+  width: 40%;
+  height: 20%;
+  max-height: 13em;
+  box-shadow: 0px 13px 8px #979797;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+#post-content.coy :not(pre)>code[class*="language-"]:after, #post-content.coy pre[class*="language-"]:after {
+  right: 0.75em;
+  left: auto;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+#post-content.coy .token.comment, #post-content.coy .token.block-comment, #post-content.coy .token.prolog, #post-content.coy .token.doctype, #post-content.coy .token.cdata {
+  color: #7D8B99;
+}
+
+#post-content.coy .token.punctuation {
+  color: #5F6364;
+}
+
+#post-content.coy .token.property, #post-content.coy .token.tag, #post-content.coy .token.boolean, #post-content.coy .token.number, #post-content.coy .token.function-name, #post-content.coy .token.constant, #post-content.coy .token.symbol, #post-content.coy .token.deleted {
+  color: #c92c2c;
+}
+
+#post-content.coy .token.selector, #post-content.coy .token.attr-name, #post-content.coy .token.string, #post-content.coy .token.char, #post-content.coy .token.function, #post-content.coy .token.builtin, #post-content.coy .token.inserted {
+  color: #2f9c0a;
+}
+
+#post-content.coy .token.operator, #post-content.coy .token.entity, #post-content.coy .token.url, #post-content.coy .token.variable {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#post-content.coy .token.atrule, .token.attr-value, #post-content.coy .token.keyword, #post-content.coy .token.class-name {
+  color: #1990b8;
+}
+
+#post-content.coy .token.regex, #post-content.coy .token.important {
+  color: #e90;
+}
+
+#post-content.coy .language-css .token.string, #post-content.coy .style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#post-content.coy .token.important {
+  font-weight: normal;
+}
+
+#post-content.coy .token.bold {
+  font-weight: bold;
+}
+
+#post-content.coy .token.italic {
+  font-style: italic;
+}
+
+#post-content.coy .token.entity {
+  cursor: help;
+}
+
+#post-content.coy .namespace {
+  opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+  #post-content.coy pre[class*="language-"]:before, #post-content.coy pre[class*="language-"]:after {
+    bottom: 14px;
+    box-shadow: none;
+  }
+}
+
+
+/* Plugin styles */
+
+#post-content.coy .token.tab:not(:empty):before, #post-content.coy .token.cr:before, #post-content.coy .token.lf:before {
+  color: #e0d7d1;
+}
+
+
+/* Plugin styles: Line Numbers */
+
+#post-content.coy pre[class*="language-"].line-numbers {
+  padding-left: 0;
+}
+
+#post-content.coy pre[class*="language-"].line-numbers code {
+  padding-left: 3.8em;
+}
+
+#post-content.coy pre[class*="language-"].line-numbers .line-numbers-rows {
+  left: 0;
+}
+
+
+/* Plugin styles: Line Highlight */
+
+#post-content.coy pre[class*="language-"][data-line] {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+#post-content.coy pre[data-line] code {
+  position: relative;
+  padding-left: 4em;
+}
+
+#post-content.coy pre .line-highlight {
+  margin-top: 0;
+}
+
+
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ */
+
+#post-content.dark code[class*="language-"], #post-content.dark pre[class*="language-"] {
+  color: white;
+  background: none;
+  text-shadow: 0 -.1em .2em black;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media print {
+  #post-content.dark code[class*="language-"], #post-content.dark pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+#post-content.dark pre[class*="language-"], #post-content.dark :not(pre)>code[class*="language-"] {
+  background: hsl(30, 20%, 25%);
+}
+
+
+/* Code blocks */
+
+#post-content.dark pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border: .3em solid hsl(30, 20%, 40%);
+  border-radius: .5em;
+  box-shadow: 1px 1px .5em black inset;
+}
+
+
+/* Inline code */
+
+#post-content.dark :not(pre)>code[class*="language-"] {
+  padding: .15em .2em .05em;
+  border-radius: .3em;
+  border: .13em solid hsl(30, 20%, 40%);
+  box-shadow: 1px 1px .3em -.1em black inset;
+  white-space: normal;
+}
+
+#post-content.dark .token.comment, #post-content.dark .token.prolog, #post-content.dark .token.doctype, #post-content.dark .token.cdata {
+  color: hsl(30, 20%, 50%);
+}
+
+#post-content.dark .token.punctuation {
+  opacity: .7;
+}
+
+#post-content.dark .namespace {
+  opacity: .7;
+}
+
+#post-content.dark .token.property, #post-content.dark .token.tag, #post-content.dark .token.boolean, #post-content.dark .token.number, #post-content.dark .token.constant, #post-content.dark .token.symbol {
+  color: hsl(350, 40%, 70%);
+}
+
+#post-content.dark .token.selector, #post-content.dark .token.attr-name, #post-content.dark .token.string, #post-content.dark .token.char, #post-content.dark .token.builtin, #post-content.dark .token.inserted {
+  color: hsl(75, 70%, 60%);
+}
+
+#post-content.dark .token.operator, #post-content.dark .token.entity, #post-content.dark .token.url, #post-content.dark .language-css .token.string, #post-content.dark .style .token.string, #post-content.dark .token.variable {
+  color: hsl(40, 90%, 60%);
+}
+
+#post-content.dark .token.atrule, #post-content.dark .token.attr-value, #post-content.dark .token.keyword {
+  color: hsl(350, 40%, 70%);
+}
+
+#post-content.dark .token.regex, #post-content.dark .token.important {
+  color: #e90;
+}
+
+#post-content.dark .token.important, #post-content.dark .token.bold {
+  font-weight: bold;
+}
+
+#post-content.dark .token.italic {
+  font-style: italic;
+}
+
+#post-content.dark .token.entity {
+  cursor: help;
+}
+
+#post-content.dark .token.deleted {
+  color: red;
+}
+
+
+/**
+ * prism.js Funky theme
+ * Based on “Polyfilling the gaps” talk slides http://lea.verou.me/polyfilling-the-gaps/
+ * @author Lea Verou
+ */
+
+#post-content.funky code[class*="language-"], #post-content.funky pre[class*="language-"] {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+
+/* Code blocks */
+
+#post-content.funky pre[class*="language-"] {
+  padding: .4em .8em;
+  margin: .5em 0;
+  overflow: auto;
+  background: url('data:image/svg+xml;charset=utf-8,<svg%20version%3D"1.1"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"100"%20height%3D"100"%20fill%3D"rgba(0%2C0%2C0%2C.2)">%0D%0A<polygon%20points%3D"0%2C50%2050%2C0%200%2C0"%20%2F>%0D%0A<polygon%20points%3D"0%2C100%2050%2C100%20100%2C50%20100%2C0"%20%2F>%0D%0A<%2Fsvg>');
+  background-size: 1em 1em;
+}
+
+#post-content.funky code[class*="language-"] {
+  background: black;
+  color: white;
+  box-shadow: -.3em 0 0 .3em black, .3em 0 0 .3em black;
+}
+
+
+/* Inline code */
+
+#post-content.funky :not(pre)>code[class*="language-"] {
+  padding: .2em;
+  border-radius: .3em;
+  box-shadow: none;
+  white-space: normal;
+}
+
+#post-content.funky .token.comment, #post-content.funky .token.prolog, #post-content.funky .token.doctype, #post-content.funky .token.cdata {
+  color: #aaa;
+}
+
+#post-content.funky .token.punctuation {
+  color: #999;
+}
+
+#post-content.funky .namespace {
+  opacity: .7;
+}
+
+#post-content.funky .token.property, #post-content.funky .token.tag, #post-content.funky .token.boolean, #post-content.funky .token.number, #post-content.funky .token.constant, #post-content.funky .token.symbol {
+  color: #0cf;
+}
+
+#post-content.funky .token.selector, #post-content.funky .token.attr-name, #post-content.funky .token.string, #post-content.funky .token.char, #post-content.funky .token.builtin {
+  color: yellow;
+}
+
+#post-content.funky .token.operator, #post-content.funky .token.entity, #post-content.funky .token.url, #post-content.funky .language-css .token.string, #post-content.funky .toke.variable, #post-content.funky .token.inserted {
+  color: yellowgreen;
+}
+
+#post-content.funky .token.atrule, #post-content.funky .token.attr-value, #post-content.funky .token.keyword {
+  color: deeppink;
+}
+
+#post-content.funky .token.regex, #post-content.funky .token.important {
+  color: orange;
+}
+
+#post-content.funky .token.important, #post-content.funky .token.bold {
+  font-weight: bold;
+}
+
+#post-content.funky .token.italic {
+  font-style: italic;
+}
+
+#post-content.funky .token.entity {
+  cursor: help;
+}
+
+#post-content.funky .token.deleted {
+  color: red;
+}
+
+
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+#post-content.okaidia code[class*="language-"], #post-content.okaidia pre[class*="language-"] {
+  color: #f8f8f2;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+
+/* Code blocks */
+
+#post-content.okaidia pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+#post-content.okaidia :not(pre)>code[class*="language-"], #post-content.okaidia pre[class*="language-"] {
+  background: #272822;
+}
+
+
+/* Inline code */
+
+#post-content.okaidia :not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+#post-content.okaidia .token.comment, #post-content.okaidia .token.prolog, #post-content.okaidia .token.doctype, #post-content.okaidia .token.cdata {
+  color: slategray;
+}
+
+#post-content.okaidia .token.punctuation {
+  color: #f8f8f2;
+}
+
+#post-content.okaidia .namespace {
+  opacity: .7;
+}
+
+#post-content.okaidia .token.property, #post-content.okaidia .token.tag, #post-content.okaidia .token.constant, #post-content.okaidia .token.symbol, #post-content.okaidia .token.deleted {
+  color: #f92672;
+}
+
+#post-content.okaidia .token.boolean, #post-content.okaidia .token.number {
+  color: #ae81ff;
+}
+
+#post-content.okaidia .token.selector, #post-content.okaidia .token.attr-name, #post-content.okaidia .token.string, #post-content.okaidia .token.char, #post-content.okaidia .token.builtin, #post-content.okaidia .token.inserted {
+  color: #a6e22e;
+}
+
+#post-content.okaidia .token.operator, #post-content.okaidia .token.entity, #post-content.okaidia .token.url, #post-content.okaidia .language-css .token.string, #post-content.okaidia .style .token.string, #post-content.okaidia .token.variable {
+  color: #f8f8f2;
+}
+
+#post-content.okaidia .token.atrule, #post-content.okaidia .token.attr-value, #post-content.okaidia .token.function {
+  color: #e6db74;
+}
+
+#post-content.okaidia .token.keyword {
+  color: #66d9ef;
+}
+
+#post-content.okaidia .token.regex, #post-content.okaidia .token.important {
+  color: #fd971f;
+}
+
+#post-content.okaidia .token.important, #post-content.okaidia .token.bold {
+  font-weight: bold;
+}
+
+#post-content.okaidia .token.italic {
+  font-style: italic;
+}
+
+#post-content.okaidia .token.entity {
+  cursor: help;
+}
+
+
+/*
+ Solarized Color Schemes originally by Ethan Schoonover
+ http://ethanschoonover.com/solarized
+
+ Ported for PrismJS by Hector Matos
+ Website: https://krakendev.io
+ Twitter Handle: https://twitter.com/allonsykraken)
+*/
+
+
+/*
+SOLARIZED HEX
+--------- -------
+base03    #002b36
+base02    #073642
+base01    #586e75
+base00    #657b83
+base0     #839496
+base1     #93a1a1
+base2     #eee8d5
+base3     #fdf6e3
+yellow    #b58900
+orange    #cb4b16
+red       #dc322f
+magenta   #d33682
+violet    #6c71c4
+blue      #268bd2
+cyan      #2aa198
+green     #859900
+*/
+
+#post-content.solarizedlight code[class*="language-"], #post-content.solarizedlight pre[class*="language-"] {
+  color: #657b83;
+  /* base00 */
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+#post-content.solarizedlight pre[class*="language-"]::-moz-selection, #post-content.solarizedlight pre[class*="language-"] ::-moz-selection, #post-content.solarizedlight code[class*="language-"]::-moz-selection, #post-content.solarizedlight code[class*="language-"] ::-moz-selection {
+  background: #073642;
+  /* base02 */
+}
+
+#post-content.solarizedlight pre[class*="language-"]::selection, #post-content.solarizedlight pre[class*="language-"] ::selection, #post-content.solarizedlight code[class*="language-"]::selection, #post-content.solarizedlight code[class*="language-"] ::selection {
+  background: #073642;
+  /* base02 */
+}
+
+
+/* Code blocks */
+
+#post-content.solarizedlight pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+#post-content.solarizedlight :not(pre)>code[class*="language-"], #post-content.solarizedlight pre[class*="language-"] {
+  background-color: #fdf6e3;
+  /* base3 */
+}
+
+
+/* Inline code */
+
+#post-content.solarizedlight :not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+#post-content.solarizedlight .token.comment, #post-content.solarizedlight .token.prolog, #post-content.solarizedlight .token.doctype, #post-content.solarizedlight .token.cdata {
+  color: #93a1a1;
+  /* base1 */
+}
+
+#post-content.solarizedlight .token.punctuation {
+  color: #586e75;
+  /* base01 */
+}
+
+#post-content.solarizedlight .namespace {
+  opacity: .7;
+}
+
+#post-content.solarizedlight .token.property, #post-content.solarizedlight .token.tag, #post-content.solarizedlight .token.boolean, #post-content.solarizedlight .token.number, #post-content.solarizedlight .token.constant, #post-content.solarizedlight .token.symbol, #post-content.solarizedlight .token.deleted {
+  color: #268bd2;
+  /* blue */
+}
+
+#post-content.solarizedlight .token.selector, #post-content.solarizedlight .token.attr-name, #post-content.solarizedlight .token.string, #post-content.solarizedlight .token.char, #post-content.solarizedlight .token.builtin, #post-content.solarizedlight .token.url, #post-content.solarizedlight .token.inserted {
+  color: #2aa198;
+  /* cyan */
+}
+
+#post-content.solarizedlight .token.entity {
+  color: #657b83;
+  /* base00 */
+  background: #eee8d5;
+  /* base2 */
+}
+
+#post-content.solarizedlight .token.atrule, #post-content.solarizedlight .token.attr-value, #post-content.solarizedlight .token.keyword {
+  color: #859900;
+  /* green */
+}
+
+#post-content.solarizedlight .token.function {
+  color: #b58900;
+  /* yellow */
+}
+
+#post-content.solarizedlight .token.regex, #post-content.solarizedlight .token.important, #post-content.solarizedlight .token.variable {
+  color: #cb4b16;
+  /* orange */
+}
+
+#post-content.solarizedlight .token.important, #post-content.solarizedlight .token.bold {
+  font-weight: bold;
+}
+
+#post-content.solarizedlight .token.italic {
+  font-style: italic;
+}
+
+#post-content.solarizedlight .token.entity {
+  cursor: help;
+}
+
+
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+#post-content.tomorrow code[class*="language-"], #post-content.tomorrow pre[class*="language-"] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+
+/* Code blocks */
+
+#post-content.tomorrow pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+#post-content.tomorrow :not(pre)>code[class*="language-"], #post-content.tomorrow pre[class*="language-"] {
+  background: #2d2d2d;
+}
+
+
+/* Inline code */
+
+#post-content.tomorrow :not(pre)>code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
+
+#post-content.tomorrow .token.comment, #post-content.tomorrow .token.block-comment, #post-content.tomorrow .token.prolog, #post-content.tomorrow .token.doctype, #post-content.tomorrow .token.cdata {
+  color: #999;
+}
+
+#post-content.tomorrow .token.punctuation {
+  color: #ccc;
+}
+
+#post-content.tomorrow .token.tag, #post-content.tomorrow .token.attr-name, #post-content.tomorrow .token.namespace, #post-content.tomorrow .token.deleted {
+  color: #e2777a;
+}
+
+#post-content.tomorrow .token.function-name {
+  color: #6196cc;
+}
+
+#post-content.tomorrow .token.boolean, #post-content.tomorrow .token.number, #post-content.tomorrow .token.function {
+  color: #f08d49;
+}
+
+#post-content.tomorrow .token.property, #post-content.tomorrow .token.class-name, #post-content.tomorrow .token.constant, #post-content.tomorrow .token.symbol {
+  color: #f8c555;
+}
+
+#post-content.tomorrow .token.selector, #post-content.tomorrow .token.important, #post-content.tomorrow .token.atrule, #post-content.tomorrow .token.keyword, #post-content.tomorrow .token.builtin {
+  color: #cc99cd;
+}
+
+#post-content.tomorrow .token.string, #post-content.tomorrow .token.char, #post-content.tomorrow .token.attr-value, #post-content.tomorrow .token.regex, #post-content.tomorrow .token.variable {
+  color: #7ec699;
+}
+
+#post-content.tomorrow .token.operator, #post-content.tomorrow .token.entity, #post-content.tomorrow .token.url {
+  color: #67cdcc;
+}
+
+#post-content.tomorrow .token.important, #post-content.tomorrow .token.bold {
+  font-weight: bold;
+}
+
+#post-content.tomorrow .token.italic {
+  font-style: italic;
+}
+
+#post-content.tomorrow .token.entity {
+  cursor: help;
+}
+
+#post-content.tomorrow .token.inserted {
+  color: green;
+}
+
+
+/**
+ * prism.js Twilight theme
+ * Based (more or less) on the Twilight theme originally of Textmate fame.
+ * @author Remy Bach
+ */
+
+#post-content.twillight code[class*="language-"], #post-content.twillight pre[class*="language-"] {
+  color: white;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  text-shadow: 0 -.1em .2em black;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+#post-content.twillight pre[class*="language-"], #post-content.twillight :not(pre)>code[class*="language-"] {
+  background: hsl(0, 0%, 8%);
+  /* #141414 */
+}
+
+
+/* Code blocks */
+
+#post-content.twillight pre[class*="language-"] {
+  border-radius: .5em;
+  border: .3em solid hsl(0, 0%, 33%);
+  /* #282A2B */
+  box-shadow: 1px 1px .5em black inset;
+  margin: .5em 0;
+  overflow: auto;
+  padding: 1em;
+}
+
+#post-content.twillight pre[class*="language-"]::-moz-selection {
+  /* Firefox */
+  background: hsl(200, 4%, 16%);
+  /* #282A2B */
+}
+
+#post-content.twillight pre[class*="language-"]::selection {
+  /* Safari */
+  background: hsl(200, 4%, 16%);
+  /* #282A2B */
+}
+
+
+/* Text Selection colour */
+
+#post-content.twillight pre[class*="language-"]::-moz-selection, #post-content.twillight pre[class*="language-"] ::-moz-selection, #post-content.twillight code[class*="language-"]::-moz-selection, #post-content.twillight code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 93%, 0.15);
+  /* #EDEDED */
+}
+
+#post-content.twillight pre[class*="language-"]::selection, #post-content.twillight pre[class*="language-"] ::selection, #post-content.twillight code[class*="language-"]::selection, #post-content.twillight code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 93%, 0.15);
+  /* #EDEDED */
+}
+
+
+/* Inline code */
+
+#post-content.twillight :not(pre)>code[class*="language-"] {
+  border-radius: .3em;
+  border: .13em solid hsl(0, 0%, 33%);
+  /* #545454 */
+  box-shadow: 1px 1px .3em -.1em black inset;
+  padding: .15em .2em .05em;
+  white-space: normal;
+}
+
+#post-content.twillight .token.comment, #post-content.twillight .token.prolog, #post-content.twillight .token.doctype, #post-content.twillight .token.cdata {
+  color: hsl(0, 0%, 47%);
+  /* #777777 */
+}
+
+#post-content.twillight .token.punctuation {
+  opacity: .7;
+}
+
+#post-content.twillight .namespace {
+  opacity: .7;
+}
+
+#post-content.twillight .token.tag, #post-content.twillight .token.boolean, #post-content.twillight .token.number, #post-content.twillight .token.deleted {
+  color: hsl(14, 58%, 55%);
+  /* #CF6A4C */
+}
+
+#post-content.twillight .token.keyword, #post-content.twillight .token.property, #post-content.twillight .token.selector, #post-content.twillight .token.constant, #post-content.twillight .token.symbol, #post-content.twillight .token.builtin {
+  color: hsl(53, 89%, 79%);
+  /* #F9EE98 */
+}
+
+#post-content.twillight .token.attr-name, #post-content.twillight .token.attr-value, #post-content.twillight .token.string, #post-content.twillight .token.char, #post-content.twillight .token.operator, #post-content.twillight .token.entity, #post-content.twillight .token.url, #post-content.twillight .language-css .token.string, #post-content.twillight .style .token.string, #post-content.twillight .token.variable, #post-content.twillight .token.inserted {
+  color: hsl(76, 21%, 52%);
+  /* #8F9D6A */
+}
+
+#post-content.twillight .token.atrule {
+  color: hsl(218, 22%, 55%);
+  /* #7587A6 */
+}
+
+#post-content.twillight .token.regex, #post-content.twillight .token.important {
+  color: hsl(42, 75%, 65%);
+  /* #E9C062 */
+}
+
+#post-content.twillight .token.important, #post-content.twillight .token.bold {
+  font-weight: bold;
+}
+
+#post-content.twillight .token.italic {
+  font-style: italic;
+}
+
+#post-content.twillight .token.entity {
+  cursor: help;
+}
+
+#post-content.twillight pre[data-line] {
+  padding: 1em 0 1em 3em;
+  position: relative;
+}
+
+
+/* Markup */
+
+#post-content.twillight .language-markup .token.tag, #post-content.twillight .language-markup .token.attr-name, #post-content.twillight .language-markup .token.punctuation {
+  color: hsl(33, 33%, 52%);
+  /* #AC885B */
+}
+
+
+/* Make the tokens sit above the line highlight so the colours don't look faded. */
+
+#post-content.twillight .token {
+  position: relative;
+  z-index: 1;
+}
+
+#post-content.twillight .line-highlight {
+  background: hsla(0, 0%, 33%, 0.25);
+  /* #545454 */
+  background: linear-gradient(to right, hsla(0, 0%, 33%, .1) 70%, hsla(0, 0%, 33%, 0));
+  /* #545454 */
+  border-bottom: 1px dashed hsl(0, 0%, 33%);
+  /* #545454 */
+  border-top: 1px dashed hsl(0, 0%, 33%);
+  /* #545454 */
+  left: 0;
+  line-height: inherit;
+  margin-top: 0.75em;
+  /* Same as .prism’s padding-top */
+  padding: inherit 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  white-space: pre;
+  z-index: 0;
+}
+
+#post-content.twillight .line-highlight:before, #post-content.twillight .line-highlight[data-end]:after {
+  background-color: hsl(215, 15%, 59%);
+  /* #8794A6 */
+  border-radius: 999px;
+  box-shadow: 0 1px white;
+  color: hsl(24, 20%, 95%);
+  /* #F5F2F0 */
+  content: attr(data-start);
+  font: bold 65%/1.5 sans-serif;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  position: absolute;
+  text-align: center;
+  text-shadow: none;
+  top: .4em;
+  vertical-align: .3em;
+}
+
+#post-content.twillight .line-highlight[data-end]:after {
+  bottom: .4em;
+  content: attr(data-end);
+  top: auto;
+}
+
+
+/* line number */
+
+#post-content.line-number pre.line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+#post-content.line-number pre.line-numbers>code {
+  position: relative;
+}
+
+#post-content.line-number .line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em;
+  /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#post-content.line-number .line-numbers-rows>span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+#post-content.line-number .line-numbers-rows>span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}

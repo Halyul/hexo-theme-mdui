@@ -1,0 +1,314 @@
+#archives {
+  max-width: 530px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  #archives {
+    width: 95%;
+  }
+}
+
+@media (min-width: 650px) {
+  #archives {
+    width: 85%;
+  }
+}
+
+#archives .header .content {
+  position: relative;
+  z-index: 1;
+}
+
+#archives .header .content .avatar {
+  width: 60px;
+  margin-top: -30px;
+}
+
+#archives .header .content .name {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 16px;
+  word-break: break-word;
+}
+
+#archives .header .content .slogan {
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+#archives .header .content button {
+  margin-top: 24px;
+}
+
+#archives .items .mdui-card-media {
+  height: 16vh;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll;
+}
+
+#archives .items .title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 32px 16px 16px;
+  text-align: left;
+}
+
+#archives .items .content {
+  height: 80px;
+  padding: 0 16px 16px;
+  text-align: left;
+}
+
+#archives .items .content.no-length {
+  height: 63px;
+  padding: 0 16px 16px;
+  text-align: left;
+}
+
+#archives .items .content .avatar {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+}
+
+#archives .items .content .category {
+  font-size: 16px;
+  line-height: 20px;
+  max-height: 40px;
+  margin-top: 4px;
+  word-break: break-word;
+}
+
+#archives .items .content .length {
+  font-size: 12px;
+  overflow: hidden;
+  margin-top: 4px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+@media only screen and (min-width: 440px) {
+  #archives {
+    width: 95%;
+    margin: 0 auto;
+  }
+  #archives .items .title {
+    margin: 32px 0 16px 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #archives {
+    max-width: 1084px;
+  }
+  #archives .header, #archives .header .mdui-img-fluid {
+    border-radius: 2px;
+  }
+  #archives .header {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+    overflow: hidden;
+  }
+  #archives .header .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    margin-top: -108px;
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -ms-flex-direction: row;
+    background-color: transparent !important;
+  }
+  #archives .header .content .avatar {
+    margin-top: 0;
+  }
+  #archives .header .content .info {
+    margin-left: 24px;
+  }
+  #archives .header .content .name {
+    margin-top: 0;
+    color: #fff;
+    text-align: left;
+  }
+  #archives .header .content .slogan {
+    margin-top: 8px;
+    color: #fff;
+    text-align: left;
+  }
+  #archives .items .title {
+    margin: 32px 0 24px 0;
+  }
+}
+
+body.side-content {
+  padding-left: 30%;
+}
+
+body #blog-appbar button.style-fix {
+  display: none;
+}
+
+#side-content {
+  position: fixed;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  z-index: 99;
+}
+
+@media only screen and (min-width: 1280px) {
+  body.side-content {
+    padding-left: 24%;
+  }
+  #side-content {
+    width: 24%;
+  }
+}
+
+@media (min-width: 1500px) {
+  body.side-content {
+    padding-left: 368px;
+  }
+  #side-content {
+    width: 368px;
+  }
+}
+
+#side-content .mdui-grid-tile {
+  margin-bottom: 0;
+}
+
+#side-content .content {
+  margin: 0 32px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+#side-content .content .avatar {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-top: -25px;
+  border: #fff 1px solid;
+}
+
+#side-content .content .author {
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+#side-content .content .name {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  max-height: 105px;
+  margin-bottom: -6px;
+}
+
+#side-content .content .length {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 14px;
+  opacity: .54;
+}
+
+#content-list {
+  padding-top: 16px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media (max-width: 599px) {
+  #content-list {
+    width: 95%;
+  }
+}
+
+@media (max-width: 860px) {
+  body.side-content {
+    padding-top: 0;
+    padding-left: 0;
+  }
+  body.style-fix #blog-appbar, body.style-fix #blog-appbar .mdui-toolbar {
+    box-shadow: none;
+  }
+  body.style-fix #blog-appbar .mdui-color-theme {
+    color: #000 !important;
+    background-color: rgba(0, 0, 0, .1) !important;
+  }
+  body.side-content #blog-appbar .appbar-border-line, body.side-content #blog-appbar .mdui-typo-headline, body.side-content #blog-appbar .appbar-userview {
+    display: none !important;
+  }
+  body.side-content #blog-appbar .mdui-typo-title {
+    display: none;
+    width: 100%;
+  }
+  body.side-content #blog-appbar button.style-fix, body #blog-appbar.style-fix .mdui-typo-title {
+    display: inherit !important;
+  }
+  body.side-content #blog-appbar .mdui-toolbar-spacer {
+    height: inherit;
+  }
+  body.side-content #blog-appbar .search-button {
+    display: none;
+  }
+  #side-content {
+    position: inherit;
+    width: 100%;
+    height: auto;
+  }
+  #side-content .mdui-grid-tile-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 859px) and (min-width: 660px) {
+  #side-content .content {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 859px) and (min-width: 370px) {
+  #side-content .bg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    height: 30%;
+    height: 30vw;
+    min-height: 200px;
+    max-height: 250px;
+    -webkit-box-align: center;
+    box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  #side-content .content {
+    margin: 0 24px;
+    text-align: left;
+  }
+  #side-content .content .author {
+    width: 50px;
+  }
+}

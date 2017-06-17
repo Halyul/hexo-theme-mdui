@@ -8,45 +8,48 @@
 <!DOCTYPE html>
 <html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
 <% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-  <%-partial('partials/head', { primary_color: primary_color[primary_num] })%>
+  <%-partial('_partials/head', { primary_color: primary_color[primary_num] })%>
 <% } else { %>
-  <%-partial('partials/head')%>
+  <%-partial('_partials/head')%>
 <% } %>
 
-<% if (theme.color.random === 'global') { %>
-  <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
-<% } else if (theme.color.random === 'post' && is_post()) { %>
-  <% if (page.primary_color || page.accent_color) { %>
-    <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= page.primary_color || primary_color[primary_num] %> mdui-theme-accent-<%= page.accent_color || accent_color[accent_num] %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
+<% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
+  <% if (theme.style.scheme === 'now') { %>
+    <%- partial('_partials/body/now', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
   <% } else { %>
-    <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= primary_color[primary_num] %> mdui-theme-accent-<%= accent_color[accent_num] %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
+    <%- partial('_partials/body/plus', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
   <% } %>
 <% } else { %>
-  <body class="mdui-appbar-with-toolbar mdui-theme-primary-<%= theme.color.primary_color %> mdui-theme-accent-<%= theme.color.accent_color %> <% if (theme.color.layout === 'dark' || page.layout === 'galleries' || page.layout === 'gallery') { %>mdui-theme-layout-dark<% } %> <% if (!is_category() && !is_tag() && !is_year() && page.layout !== 'galleries' || page.layout !== 'gallery') { %>mdui-drawer-body-left<% } %> <% if (is_category() || is_tag() || is_year()) { %>side-content style-fix<% } %> drawer-overlay-none" <% if (is_category() || is_tag() || is_year()) { %>onresize="styleChanging()"<% } %>>
+  <% if (theme.style.scheme === 'now') { %>
+    <%- partial('_partials/body/now') %>
+  <% } else { %>
+    <%- partial('_partials/body/plus') %>
+  <% } %>
 <% } %>
+
 <div id="top"></div>
 
-<%- partial('partials/appbar') %>
+<%- partial('_partials/appbar') %>
+
+<% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
+  <%- partial('_partials/drawer') %>
+<% } %>
 
 <% if (is_category() || is_tag() || is_year()) { %>
-  <%- partial('partials/archives/side_content') %>
+  <%- partial('_partials/archives/side_content') %>
 <% } %>
 
 <main>
   <%- body %>
 </main>
 
-<% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
-  <%- partial('partials/drawer') %>
-<% } %>
-
 <div id="outdated" style="z-index: 9999;">
   <h6><%= __('outdated_browser.title')  %></h6>
   <p><%= __('outdated_browser.line_one') %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= __('outdated_browser.link') %></a></p>
   <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= __('outdated_browser.close') %>">&times;</a></p>
 </div>
-<%- partial('partials/dialogs') %>
-<%- partial('partials/import_js') %>
+<%- partial('_partials/dialogs') %>
+<%- partial('_partials/import_js') %>
 </body>
 
 </html>

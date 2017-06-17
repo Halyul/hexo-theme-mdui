@@ -8,11 +8,12 @@ global:
   tags: '标签'
   years: '年份'
   busuanzi_views: '浏览量: '
-  snackbar: '额...啥都没发生'
 archive:
   post: '篇文章'
   posts: '篇文章'
   about: '关于'
+  more: '更多'
+  less: '更少'
 posts:
   header: '我的文章'
   public: '公开'
@@ -25,10 +26,8 @@ posts:
   pagination:
     newer: '新的文章'
     older: '旧的文章'
-    no_newer: '没有更新的文章辣'
-    no_older: '没有更旧的文章辣'
 search:
-  text: '搜索'
+  text: '搜索什么...'
   explore: '探索'
   footer: '看起来已经没有了'
 share_menu:

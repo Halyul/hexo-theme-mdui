@@ -1,0 +1,137 @@
+<script type="text/ls-javascript" id="global-script">
+  /* swipable drawer */
+  (function () {
+    var drawer = new mdui.Drawer('#drawer', {swipe: true});
+  })();
+
+  /* appbar button */
+  $$(document).on('open.mdui.drawer', '#drawer', function (e) {
+    $$('.drawer-button').addClass('back');
+  });
+
+  $$(document).on('close.mdui.drawer', '#drawer', function (e) {
+    $$('.drawer-button').removeClass('back');
+  });
+
+  /* drawer */
+  $$('#drawer-button').on('click', function (e) {
+      $$(this).toggleClass('pages');
+      $$('#drawer').toggleClass('pages');
+  });
+</script>
+
+<% // js in post and custom page
+  if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends')
+{ %>
+  <%- partial('js/now/appbar') %>
+  <%- partial('js/toc') %>
+  <%- partial('js/post_lg') %>
+  <%//- partial('js/donte_judge')
+  %>
+
+  <% if (page.mathjax === true) { %>
+    <!-- MathJax Load-->
+    <%- partial('../../_widget/post_mathjax') %>
+  <% } %>
+
+  <script type="text/ls-javascript" id="post-toc-script">
+    /* post toc */
+    (function() {
+      $$(document).ready(function(){
+        if($$("ul#menu-toc").children().length === 0 && $$("div#card-toc").children().length === 0)
+        {
+          $$("button#button-toc").addClass("mdui-hidden");
+          $$("div#card-toc").addClass("mdui-hidden");
+          $$("div#blog-post").addClass("no-toc")
+        };
+      });
+    })();
+  </script>
+<% } %>
+
+<% // archive page parallax background
+  if (is_archive())
+{ %>
+  <script>
+    window.addEventListener("scroll", function(){
+       document.querySelector('#archives .bg .mdui-img-fluid.mdui-img-rounded')
+        .style.transform = 'translateY(' + document.body.scrollTop * 0.4 + 'px)';
+    })
+  </script>
+  <% if (theme.about_me === true) { %>
+    <script type="text/ls-javascript" id="about-me-dialog-script">
+      /* aboutme dialog */
+      (function() {
+        $$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
+            $$(this).addClass('hide-more');
+            $$(this).removeClass('hide-less');
+        });
+        $$(document).on('close.mdui.collapse', 'div.mdui-collapse-item', function() {
+          $$(this).removeClass('hide-more');
+          $$(this).addClass('hide-less');
+        });
+        var cardFlag = false;
+        $$('div#aboutmeDialog').on('scroll', function() {
+          if (!cardFlag && $$('div#cardLocation').position().top < 0) {
+            $$('div#aboutmeAppbar').addClass('style-fix');
+            cardFlag = true;
+          } else if (cardFlag && $$('div#cardLocation').position().top >= 0) {
+            $$('div#aboutmeAppbar').removeClass('style-fix');
+            cardFlag = false;
+          };
+        });
+        $$(document).on('open.mdui.dialog', 'div#aboutmeDialog', function() {
+          if (!cardFlag && $$('div#cardLocation').position().top < 0) {
+            $$('div#aboutmeAppbar').addClass('style-fix');
+            cardFlag = true;
+          };
+        });
+        $$(document).on('close.mdui.dialog', 'div#aboutmeDialog', function() {
+          if (cardFlag && $$('div#cardLocation').position().top < 0) {
+            $$('div#aboutmeAppbar').removeClass('style-fix');
+            cardFlag = false;
+          };
+        });
+      })();
+    </script>
+  <% } %>
+<% } %>
+
+<% // index toolbar search
+  if (is_home())
+{ %>
+  <%- partial('js/now/index_search') %>
+<% } %>
+
+<% if (!is_home() && !is_archive() && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends') { %>
+  <%- partial('js/now/appbar_search') %>
+<% } %>
+
+<% // appbar style change in category, tag ,year posts page
+  if (is_category() || is_tag() || is_year())
+{ %>
+  <%- partial('js/styleChanging') %>
+<% } %>
+
+<% // js in search page
+  if (page.path === 'search/index.html' && theme.appbar.search === true)
+{ %>
+  <%- partial('../../_widget/js/search/now')%>
+<% } %>
+
+<% // to top fab
+  if (is_home() || is_archive() || is_year() || is_category() || is_tag()) { %>
+  <%- partial('js/to_top')%>
+<% } %>
+
+<% // js in gallery, galleries
+  if (page.layout === 'gallery' || page.layout === 'galleries') { %>
+  <script type="text/ls-javascript" id="back-button-script">
+    /* back button */
+    (function() {
+      $$(document).on('click', 'button[back]', function() {
+          window.history.back();
+      });
+    })();
+  </script>
+<% } %>
