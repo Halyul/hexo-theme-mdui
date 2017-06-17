@@ -45,7 +45,7 @@
           // show search results
 
           if (isMatch) {
-            str += '<div class="mdui-card card-bottom-fix">';
+            str += '<div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">';
             str += '<div class="mdui-card-header posts-header">';
             str += '<img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>';
             str += '<div class="content mdui-valign">';

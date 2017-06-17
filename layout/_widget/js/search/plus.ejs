@@ -50,39 +50,16 @@
           // show search results
 
           if (isMatch) {
-            str += '<div class="content-item"><div class="mdui-card card-bottom-fix mdui-hoverable mdui-center" id="index">' +
-              '<div class="mdui-card-header posts-card-header">' +
-              '<img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>">' +
-              '<div class="content mdui-valign">' +
-              '<span class="username"><%= config.author %></span>';
+            str += '<div class="content-item">';
 
-            // icon
-            if (typeof data.categories !== 'undefined')
-              str += '<div class="arrow mdui-text-center mdui-text-color-theme-accent">';
-            else {
-              str += '<div class="arrow mdui-text-center">';
-            };
-            '<div class="arrow mdui-text-center mdui-text-color-theme-accent">';
-
-            str += '<i class="mdui-icon material-icons">&#xe037;</i>' +
-              '</div>' +
-              '<div class="mdui-typo-body-1-opacity mdui-typo">';
-
-            //post category
-            if (typeof data.categories !== 'undefined')
-              data.categories.forEach(function(category) {
-                str += '<a href="<%= config.root %>categories/' + category + '/"><span>' + category + '</span></a>';
-              })
-            else {
-              str += '<%= __('posts.public ') %>';
-            };
-
-            // post title
-            str += '</div>' + '</div>' + '<div class="flex-spacer"></div>' + '</div>' + '<div class="posts-card-title mdui-typo">' +
-              '<a href="' + data_url + '" target="_self">' + data_title + '</a>' +
-              '</div>' + '<div class="posts-card-line">' +
-              '<div class="mdui-divider"></div>' + '</div>' + '<div class="posts-card-content mdui-typo">';
-
+            str += '<div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %> mdui-center">';
+            str += '<div class="posts-title mdui-typo">';
+            str += '<a href="' + data_url + '" target="_self">' + data_title + '</a>'
+            str += '</div>'
+            str += '<div class="posts-line">'
+            str += '<div class="mdui-divider"></div>'
+            str += '</div>'
+            str += '<div class="posts-content">'
             var content = data.content.trim().replace(/<[^>]+>/g, '');
             if (first_occur >= 0) {
               // cut out characters
@@ -105,17 +82,37 @@
               })
               str += '<p class="result">' + match_content + '...</p>';
             }
-
+            str += '</div>'
+            if (typeof data.categories !== 'undefined' && typeof data.tags !== 'undefined') {
+              str += '<div class="posts-bottom">'
+              if (typeof data.categories !== 'undefined') {
+                str += '<div class="mdui-chip">';
+                str += '<span class="mdui-chip-icon"><i class="mdui-icon <% if (theme.color.layout !== 'dark') { %>mdui-text-color-black-icon<% } %> material-icons mdui-text-center">&#xe149;</i></span>';
+                str += '</div>';
+                str += '<div class="content mdui-typo">';
+                data.categories.forEach(function(category) {
+                  str += '<a href="<%= config.root %>categories/' + category + '/">';
+                  str +=' <span>' + category + '</span>';
+                  str += '</a>';
+                })
+                str += '</div>';
+              }
+              if (typeof data.tags !== 'undefined') {
+                str += '<div class="mdui-chip">';
+                str += '<span class="mdui-chip-icon"><i class="mdui-icon <% if (theme.color.layout !== 'dark') { %>mdui-text-color-black-icon<% } %> fa fa-tags mdui-text-center"></i></span>';
+                str += '</div>';
+                str += '<div class="content mdui-typo">';
+                data.tags.forEach(function(tag) {
+                  str += '<a href="<%= config.root %>tags/' + tag + '/">';
+                  str += '<span>' + tag + '</span>';
+                  str += '</a>';
+                })
+                str += '</div>';
+              }
+              str += '</div>';
+            }
             str += '</div>';
 
-            // post tag
-            if (typeof data.tags !== 'undefined') {
-              str += '<div class="posts-card-actions"><div class="mdui-chip"><span class="mdui-chip-icon"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags mdui-text-center"></i></span></div><div class="content mdui-typo">';
-              data.tags.forEach(function(tag) {
-                str += '<a href="<%= config.root %>tags/' + tag + '/"><span>' + tag + '</span></a>';
-              });
-              str += '</div></div>';
-            }
             str += '</div>';
           }
         });
