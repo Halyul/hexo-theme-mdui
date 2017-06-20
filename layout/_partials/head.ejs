@@ -11,10 +11,6 @@ pageTitle += ' - ' + config.title;
 <head>
   <script>
     window.mduiVersion = "1.4.1"
-    // Delete localstorage with these tags
-    window.oldVersion = [
-      'dev',
-    ]
   </script>
   <!--
         © HEXO MDUI Theme
@@ -88,17 +84,17 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170617" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170620" />
   <% } else { %>
-    <%- css("css/fonts-v20170617.min") %>
+    <%- css("css/fonts-v20170620.min") %>
   <% } %>
   <% if(theme.vendors.style_min_css) { %>
     <%- cssLsload({path:(theme.vendors.style_min_css),key:'style_css'}) %>
   <% } else { %>
     <% if (theme.style.scheme === 'now') { %>
-      <%- cssLsload({path:(config.root + 'css/style-now-v20170617.min'),key:'style_css'}) %>
+      <%- cssLsload({path:(config.root + 'css/style-now-v20170620.min'),key:'style_css'}) %>
     <% } else { %>
-      <%- cssLsload({path:(config.root + 'css/style-plus-v20170617.min'),key:'style_css'}) %>
+      <%- cssLsload({path:(config.root + 'css/style-plus-v20170620.min'),key:'style_css'}) %>
     <% } %>
   <% } %>
 
