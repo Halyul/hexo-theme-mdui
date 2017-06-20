@@ -98,12 +98,12 @@
 <% } %>
 
 <% // index toolbar search
-  if (is_home())
+  if (is_home() && theme.appbar.search === true)
 { %>
   <%- partial('js/now/index_search') %>
 <% } %>
 
-<% if (!is_home() && !is_archive() && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends') { %>
+<% if (!is_home() && !is_archive() && page.layout !== 'galleries' && page.layout !== 'gallery' && page.layout !== 'friends' && theme.appbar.search === true) { %>
   <%- partial('js/now/appbar_search') %>
 <% } %>
 
