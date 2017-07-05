@@ -236,7 +236,7 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-#post-content.coy .token.atrule, .token.attr-value, #post-content.coy .token.keyword, #post-content.coy .token.class-name {
+#post-content.coy .token.atrule, #post-content.coy .token.keyword, #post-content.coy .token.class-name {
   color: #1990b8;
 }
 
