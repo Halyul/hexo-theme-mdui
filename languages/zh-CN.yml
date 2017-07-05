@@ -34,6 +34,13 @@ posts:
     head: '这篇文章最后修改于'
     foot: '天之前。'
     content: '本页内容可能已经过时！'
+  count:
+    words:
+      head: '本文共'
+      foot: '字。'
+    time:
+      head: '阅读大约需要'
+      foot: '分钟。'
 search:
   text: '搜索什么...'
   explore: '探索'

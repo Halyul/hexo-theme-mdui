@@ -1,3 +1,8 @@
+/* hexo toc.js
+* author: hexojs
+* license: MIT
+*/
+
 'use strict';
 
 var cheerio;

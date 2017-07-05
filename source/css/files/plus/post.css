@@ -50,10 +50,11 @@
   margin: 0 0 16px 12px;
 }
 
-.post-container div.warning, .post-container div.license {
+.post-container div.warning, .post-container div.license, .post-container div.count {
   background-color: #f8f8f8;
+  border-left-width: 4px;
+  border-left-style: solid;
   border-bottom-right-radius: 2px;
-  border-left: 4px solid #D50000;
   border-top-right-radius: 2px;
   padding: 12px 24px 12px 30px;
   position: relative;
@@ -64,6 +65,14 @@
 .post-container div.warning {
   display: none;
   margin-bottom: 16px;
+}
+
+.post-container div.count {
+  margin-bottom: 16px;
+}
+
+.post-container div.warning, .post-container div.license {
+  border-left-color: #D50000;
 }
 
 .post-container div.warning:before {
@@ -363,4 +372,54 @@
 
 .mdui-typo pre code {
   color: inherit !important;
+}
+
+/* word counts color setting */
+.mdui-theme-accent-amber .post-container div.count {
+  border-left-color: #ffd740;
+}
+.mdui-theme-accent-blue .post-container div.count {
+  border-left-color: #448aff;
+}
+.mdui-theme-accent-cyan .post-container div.count {
+  border-left-color: #18ffff;
+}
+.mdui-theme-accent-deep-orange .post-container div.count {
+  border-left-color: #ff6e40;
+}
+.mdui-theme-accent-deep-purple .post-container div.count {
+  border-left-color: #7c4dff;
+}
+.mdui-theme-accent-green .post-container div.count {
+  border-left-color: #69f0ae;
+}
+.mdui-theme-accent-indigo .post-container div.count {
+  border-left-color: #536dfe;
+}
+.mdui-theme-accent-light-blue .post-container div.count {
+  border-left-color: #40c4ff;
+}
+.mdui-theme-accent-light-green .post-container div.count {
+  border-left-color: #b2ff59;
+}
+.mdui-theme-accent-lime .post-container div.count {
+  border-left-color: #eeff41;
+}
+.mdui-theme-accent-orange .post-container div.count {
+  border-left-color: #ffab40;
+}
+.mdui-theme-accent-pink .post-container div.count {
+  border-left-color: #ff4081;
+}
+.mdui-theme-accent-purple .post-container div.count {
+  border-left-color: #e040fb;
+}
+.mdui-theme-accent-red .post-container div.count {
+  border-left-color: #ff5252;
+}
+.mdui-theme-accent-teal .post-container div.count {
+  border-left-color: #64ffda;
+}
+.mdui-theme-accent-yellow .post-container div.count {
+  border-left-color: #ff0;
 }

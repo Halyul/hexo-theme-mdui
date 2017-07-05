@@ -52,6 +52,20 @@
         <%= __('posts.modified.foot') %>
         <%= __('posts.modified.content') %>
       </div>
+      <% if (theme.post.word_count === true || theme.post.read_time === true) { %>
+        <div class="count">
+          <% if (theme.post.word_count === true) { %>
+            <span>
+              <%= __('posts.count.words.head') %><%= wordcount(page.content) %><%= __('posts.count.words.foot') %>
+            </span>
+          <% } %>
+          <% if (theme.post.read_time === true) { %>
+            <span>
+              <%= __('posts.count.time.head') %><%= min2read(page.content, {cn: 600, en: 160}) %><%= __('posts.count.time.foot') %>
+            </span>
+          <% } %>
+        </div>
+      <% } %>
       <div class="mdui-card-media">
         <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>
