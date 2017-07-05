@@ -37,6 +37,19 @@
   <script type="text/javascript" src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
 
+<!-- drawer lock
+<script type="text/ls-javascript" id="drawer-lock-script">
+  var drawer = document.querySelector('#drawer')
+  var html = document.querySelector('html')
+  drawer.addEventListener('opened.mdui.drawer', function () {
+    if (document.querySelector('body').classList.contains('mdui-locked'))
+    html.style.overflow = 'hidden'
+  });
+  drawer.addEventListener('close.mdui.drawer', function () {
+    html.style.overflow = 'auto'
+  });
+</script>-->
+
 <!-- Custom javascript -->
 <%- partial('../_custom/custom_js')%>
 
