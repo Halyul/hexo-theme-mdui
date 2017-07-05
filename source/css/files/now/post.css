@@ -51,6 +51,7 @@
 }
 
 .post-container p.warning {
+  display: none;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
