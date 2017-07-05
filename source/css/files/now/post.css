@@ -325,3 +325,7 @@
 .mdui-theme-accent-yellow .mdui-typo code {
   color: #ff0;
 }
+
+.mdui-typo pre code {
+  color: inherit !important;
+}
