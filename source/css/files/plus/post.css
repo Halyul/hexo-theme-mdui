@@ -91,6 +91,25 @@
   top: 14px;
 }
 
+#post-content.mdui-typo pre {
+  position: relative;
+}
+
+#post-content.mdui-typo pre:after {
+  content: attr(data-lang);
+  font-size: 14px;
+  font-size: .9rem;
+  font-weight: 600;
+  height: 15px;
+  line-height: 15px;
+  padding: 5px 10px 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+  opacity: .72;
+}
+
 #blog-post {
   padding: 16px;
   display: inline-block;
@@ -320,53 +339,53 @@
   }
 }
 
-/* color setting */
-.mdui-theme-accent-amber .mdui-typo code {
+/* code color setting */
+.mdui-theme-accent-amber .mdui-typo code, .mdui-theme-accent-amber #post-content.mdui-typo pre:after {
   color: #ffd740;
 }
-.mdui-theme-accent-blue .mdui-typo code {
+.mdui-theme-accent-blue .mdui-typo code, .mdui-theme-accent-blue #post-content.mdui-typo pre:after {
   color: #448aff;
 }
-.mdui-theme-accent-cyan .mdui-typo code {
+.mdui-theme-accent-cyan .mdui-typo code, .mdui-theme-accent-cyan #post-content.mdui-typo pre:after {
   color: #18ffff;
 }
-.mdui-theme-accent-deep-orange .mdui-typo code {
+.mdui-theme-accent-deep-orange .mdui-typo code, .mdui-theme-accent-deep-orange #post-content.mdui-typo pre:after {
   color: #ff6e40;
 }
-.mdui-theme-accent-deep-purple .mdui-typo code {
+.mdui-theme-accent-deep-purple .mdui-typo code, .mdui-theme-accent-deep-purple #post-content.mdui-typo pre:after {
   color: #7c4dff;
 }
-.mdui-theme-accent-green .mdui-typo code {
+.mdui-theme-accent-green .mdui-typo code, .mdui-theme-accent-green #post-content.mdui-typo pre:after {
   color: #69f0ae;
 }
-.mdui-theme-accent-indigo .mdui-typo code {
+.mdui-theme-accent-indigo .mdui-typo code, .mdui-theme-accent-indigo #post-content.mdui-typo pre:after {
   color: #536dfe;
 }
-.mdui-theme-accent-light-blue .mdui-typo code {
+.mdui-theme-accent-light-blue .mdui-typo code, .mdui-theme-accent-light-blue #post-content.mdui-typo pre:after {
   color: #40c4ff;
 }
-.mdui-theme-accent-light-green .mdui-typo code {
+.mdui-theme-accent-light-green .mdui-typo code, .mdui-theme-accent-light-green #post-content.mdui-typo pre:after {
   color: #b2ff59;
 }
-.mdui-theme-accent-lime .mdui-typo code {
+.mdui-theme-accent-lime .mdui-typo code, .mdui-theme-accent-lime #post-content.mdui-typo pre:after {
   color: #eeff41;
 }
-.mdui-theme-accent-orange .mdui-typo code {
+.mdui-theme-accent-orange .mdui-typo code, .mdui-theme-accent-orange #post-content.mdui-typo pre:after {
   color: #ffab40;
 }
-.mdui-theme-accent-pink .mdui-typo code {
+.mdui-theme-accent-pink .mdui-typo code, .mdui-theme-accent-pink #post-content.mdui-typo pre:after {
   color: #ff4081;
 }
-.mdui-theme-accent-purple .mdui-typo code {
+.mdui-theme-accent-purple .mdui-typo code, .mdui-theme-accent-purple #post-content.mdui-typo pre:after {
   color: #e040fb;
 }
-.mdui-theme-accent-red .mdui-typo code {
+.mdui-theme-accent-red .mdui-typo code, .mdui-theme-accent-red #post-content.mdui-typo pre:after {
   color: #ff5252;
 }
-.mdui-theme-accent-teal .mdui-typo code {
+.mdui-theme-accent-teal .mdui-typo code, .mdui-theme-accent-teal #post-content.mdui-typo pre:after {
   color: #64ffda;
 }
-.mdui-theme-accent-yellow .mdui-typo code {
+.mdui-theme-accent-yellow .mdui-typo code, .mdui-theme-accent-yellow #post-content.mdui-typo pre:after {
   color: #ff0;
 }
 
