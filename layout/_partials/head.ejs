@@ -93,6 +93,7 @@ pageTitle += ' - ' + config.title;
   <% } else { %>
     <% if (theme.style.scheme === 'now') { %>
       <%- cssLsload({path:(config.root + 'css/style-now-v20170705.min'),key:'style_css'}) %>
+      <%- css('/css/files/now/post') %>
     <% } else { %>
       <%- cssLsload({path:(config.root + 'css/style-plus-v20170705.min'),key:'style_css'}) %>
     <% } %>

@@ -28,6 +28,10 @@ posts:
   pagination:
     newer: '新的文章'
     older: '旧的文章'
+  modified:
+    head: '这篇文章最后修改于'
+    foot: '天之前。'
+    content: '本页内容可能已经过时！'
 search:
   text: '搜索什么...'
   explore: '探索'

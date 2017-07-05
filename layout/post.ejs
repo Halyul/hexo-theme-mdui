@@ -46,6 +46,12 @@
 <div class="post-container">
   <div class="post-adjust">
     <div class="mdui-card card-bottom-fix menu-fix animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
+      <p class="warning">
+        <%= __('posts.modified.head') %>
+        <span id="content-warning"></span>
+        <%= __('posts.modified.foot') %>
+        <%= __('posts.modified.content') %>
+      </p>
       <div class="mdui-card-media">
         <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>

@@ -1,0 +1,13 @@
+<!-- post toc -->
+<script type="text/ls-javascript" id="post-toc-script">
+  (function() {
+    $$(document).ready(function(){
+      if($$("ul#menu-toc").children().length === 0 && $$("div#card-toc").children().length === 0)
+      {
+        $$("button#button-toc").addClass("mdui-hidden");
+        $$("div#card-toc").addClass("mdui-hidden");
+        $$("div#blog-post").addClass("no-toc")
+      };
+    });
+  })();
+</script>

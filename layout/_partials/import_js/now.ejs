@@ -26,7 +26,9 @@
   <%- partial('js/now/appbar') %>
   <%- partial('js/toc') %>
   <%- partial('js/post_lg') %>
-  <%//- partial('js/donte_judge')
+  <%- partial('js/toc_hidden') %>
+  <%- partial('js/content_warning') %>
+  <% //- partial('js/donte_judge')
   %>
 
   <% if (page.mathjax === true) { %>
@@ -34,19 +36,6 @@
     <%- partial('../../_widget/post_mathjax') %>
   <% } %>
 
-  <script type="text/ls-javascript" id="post-toc-script">
-    /* post toc */
-    (function() {
-      $$(document).ready(function(){
-        if($$("ul#menu-toc").children().length === 0 && $$("div#card-toc").children().length === 0)
-        {
-          $$("button#button-toc").addClass("mdui-hidden");
-          $$("div#card-toc").addClass("mdui-hidden");
-          $$("div#blog-post").addClass("no-toc")
-        };
-      });
-    })();
-  </script>
 <% } %>
 
 <% // archive page parallax background
