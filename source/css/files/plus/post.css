@@ -81,11 +81,12 @@
   .post-actions {
     float: right;
     font-size: 14px;
+    height: 64px;
     line-height: 64px;
   }
-  .post-actions span {
-    margin-right: 0;
+  .post-actions div {
     padding: 0 24px;
+    line-height: normal;
   }
   .post-actions button {
     margin: 0 24px;
@@ -108,10 +109,8 @@
   .post-actions {
     height: 48px;
   }
-  .post-actions span {
+  .post-actions div {
     padding: 0 16px;
-    line-height: 48px;
-    text-transform: uppercase;
   }
   .post-actions button {
     float: right;

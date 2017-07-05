@@ -7,7 +7,8 @@
     <div class="content mdui-valign">
       <div class="mdui-typo-body-1-opacity mdui-typo">
         <span><%= config.author %></span>
-          <%= ' · ' + date(post.date, 'MMM DD, YYYY') %>
+        <span> · </span>
+        <span><%= date(post.date, 'MMM DD, YYYY') %></span>
       </div>
     </div>
   <div class="flex-spacer"></div>
@@ -16,6 +17,9 @@
   <div class="mdui-card-content posts-content">
     <div class="posts-excerpt">
       <a href="<%= url_for(post.path) %>" target="_self" class="posts-title mdui-typo-title no-text-decoration">
+        <% if (post.pinned === true) { %>
+          <span style="color: #D50000"><%= '['+ __('posts.pinned') + '] ' %></span>
+        <% } %>
         <%= post.title %>
       </a>
       <div class="posts-strip mdui-typo-body-1">
@@ -25,8 +29,8 @@
     <div class="flex-spacer"></div>
     <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
   </div>
-  <div class="mdui-divider" style="margin: 0 16px;"></div>
-  <% if (post.category !== false || post.tag !== false || post.pinned === true) { %>
+  <% if (post.category !== false || post.tag !== false) { %>
+    <div class="mdui-divider" style="margin: 0 16px;"></div>
     <div class="posts-bottom">
       <% if (post.category !== false) { %>
         <div class="mdui-chip">
@@ -58,12 +62,6 @@
               <span><%= tag.name %></span>
             </a>
           <% }) %>
-        </div>
-      <% } %>
-      <div class="flex-spacer"></div>
-      <% if (post.pinned === true) { %>
-        <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
-          <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
         </div>
       <% } %>
     </div>

@@ -26,8 +26,18 @@
 ">
   <div class="post-header-container">
     <div class="post-title mdui-text-truncate"><%= page.title %></div>
-    <div class="post-actions">
-      <span><%= date(page.date, 'MMM DD, YYYY') %></span>
+    <div class="post-actions mdui-valign">
+      <div>
+        <span><%= __('posts.posted') + ': ' %></span>
+        <span style="float: right"><%= date(page.date, 'MMM DD, YYYY') %></span>
+        <%  var posted = date(page.date, 'MMM DD, YYYY')
+            var edited = date(page.updated, 'MMM DD, YYYY')
+            if (posted !== edited) { %>
+        <br>
+          <span><%= __('posts.edited') + ': ' %></span>
+          <span><%= edited %></span>
+        <% } %>
+      </div>
       <%- partial('_partials/menu/qrcode') %>
       <%- partial('_partials/menu/post_share') %>
     </div>

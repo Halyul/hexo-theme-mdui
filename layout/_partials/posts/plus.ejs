@@ -3,7 +3,12 @@
 %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %> mdui-center">
   <div class="posts-title mdui-typo">
-    <a href="<%= url_for(post.path) %>" target="_self"><%= post.title %></a>
+    <a href="<%= url_for(post.path) %>" target="_self">
+      <% if (post.pinned === true) { %>
+        <span style="color: #D50000"><%= '['+ __('posts.pinned') + '] ' %></span>
+      <% } %>
+      <%= post.title %>
+    </a>
   </div>
   <div class="posts-line">
     <div class="mdui-divider"></div>
@@ -48,11 +53,8 @@
       </div>
     <% } %>
     <div class="flex-spacer"></div>
-    <div class="mdui-typo-caption-opacity mdui-valign"><%= date(post.date, 'MMM DD, YYYY') %></div>
-    <% if (post.pinned === true) { %>
-      <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
-        <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
-      </div>
-    <% } %>
+    <div class="mdui-typo-caption-opacity mdui-valign">
+      <span><%= date(post.date, 'MMM DD, YYYY') %></span>
+    </div>
   </div>
 </div>
