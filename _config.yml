@@ -46,6 +46,9 @@ post:
     paypay:
       link: 'https://paypal.com'
       fa: 'fa-paypal'
+  license:
+    name: 'CC BY-NC-SA 4.0'
+    link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
 
 share_menu: false
 #  rss: false

@@ -5,7 +5,7 @@
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
-      document.querySelector('p.warning').style.display = 'block'
+      document.querySelector('div.warning').style.display = 'block'
       document.querySelector('#content-warning').textContent = difference
     }
   })();

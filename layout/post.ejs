@@ -28,13 +28,13 @@
     <div class="post-title mdui-text-truncate"><%= page.title %></div>
     <div class="post-actions mdui-valign">
       <div>
-        <span><%= __('posts.posted') + ': ' %></span>
+        <span><%= __('posts.posted') %></span>
         <span style="float: right"><%= date(page.date, 'MMM DD, YYYY') %></span>
         <%  var posted = date(page.date, 'MMM DD, YYYY')
             var edited = date(page.updated, 'MMM DD, YYYY')
             if (posted !== edited) { %>
         <br>
-          <span><%= __('posts.edited') + ': ' %></span>
+          <span><%= __('posts.edited') %></span>
           <span><%= edited %></span>
         <% } %>
       </div>
@@ -46,12 +46,12 @@
 <div class="post-container">
   <div class="post-adjust">
     <div class="mdui-card card-bottom-fix menu-fix animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
-      <p class="warning">
+      <div class="warning">
         <%= __('posts.modified.head') %>
         <span id="content-warning"></span>
         <%= __('posts.modified.foot') %>
         <%= __('posts.modified.content') %>
-      </p>
+      </div>
       <div class="mdui-card-media">
         <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>
@@ -63,6 +63,21 @@
       " id="post-content">
         <%-page.content%>
       </div>
+
+      <% if (page.license_name || theme.post.license.name) { %>
+        <div class="license mdui-typo">
+          <span>
+            <%= __('posts.license') %>
+            <% if (page.license_link || theme.post.license.link) { %>
+              <a href="<%= page.license_link || theme.post.license.link %>" target="_blank"><%= page.license_name || theme.post.license.name %></a>
+            <% } else { %>
+              <%= page.license_name || theme.post.license.name %>
+            <% } %>
+          </span>
+          <br />
+          <span><%= __('posts.permalink') %><a href="<%= page.permalink %>"><%= page.permalink %></a></span>
+        </div>
+      <% } %>
 
       <% if (page.category !== false || page.tag !== false || theme.post.donate !== false) { %>
         <div class="posts-info">

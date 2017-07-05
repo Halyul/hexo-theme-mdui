@@ -15,12 +15,14 @@ archive:
   more: 'MORE'
   less: 'LESS'
 posts:
-  posted: 'Posted'
-  edited: 'Last Modified'
+  posted: 'Posted: '
+  edited: 'Last Modified: '
   header: 'Something that I have posted'
   public: 'Public'
   qr_code: "Article QR Code"
   pinned: 'Pinned'
+  license: 'Article License: '
+  permalink: 'Article Permalink: '
   donate:
     button: 'Buy me a beer?'
     close: 'cancel'
