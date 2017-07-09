@@ -40,6 +40,13 @@
 <!-- Custom javascript -->
 <%- partial('../_custom/custom_js')%>
 
+<!-- remove diplay:none -->
+<script type="text/ls-javascript" id="html-script">
+  (function(){
+   document.querySelector('html').style.display = 'block';
+  })()
+</script>
+
 <script>
   (function(){
     var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
