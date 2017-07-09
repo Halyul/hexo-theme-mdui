@@ -93,12 +93,19 @@
 
 #post-content.mdui-typo pre {
   position: relative;
+  padding: 16px;
+}
+
+#post-content.mdui-typo pre code {
+  display: block;
+  overflow: inherit;
+  padding: 12px;
 }
 
 #post-content.mdui-typo pre:after {
   content: attr(data-lang);
-  font-size: 14px;
-  font-size: .9rem;
+  font-size: 12px;
+  font-size: .8rem;
   font-weight: 600;
   height: 15px;
   line-height: 15px;
