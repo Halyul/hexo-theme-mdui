@@ -241,7 +241,7 @@ body #blog-appbar button.style-fix {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 859px) {
   body.side-content {
     padding-top: 0;
     padding-left: 0;

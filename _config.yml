@@ -37,7 +37,7 @@ post:
   entry_excerpt: 80
   qr_code: true
   prism:
-    theme: 
+    theme:
     line_number:
   donate:
     wechat:
