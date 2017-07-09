@@ -32,7 +32,7 @@
 </div>
 <div class="post-container">
   <div class="post-adjust">
-    <div class="mdui-card card-bottom-fix menu-fix animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
+    <div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
       <div class="mdui-card-media">
         <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>
@@ -61,7 +61,7 @@
         <% } %>
       <% } %>
     </div>
-    <div id="card-toc" class="animate mdui-color-theme">
+    <div id="card-toc" class="mdui-color-theme">
       <%- customToc(page.content, {
                 class: 'post-toc'
             }) %>

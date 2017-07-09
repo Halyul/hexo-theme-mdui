@@ -63,7 +63,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
 <% // appbar in post and custom page
   } else if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'gallery')
 { %>
-  <div class="mdui-appbar mdui-appbar-fixed animate" id="blog-appbar">
+  <div class="mdui-appbar mdui-appbar-fixed" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
       <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
         <i class="mdui-icon material-icons">&#xe5d2;</i>
