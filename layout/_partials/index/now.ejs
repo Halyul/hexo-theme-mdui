@@ -2,41 +2,43 @@
   <div class="faviconImg">
     <img class="mdui-img-fluid" src="<%= theme.head.high_res_favicon %>" />
   </div>
-  <div id="search">
-    <div class="mdui-toolbar
-      <% if (theme.color.layout === 'dark') { %>
-        mdui-color-grey-900
-      <% } else { %>
-        mdui-color-theme
-      <% } %>
-     mdui-shadow-2">
-      <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
-        <i class="mdui-icon">
-          <span></span>
-        </i>
-      </button>
-      <div class="mdui-toolbar-spacer
-      <% if (theme.color.layout === 'dark') { %>
-        mdui-color-grey-900
-      <% } else { %>
-        mdui-color-theme
-      <% } %>
-       mdui-ripple" id="search-btn">
-        <div class="mdui-typo-subheading-opacity"><%= __('search.text') %></div>
-      </div>
-      <%- partial('../menu/index_more') %>
-      <%- partial('../menu/index_share') %>
-      <div class="search">
-        <div class="icon">
-          <i class="mdui-icon material-icons">&#xe8b6;</i>
+  <% if (theme.appbar.search === true) { %>
+    <div id="search">
+      <div class="mdui-toolbar
+        <% if (theme.color.layout === 'dark') { %>
+          mdui-color-grey-900
+        <% } else { %>
+          mdui-color-theme
+        <% } %>
+       mdui-shadow-2">
+        <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
+          <i class="mdui-icon">
+            <span></span>
+          </i>
+        </button>
+        <div class="mdui-toolbar-spacer
+        <% if (theme.color.layout === 'dark') { %>
+          mdui-color-grey-900
+        <% } else { %>
+          mdui-color-theme
+        <% } %>
+         mdui-ripple" id="search-btn">
+          <div class="mdui-typo-subheading-opacity"><%= __('search.text') %></div>
         </div>
-        <div class="text">
-          <input type="text" placeholder="<%= __('search.text') %>" id="search-input"/>
+        <%- partial('../menu/index_more') %>
+        <%- partial('../menu/index_share') %>
+        <div class="search">
+          <div class="icon">
+            <i class="mdui-icon material-icons">&#xe8b6;</i>
+          </div>
+          <div class="text">
+            <input type="text" placeholder="<%= __('search.text') %>" id="search-input"/>
+          </div>
         </div>
+        <button class="mdui-btn mdui-btn-icon mdui-ripple close" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
       </div>
-      <button class="mdui-btn mdui-btn-icon mdui-ripple close" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
     </div>
-  </div>
+  <% } %>
 </div>
 <div id="search-cover" searchResult></div>
 <div id="posts">
