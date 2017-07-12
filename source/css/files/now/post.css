@@ -1,8 +1,45 @@
+.post-warpper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  min-height: calc(100vh - 56px);
+}
+
+@meidia (min-width: 600px) {
+  .post-warpper {
+    min-height: calc(100vh - 60px);
+  }
+}
+
+@meidia (min-width: 1024px) {
+  .post-warpper {
+    min-height: calc(100vh - 64px);
+  }
+}
+
 .post-bg-color {
     height: 64%;
     z-index: -1;
     position: absolute;
     width: 100%;
+}
+
+body.mdui-drawer-body-left .post-bg-color {
+  width: calc(100% - 300px);
+  transition: width .3s cubic-bezier(0,0,.2,1);
+}
+
+@media (max-width: 599px) {
+  .post-bg-color {
+      height: 48%;
+  }
 }
 
 .posts-info {
@@ -273,7 +310,13 @@
   cursor: pointer;
 }
 
-#blog-post.no-toc {
+@media (min-width: 1024px) {
+  .no-toc {
+    margin: 0 auto;
+  }
+}
+
+.no-toc .mdui-card {
   display: inherit;
   margin: 0 auto;
   margin-bottom: 16px;
@@ -293,9 +336,6 @@
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
-  flex: auto;
   -webkit-box-orient: horizontal;
   box-orient: horizontal;
   -ms-flex-direction: row;
@@ -317,18 +357,6 @@
 }
 
 @media (max-width: 599px) {
-  .post-pagination {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-flex: auto;
-    -ms-flex: auto;
-    flex: auto;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
-    -ms-flex-direction: column;
-  }
   .post-pagination {
     height: auto;
     padding: 0;
