@@ -8,7 +8,7 @@
 
 #index #search, #posts {
   width: 75%;
-  margin: 0 auto;
+  margin: 0 auto 16px auto;
 }
 
 @media (max-width: 599px) {
@@ -185,7 +185,7 @@
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
   width: 75%;
-  margin: 16px auto;
+  margin: 0 auto 16px auto;
   position: relative;
 }
 

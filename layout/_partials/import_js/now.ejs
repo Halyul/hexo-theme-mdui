@@ -5,19 +5,23 @@
   })();
 
   /* appbar button */
-  $$(document).on('open.mdui.drawer', '#drawer', function (e) {
-    $$('.drawer-button').addClass('back');
-  });
+  (function() {
+    var drawer = document.querySelector('#drawer')
+    var drawerBtn = document.querySelector('.drawer-button')
 
-  $$(document).on('close.mdui.drawer', '#drawer', function (e) {
-    $$('.drawer-button').removeClass('back');
-  });
+    drawer.addEventListener('open.mdui.drawer', function (e) {
+      drawerBtn.classList.add('back')
+    })
+    drawer.addEventListener('close.mdui.drawer', function (e) {
+      drawerBtn.classList.remove('back')
+    })
+  })();
 
   /* drawer */
-  $$('#drawer-button').on('click', function (e) {
-      $$(this).toggleClass('pages');
-      $$('#drawer').toggleClass('pages');
-  });
+  document.querySelector('#drawer-button').addEventListener('click', function (e) {
+      this.classList.toggle('pages');
+      document.querySelector('#drawer').classList.toggle('pages');
+  })
 </script>
 
 <% // js in post and custom page
@@ -51,33 +55,49 @@
     <script type="text/ls-javascript" id="about-me-dialog-script">
       /* aboutme dialog */
       (function() {
-        $$(document).on('open.mdui.collapse', 'div.mdui-collapse-item', function() {
-            $$(this).addClass('hide-more');
-            $$(this).removeClass('hide-less');
-        });
-        $$(document).on('close.mdui.collapse', 'div.mdui-collapse-item', function() {
-          $$(this).removeClass('hide-more');
-          $$(this).addClass('hide-less');
-        });
+        var collapseItems = document.querySelectorAll('div.mdui-collapse-item')
+
+        for (i = 0; i < collapseItems.length; i++) {
+          collapseItems[i].addEventListener("click", toggleText);
+        }
+
+        function toggleText() {
+          this.addEventListener('open.mdui.collapse', function() {
+              this.classList.add('hide-more');
+              this.classList.remove('hide-less');
+          });
+          this.addEventListener('close.mdui.collapse', function() {
+            this.classList.remove('hide-more');
+            this.classList.add('hide-less');
+          });
+        }
+
         var cardFlag = false;
-        $$('div#aboutmeDialog').on('scroll', function() {
-          if (!cardFlag && $$('div#cardLocation').position().top < 0) {
-            $$('div#aboutmeAppbar').addClass('style-fix');
+        var aboutmeDialog = document.querySelector('div#aboutmeDialog')
+        var aboutmeAppbar = document.querySelector('div#aboutmeAppbar')
+
+        aboutmeDialog.addEventListener('scroll', function() {
+          var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
+          if (!cardFlag && cardLocation < 0) {
+            aboutmeAppbar.classList.add('style-fix');
             cardFlag = true;
-          } else if (cardFlag && $$('div#cardLocation').position().top >= 0) {
-            $$('div#aboutmeAppbar').removeClass('style-fix');
+          } else if (cardFlag && cardLocation >= 0) {
+            aboutmeAppbar.classList.remove('style-fix');
             cardFlag = false;
           };
         });
-        $$(document).on('open.mdui.dialog', 'div#aboutmeDialog', function() {
-          if (!cardFlag && $$('div#cardLocation').position().top < 0) {
-            $$('div#aboutmeAppbar').addClass('style-fix');
+
+        var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
+
+        aboutmeDialog.addEventListener('open.mdui.dialog', function() {
+          if (!cardFlag && cardLocation < 0) {
+            aboutmeAppbar.classList.add('style-fix');
             cardFlag = true;
           };
         });
-        $$(document).on('close.mdui.dialog', 'div#aboutmeDialog', function() {
-          if (cardFlag && $$('div#cardLocation').position().top < 0) {
-            $$('div#aboutmeAppbar').removeClass('style-fix');
+        aboutmeDialog.addEventListener('close.mdui.dialog', function() {
+          if (cardFlag && cardLocation < 0) {
+            aboutmeAppbar.classList.remove('style-fix');
             cardFlag = false;
           };
         });
@@ -118,9 +138,9 @@
   <script type="text/ls-javascript" id="back-button-script">
     /* back button */
     (function() {
-      $$(document).on('click', 'button[back]', function() {
+      document.querySelector('button[back]').addEventListener('click', function() {
           window.history.back();
-      });
+      })
     })();
   </script>
 <% } %>

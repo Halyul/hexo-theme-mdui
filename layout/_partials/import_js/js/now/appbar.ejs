@@ -4,18 +4,22 @@
     var pageFlag = false;
     var appbar = new mdui.Headroom('#blog-appbar');
     appbar.disable();
-    $$(window).on('scroll', function() {
+    var toolbar = document.querySelector('#blog-appbar .mdui-toolbar')
+
+    window.addEventListener('scroll', function() {
       var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      var pageLocation = $$('div#top').offset().top - bodyTop;
+      var divTop = document.querySelector('div#top').offsetTop
+
+      var pageLocation = divTop - bodyTop;
       if (!pageFlag && pageLocation < 0) {
-        $$('#blog-appbar .mdui-toolbar').addClass('mdui-shadow-2');
+        toolbar.classList.add('mdui-shadow-2')
         appbar.enable();
         pageFlag = true;
       } else if (pageFlag && pageLocation >= 0) {
-        $$('#blog-appbar .mdui-toolbar').removeClass('mdui-shadow-2');
+        toolbar.classList.remove('mdui-shadow-2')
         appbar.disable();
         pageFlag = false;
       }
-    });
+    })
   })();
 </script>

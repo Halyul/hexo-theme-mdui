@@ -129,8 +129,13 @@
   }
 </script>
 <script type="text/ls-javascript" id="search-json-script">
-  $$(document).ready(function() {
+  if (document.readyState === 'complete' || document.readyState !== 'loading') {
+    searchCall();
+  } else {
+    document.addEventListener('DOMContentLoaded', searchCall);
+  }
+  function searchCall() {
     var path = '<%= config.root + config.search.path %>';
     searchFunc(path, 'search-input');
-  });
+  };
 </script>

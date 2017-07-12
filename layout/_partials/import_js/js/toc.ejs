@@ -1,5 +1,5 @@
 <script type="text/ls-javascript" id="toc-active-script">
-  if ($$("ul#menu-toc").children().length !== 0 && $$("div#card-toc").children().length !== 0) {
+  if (document.querySelector('ul#menu-toc > ol') !== null && document.querySelector('div#card-toc > ul') !== null) {
     window.addEventListener("load", function() {
       var timer;
       function doWork() {
@@ -45,7 +45,7 @@
         listens.push([value, function() {
           var readed = false;
           var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-          if ($$(element).offset().top <= scrollTop + $$(element).height() + 64) {
+          if (element.offsetTop <= scrollTop + element.clientHeight + 64) {
             readed = true;
           } else {
             readed = false;

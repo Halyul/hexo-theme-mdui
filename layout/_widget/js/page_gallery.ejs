@@ -1,17 +1,20 @@
 <script type="text/ls-javascript" id="gallery-script">
   (function() {
     var galleryFlag = false;
-    $$(window).on('scroll', function() {
+    window.addEventListener('scroll', function() {
       var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      var pageLocation = $$('div#top').offset().top - bodyTop;
+      var divTop = document.querySelector('div#top').offsetTop
+      var pageLocation = divTop - bodyTop;
+      var appbar = document.querySelector('div#blog-appbar')
+
       if (!galleryFlag && pageLocation < 0) {
-        $$('div#blog-appbar').removeClass('mdui-shadow-0 gallery-fix');
+        appbar.classList.remove('mdui-shadow-0 gallery-fix');
         galleryFlag = true;
       } else if (galleryFlag && pageLocation >= 0) {
-        $$('div#blog-appbar').addClass('mdui-shadow-0 gallery-fix');
+        appbar.classList.add('mdui-shadow-0 gallery-fix');
         galleryFlag = false;
       }
-    });
+    })
   })();
   lightGallery(document.getElementById('gallery-container'), {
     <%

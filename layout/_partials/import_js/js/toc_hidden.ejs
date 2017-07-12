@@ -1,13 +1,18 @@
 <!-- post toc -->
 <script type="text/ls-javascript" id="post-toc-script">
   (function() {
-    $$(document).ready(function(){
-      if($$("ul#menu-toc").children().length === 0 && $$("div#card-toc").children().length === 0)
+    if (document.readyState === 'complete' || document.readyState !== 'loading') {
+      tocHide();
+    } else {
+      document.addEventListener('DOMContentLoaded', tocHide);
+    }
+    function tocHide() {
+      if(document.querySelector('ul#menu-toc > ol') === null && document.querySelector('div#card-toc > ul') === null)
       {
-        $$("button#button-toc").addClass("mdui-hidden");
-        $$("div#card-toc").addClass("mdui-hidden");
-        $$("div#blog-post").addClass("no-toc")
+        document.querySelector('button#button-toc').classList.add('mdui-hidden')
+        document.querySelector('div#card-toc').classList.add('mdui-hidden')
+        document.querySelector('div#blog-post').classList.add('no-toc')
       };
-    });
+    }
   })();
 </script>
