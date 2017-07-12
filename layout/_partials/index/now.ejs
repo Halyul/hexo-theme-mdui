@@ -41,6 +41,13 @@
   <% } %>
 </div>
 <div id="search-cover" searchResult></div>
+
+<% if (theme.index.notification === true) { %>
+  <div class="info-notification">
+    <div class="content"></div>
+  </div>
+<% } %>
+
 <div id="posts">
   <%
     var index = 0;

@@ -12,6 +12,11 @@
         <%- partial('../menu/index_share') %>
       </div>
     </div>
+    <% if (theme.index.notification === true) { %>
+      <div class="info-notification">
+        <div class="content"></div>
+      </div>
+    <% } %>
   <% } %>
   <% if(index <= 2) { %>
     <div class="posts-header mdui-center" style="max-width: 498px;">

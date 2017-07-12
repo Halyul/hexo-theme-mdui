@@ -116,3 +116,137 @@
   line-height: 36px;
   margin-right: 4px;
 }
+
+.info-notification {
+  display: none;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  max-width: 526px;
+  margin: 16px auto;
+  position: relative;
+}
+
+.info-notification .content {
+  padding: 1px 16px;
+}
+
+.info-notification::before {
+  border-radius: 100%;
+  color: #fff;
+  content: "!";
+  font-size: 14px;
+  font-weight: 700;
+  left: -12px;
+  line-height: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  top: calc(50% - 10px);
+}
+
+@media (max-width: 530px) {
+  .info-notification {
+    margin-left: 10px;
+  }
+}
+
+.mdui-theme-accent-amber .info-notification {
+  border-left-color: #ffd740;
+}
+.mdui-theme-accent-blue .info-notification {
+  border-left-color: #448aff;
+}
+.mdui-theme-accent-cyan .info-notification {
+  border-left-color: #18ffff;
+}
+.mdui-theme-accent-deep-orange .info-notification {
+  border-left-color: #ff6e40;
+}
+.mdui-theme-accent-deep-purple .info-notification {
+  border-left-color: #7c4dff;
+}
+.mdui-theme-accent-green .info-notification {
+  border-left-color: #69f0ae;
+}
+.mdui-theme-accent-indigo .info-notification {
+  border-left-color: #536dfe;
+}
+.mdui-theme-accent-light-blue .info-notification {
+  border-left-color: #40c4ff;
+}
+.mdui-theme-accent-light-green .info-notification {
+  border-left-color: #b2ff59;
+}
+.mdui-theme-accent-lime .info-notification {
+  border-left-color: #eeff41;
+}
+.mdui-theme-accent-orange .info-notification {
+  border-left-color: #ffab40;
+}
+.mdui-theme-accent-pink .info-notification {
+  border-left-color: #ff4081;
+}
+.mdui-theme-accent-purple .info-notification {
+  border-left-color: #e040fb;
+}
+.mdui-theme-accent-red .info-notification {
+  border-left-color: #ff5252;
+}
+.mdui-theme-accent-teal .info-notification {
+  border-left-color: #64ffda;
+}
+.mdui-theme-accent-yellow .info-notification {
+  border-left-color: #ff0;
+}
+
+.mdui-theme-accent-amber .info-notification::before {
+  background-color: #ffd740;
+}
+.mdui-theme-accent-blue .info-notification::before {
+  background-color: #448aff;
+}
+.mdui-theme-accent-cyan .info-notification::before {
+  background-color: #18ffff;
+}
+.mdui-theme-accent-deep-orange .info-notification::before {
+  background-color: #ff6e40;
+}
+.mdui-theme-accent-deep-purple .info-notification::before {
+  background-color: #7c4dff;
+}
+.mdui-theme-accent-green .info-notification::before {
+  background-color: #69f0ae;
+}
+.mdui-theme-accent-indigo .info-notification::before {
+  background-color: #536dfe;
+}
+.mdui-theme-accent-light-blue .info-notification::before {
+  background-color: #40c4ff;
+}
+.mdui-theme-accent-light-green .info-notification::before {
+  background-color: #b2ff59;
+}
+.mdui-theme-accent-lime .info-notification::before {
+  background-color: #eeff41;
+}
+.mdui-theme-accent-orange .info-notification::before {
+  background-color: #ffab40;
+}
+.mdui-theme-accent-pink .info-notification::before {
+  background-color: #ff4081;
+}
+.mdui-theme-accent-purple .info-notification::before {
+  background-color: #e040fb;
+}
+.mdui-theme-accent-red .info-notification::before {
+  background-color: #ff5252;
+}
+.mdui-theme-accent-teal .info-notification::before {
+  background-color: #64ffda;
+}
+.mdui-theme-accent-yellow .info-notification::before {
+  background-color: #ff0;
+}

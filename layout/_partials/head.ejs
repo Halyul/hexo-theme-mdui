@@ -84,17 +84,17 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170709" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170712" />
   <% } else { %>
-    <%- css("css/fonts-v20170709.min") %>
+    <%- css("css/fonts-v20170712.min") %>
   <% } %>
   <% if(theme.vendors.style_min_css) { %>
     <%- cssLsload({path:(theme.vendors.style_min_css),key:'style_css'}) %>
   <% } else { %>
     <% if (theme.style.scheme === 'now') { %>
-      <%- cssLsload({path:(config.root + 'css/style-now-v20170709.min'),key:'style_css'}) %>
+      <%- cssLsload({path:(config.root + 'css/style-now-v20170712.min'),key:'style_css'}) %>
     <% } else { %>
-      <%- cssLsload({path:(config.root + 'css/style-plus-v20170709.min'),key:'style_css'}) %>
+      <%- cssLsload({path:(config.root + 'css/style-plus-v20170712.min'),key:'style_css'}) %>
     <% } %>
   <% } %>
 

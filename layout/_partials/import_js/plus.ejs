@@ -99,3 +99,7 @@
   if (is_home() || is_archive() || is_year() || is_category() || is_tag()) { %>
   <%- partial('js/to_top')%>
 <% } %>
+
+<% if (theme.index.notification === true) { %>
+  <%- partial('js/notification')%>
+<% } %>
