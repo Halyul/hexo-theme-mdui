@@ -1,57 +1,68 @@
 #!/bin/bash
-THEME_PATH=$PWD
 CSS=$PWD/source/css
 JS=$PWD/source/js
-PARTIALS=$THEME_PATH/layout/_partials
 
-CSS_PLUS_CURRENT=$(find $CSS/style-plus-v*.css)
-CSS_NOW_CURRENT=$(find $CSS/style-now-v*.css)
-FONTS_CURRENT=$(find $CSS/fonts-v*.css)
-JS_CURRENT=$(find $JS/js-v*.js)
+CSS_PLUS=$(find $CSS/style-plus.min.css)
+CSS_NOW=$(find $CSS/style-now.min.css)
+FONTS=$(find $CSS/fonts.min.css)
+JS=$(find $JS/js.min.js)
 
-CSS_FILES=$PWD/source/css/files
-JS_FILES=$PWD/source/js/files
-
-DATE=$(date +%Y%m%d)
-
-cd $CSS
-find style-plus-v*.css > $THEME_PATH/tmp.sh
-sed -i "s/style-plus-v//" $THEME_PATH/tmp.sh
-sed -i "s/.min.css//" $THEME_PATH/tmp.sh
-sed -i "s/^/CURRENT=/" $THEME_PATH/tmp.sh
-source $THEME_PATH/tmp.sh
+CSS_FILES=$PWD/source/css/_files
+JS_FILES=$PWD/source/js/_files
 
 # delete old files
-rm $CSS_PLUS_CURRENT $CSS_NOW_CURRENT
-rm $JS_CURRENT
-rm $FONTS_CURRENT
+rm $CSS_PLUS $CSS_NOW
+rm $JS
+rm $FONTS
 
 cd $CSS_FILES
-uglifycss outdatedbrowser.css mdui.custom.css font-awesome.css lightgallery.css lg-transitions.css prism-themes.css --output external.min.css
 
-uglifycss plus/global.css plus/appbar.css plus/drawer.css plus/post.css plus/posts.css plus/archives.css plus/dialogs.css plus/page-search.css page-friends.css page-galleries.css page-gallery.css lg.css animate.css --output plus.min.css
+# external core css
+uglifycss core/outdatedbrowser.css core/mdui.custom.css core/font-awesome.css core/animate.css --output external-core.min.css
 
-uglifycss external.min.css plus.min.css --output ../style-plus-v$DATE.min.css
+# plus
+## plus core
+uglifycss plus/global.css plus/appbar.css plus/drawer.css plus/posts.css --output plus.min.css
 
-cssnano ../style-plus-v$DATE.min.css ../style-plus-v$DATE.min.css
+## combine core css
+uglifycss external-core.min.css plus.min.css --output ../style-plus.min.css
 
-uglifycss now/global.css now/appbar.css now/drawer.css now/index.css now/post.css now/posts.css now/archives.css plus/dialogs.css page-friends.css page-galleries.css page-gallery.css lg.css animate.css --output now.min.css
+cssnano ../style-plus.min.css ../style-plus.min.css
 
-uglifycss external.min.css now.min.css --output ../style-now-v$DATE.min.css
+## plus other
+### plus post
+cssnano plus/post.css ../src/plus/post.min.css
 
-cssnano ../style-now-v$DATE.min.css ../style-now-v$DATE.min.css
+### plus archives
+uglifycss plus/archives.css plus/dialogs.css --output ../src/plus/archives.min.css
+
+cssnano ../src/plus/archives.min.css ../src/plus/archives.min.css
+
+### plus search
+cssnano plus/search.css ../src/plus/search.min.css
+
+# now
+## now core
+uglifycss now/global.css now/appbar.css now/drawer.css now/index.css now/posts.css  --output now.min.css
+
+## combine core css
+uglifycss external-core.min.css now.min.css --output ../style-now.min.css
+
+cssnano ../style-now.min.css ../style-now.min.css
+
+## now other
+### now post
+cssnano now/post.css ../src/now/post.min.css
+
+### now archives
+uglifycss now/archives.css now/dialogs.css --output ../src/now/archives.min.css
+
+cssnano ../src/now/archives.min.css ../src/now/archives.min.css
 
 # fonts
-uglifycss fonts.css --output ../fonts-v$DATE.min.css
+uglifycss fonts.css --output ../fonts.min.css
 
-rm external.min.css plus.min.css now.min.css
+rm external-core.min.css plus.min.css now.min.css
 
 cd $JS_FILES
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js js.js --output ../js-v$DATE.min.js
-
-cd $PARTIALS
-sed -i "s/$CURRENT/$DATE/" head.ejs
-sed -i "s/$CURRENT/$DATE/" import_js.ejs
-
-cd $THEME_PATH
-rm $THEME_PATH/tmp.sh
+uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js js.js --output ../js.min.js

@@ -1,6 +1,11 @@
 <% if (!is_year()) { %>
   <%- partial('_partials/archives/index') %>
 <% } else { %>
+  <% if (theme.style.scheme === 'now') { %>
+    <%- cssLsload({path:(config.root + 'css/src/now/archives.min'),key:'archives_css'}) %>
+  <% } else { %>
+    <%- cssLsload({path:(config.root + 'css/src/plus/archives.min'),key:'archives_css'}) %>
+  <% } %>
   <div class="posts-container column-3">
 
   </div>

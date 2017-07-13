@@ -135,7 +135,6 @@ body.mdui-drawer-body-left .post-bg-color {
 
 #post-content.mdui-typo pre code {
   display: block;
-  overflow: inherit;
   padding: 12px;
 }
 

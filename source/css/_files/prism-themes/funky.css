@@ -1,0 +1,97 @@
+/**
+ * prism.js Funky theme
+ * Based on “Polyfilling the gaps” talk slides http://lea.verou.me/polyfilling-the-gaps/
+ * @author Lea Verou
+ */
+
+#post-content code[class*="language-"], #post-content pre[class*="language-"] {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+
+/* Code blocks */
+
+#post-content pre[class*="language-"] {
+  padding: .4em .8em;
+  margin: .5em 0;
+  overflow: auto;
+  background: url('data:image/svg+xml;charset=utf-8,<svg%20version%3D"1.1"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"100"%20height%3D"100"%20fill%3D"rgba(0%2C0%2C0%2C.2)">%0D%0A<polygon%20points%3D"0%2C50%2050%2C0%200%2C0"%20%2F>%0D%0A<polygon%20points%3D"0%2C100%2050%2C100%20100%2C50%20100%2C0"%20%2F>%0D%0A<%2Fsvg>');
+  background-size: 1em 1em;
+}
+
+#post-content code[class*="language-"] {
+  background: black;
+  color: white;
+  box-shadow: -.3em 0 0 .3em black, .3em 0 0 .3em black;
+}
+
+
+/* Inline code */
+
+#post-content :not(pre)>code[class*="language-"] {
+  padding: .2em;
+  border-radius: .3em;
+  box-shadow: none;
+  white-space: normal;
+}
+
+#post-content .token.comment, #post-content .token.prolog, #post-content .token.doctype, #post-content .token.cdata {
+  color: #aaa;
+}
+
+#post-content .token.punctuation {
+  color: #999;
+}
+
+#post-content .namespace {
+  opacity: .7;
+}
+
+#post-content .token.property, #post-content .token.tag, #post-content .token.boolean, #post-content .token.number, #post-content .token.constant, #post-content .token.symbol {
+  color: #0cf;
+}
+
+#post-content .token.selector, #post-content .token.attr-name, #post-content .token.string, #post-content .token.char, #post-content .token.builtin {
+  color: yellow;
+}
+
+#post-content .token.operator, #post-content .token.entity, #post-content .token.url, #post-content .language-css .token.string, #post-content .toke.variable, #post-content .token.inserted {
+  color: yellowgreen;
+}
+
+#post-content .token.atrule, #post-content .token.attr-value, #post-content .token.keyword {
+  color: deeppink;
+}
+
+#post-content .token.regex, #post-content .token.important {
+  color: orange;
+}
+
+#post-content .token.important, #post-content .token.bold {
+  font-weight: bold;
+}
+
+#post-content .token.italic {
+  font-style: italic;
+}
+
+#post-content .token.entity {
+  cursor: help;
+}
+
+#post-content .token.deleted {
+  color: red;
+}

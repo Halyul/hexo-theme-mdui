@@ -496,7 +496,7 @@
         var template;
         var _this = this;
 
-        document.body.insertAdjacentHTML('beforeend', '<div class="lg-backdrop"></div>');
+        document.body.insertAdjacentHTML('beforeend', '<div class="lg-backdrop" style="z-index: 5050;"></div>');
         _lgUtils2.default.setVendor(document.querySelector('.lg-backdrop'), 'TransitionDuration', this.s.backdropDuration + 'ms');
 
         // Create gallery items
@@ -513,7 +513,7 @@
             subHtmlCont = '<div class="lg-sub-html"></div>';
         }
 
-        template = '<div class="lg-outer ' + this.s.addClass + ' ' + this.s.startClass + '">' + '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' + '<div class="lg-inner">' + list + '</div>' + '<div class="lg-toolbar group">' + '<button class="mdui-btn mdui-ripple mdui-ripple-white mdui-btn-icon lg-close"><i class="mdui-icon material-icons">&#xe5c4;</i></button>' + '</div>' + controls + subHtmlCont + '</div>' + '</div>';
+        template = '<div class="lg-outer ' + this.s.addClass + ' ' + this.s.startClass + '" style="z-index: 5050;">' + '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' + '<div class="lg-inner">' + list + '</div>' + '<div class="lg-toolbar group">' + '<button class="mdui-btn mdui-ripple mdui-ripple-white mdui-btn-icon lg-close"><i class="mdui-icon material-icons">&#xe5c4;</i></button>' + '</div>' + controls + subHtmlCont + '</div>' + '</div>';
 
         document.body.insertAdjacentHTML('beforeend', template);
         this.outer = document.querySelector('.lg-outer');

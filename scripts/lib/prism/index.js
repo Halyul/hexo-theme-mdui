@@ -18,7 +18,7 @@ const map = {
 
 const regex = /<pre><code class="(.*)?">([\s\S]*?)<\/code><\/pre>/igm;
 
-const line_number = true;
+const line_number = hexo.theme.config.post.prism.line_number;
 
 /**
  * Unescape from Marked escape
