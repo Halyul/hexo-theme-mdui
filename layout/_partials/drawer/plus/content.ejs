@@ -44,45 +44,49 @@
 <% } %>
 <% if (!is_archive() || is_year()) { %>
   <div class="mdui-list no-padding-top" mdui-collapse="{accordion: true}" mdui-collapse>
-    <div class="mdui-collapse-item <% if (is_category()) { %>mdui-collapse-item-open<% } %>" categories>
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
-        <div class="mdui-list-item-content"><%= __('global.categories') %></div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+    <% if (site.categories && site.categories.length) { %>
+      <div class="mdui-collapse-item <% if (is_category()) { %>mdui-collapse-item-open<% } %>">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
+          <div class="mdui-list-item-content"><%= __('global.categories') %></div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <% site.categories.map(function(category){  %>
+            <a href="<%= config.root %>categories/<%= category.name %>/" class="mdui-list-item mdui-ripple" style="display: flex">
+              <%= category.name %>
+              <div style="flex-grow: 1;"></div>
+              <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
+            </a>
+          <% }) %>
+        </div>
       </div>
-      <div class="mdui-collapse-item-body mdui-list" categories>
-        <% site.categories.map(function(category){  %>
-          <a href="<%= config.root %>categories/<%= category.name %>/" class="mdui-list-item mdui-ripple" style="display: flex">
-            <%= category.name %>
-            <div style="flex-grow: 1;"></div>
-            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
-          </a>
-        <% }) %>
+    <% } %>
+    <% if (site.tags && site.tags.length) { %>
+      <div class="mdui-collapse-item <% if (is_tag()) { %>mdui-collapse-item-open<% } %>">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
+          <div class="mdui-list-item-content"><%= __('global.tags') %></div>
+          <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
+        </div>
+        <div class="mdui-collapse-item-body mdui-list">
+          <% site.tags.map(function(tag){  %>
+            <a href="<%= config.root %>tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple" style="display: flex">
+              <%= tag.name %>
+              <div style="flex-grow: 1;"></div>
+              <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
+            </a>
+          <% }) %>
+        </div>
       </div>
-    </div>
-    <div class="mdui-collapse-item <% if (is_tag()) { %>mdui-collapse-item-open<% } %>" tags>
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
-        <div class="mdui-list-item-content"><%= __('global.tags') %></div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list" tags>
-        <% site.tags.map(function(tag){  %>
-          <a href="<%= config.root %>tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple" style="display: flex">
-            <%= tag.name %>
-            <div style="flex-grow: 1;"></div>
-            <span class="badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
-          </a>
-        <% }) %>
-      </div>
-    </div>
-    <div class="mdui-collapse-item <% if (is_year()) { %>mdui-collapse-item-open<% } %>" years>
+    <% } %>
+    <div class="mdui-collapse-item <% if (is_year()) { %>mdui-collapse-item-open<% } %>">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
         <div class="mdui-list-item-content"><%= __('global.years') %></div>
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
       </div>
-      <div class="mdui-collapse-item-body mdui-list" years>
+      <div class="mdui-collapse-item-body mdui-list">
         <%
         var years = {};
         site.posts.sort('date').reverse().forEach(function(post){

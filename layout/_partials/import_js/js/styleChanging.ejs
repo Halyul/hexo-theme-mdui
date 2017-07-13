@@ -1,13 +1,4 @@
 <script type="text/ls-javascript" id="style-changing-script">
-  var postsCount = document.querySelectorAll('div.posts-container div div.content-item').length || document.querySelectorAll('#content-list div.content-item').length;
-
-  if (postsCount === 1) {
-    var postsText = '<%= __('archive.post') %>';
-  } else if (postsCount > 1) {
-    var postsText = '<%= __('archive.posts') %>';
-  };
-
-  document.querySelector('div#postsCount').textContent = postsCount + ' ' + postsText;
   var content_flag = false;
   var appbar = document.querySelector('div#blog-appbar')
   var body = document.querySelector('body')

@@ -22,7 +22,14 @@
     <div class="name">
       <%= page.category || page.tag || page.year %>
     </div>
-    <div class="length" id="postsCount"></div>
+    <div class="length">
+      <% if (page.posts.length === 1) {
+          text = __('archive.post');
+        } else {
+          text = __('archive.posts');
+      } %>
+      <%= page.posts.length + text %>
+    </div>
   </div>
 </div>
 <div id="contentLocation"></div>
