@@ -17,11 +17,13 @@
     })
   })();
 
-  /* drawer */
-  document.querySelector('#drawer-button').addEventListener('click', function (e) {
-      this.classList.toggle('pages');
-      document.querySelector('#drawer').classList.toggle('pages');
-  })
+  <% if (theme.pages !== null) { %>
+    /* drawer */
+    document.querySelector('#drawer-button').addEventListener('click', function (e) {
+        this.classList.toggle('pages');
+        document.querySelector('#drawer').classList.toggle('pages');
+    })
+  <% } %>
 </script>
 
 <% // js in post and custom page

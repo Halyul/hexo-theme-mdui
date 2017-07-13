@@ -29,7 +29,7 @@
     <div class="flex-spacer"></div>
     <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
   </div>
-  <% if ((post.categories && post.categories.length) || post.tags && post.tags.length) { %>
+  <% if ((post.categories && post.categories.length) || (post.tags && post.tags.length)) { %>
     <div class="mdui-divider" style="margin: 0 16px;"></div>
     <div class="posts-bottom">
       <% if (post.categories && post.categories.length) { %>

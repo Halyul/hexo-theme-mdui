@@ -31,10 +31,12 @@ site.posts.sort('date').reverse().forEach(function(post){
         </div>
       </div>
       <div class="flex-spacer mdui-hidden-sm-down"></div>
-        <% if (theme.about_me === true) { %>
-          <button class="mdui-btn mdui-ripple mdui-text-color-white-icon mdui-hidden-sm-down" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
-        <% } %>
-      <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= __('userview.contact_me') %></button>
+      <% if (theme.about_me === true) { %>
+        <button class="mdui-btn mdui-ripple mdui-text-color-white-icon mdui-hidden-sm-down" mdui-dialog="{target: '#aboutmeDialog'}"><%= __('archive.about') %></button>
+      <% } %>
+      <% if (theme.sns !== null) { %>
+        <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= __('userview.contact_me') %></button>
+      <% } %>
     </div>
   </div>
   <div class="items mdui-container-fluid">
