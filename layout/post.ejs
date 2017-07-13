@@ -94,7 +94,7 @@
           </div>
         <% } %>
 
-        <% if ((post.categories && post.categories.length) || (post.tags && post.tags.length) || theme.post.donate !== null) { %>
+        <% if ((page.categories && page.categories.length) || (page.tags && page.tags.length) || theme.post.donate !== null) { %>
           <div class="posts-info">
             <% if (theme.post.donate !== null) { %>
               <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
