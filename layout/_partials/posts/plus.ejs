@@ -20,7 +20,7 @@
     <img src="<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
   </div>
   <div class="posts-bottom">
-    <% if (post.category !== false) { %>
+    <% if (post.categories && post.categories.length) { %>
       <div class="mdui-chip">
         <span class="mdui-chip-icon"><i class="mdui-icon
         <% if (theme.color.layout !== 'dark') { %>
@@ -36,7 +36,7 @@
         <% }) %>
       </div>
     <% } %>
-    <% if (post.tag !== false) { %>
+    <% if (post.tags && post.tags.length) { %>
       <div class="mdui-chip">
         <span class="mdui-chip-icon"><i class="mdui-icon
         <% if (theme.color.layout !== 'dark') { %>
