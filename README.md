@@ -17,7 +17,7 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 ## General 概括
 
 [![Author](https://img.shields.io/badge/author-Halyul-blue.svg?style=flat-square)](https://halyul.com)
-[![Version](https://img.shields.io/badge/version-1.4.0-green.svg?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-1.4.5-green.svg?style=flat-square)]()
 [![Hexo](https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square)](https://hexo.io)
 
 ## Demo 演示

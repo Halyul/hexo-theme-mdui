@@ -83,7 +83,7 @@ busuanzi:
 
 service_woker:
 
-about_me: true
+about_me: false
 
 pace: false
 

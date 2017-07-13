@@ -42,9 +42,14 @@
 
 <!-- remove diplay:none -->
 <script type="text/ls-javascript" id="html-script">
-  (function(){
-   document.querySelector('html').style.display = 'block';
-  })()
+  if (document.readyState === 'complete' || document.readyState !== 'loading') {
+    showHTML();
+  } else {
+    document.addEventListener('DOMContentLoaded', showHTML);
+  }
+  function showHTML(){
+    document.querySelector('html').style.display = 'block';
+  }
 </script>
 
 <script>

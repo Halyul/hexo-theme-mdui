@@ -3,6 +3,7 @@
     var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
   }
 %>
+<%- cssLsload({path:(config.root + 'css/src/now/index.min'),key:'index_css'}) %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
   <div class="mdui-card-header posts-header">
     <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>

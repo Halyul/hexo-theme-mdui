@@ -22,7 +22,7 @@ uglifycss core/outdatedbrowser.css core/mdui.custom.css core/font-awesome.css co
 
 # plus
 ## plus core
-uglifycss plus/global.css plus/appbar.css plus/drawer.css plus/posts.css --output plus.min.css
+uglifycss plus/global.css plus/appbar.css plus/drawer.css --output plus.min.css
 
 ## combine core css
 uglifycss external-core.min.css plus.min.css --output ../style-plus.min.css
@@ -30,20 +30,21 @@ uglifycss external-core.min.css plus.min.css --output ../style-plus.min.css
 cssnano ../style-plus.min.css ../style-plus.min.css
 
 ## plus other
+### plus index
+cssnano plus/index.css ../src/plus/index.min.css
+
 ### plus post
 cssnano plus/post.css ../src/plus/post.min.css
 
-### plus archives
-uglifycss plus/archives.css plus/dialogs.css --output ../src/plus/archives.min.css
-
-cssnano ../src/plus/archives.min.css ../src/plus/archives.min.css
+### plus side content
+cssnano plus/side_content.css ../src/plus/side_content.min.css
 
 ### plus search
 cssnano plus/search.css ../src/plus/search.min.css
 
 # now
 ## now core
-uglifycss now/global.css now/appbar.css now/drawer.css now/index.css now/posts.css  --output now.min.css
+uglifycss now/global.css now/appbar.css now/drawer.css --output now.min.css
 
 ## combine core css
 uglifycss external-core.min.css now.min.css --output ../style-now.min.css
@@ -51,13 +52,20 @@ uglifycss external-core.min.css now.min.css --output ../style-now.min.css
 cssnano ../style-now.min.css ../style-now.min.css
 
 ## now other
+### now index
+uglifycss now/index.css now/posts.css --output ../src/now/index.min.css
+
+cssnano ../src/now/index.min.css ../src/now/index.min.css
+
 ### now post
 cssnano now/post.css ../src/now/post.min.css
 
-### now archives
-uglifycss now/archives.css now/dialogs.css --output ../src/now/archives.min.css
+### plus side content
+cssnano now/side_content.css ../src/now/side_content.min.css
 
-cssnano ../src/now/archives.min.css ../src/now/archives.min.css
+# shared
+cssnano shared/archives.css ../src/shared/archives.min.css
+cssnano shared/aboutme_dialog.css ../src/shared/aboutme_dialog.min.css
 
 # fonts
 uglifycss fonts.css --output ../fonts.min.css
