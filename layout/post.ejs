@@ -1,5 +1,7 @@
 <%
-  var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+  if (theme.random_pics !== false && theme.random_pics) {
+    var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+  }
 %>
 <% if (theme.style.scheme === 'now') { %>
   <%- cssLsload({path:(config.root + 'css/src/now/post.min'),key:'post_css'}) %>
@@ -79,9 +81,11 @@
             <% } %>
           </div>
         <% } %>
-        <div class="mdui-card-media">
-          <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
-        </div>
+        <% if (theme.random_pics !== false && theme.random_pics) { %>
+          <div class="mdui-card-media">
+            <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+          </div>
+        <% } %>
         <div class="post-content mdui-typo no-margin" id="post-content">
           <%-page.content%>
         </div>

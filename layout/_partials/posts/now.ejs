@@ -1,5 +1,7 @@
 <%
-  var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+  if (theme.random_pics !== false && theme.random_pics) {
+    var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+  }
 %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
   <div class="mdui-card-header posts-header">
@@ -27,7 +29,9 @@
       </div>
     </div>
     <div class="flex-spacer"></div>
-    <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
+    <% if (theme.random_pics !== false && theme.random_pics) { %>
+      <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
+    <% } %>
   </div>
   <% if ((post.categories && post.categories.length) || (post.tags && post.tags.length)) { %>
     <div class="mdui-divider" style="margin: 0 16px;"></div>

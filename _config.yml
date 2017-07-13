@@ -36,7 +36,7 @@ index:
 # post settings
 post:
   entry_excerpt: 80
-  qr_code: true
+  qr_code: false
   prism:
     theme:
     line_number:

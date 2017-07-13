@@ -111,51 +111,49 @@
   </div>
   <% if (theme.pages !== null) { %>
     <div class="pages">
-      <% if (theme.pages !== false) { %>
-        <div class="mdui-list" mdui-collapse="{accordion: true}" mdui-collapse>
-          <% for (var i in theme.pages) { %>
-            <% if (theme.pages[i].cascade === true) { %>
-              <div class="mdui-collapse-item">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                  <% if (theme.pages[i].fa) { %>
-                    <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
-                  <% } %>
-                  <% if (theme.pages[i].md) { %>
-                    <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.pages[i].md %></i>
-                  <% } %>
-                  <% if (theme.pages[i].null_icon === true) { %>
-                    <i class="mdui-list-item-icon"></i>
-                  <% } %>
-                  <div class="mdui-list-item-content"><%= i %></div>
-                  <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
-                </div>
-                <div class="mdui-collapse-item-body mdui-list">
-                  <% for (var x in theme.pages[i].pages) { %>
-                    <a href="<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple" target="_blank">
-                      <%= x %>
-                    </a>
-                  <% } %>
-                </div>
+      <div class="mdui-list" mdui-collapse="{accordion: true}" mdui-collapse>
+        <% for (var i in theme.pages) { %>
+          <% if (theme.pages[i].cascade === true) { %>
+            <div class="mdui-collapse-item">
+              <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <% if (theme.pages[i].fa) { %>
+                  <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
+                <% } %>
+                <% if (theme.pages[i].md) { %>
+                  <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.pages[i].md %></i>
+                <% } %>
+                <% if (theme.pages[i].null_icon === true) { %>
+                  <i class="mdui-list-item-icon"></i>
+                <% } %>
+                <div class="mdui-list-item-content"><%= i %></div>
+                <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
               </div>
-            <% } else { %>
-              <a href="<%= theme.pages[i].link %>" target="_blank">
-                <li class="mdui-list-item mdui-ripple">
-                  <% if (theme.pages[i].fa) { %>
-                    <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
-                  <% } %>
-                  <% if (theme.pages[i].md) { %>
-                    <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.pages[i].md %></i>
-                  <% } %>
-                  <% if (theme.pages[i].null_icon === true) { %>
-                    <i class="mdui-list-item-icon"></i>
-                  <% } %>
-                  <div class="mdui-list-item-content"><%= i %></div>
-                </li>
-              </a>
-            <% } %>
+              <div class="mdui-collapse-item-body mdui-list">
+                <% for (var x in theme.pages[i].pages) { %>
+                  <a href="<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple" target="_blank">
+                    <%= x %>
+                  </a>
+                <% } %>
+              </div>
+            </div>
+          <% } else { %>
+            <a href="<%= theme.pages[i].link %>" target="_blank">
+              <li class="mdui-list-item mdui-ripple">
+                <% if (theme.pages[i].fa) { %>
+                  <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
+                <% } %>
+                <% if (theme.pages[i].md) { %>
+                  <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.pages[i].md %></i>
+                <% } %>
+                <% if (theme.pages[i].null_icon === true) { %>
+                  <i class="mdui-list-item-icon"></i>
+                <% } %>
+                <div class="mdui-list-item-content"><%= i %></div>
+              </li>
+            </a>
           <% } %>
-        </div>
-      <% } %>
+        <% } %>
+      </div>
     </div>
   <% } %>
 </div>
