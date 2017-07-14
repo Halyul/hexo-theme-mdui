@@ -3,7 +3,7 @@ location:
 
 # style
 style:
-  scheme: 'no'
+  scheme: 'now'
   bg_img: /img/bg.png
   avatar: /img/avatar.png
   slogan: "I'm your slogan!"
@@ -40,6 +40,11 @@ post:
   prism:
     theme:
     line_number:
+  license:
+    name: 'CC BY-NC-SA 4.0'
+    link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
+  word_count:
+  read_time:
   donate:
 #    wechat:
 #      link: /img/avatar.png
@@ -47,9 +52,7 @@ post:
 #    paypay:
 #      link: 'https://paypal.com'
 #      fa: 'fa-paypal'
-  license:
-    name: 'CC BY-NC-SA 4.0'
-    link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
+
 
 share_menu:
 #  rss: false

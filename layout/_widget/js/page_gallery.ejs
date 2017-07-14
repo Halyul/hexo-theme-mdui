@@ -80,17 +80,8 @@
     <% if (page.showAfterLoad === false) { %>
     showAfterLoad: false,
     <% } %>
-    <% if (page.nextHtml) { %>
-    nextHtml: '<%= page.nextHtml %>',
-    <% } %>
-    <% if (page.prevHtml) { %>
-    prevHtml: '<%= page.prevHtml %>',
-    <% } %>
     <% if (page.index) { %>
     index: <%= page.index %>,
-    <% } %>
-    <% if (page.iframeMaxWidth) { %>
-    iframeMaxWidth: '<%= page.iframeMaxWidth %>',
     <% } %>
     <% if (page.download === false) { %>
     download: false,
@@ -106,57 +97,6 @@
     <% } %>
     <% if (page.enableTouch === false) { %>
     enableTouch: false,
-    <% } %>
-    <%
-      // thumbnial plugin settings
-    %>
-    <% if (page.thumbnail === false) { %>
-    thumbnail: false,
-    <% } %>
-    <% if (page.animateThumb === false) { %>
-    animateThumb: false,
-    <% } %>
-    <% if (page.currentPagerPosition) { %>
-    currentPagerPosition: '<%= page.currentPagerPosition %>',
-    <% } %>
-    <% if (page.thumbWidth) { %>
-    thumbWidth: <%= page.thumbWidth %>,
-    <% } %>
-    <% if (page.thumbContHeight) { %>
-    thumbContHeight: <%= page.thumbContHeight %>,
-    <% } %>
-    <% if (page.thumbMargin) { %>
-    thumbMargin: <%= page.thumbMargin %>,
-    <% } %>
-    <% if (page.showThumbByDefault === false) { %>
-    showThumbByDefault: false,
-    <% } %>
-    <% if (page.toogleThumb === false) { %>
-    toogleThumb: false,
-    <% } %>
-    <% if (page.pullCaptionUp === false) { %>
-    pullCaptionUp: false,
-    <% } %>
-    <% if (page.enableThumbDrag === false) { %>
-    enableThumbDrag: false,
-    <% } %>
-    <% if (page.enableThumbSwipe === false) { %>
-    enableThumbSwipe: false,
-    <% } %>
-    <% if (page.loadYoutubeThumbnail === false) { %>
-    loadYoutubeThumbnail: false,
-    <% } %>
-    <% if (page.youtubeThumbSize) { %>
-    youtubeThumbSize: <%= page.youtubeThumbSize %>,
-    <% } %>
-    <% if (page.loadVimeoThumbnail === false) { %>
-    loadVimeoThumbnail: false,
-    <% } %>
-    <% if (page.vimeoThumbSize) { %>
-    vimeoThumbSize: <%= page.vimeoThumbSize %>,
-    <% } %>
-    <% if (page.loadDailymotionThumbnail === false) { %>
-    loadDailymotionThumbnail: false,
     <% } %>
     <%
       // autoplay plugin settings

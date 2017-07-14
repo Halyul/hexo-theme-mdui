@@ -135,18 +135,6 @@
   <%- partial('js/to_top')%>
 <% } %>
 
-<% // js in gallery, galleries
-  if (page.layout === 'gallery' || page.layout === 'galleries') { %>
-  <script type="text/ls-javascript" id="back-button-script">
-    /* back button */
-    (function() {
-      document.querySelector('button[back]').addEventListener('click', function() {
-          window.history.back();
-      })
-    })();
-  </script>
-<% } %>
-
 <% if (theme.index.notification === true) { %>
   <%- partial('js/notification')%>
 <% } %>

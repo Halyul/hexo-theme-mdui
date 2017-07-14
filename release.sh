@@ -73,4 +73,6 @@ uglifycss fonts.css --output ../fonts.min.css
 rm external-core.min.css plus.min.css now.min.css
 
 cd $JS_FILES
-uglifyjs mdui.custom.js lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js smooth-scroll.js es6-promise.js fetch.js js.js --output ../js.min.js
+uglifyjs mdui.custom.js smooth-scroll.js es6-promise.js fetch.js js.js --output ../js.min.js
+
+uglifyjs lightgallery.js lg-hash.js lg-zoom.js lg-fullscreen.js lg-autoplay.js --output ../lightgallery.min.js
