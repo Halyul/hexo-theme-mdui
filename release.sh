@@ -27,20 +27,20 @@ uglifycss plus/global.css plus/appbar.css plus/drawer.css --output plus.min.css
 ## combine core css
 uglifycss external-core.min.css plus.min.css --output ../style-plus.min.css
 
-cssnano ../style-plus.min.css ../style-plus.min.css
+cssnano ../style-plus.min.css ../style-plus.min.css --safe
 
 ## plus other
 ### plus index
-cssnano plus/index.css ../src/plus/index.min.css
+cssnano plus/index.css ../src/plus/index.min.css --safe
 
 ### plus post
-cssnano plus/post.css ../src/plus/post.min.css
+cssnano plus/post.css ../src/plus/post.min.css --safe
 
 ### plus side content
-cssnano plus/side_content.css ../src/plus/side_content.min.css
+cssnano plus/side_content.css ../src/plus/side_content.min.css --safe
 
 ### plus search
-cssnano plus/search.css ../src/plus/search.min.css
+cssnano plus/search.css ../src/plus/search.min.css --safe
 
 # now
 ## now core
@@ -49,23 +49,23 @@ uglifycss now/global.css now/appbar.css now/drawer.css --output now.min.css
 ## combine core css
 uglifycss external-core.min.css now.min.css --output ../style-now.min.css
 
-cssnano ../style-now.min.css ../style-now.min.css
+cssnano ../style-now.min.css ../style-now.min.css --safe
 
 ## now other
 ### now index
 uglifycss now/index.css now/posts.css --output ../src/now/index.min.css
 
-cssnano ../src/now/index.min.css ../src/now/index.min.css
+cssnano ../src/now/index.min.css ../src/now/index.min.css --safe
 
 ### now post
-cssnano now/post.css ../src/now/post.min.css
+cssnano now/post.css ../src/now/post.min.css --safe
 
 ### plus side content
-cssnano now/side_content.css ../src/now/side_content.min.css
+cssnano now/side_content.css ../src/now/side_content.min.css --safe
 
 # shared
-cssnano shared/archives.css ../src/shared/archives.min.css
-cssnano shared/aboutme_dialog.css ../src/shared/aboutme_dialog.min.css
+cssnano shared/archives.css ../src/shared/archives.min.css --safe
+cssnano shared/aboutme_dialog.css ../src/shared/aboutme_dialog.min.css --safe
 
 # fonts
 uglifycss fonts.css --output ../fonts.min.css

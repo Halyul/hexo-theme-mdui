@@ -30,7 +30,7 @@
         var ColumnNums = getColumnNums();
         if (level == ColumnNums) return;
         level = ColumnNums;
-        list.setAttribute("class", "column-" + ColumnNums + " posts-container animate")
+        list.setAttribute("class", "column-" + ColumnNums + " posts-container animate-post")
         Array.prototype.forEach.call(items, function(value, index) {
           var to = index % ColumnNums;
           columns[to].appendChild(value);
