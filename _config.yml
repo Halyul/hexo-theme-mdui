@@ -76,7 +76,7 @@ pagination: 2
 footer:
   since:
   ICP:
-  image:
+  image: http://opentf.github.io/GuokrBadge/cc/gs/cc_byncsa.flat.guokr.svg
 
 # Plugins
 busuanzi:
