@@ -71,10 +71,10 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           <a href="<%= config.root %>" class="mdui-typo-headline">
             <%= theme.appbar.title %>
           </a>
-          <span class="appbar-border-line"></span>
+          <span class="appbar-border-line mdui-hidden-xs"></span>
         <% } %>
         <% if (is_category() || is_tag() || is_year() || page.layout === 'friends') {%>
-          <span class="mdui-typo-title <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>">
+          <span class="mdui-typo-title <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %> mdui-hidden-xs">
             <%= pageTitle %>
           </span>
         <% } %>
@@ -89,12 +89,12 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
             </div>
           </div>
         <% } %>
-        <% if (theme.appbar.search !== true) { %>
+        <% if (theme.appbar.search !== true || page.layout === 'friends') { %>
           <div class="flex-spacer"></div>
         <% } else { %>
           <div class="flex-spacer mdui-hidden-sm"></div>
         <% } %>
-        <% if (theme.appbar.search === true) { %>
+        <% if (theme.appbar.search === true && page.layout !== 'friends') { %>
           <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" onclick="mobileSearch()"><i class="mdui-icon material-icons">&#xe8b6;</i></button>
           <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden" onclick="closeSearch()" id="close-button"><i class="mdui-icon material-icons">&#xe5cd;</i></button>
         <% } %>
