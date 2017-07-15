@@ -13,6 +13,9 @@
       <br />
       <span onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.footer.ICP %></span>
     <% } %>
+    <% if (theme.footer.image) { %>
+      <img class="mdui-img-fluid" src="<%= theme.footer.image %>"/>
+    <% } %>
   </div>
 </div>
 <script type="text/javascript">
