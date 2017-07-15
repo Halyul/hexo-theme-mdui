@@ -58,9 +58,11 @@
   }
 
   function hide(e) {
+    if (e === null) return;
     e.classList.add('mdui-hidden');
   }
   function show(e) {
+    if (e === null) return;
     e.classList.remove('mdui-hidden');
   }
 </script>
