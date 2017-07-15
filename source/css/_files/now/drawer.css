@@ -112,7 +112,7 @@
   padding: 0;
 }
 
-#drawer .footer {
+.drawer-footer {
   margin: 5px 24px 24px 24px;
   -webkit-box-flex: none;
   -ms-flex: none;
