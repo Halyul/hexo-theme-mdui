@@ -29,9 +29,6 @@
     z-index: -1;
     position: absolute;
     width: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
 }
 
 body.mdui-drawer-body-left .post-bg-color {
