@@ -28,7 +28,7 @@
 <% } %>
 
 <% // lightgallery in post, custom page and gallery page
-  if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'friends')
+  if ((!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'friends') || page.layout === 'gallery')
 { %>
   <%- jsLsload({path:(config.root + 'js/lightgallery.min'),key:'lightgallery_js'}) %>
 <% } %>
@@ -39,10 +39,6 @@
 
 <% if (page.layout === 'gallery') { %>
   <%- partial('../_widget/js/page_gallery') %>
-<% } %>
-
-<% // js in gallery, galleries
-  if (page.layout === 'gallery' || page.layout === 'galleries') { %>
   <script type="text/ls-javascript" id="back-button-script">
     /* back button */
     (function() {
