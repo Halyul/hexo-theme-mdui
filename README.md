@@ -17,7 +17,7 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 ## General 概括
 
 [![Author](https://img.shields.io/badge/author-Halyul-blue.svg?style=flat-square)](https://halyul.com)
-[![Version](https://img.shields.io/badge/version-1.4.0-green.svg?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-1.4.5-green.svg?style=flat-square)]()
 [![Hexo](https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square)](https://hexo.io)
 
 ## Demo 演示
@@ -28,9 +28,9 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 
 ## Docs 文档
 
-[MDUI Theme Docs English Version](https://blog.halyul.com/2017/03/23/mdui-doc/)
+[MDUI Theme Docs English Version](https://halyul.github.io/theme-mdui-docs/#/)
 
-[MDUI 主题中文文档](https://blog.halyul.cc/2017/03/23/mdui-doc/)
+[MDUI 主题中文文档](https://halyul.github.io/theme-mdui-docs/#/zh-cn/)
 
 >[Docs Markdown Files](https://github.com/Halyul/theme-mdui-docs)
 

@@ -3,3 +3,4 @@ custom_comment.ejs
 custom_head.ejs
 custom_js.ejs
 pace-style.css
+node_modules

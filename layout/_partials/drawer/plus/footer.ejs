@@ -4,14 +4,28 @@
     <br />
     Theme - <a href="//github.com/Halyul/hexo-theme-mdui">Halyul/MDUI</a>
     <br />
-    <script type="text/javascript">
-      copyright = new Date();
-      update = copyright.getFullYear();
-      document.write("Copyright © <% if (theme.footer.since > 0) { %><%= theme.footer.since %> - <% } %>" + update + " <%= config.author %>");
-    </script>
+    <span>
+      Copyright ©
+      <span year></span>
+      <%= config.author %>
+    </span>
     <% if (theme.footer.ICP) { %>
       <br />
       <span onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.footer.ICP %></span>
     <% } %>
   </div>
 </div>
+<script type="text/javascript">
+  var copyrightNow = new Date().getFullYear();
+  var textContent = document.querySelector('span[year]')
+  <% if (theme.footer.since > 0) { %>
+    copyrightSince = <%= theme.footer.since %>;
+    if (copyrightSince === copyrightNow) {
+      textContent.textContent = copyrightNow
+    } else {
+      textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+  <% } else { %>
+    textContent.textContent = copyrightNow
+  <% } %>
+</script>

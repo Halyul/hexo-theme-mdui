@@ -1,6 +1,13 @@
 <%
   var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
+<%- cssLsload({path:(config.root + 'css/src/lightgallery.min'),key: 'lightgallery_css'}) %>
+<% if (theme.post.prism.theme) { %>
+  <%- cssLsload({path:(config.root + 'css/src/prism-themes/' + theme.post.prism.theme + '.min'),key:'prism_theme_css'}) %>
+<% } %>
+<% if (theme.post.prism.line_number === true) { %>
+  <%- cssLsload({path:(config.root + 'css/src/prism-themes/line-number.min'),key:'line_number_css'}) %>
+<% } %>
 <style>
   .lg-outer .lg-item {
     background-image: url("<%= config.root + 'img/loading.gif' %>");
@@ -32,7 +39,7 @@
 </div>
 <div class="post-container">
   <div class="post-adjust">
-    <div class="mdui-card card-bottom-fix menu-fix animate <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
+    <div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
       <div class="mdui-card-media">
         <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
       </div>
@@ -45,7 +52,7 @@
         <%-page.content%>
       </div>
 
-      <% if (theme.post.donate !== false) { %>
+      <% if (theme.post.donate !== null) { %>
         <div class="posts-card-actions">
           <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-color-red mdui-ripple mdui-center mdui-btn-dense" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}"><i class="mdui-icon fa fa-beer mdui-text-center"></i></button>
         </div>
@@ -61,7 +68,7 @@
         <% } %>
       <% } %>
     </div>
-    <div id="card-toc" class="animate mdui-color-theme">
+    <div id="card-toc" class="mdui-color-theme">
       <%- customToc(page.content, {
                 class: 'post-toc'
             }) %>

@@ -8,7 +8,7 @@
 <% if(theme.vendors.js_min_js) { %>
   <%- jsLsload({path:(theme.vendors.js_min_js),key:'main_js'}) %>
 <% } else { %>
-    <%- jsLsload({path:(config.root + 'js/js-v20170620.min'),key:'main_js'}) %>
+    <%- jsLsload({path:(config.root + 'js/js.min'),key:'main_js'}) %>
 <% } %>
 
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
@@ -19,10 +19,18 @@
   </script>
 <% } %>
 
-<% if (theme.style.scheme === 'now') { %>
-  <%- partial('import_js/now') %>
-<% } else { %>
-  <%- partial('import_js/plus') %>
+<% if (page.layout !== 'gallery' && page.layout !== 'galleries') { %>
+  <% if (theme.style.scheme === 'now') { %>
+    <%- partial('import_js/now') %>
+  <% } else { %>
+    <%- partial('import_js/plus') %>
+  <% } %>
+<% } %>
+
+<% // lightgallery in post, custom page and gallery page
+  if (!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'friends')
+{ %>
+  <%- jsLsload({path:(config.root + 'js/lightgallery.min'),key:'lightgallery_js'}) %>
 <% } %>
 
 <% if (page.layout === 'galleries') { %>
@@ -33,12 +41,36 @@
   <%- partial('../_widget/js/page_gallery') %>
 <% } %>
 
-<% if (theme.busuanzi !== false) { %>
+<% // js in gallery, galleries
+  if (page.layout === 'gallery' || page.layout === 'galleries') { %>
+  <script type="text/ls-javascript" id="back-button-script">
+    /* back button */
+    (function() {
+      document.querySelector('button[back]').addEventListener('click', function() {
+          window.history.back();
+      })
+    })();
+  </script>
+<% } %>
+
+<% if (theme.busuanzi !== null) { %>
   <script type="text/javascript" src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
 
 <!-- Custom javascript -->
 <%- partial('../_custom/custom_js')%>
+
+<!-- remove diplay:none -->
+<script type="text/ls-javascript" id="html-script">
+  if (document.readyState === 'complete' || document.readyState !== 'loading') {
+    showHTML();
+  } else {
+    document.addEventListener('DOMContentLoaded', showHTML);
+  }
+  function showHTML(){
+    document.querySelector('html').style.display = 'block';
+  }
+</script>
 
 <script>
   (function(){

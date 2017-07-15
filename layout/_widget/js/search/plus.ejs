@@ -1,5 +1,5 @@
 <script type="text/ls-javascript" id="search-to-top-script">
-  $$('div.search').on('click', function() {
+  document.querySelector('div.search').addEventListener('click', function() {
     smoothScroll.animateScroll(0);
   });
 </script>
@@ -124,8 +124,13 @@
   }
 </script>
 <script type="text/ls-javascript" id="search-json-script">
-  $$(document).ready(function() {
+  if (document.readyState === 'complete' || document.readyState !== 'loading') {
+    searchCall();
+  } else {
+    document.addEventListener('DOMContentLoaded', searchCall);
+  }
+  function searchCall() {
     var path = '<%= config.root + config.search.path %>';
     searchFunc(path, 'search-input');
-  });
+  };
 </script>

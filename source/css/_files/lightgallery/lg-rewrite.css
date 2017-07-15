@@ -1,0 +1,85 @@
+.lg-toolbar {
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0.4));
+  background-image: linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0.4));
+}
+
+.lg .mdui-btn-icon {
+  width: 48px;
+  height: 48px;
+  color: rgba(255,255,255,.54);
+}
+
+.mdui-theme-layout-dark .lg .mdui-btn-icon {
+  width: 48px;
+  height: 48px;
+}
+
+#lg-counter {
+  padding: 0;
+}
+
+.lg-toolbar .mdui-btn-icon.lg-close {
+  margin-left: 8px;
+}
+
+.lg-toolbar .lg-fullscreen i.fullscreen_exit {
+  display: none;
+}
+
+.lg-fullscreen-on .lg-toolbar .lg-fullscreen i.fullscreen {
+  display: none;
+}
+
+.lg-fullscreen-on .lg-toolbar .lg-fullscreen i.fullscreen_exit {
+  display: inherit;
+}
+
+.lg-toolbar .lg-autoplay-button i.pause {
+  display: none;
+}
+
+.lg-show-autoplay .lg-toolbar .lg-autoplay-button i.play {
+  display: none;
+}
+
+.lg-show-autoplay .lg-toolbar .lg-autoplay-button i.pause {
+  display: inherit;
+}
+
+.lg-actions .lg-next, .lg-actions .lg-prev {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    font-size: 22px;
+    margin-top: -24px;
+    padding: 0;
+}
+
+.lg-actions .lg-next:hover, .lg-actions .lg-prev:hover {
+    background-color: rgba(0,0,0,0.4) !important;
+}
+
+.mdui-theme-layout-dark .lg-toggle-thumb.mdui-btn:hover,  .mdui-theme-layout-dark .lg-toggle-thumb.mdui-btn:not(.mdui-ripple):active {
+  background-color: #0D0A0A !important;
+}
+
+.lg-toolbar .lg-close:after, .lg-actions .lg-prev:after, .lg-actions .lg-next:after, .lg-actions .lg-next:before, .lg-toolbar .lg-download:after, #lg-zoom-in:after, #lg-zoom-out:after, #lg-actual-size:after, .lg-fullscreen:after, .lg-fullscreen-on .lg-fullscreen:after, .lg-autoplay-button:after, .lg-show-autoplay .lg-autoplay-button:after, .lg-outer .lg-toggle-thumb:after {
+  content: '';
+}
+
+.lg-sub-html {
+  text-align: left;
+  font-size: 14px;
+  padding: 16px;
+  background-color: rgba(0,0,0,0);
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.4));
+  background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.4));
+}
+
+.lg-sub-html span[author] {
+  font-weight: 700;
+}
+
+.lg-sub-html div[descr] {
+  margin-top: 8px;
+}

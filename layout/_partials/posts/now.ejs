@@ -1,13 +1,17 @@
 <%
-  var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+  if (theme.random_pics !== false && theme.random_pics) {
+    var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
+  }
 %>
+<%- cssLsload({path:(config.root + 'css/src/now/index.min'),key:'index_css'}) %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
   <div class="mdui-card-header posts-header">
     <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
     <div class="content mdui-valign">
       <div class="mdui-typo-body-1-opacity mdui-typo">
         <span><%= config.author %></span>
-          <%= ' · ' + date(post.date, 'MMM DD, YYYY') %>
+        <span> · </span>
+        <span><%= date(post.date, 'MMM DD, YYYY') %></span>
       </div>
     </div>
   <div class="flex-spacer"></div>
@@ -16,6 +20,9 @@
   <div class="mdui-card-content posts-content">
     <div class="posts-excerpt">
       <a href="<%= url_for(post.path) %>" target="_self" class="posts-title mdui-typo-title no-text-decoration">
+        <% if (post.pinned === true) { %>
+          <span style="color: #D50000"><%= '['+ __('posts.pinned') + '] ' %></span>
+        <% } %>
         <%= post.title %>
       </a>
       <div class="posts-strip mdui-typo-body-1">
@@ -23,12 +30,14 @@
       </div>
     </div>
     <div class="flex-spacer"></div>
-    <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
+    <% if (theme.random_pics !== false && theme.random_pics) { %>
+      <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
+    <% } %>
   </div>
-  <div class="mdui-divider" style="margin: 0 16px;"></div>
-  <% if (post.category !== false || post.tag !== false || post.pinned === true) { %>
+  <% if ((post.categories && post.categories.length) || (post.tags && post.tags.length)) { %>
+    <div class="mdui-divider" style="margin: 0 16px;"></div>
     <div class="posts-bottom">
-      <% if (post.category !== false) { %>
+      <% if (post.categories && post.categories.length) { %>
         <div class="mdui-chip">
           <span class="mdui-chip-icon"><i class="mdui-icon
           <% if (theme.color.layout !== 'dark') { %>
@@ -37,14 +46,14 @@
            material-icons mdui-text-center">&#xe149;</i></span>
         </div>
         <div class="content mdui-typo">
-          <% post.categories.map(function(category){  %>
+          <% post.categories.map(function(category){ %>
             <a href="<%= config.root %>categories/<%= category.name %>/">
               <span><%= category.name %></span>
             </a>
           <% }) %>
         </div>
       <% } %>
-      <% if (post.tag !== false) { %>
+      <% if (post.tags && post.tags.length) { %>
         <div class="mdui-chip">
           <span class="mdui-chip-icon"><i class="mdui-icon
            <% if (theme.color.layout !== 'dark') { %>
@@ -58,12 +67,6 @@
               <span><%= tag.name %></span>
             </a>
           <% }) %>
-        </div>
-      <% } %>
-      <div class="flex-spacer"></div>
-      <% if (post.pinned === true) { %>
-        <div class="mdui-chip" mdui-tooltip="{content: '<%= __('posts.pinned') %>'}">
-          <span class="mdui-chip-icon mdui-color-red"><i class="mdui-icon material-icons">&#xe55e;</i></span>
         </div>
       <% } %>
     </div>

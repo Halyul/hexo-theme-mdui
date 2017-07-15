@@ -15,10 +15,14 @@ archive:
   more: 'MORE'
   less: 'LESS'
 posts:
+  posted: 'Posted: '
+  edited: 'Last Modified: '
   header: 'Something that I have posted'
   public: 'Public'
   qr_code: "Article QR Code"
   pinned: 'Pinned'
+  license: 'Article License: '
+  permalink: 'Article Permalink: '
   donate:
     button: 'Buy me a beer?'
     close: 'cancel'
@@ -26,6 +30,17 @@ posts:
   pagination:
     newer: 'Newer Post'
     older: 'Older Post'
+  modified:
+    head: 'This article was last modified'
+    foot: 'days ago.'
+    content: 'The content of this post may be outdated!'
+  count:
+    words:
+      head: 'There are '
+      foot: 'words in this article.'
+    time:
+      head: 'Reading it needs about '
+      foot: 'minutes.'
 search:
   text: 'Search something...'
   explore: 'Explore'

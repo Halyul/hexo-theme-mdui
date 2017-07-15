@@ -1,4 +1,4 @@
-<% if (theme.post.donate !==false) { %>
+<% if (theme.post.donate !== null) { %>
   <div class="mdui-dialog" id="donateDialog">
     <div class="mdui-dialog-title"><%= __('posts.donate.button') %></div>
     <div class="mdui-dialog-content no-padding-bottom">
@@ -27,31 +27,33 @@
 <% if (theme.about_me === true && is_archive() && !is_year()) { %>
   <%- partial('../_widget/dialog_aboutme') %>
 <% } %>
-<div class="mdui-dialog" id="contactDialog">
-  <div class="mdui-dialog-title">
-    <%= __('userview.how_to_contact_me') %>
-  </div>
-  <div class="mdui-dialog-content no-padding-bottom">
-    <div class="mdui-list">
-      <% for (var i in theme.sns){ %>
-        <a href="<%= theme.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
-          <% if (theme.sns[i].fa) { %>
-            <i class="mdui-list-item-icon mdui-icon fa <%= theme.sns[i].fa %> mdui-text-center"></i>&emsp;
-          <% } %>
-          <% if (theme.sns[i].md) { %>
-            <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.sns[i].md %></i>&emsp;
-          <% } %>
-          <% if (theme.sns[i].null_icon === true) { %>
-            <i class="mdui-list-item-icon"></i>&emsp;
-          <% } %>
-          <%= i %>
-        </a>
-      <% } %>
+<% if (theme.sns !== null) { %>
+  <div class="mdui-dialog" id="contactDialog">
+    <div class="mdui-dialog-title">
+      <%= __('userview.how_to_contact_me') %>
+    </div>
+    <div class="mdui-dialog-content no-padding-bottom">
+      <div class="mdui-list">
+        <% for (var i in theme.sns){ %>
+          <a href="<%= theme.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
+            <% if (theme.sns[i].fa) { %>
+              <i class="mdui-list-item-icon mdui-icon fa <%= theme.sns[i].fa %> mdui-text-center"></i>&emsp;
+            <% } %>
+            <% if (theme.sns[i].md) { %>
+              <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.sns[i].md %></i>&emsp;
+            <% } %>
+            <% if (theme.sns[i].null_icon === true) { %>
+              <i class="mdui-list-item-icon"></i>&emsp;
+            <% } %>
+            <%= i %>
+          </a>
+        <% } %>
+      </div>
+    </div>
+    <div class="mdui-dialog-actions">
+      <button class="mdui-btn mdui-ripple" mdui-dialog-close>
+        <%= __('userview.close') %>
+      </button>
     </div>
   </div>
-  <div class="mdui-dialog-actions">
-    <button class="mdui-btn mdui-ripple" mdui-dialog-close>
-      <%= __('userview.close') %>
-    </button>
-  </div>
-</div>
+<% } %>

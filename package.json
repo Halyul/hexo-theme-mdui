@@ -1,0 +1,29 @@
+{
+  "name": "hexo-theme-mdui",
+  "version": "1.4.5",
+  "description": "An awesome hexo theme with Material Design.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "setup": "npm cache clean && npm install",
+    "lint": "npm run setup && bash lint.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Halyul/hexo-theme-mdui.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "material design",
+    "mdui"
+  ],
+  "author": "Halyul",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "prismjs": "^1.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Halyul/hexo-theme-mdui/issues"
+  },
+  "homepage": "https://github.com/Halyul/hexo-theme-mdui#readme"
+}

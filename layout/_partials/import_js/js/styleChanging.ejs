@@ -1,25 +1,23 @@
 <script type="text/ls-javascript" id="style-changing-script">
-  var postsCount = $$('div.posts-container div').children('div.content-item').length || $$('#content-list').children('div.content-item').length;
-  if (postsCount === 1) {
-    var postsText = '<%= __('archive.post') %>';
-  } else if (postsCount > 1) {
-    var postsText = '<%= __('archive.posts') %>';
-  };
-  $$('div#postsCount').text(postsCount + ' ' + postsText);
   var content_flag = false;
-  $$(window).on('scroll', function() {
+  var appbar = document.querySelector('div#blog-appbar')
+  var body = document.querySelector('body')
+
+  window.addEventListener('scroll', function() {
     var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var contentLocation = $$('div#contentLocation').offset().top - scrollTop - 56;
+    var divTop = document.querySelector('div#contentLocation').offsetTop
+    var contentLocation = divTop - scrollTop - 56;
+
     if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-      $$('div#blog-appbar').addClass('style-fix');
-      $$('body').removeClass('style-fix');
+      appbar.classList.add('style-fix');
+      body.classList.remove('style-fix');
       content_flag = true;
     } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-      $$('div#blog-appbar').removeClass('style-fix');
-      $$('body').addClass('style-fix');
+      appbar.classList.remove('style-fix');
+      body.classList.add('style-fix');
       content_flag = false;
     };
-  });
+  })
 
   function styleChanging() {
     var hide = new mdui.Headroom('div#blog-appbar');

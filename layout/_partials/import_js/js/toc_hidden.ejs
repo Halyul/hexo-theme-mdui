@@ -1,0 +1,18 @@
+<!-- post toc -->
+<script type="text/ls-javascript" id="post-toc-script">
+  (function() {
+    if (document.readyState === 'complete' || document.readyState !== 'loading') {
+      tocHide();
+    } else {
+      document.addEventListener('DOMContentLoaded', tocHide);
+    }
+    function tocHide() {
+      if(document.querySelector('ul#menu-toc > ol') === null && document.querySelector('div#card-toc > ul') === null)
+      {
+        document.querySelector('button#button-toc').classList.add('mdui-hidden')
+        document.querySelector('div#card-toc').classList.add('mdui-hidden')
+        document.querySelector('.post-container').classList.add('no-toc')
+      };
+    }
+  })();
+</script>

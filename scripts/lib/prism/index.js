@@ -39,7 +39,7 @@ function unescape(str) {
 function PrismPlugin(data) {
   data.content = data.content.replace(regex, (origin, lang, code) => {
     const lineNumbers = line_number ? 'line-numbers' : '';
-    const startTag = `<pre class="${lineNumbers} language-${lang}"><code class="language-${lang}">`;
+    const startTag = `<pre class="${lineNumbers} language-${lang}" data-lang="${lang}"><code class="language-${lang}">`;
     const endTag = `</code></pre>`;
     code = unescape(code);
     let parsedCode = '';

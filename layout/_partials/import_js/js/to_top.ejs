@@ -4,9 +4,10 @@
     var pageFlag = false;
     var fab = new mdui.Fab('#toTop');
     fab.hide();
-    $$(window).on('scroll', function() {
+    window.addEventListener('scroll', function() {
       var bodyTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      var pageLocation = $$('div#top').offset().top - bodyTop;
+      var divTop = document.querySelector('div#top').offsetTop
+      var pageLocation = divTop - bodyTop;
       if (!pageFlag && pageLocation < 0) {
         fab.show();
         pageFlag = true;

@@ -9,7 +9,7 @@ hexo.extend.generator.register('search',function(site){
 });
 
 hexo.extend.helper.register('customToc', function(){
-   return require("./lib/customToc.js").call(hexo,...arguments);
+   return require("./lib/custom_toc.js").call(hexo,...arguments);
  });
 
 hexo.extend.helper.register('prism', function(){
