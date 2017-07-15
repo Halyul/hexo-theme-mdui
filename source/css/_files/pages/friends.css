@@ -54,6 +54,7 @@
 .friends-container .content .descr {
   font-size: 14px;
   vertical-align: middle;
+  padding: 0 16px;
 }
 
 .friends-container .content .spacer {
