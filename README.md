@@ -28,9 +28,9 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 
 ## Docs 文档
 
-[MDUI Theme Docs English Version](https://blog.halyul.com/2017/03/23/mdui-doc/)
+[MDUI Theme Docs English Version](https://halyul.github.io/theme-mdui-docs/#/)
 
-[MDUI 主题中文文档](https://blog.halyul.cc/2017/03/23/mdui-doc/)
+[MDUI 主题中文文档](https://halyul.github.io/theme-mdui-docs/#/zh-cn/)
 
 >[Docs Markdown Files](https://github.com/Halyul/theme-mdui-docs)
 
