@@ -74,7 +74,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           <span class="appbar-border-line mdui-hidden-xs"></span>
         <% } %>
         <% if (is_category() || is_tag() || is_year() || page.layout === 'friends') {%>
-          <span class="mdui-typo-title <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %> mdui-hidden-xs">
+          <span class="mdui-typo-title mdui-hidden-xs"
+            <% if (is_category() || is_tag() || is_year() || is_post()) { %>
+              onclick="smoothScroll.animateScroll( 0 );"
+            <% } %>
+          >
             <%= pageTitle %>
           </span>
         <% } %>

@@ -5,25 +5,36 @@ var $$ = mdui.JQ;
 
 /* smooth scroll */
 (function() {
-  $$(document).ready(function () {
+  if (document.readyState === 'complete' || document.readyState !== 'loading') {
+    initSmoothScroll();
+  } else {
+    document.addEventListener('DOMContentLoaded', initSmoothScroll);
+  }
+  function initSmoothScroll() {
     smoothScroll.init({
       selector: 'a',
       offset: 60
     });
-  });
-  $$('.toTop').on('click', function () {
-    $$('button#toTop').trigger('click');
-  });
+  }
 })();
 
 /* global dialog */
 (function() {
-  $$(document).on('open.mdui.dialog', '.mdui-dialog', function() {
-      $$('html').css('overflow-y', 'hidden');
-      $$('body').removeClass('drawer-overlay-none');
-  });
-  $$(document).on('close.mdui.dialog', '.mdui-dialog', function() {
-      $$('html').css('overflow-y', 'auto');
-      $$('body').addClass('drawer-overlay-none');
-  });
+  var dialogs = document.querySelectorAll('.mdui-dialog');
+  console.log(dialogs)
+  if (dialogs !== null) {
+    var html = document.querySelector('html');
+    var body = document.querySelector('body');
+
+    for (i = 0; i < dialogs.length; i++) {
+      dialogs[i].addEventListener("open.mdui.dialog", openDialog);
+      dialogs[i].addEventListener("close.mdui.dialog", closeDialog);
+    }
+    function openDialog() {
+      body.classList.remove('drawer-overlay-none');
+    }
+    function closeDialog() {
+      body.classList.add('drawer-overlay-none');
+    }
+  }
 })();
