@@ -15,6 +15,10 @@
   }
 }
 
+#archives .header .bg {
+  overflow: hidden;
+}
+
 #archives .header .content {
   position: relative;
   z-index: 1;
