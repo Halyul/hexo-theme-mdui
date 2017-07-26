@@ -17,8 +17,8 @@ before_script:
   - sed -i "s/url:\ http:\/\/yoursite.com/url:\ https:\/\/halyul.github.io/g" _config.yml
   - echo "" >> _config.yml
   - echo "search:" >> _config.yml
-  - echo "\  path: search.json" >> _config.yml
-  - echo "\  field: all" >> _config.yml
+  - echo "  path: search.json" >> _config.yml
+  - echo "  field: all" >> _config.yml
   - cat _config.yml
   - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
   - cp -rf _ci/source .
