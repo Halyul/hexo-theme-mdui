@@ -8,7 +8,7 @@ before_script:
   - cd ci-test
   - npm install
   - git clone https://github.com/Halyul/hexo-theme-mdui.git themes/mdui
-  - sed "s/landscape/mdui/g" _config.yml
+  - sed -i "s/landscape/mdui/g" _config.yml
   - cd themes/mdui
   - git checkout -t origin/dev
   - git pull
