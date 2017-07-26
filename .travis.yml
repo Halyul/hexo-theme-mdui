@@ -26,10 +26,10 @@ script:
   - git config --global push.default matching
   - git config --global user.email "${GitHubEmail}"
   - git config --global user.name "${GitHubUser}"
-  - git remote add origin https://${GitHubKEY}@github.com/${GitHubRepo}.git
+  - git remote add origin git@github.com:Halyul/halyul.github.io.git
   - git pull origin ${DeployBranch}
   - rm -rf ./*
   - cp -rf ../public/* ./
   - git add --all .
   - git commit -m "Travis Auto Tester for MDUI Theme"
-  - git push --quiet --force https://${GitHubKEY}@github.com/${GitHubRepo}.git
+  - git push --quiet --force git@github.com:Halyul/halyul.github.io.git
