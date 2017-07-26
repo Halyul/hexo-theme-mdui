@@ -18,7 +18,8 @@ before_script:
   - echo "" >> _config.yml
   - echo "search:" >> _config.yml
   - echo "  path:\ search.json" >> _config.yml
-  - echo "  field:\ add" >> _config.yml
+  - echo "  field:\ all" >> _config.yml
+  - cat _config.yml
   - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
   - cp -rf _ci/source .
   - cp _ci/theme/_config.yml themes/mdui
