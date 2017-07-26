@@ -16,7 +16,6 @@
 /* global dialog */
 (function() {
   var dialogs = document.querySelectorAll('.mdui-dialog');
-  console.log(dialogs)
   if (dialogs !== null) {
     var html = document.querySelector('html');
     var body = document.querySelector('body');
