@@ -1,3 +1,17 @@
 language: node_js
 node_js:
-    - "4"
+    - "7"
+install:
+  - npm install hexo-cli -g
+before_script:
+  - hexo init ci-test
+  - cd ci-test
+  - npm install
+  - git clone https://github.com/Halyul/hexo-theme-mdui.git themes/mdui
+  - sed 's/theme\: landscape/theme\: mdui/g' _config.yml
+  - cd themes/mdui
+  - git checkout -t origin/dev
+  - git pull
+  - cd ../..
+script:
+  - hexo clean && hexo g
