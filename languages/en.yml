@@ -23,6 +23,7 @@ posts:
   pinned: 'Pinned'
   license: 'Article License: '
   permalink: 'Article Permalink: '
+  markdown: 'Article Markdown: '
   donate:
     button: 'Buy me a beer?'
     close: 'cancel'

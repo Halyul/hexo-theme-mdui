@@ -2,6 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../icons/material-icons/MaterialIcons-Regular.woff2) format('woff2'), url(../icons/material-icons/MaterialIcons-Regular.woff) format('woff');
+}
+
 /* FONT AWESOME */
 @font-face {
   font-family: 'FontAwesome';
