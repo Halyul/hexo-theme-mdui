@@ -36,5 +36,5 @@ script:
   - cp -rf ../public/* ./
   - git add --all .
   - export date=date
-  - git commit -m "Travis Auto Tester for MDUI Theme $date"
+  - git commit -m "Travis Auto Tester for MDUI Theme"
   - git push --quiet --force https://${GitHubKEY}@github.com/${GitHubUser}/${GitHubRepo}.git
