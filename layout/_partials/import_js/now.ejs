@@ -135,6 +135,6 @@
   <%- partial('js/to_top')%>
 <% } %>
 
-<% if (theme.index.notification === true) { %>
+<% if (theme.index.notification === true && is_home()) { %>
   <%- partial('js/notification')%>
 <% } %>

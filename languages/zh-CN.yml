@@ -23,6 +23,7 @@ posts:
   pinned: '置顶'
   license: '本文许可协议：'
   permalink: '本文永久链接：'
+  markdown: '本文Markdown：'
   donate:
     button: '打赏我一个吧'
     close: '才不呢'

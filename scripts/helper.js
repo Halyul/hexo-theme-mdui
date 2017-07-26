@@ -23,3 +23,5 @@ hexo.extend.helper.register('jsLsload', function(){
 hexo.extend.helper.register('cssLsload', function(){
   return require("./lib/ls/css_lsload.js").call(hexo,...arguments);
 });
+
+hexo.extend.generator.register('exportMD', require('./lib/export_md.js'));

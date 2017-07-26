@@ -1,3 +1,47 @@
 language: node_js
 node_js:
-    - "4"
+    - "7"
+install:
+  - npm install hexo-cli -g
+before_script:
+  - hexo init ci-test
+  - cd ci-test
+  - npm install
+  - npm install prismjs hexo-generator-search hexo-generator-feed  hexo-helper-qrcode hexo-wordcount --save
+  - git clone https://github.com/Halyul/hexo-theme-mdui.git themes/mdui
+  - sed -i "s/theme:\ landscape/theme:\ mdui/g" _config.yml
+  - sed -i "s/enable:\ true/enable:\ false/g" _config.yml
+  - sed -i "s/title:\ Hexo/title:\ HEXO-THEME-MDUI DEMO/g" _config.yml
+  - sed -i "s/author:\ John Doe/author:\ Halyul/g" _config.yml
+  - sed -i "s/language:/language:\ en/g" _config.yml
+  - sed -i "s/url:\ http:\/\/yoursite.com/url:\ https:\/\/halyul.github.io/g" _config.yml
+  - echo "" >> _config.yml
+  - echo "search:" >> _config.yml
+  - echo "search_path:" >> _config.yml
+  - sed -i "s/search_path:/\ \ path:\ search.json/g" _config.yml
+  - echo "search_field:" >> _config.yml
+  - sed -i "s/search_field:/\ \ field:\ all/g" _config.yml
+  - cat _config.yml
+  - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
+  - cp -rf _ci/source .
+  - cp _ci/theme/_config.yml themes/mdui
+  - cd themes/mdui
+  - git checkout -t origin/dev
+  - git pull
+  - cd ../..
+script:
+  - hexo clean && hexo g
+  - mkdir ./deploy-git
+  - cd ./deploy-git
+  - git init
+  - git config --global push.default matching
+  - git config --global user.email "${GitHubEmail}"
+  - git config --global user.name "${GitHubUser}"
+  - git remote add origin https://github.com/${GitHubUser}/${GitHubRepo}.git
+  - git pull origin ${DeployBranch}
+  - rm -rf ./*
+  - cp -rf ../public/* ./
+  - git add --all .
+  - export date=date
+  - git commit -m "Travis Auto Tester for MDUI Theme"
+  - git push --quiet --force https://${GitHubKEY}@github.com/${GitHubUser}/${GitHubRepo}.git

@@ -30,10 +30,10 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <span class="mdui-typo-title
       <% if (!is_category() && !is_tag() && !is_year()) { %>
         mdui-hidden-xs
-      <% } %>
+      <% } %>"
       <% if (is_category() || is_tag() || is_year() || is_post()) { %>
-        toTop
-      <% } %>">
+        onclick="smoothScroll.animateScroll( 0 );"
+      <% } %>>
         <%= pageTitle %>
       </span>
       <% if (theme.appbar.search === true) { %>
@@ -46,7 +46,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
           </div>
         </div>
       <% } %>
-      <div class="mdui-toolbar-spacer <% if (is_category() || is_tag() || is_year() || is_post()) { %>toTop<% } %>"></div>
+      <div class="mdui-toolbar-spacer"
+        <% if (is_category() || is_tag() || is_year() || is_post()) { %>
+          onclick="smoothScroll.animateScroll( 0 );"
+        <% } %>
+      ></div>
       <% if (theme.appbar.search === true) { %>
         <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>

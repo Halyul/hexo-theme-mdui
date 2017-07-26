@@ -23,6 +23,7 @@ posts:
   pinned: 'Pinned'
   license: 'Article License: '
   permalink: 'Article Permalink: '
+  markdown: 'Article Markdown: '
   donate:
     button: 'Buy me a beer?'
     close: 'cancel'
@@ -37,10 +38,10 @@ posts:
   count:
     words:
       head: 'There are '
-      foot: 'words in this article.'
+      foot: ' words in this article.'
     time:
       head: 'Reading it needs about '
-      foot: 'minutes.'
+      foot: ' minutes.'
 search:
   text: 'Search something...'
   explore: 'Explore'

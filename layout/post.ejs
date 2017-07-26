@@ -90,7 +90,7 @@
           <%-page.content%>
         </div>
 
-        <% if (page.license_name || theme.post.license.name) { %>
+        <% if (page.license_name || theme.post.license.name || page.export_md !== false) { %>
           <div class="license mdui-typo">
             <span>
               <%= __('posts.license') %>
@@ -102,6 +102,10 @@
             </span>
             <br />
             <span><%= __('posts.permalink') %><a href="<%= page.permalink %>"><%= page.permalink %></a></span>
+            <% if (page.export_md !== false) { %>
+              <br />
+              <span><%= __('posts.markdown') %><a href="<%= page.permalink + page.slug + '.md' %>"><%= page.permalink + page.slug + '.md' %></a></span>
+            <% } %>
           </div>
         <% } %>
 
