@@ -124,6 +124,12 @@
   opacity: 1;
 }
 
+@media (max-width: 959px) and (orientation: landscape) {
+  #index #search .search {
+    margin-left: 4px;
+  }
+}
+
 #index #search .search .icon {
   margin: auto 8px;
 }

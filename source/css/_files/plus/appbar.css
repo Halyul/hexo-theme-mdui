@@ -152,6 +152,12 @@
   flex-grow: 1;
 }
 
+@media (max-width: 959px) and (orientation: landscape) {
+  #blog-appbar .search {
+    height: 36px;
+  }
+}
+
 #blog-appbar .search .icon {
   margin: auto 8px;
 }
