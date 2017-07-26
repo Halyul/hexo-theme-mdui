@@ -13,7 +13,7 @@ before_script:
   - sed -i "s/enable:\ true/enable:\ false/g" _config.yml
   - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
   - cp -rf _ci/source source
-  - cp _ci/theme/_config.yml theme/mdui
+  - cp _ci/theme/_config.yml themes/mdui
   - cd themes/mdui
   - git checkout -t origin/dev
   - git pull
