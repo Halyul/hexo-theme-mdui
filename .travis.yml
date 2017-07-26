@@ -11,6 +11,10 @@ before_script:
   - git clone https://github.com/Halyul/hexo-theme-mdui.git themes/mdui
   - sed -i "s/theme:\ landscape/theme:\ mdui/g" _config.yml
   - sed -i "s/enable:\ true/enable:\ false/g" _config.yml
+  - sed -i "s/title:\ Hexo/title:\ HEXO-THEME-MDUI DEMO/g" _config.yml
+  - sed -i "s/author:\ John Doe/author:\ Halyul/g" _config.yml
+  - sed -i "s/language:/language:\ en/g" _config.yml
+  - sed -i "s/url:\ http:\/\/yoursite.com/url:\ https:\/\/halyul.github.io/g" _config.yml
   - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
   - cp -rf _ci/source .
   - cp _ci/theme/_config.yml themes/mdui
@@ -31,5 +35,6 @@ script:
   - rm -rf ./*
   - cp -rf ../public/* ./
   - git add --all .
-  - git commit -m "Travis Auto Tester for MDUI Theme"
+  - export date=date
+  - git commit -m "Travis Auto Tester for MDUI Theme $date"
   - git push --quiet --force https://${GitHubKEY}@github.com/${GitHubUser}/${GitHubRepo}.git
