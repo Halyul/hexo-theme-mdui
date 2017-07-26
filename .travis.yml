@@ -12,7 +12,7 @@ before_script:
   - sed -i "s/theme:\ landscape/theme:\ mdui/g" _config.yml
   - sed -i "s/enable:\ true/enable:\ false/g" _config.yml
   - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
-  - cp -rf _ci/source source
+  - cp -rf _ci/source .
   - cp _ci/theme/_config.yml themes/mdui
   - cd themes/mdui
   - git checkout -t origin/dev
