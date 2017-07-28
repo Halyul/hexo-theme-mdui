@@ -1,55 +1,57 @@
-<% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-  <% var primary_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
-    var accent_color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange'];
-    var primary_num = Math.floor(Math.random() * primary_color.length);
-    var accent_num = Math.floor(Math.random() * accent_color.length);
-  %>
-<% } %>
+
+<%
+var pageTitle = page.title || config.subtitle || '';
+if (is_archive()) pageTitle = 'Archives';
+if (is_tag()) pageTitle = 'Tag: ' + page.tag;
+if (is_category()) pageTitle = 'Category: ' + page.category;
+if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
+if (is_year()) pageTitle += ': ' + page.year;
+pageTitle += ' [ ' + config.title + ' ]';
+%>
+
 <!DOCTYPE html>
-<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %> style="display: none;">
-<% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-  <%-partial('_partials/head', { primary_color: primary_color[primary_num] })%>
-<% } else { %>
-  <%-partial('_partials/head')%>
-<% } %>
-
-<% if (theme.color.random === 'global' || theme.color.random === 'post') { %>
-  <% if (theme.style.scheme === 'now') { %>
-    <%- partial('_partials/body/now', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
-  <% } else { %>
-    <%- partial('_partials/body/plus', { primary_color: primary_color[primary_num] || false, accent_color: accent_color[accent_num] || false }) %>
+<html lang="<%=config.language%>">
+<head>
+  <meta charset="UTF-8">
+  <title><%=pageTitle%></title>
+  <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
+    <!-- stylesheets list from config.yml -->
+    <% theme.stylesheets.forEach(function(url) { %>
+      <link rel="stylesheet" href="<%=url%>">
+    <% }); %>
   <% } %>
-<% } else { %>
-  <% if (theme.style.scheme === 'now') { %>
-    <%- partial('_partials/body/now') %>
-  <% } else { %>
-    <%- partial('_partials/body/plus') %>
-  <% } %>
-<% } %>
+</head>
+<body>
 
-<div id="top"></div>
-
-<%- partial('_partials/appbar') %>
-
-<% if (page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
-  <%- partial('_partials/drawer') %>
-<% } %>
-
-<% if (is_category() || is_tag() || is_year()) { %>
-  <%- partial('_partials/archives/side_content') %>
-<% } %>
-
-<main>
-  <%- body %>
-</main>
-
-<div id="outdated" style="z-index: 9999;">
-  <h6><%= __('outdated_browser.title')  %></h6>
-  <p><%= __('outdated_browser.line_one') %><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/"><%= __('outdated_browser.link') %></a></p>
-  <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="<%= __('outdated_browser.close') %>">&times;</a></p>
+<div id="menu-outer">
+  <div id="menu-inner">
+    <% Object.keys(theme.menu).forEach(function(key) { %>
+      <a href="<%=theme.menu[key]%>"><%=key%></a>
+    <% }); %>
+  </div>
 </div>
-<%- partial('_partials/dialogs') %>
-<%- partial('_partials/import_js') %>
-</body>
 
+<div id="content-outer">
+  <div id="content-inner">
+    <%- body %>
+  </div>
+</div>
+
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    Site by <%=config.author%> using
+    <a href="http://hexo.io">hexo blog framework</a>.
+    <br>
+    <a href="<%=config.root%>">Home</a>
+  </div>
+</div>
+
+<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
+  <!-- scripts list from theme config.yml -->
+  <% theme.scripts.forEach(function(url) { %>
+    <script src="<%=url%>"></script>
+  <% }); %>
+<% } %>
+
+</body>
 </html>

@@ -1,11 +1,10 @@
 {
   "name": "hexo-theme-mdui",
-  "version": "1.4.6",
+  "version": "2.0.0",
   "description": "An awesome hexo theme with Material Design.",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "setup": "npm cache clean && npm install",
-    "lint": "npm run setup && bash lint.sh"
+    "setup": "npm cache clean && npm install"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,7 @@
   "author": "Halyul",
   "license": "GPL-3.0",
   "dependencies": {
+    "hexo-renderer-scss": "^1.0.3",
     "prismjs": "^1.6.0"
   },
   "bugs": {
