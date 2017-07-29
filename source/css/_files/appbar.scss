@@ -1,0 +1,97 @@
+@mixin burger-shared {
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  position: absolute;
+  background-color: black;
+  width: 18px;
+  height: 2px;
+  border-radius: 3px;
+}
+
+body {
+  padding-top: 128px;
+}
+
+.theme-appbar {
+  border-bottom: 1px solid #ddd;
+  transition: padding .3s cubic-bezier(0,0,.2,1);
+  @media (min-width: 1024px) {
+    body.mdui-drawer-body-left & {
+      padding-left: 240px;
+    }
+  }
+  &:after {
+    position: absolute;
+    right: 0px;
+    bottom: -5px;
+    left: 0px;
+    width: 100%;
+    height: 5px;
+    content: "";
+    transition: opacity 0.4s;
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+    will-change: opacity;
+  }
+  &.theme-appbar-shadow:after {
+    opacity: 1;
+  }
+  & .theme-toolbar-top, & .theme-toolbar-bottom {
+    height: 64px;
+  }
+  & .theme-toolbar-bottom {
+    justify-content: center;
+  }
+  & .theme-toolbar-title {
+    overflow: visible;
+    font-size: 60px;
+    font-weight: 800;
+    padding-bottom: 40px;
+    @media (max-width: 599px) {
+      font-size: 40px;
+      padding-bottom: 16px;
+    }
+  }
+  & .theme-toolbar-burger {
+    & span {
+      @include burger-shared;
+      top: 11px;
+      left: 3px;
+      &:before {
+        @include burger-shared;
+        content: '';
+        top: -5px;
+        left: 0;
+      }
+      &:after {
+        @include burger-shared;
+        content: '';
+        top: 5px;
+        left: 0;
+      }
+    }
+    &.back span {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      &:before {
+        width: 13px;
+        left: 8px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        top: -4px;
+      }
+      &:after {
+        width: 13px;
+        left: 8px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        top: 4px;
+      }
+    }
+  }
+}

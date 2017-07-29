@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  (function() {
+    var appbarTopFlag = false;
+    var appbarEl = document.querySelector('.theme-appbar');
+
+    window.addEventListener('scroll', function() {
+      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      if (bodyScrolled >= 0 && !appbarTopFlag) {
+        appbarEl.classList.add('theme-appbar-shadow');
+        appbarTopFlag = true;
+      } else if (bodyScrolled === 0 && appbarTopFlag) {
+        appbarEl.classList.remove('theme-appbar-shadow');
+        appbarTopFlag = false;
+      }
+    });
+  })();
+</script>

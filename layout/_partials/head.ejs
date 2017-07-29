@@ -1,0 +1,78 @@
+<%
+var pageTitle = page.title || '';
+if (is_home()) pageTitle = __('global.index');
+if (is_archive()) pageTitle = __('global.archives');
+if (is_tag()) pageTitle = __('global.tag') + ': ' + page.tag;
+if (is_category()) pageTitle = __('global.category') + ': ' + page.category;
+if (is_year()) pageTitle = page.year;
+pageTitle += ' - ' + config.title;
+%>
+
+<head>
+  <script>
+    window.mduiVersion = "2.0.0"
+    window.oldVersion = [
+     '1.4.1',
+     '1.4.5',
+     'unknownVersion'
+    ]
+  </script>
+  <!--
+        © HEXO MDUI Theme
+        https://github.com/Halyul/hexo-theme-mdui
+        Version: 2.0.0 -->
+
+  <meta charset="UTF-8">
+  <title><%= pageTitle %></title>
+  <base href="<%= config.root %>" />
+
+  <!-- Favicons -->
+  <link rel="icon shortcut" type="image/ico" href="<%= theme.head.favicon %>">
+  <link rel="icon" sizes="192x192" href="<%= theme.head.high_res_favicon %>">
+  <link rel="apple-touch-icon" href="<%= theme.head.apple_touch_icon %>">
+
+  <!-- Meta & Info -->
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <meta name="author" content="<%= config.author %>">
+  <% if(page.description) { %>
+      <meta name="description" itemprop="description" content="<%= page.description %>">
+  <% } else if(page.excerpt){ %>
+      <meta name="description" content="<%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %>">
+  <% } else if (config.description){ %>
+      <meta name="description" content="<%= config.description %>">
+  <% } %>
+  <meta name="keywords" content="<%= theme.head.keywords %><% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %>">
+
+  <!--iOS -->
+  <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="480">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:url" content="<%= config.url %>">
+  <meta property="og:type" content="blog">
+  <meta property="og:title" content="<% if (pageTitle) { %><%= pageTitle %> | <% } %><%= config.title %>">
+  <meta property="og:image" content="<%= theme.head.high_res_favicon %>" />
+  <% if(page.description) { %>
+    <meta property="og:description" content="<%= page.description %>">
+  <% } else if(page.excerpt){ %>
+    <meta property="og:description" content="<%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %>">
+  <% } else if (config.description){ %>
+    <meta property="og:description" content="<%= config.description %>">
+  <% } %>
+
+  <% if(page.tags && page.tags.each) { page.tags.each(function(tag){ %>
+    <meta property="og:article:tag" content="<%= tag.name %>">
+  <% })} %>
+
+  <!-- Import CSS -->
+  <%- css("css/mdui") %>
+
+</head>

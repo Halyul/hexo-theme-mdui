@@ -1,27 +1,18 @@
-
 <%
-var pageTitle = page.title || config.subtitle || '';
-if (is_archive()) pageTitle = 'Archives';
-if (is_tag()) pageTitle = 'Tag: ' + page.tag;
-if (is_category()) pageTitle = 'Category: ' + page.category;
-if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
-if (is_year()) pageTitle += ': ' + page.year;
-pageTitle += ' [ ' + config.title + ' ]';
+if (is_home()) pageLayout = 'index';
+if (!is_home()) pageLayout = 'NIndex';
 %>
 
 <!DOCTYPE html>
-<html lang="<%=config.language%>">
-<head>
-  <meta charset="UTF-8">
-  <title><%=pageTitle%></title>
-  <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
-    <!-- stylesheets list from config.yml -->
-    <% theme.stylesheets.forEach(function(url) { %>
-      <link rel="stylesheet" href="<%=url%>">
-    <% }); %>
-  <% } %>
-</head>
-<body>
+<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
+
+<%-partial('_partials/head')%>
+
+<body class="mdui-drawer-body-left">
+
+  <%-partial('_partials/appbar')%>
+  <%-partial('_partials/drawer')%>
+  <div id="top"></div>
 
 <div id="menu-outer">
   <div id="menu-inner">
@@ -31,9 +22,15 @@ pageTitle += ' [ ' + config.title + ' ]';
   </div>
 </div>
 
-<div id="content-outer">
-  <div id="content-inner">
-    <%- body %>
+<div id="barba-wrapper">
+  <div class="barba-container" data-namespace="<%= pageLayout %>">
+    <main>
+      <div id="content-outer">
+        <div id="content-inner">
+          <%- body %>
+        </div>
+      </div>
+    </main>
   </div>
 </div>
 
@@ -46,12 +43,7 @@ pageTitle += ' [ ' + config.title + ' ]';
   </div>
 </div>
 
-<% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
-  <!-- scripts list from theme config.yml -->
-  <% theme.scripts.forEach(function(url) { %>
-    <script src="<%=url%>"></script>
-  <% }); %>
-<% } %>
+<%-partial('_partials/import_js')%>
 
 </body>
 </html>

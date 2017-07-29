@@ -1,0 +1,34 @@
+<div class="theme-drawer-footer">
+  <div class="mdui-typo mdui-typo-caption-opacity">
+    Powered by <a href="http://hexo.io">Hexo</a>
+    <br />
+    Theme - <a href="//github.com/Halyul/hexo-theme-mdui">Halyul/MDUI</a>
+    <br />
+    <span>
+      Copyright ©
+      <span year></span>
+      <%= config.author %>
+    </span>
+    <% if (theme.footer.ICP) { %>
+      <br />
+      <span onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.footer.ICP %></span>
+    <% } %>
+    <% if (theme.footer.image) { %>
+      <img class="mdui-img-fluid" src="<%= theme.footer.image %>"/>
+    <% } %>
+  </div>
+</div>
+<script type="text/javascript">
+  var copyrightNow = new Date().getFullYear();
+  var textContent = document.querySelector('span[year]')
+  <% if (theme.footer.since > 0) { %>
+    copyrightSince = <%= theme.footer.since %>;
+    if (copyrightSince === copyrightNow) {
+      textContent.textContent = copyrightNow
+    } else {
+      textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+  <% } else { %>
+    textContent.textContent = copyrightNow
+  <% } %>
+</script>
