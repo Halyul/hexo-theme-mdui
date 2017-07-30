@@ -38,3 +38,9 @@ span.theme-menu-badge {
 .mdui-divider {
   min-height: 1px;
 }
+
+.theme-spacer {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}

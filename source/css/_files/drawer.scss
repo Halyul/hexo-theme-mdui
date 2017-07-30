@@ -1,4 +1,6 @@
-.theme-drawer {
+$main-class: theme-drawer;
+
+.#{$main-class} {
   background-color: #404040;
   color: #fff;
   display: -webkit-box;
@@ -19,14 +21,16 @@
       display: none;
     }
   }
-  & .theme-drawer-header {
+  & .#{$main-class}-header {
+    $sub-class: #{$main-class}-header-layer;
     background-color: inherit;
     height: 128px;
-    .theme-drawer-header-layer-1, .theme-drawer-header-layer-2 {
+    .#{$sub-class}_1, .#{$sub-class}_2 {
       position: absolute;
       background-color: inherit;
     }
-    .theme-drawer-header-layer-1 {
+    .#{$sub-class}_1 {
+      $sub-sub-class: #{$sub-class}_1-toolbar;
       font-size: 60px;
       font-weight: 800;
       @media (max-width: 599px) {
@@ -35,16 +39,16 @@
       @media (min-width: 1024px) {
         display: none;
       }
-      .theme-toolbar-top, .theme-toolbar-bottom {
+      .#{$sub-sub-class}-top, .#{$sub-sub-class}-bottom {
         width: 100vw;
         height: 64px;
       }
-      .theme-toolbar-bottom {
+      .#{$sub-sub-class}-bottom {
         justify-content: center;
         transform: translateX(280px);
         transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
       }
-      .theme-toolbar-title {
+      .#{$sub-sub-class}-title {
         overflow: visible;
         font-size: 60px;
         font-weight: 800;
@@ -55,7 +59,8 @@
         }
       }
     }
-    .theme-drawer-header-layer-2 {
+    .#{$sub-class}_2 {
+      $sub-sub-class: #{$sub-class}_2-user;
       display: none;
       width: 100%;
       height: 128px;
@@ -67,30 +72,31 @@
       @media (min-width: 1024px) {
         display: inherit;
       }
-      .theme-drawer-user-avatar {
+      .#{$sub-sub-class}_avatar {
         width: 48px;
         height: 48px;
         margin: 12px;
       }
-      .theme-drawer-user-info {
+      .#{$sub-sub-class}_info {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         padding-left: 16px;
         height: 48px;
-        .theme-drawer-user-author {
+        .#{$sub-sub-class}_author {
           font-size: 16px;
           font-weight: 500;
         }
-        .theme-drawer-user-slogan {
+        .#{$sub-sub-class}_slogan {
           font-size: 12px;
           margin: 4px 0;
         }
       }
     }
   }
-  & .theme-drawer-warpper {
+  & .#{$main-class}-warpper {
+    $sub-class: #{$main-class}-warpper;
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -101,10 +107,10 @@
     flex-grow: 1;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    & .theme-drawer-content {
+    & .#{$sub-class}-content {
       overflow: inherit;
     }
-    & .theme-drawer-footer {
+    & .#{$sub-class}-footer {
       margin: 5px 24px 24px 24px;
       -webkit-box-flex: none;
       -ms-flex: none;
@@ -113,10 +119,12 @@
   }
 }
 
-.theme-drawer.mdui-drawer-open {
-  & .theme-drawer-header {
-    .theme-drawer-header-layer-1 {
-      .theme-toolbar-bottom {
+.#{$main-class}.mdui-drawer-open {
+  & .#{$main-class}-header {
+    $sub-class: #{$main-class}-header;
+    .#{$sub-class}-layer_1 {
+      $sub-sub-class: #{$sub-class}-layer_1-toolbar;
+      .#{$sub-sub-class}-bottom {
         transform: translateX(0px) !important;
       }
     }

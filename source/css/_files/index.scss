@@ -1,0 +1,31 @@
+$main-class: theme-index;
+
+.#{$main-class} {
+  .#{$main-class}-pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    li {
+      display: inline-block;
+      height: 30px;
+      text-align: center;
+      vertical-align: top;
+      border-radius: 2px;
+      a {
+        font-size: 1.2rem;
+        line-height: 30px;
+        display: inline-block;
+        padding: 0 10px;
+        text-decoration: none;
+        color: #444;
+      }
+    }
+    @media (max-width: 599px) {
+      width: 100%;
+    }
+  }
+}

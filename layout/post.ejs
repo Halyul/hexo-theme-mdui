@@ -1,7 +1,11 @@
+<div class="theme-post">
+  <article class="mdui-card">
 
-<article id="post">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
-</article>
+    <section class="mdui-card-content mdui-typo">
+      <%-page.content%>
+    </section>
 
-<%-partial('partials/pagination')%>
+  </article>
+
+  <%-partial('_partials/pagination/post')%>
+</div>

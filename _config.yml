@@ -17,6 +17,8 @@ head:
   apple_touch_icon: /images/favicon.png
   keywords: blog, hexo, mdui
 
+pagination: 1
+
 # main menu navigation
 menu:
   Home: /

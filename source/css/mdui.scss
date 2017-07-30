@@ -3,10 +3,12 @@ $primary-color: primary- + hexo-theme-config('style.primary_color');
 $accent-color: accent- + hexo-theme-config('style.accent_color');
 
 @import '_files/mdui';
-@import '_files/appbar';
-@import '_files/drawer';
 @import '_files/global';
 @import '_files/color';
+@import '_files/appbar';
+@import '_files/drawer';
+@import '_files/index';
+@import '_files/post';
 
 body {
   background-color: $global-background-color;

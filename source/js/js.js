@@ -5,7 +5,7 @@ document.querySelector('#drawer-back').addEventListener('click', function() {
 
 function BarbaSettings() {
   // Barbajs settings
-  var burger = document.querySelector('.theme-toolbar-burger');
+  var burger = document.querySelector('.theme-appbar-toolbar-top-burger');
   var BarbaIndex = Barba.BaseView.extend({
     namespace: 'index',
     onEnter: function() {
@@ -29,13 +29,13 @@ function BarbaSettings() {
     namespace: 'NIndex',
     onEnter: function() {
       burger.classList.add('back');
-      burger.addEventListener('click', backToPrev)
+      burger.setAttribute('href', '/')
     },
     onEnterCompleted: function() {
 
     },
     onLeave: function() {
-      burger.removeEventListener('click', backToPrev)
+      burger.setAttribute('href', 'javascript:;')
     },
     onLeaveCompleted: function() {
 
@@ -56,10 +56,6 @@ if (document.readyState === 'complete' || document.readyState !== 'loading') {
   initBarba();
 } else {
   document.addEventListener('DOMContentLoaded', initBarba);
-}
-
-function backToPrev() {
-  window.history.back()
 }
 
 function drawerToggle() {
