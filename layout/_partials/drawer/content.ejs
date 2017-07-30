@@ -1,24 +1,24 @@
 <div class="theme-drawer-content">
   <ul class="mdui-list">
-    <a href="/" class="mdui-list-item mdui-ripple">
+    <a href="/" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
       <div class="mdui-list-item-content"><%= __('global.index') %></div>
     </a>
-    <a href="archives" class="mdui-list-item mdui-ripple">
+    <a href="archives" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
       <div class="mdui-list-item-content"><%= __('global.archives') %></div>
     </a>
     <ul class="mdui-list" mdui-collapse="{accordion: true}" mdui-collapse>
       <% if (site.categories && site.categories.length) { %>
         <div class="mdui-collapse-item <% if (is_category()) { %>mdui-collapse-item-open<% } %>">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
             <div class="mdui-list-item-content"><%= __('global.categories') %></div>
             <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
           </div>
           <div class="mdui-collapse-item-body mdui-list">
             <% site.categories.map(function(category){  %>
-              <a href="categories/<%= category.name %>/" class="mdui-list-item mdui-ripple" style="display: flex">
+              <a href="categories/<%= category.name %>/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= category.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
@@ -29,14 +29,14 @@
       <% } %>
       <% if (site.tags && site.tags.length) { %>
         <div class="mdui-collapse-item <% if (is_tag()) { %>mdui-collapse-item-open<% } %>">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
             <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
             <div class="mdui-list-item-content"><%= __('global.tags') %></div>
             <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
           </div>
           <div class="mdui-collapse-item-body mdui-list">
             <% site.tags.map(function(tag){  %>
-              <a href="tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple" style="display: flex">
+              <a href="tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= tag.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
@@ -46,7 +46,7 @@
         </div>
       <% } %>
       <div class="mdui-collapse-item <% if (is_year()) { %>mdui-collapse-item-open<% } %>">
-        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
           <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
           <div class="mdui-list-item-content"><%= __('global.years') %></div>
           <i class="mdui-collapse-item-arrow mdui-icon material-icons">&#xe5c5;</i>
@@ -77,7 +77,7 @@
       <% for (var i in theme.pages) { %>
         <% if (theme.pages[i].cascade === true) { %>
           <div class="mdui-collapse-item">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
               <% if (theme.pages[i].fa) { %>
                 <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
               <% } %>
@@ -92,7 +92,7 @@
             </div>
             <div class="mdui-collapse-item-body mdui-list">
               <% for (var x in theme.pages[i].pages) { %>
-                <a href="<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple" target="_blank">
+                <a href="<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_blank">
                   <%= x %>
                 </a>
               <% } %>
@@ -100,7 +100,7 @@
           </div>
         <% } else { %>
           <a href="<%= theme.pages[i].link %>" target="_blank">
-            <li class="mdui-list-item mdui-ripple">
+            <li class="mdui-list-item mdui-ripple mdui-ripple-white">
               <% if (theme.pages[i].fa) { %>
                 <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
               <% } %>

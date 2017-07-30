@@ -41,6 +41,8 @@
       }
       .theme-toolbar-bottom {
         justify-content: center;
+        transform: translateX(280px);
+        transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
       }
       .theme-toolbar-title {
         overflow: visible;
@@ -107,6 +109,16 @@
       -webkit-box-flex: none;
       -ms-flex: none;
       flex: none;
+    }
+  }
+}
+
+.theme-drawer.mdui-drawer-open {
+  & .theme-drawer-header {
+    .theme-drawer-header-layer-1 {
+      .theme-toolbar-bottom {
+        transform: translateX(0px) !important;
+      }
     }
   }
 }

@@ -17,7 +17,7 @@ function BarbaSettings() {
     },
     onLeave: function() {
       burger.removeEventListener('click', drawerToggle)
-      drawer.close();
+      drawerClose()
     },
     onLeaveCompleted: function() {
 
@@ -64,4 +64,10 @@ function backToPrev() {
 
 function drawerToggle() {
   drawer.toggle()
+}
+function drawerClose() {
+  var clientWidth = document.body.clientWidth;
+  if (clientWidth < 1024) {
+    drawer.close();
+  }
 }
