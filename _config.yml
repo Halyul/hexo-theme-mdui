@@ -1,16 +1,25 @@
+# Theme config
+style:
+  primary_color: "yellow"
+  accent_color: "blue"
+  random:
+  bg_color: "#eeeeee"
+
+info:
+  bg_image: /images/bg.png
+  avatar: /images/avatar.png
+  slogan: "I'm your slogan!"
+
 # HTML head
 head:
-  favicon: /img/favicon.png
-  high_res_favicon: /img/favicon.png
-  apple_touch_icon: /img/favicon.png
+  favicon: /images/favicon.png
+  high_res_favicon: /images/favicon.png
+  apple_touch_icon: /images/favicon.png
   keywords: blog, hexo, mdui
 
 # main menu navigation
 menu:
   Home: /
-  About: /about
-  Contact: /contact
-  Archives: /archives
 
 pages:
   Test1:

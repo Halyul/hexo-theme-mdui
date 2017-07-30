@@ -1,4 +1,7 @@
 var drawer = new mdui.Drawer('#drawer', {swipe: true});
+document.querySelector('#drawer-back').addEventListener('click', function() {
+  drawer.close()
+})
 
 function BarbaSettings() {
   // Barbajs settings

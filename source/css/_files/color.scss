@@ -1,0 +1,48 @@
+@mixin bg-color($color) {
+  background-color: $color;
+}
+@mixin color($color) {
+  color: $color;
+}
+
+/*.theme-appbar .theme-toolbar-burger span, .theme-appbar .theme-toolbar-burger span:before, .theme-appbar .theme-toolbar-burger span:after {
+  @if $primary-color == primary-amber {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-blue {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-blue-grey {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-brown {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-cyan {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-deep-orange {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-deep-purple {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-green {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-grey {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-indigo {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-light-blue {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-light-green {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-lime {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-orange {
+    @include bg-color(#000);
+  } @else if $primary-color == primary-pink {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-purple {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-red {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-teal {
+    @include bg-color(#fff);
+  } @else if $primary-color == primary-yellow {
+    @include bg-color(#000);
+  }
+}*/

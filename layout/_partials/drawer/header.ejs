@@ -1,6 +1,23 @@
 <div class="theme-drawer-header">
-  <div class="mdui-toolbar mdui-color-theme theme-toolbar-top"></div>
-  <div class="mdui-toolbar mdui-color-theme theme-toolbar-bottom">
-    <span class="theme-toolbar-title"><%= config.title %></span>
+  <div class="theme-drawer-header-layer-1">
+    <div class="mdui-toolbar theme-toolbar-top">
+      <button class="mdui-btn mdui-btn-icon" id="drawer-back">
+        <i class="mdui-icon material-icons">&#xe5c4;</i>
+      </button>
+    </div>
+    <div class="mdui-toolbar theme-toolbar-bottom">
+      <span class="theme-toolbar-title"><%= config.title %></span>
+    </div>
+  </div>
+  <div class="theme-drawer-header-layer-2" style="background-image: url(<%= theme.info.bg_image %>)">
+    <img class="mdui-img-circle theme-drawer-user-avatar" src="<%= theme.info.avatar %>"/>
+    <div class="theme-drawer-user-info">
+      <div class="theme-drawer-user-author mdui-text-color-white-text">
+        <%= config.author %>
+      </div>
+      <div class="theme-drawer-user-slogan mdui-text-color-white-secondary">
+        <%= theme.info.slogan %>
+      </div>
+    </div>
   </div>
 </div>

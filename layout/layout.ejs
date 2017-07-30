@@ -8,42 +8,25 @@ if (!is_home()) pageLayout = 'NIndex';
 
 <%-partial('_partials/head')%>
 
-<body class="mdui-drawer-body-left">
+<body class="mdui-drawer-body-left mdui-theme-primary-<%= theme.style.primary_color %> mdui-theme-accent-<%= theme.style.accent_color %>">
 
   <%-partial('_partials/appbar')%>
   <%-partial('_partials/drawer')%>
   <div id="top"></div>
 
-<div id="menu-outer">
-  <div id="menu-inner">
-    <% Object.keys(theme.menu).forEach(function(key) { %>
-      <a href="<%=theme.menu[key]%>"><%=key%></a>
-    <% }); %>
-  </div>
-</div>
-
-<div id="barba-wrapper">
-  <div class="barba-container" data-namespace="<%= pageLayout %>">
-    <main>
-      <div id="content-outer">
-        <div id="content-inner">
-          <%- body %>
+  <div id="barba-wrapper">
+    <div class="barba-container" data-namespace="<%= pageLayout %>">
+      <main>
+        <div id="content-outer">
+          <div id="content-inner">
+            <%- body %>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </div>
-</div>
 
-<div id="bottom-outer">
-  <div id="bottom-inner">
-    Site by <%=config.author%> using
-    <a href="http://hexo.io">hexo blog framework</a>.
-    <br>
-    <a href="<%=config.root%>">Home</a>
-  </div>
-</div>
-
-<%-partial('_partials/import_js')%>
+  <%-partial('_partials/import_js')%>
 
 </body>
 </html>
