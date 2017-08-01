@@ -1,4 +1,24 @@
 <div class="theme-index">
-  <%-partial('_partials/recent-posts')%>
+  <div class="theme-posts">
+    <%
+        var index = 0;
+        var posts = page.posts.filter(function(post) {
+          if (post.pinned) {
+      %>
+            <%-partial('_partials/posts', { index: index, post })%>
+          <%
+            index++;
+            return false;
+          }
+          return true;
+        })
+      %>
+      <% posts.forEach(function(post) {%>
+          <%-partial('_partials/posts', { index: index, post })%>
+      <%
+        index++;
+      }); %>
+  </div>
   <%-partial('_partials/pagination/index', {show: theme.pagination })%>
+  <%-partial('_partials/fab/index')%>
 </div>

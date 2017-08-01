@@ -9,6 +9,7 @@ $accent-color: accent- + hexo-theme-config('style.accent_color');
 @import '_files/drawer';
 @import '_files/index';
 @import '_files/post';
+@import '_files/posts';
 
 body {
   background-color: $global-background-color;

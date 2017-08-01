@@ -46,11 +46,25 @@ body {
     $sub-sub-class: #{$sub-class}-top;
     & .#{$sub-sub-class}-burger {
       $sub-sub-sub-class: #{$sub-sub-class}-burger;
-      &.#{$sub-sub-sub-class}-menu span {
+      span {
         @include burger-shared;
-        animation-name: burger-menu;
         top: 11px;
         left: 3px;
+        &:before {
+          @include burger-shared;
+          content: '';
+          top: -5px;
+          left: 0;
+        }
+        &:after {
+          @include burger-shared;
+          content: '';
+          top: 5px;
+          left: 0;
+        }
+      }
+      &.#{$sub-sub-sub-class}-menu span {
+        animation-name: burger-menu;
         &:before {
           @include burger-shared;
           animation-name: burger-menu-before;

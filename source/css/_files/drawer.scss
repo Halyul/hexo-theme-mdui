@@ -45,8 +45,11 @@ $main-class: theme-drawer;
       }
       .#{$sub-sub-class}-bottom {
         justify-content: center;
-        transform: translateX(280px);
+        transform: translateX(290px);
         transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+        @media (min-width: 600px) {
+          transform: translateX(330px);
+        }
       }
       .#{$sub-sub-class}-title {
         overflow: visible;
