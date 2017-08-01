@@ -9,7 +9,8 @@ function BarbaSettings() {
   var BarbaIndex = Barba.BaseView.extend({
     namespace: 'index',
     onEnter: function() {
-      burger.classList.remove('back');
+      burger.classList.add('theme-appbar-toolbar-top-burger-menu');
+      burger.classList.remove('theme-appbar-toolbar-top-burger-arrow');
       burger.addEventListener('click', drawerToggle)
     },
     onEnterCompleted: function() {
@@ -28,7 +29,8 @@ function BarbaSettings() {
   var BarbaNIndex = Barba.BaseView.extend({
     namespace: 'NIndex',
     onEnter: function() {
-      burger.classList.add('back');
+      burger.classList.remove('theme-appbar-toolbar-top-burger-menu');
+      burger.classList.add('theme-appbar-toolbar-top-burger-arrow');
       burger.setAttribute('href', '/')
     },
     onEnterCompleted: function() {

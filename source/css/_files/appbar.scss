@@ -1,21 +1,12 @@
 $main-class: theme-appbar;
-$sub-class: theme-toolbar;
 
 @mixin burger-shared {
-  transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
   position: absolute;
   background-color: #000;
   width: 18px;
   height: 2px;
-  border-radius: 3px;
-}
-
-@mixin burger-rotate($degree) {
-  -webkit-transform: rotate($degree);
-  transform: rotate($degree);
-  -moz-transform: rotate($degree);
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
 }
 
 body {
@@ -54,36 +45,48 @@ body {
   & .#{$sub-class}-top {
     $sub-sub-class: #{$sub-class}-top;
     & .#{$sub-sub-class}-burger {
-      & span {
+      $sub-sub-sub-class: #{$sub-sub-class}-burger;
+      &.#{$sub-sub-sub-class}-menu span {
         @include burger-shared;
+        animation-name: burger-menu;
         top: 11px;
         left: 3px;
         &:before {
           @include burger-shared;
+          animation-name: burger-menu-before;
           content: '';
           top: -5px;
           left: 0;
         }
         &:after {
           @include burger-shared;
+          animation-name: burger-menu-after;
           content: '';
           top: 5px;
           left: 0;
         }
       }
-      &.back span {
-        @include burger-rotate(180deg);
+      &.#{$sub-sub-sub-class}-arrow span {
+        @include burger-shared;
+        top: 11px;
+        left: 3px;
+        animation-name: burger-arrow;
+        animation-fill-mode: forwards;
         &:before {
-          @include burger-rotate(45deg);
-          width: 13px;
-          left: 8px;
-          top: -4px;
+          @include burger-shared;
+          content: '';
+          left: 0;
+          top: -5px;
+          animation-name: burger-arrow-before;
+          animation-fill-mode: forwards;
         }
         &:after {
-          @include burger-rotate(-45deg);
-          width: 13px;
-          left: 8px;
-          top: 4px;
+          @include burger-shared;
+          content: '';
+          left: 0;
+          top: 5px;
+          animation-name: burger-arrow-after;
+          animation-fill-mode: forwards;
         }
       }
     }
@@ -101,5 +104,53 @@ body {
         padding-bottom: 16px;
       }
     }
+  }
+}
+
+@keyframes burger-arrow {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes burger-arrow-before {
+  100% {
+    transform: rotate(45deg);
+    width: 12px;
+    margin: 0 9px;
+    top: -3.5px;
+  }
+}
+
+@keyframes burger-arrow-after {
+  100% {
+    transform: rotate(-45deg);
+    width: 12px;
+    margin: 0 9px;
+    top: 3.5px;
+  }
+}
+
+@keyframes burger-menu {
+  0% {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes burger-menu-before {
+  0% {
+    transform: rotate(45deg);
+    width: 12px;
+    margin: 0 9px;
+    top: -3.5px;
+  }
+}
+
+@keyframes burger-menu-after {
+  0% {
+    transform: rotate(-45deg);
+    width: 12px;
+    margin: 0 9px;
+    top: 3.5px;
   }
 }
