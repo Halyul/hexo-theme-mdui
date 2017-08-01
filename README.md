@@ -19,6 +19,8 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 ![Version](https://img.shields.io/badge/version-1.4.6-green.svg?style=flat-square)
 [![Hexo](https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square)](https://hexo.io)
 ![Travis CI](https://travis-ci.org/Halyul/hexo-theme-mdui.svg?branch=master)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Code Climate](https://img.shields.io/codeclimate/github/Halyul/hexo-theme-mdui.svg?style=flat-square)](https://codeclimate.com/github/Halyul/hexo-theme-mdui/)
 
 ## Demo 演示
 
