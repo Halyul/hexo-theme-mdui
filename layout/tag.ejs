@@ -1,7 +1,12 @@
 <div class="theme-tags">
-  <% page.posts.each(function(post) {%>
-    <%-partial('_partials/posts', { post: post })%>
-  <% }); %>
+  <div class="theme-posts">
+    <% var position = 0 %>
+    <% page.posts.forEach(function(post) {%>
+        <%-partial('_partials/posts', { position: position, post })%>
+    <%
+      position++;
+    }); %>
+  </div>
   <%-partial('_partials/fab/index')%>
   <%-partial('_partials/pagination/index')%>
 </div>

@@ -24,11 +24,68 @@
         <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
       </section>
       <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="mdui-card-actions">
-        <div class="mdui-typo-body-1-opacity mdui-typo">
-          <span><%= config.author %></span>
-          <span> · </span>
-          <span><%= date(post.date, 'MMM DD, YYYY') %></span>
+      <section class="theme-posts__post__footer">
+        <% if (post.categories && post.categories.length) { %>
+          <% if (post.categories.length === 1) { %>
+            <div class="mdui-chip theme-posts__post__footer__categories">
+              <span class="mdui-chip-icon">
+                <i class="mdui-icon material-icons mdui-text-center">&#xe149;</i>
+              </span>
+              <% post.categories.map(function(category){ %>
+                <span class="mdui-chip-title"><%= category.name %></span>
+              <% }) %>
+            </div>
+          <% } else { %>
+            <div class="theme-posts__post__footer__categories mdui-valign">
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-categories-<%= position %>'}">
+                <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
+              </button>
+              <ul class="mdui-menu" id="post-categories-<%= position %>">
+                <% post.categories.map(function(category){ %>
+                  <li class="mdui-menu-item">
+                    <a href="categories/<%= category.name %>/" class="mdui-ripple">
+                      <span><%= category.name %></span>
+                    </a>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          <% } %>
+        <% } %>
+        <% if (post.tags && post.tags.length) { %>
+          <% if (post.tags.length === 1) { %>
+            <% post.tags.map(function(tag){ %>
+              <a href="tag/<%= tag.name %>/" class="theme-link--no-style">
+                <div class="mdui-chip theme-posts__post__footer__tags">
+                  <span class="mdui-chip-icon">
+                    <i class="mdui-icon fa fa-tags mdui-text-center"></i>
+                  </span>
+                  <span class="mdui-chip-title"><%= tag.name %></span>
+                </div>
+              </a>
+            <% }) %>
+          <% } else { %>
+            <div class="theme-posts__post__footer__tags mdui-valign">
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-tags-<%= position %>'}">
+                <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
+              </button>
+              <ul class="mdui-menu" id="post-tags-<%= position %>">
+                <% post.tags.map(function(tag){ %>
+                  <li class="mdui-menu-item">
+                    <a href="tag/<%= tag.name %>/" class="mdui-ripple">
+                      <span><%= tag.name %></span>
+                    </a>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          <% } %>
+        <% } %>
+        <div class="theme-spacer"></div>
+        <div class="mdui-valign">
+          <div>
+            <%= date(post.date, 'MMM DD, YYYY') %>
+          </div>
         </div>
       </section>
     </article>

@@ -13,6 +13,9 @@ $main-class: theme-posts;
 .#{$main-class}__post {
   $sub-class: #{$main-class}__post;
   margin-bottom: 16px;
+  * {
+    overflow: visible;
+  }
   .#{$sub-class}__media {
     $sub-sub-class: #{$sub-class}__media;
     height: 224px;
@@ -23,6 +26,35 @@ $main-class: theme-posts;
     background-attachment: scroll;
     .#{$sub-sub-class}__image {
       display: none;
+    }
+  }
+  .#{$sub-class}__footer {
+    $sub-sub-class: #{$sub-class}__footer;
+    padding: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
+    -ms-flex-direction: row;
+    .#{$sub-sub-class}__categories button {
+      background-color: #989898;
+      i {
+        color: #fff;
+      }
+    }
+    .#{$sub-sub-class}__tags {
+      margin-left: 8px;
+      button {
+        background-color: #989898;
+        i {
+          color: #fff;
+        }
+      }
     }
   }
 }

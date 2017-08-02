@@ -1,22 +1,22 @@
 <div class="theme-index">
   <div class="theme-posts">
     <%
-        var index = 0;
+        var position = 0;
         var posts = page.posts.filter(function(post) {
           if (post.pinned) {
       %>
-            <%-partial('_partials/posts', { index: index, post })%>
+            <%-partial('_partials/posts', { position: position, post })%>
           <%
-            index++;
+            position++;
             return false;
           }
           return true;
         })
       %>
       <% posts.forEach(function(post) {%>
-          <%-partial('_partials/posts', { index: index, post })%>
+          <%-partial('_partials/posts', { position: position, post })%>
       <%
-        index++;
+        position++;
       }); %>
   </div>
   <%-partial('_partials/pagination/index', {show: theme.pagination })%>

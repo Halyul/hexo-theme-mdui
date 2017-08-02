@@ -44,3 +44,8 @@ span.theme-menu-badge {
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
+
+.theme-link--no-style {
+  text-decoration: none;
+  color: inherit;
+}

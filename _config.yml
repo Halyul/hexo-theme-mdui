@@ -54,6 +54,7 @@ footer:
   since:
   ICP:
   image:
+  last_updated:
 
 # scss
 node_sass:
