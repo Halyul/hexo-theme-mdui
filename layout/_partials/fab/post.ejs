@@ -1,0 +1,8 @@
+<div class="mdui-color-theme theme-post__toc-fab">
+  <button class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-hidden-md-up" mdui-menu="{target: '#toc-fab', fixed: true}">
+    <i class="mdui-icon material-icons">&#xe242;</i>
+  </button>
+  <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab" style="padding: 8px;max-height: 80%">
+    <%- fabToc(page.content, {list_number: false}) %>
+  </ul>
+</div>

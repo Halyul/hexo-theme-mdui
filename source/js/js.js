@@ -102,6 +102,7 @@ var pageTransition = Barba.BaseTransition.extend({
     } else {
       smoothScroll.animateScroll( 0 );
     }
+    console.log("scrollMap: ",scrollMap)
     this.done();
   }
 });
@@ -112,3 +113,10 @@ Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus) {
   console.log("currentStatus: ", currentStatus)
   console.log("prevStatus: ", prevStatus)
 });
+
+window.hashesJump = function(href) {
+  var hrefY = document.getElementById(href).getBoundingClientRect().top  - 128
+  var scrollY = hrefY + window.pageYOffset
+  console.log(href, scrollY)
+  smoothScroll.animateScroll( scrollY );
+}

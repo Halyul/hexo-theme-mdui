@@ -1,11 +1,41 @@
 <div class="theme-post">
-  <article class="mdui-card">
+  <div class="theme-post__background mdui-color-theme"></div>
+  <div class="theme-post__header">
+    <div class="theme-post__header__title mdui-text-truncate">
+      <%= page.title %>
+    </div>
+    <div class="theme-post__header__actions mdui-valign">
+      <div>
+        <span><%= __('posts.posted') %></span>
+        <span style="float: right"><%= date(page.date, 'MMM DD, YYYY') %></span>
+        <%  var posted = date(page.date, 'MMM DD, YYYY')
+            var edited = date(page.updated, 'MMM DD, YYYY')
+            if (posted !== edited) { %>
+        <br>
+          <span><%= __('posts.edited') %></span>
+          <span><%= edited %></span>
+        <% } %>
+      </div>
+      <%/*- partial('_partials/menu/qrcode') */%>
+      <%/*- partial('_partials/menu/post_share') */%>
+    </div>
+  </div>
+  <div class="theme-post__warpper">
+    <div class="theme-post__warpper__container">
+      <article class="mdui-card theme-post__card">
+        <section class="mdui-typo">
+          <%-page.content%>
+        </section>
+      </article>
+      <div class="mdui-color-theme theme-post__toc">
+          <%- cardToc(page.content, {
+              class: 'theme-post__toc__content'
+            }) %>
+      </div>
+    </div>
+  </div>
 
-    <section class="mdui-card-content mdui-typo">
-      <%-page.content%>
-    </section>
-
-  </article>
-
+  <div class="theme-spacer"></div>
+  <%-partial('_partials/fab/post')%>
   <%-partial('_partials/pagination/post')%>
 </div>

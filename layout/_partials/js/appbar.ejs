@@ -2,16 +2,17 @@
   (function() {
     var appbarTopFlag = false;
     var appbarEl = document.querySelector('.theme-appbar');
-
-    window.addEventListener('scroll', function() {
+    function appbarShadow() {
       var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-      if (bodyScrolled >= 0 && !appbarTopFlag) {
+      if (bodyScrolled > 0 && !appbarTopFlag) {
         appbarEl.classList.add('theme-appbar--shadow');
         appbarTopFlag = true;
       } else if (bodyScrolled === 0 && appbarTopFlag) {
         appbarEl.classList.remove('theme-appbar--shadow');
         appbarTopFlag = false;
       }
-    });
+    }
+    appbarShadow()
+    window.addEventListener('scroll', appbarShadow);
   })();
 </script>

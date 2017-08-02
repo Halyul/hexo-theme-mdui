@@ -31,12 +31,15 @@ menu:
 pages:
   Test1:
     link: "/myfriends"
+    type: 'internal'
     md: "&#xe0ba;"
   Test2:
     link: "/apply-for-link"
+    type: 'internal'
     fa: "fa-child"
   Test3:
     link: "/timeline"
+    type: 'internal'
     md: "home"
   Test4:
     cascade: true
@@ -44,9 +47,11 @@ pages:
     pages:
       TEST1:
         link: "/myfriends"
+        type: 'internal'
         md: "&#xe5ca;"
       TEST2:
         link: "/timeline"
+        type: 'internal'
         md: "home"
 
 # footer
