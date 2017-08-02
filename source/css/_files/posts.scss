@@ -7,20 +7,22 @@ $main-class: theme-posts;
   @media (max-width: 599px) {
     width: 92%;
   }
-  .#{$main-class}-post {
-    $sub-class: #{$main-class}-post;
-    margin-bottom: 16px;
-    .#{$sub-class}-media {
-      $sub-sub-class: #{$sub-class}-media;
-      height: 224px;
-      background-repeat: repeat;
-      background-position: 50% 50%;
-      background-size: cover;
-      background-origin: padding-box;
-      background-attachment: scroll;
-      .#{$sub-sub-class}-image {
-        display: none;
-      }
+}
+
+// Single post
+.#{$main-class}__post {
+  $sub-class: #{$main-class}__post;
+  margin-bottom: 16px;
+  .#{$sub-class}__media {
+    $sub-sub-class: #{$sub-class}__media;
+    height: 224px;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-origin: padding-box;
+    background-attachment: scroll;
+    .#{$sub-sub-class}__image {
+      display: none;
     }
   }
 }

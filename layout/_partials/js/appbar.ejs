@@ -6,10 +6,10 @@
     window.addEventListener('scroll', function() {
       var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
       if (bodyScrolled >= 0 && !appbarTopFlag) {
-        appbarEl.classList.add('theme-appbar-shadow');
+        appbarEl.classList.add('theme-appbar--shadow');
         appbarTopFlag = true;
       } else if (bodyScrolled === 0 && appbarTopFlag) {
-        appbarEl.classList.remove('theme-appbar-shadow');
+        appbarEl.classList.remove('theme-appbar--shadow');
         appbarTopFlag = false;
       }
     });

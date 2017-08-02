@@ -1,0 +1,25 @@
+// two toolbals
+$main-class: theme-toolbar;
+body {
+  padding-top: 128px;
+}
+
+.#{$main-class}-top, & .#{$main-class}-bottom {
+  width: 100vw;
+  height: 64px !important;
+}
+
+.#{$main-class}-bottom {
+  $sub-class: #{$main-class}-bottom;
+  justify-content: center;
+  & .#{$sub-class}__title {
+    overflow: visible;
+    font-size: 60px;
+    font-weight: 800;
+    padding-bottom: 40px;
+    @media (max-width: 599px) {
+      font-size: 40px;
+      padding-bottom: 16px;
+    }
+  }
+}

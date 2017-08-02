@@ -5,11 +5,11 @@
 %>
 
 <% if (site.posts.length > 0) { %>
-  <div class="theme-posts-post">
+  <div class="theme-posts__post">
     <article class="mdui-card">
-      <section class="mdui-card-media theme-posts-post-media" style="background-image: url(<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>)">
-        <img src="<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>" class="theme-posts-post-media-image" />
-        <div class="mdui-card-media-covered theme-posts-post-media-covered">
+      <section class="mdui-card-media theme-posts__post__media" style="background-image: url(<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>)">
+        <img src="<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>" class="theme-posts__post__media__image" />
+        <div class="mdui-card-media-covered theme-posts__post__media-covered">
           <div class="mdui-card-primary mdui-typo">
             <a href="<%= post.path %>" target="_self" class="mdui-card-primary-title mdui-text-truncate">
               <% if (post.pinned === true) { %>

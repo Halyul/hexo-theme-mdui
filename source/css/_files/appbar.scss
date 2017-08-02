@@ -9,12 +9,7 @@ $main-class: theme-appbar;
   animation-timing-function: ease-in-out;
 }
 
-body {
-  padding-top: 128px;
-}
-
 .#{$main-class} {
-  $sub-class: #{$main-class}-toolbar;
   border-bottom: 1px solid #ddd;
   transition: padding .3s cubic-bezier(0,0,.2,1);
   @media (min-width: 1024px) {
@@ -36,87 +31,68 @@ body {
     box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
     will-change: opacity;
   }
-  &.#{$main-class}-shadow:after {
+  &.#{$main-class}--shadow:after {
     opacity: 1;
   }
-  & .#{$sub-class}-top, & .#{$sub-class}-bottom {
-    height: 64px;
-  }
-  & .#{$sub-class}-top {
-    $sub-sub-class: #{$sub-class}-top;
-    & .#{$sub-sub-class}-burger {
-      $sub-sub-sub-class: #{$sub-sub-class}-burger;
-      span {
-        @include burger-shared;
-        top: 11px;
-        left: 3px;
-        &:before {
-          @include burger-shared;
-          content: '';
-          top: -5px;
-          left: 0;
-        }
-        &:after {
-          @include burger-shared;
-          content: '';
-          top: 5px;
-          left: 0;
-        }
-      }
-      &.#{$sub-sub-sub-class}-menu span {
-        animation-name: burger-menu;
-        &:before {
-          @include burger-shared;
-          animation-name: burger-menu-before;
-          content: '';
-          top: -5px;
-          left: 0;
-        }
-        &:after {
-          @include burger-shared;
-          animation-name: burger-menu-after;
-          content: '';
-          top: 5px;
-          left: 0;
-        }
-      }
-      &.#{$sub-sub-sub-class}-arrow span {
-        @include burger-shared;
-        top: 11px;
-        left: 3px;
-        animation-name: burger-arrow;
-        animation-fill-mode: forwards;
-        &:before {
-          @include burger-shared;
-          content: '';
-          left: 0;
-          top: -5px;
-          animation-name: burger-arrow-before;
-          animation-fill-mode: forwards;
-        }
-        &:after {
-          @include burger-shared;
-          content: '';
-          left: 0;
-          top: 5px;
-          animation-name: burger-arrow-after;
-          animation-fill-mode: forwards;
-        }
-      }
+}
+
+.#{$main-class}__burger {
+  $sub-class: #{$main-class}__burger;
+  span {
+    @include burger-shared;
+    top: 11px;
+    left: 3px;
+    &:before {
+      @include burger-shared;
+      content: '';
+      top: -5px;
+      left: 0;
+    }
+    &:after {
+      @include burger-shared;
+      content: '';
+      top: 5px;
+      left: 0;
     }
   }
-  & .#{$sub-class}-bottom {
-    $sub-sub-class: #{$sub-class}-bottom;
-    justify-content: center;
-    & .#{$sub-sub-class}-title {
-      overflow: visible;
-      font-size: 60px;
-      font-weight: 800;
-      padding-bottom: 40px;
-      @media (max-width: 599px) {
-        font-size: 40px;
-        padding-bottom: 16px;
-      }
+  &.#{$sub-class}--menu span {
+    animation-name: burger-menu;
+    &:before {
+      @include burger-shared;
+      animation-name: burger-menu-before;
+      content: '';
+      top: -5px;
+      left: 0;
+    }
+    &:after {
+      @include burger-shared;
+      animation-name: burger-menu-after;
+      content: '';
+      top: 5px;
+      left: 0;
+    }
+  }
+  &.#{$sub-class}--arrow span {
+    @include burger-shared;
+    top: 11px;
+    left: 3px;
+    animation-name: burger-arrow;
+    animation-fill-mode: forwards;
+    &:before {
+      @include burger-shared;
+      content: '';
+      left: 0;
+      top: -5px;
+      animation-name: burger-arrow-before;
+      animation-fill-mode: forwards;
+    }
+    &:after {
+      @include burger-shared;
+      content: '';
+      left: 0;
+      top: 5px;
+      animation-name: burger-arrow-after;
+      animation-fill-mode: forwards;
     }
   }
 }

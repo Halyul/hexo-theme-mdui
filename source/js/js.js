@@ -5,11 +5,11 @@ document.querySelector('#drawer-back').addEventListener('click', function() {
 
 function BarbaSettings() {
   // Barbajs settings
-  var burger = document.querySelector('.theme-appbar-toolbar-top-burger');
+  var burger = document.querySelector('.theme-appbar__burger');
   var BarbaIndex = Barba.BaseView.extend({
     namespace: 'index',
     onEnter: function() {
-      burger.classList.remove('theme-appbar-toolbar-top-burger-arrow');
+      burger.classList.remove('theme-appbar__burger--arrow');
       burger.addEventListener('click', drawerToggle)
     },
     onEnterCompleted: function() {
@@ -28,15 +28,15 @@ function BarbaSettings() {
   var BarbaNIndex = Barba.BaseView.extend({
     namespace: 'NIndex',
     onEnter: function() {
-      burger.classList.remove('theme-appbar-toolbar-top-burger-menu');
-      burger.classList.add('theme-appbar-toolbar-top-burger-arrow');
+      burger.classList.remove('theme-appbar__burger--menu');
+      burger.classList.add('theme-appbar__burger--arrow');
       burger.setAttribute('href', '/')
     },
     onEnterCompleted: function() {
 
     },
     onLeave: function() {
-      burger.classList.add('theme-appbar-toolbar-top-burger-menu');
+      burger.classList.add('theme-appbar__burger--menu');
       burger.setAttribute('href', 'javascript:;')
     },
     onLeaveCompleted: function() {

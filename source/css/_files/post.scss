@@ -1,51 +1,52 @@
 $main-class: theme-post;
 
 .#{$main-class} {
-  .#{$main-class}-pagination {
-    $sub-class: #{$main-class}-pagination;
-    a {
-      text-decoration: none;
-      color: inherit;
+
+}
+
+// Pagination
+.#{$main-class}__pagination {
+  $sub-class: #{$main-class}__pagination;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+  height: 96px;
+  padding: 0 72px;
+  @each $position in prev, next {
+    .#{$sub-class}__#{$position} {
+      min-width: calc(50% - 16px);
+      width: calc(50% - 16px);
+      padding: 8px;
+      & .#{$sub-class}__#{$position}__content {
+        width: 100%;
+      }
     }
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    -webkit-box-orient: horizontal;
-    box-orient: horizontal;
-    -ms-flex-direction: row;
-    height: 96px;
-    padding: 0 72px;
+  }
+  @media (max-width: 599px) {
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -ms-flex-direction: column;
+    height: auto;
+    padding: 0;
     @each $position in prev, next {
-      .#{$sub-class}-#{$position} {
-        min-width: calc(50% - 16px);
-        width: calc(50% - 16px);
+      .#{$sub-class}__#{$position} {
+        min-height: 50%;
+        height: 50%;
         padding: 8px;
-        & .#{$sub-class}-#{$position}-content {
-          width: 100%;
-        }
+        width: calc(100% - 16px);
       }
     }
-    @media (max-width: 599px) {
-      flex-direction: column;
-      -webkit-box-orient: vertical;
-      box-orient: vertical;
-      -ms-flex-direction: column;
-      height: auto;
-      padding: 0;
-      @each $position in prev, next {
-        .#{$sub-class}-#{$position} {
-          min-height: 50%;
-          height: 50%;
-          padding: 8px;
-          width: calc(100% - 16px);
-        }
-      }
-      .#{$sub-class}-next {
-        a {
-          text-align: left !important;
-        }
-      }
+    .#{$sub-class}__next a {
+      text-align: left !important;
     }
   }
 }

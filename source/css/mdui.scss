@@ -7,6 +7,7 @@ $accent-color: accent- + hexo-theme-config('style.accent_color');
 @import '_files/color';
 @import '_files/appbar';
 @import '_files/drawer';
+@import '_files/shared';
 @import '_files/index';
 @import '_files/post';
 @import '_files/posts';

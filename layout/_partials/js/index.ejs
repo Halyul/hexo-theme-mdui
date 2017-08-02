@@ -1,10 +1,10 @@
 <script type="text/javascript">
   //index image
   /*(function () {
-    var imagesEl = document.getElementsByClassName('theme-index-posts-post-media');
+    var imagesEl = document.getElementsByClassName('theme-posts__post__media');
     Array.prototype.forEach.call(imagesEl, (imageEl) => {
-    var img = imageEl.getElementsByClassName('theme-index-posts-post-media-image')[0]
-    var covered = imageEl.getElementsByClassName('theme-index-posts-post-media-covered')[0]
+    var img = imageEl.getElementsByClassName('theme-posts__post__media__image')[0]
+    var covered = imageEl.getElementsByClassName('theme-index-posts__post__media__covered')[0]
       RGBaster.colors(img, {
         success: function (payload) {
           covered.style.backgroundColor = payload.dominant;
