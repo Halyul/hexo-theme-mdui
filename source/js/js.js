@@ -85,6 +85,29 @@ function drawerClose() {
   }
 })();
 
+var scrollMap = {};
+var pageTransition = Barba.BaseTransition.extend({
+  start: function() {
+    this.newContainerLoading.then(this.finish.bind(this));
+  },
+
+  finish: function() {
+    var prevStatus = Barba.HistoryManager.prevStatus();
+    var currentStatus = Barba.HistoryManager.currentStatus();
+    if (prevStatus !== undefined && prevStatus.url !== undefined) {
+      scrollMap[prevStatus.url] = window.pageYOffset;
+    }
+    if (scrollMap[currentStatus.url] !== undefined) {
+      smoothScroll.animateScroll( scrollMap[currentStatus.url] );
+    } else {
+      smoothScroll.animateScroll( 0 );
+    }
+    this.done();
+  }
+});
+Barba.Pjax.getTransition = function() {
+  return pageTransition;
+};
 Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus) {
   console.log("currentStatus: ", currentStatus)
   console.log("prevStatus: ", prevStatus)

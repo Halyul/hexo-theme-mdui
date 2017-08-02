@@ -27,14 +27,16 @@
       <section class="theme-posts__post__footer">
         <% if (post.categories && post.categories.length) { %>
           <% if (post.categories.length === 1) { %>
-            <div class="mdui-chip theme-posts__post__footer__categories">
-              <span class="mdui-chip-icon">
-                <i class="mdui-icon material-icons mdui-text-center">&#xe149;</i>
-              </span>
-              <% post.categories.map(function(category){ %>
-                <span class="mdui-chip-title"><%= category.name %></span>
-              <% }) %>
-            </div>
+            <% post.categories.map(function(category){ %>
+              <a href="categories/<%= category.name %>/" class="theme-link--no-style">
+                <div class="mdui-chip theme-posts__post__footer__categories">
+                  <span class="mdui-chip-icon">
+                    <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
+                  </span>
+                  <span class="mdui-chip-title"><%= category.name %></span>
+                </div>
+              </a>
+            <% }) %>
           <% } else { %>
             <div class="theme-posts__post__footer__categories mdui-valign">
               <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-categories-<%= position %>'}">
@@ -55,7 +57,7 @@
         <% if (post.tags && post.tags.length) { %>
           <% if (post.tags.length === 1) { %>
             <% post.tags.map(function(tag){ %>
-              <a href="tag/<%= tag.name %>/" class="theme-link--no-style">
+              <a href="tags/<%= tag.name %>/" class="theme-link--no-style">
                 <div class="mdui-chip theme-posts__post__footer__tags">
                   <span class="mdui-chip-icon">
                     <i class="mdui-icon fa fa-tags mdui-text-center"></i>
@@ -72,7 +74,7 @@
               <ul class="mdui-menu" id="post-tags-<%= position %>">
                 <% post.tags.map(function(tag){ %>
                   <li class="mdui-menu-item">
-                    <a href="tag/<%= tag.name %>/" class="mdui-ripple">
+                    <a href="tags/<%= tag.name %>/" class="mdui-ripple">
                       <span><%= tag.name %></span>
                     </a>
                   </li>

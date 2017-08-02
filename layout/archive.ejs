@@ -50,26 +50,18 @@ var categoriesList = list_categories({ show_count: false }),
   </div>
 <% } else { %>
 
-  <h1><%=page.month + '/' + page.year%></h1>
-
-  <% page.posts.each(function(article) { %>
-    <div class="archive-item">
-      <% if (article.link) { %>
-        <!-- external link -->
-        <a href="<%=url_for(article.link)%>" target="_blank">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } else { %>
-        <!-- internal link -->
-        <a href="<%=url_for(article.path)%>">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } %>
-      <time datetime="<%=date_xml(article.date)%>">
-        <%=date(article.date)%>
-      </time>
+  <div class="theme-years">
+    <div class="theme-posts">
+      <% var position = 0 %>
+      <% page.posts.forEach(function(post) {%>
+          <%-partial('_partials/posts', { position: position, post })%>
+      <%
+        position++;
+      }); %>
     </div>
-  <% }); %>
+    <%-partial('_partials/fab/index')%>
+    <%-partial('_partials/pagination/index')%>
+  </div>
 
 <% } %>
 
