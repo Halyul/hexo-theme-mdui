@@ -236,13 +236,14 @@ body.mdui-drawer-body-left .post-bg-color {
 @media (min-width: 1186px) {
   .post-header {
     text-align: center;
+    width: 100%;
   }
   .post-header-container {
     box-sizing: border-box;
     display: inline-block;
     padding: 0 0 0 16px;
     text-align: left;
-    width: 1170px;
+    width: 100%;
   }
   .post-container {
     margin-left: 16px;
@@ -251,7 +252,7 @@ body.mdui-drawer-body-left .post-bg-color {
     margin: 0 auto;
     padding-left: 8px;
     text-align: left;
-    width: 1170px;
+    width: calc(100%-8px);
   }
   #blog-post {
     width: 832px;

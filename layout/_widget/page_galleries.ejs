@@ -6,9 +6,9 @@
         <div class="mdui-col-xs-6 mdui-col-md-3">
           <a href="<%= site.data.galleries[i].link %>" target="_self" class="no-text-decoration item">
             <div class="mdui-grid-tile card-bottom-fix">
-              <div class="bg" src="<%= site.data.galleries[i].bg %>"></div>
-              <div class="mdui-grid-tile-actions no-padding-top">
-                <div class="mdui-grid-tile-text">
+              <img class="bg" src="<%= site.data.galleries[i].bg %>" />
+              <div class="mdui-grid-tile-actions no-padding-top" style="width: 100%;">
+                <div class="mdui-grid-tile-text" style="width: 100%;">
                   <% if (site.data.galleries[i].logo) { %>
                     <img class="mdui-img-circle logo" src="<%= site.data.galleries[i].logo %>"/>
                   <% } %>

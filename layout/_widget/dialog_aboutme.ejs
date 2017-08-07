@@ -5,9 +5,14 @@
     <div class="title">
       <%= config.author %>
     </div>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" onclick="closeAboutmeDialog()">
+      <i class="mdui-icon material-icons">&#xe5cd;</i>
+    </button>
   </div>
 </div>
 <div class="mdui-dialog" id="aboutmeDialog">
+  <div style="height: 224px;" onclick="closeAboutmeDialog()"></div>
   <div class="mdui-card mdui-color-theme card1 card-bottom-fix">
     <img class="mdui-img-circle avatar mdui-center" src="<%= theme.style.avatar %>"/>
     <div class="content">
@@ -139,3 +144,4 @@
     <% } %>
   <% } %>
 </div>
+<%- partial('js/dialog_galleries') %>
