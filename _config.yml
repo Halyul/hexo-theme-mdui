@@ -24,10 +24,6 @@ post:
 
 pagination: 1
 
-# main menu navigation
-menu:
-  Home: /
-
 pages:
   Test1:
     link: "/myfriends"

@@ -41,6 +41,7 @@ $shared-toolbar: theme-toolbar;
     $sub-sub-class: #{$sub-class}-1__toolbar;
     font-size: 60px;
     font-weight: 800;
+    width: 100vw;
     @media (max-width: 599px) {
       font-size: 40px;
     }

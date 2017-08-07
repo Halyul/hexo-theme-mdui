@@ -72,7 +72,7 @@ $main-class: theme-post;
     display: inline-block;
     padding: 0 0 0 16px;
     text-align: left;
-    width: 1170px;
+    width: 100%;
   }
   @media (min-width: 1351px) {
     padding-left: 80px;
@@ -92,7 +92,7 @@ $main-class: theme-post;
       margin: 0 auto;
       padding-left: 8px;
       text-align: left;
-      width: 1170px;
+      width: calc(100%-8px);
     }
   }
   @media (min-width: 1351px) {
