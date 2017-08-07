@@ -53,59 +53,6 @@
         .style.transform = 'translateY(' + document.body.scrollTop * 0.4 + 'px)';
     })
   </script>
-  <% if (theme.about_me === true) { %>
-    <script type="text/ls-javascript" id="about-me-dialog-script">
-      /* aboutme dialog */
-      (function() {
-        var collapseItems = document.querySelectorAll('div.mdui-collapse-item')
-
-        for (i = 0; i < collapseItems.length; i++) {
-          collapseItems[i].addEventListener("click", toggleText);
-        }
-
-        function toggleText() {
-          this.addEventListener('open.mdui.collapse', function() {
-              this.classList.add('hide-more');
-              this.classList.remove('hide-less');
-          });
-          this.addEventListener('close.mdui.collapse', function() {
-            this.classList.remove('hide-more');
-            this.classList.add('hide-less');
-          });
-        }
-
-        var cardFlag = false;
-        var aboutmeDialog = document.querySelector('div#aboutmeDialog')
-        var aboutmeAppbar = document.querySelector('div#aboutmeAppbar')
-
-        aboutmeDialog.addEventListener('scroll', function() {
-          var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
-          if (!cardFlag && cardLocation < 0) {
-            aboutmeAppbar.classList.add('style-fix');
-            cardFlag = true;
-          } else if (cardFlag && cardLocation >= 0) {
-            aboutmeAppbar.classList.remove('style-fix');
-            cardFlag = false;
-          };
-        });
-
-        var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
-
-        aboutmeDialog.addEventListener('open.mdui.dialog', function() {
-          if (!cardFlag && cardLocation < 0) {
-            aboutmeAppbar.classList.add('style-fix');
-            cardFlag = true;
-          };
-        });
-        aboutmeDialog.addEventListener('close.mdui.dialog', function() {
-          if (cardFlag && cardLocation < 0) {
-            aboutmeAppbar.classList.remove('style-fix');
-            cardFlag = false;
-          };
-        });
-      })();
-    </script>
-  <% } %>
 <% } %>
 
 <% // index toolbar search
