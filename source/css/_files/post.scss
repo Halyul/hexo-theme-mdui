@@ -19,6 +19,7 @@ $main-class: theme-post;
   z-index: -1;
   position: absolute;
   width: 100%;
+  -webkit-transition: width .3s cubic-bezier(0,0,.2,1);
   transition: width .3s cubic-bezier(0,0,.2,1);
   @media (min-width: 1024px) {
     body.mdui-drawer-body-left & {
@@ -68,7 +69,8 @@ $main-class: theme-post;
     }
   }
   @media (min-width: 1186px) {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     display: inline-block;
     padding: 0 0 0 16px;
     text-align: left;
@@ -135,7 +137,8 @@ $main-class: theme-post;
   margin-left: 32px;
   position: fixed;
   overflow-y: scroll;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0 16px;
   width: 222px;
   list-style: none;

@@ -25,7 +25,8 @@ $shared-toolbar: theme-toolbar;
 }
 
 .#{$main-class}.mdui-drawer-open .#{$shared-toolbar}-bottom {
-    transform: translateX(0px) !important;
+    -webkit-transform: translateX(0px) !important;
+            transform: translateX(0px) !important;
 }
 
 // Header
@@ -49,11 +50,16 @@ $shared-toolbar: theme-toolbar;
       display: none;
     }
     .#{$shared-toolbar}-bottom {
-      justify-content: center;
-      transform: translateX(290px);
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-transform: translateX(290px);
+              transform: translateX(290px);
+      -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
       transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
       @media (min-width: 600px) {
-        transform: translateX(330px);
+        -webkit-transform: translateX(330px);
+                transform: translateX(330px);
       }
     }
   }
@@ -97,8 +103,13 @@ $shared-toolbar: theme-toolbar;
 // Warpper
 .#{$main-class}__warpper {
   $sub-class: #{$main-class}__warpper;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: auto;
   height: 0;
   -webkit-box-flex: 1;

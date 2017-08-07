@@ -10,7 +10,9 @@ body {
 
 .#{$main-class}-bottom {
   $sub-class: #{$main-class}-bottom;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   & .#{$sub-class}__title {
     overflow: visible;
     font-size: 60px;

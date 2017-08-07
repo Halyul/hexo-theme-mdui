@@ -12,15 +12,9 @@ function BarbaSettings() {
       burger.classList.remove('theme-appbar__burger--arrow');
       burger.addEventListener('click', drawerToggle)
     },
-    onEnterCompleted: function() {
-
-    },
     onLeave: function() {
       burger.removeEventListener('click', drawerToggle)
       drawerClose()
-    },
-    onLeaveCompleted: function() {
-
     }
   });
 
@@ -32,15 +26,9 @@ function BarbaSettings() {
       burger.classList.add('theme-appbar__burger--arrow');
       burger.setAttribute('href', '/')
     },
-    onEnterCompleted: function() {
-
-    },
     onLeave: function() {
       burger.classList.add('theme-appbar__burger--menu');
       burger.setAttribute('href', 'javascript:;')
-    },
-    onLeaveCompleted: function() {
-
     }
   });
 
@@ -53,6 +41,7 @@ function BarbaSettings() {
 function initBarba() {
   BarbaSettings()
   Barba.Pjax.start();
+  Barba.Prefetch.init();
 }
 if (document.readyState === 'complete' || document.readyState !== 'loading') {
   initBarba();
@@ -94,25 +83,21 @@ var pageTransition = Barba.BaseTransition.extend({
   finish: function() {
     var prevStatus = Barba.HistoryManager.prevStatus();
     var currentStatus = Barba.HistoryManager.currentStatus();
+    var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
     if (prevStatus !== undefined && prevStatus.url !== undefined) {
       scrollMap[prevStatus.url] = window.pageYOffset;
     }
     if (scrollMap[currentStatus.url] !== undefined) {
       smoothScroll.animateScroll( scrollMap[currentStatus.url] );
-    } else {
+    } else if (bodyScrolled > 0) {
       smoothScroll.animateScroll( 0 );
     }
-    console.log("scrollMap: ",scrollMap)
     this.done();
   }
 });
 Barba.Pjax.getTransition = function() {
   return pageTransition;
 };
-Barba.Dispatcher.on('newPageReady', function(currentStatus, prevStatus) {
-  console.log("currentStatus: ", currentStatus)
-  console.log("prevStatus: ", prevStatus)
-});
 
 window.hashesJump = function(href) {
   var hrefY = document.getElementById(href).getBoundingClientRect().top  - 128
