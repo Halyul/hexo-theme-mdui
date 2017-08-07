@@ -1,9 +1,10 @@
 <div class="theme-post">
   <div class="theme-post__background mdui-color-theme"></div>
-  <div class="theme-post__header">
+  <div class="theme-post__header mdui-color-theme">
     <div class="theme-post__header__title mdui-text-truncate">
       <%= page.title %>
     </div>
+    <div class="theme-spacer"></div>
     <div class="theme-post__header__actions mdui-valign">
       <div>
         <span><%= __('posts.posted') %></span>
@@ -16,8 +17,8 @@
           <span><%= edited %></span>
         <% } %>
       </div>
-      <%/*- partial('_partials/menu/qrcode') */%>
-      <%/*- partial('_partials/menu/post_share') */%>
+      <%- partial('_partials/menu/qrcode') %>
+      <%- partial('_partials/menu/share/post') %>
     </div>
   </div>
   <div class="theme-post__warpper">
@@ -39,3 +40,4 @@
   <%-partial('_partials/fab/post')%>
   <%-partial('_partials/pagination/post')%>
 </div>
+<%-partial('_partials/js/post')%>

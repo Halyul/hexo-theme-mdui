@@ -1,0 +1,15 @@
+<% if(theme.post.qr_code === true) { %>
+  <div class="theme-post__qrcode">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-xs-down" mdui-menu="{target: '#qrcode-menu'}">
+      <i class="mdui-icon material-icons">&#xe337;</i>
+    </button>
+    <ul class="mdui-menu" id="qrcode-menu">
+      <li class="mdui-list-item" style="cursor: auto">
+        <%= __('posts.qr_code') %>
+      </li>
+        <img class="mdui-img-fluid" src="<%- qrcode(url, {
+          margin: 2
+        }) %>" style="cursor: auto">
+    </ul>
+  </div>
+<% } %>

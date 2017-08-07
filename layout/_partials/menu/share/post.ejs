@@ -1,0 +1,67 @@
+<% if (theme.share_menu !== null) { %>
+  <div class="theme-post__share">
+    <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-menu="{target: '#post-share-menu'}">
+      <i class="mdui-icon material-icons">&#xe80d;</i>
+    </button>
+
+    <ul class="mdui-menu" id="post-share-menu">
+
+      <% if(theme.share_menu.facebook === true) { %>
+        <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<%= config.url + config.root + url_for(path) %>" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.facebook') %>
+            </a>
+        </li>
+      <% } %>
+
+      <% if(theme.share_menu.googleplus === true) { %>
+        <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=<%= config.url + config.root + url_for(path) %>" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.googleplus') %>
+            </a>
+        </li>
+      <% } %>
+
+      <% if(theme.share_menu.linkedin === true) { %>
+        <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%- config.url + config.root + url_for(path) %>&title=<%= page.title %>" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.linkedin') %>
+            </a>
+        </li>
+      <% } %>
+
+      <% if(theme.share_menu.qq === true) { %>
+        <li class="mdui-menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%= config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + theme.head.favicon %>&url=<%- config.url +  url_for(path) %>" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.qq') %>
+            </a>
+        </li>
+      <% } %>
+
+      <% if(theme.share_menu.telegram === true) { %>
+        <li class="mdui-menu-item">
+            <a href="https://telegram.me/url?url=<%- config.url + config.root + url_for(path) %>&text=<%= page.title %>" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.telegram') %>
+            </a>
+        </li>
+      <% } %>
+
+      <% if(theme.share_menu.twitter === true) { %>
+        <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=<%= page.title %>&url=<%= config.url + config.root + url_for(path) %>&via=<%= config.author %>" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.twitter') %>
+            </a>
+        </li>
+      <% } %>
+
+      <% if(theme.share_menu.weibo === true) { %>
+        <li class="mdui-menu-item">
+            <a href="http://service.weibo.com/share.php?appkey=&title=<%= page.title %>&url=<%= config.url + config.root + url_for(path) %>&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+                <%= __('share_menu.weibo') %>
+            </a>
+        </li>
+      <% } %>
+
+    </ul>
+  </div>
+<% } %>

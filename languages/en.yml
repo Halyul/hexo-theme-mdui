@@ -9,6 +9,7 @@ global:
   years: 'Years'
   busuanzi_views: 'Views: '
   last_updated: 'Last Updated: '
+  multiple: 'Multiple '
 archive:
   post: 'Post'
   posts: 'Posts'

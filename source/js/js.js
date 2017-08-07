@@ -3,6 +3,9 @@ document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
 })
 
+/* smooth scroll */
+var smoothScroll = new SmoothScroll();
+
 function BarbaSettings() {
   // Barbajs settings
   var burger = document.querySelector('.theme-appbar__burger');
@@ -59,21 +62,6 @@ function drawerClose() {
   }
 }
 
-/* smooth scroll */
-(function() {
-  if (document.readyState === 'complete' || document.readyState !== 'loading') {
-    initSmoothScroll();
-  } else {
-    document.addEventListener('DOMContentLoaded', initSmoothScroll);
-  }
-  function initSmoothScroll() {
-    smoothScroll.init({
-      selector: 'a',
-      offset: 60
-    });
-  }
-})();
-
 var scrollMap = {};
 var pageTransition = Barba.BaseTransition.extend({
   start: function() {
@@ -100,7 +88,7 @@ Barba.Pjax.getTransition = function() {
 };
 
 window.hashesJump = function(href) {
-  var hrefY = document.getElementById(href).getBoundingClientRect().top  - 128
+  var hrefY = document.getElementById(href).getBoundingClientRect().top  - 144
   var scrollY = hrefY + window.pageYOffset
   console.log(href, scrollY)
   smoothScroll.animateScroll( scrollY );

@@ -28,7 +28,7 @@
         <% if (post.categories && post.categories.length) { %>
           <% if (post.categories.length === 1) { %>
             <% post.categories.map(function(category){ %>
-              <a href="categories/<%= category.name %>/" class="theme-link--no-style">
+              <a href="categories/<%= category.name %>/" class="theme-link--no-style" mdui-tooltip="{content: '<%= __('global.categories') %>'}">
                 <div class="mdui-chip theme-posts__post__footer__categories">
                   <span class="mdui-chip-icon">
                     <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
@@ -39,7 +39,7 @@
             <% }) %>
           <% } else { %>
             <div class="theme-posts__post__footer__categories mdui-valign">
-              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-categories-<%= position %>'}">
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-categories-<%= position %>'}" mdui-tooltip="{content: '<%= __('global.multiple') + __('global.categories') %>'}">
                 <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
               </button>
               <ul class="mdui-menu" id="post-categories-<%= position %>">
@@ -57,7 +57,7 @@
         <% if (post.tags && post.tags.length) { %>
           <% if (post.tags.length === 1) { %>
             <% post.tags.map(function(tag){ %>
-              <a href="tags/<%= tag.name %>/" class="theme-link--no-style">
+              <a href="tags/<%= tag.name %>/" class="theme-link--no-style" mdui-tooltip="{content: '<%= __('global.tags') %>'}">
                 <div class="mdui-chip theme-posts__post__footer__tags">
                   <span class="mdui-chip-icon">
                     <i class="mdui-icon fa fa-tags mdui-text-center"></i>
@@ -68,7 +68,7 @@
             <% }) %>
           <% } else { %>
             <div class="theme-posts__post__footer__tags mdui-valign">
-              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-tags-<%= position %>'}">
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-tags-<%= position %>'}" mdui-tooltip="{content: '<%= __('global.multiple') + __('global.tags') %>'}">
                 <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
               </button>
               <ul class="mdui-menu" id="post-tags-<%= position %>">

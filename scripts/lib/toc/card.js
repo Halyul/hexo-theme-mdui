@@ -52,7 +52,7 @@ function tocHelper(str, options) {
       firstLevel = level;
     }
 
-     result += '<a class="mdui-list-item mdui-ripple ' + className + '__link" href="javascript:;" onclick="hashesJump(\'' + id + '\')">';
+     result += '<a class="mdui-list-item mdui-ripple ' + className + '__link" href="javascript:;" data-href="' + '#' + id + '" onclick="hashesJump(\'' + id + '\')">';
 
     if (listNumber) {
       result += '<span class="' + className + '-number">';

@@ -1,7 +1,7 @@
 # Theme config
 style:
-  primary_color: "yellow"
-  accent_color: "blue"
+  primary_color: "indigo"
+  accent_color: "pink"
   random:
   bg_color: "#eeeeee"
 
@@ -21,8 +21,19 @@ head:
 post:
   entry_excerpt: 80
   random_pics: 44
+  qr_code: true
 
 pagination: 1
+
+share_menu:
+  rss: false
+  weibo: false
+  twitter: true
+  facebook: true
+  googleplus: true
+  linkedin: true
+  qq: false
+  telegram: false
 
 pages:
   Test1:

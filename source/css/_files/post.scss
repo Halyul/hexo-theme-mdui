@@ -1,6 +1,5 @@
 $main-class: theme-post;
-
-.#{$main-class} {
+@mixin flex-vertical {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,8 +8,24 @@ $main-class: theme-post;
   -ms-flex: auto;
   flex: auto;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  box-orient: vertical;
   -ms-flex-direction: column;
+}
+@mixin flex-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto;
+  -webkit-box-orient: horizontal;
+  box-orient: horizontal;
+  -ms-flex-direction: row;
+}
+
+.#{$main-class} {
+  @include flex-vertical;
   min-height: calc(100vh - 128px);
 }
 
@@ -38,16 +53,17 @@ $main-class: theme-post;
     line-height: 56px;
   }
   .#{$sub-class}__actions {
+    $sub-sub-class: #{$sub-class}__actions;
     height: 48px;
     div {
       padding: 0 16px;
     }
     button {
       float: right;
-      margin: 0 16px;
     }
   }
   @media (min-width: 771px) {
+    @include flex-horizontal;
     padding: 0 10px 0 26px;
     height: 64px;
     .#{$sub-class}__title {
@@ -63,15 +79,11 @@ $main-class: theme-post;
       div {
         padding: 0 24px;
       }
-      button {
-        margin: 0 16px;
-      }
     }
   }
   @media (min-width: 1186px) {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    display: inline-block;
     padding: 0 0 0 16px;
     text-align: left;
     width: 100%;
@@ -79,6 +91,12 @@ $main-class: theme-post;
   @media (min-width: 1351px) {
     padding-left: 80px;
     width: 100%;
+  }
+}
+
+.#{$main-class}__qrcode {
+  .mdui-list-item:hover {
+    background-color: transparent;
   }
 }
 
@@ -161,9 +179,15 @@ $main-class: theme-post;
 }
 
 .#{$main-class}__toc-fab__menu {
+  $sub-class: #{$main-class}__toc-fab__menu;
   width: auto;
-  max-width: 32vw;
-  max-height: calc(100vh - 160px) !important;
+  max-height: 48vh !important;
+  @media (min-width: 600px) {
+    max-width: 36vh;
+  }
+  .#{$sub-class}__content {
+    margin: 0;
+  }
 }
 
 // Pagination
