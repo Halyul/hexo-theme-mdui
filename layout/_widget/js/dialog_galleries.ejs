@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  function closeAboutmeDialog() {
+    var aboutmeDialog = new mdui.Dialog('#aboutmeDialog');
+    aboutmeDialog.close();
+  };
+  /* aboutme dialog */
+  (function() {
+    var collapseItems = document.querySelectorAll('div.mdui-collapse-item')
+
+    for (i = 0; i < collapseItems.length; i++) {
+      collapseItems[i].addEventListener("click", toggleText);
+    }
+
+    function toggleText() {
+      this.addEventListener('open.mdui.collapse', function() {
+          this.classList.add('hide-more');
+          this.classList.remove('hide-less');
+      });
+      this.addEventListener('close.mdui.collapse', function() {
+        this.classList.remove('hide-more');
+        this.classList.add('hide-less');
+      });
+    }
+
+    var cardFlag = false;
+    var aboutmeDialog = document.querySelector('div#aboutmeDialog')
+    var aboutmeAppbar = document.querySelector('div#aboutmeAppbar')
+    aboutmeDialog.addEventListener('scroll', function() {
+      var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
+      if (!cardFlag && cardLocation < 0) {
+        aboutmeAppbar.classList.add('style-fix');
+        cardFlag = true;
+      } else if (cardFlag && cardLocation >= 0) {
+        aboutmeAppbar.classList.remove('style-fix');
+        cardFlag = false;
+      };
+    });
+
+    aboutmeDialog.addEventListener('open.mdui.dialog', function() {
+      var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
+      if (cardLocation < 0) {
+        aboutmeAppbar.classList.add('style-fix');
+        cardFlag = true;
+      };
+    });
+    aboutmeDialog.addEventListener('close.mdui.dialog', function() {
+      var cardLocation = document.querySelector('div#cardLocation').getBoundingClientRect().top
+      if (cardLocation < 0) {
+        aboutmeAppbar.classList.remove('style-fix');
+        cardFlag = false;
+      };
+    });
+  })();
+</script>
