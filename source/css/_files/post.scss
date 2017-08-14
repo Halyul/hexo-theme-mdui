@@ -66,6 +66,7 @@ $main-class: theme-post;
     @include flex-horizontal;
     padding: 0 10px 0 26px;
     height: 64px;
+    max-height: 64px;
     .#{$sub-class}__title {
       display: inline;
       font-size: 20px;
@@ -178,6 +179,10 @@ $main-class: theme-post;
   }
 }
 
+.#{$main-class}__toc-fab {
+  z-index: 10;
+}
+
 .#{$main-class}__toc-fab__menu {
   $sub-class: #{$main-class}__toc-fab__menu;
   width: auto;
@@ -193,6 +198,7 @@ $main-class: theme-post;
 // Pagination
 .#{$main-class}__pagination {
   $sub-class: #{$main-class}__pagination;
+  z-index: 1;
   a {
     text-decoration: none;
     color: inherit;

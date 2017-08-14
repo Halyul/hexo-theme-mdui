@@ -1,27 +1,12 @@
-<% if (is_home()) { %>
-  <div class="mdui-appbar mdui-appbar-fixed mdui-color-white mdui-shadow-0 theme-appbar">
-    <div class="mdui-toolbar theme-toolbar-top">
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger">
-        <i class="mdui-icon">
-          <span></span>
-        </i>
-      </a>
-    </div>
-    <div class="mdui-toolbar theme-toolbar-bottom">
-      <span class="theme-toolbar-bottom__title"><%= config.title %></span>
-    </div>
+<div class="mdui-appbar mdui-appbar-fixed mdui-color-white mdui-shadow-0 theme-appbar">
+  <div class="mdui-toolbar theme-toolbar-top">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger">
+      <i class="mdui-icon">
+        <span></span>
+      </i>
+    </a>
   </div>
-<% } else { %>
-  <div class="mdui-appbar mdui-appbar-fixed mdui-color-white mdui-shadow-0 theme-appbar">
-    <div class="mdui-toolbar theme-toolbar-top">
-      <a href="/" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--arrow">
-        <i class="mdui-icon">
-          <span></span>
-        </i>
-      </a>
-    </div>
-    <div class="mdui-toolbar theme-toolbar-bottom">
-      <span class="theme-toolbar-bottom__title"><%= config.title %></span>
-    </div>
+  <div class="mdui-toolbar theme-toolbar-bottom">
+    <span class="theme-toolbar-bottom__title"><%= config.title %></span>
   </div>
-<% } %>
+</div>
