@@ -15,6 +15,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -36,6 +38,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -55,6 +59,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -77,6 +83,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -96,6 +104,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -117,6 +127,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -136,6 +148,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -157,6 +171,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPosition(scrollY)
     }
   }
 );
@@ -176,6 +192,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );
@@ -196,6 +214,8 @@ router.on(
     },
     leave: function (params) {
       loadProgress(false)
+      scrollPositionLeave()
+      scrollPositionInit(scrollY)
     }
   }
 );

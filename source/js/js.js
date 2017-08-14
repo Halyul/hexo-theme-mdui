@@ -19,8 +19,9 @@ function loadHTML(url, query, page) {
   req.open('GET', url);
   req.send();
   req.onload = () => {
-    loadProgress(true)
+    loadProgress(true);
     document.querySelector('main').innerHTML = req.responseText;
+    scrollPositionEnter();
     burgerChanging(page);
     if (page === 'posts' && query !== '') {
       tocQueryItem(query)
@@ -72,17 +73,21 @@ function loadProgress(state) {
 }
 
 // scroll position
-/*
 var scrollMap = {};
-var lastPage;
-function scrollPosition() {
-  var thisPage = router.lastRouteResolved();
-  if (lastPage === undefined) {
-
-  }
-  console.log("scrollMap: ", scrollMap)
-  console.log("lastPage: ", lastPage)
-  console.log("thisPage: ", thisPage)
-  lastPage = thisPage
+function scrollPositionLeave() {
+  var scrollY = window.pageYOffset
+  return scrollY
 }
-*/
+function scrollPositionInit(scrollY) {
+  var lastPage = router.lastRouteResolved();
+  scrollMap[lastPage.url] = scrollY
+}
+function scrollPositionEnter() {
+  var url = router.lastRouteResolved().url
+  console.log(scrollMap)
+  if (scrollMap[url] !== undefined) {
+    smoothScroll.animateScroll( scrollMap[url] )
+  } else {
+    smoothScroll.animateScroll( 0 )
+  }
+}
