@@ -4,6 +4,25 @@
 A hexo theme base on [mdui front end](https://github.com/zdhxiong/mdui)
 
 Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
+
+## Notice 须知
+
+这是一个基于[navigo](https://github.com/krasimir/navigo)(一个js路由)的版本，所以这是一个SPA的版本，但其特性，会导致部分问题，例如：
+
+- 统计服务可能无法正常使用
+- 页面卡顿
+- JS报错
+
+使用此版本请三思！
+
+This is a version which is based on [navigo](https://github.com/krasimir/navigo)(a js router), so it is a SPA, but beause of feature, it leads to many problems, for example:
+
+- some analytics services may not work properly.
+- page may easily get stuck
+- JS may get errors
+
+Please think carefully before you use this version
+
 ## Contents 目录
 
 - [General 概括](#general-概括)
