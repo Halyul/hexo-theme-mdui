@@ -106,6 +106,9 @@ $main-class: theme-post;
   margin: 0;
   @media (min-width: 1024px) {
     margin: 0 0 16px 12px;
+    &.#{$sub-class}--center {
+      margin: 0 auto;
+    }
   }
   @media (min-width: 1186px) {
     margin-left: 16px;

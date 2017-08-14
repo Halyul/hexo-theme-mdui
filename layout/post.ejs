@@ -4,6 +4,11 @@
     page.path = page.path.replace('/index.html', '')
     usePath = true
   }
+  var toc = cardToc(page.content, {
+    class: 'theme-post__toc__content',
+    slug: page.slug || page.path,
+    usePath: usePath
+   })
 %>
 <div class="theme-post">
   <div class="theme-post__background mdui-color-theme"></div>
@@ -28,25 +33,31 @@
       <%- partial('_partials/menu/share/post') %>
     </div>
   </div>
-  <div class="theme-post__warpper">
+  <div class="theme-post__warpper
+    <% if (toc.length === 0) { %>
+      theme-post__warpper--center
+    <% } %>
+  ">
     <div class="theme-post__warpper__container">
       <article class="mdui-card theme-post__card">
         <section class="mdui-typo">
           <%-page.content%>
         </section>
       </article>
-      <div class="mdui-color-theme theme-post__toc">
-          <%- cardToc(page.content, {
-              class: 'theme-post__toc__content',
-              slug: page.slug || page.path,
-              usePath: usePath
-            }) %>
-      </div>
+      <% if (toc.length > 0) { %>
+        <div class="mdui-color-theme theme-post__toc">
+          <%- toc %>
+        </div>
+      <% } %>
     </div>
   </div>
 
   <div class="theme-spacer"></div>
-  <%-partial('_partials/fab/post', {usePath: usePath})%>
+
+  <% if (toc.length > 0) { %>
+    <%-partial('_partials/fab/post', {usePath: usePath})%>
+  <% } %>
+
   <% if (pagination !== false) { %>
     <%-partial('_partials/pagination/post')%>
   <% } %>
