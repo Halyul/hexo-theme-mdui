@@ -16,6 +16,8 @@ function tocHelper(str, options) {
 
   var className = options.class || 'toc';
   var listNumber = options.hasOwnProperty('list_number') ? options.list_number : true;
+  var slug = options.slug;
+  var usePath = options.usePath;
   var result = '<ol class="' + className + '">';
   var lastNumber = [0, 0, 0, 0, 0, 0];
   var firstLevel = 0;
@@ -48,7 +50,12 @@ function tocHelper(str, options) {
     }
 
     result += '<li class="' + className + '-item ' + className + '-level-' + level + '">';
-    result += '<a class="' + className + '-link" href="javascript:;" onclick="hashesJump(\'' + id + '\')">';
+
+    if (usePath === true) {
+      result += '<a class="' + className + '-link" href="' + '#/' + slug + '/?id=' + id + '">';
+    } else {
+      result += '<a class="' + className + '-link" href="' + '#/posts/' + slug + '/?id=' + id + '">';
+    }
 
     if (listNumber) {
       result += '<span class="' + className + '-number">';

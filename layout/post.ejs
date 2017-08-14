@@ -1,3 +1,10 @@
+<% var pagination;
+  var usePath = false;
+  if (page.slug === undefined) {
+    page.path = page.path.replace('/index.html', '')
+    usePath = true
+  }
+%>
 <div class="theme-post">
   <div class="theme-post__background mdui-color-theme"></div>
   <div class="theme-post__header mdui-color-theme">
@@ -30,14 +37,18 @@
       </article>
       <div class="mdui-color-theme theme-post__toc">
           <%- cardToc(page.content, {
-              class: 'theme-post__toc__content'
+              class: 'theme-post__toc__content',
+              slug: page.slug || page.path,
+              usePath: usePath
             }) %>
       </div>
     </div>
   </div>
 
   <div class="theme-spacer"></div>
-  <%-partial('_partials/fab/post')%>
-  <%-partial('_partials/pagination/post')%>
+  <%-partial('_partials/fab/post', {usePath: usePath})%>
+  <% if (pagination !== false) { %>
+    <%-partial('_partials/pagination/post')%>
+  <% } %>
 </div>
 <%-partial('_partials/js/post')%>

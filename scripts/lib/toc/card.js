@@ -21,6 +21,8 @@ function tocHelper(str, options) {
 
   var className = options.class || 'toc';
   var listNumber = options.hasOwnProperty('list_number') ? options.list_number : true;
+  var slug = options.slug;
+  var usePath = options.usePath;
   var result = '<ul class="mdui-list ' + className + '">';
   var lastNumber = [0, 0, 0, 0, 0, 0];
   var firstLevel = 0;
@@ -52,7 +54,11 @@ function tocHelper(str, options) {
       firstLevel = level;
     }
 
-     result += '<a class="mdui-list-item mdui-ripple ' + className + '__link" href="javascript:;" data-href="' + '#' + id + '" onclick="hashesJump(\'' + id + '\')">';
+    if (usePath === true) {
+      result += '<a class="' + className + '-link" href="' + '#/' + slug + '/?id=' + id + '">';
+    } else {
+      result += '<a class="' + className + '-link" href="' + '#/posts/' + slug + '/?id=' + id + '">';
+    }
 
     if (listNumber) {
       result += '<span class="' + className + '-number">';

@@ -1,7 +1,10 @@
-
-<article id="page">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
-</article>
-
-<%-partial('partials/pagination')%>
+<% if (page.layout === 'friends') { %>
+  <%- partial('_widget/page_friends') %>
+<% } else if (page.layout === 'galleries') { %>
+  <%- partial('_widget/page_galleries') %>
+  <% } else if (page.layout === 'gallery') { %>
+    <%- partial('_widget/page_gallery') %>
+<% } else { %>
+  <%- partial('post', {pagination: false}) %>
+<% } %>
+<% console.log(page.path) %>

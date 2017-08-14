@@ -5,7 +5,9 @@
   <ul class="mdui-menu mdui-typo theme-post__toc-fab__menu" id="toc-fab-menu" style="padding: 8px;max-height: 80%">
     <%- fabToc(page.content, {
       list_number: false,
-      class: 'theme-post__toc-fab__menu__content'
+      class: 'theme-post__toc-fab__menu__content',
+      slug: page.slug || page.path,
+      usePath: usePath
     }) %>
   </ul>
 </div>

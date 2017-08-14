@@ -1,0 +1,25 @@
+<div class="theme-index">
+  <div class="theme-posts">
+    <%
+        var position = 0;
+        var posts = site.posts.sort('date', -1).filter(function(post) {
+          if (post.pinned) {
+      %>
+            <%-partial('_partials/posts', { position: position, post })%>
+          <%
+            position++;
+            return false;
+          }
+          return true;
+        })
+      %>
+      <% posts.forEach(function(post) {%>
+          <%-partial('_partials/posts', { position: position, post })%>
+      <%
+        position++;
+      }); %>
+  </div>
+  <%-partial('_partials/pagination/index', {show: theme.pagination })%>
+  <%-partial('_partials/fab/index')%>
+</div>
+<%-partial('_partials/js/index')%>
