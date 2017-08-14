@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-mdui",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "An awesome hexo theme with Material Design.",
   "scripts": {
     "test": "echo \"Error: no test specified\"",

@@ -12,15 +12,9 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
 { %>
   <div class="mdui-appbar mdui-appbar-fixed animate-appbar" id="blog-appbar">
     <div class="mdui-toolbar mdui-color-theme">
-      <% if (is_home() || is_year() || is_month() || is_category() || is_tag()) { %>
-        <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
-          <i class="mdui-icon material-icons">&#xe5d2;</i>
-        </button>
-      <% } else { %>
-        <button class="mdui-btn mdui-ripple mdui-btn-icon" back>
-          <i class="mdui-icon material-icons">&#xe5c4;</i>
-        </button>
-      <% } %>
+      <button class="mdui-btn mdui-ripple mdui-btn-icon" mdui-drawer="{target: '#drawer'}">
+        <i class="mdui-icon material-icons">&#xe5d2;</i>
+      </button>
       <% if (theme.appbar.title) { %>
         <a href="<%= config.root %>" class="mdui-typo-headline">
           <%= theme.appbar.title %>
