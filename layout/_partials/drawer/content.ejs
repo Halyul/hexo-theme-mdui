@@ -1,10 +1,10 @@
 <div class="theme-drawer__warpper__content">
   <ul class="mdui-list">
-    <a href="#/" class="mdui-list-item mdui-ripple mdui-ripple-white">
+    <a href="#!/" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
       <div class="mdui-list-item-content"><%= __('global.index') %></div>
     </a>
-    <a href="#/archives" class="mdui-list-item mdui-ripple mdui-ripple-white">
+    <a href="#!/archives" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
       <div class="mdui-list-item-content"><%= __('global.archives') %></div>
     </a>
@@ -20,7 +20,7 @@
             <% site.categories.map(function(category){
               console.log(category.path)
               %>
-              <a href="#/<%= category.path %>" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+              <a href="#!/<%= category.path %>" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= category.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
@@ -38,7 +38,7 @@
           </div>
           <div class="mdui-collapse-item-body mdui-list">
             <% site.tags.map(function(tag){  %>
-              <a href="#/tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+              <a href="#!/tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= tag.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
@@ -65,7 +65,7 @@
           });
           %>
           <% Object.keys(years).reverse().forEach(function(year){  %>
-            <a href="#/archives/<%= year %>/" class="mdui-list-item mdui-ripple">
+            <a href="#!/archives/<%= year %>/" class="mdui-list-item mdui-ripple">
               <%= year %>
             </a>
           <% }) %>
@@ -95,7 +95,7 @@
             <div class="mdui-collapse-item-body mdui-list">
               <% for (var x in theme.pages[i].pages) { %>
                 <% if (theme.pages[i].pages[x].type === 'internal') { %>
-                  <a href="#<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
+                  <a href="#!<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_self">
                 <% } else { %>
                   <a href="<%= theme.pages[i].pages[x].link %>" class="mdui-list-item mdui-ripple mdui-ripple-white" target="_blank">
                 <% } %>
@@ -106,7 +106,7 @@
           </div>
         <% } else { %>
           <% if (theme.pages[i].type === 'internal') { %>
-            <a href="#<%= theme.pages[i].link %>" target="_self">
+            <a href="#!<%= theme.pages[i].link %>" target="_self">
           <% } else { %>
             <a href="<%= theme.pages[i].link %>" target="_blank">
           <% } %>

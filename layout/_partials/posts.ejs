@@ -11,7 +11,7 @@
         <img src="<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>" class="theme-posts__post__media__image" />
         <div class="mdui-card-media-covered theme-posts__post__media-covered">
           <div class="mdui-card-primary mdui-typo">
-            <a href="#<%= post.path %>" target="_self" class="mdui-card-primary-title mdui-text-truncate">
+            <a href="#!<%= post.path %>" target="_self" class="mdui-card-primary-title mdui-text-truncate">
               <% if (post.pinned === true) { %>
                 <span style="color: #D50000"><%= '['+ __('posts.pinned') + '] ' %></span>
               <% } %>
@@ -28,7 +28,7 @@
         <% if (post.categories && post.categories.length) { %>
           <% if (post.categories.length === 1) { %>
             <% post.categories.map(function(category){ %>
-              <a href="#categories/<%= category.name %>/" class="theme-link--no-style">
+              <a href="#!/categories/<%= category.name %>/" class="theme-link--no-style">
                 <div class="mdui-chip theme-posts__post__footer__categories">
                   <span class="mdui-chip-icon">
                     <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
@@ -45,7 +45,7 @@
               <ul class="mdui-menu" id="post-categories-<%= position %>">
                 <% post.categories.map(function(category){ %>
                   <li class="mdui-menu-item">
-                    <a href="#/categories/<%= category.name %>/" class="mdui-ripple">
+                    <a href="#!/categories/<%= category.name %>/" class="mdui-ripple">
                       <span><%= category.name %></span>
                     </a>
                   </li>
@@ -57,7 +57,7 @@
         <% if (post.tags && post.tags.length) { %>
           <% if (post.tags.length === 1) { %>
             <% post.tags.map(function(tag){ %>
-              <a href="#tags/<%= tag.name %>/" class="theme-link--no-style">
+              <a href="#!/tags/<%= tag.name %>/" class="theme-link--no-style">
                 <div class="mdui-chip theme-posts__post__footer__tags">
                   <span class="mdui-chip-icon">
                     <i class="mdui-icon fa fa-tags mdui-text-center"></i>
@@ -74,7 +74,7 @@
               <ul class="mdui-menu" id="post-tags-<%= position %>">
                 <% post.tags.map(function(tag){ %>
                   <li class="mdui-menu-item">
-                    <a href="#/tags/<%= tag.name %>/" class="mdui-ripple">
+                    <a href="#!/tags/<%= tag.name %>/" class="mdui-ripple">
                       <span><%= tag.name %></span>
                     </a>
                   </li>

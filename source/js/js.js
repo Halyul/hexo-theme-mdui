@@ -47,7 +47,7 @@ function burgerChanging(page) {
   } else {
     burger.classList.remove('theme-appbar__burger--menu');
     burger.classList.add('theme-appbar__burger--arrow');
-    burger.setAttribute('href', '#/')
+    burger.setAttribute('href', '#!/')
     burger.removeEventListener('click', drawerToggle)
     drawerClose()
   }
