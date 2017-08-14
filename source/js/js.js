@@ -23,6 +23,7 @@ function loadHTML(url, query, page) {
     document.querySelector('main').innerHTML = req.responseText;
     scrollPositionEnter();
     burgerChanging(page);
+    runScript();
     if (page === 'posts' && query !== '') {
       tocQueryItem(query)
     }
@@ -89,5 +90,13 @@ function scrollPositionEnter() {
     smoothScroll.animateScroll( scrollMap[url] )
   } else {
     smoothScroll.animateScroll( 0 )
+  }
+}
+
+function runScript() {
+  var main = document.querySelector('main')
+  var scripts = main.querySelectorAll('script')
+  for (var i = 0; i < scripts.length; ++i) {
+    eval(scripts[i].innerHTML)
   }
 }
