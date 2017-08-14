@@ -6,82 +6,20 @@ document.querySelector('#drawer-back').addEventListener('click', function() {
 /* smooth scroll */
 var smoothScroll = new SmoothScroll();
 
-window.hashesJump = function(href) {
-  var hrefY = document.getElementById(href).getBoundingClientRect().top  - 144
-  var scrollY = hrefY + window.pageYOffset
-  console.log(href, scrollY)
-  smoothScroll.animateScroll( scrollY );
-}
 
-/*! router settings */
-var root = null;
-var useHash = true; // Defaults to: false
-var hash = '#'; // Defaults to: '#'
-var router = new Navigo(root, useHash, hash);
-
-// set the default route
-router.on(
-  function(params, query) {
-    loadHTML('./templates', query, 'index')
-  },
-  {
-    before: function (done, params) {
-      burgerChanging('enter')
-      done();
-    },
-    leave: function (params) {
-      burgerChanging('leave')
-    }
-  }
-);
-
-router.on(
-  {
-    'posts/:slug': function(params, query) {
-      var url = './posts/' + params.slug
-      loadHTML(url, query, 'posts')
-    },
-    'posts': function() {
-      router.navigate('/');
-    },
-    // BUG: not supports subcategory
-    'categories/:category': function(params) {
-      var url = './categories/' + params.category
-      loadHTML(url)
-    },
-    'categories': function() {
-      router.navigate('/');
-    },
-    'tags/:tag': function(params) {
-      var url = './tags/' + params.tag
-      loadHTML(url)
-    },
-    'tags': function() {
-      router.navigate('/');
-    },
-    'archives/:year': function(params) {
-      var url = './archives/' + params.year
-      loadHTML(url)
-    },
-    'archives': function() {
-      loadHTML('./archives')
-    },
-    ':pages': function(params, query) {
-      var url = './' + params.pages
-      loadHTML(url, query) // BUG:if the page is a post, toc will not work
-    },
-  }
-);
-
-router.notFound((query) => { document.querySelector('main').innerHTML = '<h3>Couldn\'t find the page you\'re looking for...</h3>'; })
-
-router.resolve();
+/*****
+******
+****** router functions
+******
+******
+*/
 
 function loadHTML(url, query, page) {
   req = new XMLHttpRequest();
   req.open('GET', url);
   req.send();
   req.onload = () => {
+    loadProgress(true)
     document.querySelector('main').innerHTML = req.responseText;
     burgerChanging(page);
     if (page === 'posts' && query !== '') {
@@ -116,9 +54,35 @@ function burgerChanging(page) {
 function drawerToggle() {
   drawer.toggle()
 }
+
 function drawerClose() {
   var clientWidth = document.body.clientWidth;
   if (clientWidth < 1024) {
     drawer.close();
   }
 }
+
+function loadProgress(state) {
+  var progressEl = document.getElementById('progressBar')
+  if (state === true) {
+    progressEl.classList.add('theme-appbar__progress--hidden')
+  } else if (state === false) {
+    progressEl.classList.remove('theme-appbar__progress--hidden')
+  }
+}
+
+// scroll position
+/*
+var scrollMap = {};
+var lastPage;
+function scrollPosition() {
+  var thisPage = router.lastRouteResolved();
+  if (lastPage === undefined) {
+
+  }
+  console.log("scrollMap: ", scrollMap)
+  console.log("lastPage: ", lastPage)
+  console.log("thisPage: ", thisPage)
+  lastPage = thisPage
+}
+*/

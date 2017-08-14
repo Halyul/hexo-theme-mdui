@@ -42,6 +42,20 @@ $main-class: theme-appbar;
   }
 }
 
+.#{$main-class}__progress {
+  $sub-class: #{$main-class}__progress;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  &.#{$sub-class}--hidden {
+    opacity: 0;
+  }
+}
+
 .#{$main-class}__burger {
   $sub-class: #{$main-class}__burger;
   span {
