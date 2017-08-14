@@ -3,6 +3,9 @@
     var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
   }
 %>
+<% var toc = customToc(page.content, {
+        class: 'post-toc'
+  }) %>
 <% if (theme.style.scheme === 'now') { %>
   <%- cssLsload({path:(config.root + 'css/src/now/post.min'),key:'post_css'}) %>
 <% } else { %>
@@ -58,7 +61,11 @@
       </div>
     </div>
   </div>
-  <div class="post-container flex-spacer">
+  <div class="post-container flex-spacer
+  <% if (toc.length === 0) { %>
+    no-toc
+  <% } %>
+  ">
     <div class="post-adjust">
       <div class="mdui-card card-bottom-fix menu-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>" id="blog-post">
         <div class="warning">
@@ -152,20 +159,22 @@
           <% } %>
         <% } %>
       </div>
-      <div id="card-toc" class="
-      <% if (theme.color.layout === 'dark') { %>
-        mdui-color-grey-900
-      <% } else { %>
-        mdui-color-theme
+      <% if (toc.length > 0) { %>
+        <div id="card-toc" class="
+        <% if (theme.color.layout === 'dark') { %>
+          mdui-color-grey-900
+        <% } else { %>
+          mdui-color-theme
+        <% } %>
+        ">
+          <%- toc %>
+        </div>
       <% } %>
-      ">
-        <%- customToc(page.content, {
-                  class: 'post-toc'
-              }) %>
-      </div>
     </div>
   </div>
   <%-partial('_partials/pagination/post')%>
-  <%-partial('_partials/fab/post')%>
+  <% if (toc.length > 0) { %>
+    <%-partial('_partials/fab/post')%>
+  <% } %>
 
 </div>
