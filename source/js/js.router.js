@@ -1,6 +1,6 @@
 /*! router settings */
 var root = null;
-var useHash = false; // Defaults to: false
+var useHash = true; // Defaults to: false
 var hash = '#!'; // Defaults to: '#'
 var router = new Navigo(root, useHash, hash);
 
@@ -26,28 +26,7 @@ router.on(
   'posts/:slug',
   function(params, query) {
     var url = './posts/' + params.slug
-    loadHTML(url, query, 'posts')
-  },
-  {
-    before: function (done, params) {
-      // doing some async operation
-      done();
-    },
-    after: function (params) {
-      // after resolving
-    },
-    leave: function (params) {
-      loadProgress(false)
-      scrollPositionLeave()
-      scrollPositionInit(scrollY)
-    }
-  }
-);
-
-router.on(
-  'posts',
-  function() {
-    router.navigate('/');
+    loadHTML(url, query, 'post')
   },
   {
     before: function (done, params) {
@@ -71,28 +50,7 @@ router.on(
   'categories/:category',
   function(params) {
     var url = './categories/' + params.category
-    loadHTML(url)
-  },
-  {
-    before: function (done, params) {
-      // doing some async operation
-      done();
-    },
-    after: function (params) {
-      // after resolving
-    },
-    leave: function (params) {
-      loadProgress(false)
-      scrollPositionLeave()
-      scrollPositionInit(scrollY)
-    }
-  }
-);
-
-router.on(
-  'categories',
-  function() {
-    router.navigate('/');
+    loadHTML(url, false, 'category')
   },
   {
     before: function (done, params) {
@@ -115,28 +73,7 @@ router.on(
   'tags/:tag',
   function(params) {
     var url = './tags/' + params.tag
-    loadHTML(url)
-  },
-  {
-    before: function (done, params) {
-      // doing some async operation
-      done();
-    },
-    after: function (params) {
-      // after resolving
-    },
-    leave: function (params) {
-      loadProgress(false)
-      scrollPositionLeave()
-      scrollPositionInit(scrollY)
-    }
-  }
-);
-
-router.on(
-  'tags',
-  function() {
-    router.navigate('/');
+    loadHTML(url, false, 'tag')
   },
   {
     before: function (done, params) {
@@ -159,7 +96,7 @@ router.on(
   'archives/:year',
   function(params) {
     var url = './archives/' + params.year
-    loadHTML(url)
+    loadHTML(url, false, 'year')
   },
   {
     before: function (done, params) {
@@ -180,7 +117,7 @@ router.on(
 router.on(
   'archives',
   function() {
-    loadHTML('./archives')
+    loadHTML('./archives', false, 'archive')
   },
   {
     before: function (done, params) {
@@ -198,11 +135,18 @@ router.on(
   }
 );
 
+router
+  .on({
+    'posts': function () { router.navigate('/') },
+    'categories': function () { router.navigate('/') },
+    'tags': function () { router.navigate('/') }
+  })
+
 router.on(
   ':pages',
   function(params, query) {
     var url = './' + params.pages
-    loadHTML(url, query) // BUG:if the page is a post, toc will not work
+    loadHTML(url, query, 'page') // BUG:if the page is a post, toc will not work
   },
   {
     before: function (done, params) {
