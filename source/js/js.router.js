@@ -18,7 +18,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
-      fireListeners('index')
+      fireListeners('posts')
     }
   }
 );
@@ -42,6 +42,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
+      fireListeners('post')
     }
   }
 );
@@ -66,6 +67,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
+      fireListeners('posts')
     }
   }
 );
@@ -89,6 +91,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
+      fireListeners('posts')
     }
   }
 );
@@ -111,7 +114,8 @@ router.on(
     leave: function (params) {
       loadProgress(false)
       scrollPositionLeave()
-      scrollPosition(scrollY)
+      scrollPositionInit(scrollY)
+      fireListeners('posts')
     }
   }
 );
@@ -133,6 +137,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
+      fireListeners('archive')
     }
   }
 );

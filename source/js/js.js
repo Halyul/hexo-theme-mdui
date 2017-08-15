@@ -15,20 +15,36 @@ var smoothScroll = new SmoothScroll();
 */
 
 function loadHTML(url, query, page) {
-  req = new XMLHttpRequest();
-  req.open('GET', url);
-  req.send();
-  req.onload = () => {
+  fetch(url)
+  .then(function(response) {
+    return response.text()
+  }).then(function(HTML) {
     loadProgress(true);
-    document.querySelector('main').innerHTML = req.responseText;
+    document.querySelector('main').innerHTML = HTML
     scrollPositionEnter();
     burgerChanging(page);
     runScript();
     if (page === 'post' && query !== '') {
       tocQueryItem(query)
     }
-  }
+  })
 }
+
+/*function loadJSON(url, query, page) {
+  fetch(url)
+  .then(function(response) {
+    return response.text()
+  }).then(function(JSON) {
+    loadProgress(true);
+    console.log(JSON)
+    scrollPositionEnter();
+    burgerChanging(page);
+    runScript();
+    if (page === 'post' && query !== '') {
+      tocQueryItem(query)
+    }
+  })
+}*/
 
 function tocQueryItem(query) {
   var id = query.replace(/id=/,'')
@@ -105,7 +121,9 @@ function runScript() {
 
 function fireListeners(page) {
   var pageScripts = themeRunning.scriptsMap[page]
-  console.log(themeRunning.scriptsMap[page])
+  if (pageScripts === undefined) {
+    return
+  }
   for (var i = 0; i < pageScripts.length; i++) {
     var el = pageScripts[i].el
     el.removeEventListener(pageScripts[i].event, pageScripts[i].function)
