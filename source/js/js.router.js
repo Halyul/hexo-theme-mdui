@@ -1,8 +1,9 @@
 /*! router settings */
-var root = null;
-var useHash = true; // Defaults to: false
-var hash = '#!'; // Defaults to: '#'
-var router = new Navigo(root, useHash, hash);
+themeRunning.router = {};
+themeRunning.router.siteRoot = null;
+themeRunning.router.useHash = true; // Defaults to: false
+themeRunning.router.hash = '#!'; // Defaults to: '#'
+var router = new Navigo(themeRunning.router.siteRoot, themeRunning.router.useHash, themeRunning.router.hash);
 
 // set the index route
 router.on(
@@ -17,6 +18,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
+      fireListeners('index')
     }
   }
 );

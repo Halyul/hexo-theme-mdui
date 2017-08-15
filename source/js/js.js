@@ -1,3 +1,4 @@
+window.themeRunning = {};
 var drawer = new mdui.Drawer('#drawer');
 document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
@@ -5,7 +6,6 @@ document.querySelector('#drawer-back').addEventListener('click', function() {
 
 /* smooth scroll */
 var smoothScroll = new SmoothScroll();
-
 
 /*****
 ******
@@ -74,29 +74,40 @@ function loadProgress(state) {
 }
 
 // scroll position
-var scrollMap = {};
+themeRunning.scrollMap = {}
 function scrollPositionLeave() {
   var scrollY = window.pageYOffset
   return scrollY
 }
 function scrollPositionInit(scrollY) {
   var lastPage = router.lastRouteResolved();
-  scrollMap[lastPage.url] = scrollY
+  themeRunning.scrollMap[lastPage.url] = scrollY
 }
 function scrollPositionEnter() {
   var url = router.lastRouteResolved().url
-  console.log(scrollMap)
-  if (scrollMap[url] !== undefined) {
-    smoothScroll.animateScroll( scrollMap[url] )
+  console.log(themeRunning.scrollMap)
+  if (themeRunning.scrollMap[url] !== undefined) {
+    smoothScroll.animateScroll( themeRunning.scrollMap[url] )
   } else {
     smoothScroll.animateScroll( 0 )
   }
 }
 
+// script running
+themeRunning.scriptsMap = {};
 function runScript() {
-  /*var main = document.querySelector('main')
+  var main = document.querySelector('main')
   var scripts = main.querySelectorAll('script')
   for (var i = 0; i < scripts.length; ++i) {
     eval(scripts[i].innerHTML)
-  }*/
+  }
+}
+
+function fireListeners(page) {
+  var pageScripts = themeRunning.scriptsMap[page]
+  console.log(themeRunning.scriptsMap[page])
+  for (var i = 0; i < pageScripts.length; i++) {
+    var el = pageScripts[i].el
+    el.removeEventListener(pageScripts[i].event, pageScripts[i].function)
+  }
 }
