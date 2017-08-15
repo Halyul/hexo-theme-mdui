@@ -1,5 +1,5 @@
 window.themeRunning = {};
-var drawer = new mdui.Drawer('#drawer');
+var drawer = new mdui.Drawer('#drawer', {swipe: true});
 document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
 })
@@ -19,6 +19,7 @@ function loadHTML(url, query, page) {
   .then(function(response) {
     return response.text()
   }).then(function(HTML) {
+    itemHighlight(page);
     loadProgress(true);
     document.querySelector('main').innerHTML = HTML
     scrollPositionEnter();
@@ -128,4 +129,40 @@ function fireListeners(page) {
     var el = pageScripts[i].el
     el.removeEventListener(pageScripts[i].event, pageScripts[i].function)
   }
+}
+
+// list items highlight
+function itemHighlight(page) {
+
+  themeRunning.router.currentState.hash = window.location.hash || '#!/'
+  var drawerContent = document.querySelector('.theme-drawer__warpper__content')
+
+  var cleanHighlight = function () {
+    if (themeRunning.router.lastState.hash !== undefined) {
+      var lastHref = 'a[href="' + themeRunning.router.lastState.hash + '"]'
+      drawerContent.querySelector(lastHref).classList.remove('mdui-list-item-active')
+    }
+  }
+
+  var collapseItem = function (item) {
+    var parent = item.parentNode;
+    if (parent.classList.contains('mdui-collapse-item-body')) {
+      var ancestorEl = parent.parentNode.parentNode;
+      var ancestor = new mdui.Collapse(ancestorEl);
+      ancestor.open(0)
+    }
+  }
+
+  if (page === 'post') {
+    cleanHighlight()
+    return
+  }
+
+  cleanHighlight()
+
+  var nowHref = 'a[href="' + themeRunning.router.currentState.hash + '"]'
+  var item = drawerContent.querySelector(nowHref)
+  item.classList.add('mdui-list-item-active')
+  collapseItem(item)
+  themeRunning.router.lastState.hash = themeRunning.router.currentState.hash
 }

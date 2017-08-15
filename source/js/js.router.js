@@ -3,6 +3,8 @@ themeRunning.router = {};
 themeRunning.router.siteRoot = null;
 themeRunning.router.useHash = true; // Defaults to: false
 themeRunning.router.hash = '#!'; // Defaults to: '#'
+themeRunning.router.currentState = {}
+themeRunning.router.lastState = {}
 var router = new Navigo(themeRunning.router.siteRoot, themeRunning.router.useHash, themeRunning.router.hash);
 
 // set the index route
