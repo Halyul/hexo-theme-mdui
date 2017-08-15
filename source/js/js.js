@@ -147,9 +147,10 @@ function itemHighlight(page) {
   var collapseItem = function (item) {
     var parent = item.parentNode;
     if (parent.classList.contains('mdui-collapse-item-body')) {
-      var ancestorEl = parent.parentNode.parentNode;
-      var ancestor = new mdui.Collapse(ancestorEl);
-      ancestor.open(0)
+      var collapseEl = document.querySelector('.mdui-collapse')
+      var collapse = mdui.Collapse(collapseEl);
+      var ancestorEl = parent.parentNode;
+      collapse.open(ancestorEl)
     }
   }
 

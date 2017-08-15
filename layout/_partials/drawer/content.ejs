@@ -8,7 +8,7 @@
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
       <div class="mdui-list-item-content"><%= __('global.archives') %></div>
     </a>
-    <ul class="mdui-list" mdui-collapse="{accordion: true}" mdui-collapse>
+    <ul class="mdui-list mdui-collapse" mdui-collapse="{accordion: true}" mdui-collapse>
       <% if (site.categories && site.categories.length) { %>
         <div class="mdui-collapse-item <% if (is_category()) { %>mdui-collapse-item-open<% } %>">
           <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
