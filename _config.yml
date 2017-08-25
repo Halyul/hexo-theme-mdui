@@ -45,6 +45,7 @@ post:
     link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
   word_count:
   read_time:
+  toc_list_number: true
   donate:
 #    wechat:
 #      link: /img/avatar.png

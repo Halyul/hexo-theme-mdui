@@ -52,18 +52,20 @@ function tocHelper(str, options) {
       firstLevel = level;
     }
 
-     result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" href="#' + id + '">';
+    result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" href="#' + id + '">';
+
+
+    result += '<span class="' + className + '-number">';
 
     if (listNumber) {
-      result += '<span class="' + className + '-number">';
-
       for (i = firstLevel - 1; i < level; i++) {
         result += lastNumber[i] + '.';
       }
-      result += '<span class="' + className + '-text">' + text + '</span>';
-
-      result += '</span></a>';
     }
+    result += '<span class="' + className + '-text">' + text + '</span>';
+
+    result += '</span></a>';
+
 
     lastLevel = level;
   });
