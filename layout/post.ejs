@@ -5,7 +5,7 @@
 %>
 <% var toc = customToc(page.content, {
         class: 'post-toc',
-        list_number: !!config.post.toc_list_number
+        list_number: !!theme.post.toc_list_number
   }) %>
 <% if (theme.style.scheme === 'now') { %>
   <%- cssLsload({path:(config.root + 'css/src/now/post.min'),key:'post_css'}) %>
