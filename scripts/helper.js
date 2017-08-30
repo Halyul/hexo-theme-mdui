@@ -8,6 +8,11 @@ hexo.extend.generator.register('themeRouter',function(site){
     ]
 });
 
+var renderer = require('./lib/style_renderer');
+// associate the Sass renderer with .scss AND .sass extensions
+hexo.extend.renderer.register('scss', 'css', renderer);
+hexo.extend.renderer.register('sass', 'css', renderer);
+
 hexo.extend.helper.register('cardToc', function(){
    return require("./lib/toc/card.js").call(hexo,...arguments);
 });
