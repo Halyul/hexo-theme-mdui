@@ -172,6 +172,10 @@ body.mdui-drawer-body-left .post-bg-color {
   border-radius: 2px;
 }
 
+ol {
+  list-style-type: none !important;
+}
+
 @media (min-width: 771px) {
   .post-header-container {
     padding: 0 10px 0 26px;
