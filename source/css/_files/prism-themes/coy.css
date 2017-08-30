@@ -35,7 +35,7 @@
   background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
   background-size: 3em 3em;
   background-origin: content-box;
-  overflow: visible;
+  overflow: auto;
   padding: 0;
 }
 
@@ -72,8 +72,6 @@
 }
 
 #post-content pre[class*="language-"]:before, #post-content pre[class*="language-"]:after {
-  content: '';
-  z-index: -2;
   display: block;
   position: absolute;
   bottom: 0.75em;
@@ -81,22 +79,11 @@
   width: 40%;
   height: 20%;
   max-height: 13em;
-  box-shadow: 0px 13px 8px #979797;
-  -webkit-transform: rotate(-2deg);
-  -moz-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  -o-transform: rotate(-2deg);
-  transform: rotate(-2deg);
 }
 
 #post-content :not(pre)>code[class*="language-"]:after, #post-content pre[class*="language-"]:after {
   right: 0.75em;
   left: auto;
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-  -ms-transform: rotate(2deg);
-  -o-transform: rotate(2deg);
-  transform: rotate(2deg);
 }
 
 #post-content .token.comment, #post-content .token.block-comment, #post-content .token.prolog, #post-content .token.doctype, #post-content .token.cdata {
