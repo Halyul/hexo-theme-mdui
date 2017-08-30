@@ -24,11 +24,11 @@ before_script:
   - cat _config.yml
   - git clone https://github.com/Halyul/theme-mdui-ci.git _ci
   - cp -rf _ci/source .
-  - cp _ci/theme/_config.yml themes/mdui
   - cd themes/mdui
   - git checkout -t origin/dev
   - git pull
   - cd ../..
+  - cp _ci/theme/_config.yml themes/mdui
 script:
   - hexo clean && hexo g
   - mkdir ./deploy-git
