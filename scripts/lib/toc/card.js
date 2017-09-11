@@ -55,9 +55,9 @@ function tocHelper(str, options) {
     }
 
     if (usePath === true) {
-      result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" href="' + '#!/' + slug + '/?id=' + id + '">';
+      result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" onclick="tocQueryItem(\'' + id  +'\')">';
     } else {
-      result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" href="' + '#!/posts/' + slug + '/?id=' + id + '">';
+      result += '<a class="mdui-list-item mdui-ripple ' + className + '-link" onclick="tocQueryItem(\'' + id  +'\')">';
     }
 
     if (listNumber) {
