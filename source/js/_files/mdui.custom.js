@@ -1,9 +1,9 @@
 /*!
- * mdui v0.2.1 (https://mdui.org) - Custom Build
+ * mdui v0.3.0 (https://mdui.org) - Custom Build
  * Copyright 2016-2017 zdhxiong
  * Licensed under MIT
  * 
- * Included modules:          material-icons,typo,headroom,collapse,divider,media,ripple,button,fab,grid,toolbar,appbar,card,subheader,grid_list,list,drawer,dialog,shadow,tooltip,snackbar,chip,menu,panel
+ * Included modules:          material-icons,typo,headroom,collapse,divider,media,ripple,button,fab,grid,toolbar,appbar,card,subheader,grid_list,list,drawer,dialog,shadow,tooltip,snackbar,chip,menu,panel,table,checkbox
  * Included primary colors:   amber,blue,blue-grey,brown,cyan,deep-orange,deep-purple,green,grey,indigo,light-blue,light-green,lime,orange,pink,purple,red,teal,yellow
  * Included accent colors:    amber,blue,cyan,deep-orange,deep-purple,green,indigo,light-blue,light-green,lime,orange,pink,purple,red,teal,yellow
  * Included color degrees:    50,100,200,300,400,500,600,700,800,900,a100,a200,a400,a700
@@ -1117,13 +1117,16 @@
 
           var $ele = $(ele);
 
-          // IE10、IE11 在 box-sizing:border-box 时，不会包含 padding，这里进行修复
+          // IE10、IE11 在 box-sizing:border-box 时，不会包含 padding 和 border，这里进行修复
           var IEFixValue = 0;
+          var isWidth = name === 'width';
           if ('ActiveXObject' in window) { // 判断是 IE 浏览器
             if ($ele.css('box-sizing') === 'border-box') {
               IEFixValue =
-                parseFloat($ele.css('padding-' + (name === 'width' ? 'left' : 'top'))) +
-                parseFloat($ele.css('padding-' + (name === 'width' ? 'right' : 'bottom')));
+                parseFloat($ele.css('padding-' + (isWidth ? 'left' : 'top'))) +
+                parseFloat($ele.css('padding-' + (isWidth ? 'right' : 'bottom'))) +
+                parseFloat($ele.css('border-' + (isWidth ? 'left' : 'top') + '-width')) +
+                parseFloat($ele.css('border-' + (isWidth ? 'right' : 'bottom') + '-width'));
             }
           }
 
@@ -1467,8 +1470,15 @@
          */
         data: function (key, value) {
           if (value === undefined) {
-            // 获取值
-            if (this[0]) {
+            if (isObjectLike(key)) {
+
+              // 同时设置多个值
+              return this.each(function (i, ele) {
+                $.data(ele, key);
+              });
+            } else if (this[0]) {
+
+              // 获取值
               return $.data(this[0], key);
             } else {
               return undefined;
@@ -1702,7 +1712,7 @@
             evt.detail = data;
           }
 
-          evt._data = data;
+          evt._detailData = data;
 
           return this.each(function () {
             this.dispatchEvent(evt);
@@ -1740,7 +1750,7 @@
           };
 
           var callFn = function (e, ele) {
-            var result = func.apply(ele, e._data === undefined ? [e] : [e].concat(e._data));
+            var result = func.apply(ele, e._detailData === undefined ? [e] : [e].concat(e._detailData));
 
             if (result === false) {
               e.preventDefault();
@@ -1749,7 +1759,7 @@
           };
 
           var proxyfn = handler.proxy = function (e) {
-            e.data = data;
+            e._data = data;
 
             // 事件代理
             if (selector) {
@@ -3203,6 +3213,190 @@
 
   /**
    * =============================================================================
+   * ************   Table 表格   ************
+   * =============================================================================
+   */
+
+  (function () {
+
+    /**
+     * 生成 checkbox 的 HTML 结构
+     * @param tag
+     * @returns {string}
+     */
+    var checkboxHTML = function (tag) {
+      return '<' + tag + ' class="mdui-table-cell-checkbox">' +
+               '<label class="mdui-checkbox">' +
+                 '<input type="checkbox"/>' +
+                 '<i class="mdui-checkbox-icon"></i>' +
+               '</label>' +
+             '</' + tag + '>';
+    };
+
+    /**
+     * Table 表格
+     * @param selector
+     * @constructor
+     */
+    function Table(selector) {
+      var _this = this;
+
+      _this.$table = $(selector).eq(0);
+
+      if (!_this.$table.length) {
+        return;
+      }
+
+      _this.init();
+    }
+
+    /**
+     * 初始化
+     */
+    Table.prototype.init = function () {
+      var _this = this;
+
+      _this.$thRow = _this.$table.find('thead tr');
+      _this.$tdRows = _this.$table.find('tbody tr');
+      _this.$tdCheckboxs = $();
+      _this.selectable = _this.$table.hasClass('mdui-table-selectable');
+      _this.selectedRow = 0;
+
+      _this._updateThCheckbox();
+      _this._updateTdCheckbox();
+      _this._updateNumericCol();
+    };
+
+    /**
+     * 更新表格行的 checkbox
+     */
+    Table.prototype._updateTdCheckbox = function () {
+      var _this = this;
+
+      _this.$tdRows.each(function () {
+        var $tdRow = $(this);
+
+        // 移除旧的 checkbox
+        $tdRow.find('.mdui-table-cell-checkbox').remove();
+
+        if (!_this.selectable) {
+          return;
+        }
+
+        // 创建 DOM
+        var $checkbox = $(checkboxHTML('td'))
+          .prependTo($tdRow)
+          .find('input[type="checkbox"]');
+
+        // 默认选中的行
+        if ($tdRow.hasClass('mdui-table-row-selected')) {
+          $checkbox[0].checked = true;
+          _this.selectedRow++;
+        }
+
+        // 所有行都选中后，选中表头；否则，不选中表头
+        _this.$thCheckbox[0].checked = _this.selectedRow === _this.$tdRows.length;
+
+        // 绑定事件
+        $checkbox.on('change', function () {
+          if ($checkbox[0].checked) {
+            $tdRow.addClass('mdui-table-row-selected');
+            _this.selectedRow++;
+          } else {
+            $tdRow.removeClass('mdui-table-row-selected');
+            _this.selectedRow--;
+          }
+
+          // 所有行都选中后，选中表头；否则，不选中表头
+          _this.$thCheckbox[0].checked = _this.selectedRow === _this.$tdRows.length;
+        });
+
+        _this.$tdCheckboxs = _this.$tdCheckboxs.add($checkbox);
+      });
+    };
+
+    /**
+     * 更新表头的 checkbox
+     */
+    Table.prototype._updateThCheckbox = function () {
+      var _this = this;
+
+      // 移除旧的 checkbox
+      _this.$thRow.find('.mdui-table-cell-checkbox').remove();
+
+      if (!_this.selectable) {
+        return;
+      }
+
+      _this.$thCheckbox = $(checkboxHTML('th'))
+        .prependTo(_this.$thRow)
+        .find('input[type="checkbox"]')
+        .on('change', function () {
+
+          var isCheckedAll = _this.$thCheckbox[0].checked;
+          _this.selectedRow = isCheckedAll ? _this.$tdRows.length : 0;
+
+          _this.$tdCheckboxs.each(function (i, checkbox) {
+            checkbox.checked = isCheckedAll;
+          });
+
+          _this.$tdRows.each(function (i, row) {
+            $(row)[isCheckedAll ? 'addClass' : 'removeClass']('mdui-table-row-selected');
+          });
+
+        });
+    };
+
+    /**
+     * 更新数值列
+     */
+    Table.prototype._updateNumericCol = function () {
+      var _this = this;
+      var $th;
+      var $tdRow;
+
+      _this.$thRow.find('th').each(function (i, th) {
+        $th = $(th);
+
+        _this.$tdRows.each(function () {
+          $tdRow = $(this);
+          var method = $th.hasClass('mdui-table-col-numeric') ? 'addClass' : 'removeClass';
+          $tdRow.find('td').eq(i)[method]('mdui-table-col-numeric');
+        });
+      });
+    };
+
+    $(function () {
+      // 实例化表格
+      $('.mdui-table').each(function () {
+        var $table = $(this);
+        if (!$table.data('mdui.table')) {
+          $table.data('mdui.table', new Table($table));
+        }
+      });
+    });
+
+    /**
+     * 更新表格
+     */
+    mdui.updateTables = function () {
+      $(arguments.length ? arguments[0] : '.mdui-table').each(function () {
+        var $table = $(this);
+        var inst = $table.data('mdui.table');
+
+        if (inst) {
+          inst.init();
+        } else {
+          $table.data('mdui.table', new Table($table));
+        }
+      });
+    };
+
+  })();
+
+
+  /**
+   * =============================================================================
    * ************   涟漪   ************
    * =============================================================================
    *
@@ -3749,48 +3943,57 @@
         });
       });
 
-      // 抽屉栏触屏手势控制
+      swipeSupport(_this);
+    }
+
+    /**
+     * 滑动手势支持
+     * @param _this
+     */
+    var swipeSupport = function (_this) {
+      // 抽屉栏滑动手势控制
       var openNavEventHandler;
       var touchStartX;
       var touchStartY;
       var swipeStartX;
       var swiping = false;
       var maybeSwiping = false;
+      var $body = $('body');
 
       // 手势触发的范围
-      var swipeAreaWidth = 30;
+      var swipeAreaWidth = 24;
 
-      _this.enableSwipeHandling = function () {
+      function enableSwipeHandling() {
         if (!openNavEventHandler) {
-          $(document.body).on('touchstart', onBodyTouchStart);
+          $body.on('touchstart', onBodyTouchStart);
           openNavEventHandler = onBodyTouchStart;
         }
-      };
+      }
 
       function setPosition(translateX, closeTransform) {
         var rtlTranslateMultiplier = _this.position === 'right' ? -1 : 1;
-        var drawer = _this.$drawer;
-        var transformCSS =
-          'translate(' + (-1 * rtlTranslateMultiplier * translateX) + 'px, 0) !important;';
-        drawer.css('cssText',
-          'transform:' + transformCSS + (closeTransform ? 'transition: initial !important;' : ''));
+        var transformCSS = 'translate(' + (-1 * rtlTranslateMultiplier * translateX) + 'px, 0) !important;';
+        _this.$drawer.css(
+          'cssText',
+          'transform:' + transformCSS + (closeTransform ? 'transition: initial !important;' : '')
+        );
       }
 
       function cleanPosition() {
-        _this.$drawer.css('transform', null).css('transition', null);
+        _this.$drawer.css({
+          transform: '',
+          transition: '',
+        });
       }
 
       function getMaxTranslateX() {
-        var width = _this.$drawer.width();
-        return width + 10;
+        return _this.$drawer.width() + 10;
       }
 
       function getTranslateX(currentX) {
         return Math.min(
           Math.max(
-            swiping === 'closing' ?
-              -1 * (currentX - swipeStartX) :
-              getMaxTranslateX() - (swipeStartX - currentX) * -1,
+            swiping === 'closing' ? (swipeStartX - currentX) : (getMaxTranslateX() + swipeStartX - currentX),
             0
           ),
           getMaxTranslateX()
@@ -3798,36 +4001,34 @@
       }
 
       function onBodyTouchStart(event) {
-        var touchX = _this.position === 'right' ?
-          (document.body.offsetWidth - event.touches[0].pageX) :
-          event.touches[0].pageX;
-        var touchY = event.touches[0].pageY;
+        touchStartX = event.touches[0].pageX;
+        if (_this.position === 'right') {
+          touchStartX = $body.width() - touchStartX;
+        }
 
-        if (swipeAreaWidth !== null && _this.state !== 'opened') {
-          if (touchX > swipeAreaWidth) {
+        touchStartY = event.touches[0].pageY;
+
+        if (_this.state !== 'opened') {
+          if (touchStartX > swipeAreaWidth || openNavEventHandler !== onBodyTouchStart) {
             return;
           }
         }
 
-        if (_this.state !== 'opened' &&
-          (openNavEventHandler !== onBodyTouchStart)
-        ) {
-          return;
-        }
-
         maybeSwiping = true;
-        touchStartX = touchX;
-        touchStartY = touchY;
 
-        document.body.addEventListener('touchmove', onBodyTouchMove);
-        document.body.addEventListener('touchend', onBodyTouchEnd);
-        document.body.addEventListener('touchcancel', onBodyTouchMove);
+        $body.on({
+          touchmove: onBodyTouchMove,
+          touchend: onBodyTouchEnd,
+          touchcancel: onBodyTouchMove,
+        });
       }
 
       function onBodyTouchMove(event) {
-        var touchX = _this.position === 'right' ?
-          (document.body.offsetWidth - event.touches[0].pageX) :
-          event.touches[0].pageX;
+        var touchX = event.touches[0].pageX;
+        if (_this.position === 'right') {
+          touchX = $body.width() - touchX;
+        }
+
         var touchY = event.touches[0].pageY;
 
         if (swiping) {
@@ -3835,12 +4036,12 @@
         } else if (maybeSwiping) {
           var dXAbs = Math.abs(touchX - touchStartX);
           var dYAbs = Math.abs(touchY - touchStartY);
-          var threshold = 10;
+          var threshold = 8;
 
           if (dXAbs > threshold && dYAbs <= threshold) {
             swipeStartX = touchX;
             swiping = _this.state === 'opened' ? 'closing' : 'opening';
-            $(document.body).addClass('mdui-locked');
+            $.lockScreen();
             setPosition(getTranslateX(touchX), true);
           } else if (dXAbs <= threshold && dYAbs > threshold) {
             onBodyTouchEnd();
@@ -3850,9 +4051,11 @@
 
       function onBodyTouchEnd(event) {
         if (swiping) {
-          var touchX = _this.position === 'right' ?
-            (document.body.offsetWidth - event.changedTouches[0].pageX) :
-            event.changedTouches[0].pageX;
+          var touchX = event.changedTouches[0].pageX;
+          if (_this.position === 'right') {
+            touchX = $body.width() - touchX;
+          }
+
           var translateRatio = getTranslateX(touchX) / getMaxTranslateX();
 
           maybeSwiping = false;
@@ -3860,14 +4063,14 @@
           swiping = null;
 
           if (swipingState === 'opening') {
-            if (translateRatio < 0.7) {
+            if (translateRatio < 0.92) {
               cleanPosition();
               _this.open();
             } else {
               cleanPosition();
             }
           } else {
-            if (translateRatio > 0.3) {
+            if (translateRatio > 0.08) {
               cleanPosition();
               _this.close();
             } else {
@@ -3875,20 +4078,22 @@
             }
           }
 
-          $(document.body).removeClass('mdui-locked');
+          $.unlockScreen();
         } else {
           maybeSwiping = false;
         }
 
-        document.body.removeEventListener('touchmove', onBodyTouchMove);
-        document.body.removeEventListener('touchend', onBodyTouchEnd);
-        document.body.removeEventListener('touchcancel', onBodyTouchMove);
+        $body.off({
+          touchmove: onBodyTouchMove,
+          touchend: onBodyTouchEnd,
+          touchcancel: onBodyTouchMove,
+        });
       }
 
       if (_this.options.swipe) {
-        _this.enableSwipeHandling();
+        enableSwipeHandling();
       }
-    }
+    };
 
     /**
      * 动画结束回调
@@ -5121,6 +5326,7 @@
       timeout: 4000,                  // 在用户没有操作时多长时间自动隐藏
       buttonText: '',                 // 按钮的文本
       buttonColor: '',                // 按钮的颜色，支持 blue #90caf9 rgba(...)
+      position: 'bottom',             // 位置 bottom、top、left-top、left-bottom、right-top、right-bottom
       closeOnButtonClick: true,       // 点击按钮时关闭
       closeOnOutsideClick: true,      // 触摸或点击屏幕其他地方时关闭
       onClick: function () {          // 在 Snackbar 上点击的回调
@@ -5129,7 +5335,16 @@
       onButtonClick: function () {    // 点击按钮的回调
       },
 
+      onOpen: function () {           // 打开动画开始时的回调
+      },
+
+      onOpened: function () {         // 打开动画结束时的回调
+      },
+
       onClose: function () {          // 关闭动画开始时的回调
+      },
+
+      onClosed: function () {         // 打开动画结束时的回调
       },
     };
 
@@ -5195,11 +5410,57 @@
         .appendTo(document.body);
 
       // 设置位置
+      _this._setPosition('close');
+
       _this.$snackbar
-        .transform('translateY(' + _this.$snackbar[0].clientHeight + 'px)')
-        .css('left', (document.body.clientWidth - _this.$snackbar[0].clientWidth) / 2 + 'px')
-        .addClass('mdui-snackbar-transition');
+        .reflow()
+        .addClass('mdui-snackbar-' + _this.options.position);
     }
+
+    /**
+     * 设置 Snackbar 的位置
+     * @param state
+     * @private
+     */
+    Snackbar.prototype._setPosition = function (state) {
+      var _this = this;
+
+      var snackbarHeight = _this.$snackbar[0].clientHeight;
+      var position = _this.options.position;
+
+      var translateX;
+      var translateY;
+
+      // translateX
+      if (position === 'bottom' || position === 'top') {
+        translateX = '-50%';
+      } else {
+        translateX = '0';
+      }
+
+      // translateY
+      if (state === 'open') {
+        translateY = '0';
+      } else {
+        if (position === 'bottom') {
+          translateY = snackbarHeight;
+        }
+
+        if (position === 'top') {
+          translateY = -snackbarHeight;
+        }
+
+        if (position === 'left-top' || position === 'right-top') {
+          translateY = -snackbarHeight - 24;
+        }
+
+        if (position === 'left-bottom' || position === 'right-bottom') {
+          translateY = snackbarHeight + 24;
+        }
+      }
+
+      _this.$snackbar.transform('translate(' + translateX + ',' + translateY + 'px)');
+    };
 
     /**
      * 打开 Snackbar
@@ -5224,14 +5485,18 @@
 
       // 开始打开
       _this.state = 'opening';
+      _this.options.onOpen();
+
+      _this._setPosition('open');
+
       _this.$snackbar
-        .transform('translateY(0)')
         .transitionEnd(function () {
           if (_this.state !== 'opening') {
             return;
           }
 
           _this.state = 'opened';
+          _this.options.onOpened();
 
           // 有按钮时绑定事件
           if (_this.options.buttonText) {
@@ -5285,8 +5550,9 @@
       _this.state = 'closing';
       _this.options.onClose();
 
+      _this._setPosition('close');
+
       _this.$snackbar
-        .transform('translateY(' + _this.$snackbar[0].clientHeight + 'px)')
         .transitionEnd(function () {
           if (_this.state !== 'closing') {
             return;
@@ -5294,6 +5560,7 @@
 
           currentInst = null;
           _this.state = 'closed';
+          _this.options.onClosed();
           _this.$snackbar.remove();
           queue.dequeue(queueName);
         });

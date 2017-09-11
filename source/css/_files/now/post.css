@@ -1,3 +1,13 @@
+.mdui-typo table {
+  display: table !important;
+}
+
+@media (min-width: 1024px) {
+  .mdui-table-fluid {
+    box-shadow: none;
+  }
+}
+
 .post-warpper {
   display: -webkit-box;
   display: -ms-flexbox;
