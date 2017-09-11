@@ -54,7 +54,7 @@ function tocHelper(str, options) {
     if (usePath === true) {
       result += '<a class="' + className + '-link" href="' + '#!/' + slug + '/?id=' + id + '">';
     } else {
-      result += '<a class="' + className + '-link" href="' + '#!/posts/' + slug + '/?id=' + id + '">';
+      result += '<a class="' + className + '-link" href="' + '?id=' + id + '">';
     }
 
     if (listNumber) {
