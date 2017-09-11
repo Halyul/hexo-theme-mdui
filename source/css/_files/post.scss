@@ -149,6 +149,12 @@ $main-class: theme-post;
     width: 100%;
     margin: 0 0 16px 0;
   }
+  @media (min-width: 1024px) {
+    .#{$sub-class}__table--flat {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+  }
 }
 
 .#{$main-class}__toc {

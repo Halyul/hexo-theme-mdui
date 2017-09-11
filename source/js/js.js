@@ -104,9 +104,9 @@ function scrollPositionEnter() {
   var url = router.lastRouteResolved().url
   console.log(themeRunning.scrollMap)
   if (themeRunning.scrollMap[url] !== undefined) {
-    smoothScroll.animateScroll( themeRunning.scrollMap[url] )
+    window.scrollTo(0, themeRunning.scrollMap[url])
   } else {
-    smoothScroll.animateScroll( 0 )
+    window.scrollTo(0,0);
   }
 }
 
