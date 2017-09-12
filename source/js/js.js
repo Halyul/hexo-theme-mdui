@@ -31,22 +31,6 @@ function loadHTML(url, query, page) {
   })
 }
 
-/*function loadJSON(url, query, page) {
-  fetch(url)
-  .then(function(response) {
-    return response.text()
-  }).then(function(JSON) {
-    loadProgress(true);
-    console.log(JSON)
-    scrollPositionEnter();
-    burgerChanging(page);
-    runScript();
-    if (page === 'post' && query !== '') {
-      tocQueryItem(query)
-    }
-  })
-}*/
-
 function tocQueryItem(query) {
   var id = query.replace(/id=/,'')
   var idY = document.getElementById(id).getBoundingClientRect().top  - 144
