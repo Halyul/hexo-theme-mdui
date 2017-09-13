@@ -135,6 +135,17 @@ $main-class: theme-post;
   img {
     cursor: pointer;
   }
+  .#{$sub-class}__heading-link {
+    &:before {
+      content: none;
+    }
+    &:after {
+      content: "link";
+      position: absolute;
+      left: -24px;
+      top: 0.5px;
+    }
+  }
   @media (min-width: 771px) {
     padding: 32px;
   }
