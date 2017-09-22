@@ -13,6 +13,12 @@
       <br />
       <span onclick="window.open('http://www.miitbeian.gov.cn/', '_blank');"><%= theme.footer.ICP %></span>
     <% } %>
+    <% if (theme.footer.last_updated !== false) { %>
+      <br />
+      <span>
+        <%- __('global.last_updated') + date(Date.now(), 'MMM DD, YYYY') %>
+      </span>
+    <% } %>
     <% if (theme.footer.image) { %>
       <img class="mdui-img-fluid" src="<%= theme.footer.image %>"/>
     <% } %>

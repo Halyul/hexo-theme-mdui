@@ -8,6 +8,7 @@ global:
   tags: 'Tags'
   years: 'Years'
   busuanzi_views: 'Views: '
+  last_updated: 'Last updated: '
 archive:
   post: 'Post'
   posts: 'Posts'
