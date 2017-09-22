@@ -1,14 +1,15 @@
-const href = /<a href="#([\s\S]*?)" class="headerlink"/igm;
-const newHrefStart = '<a href="#!/';
-const newHrefEnd = '" class="theme-post__card__heading-link material-icons"';
+const cheerio = require('cheerio')
 
 function linkRender(data) {
-  data.content = data.content.replace(href, (origin, content) => {
-    var a = newHrefStart + data.path + '?id=' + content + newHrefEnd
-    console.log(a)
-    return newHrefStart + data.path + '?id=' + content + newHrefEnd;
+  const $ = cheerio.load(data.content);
+  $('a.headerlink').each(function() {
+    $(this).addClass('material-icons theme-post__card__heading-link');
+    const href = $(this).attr('href');
+    const newHref = '#!/' + data.path + '?id=' + href;
+    $(this).attr('href', newHref);
   })
-  return data;
+  data.content = $.html()
+  return data
 }
 
 hexo.extend.filter.register('after_post_render', linkRender);
