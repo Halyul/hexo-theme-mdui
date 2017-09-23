@@ -13,9 +13,6 @@ var renderer = require('./lib/style_renderer');
 hexo.extend.renderer.register('scss', 'css', renderer);
 hexo.extend.renderer.register('sass', 'css', renderer);
 
-hexo.extend.helper.register('cardToc', function(){
-   return require("./lib/toc/card.js").call(hexo,...arguments);
-});
-hexo.extend.helper.register('fabToc', function(){
-  return require("./lib/toc/fab.js").call(hexo,...arguments);
+hexo.extend.helper.register('tocContentHelper', function(){
+  return require("./lib/toc/content.js").call(hexo,...arguments);
 });

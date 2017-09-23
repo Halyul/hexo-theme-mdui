@@ -23,6 +23,18 @@ $main-class: theme-post;
   box-orient: horizontal;
   -ms-flex-direction: row;
 }
+@mixin toc-clear {
+  ol, li ol {
+    margin: 0;
+    padding: 0;
+  }
+  ol ol {
+    padding-left: 16px;
+  }
+  ol li {
+    display: block;
+  }
+}
 
 .#{$main-class} {
   @include flex-vertical;
@@ -135,17 +147,6 @@ $main-class: theme-post;
   img {
     cursor: pointer;
   }
-  .#{$sub-class}__heading-link {
-    &:before {
-      content: none;
-    }
-    &:after {
-      content: "link";
-      position: absolute;
-      left: -24px;
-      top: 0.5px;
-    }
-  }
   @media (min-width: 771px) {
     padding: 32px;
   }
@@ -169,6 +170,7 @@ $main-class: theme-post;
 }
 
 .#{$main-class}__toc {
+  @include toc-clear;
   display: none;
   width: 256px;
   height: auto;
@@ -188,9 +190,6 @@ $main-class: theme-post;
     border-left-width: 2px;
     border-left-style: solid;
   }
-  ul ul {
-    padding-left: 16px;
-  }
   @media (min-width: 1024px) {
     display: inline-block;
   }
@@ -205,6 +204,7 @@ $main-class: theme-post;
 
 .#{$main-class}__toc-fab__menu {
   $sub-class: #{$main-class}__toc-fab__menu;
+  @include toc-clear;
   width: auto;
   max-height: 48vh !important;
   @media (min-width: 600px) {

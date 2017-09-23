@@ -4,11 +4,7 @@
     page.path = page.path.replace('/index.html', '')
     usePath = true
   }
-  var toc = cardToc(page.content, {
-    class: 'theme-post__toc__content',
-    slug: page.slug || page.path,
-    usePath: usePath
-   })
+  var pageToc = toc(page.content)
 %>
 <div class="theme-post">
   <div class="theme-post__background mdui-color-theme"></div>
@@ -34,7 +30,7 @@
     </div>
   </div>
   <div class="theme-post__warpper
-    <% if (toc.length === 0) { %>
+    <% if (pageToc.length === 0) { %>
       theme-post__warpper--center
     <% } %>
   ">
@@ -44,9 +40,9 @@
           <%-page.content%>
         </section>
       </article>
-      <% if (toc.length > 0) { %>
+      <% if (pageToc.length > 0) { %>
         <div class="mdui-color-theme theme-post__toc">
-          <%- toc %>
+          <%- tocContentHelper(pageToc) %>
         </div>
       <% } %>
     </div>
@@ -54,8 +50,8 @@
 
   <div class="theme-spacer"></div>
 
-  <% if (toc.length > 0) { %>
-    <%-partial('_partials/fab/post', {usePath: usePath})%>
+  <% if (pageToc.length > 0) { %>
+    <%-partial('_partials/fab/post', {pageToc: pageToc})%>
   <% } %>
 
   <% if (pagination !== false) { %>

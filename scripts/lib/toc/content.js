@@ -1,15 +1,22 @@
 const cheerio = require('cheerio')
 
-function linkRender(data) {
-  const $ = cheerio.load(data.content);
-  $('a.headerlink').each(function() {
-    $(this).addClass('material-icons theme-post__card__heading-link');
-    const href = $(this).attr('href');
-    const newHref = '#!/' + data.path + '?id=' + href;
-    $(this).attr('href', newHref);
+function contentTocHelper(str, options) {
+  const $ = cheerio.load(str);
+  $('a.toc-link').each(function() {
+    const href = $(this).attr('href')
+    $(this).attr('href', 'javascript:;')
+    const tocQueryItem = 'tocQueryItem("' + href + '")'
+    $(this).attr('onclick', tocQueryItem)
+    $(this).addClass('mdui-list-item mdui-ripple theme-post__toc__content__link')
+
+    const number = $(this).children('.toc-number').text()
+    const heading = number + ' ' +  $(this).children('.toc-text').text()
+    $(this).children('.toc-number').text('')
+    $(this).children('.toc-text').text(heading)
   })
-  data.content = $.html()
-  return data
+
+  str = $.html()
+  return str
 }
 
-hexo.extend.filter.register('after_post_render', linkRender);
+module.exports = contentTocHelper;

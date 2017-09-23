@@ -33,6 +33,7 @@ function loadHTML(url, query, page) {
 
 function tocQueryItem(query) {
   var id = query.replace(/id=/,'')
+  id = id.replace(/#/,'')
   var idY = document.getElementById(id).getBoundingClientRect().top  - 144
   var scrollY = idY + window.pageYOffset
   smoothScroll.animateScroll( scrollY );
