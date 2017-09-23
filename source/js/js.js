@@ -28,6 +28,7 @@ function loadHTML(url, query, page) {
     if (page === 'post' && query !== '') {
       tocQueryItem(query)
     }
+    drawerClose()
   })
 }
 
@@ -51,7 +52,6 @@ function burgerChanging(page) {
     burger.classList.add('theme-appbar__burger--arrow');
     burger.setAttribute('href', '#!/')
     burger.removeEventListener('click', drawerToggle)
-    drawerClose()
   }
 }
 
