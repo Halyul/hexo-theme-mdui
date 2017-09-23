@@ -1,6 +1,6 @@
 <script type="text/javascript">
-  var tocFabMenu = document.querySelector('.theme-post__toc-fab__menu__content')
-  var tocCard = document.querySelector('.theme-post__toc__content')
+  var tocFabMenu = document.querySelector('.theme-post__toc-fab__menu .toc')
+  var tocCard = document.querySelector('.theme-post__toc .toc')
   if (tocFabMenu !== null && tocCard !== null) {
     window.addEventListener("load", function() {
       var timer;
@@ -39,7 +39,7 @@
       var listens = [];
       var cardToc = document.querySelector('.theme-post__toc');
       var links = document.querySelectorAll("a.theme-post__toc__content__link");
-      var toclist = document.querySelector(".theme-post__toc__content");
+      var toclist = document.querySelector(".theme-post__toc ol.toc");
       Array.prototype.forEach.call(links, function(value, index) {
         var id = (value.getAttribute("data-href") || "#").slice(1);
         var element = document.getElementById(id);

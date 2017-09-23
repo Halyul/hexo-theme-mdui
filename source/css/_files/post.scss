@@ -210,9 +210,6 @@ $main-class: theme-post;
   @media (min-width: 600px) {
     max-width: 36vh;
   }
-  .#{$sub-class}__content {
-    margin: 0;
-  }
 }
 
 // Pagination

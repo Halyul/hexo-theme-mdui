@@ -5,6 +5,7 @@ function contentTocHelper(str, options) {
   $('a.toc-link').each(function() {
     const href = $(this).attr('href')
     $(this).attr('href', 'javascript:;')
+    $(this).attr('data-href', href)
     const tocQueryItem = 'tocQueryItem("' + href + '")'
     $(this).attr('onclick', tocQueryItem)
     $(this).addClass('mdui-list-item mdui-ripple theme-post__toc__content__link')
