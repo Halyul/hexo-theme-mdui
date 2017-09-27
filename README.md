@@ -19,7 +19,7 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 ![Version](https://img.shields.io/badge/version-1.5.1-green.svg?style=flat-square)
 [![Hexo](https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square)](https://hexo.io)
 ![Travis CI](https://travis-ci.org/Halyul/hexo-theme-mdui.svg?branch=master)
-
+ 
 ## Demo 演示
 
 [Halyul's Blog in US](https://blog.halyul.com)
