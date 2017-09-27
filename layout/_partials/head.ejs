@@ -90,7 +90,7 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.fonts_min_css %>?version=v20170713" />
+    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.fonts_min_css %>" />
   <% } else { %>
     <%- css("css/fonts.min") %>
   <% } %>
@@ -105,7 +105,7 @@ pageTitle += ' - ' + config.title;
   <% } %>
 
   <!-- Custom Head -->
-  <%-partial('../_custom/custom_head')%>
+  <%-partial('../_custom/head')%>
 
   <% if (theme.color.bg_color && page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
     <style>
