@@ -38,8 +38,8 @@ post:
   entry_excerpt: 80
   qr_code: false
   prism:
-    theme:
-    line_number:
+    theme: solarizedlight
+    line_number: true
   license:
     name: 'CC BY-NC-SA 4.0'
     link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'

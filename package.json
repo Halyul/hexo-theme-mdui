@@ -20,7 +20,7 @@
   "author": "Halyul",
   "license": "GPL-3.0",
   "dependencies": {
-    "prismjs": "^1.6.0"
+    "node-prismjs": "^0.1.0"
   },
   "bugs": {
     "url": "https://github.com/Halyul/hexo-theme-mdui/issues"
