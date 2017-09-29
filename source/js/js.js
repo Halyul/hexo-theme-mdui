@@ -1,4 +1,4 @@
-window.themeRunning = {};
+window.themeRuntime = {};
 var drawer = new mdui.Drawer('#drawer', {swipe: true});
 document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
@@ -76,27 +76,27 @@ function loadProgress(state) {
 }
 
 // scroll position
-themeRunning.scrollMap = {}
+themeRuntime.scrollMap = {}
 function scrollPositionLeave() {
   var scrollY = window.pageYOffset
   return scrollY
 }
 function scrollPositionInit(scrollY) {
   var lastPage = router.lastRouteResolved();
-  themeRunning.scrollMap[lastPage.url] = scrollY
+  themeRuntime.scrollMap[lastPage.url] = scrollY
 }
 function scrollPositionEnter() {
   var url = router.lastRouteResolved().url
-  console.log(themeRunning.scrollMap)
-  if (themeRunning.scrollMap[url] !== undefined) {
-    window.scrollTo(0, themeRunning.scrollMap[url])
+  console.log(themeRuntime.scrollMap)
+  if (themeRuntime.scrollMap[url] !== undefined) {
+    window.scrollTo(0, themeRuntime.scrollMap[url])
   } else {
     window.scrollTo(0,0);
   }
 }
 
 // script running
-themeRunning.scriptsMap = {};
+themeRuntime.scriptsMap = {};
 function runScript() {
   var main = document.querySelector('main')
   var scripts = main.querySelectorAll('script')
@@ -106,7 +106,7 @@ function runScript() {
 }
 
 function fireListeners(page) {
-  var pageScripts = themeRunning.scriptsMap[page]
+  var pageScripts = themeRuntime.scriptsMap[page]
   if (pageScripts === undefined) {
     return
   }
@@ -119,12 +119,12 @@ function fireListeners(page) {
 // list items highlight
 function itemHighlight(page) {
 
-  themeRunning.router.currentState.hash = window.location.hash || '#!/'
+  themeRuntime.router.currentState.hash = window.location.hash || '#!/'
   var drawerContent = document.querySelector('.theme-drawer__warpper__content')
 
   var cleanHighlight = function () {
-    if (themeRunning.router.lastState.hash !== undefined) {
-      var lastHref = 'a[href="' + themeRunning.router.lastState.hash + '"]'
+    if (themeRuntime.router.lastState.hash !== undefined) {
+      var lastHref = 'a[href="' + themeRuntime.router.lastState.hash + '"]'
       drawerContent.querySelector(lastHref).classList.remove('mdui-list-item-active')
     }
   }
@@ -146,9 +146,9 @@ function itemHighlight(page) {
 
   cleanHighlight()
 
-  var nowHref = 'a[href="' + themeRunning.router.currentState.hash + '"]'
+  var nowHref = 'a[href="' + themeRuntime.router.currentState.hash + '"]'
   var item = drawerContent.querySelector(nowHref)
   item.classList.add('mdui-list-item-active')
   collapseItem(item)
-  themeRunning.router.lastState.hash = themeRunning.router.currentState.hash
+  themeRuntime.router.lastState.hash = themeRuntime.router.currentState.hash
 }

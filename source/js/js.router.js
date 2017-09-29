@@ -1,11 +1,11 @@
 /*! router settings */
-themeRunning.router = {};
-themeRunning.router.siteRoot = null;
-themeRunning.router.useHash = true; // Defaults to: false
-themeRunning.router.hash = '#!'; // Defaults to: '#'
-themeRunning.router.currentState = {}
-themeRunning.router.lastState = {}
-var router = new Navigo(themeRunning.router.siteRoot, themeRunning.router.useHash, themeRunning.router.hash);
+themeRuntime.router = {};
+themeRuntime.router.siteRoot = null;
+themeRuntime.router.useHash = true; // Defaults to: false
+themeRuntime.router.hash = '#!'; // Defaults to: '#'
+themeRuntime.router.currentState = {}
+themeRuntime.router.lastState = {}
+var router = new Navigo(themeRuntime.router.siteRoot, themeRuntime.router.useHash, themeRuntime.router.hash);
 
 // set the index route
 router.on(
@@ -20,7 +20,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
-      fireListeners('posts')
+      fireListeners('index')
     }
   }
 );
