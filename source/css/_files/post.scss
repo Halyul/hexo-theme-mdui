@@ -203,6 +203,12 @@ $main-class: theme-post;
     @include info-boxes;
     margin-bottom: 16px;
   }
+  .#{$sub-class}__content {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 16px 0;
+    word-wrap: break-word;
+  }
   .#{$sub-class}__license {
     @include info-boxes;
     border-left-color: #D50000;

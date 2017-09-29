@@ -6,6 +6,12 @@
   }
   var pageToc = toc(page.content)
 %>
+<%
+  if (theme.post.random_pics !== false && theme.post.random_pics) {
+    var randomPic = Math.floor(Math.random() * theme.post.random_pics + 1);
+  }
+%>
+
 <div class="theme-post">
   <div class="theme-post__background mdui-color-theme"></div>
   <div class="theme-post__header mdui-color-theme">
@@ -56,12 +62,12 @@
             <% } %>
           </section>
         <% } %>
-        <% if (theme.random_pics !== false && theme.random_pics) { %>
+        <% if (theme.post.random_pics !== false && theme.post.random_pics) { %>
           <div class="mdui-card-media">
-            <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+            <img src="<%= page.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>"/>
           </div>
         <% } %>
-        <section class="mdui-typo">
+        <section class="mdui-typo theme-post__card__content">
           <%-page.content%>
         </section>
         <% if (page.license_name || theme.post.license.name || page.export_md !== false) { %>
