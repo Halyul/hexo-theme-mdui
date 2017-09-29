@@ -35,6 +35,17 @@ $main-class: theme-post;
     display: block;
   }
 }
+@mixin info-boxes {
+  background-color: #f8f8f8;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 12px 24px 12px 30px;
+  position: relative;
+  line-height: 1.6rem;
+  word-spacing: .05rem;
+}
 
 .#{$main-class} {
   @include flex-vertical;
@@ -166,6 +177,35 @@ $main-class: theme-post;
       -webkit-box-shadow: none;
       box-shadow: none;
     }
+  }
+  .#{$sub-class}__warning {
+    @include info-boxes;
+    display: none;
+    margin-bottom: 16px;
+    border-left-color: #D50000;
+    &:before {
+      background-color: #D50000;
+      border-radius: 100%;
+      color: #fff;
+      content: "!";
+      font-size: 14px;
+      font-weight: 700;
+      left: -12px;
+      line-height: 20px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      top: 14px;
+    }
+  }
+  .#{$sub-class}__count {
+    @include info-boxes;
+    margin-bottom: 16px;
+  }
+  .#{$sub-class}__license {
+    @include info-boxes;
+    border-left-color: #D50000;
   }
 }
 

@@ -22,8 +22,11 @@ post:
   entry_excerpt: 80
   random_pics: 44
   qr_code: true
-
-pagination: 1
+  license:
+    name: 'CC BY-NC-SA 4.0'
+    link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
+  word_count: true
+  read_time: true
 
 share_menu:
   rss: false

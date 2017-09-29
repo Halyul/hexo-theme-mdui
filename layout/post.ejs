@@ -36,9 +36,52 @@
   ">
     <div class="theme-post__warpper__container">
       <article class="mdui-card theme-post__card">
+        <section class="theme-post__card__warning">
+          <%= __('posts.modified.head') %>
+          <span id="content-warning"></span>
+          <%= __('posts.modified.foot') %>
+          <%= __('posts.modified.content') %>
+        </section>
+        <% if (theme.post.word_count === true || theme.post.read_time === true) { %>
+          <section class="theme-post__card__count">
+            <% if (theme.post.word_count === true) { %>
+              <span>
+                <%= __('posts.count.words.head') %><%= wordcount(page.content) %><%= __('posts.count.words.foot') %>
+              </span>
+            <% } %>
+            <% if (theme.post.read_time === true) { %>
+              <span>
+                <%= __('posts.count.time.head') %><%= min2read(page.content, {cn: 600, en: 160}) %><%= __('posts.count.time.foot') %>
+              </span>
+            <% } %>
+          </section>
+        <% } %>
+        <% if (theme.random_pics !== false && theme.random_pics) { %>
+          <div class="mdui-card-media">
+            <img src="<%= page.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+          </div>
+        <% } %>
         <section class="mdui-typo">
           <%-page.content%>
         </section>
+        <% if (page.license_name || theme.post.license.name || page.export_md !== false) { %>
+          <section class="theme-post__card__license mdui-typo">
+            <span>
+              <%= __('posts.license') %>
+              <% if (page.license_link || theme.post.license.link) { %>
+                <a href="<%= page.license_link || theme.post.license.link %>" target="_blank"><%= page.license_name || theme.post.license.name %></a>
+              <% } else { %>
+                <%= page.license_name || theme.post.license.name %>
+              <% } %>
+            </span>
+            <br />
+            <span><%= __('posts.permalink') %><a href="<%= page.permalink %>"><%= page.permalink %></a></span>
+            <% if (page.export_md !== false) { %>
+              <br />
+              <span><%= __('posts.markdown') %><a href="<%= page.permalink + page.slug + '.md' %>"><%= page.permalink + page.slug + '.md' %></a></span>
+            <% } %>
+          </section>
+        <% } %>
       </article>
       <% if (pageToc.length > 0) { %>
         <div class="mdui-color-theme theme-post__toc">

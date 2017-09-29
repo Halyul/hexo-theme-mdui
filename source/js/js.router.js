@@ -139,7 +139,7 @@ router.on(
       loadProgress(false)
       scrollPositionLeave()
       scrollPositionInit(scrollY)
-      fireListeners('archive')
+      fireListeners('archives')
     }
   }
 );
