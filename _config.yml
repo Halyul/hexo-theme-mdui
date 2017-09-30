@@ -64,6 +64,11 @@ pages:
         type: 'internal'
         md: "home"
 
+# comment
+comment:
+    use: disqus
+    shortname: halyul
+
 # footer
 footer:
   since:

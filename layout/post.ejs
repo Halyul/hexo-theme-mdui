@@ -63,9 +63,9 @@
           </section>
         <% } %>
         <% if (theme.post.random_pics !== false && theme.post.random_pics) { %>
-          <div class="mdui-card-media">
+          <section class="mdui-card-media">
             <img src="<%= page.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>"/>
-          </div>
+          </section>
         <% } %>
         <section class="mdui-typo theme-post__card__content">
           <%-page.content%>
@@ -87,6 +87,23 @@
               <span><%= __('posts.markdown') %><a href="<%= page.permalink + page.slug + '.md' %>"><%= page.permalink + page.slug + '.md' %></a></span>
             <% } %>
           </section>
+        <% } %>
+
+        <div class="mdui-card-actions">
+    <button class="mdui-btn mdui-ripple">action 1</button>
+    <button class="mdui-btn mdui-ripple">action 2</button>
+    <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">expand_more</i></button>
+  </div>
+
+        <% if (page.comment !== false) { %>
+          <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
+            <section>
+              <div class="mdui-divider"></div>
+            </section>
+            <section class="theme-post__card__comment">
+              <%- partial('_partials/comment') %>
+            </section>
+          <% } %>
         <% } %>
       </article>
       <% if (pageToc.length > 0) { %>

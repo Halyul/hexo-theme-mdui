@@ -213,6 +213,9 @@ $main-class: theme-post;
     @include info-boxes;
     border-left-color: #D50000;
   }
+  .#{$sub-class}__comment {
+    padding: 12px 16px;
+  }
 }
 
 .#{$main-class}__toc {
