@@ -168,6 +168,12 @@
   margin-bottom: 1px;
 }
 
+div#blog-appbar .logo {
+  margin-left: 12px;
+  width: 24px;
+  height: 24px;
+}
+
 /* color settings */
 
 .mdui-theme-layout-dark #blog-appbar button span, .mdui-theme-layout-dark #blog-appbar button span:before, .mdui-theme-layout-dark #blog-appbar button span:after,
