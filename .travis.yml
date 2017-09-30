@@ -7,7 +7,7 @@ before_script:
   - hexo init ci-test
   - cd ci-test
   - npm install
-  - npm install prismjs hexo-generator-search hexo-generator-feed  hexo-helper-qrcode hexo-wordcount --save
+  - npm install node-prismjs hexo-generator-search hexo-generator-feed  hexo-helper-qrcode hexo-wordcount --save
   - git clone https://github.com/Halyul/hexo-theme-mdui.git themes/mdui
   - sed -i "s/theme:\ landscape/theme:\ mdui/g" _config.yml
   - sed -i "s/enable:\ true/enable:\ false/g" _config.yml
