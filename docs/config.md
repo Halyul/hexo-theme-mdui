@@ -92,8 +92,9 @@ Setting uo the share menu. If you don't need any share options, please delete or
 
 ## comment
 comment service plugin, available options are `disqus` and `custom`
-- use: `disqus` or `custom`
+- use: `disqus`, `valine` or `custom`
 - shortname: disqus short name, for example, `example.disqus.com`, so short name is `example`, if `use: custom`, this line is unavailable
+- valine: a comment system, you can find the document [here](https://valine.js.org)
 
 If you want to use the comment service that I haven't add support, please click [here](/advanced?id=customComment) for how to configure
 

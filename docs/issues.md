@@ -1,15 +1,5 @@
 # Known issues
 
-## Gets WARN in console
-When you run `hexo d` or `hexo g`, you will find following lines in console
-```` bash
-...
-WARN  Partial ../_custom/custom_head does not exist. (in _partials/head.ejs)
-WARN  Partial ../_custom/custom_js does not exist. (in _partials/import_js.ejs)
-...
-````
-But don't worry, it won't bring any strange problem.
-
 ## Using hexo-neat plugin
 Because `hexo-neat` plugin will add note when it neats the files, this will break the Android Chrome status bar color changing, if you want to/ are using this plugin, please do following modifications.
 

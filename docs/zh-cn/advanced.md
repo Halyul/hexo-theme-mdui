@@ -3,6 +3,8 @@
 ## 自定义head/js
 如果想要在站点添加自定义`font-face`或者统计代码（例如`Google Analytics`）等，请在主题目录`layout`文件夹中新建一个`_custom`文件夹，并在里面新建一个`head.ejs`（此文件中代码会出现在`</head>`前）文件或`import_js.ejs`（此文件中代码会出现在`</body>`前）文件，在里面放入您的代码。
 
+!> 需要在主题`_config.yml`下的`vendors`启用`custom_head`或者`custom_js`
+
 ## ICONS
 主题支持`font awesome icons`和`Material icons`。
 如果在需要配置图标的地方需要使用`font awesome icons`，请填入`fa: `；
