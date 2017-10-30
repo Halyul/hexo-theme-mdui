@@ -181,7 +181,7 @@ body.mdui-drawer-body-left .post-bg-color {
   border-radius: 2px;
 }
 
-ol {
+ol.toc {
   list-style-type: none !important;
 }
 
