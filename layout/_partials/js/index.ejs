@@ -1,21 +1,4 @@
 <script type="text/javascript">
-  //index image
-  /*(function () {
-    var imagesEl = document.getElementsByClassName('theme-posts__post__media');
-    Array.prototype.forEach.call(imagesEl, (imageEl) => {
-    var img = imageEl.getElementsByClassName('theme-posts__post__media__image')[0]
-    var covered = imageEl.getElementsByClassName('theme-index-posts__post__media__covered')[0]
-      RGBaster.colors(img, {
-        success: function (payload) {
-          covered.style.backgroundColor = payload.dominant;
-        }
-      });
-    })
-  })();*/
-</script>
-<script type="text/javascript">
-  themeRuntime.scriptsMap.index = [];
-  //index fab
   (function() {
     var fabTopFlag = false;
     var fabEl = document.getElementById('index-fab');
@@ -30,12 +13,5 @@
       }
     }
     fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window
-    }
-    themeRuntime.scriptsMap.index.push(listener)
   })();
 </script>

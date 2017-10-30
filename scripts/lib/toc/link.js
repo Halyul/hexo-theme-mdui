@@ -15,4 +15,4 @@ function linkRender(data) {
   return data
 }
 
-hexo.extend.filter.register('after_post_render', linkRender);
+// hexo.extend.filter.register('after_post_render', linkRender);

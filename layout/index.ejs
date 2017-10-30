@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
-
-<%-partial('_partials/head')%>
-
-<body class="mdui-drawer-body-left mdui-theme-primary-<%= theme.style.primary_color %> mdui-theme-accent-<%= theme.style.accent_color %>">
-
-  <%-partial('_partials/appbar')%>
-  <%-partial('_partials/drawer')%>
-  <div id="top"></div>
-
-  <main>
-
-  </main>
-
-  <%-partial('_partials/import_js')%>
-
-</body>
-</html>
+<div class="theme-index">
+  <div class="theme-posts">
+    <%
+        var position = 0;
+        var posts = site.posts.sort('date', -1).filter(function(post) {
+          if (post.pinned) {
+      %>
+            <%-partial('_partials/posts', { position: position, post })%>
+          <%
+            position++;
+            return false;
+          }
+          return true;
+        })
+      %>
+      <% posts.forEach(function(post) {%>
+          <%-partial('_partials/posts', { position: position, post })%>
+      <%
+        position++;
+      }); %>
+  </div>
+  <%-partial('_partials/fab/index')%>
+</div>
+<%-partial('_partials/js/index')%>

@@ -1,1 +1,19 @@
-<%- body %>
+<!DOCTYPE html>
+<html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
+
+<%-partial('_partials/head')%>
+
+<body class="mdui-drawer-body-left mdui-theme-primary-<%= theme.style.primary_color %> mdui-theme-accent-<%= theme.style.accent_color %>">
+
+  <%-partial('_partials/appbar')%>
+  <%-partial('_partials/drawer')%>
+  <div id="top"></div>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <%-partial('_partials/import_js')%>
+
+</body>
+</html>

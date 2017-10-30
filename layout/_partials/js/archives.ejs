@@ -1,5 +1,4 @@
 <script type="text/javascript">
-  themeRuntime.scriptsMap.archives = [];
   //index fab
   (function() {
     var fabTopFlag = false;
@@ -15,12 +14,5 @@
       }
     }
     fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
   })();
 </script>
