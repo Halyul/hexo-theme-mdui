@@ -65,9 +65,19 @@ share_menu:
 #  qq: false
 #  telegram: false
 
+# use:disqus、valine or false
 comment:
-    use:
+    use: 
     shortname:
+    # https://valine.js.org
+    valine: 
+      appid:  # your leancloud appId
+      appkey:  # your leancloud appKey
+      notify: false #mail notify
+      verify: false #verify code
+      avatar: mm # gravatar style
+      placeholder: Just go go # comment box placeholder
+      guest_info: nick,mail,link # reviewer attributes
 
 # pagination
 # github@zllovesuki
