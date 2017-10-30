@@ -53,7 +53,6 @@
   <script type="text/javascript" src="<%= theme.busuanzi.busuanzi_pure_mini_js %>"></script>
 <% } %>
 
-
 <!-- remove diplay:none -->
 <script type="text/ls-javascript" id="html-script">
   if (document.readyState === 'complete' || document.readyState !== 'loading') {
@@ -77,3 +76,8 @@
   /*! Copyright 2017 Halyul */
   console.info("%cCopyright © 2017 Halyul\n"+'Theme Version: 1.5.1'+'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
 </script>
+
+<% if (theme.vendors.import_js === true) { %>
+  <!-- Custom Head -->
+  <%-partial('../_custom/import_js')%>
+<% } %>

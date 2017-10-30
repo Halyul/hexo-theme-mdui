@@ -65,12 +65,12 @@ share_menu:
 #  qq: false
 #  telegram: false
 
-# use:disqus、valine or false
+# use:disqus, valine or custom
 comment:
-    use: 
+    use:
     shortname:
     # https://valine.js.org
-    valine: 
+    valine:
       appid:  # your leancloud appId
       appkey:  # your leancloud appKey
       notify: false #mail notify
@@ -141,3 +141,5 @@ vendors:
   outdatedbrowser_min_js:
   pace_min_js:
   pace_style_css:
+  custom_head:
+  custom_js:

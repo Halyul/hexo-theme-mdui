@@ -104,7 +104,6 @@ pageTitle += ' - ' + config.title;
     <% } %>
   <% } %>
 
-
   <% if (theme.color.bg_color && page.layout !== 'galleries'  && page.layout !== 'gallery') { %>
     <style>
       body {
@@ -124,5 +123,10 @@ pageTitle += ' - ' + config.title;
     <% } else { %>
       <%- jsLsload({path:(config.root + 'js/pace.min'),key:'pace_js'}) %>
     <% } %>
+  <% } %>
+
+  <% if (theme.vendors.custom_head === true) { %>
+    <!-- Custom Head -->
+    <%-partial('../_custom/head')%>
   <% } %>
 </head>
