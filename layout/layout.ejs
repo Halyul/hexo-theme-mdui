@@ -8,11 +8,14 @@
   <%-partial('_partials/appbar')%>
   <%-partial('_partials/drawer')%>
   <div id="top"></div>
-
   <main>
-    <%- body %>
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        <%- body %>
+      </div>
+    </div>
   </main>
-
+  
   <%-partial('_partials/import_js')%>
 
 </body>

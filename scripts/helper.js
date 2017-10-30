@@ -1,8 +1,8 @@
 hexo.extend.generator.register('themeRouter',function(site){
     return [
         {
-            path: '/templates/index.html',
-            layout:'_templates/index',
+            path: '/404/index.html',
+            layout:'404',
             data: {}
         }
     ]

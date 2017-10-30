@@ -8,3 +8,5 @@ document.querySelector('#drawer-back').addEventListener('click', function() {
 var smoothScroll = new SmoothScroll('a.theme-post__toc__content__link', {
 	offset: 128
 });
+
+Barba.Pjax.start();
