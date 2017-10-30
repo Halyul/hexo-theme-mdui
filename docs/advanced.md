@@ -3,6 +3,8 @@
 ## Custom css and js
 If you want to add some custom code like `font-face`, `Google Analytics`, etc., please create a `_custom` folder in the `layout` folder in theme folder, then create a `head.ejs` file (the code inside  goes before `</head>` ) or a `import_js.ejs` file (the code inside  goes before `</body>` ) to put your own code.
 
+!> You need to enable the `custom_head` and/or `custom_js` under `vendors` in theme `_config.yml`
+
 ## ICONS
 The theme supports `font awesome icons` and `Material icons`.
 Add `fa: ` to the option that you want to use `font awesome icons`.

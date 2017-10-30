@@ -90,8 +90,9 @@
 
 ## comment
 评论插件，目前可用`Disqus`与`自定义`
-- use: `disqus`或`custom`
+- use: `disqus`、`valine`或`custom`
 - shortname: 您的短域名, 例如`example.disqus.com`即填`example`，若为`use: custom`，则此选项无效
+- valine: 一个评论系统，你可以在[这里](https://valine.js.org)找到文档
 
 若使用自定义评论服务，具体配置步骤请点击[这里](/zh-cn/advanced?id=customcomment)
 

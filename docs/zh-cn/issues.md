@@ -1,15 +1,5 @@
 # 已知问题
 
-## 生成文件出现WARN
-当您执行`hexo d`或`hexo g`时，会出现以下出错
-```` bash
-...
-WARN  Partial ../_custom/custom_head does not exist. (in _partials/head.ejs)
-WARN  Partial ../_custom/custom_js does not exist. (in _partials/import_js.ejs)
-...
-````
-您不必担心，这并不影响主题使用。
-
 ## 使用hexo-neat
 由于`hexo-neat`插件在精简文件会自动加入注释，会导致本主题在安卓设备上的`状态栏变色`功能出现问题，如果您需要使用这个插件，请进行以下步骤的修改。
 
