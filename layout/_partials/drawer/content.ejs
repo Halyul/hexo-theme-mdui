@@ -18,9 +18,9 @@
           </div>
           <div class="mdui-collapse-item-body mdui-list">
             <% site.categories.map(function(category){
-              console.log(category.path)
+              console.log(category)
               %>
-              <a href="/categories/<%= category.name %>/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+              <a href="/<%= category.path %>" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= category.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
