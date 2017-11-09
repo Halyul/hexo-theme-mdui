@@ -120,6 +120,9 @@ $shared-toolbar: theme-toolbar;
   flex-shrink: 0;
   & .#{$sub-class}__content {
     overflow: inherit;
+    & > .mdui-list {
+      padding-top: 0;
+    }
   }
   & .#{$sub-class}__footer {
     margin: 5px 24px 24px 24px;

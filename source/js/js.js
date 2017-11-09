@@ -33,13 +33,13 @@ themeRuntime.init.posts = Barba.BaseView.extend({
   onEnter: function() {
     console.log('enter', 'posts')
     burgerChanging('posts')
-    itemHightlight(false)
+    itemHightlight()
   },
   onEnterCompleted: function() {
     loadProgress(true)
   },
   onLeave: function() {
-
+    currentToPrev()
   },
   onLeaveCompleted: function() {
 
@@ -50,12 +50,13 @@ themeRuntime.init.post = Barba.BaseView.extend({
   onEnter: function() {
     console.log('enter', 'post')
     burgerChanging('post')
-    itemHightlight(true)
+    itemHightlight()
   },
   onEnterCompleted: function() {
     loadProgress(true)
   },
   onLeave: function() {
+    currentToPrev()
   },
    onLeaveCompleted: function() {
 
@@ -66,12 +67,13 @@ themeRuntime.init.archive = Barba.BaseView.extend({
   onEnter: function() {
      console.log('enter', 'archive')
      burgerChanging('archive')
-     itemHightlight(false)
+     itemHightlight()
   },
   onEnterCompleted: function() {
     loadProgress(true)
   },
   onLeave: function() {
+    currentToPrev()
   },
   onLeaveCompleted: function() {
 
@@ -82,8 +84,6 @@ themeRuntime.init.archive = Barba.BaseView.extend({
  * for barbajs
  * for the first time, the functions should be called
  */
-themeRuntime.page = {}
-
 var pageTransition = Barba.BaseTransition.extend({
   start: function() {
     loadProgress(false)
@@ -140,16 +140,26 @@ themeRuntime.router = {};
 themeRuntime.router.currentStatus = {};
 themeRuntime.router.prevStatus = {};
 
-function itemHightlight(status) {
+function currentToPrev() {
+  themeRuntime.router.prevStatus.pathname = decodeURI(themeRuntime.router.currentStatus.pathname)
+}
+
+function itemHightlight() {
   themeRuntime.router.currentStatus.pathname = window.location.pathname
   var drawerContent = document.querySelector('.theme-drawer__warpper__content')
+  var currentNamespace = Barba.HistoryManager.currentStatus().namespace
+  if (Barba.HistoryManager.prevStatus() === null) {
+    var prevNamespace = ''
+  } else {
+    var prevNamespace = Barba.HistoryManager.prevStatus().namespace
+  }
 
   var cleanHighlight = function () {
     if (themeRuntime.router.prevStatus.pathname !== undefined) {
-    var prevHref = 'a[origin-href="' + themeRuntime.router.prevStatus.pathname + '"]'
-    var item = drawerContent.querySelector(prevHref)
-    item.classList.remove('mdui-list-item-active')
-    item.setAttribute('href', themeRuntime.router.prevStatus.pathname)
+      var prevHref = 'a[origin-href="' + themeRuntime.router.prevStatus.pathname + '"]'
+      var item = drawerContent.querySelector(prevHref)
+      item.classList.remove('mdui-list-item-active')
+      item.setAttribute('href', themeRuntime.router.prevStatus.pathname)
     }
   }
 
@@ -163,20 +173,19 @@ function itemHightlight(status) {
     }
   }
 
-  if (status) {
+
+  if (prevNamespace !== 'post') {
     cleanHighlight()
-    return
   }
 
-  cleanHighlight()
-
-  var currentHref = 'a[href="' + themeRuntime.router.currentStatus.pathname + '"]'
-  currentHref = decodeURI(currentHref)
-  var item = drawerContent.querySelector(currentHref)
-  var originHref = item.getAttribute('href')
-  item.classList.add('mdui-list-item-active')
-  item.setAttribute('origin-href', originHref)
-  item.setAttribute('href', 'javascript:;')
-  collapseItem(item)
-  themeRuntime.router.prevStatus.pathname = decodeURI(themeRuntime.router.currentStatus.pathname)
+  if (currentNamespace !== 'post') {
+    var currentHref = 'a[href="' + themeRuntime.router.currentStatus.pathname + '"]'
+    currentHref = decodeURI(currentHref)
+    var item = drawerContent.querySelector(currentHref)
+    var originHref = item.getAttribute('href')
+    item.classList.add('mdui-list-item-active')
+    item.setAttribute('origin-href', originHref)
+    item.setAttribute('href', 'javascript:;')
+    collapseItem(item)
+  }
 }
