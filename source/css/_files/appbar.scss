@@ -1,10 +1,13 @@
 $main-class: theme-appbar;
 
-@mixin burger-shared {
+@mixin burger-shared-style {
   position: absolute;
   background-color: #000;
   width: 18px;
   height: 2px;
+}
+
+@mixin burger-shared-animate {
   -webkit-animation-duration: 300ms;
           animation-duration: 300ms;
   -webkit-animation-timing-function: ease-in-out;
@@ -59,27 +62,29 @@ $main-class: theme-appbar;
 .#{$main-class}__burger {
   $sub-class: #{$main-class}__burger;
   span {
-    @include burger-shared;
+    @include burger-shared-style;
     top: 11px;
     left: 3px;
     &:before {
-      @include burger-shared;
+      @include burger-shared-style;
       content: '';
       top: -5px;
       left: 0;
     }
     &:after {
-      @include burger-shared;
+      @include burger-shared-style;
       content: '';
       top: 5px;
       left: 0;
     }
   }
   &.#{$sub-class}--menu span {
+    @include burger-shared-animate;
     -webkit-animation-name: burger-menu;
             animation-name: burger-menu;
     &:before {
-      @include burger-shared;
+      @include burger-shared-style;
+      @include burger-shared-animate;
       -webkit-animation-name: burger-menu-before;
               animation-name: burger-menu-before;
       content: '';
@@ -87,7 +92,8 @@ $main-class: theme-appbar;
       left: 0;
     }
     &:after {
-      @include burger-shared;
+      @include burger-shared-style;
+      @include burger-shared-animate;
       -webkit-animation-name: burger-menu-after;
               animation-name: burger-menu-after;
       content: '';
@@ -96,32 +102,42 @@ $main-class: theme-appbar;
     }
   }
   &.#{$sub-class}--arrow span {
-    @include burger-shared;
-    top: 11px;
-    left: 3px;
+    @include burger-shared-style;
     -webkit-animation-name: burger-arrow;
             animation-name: burger-arrow;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+    top: 11px;
+    left: 3px;
     &:before {
-      @include burger-shared;
-      content: '';
-      left: 0;
-      top: -5px;
+      @include burger-shared-style;
       -webkit-animation-name: burger-arrow-before;
               animation-name: burger-arrow-before;
       -webkit-animation-fill-mode: forwards;
               animation-fill-mode: forwards;
-    }
-    &:after {
-      @include burger-shared;
       content: '';
       left: 0;
-      top: 5px;
+      top: -5px;
+    }
+    &:after {
+      @include burger-shared-style;
       -webkit-animation-name: burger-arrow-after;
               animation-name: burger-arrow-after;
       -webkit-animation-fill-mode: forwards;
               animation-fill-mode: forwards;
+      content: '';
+      left: 0;
+      top: 5px;
+    }
+  }
+
+  &.#{$sub-class}--arrow-animate span {
+    @include burger-shared-animate;
+    &:before {
+      @include burger-shared-animate;
+    }
+    &:after {
+      @include burger-shared-animate;
     }
   }
 }

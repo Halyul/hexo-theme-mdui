@@ -1,3 +1,9 @@
+<%
+  var layout;
+  if (is_home() || is_year() || is_tag() || is_category()) layout = 'posts';
+  if (is_post()) layout = 'post';
+  if (is_archive()) layout = 'archive';
+%>
 <!DOCTYPE html>
 <html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
 
@@ -10,12 +16,12 @@
   <div id="top"></div>
   <main>
     <div id="barba-wrapper">
-      <div class="barba-container">
+      <div class="barba-container"  data-namespace="<%= layout %>">
         <%- body %>
       </div>
     </div>
   </main>
-  
+
   <%-partial('_partials/import_js')%>
 
 </body>
