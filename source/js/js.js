@@ -89,6 +89,7 @@ themeRuntime.init.archive = Barba.BaseView.extend({
  * for barbajs
  * for the first time, the functions should be called
  */
+themeRuntime.scrollMap = {};
 var pageTransition = Barba.BaseTransition.extend({
   start: function() {
     loadProgress(false)
@@ -98,13 +99,27 @@ var pageTransition = Barba.BaseTransition.extend({
     this.newContainerLoading.then(this.finish.bind(this));
   },
   finish: function() {
-    document.body.scrollTop = 0;
+    var currentStatus = themeRuntime.router.currentStatus;
+    var prevStatus = themeRuntime.router.prevStatus;
+    scrollPosition(currentStatus, prevStatus);
     this.done();
   }
  });
 Barba.Pjax.getTransition = function() {
   return pageTransition;
 };
+
+function scrollPosition(currentStatus, prevStatus) {
+  var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  if (prevStatus !== undefined && prevStatus.pathname !== undefined) {
+    themeRuntime.scrollMap[prevStatus.pathname] = window.pageYOffset;
+  }
+  if (themeRuntime.scrollMap[currentStatus.pathname] !== undefined) {
+    smoothScroll.animateScroll( themeRuntime.scrollMap[currentStatus.pathname] );
+  } else if (bodyScrolled > 0) {
+    smoothScroll.animateScroll( 0 );
+  }
+}
 
 function loadProgress(state) {
   var progressEl = document.getElementById('progressBar')
@@ -201,7 +216,6 @@ function itemHightlight() {
     }
   }
 
-
   if (prevNamespace !== 'post') {
     cleanHighlight()
   }
@@ -218,4 +232,23 @@ function itemHightlight() {
       collapseItem(item)
     }
   }
+}
+
+document.body.addEventListener('touchmove', drawerAppbarMove);
+document.body.addEventListener('touchend', drawerAppbarEnd);
+function drawerAppbarMove(event) {
+  var drawerEl = document.getElementById('drawer')
+  var translate = drawerEl.style.transform
+  var transition = drawerEl.style.transition
+  translate = translate.replace(/\s+/g,"")
+  translate = translate.replace(/translate\(/g,"")
+  translate = translate.replace(/px,0px\)/g,"")
+  translate = -1 * translate
+  drawerEl.querySelector('.theme-toolbar-bottom').style.transform = "translateX(" + translate + "px)"
+  drawerEl.querySelector('.theme-toolbar-bottom').style.transition = transition
+}
+function drawerAppbarEnd(event) {
+  var drawerEl = document.getElementById('drawer')
+  drawerEl.querySelector('.theme-toolbar-bottom').style.transform = null
+  drawerEl.querySelector('.theme-toolbar-bottom').style.transition = null
 }
