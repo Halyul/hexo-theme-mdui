@@ -1,7 +1,8 @@
 $main-class: theme-posts;
 
 .#{$main-class} {
-  margin: 16px auto;
+  margin: 0 auto;
+  margin-top: 16px;
   width: 64%;
   max-width: 1024px;
   @media (max-width: 599px) {
@@ -12,7 +13,7 @@ $main-class: theme-posts;
 // Single post
 .#{$main-class}__post {
   $sub-class: #{$main-class}__post;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
   * {
     overflow: visible;
   }
