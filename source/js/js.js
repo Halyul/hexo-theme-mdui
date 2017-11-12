@@ -1,4 +1,3 @@
-window.themeRuntime = {};
 var drawer = new mdui.Drawer('#drawer', {swipe: true});
 document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
@@ -40,6 +39,7 @@ themeRuntime.init.posts = Barba.BaseView.extend({
   },
   onLeave: function() {
     currentToPrev()
+    fireListeners("posts")
   },
   onLeaveCompleted: function() {
 
@@ -57,6 +57,7 @@ themeRuntime.init.post = Barba.BaseView.extend({
   },
   onLeave: function() {
     currentToPrev()
+    fireListeners("post")
   },
    onLeaveCompleted: function() {
 
@@ -74,6 +75,7 @@ themeRuntime.init.archive = Barba.BaseView.extend({
   },
   onLeave: function() {
     currentToPrev()
+    fireListeners("archive")
   },
   onLeaveCompleted: function() {
 
@@ -133,6 +135,17 @@ function drawerToggle() {
   drawer.toggle()
 }
 
+function fireListeners(page) {
+  var pageScripts = themeRuntime.scriptsMap[page]
+  if (pageScripts === undefined) {
+    return
+  }
+  for (var i = 0; i < pageScripts.length; i++) {
+    var el = pageScripts[i].el
+    el.removeEventListener(pageScripts[i].event, pageScripts[i].function)
+  }
+}
+
 /* highlight drawer item
  * for barbajs
  */
@@ -158,8 +171,10 @@ function itemHightlight() {
     if (themeRuntime.router.prevStatus.pathname !== undefined) {
       var prevHref = 'a[origin-href="' + themeRuntime.router.prevStatus.pathname + '"]'
       var item = drawerContent.querySelector(prevHref)
-      item.classList.remove('mdui-list-item-active')
-      item.setAttribute('href', themeRuntime.router.prevStatus.pathname)
+      if (item !== null) {
+        item.classList.remove('mdui-list-item-active')
+        item.setAttribute('href', themeRuntime.router.prevStatus.pathname)
+      }
     }
   }
 
@@ -182,10 +197,12 @@ function itemHightlight() {
     var currentHref = 'a[href="' + themeRuntime.router.currentStatus.pathname + '"]'
     currentHref = decodeURI(currentHref)
     var item = drawerContent.querySelector(currentHref)
-    var originHref = item.getAttribute('href')
-    item.classList.add('mdui-list-item-active')
-    item.setAttribute('origin-href', originHref)
-    item.setAttribute('href', 'javascript:;')
-    collapseItem(item)
+    if (item !== null) {
+      var originHref = item.getAttribute('href')
+      item.classList.add('mdui-list-item-active')
+      item.setAttribute('origin-href', originHref)
+      item.setAttribute('href', 'javascript:;')
+      collapseItem(item)
+    }
   }
 }

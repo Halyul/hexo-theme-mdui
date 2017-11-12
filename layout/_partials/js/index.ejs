@@ -1,9 +1,10 @@
 <script type="text/javascript">
+  themeRuntime.scriptsMap.posts = [];
   (function() {
     var fabTopFlag = false;
     var fabEl = document.getElementById('index-fab');
     function fabShowHide() {
-      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
       if (bodyScrolled > 0 && !fabTopFlag) {
         fabEl.classList.remove('mdui-fab-hide');
         fabTopFlag = true;
@@ -13,5 +14,53 @@
       }
     }
     fabShowHide()
+    window.addEventListener('scroll', fabShowHide);
+    var listener = {
+      function: fabShowHide,
+      event: 'scroll',
+      el: window
+    }
+    themeRuntime.scriptsMap.posts.push(listener)
+  })();
+
+  (function() {
+    var pageTotal = <%= page.total %>
+    var pageNext = 2
+    function morePosts() {
+      var screenHeight = window.innerHeight;
+      var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
+      if (screenHeight >= compareHeight) {
+        if (pageNext <= pageTotal) {
+          var morePostsEl = document.getElementById('more-posts')
+          morePostsEl.style.display = "block"
+          var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext
+          console.log(pageTotal, url)
+          fetch(url, {
+              method:'GET',
+              mode:'cors',
+              credentials: 'include'
+          })
+          .then(function(response) {
+            return response.text()
+          }).then(function(HTML) {
+            var fakeDom = document.createElement('html');
+            fakeDom.innerHTML = HTML
+            var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
+            var postsArea = document.querySelector(".theme-posts")
+            postsArea.removeChild(morePostsEl)
+            postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
+          })
+          pageNext++
+        }
+      }
+    }
+    morePosts()
+    window.addEventListener('scroll', morePosts);
+    var listener = {
+      function: morePosts,
+      event: 'scroll',
+      el: window
+    }
+    themeRuntime.scriptsMap.posts.push(listener)
   })();
 </script>
