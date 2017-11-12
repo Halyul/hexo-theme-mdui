@@ -1,5 +1,31 @@
-<div class="theme-archives">
+<% if (is_year()) { %>
+  <div class="theme-archive">
+    <div class="theme-posts">
+      <%
+          var position = 0;
+          var posts = page.posts.filter(function(post) {
+            if (post.pinned) {
+        %>
+              <%-partial('_partials/posts', { position: position, post })%>
+            <%
+              position++;
+              return false;
+            }
+            return true;
+          })
+        %>
+        <% posts.forEach(function(post) {%>
+            <%-partial('_partials/posts', { position: position, post })%>
+        <%
+          position++;
+        }); %>
+    </div>
+    <%-partial('_partials/fab/index')%>
+  </div>
+  <%-partial('_partials/js/index')%>
+<% } else if (is_archive() && !is_year()) { %>
+  <div class="theme-archive">
 
-  <%-partial('_partials/fab/index')%>
-</div>
-<%-partial('_partials/js/archives')%>
+  </div>
+  <%-partial('_partials/js/archive')%>
+<% } %>

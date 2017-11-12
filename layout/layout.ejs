@@ -2,7 +2,7 @@
   var layout;
   if (is_home() || is_year() || is_tag() || is_category()) layout = 'posts';
   if (is_post()) layout = 'post';
-  if (is_archive()) layout = 'archive';
+  if (is_archive() && !is_year()) layout = 'archive';
 %>
 <!DOCTYPE html>
 <html <% if(config.language !== null) { %>lang="<%- config.language.substring(0,2) %>"<% } %>>
