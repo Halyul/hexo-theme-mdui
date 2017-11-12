@@ -26,13 +26,21 @@
   (function() {
     var pageTotal = <%= page.total %>
     var pageNext = 2
+    function checkStatus(response) {
+      if (response.status >= 200 && response.status < 300) {
+        return response
+      } else {
+        var error = new Error(response.statusText)
+        error.response = response
+        throw error
+      }
+    }
     function morePosts() {
       var screenHeight = window.innerHeight;
       var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
       if (screenHeight >= compareHeight) {
         if (pageNext <= pageTotal) {
-          var morePostsEl = document.getElementById('more-posts')
-          morePostsEl.style.display = "block"
+          loadProgress(false)
           var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext
           console.log(pageTotal, url)
           fetch(url, {
@@ -40,6 +48,7 @@
               mode:'cors',
               credentials: 'include'
           })
+          .then(checkStatus)
           .then(function(response) {
             return response.text()
           }).then(function(HTML) {
@@ -47,14 +56,13 @@
             fakeDom.innerHTML = HTML
             var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
             var postsArea = document.querySelector(".theme-posts")
-            postsArea.removeChild(morePostsEl)
+            loadProgress(true)
             postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
           })
           pageNext++
         }
       }
     }
-    morePosts()
     window.addEventListener('scroll', morePosts);
     var listener = {
       function: morePosts,

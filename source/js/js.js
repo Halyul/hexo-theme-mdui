@@ -35,6 +35,7 @@ themeRuntime.init.posts = Barba.BaseView.extend({
     itemHightlight()
   },
   onEnterCompleted: function() {
+    runScript()
     loadProgress(true)
   },
   onLeave: function() {
@@ -53,6 +54,7 @@ themeRuntime.init.post = Barba.BaseView.extend({
     itemHightlight()
   },
   onEnterCompleted: function() {
+    runScript()
     loadProgress(true)
   },
   onLeave: function() {
@@ -71,6 +73,7 @@ themeRuntime.init.archive = Barba.BaseView.extend({
      itemHightlight()
   },
   onEnterCompleted: function() {
+    runScript()
     loadProgress(true)
   },
   onLeave: function() {
@@ -95,7 +98,7 @@ var pageTransition = Barba.BaseTransition.extend({
     this.newContainerLoading.then(this.finish.bind(this));
   },
   finish: function() {
-    loadProgress(true)
+    document.body.scrollTop = 0;
     this.done();
   }
  });
@@ -133,6 +136,16 @@ function burgerChanging(page) {
 }
 function drawerToggle() {
   drawer.toggle()
+}
+
+function runScript() {
+  if (themeRuntime.init.status === true) {
+    var main = document.querySelector('main')
+    var scripts = main.querySelectorAll('script')
+    for (var i = 0; i < scripts.length; ++i) {
+      eval(scripts[i].innerHTML)
+    }
+  }
 }
 
 function fireListeners(page) {
