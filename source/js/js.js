@@ -244,8 +244,8 @@ function drawerAppbarMove(event) {
   translate = translate.replace(/translate\(/g,"")
   translate = translate.replace(/px,0px\)/g,"")
   translate = -1 * translate
-  drawerEl.querySelector('.theme-toolbar-bottom').style.transform = "translateX(" + translate + "px)"
-  drawerEl.querySelector('.theme-toolbar-bottom').style.transition = transition
+  drawerEl.querySelector('.theme-toolbar-bottom').style.setProperty("transform", "translateX(" + translate + "px)", "important");
+  drawerEl.querySelector('.theme-toolbar-bottom').style.setProperty("transition", transition, "important");
 }
 function drawerAppbarEnd(event) {
   var drawerEl = document.getElementById('drawer')
