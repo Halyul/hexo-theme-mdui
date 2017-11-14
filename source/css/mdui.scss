@@ -15,6 +15,7 @@ $accent-color: accent- + hexo-theme-config('style.accent_color');
 @import '_files/404';
 @import '_files/archive';
 @import '_files/friends';
+@import '_files/galleries';
 
 body {
   background-color: $global-background-color;

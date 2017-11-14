@@ -1,0 +1,31 @@
+<div class="theme-galleries">
+  <div class="mdui-container-fluid">
+    <div class="theme-galleries__container">
+      <div class="mdui-row">
+        <% for (var i in site.data.galleries) { %>
+          <div class="mdui-col-xs-6 mdui-col-md-3">
+            <a href="<%= site.data.galleries[i].link %>" target="_self" class="theme-galleries__container__item">
+              <div class="mdui-grid-tile theme-galleries__container__tile">
+                <img class="theme-galleries__container__bg" src="<%= site.data.galleries[i].bg %>" />
+                <div class="mdui-grid-tile-actions" style="width: 100%; max-height: none; padding-top: 0;">
+                  <div class="mdui-grid-tile-text" style="width: 100%; overflow: visible;">
+                    <% if (site.data.galleries[i].logo) { %>
+                      <img class="mdui-img-circle theme-galleries__container__logo" src="<%= site.data.galleries[i].logo %>"/>
+                    <% } %>
+                    <div class="mdui-grid-tile-title theme-galleries__container__tile-title"><%= i %></div>
+                    <div class="mdui-grid-tile-subtitle mdui-text-color-white-secondary theme-galleries__container__tile-subtitle"><%= site.data.galleries[i].descr %></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% } %>
+      </div>
+      <div class="theme-end-footer">
+        <div class="mdui-text-center mdui-text-color-theme-text">
+          <%= __('search.footer') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
