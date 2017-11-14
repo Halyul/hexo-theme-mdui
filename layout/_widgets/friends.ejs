@@ -1,0 +1,38 @@
+<div class="theme-friends">
+  <div class="mdui-container-fluid">
+    <div>
+      <% if (page.header) { %>
+        <div class="theme-friends__title">
+          <%= page.header %>
+        </div>
+      <% } %>
+    </div>
+    <% if (site.data.friends) { %>
+      <div class="mdui-row">
+        <% for (var i in site.data.friends) { %>
+          <% if (site.data.friends[i].down !== true) { %>
+            <div class="mdui-col-xs-6 mdui-col-md-3">
+              <div class="mdui-card theme-friends__container">
+                <a href="<%= site.data.friends[i].link %>" target="_blank" class="theme-friends__container__content">
+                  <img class="theme-friends__container__avatar" src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/>
+                  <div class="theme-friends__container__name mdui-text-color-theme-text">
+                    <%= i %>
+                  </div>
+                  <div class="theme-friends__container__descr mdui-text-color-theme-text mdui-text-truncate">
+                    <%= site.data.friends[i].descr %>
+                  </div>
+                  <div class="theme-friends__container__spacer"></div>
+                  <div class="mdui-card-actions theme-friends__container__action--no-style">
+                    <button class="mdui-btn mdui-ripple mdui-btn-block mdui-text-color-theme-accent"><%= __('friends.visit') %></button>
+                  </div>
+                </a>
+              </div>
+            </div>
+          <% } %>
+        <% } %>
+      </div>
+      <%-partial('../_partials/fab/index')%>
+    <% } %>
+  </div>
+</div>
+<%-partial('js/friends')%>

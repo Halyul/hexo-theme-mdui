@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  themeRuntime.scriptsMap.friends = [];
+  (function() {
+    var fabTopFlag = false;
+    var fabEl = document.getElementById('index-fab');
+    function fabShowHide() {
+      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
+      if (bodyScrolled > 0 && !fabTopFlag) {
+        fabEl.classList.remove('mdui-fab-hide');
+        fabTopFlag = true;
+      } else if (bodyScrolled === 0 && fabTopFlag) {
+        fabEl.classList.add('mdui-fab-hide');
+        fabTopFlag = false;
+      }
+    }
+    fabShowHide()
+    window.addEventListener('scroll', fabShowHide);
+    var listener = {
+      function: fabShowHide,
+      event: 'scroll',
+      el: window
+    }
+    themeRuntime.scriptsMap.friends.push(listener)
+  })();
+</script>

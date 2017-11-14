@@ -47,7 +47,7 @@ share_menu:
 
 pages:
   Test1:
-    link: "/myfriends"
+    link: "/friends"
     type: 'internal'
     md: "&#xe0ba;"
   Test2:

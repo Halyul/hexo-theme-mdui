@@ -1,9 +1,9 @@
 <% if (page.layout === 'friends') { %>
-  <%- partial('_widget/page_friends') %>
+  <%- partial('_widgets/friends') %>
 <% } else if (page.layout === 'galleries') { %>
-  <%- partial('_widget/page_galleries') %>
+  <%- partial('_widgets/galleries') %>
   <% } else if (page.layout === 'gallery') { %>
-    <%- partial('_widget/page_gallery') %>
+    <%- partial('_widgets/gallery') %>
 <% } else { %>
   <%- partial('post', {pagination: false}) %>
 <% } %>
