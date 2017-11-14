@@ -1,0 +1,31 @@
+<div class="theme-gallery">
+  <div class="theme-gallery__header">
+    <div class="theme-gallery__header__title mdui-text-color-theme-text">
+      <%= page.title %>
+    </div>
+    <div class="theme-gallery__header__descr mdui-text-color-theme-secondary">
+      <% if (page.logo) { %>
+        <img class="mdui-img-circle theme-gallery__header__logo" src="<%= page.logo %>"/>
+      <% } %>
+      <% if (page.descr) { %>
+        <div class="mdui-valign"><%= page.descr %></div>
+      <% } else { %>
+        <div class="mdui-valign"><%= date(page.date, 'MMM DD, YYYY') + ' • ' + __('posts.public') %></div>
+      <% } %>
+    </div>
+  </div>
+  <div class="theme-gallery__container">
+    <% for (var i in page.photos) { %>
+      <a href="<%= page.photos[i].img %>" data-sub-html="<span author><%= config.author %></span><%= ' • ' + i %><% if (page.photos[i].descr) { %><div descr><%= page.photos[i].descr %></div><% } %>" class="no-barba">
+        <img src="<%= page.photos[i].thumb || page.photos[i].img %>" class="mdui-img-fluid"/>
+      </a>
+    <% } %>
+  </div>
+  <div class="theme-end-footer">
+    <div class="mdui-text-center mdui-text-color-theme-text">
+      <%= __('search.footer') %>
+    </div>
+  </div>
+  <%-partial('../_partials/fab/index')%>
+</div>
+<%-partial('js/gallery')%>

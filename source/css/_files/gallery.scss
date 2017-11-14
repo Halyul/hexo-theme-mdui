@@ -1,0 +1,45 @@
+$main-class: theme-gallery;
+
+.#{$main-class} {
+  min-height: calc(100vh - 128px);
+}
+
+.#{$main-class}__header {
+  $sub-class: #{$main-class}__header;
+  margin: 0 32px 0 200px;
+  @media (max-width: 600px) {
+    margin: 0;
+    padding: 0 8px;
+  }
+  .#{$sub-class}__title {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .#{$sub-class}__logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.#{$main-class}__container {
+  $sub-class: #{$main-class}__container;
+  padding: 32px 32px 32px 200px;
+  @media (max-width: 600px) {
+    padding: 32px 0 0 0;
+  }
+  a {
+    display: inline-block;
+    img {
+      height: auto;
+      width: auto;
+      margin-bottom: 5px;
+      margin-right: 5px;
+      max-height: 220px;
+    }
+  }
+  .#{$sub-class}__logo {
+    margin-right: 8px;
+  }
+}

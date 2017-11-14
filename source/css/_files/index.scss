@@ -1,7 +1,7 @@
 $main-class: theme-index;
 
 .#{$main-class} {
-
+  min-height: calc(100vh - 128px);
 }
 
 // Pagination

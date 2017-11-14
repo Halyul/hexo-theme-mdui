@@ -185,6 +185,7 @@ function fireListeners(page) {
   for (var i = 0; i < pageScripts.length; i++) {
     var el = pageScripts[i].el
     el.removeEventListener(pageScripts[i].event, pageScripts[i].function)
+    pageScripts[i].removed = true
   }
 }
 

@@ -1,0 +1,155 @@
+<script type="text/javascript">
+  themeRuntime.scriptsMap.post = [];
+  (function() {
+    var fabTopFlag = false;
+    var fabEl = document.getElementById('index-fab');
+    function fabShowHide() {
+      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
+      if (bodyScrolled > 0 && !fabTopFlag) {
+        fabEl.classList.remove('mdui-fab-hide');
+        fabTopFlag = true;
+      } else if (bodyScrolled === 0 && fabTopFlag) {
+        fabEl.classList.add('mdui-fab-hide');
+        fabTopFlag = false;
+      }
+    }
+    fabShowHide()
+    window.addEventListener('scroll', fabShowHide);
+    var listener = {
+      function: fabShowHide,
+      event: 'scroll',
+      el: window,
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+  })();
+
+  lightGallery(document.querySelector('.theme-gallery__container'), {
+    <%
+      // gallery plugin setting
+    %>
+    <% if (page.mode) { %>
+    mode: '<%= page.mode %>',
+    <% } %>
+    <% if (page.cssEasing) { %>
+    cssEasing: '<%= page.cssEasing %>',
+    <% } %>
+    <% if (page.speed) { %>
+    speed: <%= page.speed %>,
+    <% } %>
+    <% if (page.height) { %>
+    height: '<%= page.height %>',
+    <% } %>
+    <% if (page.width) { %>
+    width: '<%= page.width %>',
+    <% } %>
+    <% if (page.addClass) { %>
+    addClass: '<%= page.addClass %>',
+    <% } %>
+    <% if (page.startClass) { %>
+    startClass: '<%= page.startClass %>',
+    <% } %>
+    <% if (page.backdropDuration) { %>
+    backdropDuration: <%= page.backdropDuration %>,
+    <% } %>
+    <% if (page.hideBarsDelay) { %>
+    hideBarsDelay: <%= page.hideBarsDelay %>,
+    <% } %>
+    <% if (page.useLeft === true) { %>
+    useLeft: true,
+    <% } %>
+    <% if (page.closable === false) { %>
+    closable: false,
+    <% } %>
+    <% if (page.loop === false) { %>
+    loop: false,
+    <% } %>
+    <% if (page.escKey === false) { %>
+    escKey: false,
+    <% } %>
+    <% if (page.keyPress === false) { %>
+    keyPress: false,
+    <% } %>
+    <% if (page.controls === false) { %>
+    controls: false,
+    <% } %>
+    <% if (page.slideEndAnimatoin === false) { %>
+    slideEndAnimatoin: false,
+    <% } %>
+    <% if (page.hideControlOnEnd === true) { %>
+    hideControlOnEnd: true,
+    <% } %>
+    <% if (page.getCaptionFromTitleOrAlt === false) { %>
+    getCaptionFromTitleOrAlt: false,
+    <% } %>
+    <% if (page.preload) { %>
+    preload: <%= page.preload %>,
+    <% } %>
+    <% if (page.showAfterLoad === false) { %>
+    showAfterLoad: false,
+    <% } %>
+    <% if (page.index) { %>
+    index: <%= page.index %>,
+    <% } %>
+    <% if (page.download === false) { %>
+    download: false,
+    <% } %>
+    <% if (page.counter === false) { %>
+    counter: false,
+    <% } %>
+    <% if (page.swipeThreshold) { %>
+    swipeThreshold: <%= page.swipeThreshold %>,
+    <% } %>
+    <% if (page.enableDrag === false) { %>
+    enableDrag: false,
+    <% } %>
+    <% if (page.enableTouch === false) { %>
+    enableTouch: false,
+    <% } %>
+    <%
+      // autoplay plugin settings
+    %>
+    <% if (page.autoplay === false) { %>
+    autoplay: false,
+    <% } %>
+    <% if (page.pause) { %>
+    pause: <%= page.pause %>,
+    <% } %>
+    <% if (page.progressBar === false) { %>
+    progressBar: false,
+    <% } %>
+    <% if (page.fourceAutoplay === true) { %>
+    fourceAutoplay: true,
+    <% } %>
+    <% if (page.autoplayControls === false) { %>
+    autoplayControls: false,
+    <% } %>
+    <%
+      // fullscreen plugin setting
+    %>
+    <% if (page.fullScreen === false) { %>
+    fullScreen: false,
+    <% } %>
+    <%
+      // zoom plugin settings
+    %>
+    <% if (page.zoom === false) { %>
+    zoom: false,
+    <% } %>
+    <% if (page.scale) { %>
+    scale: <%= page.speed %>,
+    <% } %>
+    <% if (page.enableZoomAfter) { %>
+    enableZoomAfter: <%= page.enableZoomAfter %>,
+    <% } %>
+    <% if (page.actualSize === false) { %>
+    actualSize: false,
+    <% } %>
+    <%
+      // hash plugin setting
+    %>
+    <% if (page.hash === false) { %>
+    hash: false,
+    <% } %>
+  });
+</script>

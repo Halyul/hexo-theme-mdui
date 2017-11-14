@@ -16,6 +16,10 @@ $accent-color: accent- + hexo-theme-config('style.accent_color');
 @import '_files/archive';
 @import '_files/friends';
 @import '_files/galleries';
+@import '_files/gallery';
+@import '_files/lightgallery';
+@import './_files/lg-rewrite.scss';
+@import './_files/lg-transitions.scss';
 
 body {
   background-color: $global-background-color;

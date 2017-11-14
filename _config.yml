@@ -55,7 +55,7 @@ pages:
     type: 'internal'
     fa: "fa-child"
   Test3:
-    link: "/timeline"
+    link: "/galleries"
     type: 'internal'
     md: "home"
   Test4:
