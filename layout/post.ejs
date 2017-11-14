@@ -91,11 +91,36 @@
         <% } %>
 
         <% if ((page.categories && page.categories.length) || (page.tags && page.tags.length) || theme.post.donate !== null) { %>
-          <section class="mdui-card-actions">
+          <section class="mdui-card-actions theme-post__card__actions">
             <% if (theme.post.donate !== null) { %>
               <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
                 <i class="mdui-icon fa fa-beer"></i>
               </button>
+            <% } %>
+            <div class="theme-spacer"></div>
+            <% if (page.categories && page.categories.length) { %>
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon material-icons">&#xe149;</i></span>
+              </div>
+              <div class="mdui-typo">
+                <% page.categories.map(function(category){  %>
+                  <a href="/<%= category.path %>">
+                    <span><%= category.name %></span>
+                  </a>
+                <% }) %>
+              </div>
+            <% } %>
+            <% if (page.tags && page.tags.length) { %>
+              <div class="mdui-chip theme-post__card__chip--bg theme-post__card__chip--margin">
+                <span class="mdui-chip-icon theme-post__card__chip--bg"><i class="mdui-icon mdui-text-color-black-icon fa fa-tags"></i></span>
+              </div>
+              <div class="mdui-typo">
+                <% page.tags.map(function(tag){  %>
+                  <a href="/<%= tag.path %>">
+                    <span><%= tag.name %></span>
+                  </a>
+                <% }) %>
+              </div>
             <% } %>
           </section>
         <% } %>

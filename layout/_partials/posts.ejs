@@ -28,7 +28,7 @@
         <% if (post.categories && post.categories.length) { %>
           <% if (post.categories.length === 1) { %>
             <% post.categories.map(function(category){ %>
-              <a href="/categories/<%= category.name %>/" class="theme-link--no-style">
+              <a href="/<%= category.path %>" class="theme-link--no-style">
                 <div class="mdui-chip theme-posts__post__footer__categories">
                   <span class="mdui-chip-icon">
                     <i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i>
@@ -45,7 +45,7 @@
               <ul class="mdui-menu" id="post-categories-<%= position %>">
                 <% post.categories.map(function(category){ %>
                   <li class="mdui-menu-item">
-                    <a href="/categories/<%= category.name %>/" class="mdui-ripple">
+                    <a href="/<%= tag.path %>" class="mdui-ripple">
                       <span><%= category.name %></span>
                     </a>
                   </li>

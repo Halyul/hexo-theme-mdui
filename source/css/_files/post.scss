@@ -213,6 +213,19 @@ $main-class: theme-post;
     @include info-boxes;
     border-left-color: #D50000;
   }
+  .#{$sub-class}__actions {
+    @include flex-horizontal;
+    a {
+      font-size: 12px;
+      line-height: 36px;
+    }
+  }
+  .#{$sub-class}__chip--bg {
+    background: #eee;
+  }
+  .#{$sub-class}__chip--margin {
+    margin: 0 8px;
+  }
   .#{$sub-class}__comment {
     padding: 12px 16px;
   }
