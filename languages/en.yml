@@ -10,6 +10,7 @@ global:
   busuanzi_views: 'Views: '
   last_updated: 'Last Updated: '
   multiple: 'Multiple '
+  pgnf_button: 'Return to homepage'
 archive:
   post: 'Post'
   posts: 'Posts'

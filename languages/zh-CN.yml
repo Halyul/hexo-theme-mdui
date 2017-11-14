@@ -10,6 +10,7 @@ global:
   busuanzi_views: '浏览量: '
   last_updated: '最后更新于: '
   multiple: '多个'
+  pgnf_button: '返回首页'
 archive:
   post: '篇文章'
   posts: '篇文章'

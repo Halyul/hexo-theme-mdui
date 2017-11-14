@@ -1,3 +1,15 @@
+var links = document.querySelectorAll('a[href]');
+var cbk = function(e) {
+ if(e.currentTarget.href === window.location.href) {
+   e.preventDefault();
+   e.stopPropagation();
+ }
+};
+
+for(var i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', cbk);
+}
+
 var drawer = new mdui.Drawer('#drawer', {swipe: true});
 document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
@@ -11,16 +23,18 @@ var smoothScroll = new SmoothScroll('a.theme-post__toc__content__link', {
 /* init pages
  * for barbajs
  */
- if (document.readyState === 'complete' || document.readyState !== 'loading') {
-   initPages();
- } else {
-   document.addEventListener('DOMContentLoaded', initPages);
- }
+Barba.Utils.errorPageUrl = '/404.html';
+if (document.readyState === 'complete' || document.readyState !== 'loading') {
+  initPages();
+} else {
+  document.addEventListener('DOMContentLoaded', initPages);
+}
 
 function initPages() {
   themeRuntime.init.posts.init();
   themeRuntime.init.post.init();
   themeRuntime.init.archive.init();
+  Barba.Pjax.cacheEnabled = false
   Barba.Pjax.start();
   themeRuntime.init.status = true;
 }
@@ -243,7 +257,7 @@ function drawerAppbarMove(event) {
   translate = translate.replace(/\s+/g,"")
   translate = translate.replace(/translate\(/g,"")
   translate = translate.replace(/px,0px\)/g,"")
-  translate = -1 * translate
+  translate = Math.abs(translate)
   drawerEl.querySelector('.theme-toolbar-bottom').style.setProperty("transform", "translateX(" + translate + "px)", "important");
   drawerEl.querySelector('.theme-toolbar-bottom').style.setProperty("transition", transition, "important");
 }

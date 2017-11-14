@@ -27,6 +27,13 @@ post:
     link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
   word_count: true
   read_time: true
+  donate:
+    wechat:
+      link: /img/avatar.png
+      fa: 'fa-wechat'
+    paypay:
+      link: 'https://paypal.com'
+      fa: 'fa-paypal'
 
 share_menu:
   rss: false

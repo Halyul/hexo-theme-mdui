@@ -70,6 +70,7 @@
         <section class="mdui-typo theme-post__card__content">
           <%-page.content%>
         </section>
+
         <% if (page.license_name || theme.post.license.name || page.export_md !== false) { %>
           <section class="theme-post__card__license mdui-typo">
             <span>
@@ -89,11 +90,15 @@
           </section>
         <% } %>
 
-        <div class="mdui-card-actions">
-    <button class="mdui-btn mdui-ripple">action 1</button>
-    <button class="mdui-btn mdui-ripple">action 2</button>
-    <button class="mdui-btn mdui-btn-icon mdui-float-right"><i class="mdui-icon material-icons">expand_more</i></button>
-  </div>
+        <% if ((page.categories && page.categories.length) || (page.tags && page.tags.length) || theme.post.donate !== null) { %>
+          <section class="mdui-card-actions">
+            <% if (theme.post.donate !== null) { %>
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple  mdui-color-red" mdui-tooltip="{content: '<%= __('posts.donate.button') %>', position: 'right'}" mdui-dialog="{target: '#donateDialog'}">
+                <i class="mdui-icon fa fa-beer"></i>
+              </button>
+            <% } %>
+          </section>
+        <% } %>
 
         <% if (page.comment !== false) { %>
           <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
@@ -122,6 +127,33 @@
 
   <% if (pagination !== false) { %>
     <%-partial('_partials/pagination/post')%>
+  <% } %>
+
+  <% if (theme.post.donate !== null) { %>
+    <div class="mdui-dialog" id="donateDialog">
+      <div class="mdui-dialog-title"><%= __('posts.donate.button') %></div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          <% for (var x in theme.post.donate){ %>
+            <a href="<%= theme.post.donate[x].link %>" title="<%= x %>" class="mdui-list-item mdui-ripple" target="_blank">
+              <% if (theme.post.donate[x].fa) { %>
+                <i class="mdui-list-item-icon mdui-icon fa <%= theme.post.donate[x].fa %> mdui-text-center"></i>&emsp;
+              <% } %>
+              <% if (theme.post.donate[x].md) { %>
+                <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.post.donate[x].md %></i>&emsp;
+              <% } %>
+              <% if (theme.post.donate[x].null_icon === true) { %>
+                <i class="mdui-list-item-icon"></i>&emsp;
+              <% } %>
+              <%= x %>
+            </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple mdui-ripple" mdui-dialog-close><%= __('posts.donate.close') %></button>
+      </div>
+    </div>
   <% } %>
 </div>
 <%-partial('_partials/js/post')%>

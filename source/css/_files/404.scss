@@ -1,0 +1,16 @@
+$main-class: theme-404;
+
+.#{$main-class} {
+  min-height: calc(100vh - 128px);
+}
+
+.#{$main-class}__error {
+  font-size: 128px;
+  @media (min-width: 1024px) {
+    font-size: 256px;
+  }
+}
+
+.#{$main-class}__button {
+  width: 100%;
+}

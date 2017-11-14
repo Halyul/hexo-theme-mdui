@@ -1,0 +1,5 @@
+$main-class: theme-archive;
+
+.#{$main-class} {
+  min-height: calc(100vh - 128px);
+}
