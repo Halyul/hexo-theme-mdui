@@ -27,15 +27,6 @@
   (function() {
     var pageTotal = <%= page.total %>
     var pageNext = 2
-    function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response
-      } else {
-        var error = new Error(response.statusText)
-        error.response = response
-        throw error
-      }
-    }
     function morePosts() {
       var screenHeight = window.innerHeight;
       var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
@@ -49,7 +40,6 @@
               mode:'cors',
               credentials: 'include'
           })
-          .then(checkStatus)
           .then(function(response) {
             return response.text()
           }).then(function(HTML) {
@@ -59,8 +49,10 @@
             var postsArea = document.querySelector(".theme-posts")
             loadProgress(true)
             postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
+            pageNext++
+          }).catch(function(error) {
+            mdui.alert(error, "<%= __('error.title') %>");
           })
-          pageNext++
         }
       }
     }

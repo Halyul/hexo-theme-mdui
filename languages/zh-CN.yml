@@ -69,3 +69,5 @@ outdated_browser:
   line_one: '赶紧升级浏览器来访问本站吧！'
   link: '现在就去'
   close: '关闭'
+error:
+  title: "错误！"

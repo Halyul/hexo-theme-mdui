@@ -69,3 +69,5 @@ outdated_browser:
   line_one: 'Update your browser to view this website correctly. '
   link: 'Update my browser now '
   close: 'Close'
+error:
+  title: "ERROR!"
