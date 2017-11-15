@@ -158,7 +158,7 @@ function burgerChanging(page) {
     if (pageStatus === true) {
       burger.classList.remove('theme-appbar__burger--menu');
       burger.classList.add('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
-      burger.setAttribute('href', '/')
+      burger.setAttribute('href', 'javascript:history.go(-1)')
       burger.removeEventListener('click', drawerToggle)
     }
   }
