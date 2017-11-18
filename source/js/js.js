@@ -11,9 +11,18 @@ for(var i = 0; i < links.length; i++) {
 }
 
 var drawer = new mdui.Drawer('#drawer', {swipe: true});
+var drawerEl = document.getElementById('drawer')
 document.querySelector('#drawer-back').addEventListener('click', function() {
   drawer.close()
 })
+drawerEl.addEventListener('open.mdui.drawer', function() {
+  document.getElementById('drawer-back').classList.remove('theme-appbar__burger--menu');
+  document.getElementById('drawer-back').classList.add('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
+});
+drawerEl.addEventListener('close.mdui.drawer', function() {
+  document.getElementById('drawer-back').classList.remove('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
+  document.getElementById('drawer-back').classList.add('theme-appbar__burger--menu');
+});
 
 /* smooth scroll */
 var smoothScroll = new SmoothScroll('a.theme-post__toc__content__link', {
@@ -259,18 +268,17 @@ function itemHightlight() {
 document.body.addEventListener('touchmove', drawerAppbarMove);
 document.body.addEventListener('touchend', drawerAppbarEnd);
 function drawerAppbarMove(event) {
-  var drawerEl = document.getElementById('drawer')
   var translate = drawerEl.style.transform
   var transition = drawerEl.style.transition
   translate = translate.replace(/\s+/g,"")
   translate = translate.replace(/translate\(/g,"")
   translate = translate.replace(/px,0px\)/g,"")
   translate = Math.abs(translate)
-  drawerEl.querySelector('.theme-toolbar-bottom').style.setProperty("transform", "translateX(" + translate + "px)", "important");
-  drawerEl.querySelector('.theme-toolbar-bottom').style.setProperty("transition", transition, "important");
+  drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transform", "translateX(" + translate + "px)", "important");
+  drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transition", transition, "important");
 }
 function drawerAppbarEnd(event) {
   var drawerEl = document.getElementById('drawer')
-  drawerEl.querySelector('.theme-toolbar-bottom').style.transform = null
-  drawerEl.querySelector('.theme-toolbar-bottom').style.transition = null
+  drawerEl.querySelector('.theme-drawer__header__layer-1').style.transform = null
+  drawerEl.querySelector('.theme-drawer__header__layer-1').style.transition = null
 }

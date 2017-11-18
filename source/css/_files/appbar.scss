@@ -61,6 +61,17 @@ $main-class: theme-appbar;
 
 .#{$main-class}__burger {
   $sub-class: #{$main-class}__burger;
+  &.#{$sub-class}--drawer {
+    span {
+      background-color: #fff;
+      &:before {
+        background-color: #fff;
+      }
+      &:after {
+        background-color: #fff;
+      }
+    }
+  }
   span {
     @include burger-shared-style;
     top: 11px;
@@ -83,7 +94,6 @@ $main-class: theme-appbar;
     -webkit-animation-name: burger-menu;
             animation-name: burger-menu;
     &:before {
-      @include burger-shared-style;
       @include burger-shared-animate;
       -webkit-animation-name: burger-menu-before;
               animation-name: burger-menu-before;
@@ -92,7 +102,6 @@ $main-class: theme-appbar;
       left: 0;
     }
     &:after {
-      @include burger-shared-style;
       @include burger-shared-animate;
       -webkit-animation-name: burger-menu-after;
               animation-name: burger-menu-after;
@@ -102,7 +111,6 @@ $main-class: theme-appbar;
     }
   }
   &.#{$sub-class}--arrow span {
-    @include burger-shared-style;
     -webkit-animation-name: burger-arrow;
             animation-name: burger-arrow;
     -webkit-animation-fill-mode: forwards;
@@ -110,7 +118,6 @@ $main-class: theme-appbar;
     top: 11px;
     left: 3px;
     &:before {
-      @include burger-shared-style;
       -webkit-animation-name: burger-arrow-before;
               animation-name: burger-arrow-before;
       -webkit-animation-fill-mode: forwards;
@@ -120,7 +127,6 @@ $main-class: theme-appbar;
       top: -5px;
     }
     &:after {
-      @include burger-shared-style;
       -webkit-animation-name: burger-arrow-after;
               animation-name: burger-arrow-after;
       -webkit-animation-fill-mode: forwards;
