@@ -27,13 +27,18 @@
   (function() {
     var pageTotal = <%= page.total %>
     var pageNext = 2
+    themeRuntime.temp = {
+      index: 1
+    }
     function morePosts() {
       var screenHeight = window.innerHeight;
       var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
-      if (screenHeight >= compareHeight) {
+      var loadStatus = pageNext - themeRuntime.temp.index
+      if (screenHeight >= compareHeight && loadStatus === 1) {
         if (pageNext <= pageTotal) {
           loadProgress(false)
           var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext
+          themeRuntime.temp.index = pageNext;
           console.log(pageTotal, url)
           fetch(url, {
               method:'GET',
@@ -49,7 +54,7 @@
             var postsArea = document.querySelector(".theme-posts")
             loadProgress(true)
             postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
-            pageNext++
+            pageNext++;
           }).catch(function(error) {
             mdui.alert(error, "<%= __('error.title') %>");
           })

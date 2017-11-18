@@ -50,11 +50,13 @@ themeRuntime.init.posts = Barba.BaseView.extend({
   },
   onEnterCompleted: function() {
     runScript()
+    scrollPositionScroll()
     loadProgress(true)
   },
   onLeave: function() {
     currentToPrev()
     fireListeners("posts")
+    scrollPositionStore()
   },
   onLeaveCompleted: function() {
 
@@ -69,11 +71,13 @@ themeRuntime.init.post = Barba.BaseView.extend({
   },
   onEnterCompleted: function() {
     runScript()
+    scrollPositionScroll()
     loadProgress(true)
   },
   onLeave: function() {
     currentToPrev()
     fireListeners("post")
+    scrollPositionStore()
   },
    onLeaveCompleted: function() {
 
@@ -82,17 +86,19 @@ themeRuntime.init.post = Barba.BaseView.extend({
 themeRuntime.init.archive = Barba.BaseView.extend({
   namespace: 'archive',
   onEnter: function() {
-     console.log('enter', 'archive')
-     burgerChanging('archive')
-     itemHightlight()
+    console.log('enter', 'archive')
+    burgerChanging('archive')
+    itemHightlight()
   },
   onEnterCompleted: function() {
     runScript()
+    scrollPositionScroll()
     loadProgress(true)
   },
   onLeave: function() {
     currentToPrev()
     fireListeners("archive")
+    scrollPositionStore()
   },
   onLeaveCompleted: function() {
 
@@ -113,9 +119,6 @@ var pageTransition = Barba.BaseTransition.extend({
     this.newContainerLoading.then(this.finish.bind(this));
   },
   finish: function() {
-    var currentStatus = themeRuntime.router.currentStatus;
-    var prevStatus = themeRuntime.router.prevStatus;
-    scrollPosition(currentStatus, prevStatus);
     this.done();
   }
  });
@@ -123,15 +126,19 @@ Barba.Pjax.getTransition = function() {
   return pageTransition;
 };
 
-function scrollPosition(currentStatus, prevStatus) {
-  var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-  if (prevStatus !== undefined && prevStatus.pathname !== undefined) {
-    themeRuntime.scrollMap[prevStatus.pathname] = window.pageYOffset;
+function scrollPositionStore() {
+  var prevStatus = Barba.HistoryManager.prevStatus();
+  if (prevStatus !== null && prevStatus.url !== undefined) {
+    themeRuntime.scrollMap[prevStatus.url] = window.pageYOffset;
   }
-  if (themeRuntime.scrollMap[currentStatus.pathname] !== undefined) {
-    smoothScroll.animateScroll( themeRuntime.scrollMap[currentStatus.pathname] );
+}
+function scrollPositionScroll() {
+  var currentStatus = Barba.HistoryManager.currentStatus();
+  var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  if (themeRuntime.scrollMap[currentStatus.url] !== undefined) {
+    window.scrollTo(0, themeRuntime.scrollMap[currentStatus.url])
   } else if (bodyScrolled > 0) {
-    smoothScroll.animateScroll( 0 );
+    window.scrollTo(0, 0);
   }
 }
 

@@ -24,6 +24,12 @@
           <%= __('search.footer') %>
         </div>
       </div>
+    <% } else { %>
+      <div class="theme-end-footer">
+        <div class="mdui-text-center mdui-text-color-theme-text">
+          <%= page.current %>
+        </div>
+      </div>
     <% } %>
   </div>
   <%-partial('_partials/fab/index')%>
