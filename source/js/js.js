@@ -20,8 +20,11 @@ drawerEl.addEventListener('open.mdui.drawer', function() {
   document.getElementById('drawer-back').classList.add('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
 });
 drawerEl.addEventListener('close.mdui.drawer', function() {
-  document.getElementById('drawer-back').classList.remove('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
-  document.getElementById('drawer-back').classList.add('theme-appbar__burger--menu');
+  var namespace = Barba.HistoryManager.currentStatus().namespace
+  if (namespace === "posts") {
+    document.getElementById('drawer-back').classList.remove('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
+    document.getElementById('drawer-back').classList.add('theme-appbar__burger--menu');
+  }
 });
 
 /* smooth scroll */
@@ -170,6 +173,8 @@ function burgerChanging(page) {
       burger.setAttribute('href', 'javascript:;')
     }
     burger.addEventListener('click', drawerToggle)
+    drawerEl.querySelector('#drawer-back').classList.add('theme-appbar__burger--menu')
+    drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--arrow')
   } else {
     if (pageStatus === true) {
       burger.classList.remove('theme-appbar__burger--menu');
@@ -177,6 +182,8 @@ function burgerChanging(page) {
       burger.setAttribute('href', 'javascript:history.go(-1)')
       burger.removeEventListener('click', drawerToggle)
     }
+    drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--menu')
+    drawerEl.querySelector('#drawer-back').classList.add('theme-appbar__burger--arrow')
   }
 }
 function drawerToggle() {
@@ -278,7 +285,6 @@ function drawerAppbarMove(event) {
   drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transition", transition, "important");
 }
 function drawerAppbarEnd(event) {
-  var drawerEl = document.getElementById('drawer')
   drawerEl.querySelector('.theme-drawer__header__layer-1').style.transform = null
   drawerEl.querySelector('.theme-drawer__header__layer-1').style.transition = null
 }
