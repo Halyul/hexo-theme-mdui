@@ -506,14 +506,14 @@
 
         // Create controlls
         if (this.s.controls && this.items.length > 1) {
-            controls = '<div class="lg-actions">' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-prev mdui-ripple mdui-ripple-white mdui-text-color-theme-icon"><i class="mdui-icon material-icons">&#xe314;</i></button>' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-next mdui-ripple mdui-ripple-white mdui-text-color-theme-icon"><i class="mdui-icon material-icons">&#xe315;</i></button>' + '</div>';
+            controls = '<div class="lg-actions">' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-prev mdui-ripple mdui-ripple-white mdui-text-color-white-icon"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe314;</i></button>' + '<button class="mdui-btn mdui-btn-icon mdui-btn-dense lg-next mdui-ripple mdui-ripple-white mdui-text-color-white-icon"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe315;</i></button>' + '</div>';
         }
 
         if (this.s.appendSubHtmlTo === '.lg-sub-html') {
             subHtmlCont = '<div class="lg-sub-html"></div>';
         }
 
-        template = '<div class="lg-outer ' + this.s.addClass + ' ' + this.s.startClass + '" style="z-index: 5050;">' + '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' + '<div class="lg-inner">' + list + '</div>' + '<div class="lg-toolbar group">' + '<button class="mdui-btn mdui-ripple mdui-ripple-white mdui-btn-icon lg-close"><i class="mdui-icon material-icons">&#xe5c4;</i></button>' + '</div>' + controls + subHtmlCont + '</div>' + '</div>';
+        template = '<div class="lg-outer ' + this.s.addClass + ' ' + this.s.startClass + '" style="z-index: 5050;">' + '<div class="lg" style="width:' + this.s.width + '; height:' + this.s.height + '">' + '<div class="lg-inner">' + list + '</div>' + '<div class="lg-toolbar group">' + '<button class="mdui-btn mdui-ripple mdui-ripple-white mdui-btn-icon lg-close"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe5c4;</i></button>' + '</div>' + controls + subHtmlCont + '</div>' + '</div>';
 
         document.body.insertAdjacentHTML('beforeend', template);
         this.outer = document.querySelector('.lg-outer');
@@ -574,7 +574,7 @@
         }, this.s.backdropDuration);
 
         if (this.s.download) {
-            this.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white lg-download mdui-float-right"><i class="mdui-icon material-icons">&#xe2c4;</i></a>');
+            this.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', '<a id="lg-download" target="_blank" download class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white lg-download mdui-float-right"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe2c4;</i></a>');
         }
 
         // Store the current scroll top value to scroll back after closing the gallery..
@@ -671,7 +671,7 @@
      */
     Plugin.prototype.counter = function () {
         if (this.s.counter) {
-            this.outer.querySelector(this.s.appendCounterTo).insertAdjacentHTML('beforeend', '<div id="lg-counter"><span id="lg-counter-current">' + (parseInt(this.index, 10) + 1) + '</span> / <span id="lg-counter-all">' + this.items.length + '</span></div>');
+            this.outer.querySelector(this.s.appendCounterTo).insertAdjacentHTML('beforeend', '<div id="lg-counter" class="mdui-text-color-white-text"><span id="lg-counter-current" class="mdui-text-color-white-text">' + (parseInt(this.index, 10) + 1) + '</span> / <span id="lg-counter-all" class="mdui-text-color-white-text">' + this.items.length + '</span></div>');
         }
     };
 

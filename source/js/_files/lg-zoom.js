@@ -120,10 +120,10 @@
         Zoom.prototype.init = function() {
 
           var _this = this;
-          var zoomIcons = '<button id="lg-zoom-in" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon material-icons">&#xe8ff;</i></button><button id="lg-zoom-out" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon material-icons">&#xe900;</i></button>';
+          var zoomIcons = '<button id="lg-zoom-in" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe8ff;</i></button><button id="lg-zoom-out" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe900;</i></button>';
 
           if (_this.core.s.actualSize) {
-            zoomIcons += '<button id="lg-actual-size" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon material-icons">&#xe432;</i></button>';
+            zoomIcons += '<button id="lg-actual-size" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right"><i class="mdui-icon mdui-text-color-white-icon material-icons">&#xe432;</i></button>';
           }
 
           if (_this.core.s.useLeftForZoom) {

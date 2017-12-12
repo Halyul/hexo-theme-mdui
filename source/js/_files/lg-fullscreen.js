@@ -102,7 +102,7 @@
             if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled && !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
               return;
             } else {
-              fullScreen = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right lg-fullscreen"><i class="mdui-icon material-icons fullscreen">&#xe5d0;</i><i class="mdui-icon material-icons fullscreen_exit">&#xe5d1;</i></button>';
+              fullScreen = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-float-right lg-fullscreen"><i class="mdui-icon material-icons mdui-text-color-white-icon fullscreen">&#xe5d0;</i><i class="mdui-icon material-icons mdui-text-color-white-icon fullscreen_exit">&#xe5d1;</i></button>';
               this.core.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', fullScreen);
               this.fullScreen();
             }

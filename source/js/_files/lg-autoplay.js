@@ -196,7 +196,7 @@
         // Manage autoplay via play/stop buttons
         Autoplay.prototype.controls = function() {
           var _this = this;
-          var _html = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white lg-autoplay-button mdui-float-right"><i class="mdui-icon material-icons play">&#xe039;</i><i class="mdui-icon material-icons pause">&#xe036;</i></button>';
+          var _html = '<button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white lg-autoplay-button mdui-float-right"><i class="mdui-icon mdui-text-color-white-icon material-icons play">&#xe039;</i><i class="mdui-icon mdui-text-color-white-icon material-icons pause">&#xe036;</i></button>';
 
           // Append autoplay controls
           _this.core.outer.querySelector(this.core.s.appendAutoplayControlsTo).insertAdjacentHTML('beforeend', _html);

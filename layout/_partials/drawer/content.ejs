@@ -105,22 +105,20 @@
           </div>
         <% } else { %>
           <% if (theme.pages[i].type === 'internal') { %>
-            <a href="<%= theme.pages[i].link %>" target="_self">
+            <a href="<%= theme.pages[i].link %>" target="_self" class="mdui-list-item mdui-ripple mdui-ripple-white">
           <% } else { %>
-            <a href="<%= theme.pages[i].link %>" target="_blank">
+            <a href="<%= theme.pages[i].link %>" target="_blank" class="mdui-list-item mdui-ripple mdui-ripple-white">
           <% } %>
-              <li class="mdui-list-item mdui-ripple mdui-ripple-white">
-                <% if (theme.pages[i].fa) { %>
-                  <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
-                <% } %>
-                <% if (theme.pages[i].md) { %>
-                  <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.pages[i].md %></i>
-                <% } %>
-                <% if (theme.pages[i].null_icon === true) { %>
-                  <i class="mdui-list-item-icon"></i>
-                <% } %>
-                <div class="mdui-list-item-content"><%= i %></div>
-              </li>
+              <% if (theme.pages[i].fa) { %>
+                <i class="mdui-list-item-icon mdui-icon fa <%= theme.pages[i].fa %> mdui-text-center"></i>
+              <% } %>
+              <% if (theme.pages[i].md) { %>
+                <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.pages[i].md %></i>
+              <% } %>
+              <% if (theme.pages[i].null_icon === true) { %>
+                <i class="mdui-list-item-icon"></i>
+              <% } %>
+              <div class="mdui-list-item-content"><%= i %></div>
             </a>
         <% } %>
       <% } %>

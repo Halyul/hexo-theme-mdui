@@ -46,6 +46,8 @@ function initPages() {
   themeRuntime.init.posts.init();
   themeRuntime.init.post.init();
   themeRuntime.init.archive.init();
+  themeRuntime.init.galleries.init();
+  themeRuntime.init.gallery.init();
   Barba.Pjax.cacheEnabled = false
   Barba.Pjax.start();
   themeRuntime.init.status = true;
@@ -111,6 +113,48 @@ themeRuntime.init.archive = Barba.BaseView.extend({
   onLeave: function() {
     currentToPrev()
     fireListeners("archive")
+    scrollPositionStore()
+  },
+  onLeaveCompleted: function() {
+
+  }
+});
+themeRuntime.init.galleries = Barba.BaseView.extend({
+  namespace: 'galleries',
+  onEnter: function() {
+    console.log('enter', 'galleries')
+    burgerChanging('galleries')
+    itemHightlight()
+  },
+  onEnterCompleted: function() {
+    runScript()
+    scrollPositionScroll()
+    loadProgress(true)
+  },
+  onLeave: function() {
+    currentToPrev()
+    fireListeners("galleries")
+    scrollPositionStore()
+  },
+  onLeaveCompleted: function() {
+
+  }
+});
+themeRuntime.init.gallery = Barba.BaseView.extend({
+  namespace: 'gallery',
+  onEnter: function() {
+    console.log('enter', 'gallery')
+    burgerChanging('gallery')
+    itemHightlight()
+  },
+  onEnterCompleted: function() {
+    runScript()
+    scrollPositionScroll()
+    loadProgress(true)
+  },
+  onLeave: function() {
+    currentToPrev()
+    fireListeners("gallery")
     scrollPositionStore()
   },
   onLeaveCompleted: function() {
