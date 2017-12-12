@@ -1,0 +1,11 @@
+$main-class: theme-search;
+
+.#{$main-class} {
+  min-height: calc(100vh - 128px);
+  margin: 0 auto;
+  width: 64%;
+  max-width: 1024px;
+  @media (max-width: 599px) {
+    width: 92%;
+  }
+}

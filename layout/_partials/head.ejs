@@ -5,6 +5,7 @@ if (is_archive()) pageTitle = __('global.archives');
 if (is_tag()) pageTitle = __('global.tag') + ': ' + page.tag;
 if (is_category()) pageTitle = __('global.category') + ': ' + page.category;
 if (is_year()) pageTitle = page.year;
+if (page.path === 'search.html') pageTitle = __('search.text');
 pageTitle += ' - ' + config.title;
 %>
 

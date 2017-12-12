@@ -23,4 +23,8 @@ body {
       padding-bottom: 16px;
     }
   }
+  & .#{$sub-class}__search {
+    position: absolute;
+    right: 0;
+  }
 }

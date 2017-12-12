@@ -14,6 +14,7 @@ $accent-color: accent- + hexo-theme-config('style.accent_color');
 @import '_files/posts';
 @import '_files/404';
 @import '_files/archive';
+@import '_files/search';
 @import '_files/friends';
 @import '_files/galleries';
 @import '_files/gallery';

@@ -4,6 +4,11 @@ hexo.extend.generator.register('themeRouter',function(site){
             path: '/404.html',
             layout:'404',
             data: {}
+        },
+        {
+          path: '/search.html',
+          layout:'search',
+          data: {}
         }
     ]
 });
