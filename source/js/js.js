@@ -80,6 +80,7 @@ themeRuntime.init.post = Barba.BaseView.extend({
     console.log('enter', 'post')
     burgerChanging('post')
     itemHightlight()
+    commentSystemReset()
   },
   onEnterCompleted: function() {
     runScript()
@@ -287,4 +288,12 @@ function drawerAppbarMove(event) {
 function drawerAppbarEnd(event) {
   drawerEl.querySelector('.theme-drawer__header__layer-1').style.transform = null
   drawerEl.querySelector('.theme-drawer__header__layer-1').style.transition = null
+}
+
+function commentSystemReset() {
+  if (themeRuntime.commentRest.status) {
+    themeRuntime.commentRest.function(Barba.HistoryManager.currentStatus().url, Barba.HistoryManager.currentStatus().url, document.title)
+  } else {
+    themeRuntime.commentRest.status = true
+  }
 }

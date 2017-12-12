@@ -17,7 +17,13 @@ pageTitle += ' - ' + config.title;
      'unknownVersion'
     ]
     window.themeRuntime = {
-      scriptsMap: {}
+      scriptsMap: {},
+      commentRest: {
+        status: false,
+        function: function() {
+          return
+        }
+      }
     };
   </script>
   <!--
@@ -27,7 +33,7 @@ pageTitle += ' - ' + config.title;
 
   <meta charset="UTF-8">
   <title><%= pageTitle %></title>
-  
+
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="<%= theme.head.favicon %>">
   <link rel="icon" sizes="192x192" href="<%= theme.head.high_res_favicon %>">
