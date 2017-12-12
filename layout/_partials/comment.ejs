@@ -1,3 +1,7 @@
+<% if(theme.comment.use === 'custom') { %>
+  <%-partial('../_custom/comment')%>
+<% } %>
+
 <% if(theme.comment.use === 'disqus') { %>
   <div id="disqus_thread"></div>
   <script>
@@ -13,4 +17,31 @@
     })();
   </script>
   <noscript><%- __('posts.disqus_no_script') %></noscript>
+<% } %>
+
+<% if(theme.comment.use === 'valine') { %>
+  <div id="comments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var notify = '<%= theme.comment.valine.notify %>' == true ? true : false;
+    var verify = '<%= theme.comment.valine.verify %>' == true ? true : false;
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = '<%= theme.comment.valine.guest_info %>'.split(',').filter(function(item){
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+    window.onload = function() {
+        new Valine({
+            el: '#comments',
+            notify: notify,
+            verify: verify,
+            app_id: "<%= theme.comment.valine.appid %>",
+            app_key: "<%= theme.comment.valine.appkey %>",
+            avatar:"<%= theme.comment.valine.avatar %>",
+            placeholder: "<%= theme.comment.valine.placeholder %>",
+            guest_info:guest_info
+        });
+    }
+  </script>
 <% } %>
