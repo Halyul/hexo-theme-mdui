@@ -3,11 +3,12 @@
     <div class="mdui-textfield mdui-textfield-floating-label">
       <i class="mdui-icon material-icons">&#xe8b6;</i>
       <label class="mdui-textfield-label"><%= __('search.text') %></label>
-      <textarea class="mdui-textfield-input"></textarea>
+      <textarea class="mdui-textfield-input" id="search-field"></textarea>
     </div>
   </div>
-  <div class="theme-search__result">
+  <div class="theme-posts" id="search-result">
 
   </div>
+  <%-partial('_partials/fab/index')%>
 </div>
 <%-partial('_partials/js/search')%>

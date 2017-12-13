@@ -11,6 +11,7 @@
   if (is_post()) layout = 'post';
   if (is_archive() && !is_year()) layout = 'archive';
   if (!is_home() && !is_year() && !is_tag() && !is_category() && !is_post() && !is_archive() && !is_customLayout()) layout = 'post';
+  if (page.path === 'search.html') layout = 'search';
   if (is_customLayout()) layout = page.layout
 %>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
   <div id="top"></div>
 
   <%- js("js/lightgallery.min") %>
-  
+
   <main>
     <div id="barba-wrapper">
       <div class="barba-container"  data-namespace="<%= layout %>">

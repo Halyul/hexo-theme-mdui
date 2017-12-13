@@ -48,6 +48,7 @@ function initPages() {
   themeRuntime.init.archive.init();
   themeRuntime.init.galleries.init();
   themeRuntime.init.gallery.init();
+  themeRuntime.init.search.init();
   Barba.Pjax.cacheEnabled = false
   Barba.Pjax.start();
   themeRuntime.init.status = true;
@@ -155,6 +156,27 @@ themeRuntime.init.gallery = Barba.BaseView.extend({
   onLeave: function() {
     currentToPrev()
     fireListeners("gallery")
+    scrollPositionStore()
+  },
+  onLeaveCompleted: function() {
+
+  }
+});
+themeRuntime.init.search = Barba.BaseView.extend({
+  namespace: 'search',
+  onEnter: function() {
+    console.log('enter', 'search')
+    burgerChanging('search')
+    itemHightlight()
+  },
+  onEnterCompleted: function() {
+    runScript()
+    scrollPositionScroll()
+    loadProgress(true)
+  },
+  onLeave: function() {
+    currentToPrev()
+    fireListeners("search")
     scrollPositionStore()
   },
   onLeaveCompleted: function() {

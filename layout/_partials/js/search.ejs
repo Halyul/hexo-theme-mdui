@@ -1,10 +1,10 @@
 <script type="text/javascript">
-  //index fab
+  themeRuntime.scriptsMap.search = [];
   (function() {
     var fabTopFlag = false;
     var fabEl = document.getElementById('index-fab');
     function fabShowHide() {
-      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
       if (bodyScrolled > 0 && !fabTopFlag) {
         fabEl.classList.remove('mdui-fab-hide');
         fabTopFlag = true;
@@ -14,5 +14,160 @@
       }
     }
     fabShowHide()
+    window.addEventListener('scroll', fabShowHide);
+    var listener = {
+      function: fabShowHide,
+      event: 'scroll',
+      el: window,
+      removed: false
+    }
+    themeRuntime.scriptsMap.search.push(listener)
   })();
+</script>
+<script>
+  var res;
+  var searchFilePath = '<%= config.root + config.search.path %>';
+  var searchFunc = function(searchFilePath) {
+    'use strict';
+    fetch(searchFilePath).then(function(res) {
+      return res.json();
+    }).then(function(datas) {
+      var $input = document.getElementById("search-field");
+      var $resultContent = document.getElementById("search-result");
+      $input.addEventListener('input', searchResult);
+      function searchResult() {
+        var str = '';
+        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+        $resultContent.innerHTML = '';
+        if (this.value.trim().length <= 0) {
+          return;
+        }
+        // perform local searching
+        datas.forEach(function(data) {
+          if (typeof data.title === "undefined") return
+          if (typeof data.content === "undefined") return
+          var isMatch = true;
+          var content_index = [];
+          var data_title = data.title.trim().toLowerCase();
+          var data_content = data.content.trim().replace(/<[^>]+>/g, '').toLowerCase();
+          var data_url = data.url;
+          var index_title = -1;
+          var index_content = -1;
+          var first_occur = -1;
+          // only match artiles with not empty titles and contents
+          if (data_title !== '' && data_content !== '') {
+            keywords.forEach(function(keyword, i) {
+              index_title = data_title.indexOf(keyword);
+              index_content = data_content.indexOf(keyword);
+              if (index_title < 0 && index_content < 0) {
+                isMatch = false;
+              } else {
+                if (index_content < 0) {
+                  index_content = 0;
+                }
+                if (i === 0) {
+                  first_occur = index_content;
+                }
+              }
+            });
+          }
+          // show search results
+          var position = 1;
+          if (isMatch) {
+            var randomPic = Math.floor(Math.random() * <%= theme.post.random_pics %> + 1);
+            str += '<div class="theme-posts__post"><article class="mdui-card">';
+            str += '<section class="mdui-card-media theme-posts__post__media" style="background-image: url(\'<%= config.root %>images/random/' + randomPic + '.png\' %>)">';
+            str += '<img src="<%= config.root%>images/random/' + randomPic + '.png" class="theme-posts__post__media__image" />';
+            str += '<div class="mdui-card-media-covered theme-posts__post__media-covered"><div class="mdui-card-primary mdui-typo">';
+            str += '<a href="' + data_url + '" target="_self" class="mdui-card-primary-title mdui-text-truncate">' + data_title + '</a>';
+
+            str += '</div></div></section><section class="mdui-card-content">'
+            var content = data.content.trim().replace(/<[^>]+>/g, '');
+            if (first_occur >= 0) {
+              // cut out characters
+              var start = first_occur - 6;
+              var end = first_occur + 6;
+              if (start < 0) {
+                start = 0;
+              }
+              if (start === 0) {
+                end = 10;
+              }
+              if (end > content.length) {
+                end = content.length;
+              }
+              var match_content = content.substr(start, end);
+              // highlight all keywords
+              keywords.forEach(function(keyword) {
+                var regS = new RegExp(keyword, 'gi');
+                match_content = match_content.replace(regS, '<strong><mark>' + keyword + '</mark></strong>');
+              })
+              str += '<p class="result">' + match_content + '...</p>';
+            }
+            str += '</section><div class="mdui-divider" style="margin: 0 16px;"></div>'
+
+            if (typeof data.categories !== 'undefined' && typeof data.tags !== 'undefined') {
+              str += '<section class="theme-posts__post__footer">'
+                if (typeof data.categories !== 'undefined') {
+                  if (data.categories.length === 1) {
+                    data.categories.forEach(function(category) {
+                      str += '<a href="' + category + '" class="theme-link--no-style">';
+                      str +='<div class="mdui-chip theme-posts__post__footer__categories"><span class="mdui-chip-icon"><i class="mdui-icon material-icons mdui-text-center">&#xe86e;</i></span>';
+                      str += '<span class="mdui-chip-title">' + category + '</span>';
+                      str += '</div></a>';
+                    })
+                  } else {
+                    data.categories.forEach(function(category) {
+                      str += '<div class="theme-posts__post__footer__categories mdui-valign">';
+                      str += '<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: \'#post-categories-' + position + '\'}">'
+                      str +='<i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i></button>';
+                      str += '<ul class="mdui-menu" id="post-categories-' + position + '">';
+                      str += '<li class="mdui-menu-item">'
+                      str += '<a href="' + category + '" class="mdui-ripple">'
+                      str += '<span>' + category + '</span>'
+                      str += '</a></li></ul></div>'
+                    })
+                  }
+
+                }
+                if (typeof data.tags !== 'undefined') {
+                  if (data.tags.length === 1) {
+                    data.tags.forEach(function(tag) {
+                      str += '<a href="' + tag + '" class="theme-link--no-style">';
+                      str += '<div class="mdui-chip theme-posts__post__footer__tags"><span class="mdui-chip-icon"><i class="mdui-icon fa fa-tags mdui-text-center"></i></span>';
+                      str += '<span class="mdui-chip-title">' + tag + '</span>';
+                      str += '</div></a>';
+                    })
+                  } else {
+                    data.tags.forEach(function(tag) {
+                      str += '<div class="theme-posts__post__footer__tags mdui-valign">';
+                      str += '<button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: \'#post-tags-' + position + '\'}">';
+                      str += '<i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i></button>';
+                      str += '<ul class="mdui-menu" id="post-tags-' + position + '">';
+                      str += '<li class="mdui-menu-item">';
+                      str += '<a href="' + tag + '" class="mdui-ripple">';
+                      str += '<span>' + tag + '</span>';
+                      str += '</a></li></ul></div>';
+                    })
+                  }
+                }
+                str += '</section>'
+            }
+
+            str+= '</article></div>';
+            position++;
+          }
+        });
+        $resultContent.innerHTML = str;
+      }
+      var listener = {
+        function: searchResult,
+        event: 'input',
+        el: $input,
+        removed: false
+      }
+      themeRuntime.scriptsMap.search.push(listener)
+    })
+  }
+  searchFunc(searchFilePath)
 </script>
