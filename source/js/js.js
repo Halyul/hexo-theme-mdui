@@ -59,19 +59,13 @@ themeRuntime.init.status = false;
 themeRuntime.init.posts = Barba.BaseView.extend({
   namespace: 'posts',
   onEnter: function() {
-    console.log('enter', 'posts')
-    burgerChanging('posts')
-    itemHightlight()
+
   },
   onEnterCompleted: function() {
-    runScript()
-    scrollPositionScroll()
-    loadProgress(true)
+
   },
   onLeave: function() {
-    currentToPrev()
-    fireListeners("posts")
-    scrollPositionStore()
+    
   },
   onLeaveCompleted: function() {
 
@@ -80,20 +74,13 @@ themeRuntime.init.posts = Barba.BaseView.extend({
 themeRuntime.init.post = Barba.BaseView.extend({
   namespace: 'post',
   onEnter: function() {
-    console.log('enter', 'post')
-    burgerChanging('post')
-    itemHightlight()
     commentSystemReset()
   },
   onEnterCompleted: function() {
-    runScript()
-    scrollPositionScroll()
-    loadProgress(true)
+
   },
   onLeave: function() {
-    currentToPrev()
-    fireListeners("post")
-    scrollPositionStore()
+
   },
    onLeaveCompleted: function() {
 
@@ -102,19 +89,13 @@ themeRuntime.init.post = Barba.BaseView.extend({
 themeRuntime.init.archive = Barba.BaseView.extend({
   namespace: 'archive',
   onEnter: function() {
-    console.log('enter', 'archive')
-    burgerChanging('archive')
-    itemHightlight()
+
   },
   onEnterCompleted: function() {
-    runScript()
-    scrollPositionScroll()
-    loadProgress(true)
+
   },
   onLeave: function() {
-    currentToPrev()
-    fireListeners("archive")
-    scrollPositionStore()
+
   },
   onLeaveCompleted: function() {
 
@@ -123,19 +104,13 @@ themeRuntime.init.archive = Barba.BaseView.extend({
 themeRuntime.init.galleries = Barba.BaseView.extend({
   namespace: 'galleries',
   onEnter: function() {
-    console.log('enter', 'galleries')
-    burgerChanging('galleries')
-    itemHightlight()
+
   },
   onEnterCompleted: function() {
-    runScript()
-    scrollPositionScroll()
-    loadProgress(true)
+
   },
   onLeave: function() {
-    currentToPrev()
-    fireListeners("galleries")
-    scrollPositionStore()
+
   },
   onLeaveCompleted: function() {
 
@@ -144,19 +119,13 @@ themeRuntime.init.galleries = Barba.BaseView.extend({
 themeRuntime.init.gallery = Barba.BaseView.extend({
   namespace: 'gallery',
   onEnter: function() {
-    console.log('enter', 'gallery')
-    burgerChanging('gallery')
-    itemHightlight()
+
   },
   onEnterCompleted: function() {
-    runScript()
-    scrollPositionScroll()
-    loadProgress(true)
+
   },
   onLeave: function() {
-    currentToPrev()
-    fireListeners("gallery")
-    scrollPositionStore()
+
   },
   onLeaveCompleted: function() {
 
@@ -165,22 +134,43 @@ themeRuntime.init.gallery = Barba.BaseView.extend({
 themeRuntime.init.search = Barba.BaseView.extend({
   namespace: 'search',
   onEnter: function() {
-    console.log('enter', 'search')
-    burgerChanging('search')
-    itemHightlight()
+
   },
   onEnterCompleted: function() {
-    runScript()
-    scrollPositionScroll()
-    loadProgress(true)
+
   },
   onLeave: function() {
-    currentToPrev()
-    fireListeners("search")
-    scrollPositionStore()
+
   },
   onLeaveCompleted: function() {
 
+  }
+});
+
+// equal to onEnter
+Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+  const namespace = currentStatus.namespace
+  console.log('enter', namespace)
+  burgerChanging(namespace)
+  itemHightlight()
+});
+
+// equal to onEnterCompleted
+Barba.Dispatcher.on('transitionCompleted', function(currentStatus, oldStatus) {
+  runScript()
+  scrollPositionScroll()
+  loadProgress(true)
+});
+
+// equal to onLeave
+Barba.Dispatcher.on('initStateChange', function() {
+  const prevStatus = Barba.HistoryManager.prevStatus()
+  if (prevStatus !== null) {
+    const namespace = prevStatus.namespace
+    console.log('leave', namespace)
+    fireListeners(namespace)
+    currentToPrev()
+    scrollPositionStore()
   }
 });
 
