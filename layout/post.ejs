@@ -12,6 +12,13 @@
   }
 %>
 
+<% if (theme.post.prism.theme) { %>
+  <%- css(config.root + 'css/prism/' + theme.post.prism.theme + '.min') %>
+<% } %>
+<% if (theme.post.prism.line_number === true) { %>
+  <%- css(config.root + 'css/prism/line-number.min') %>
+<% } %>
+
 <div class="theme-post">
   <div class="theme-post__background mdui-color-theme"></div>
   <div class="theme-post__header mdui-color-theme">
