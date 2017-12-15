@@ -41,7 +41,7 @@
     <% } %>
   ">
     <div class="theme-post__warpper__container">
-      <article class="mdui-card theme-post__card">
+      <article class="mdui-card theme-post__card <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
         <section class="theme-post__card__warning">
           <%= __('posts.modified.head') %>
           <span id="content-warning"></span>

@@ -12,7 +12,7 @@
         <% for (var i in site.data.friends) { %>
           <% if (site.data.friends[i].down !== true) { %>
             <div class="mdui-col-xs-6 mdui-col-md-3">
-              <div class="mdui-card theme-friends__container">
+              <div class="mdui-card <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %> theme-friends__container">
                 <a href="<%= site.data.friends[i].link %>" target="_blank" class="theme-friends__container__content">
                   <img class="theme-friends__container__avatar" src="<%= site.data.friends[i].avatar %>" alt="<%= i %>"/>
                   <div class="theme-friends__container__name mdui-text-color-theme-text">

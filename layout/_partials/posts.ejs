@@ -6,7 +6,7 @@
 
 <% if (site.posts.length > 0) { %>
   <div class="theme-posts__post">
-    <article class="mdui-card">
+    <article class="mdui-card <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
       <section class="mdui-card-media theme-posts__post__media" style="background-image: url(<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>)">
         <img src="<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>" class="theme-posts__post__media__image" />
         <div class="mdui-card-media-covered theme-posts__post__media-covered">

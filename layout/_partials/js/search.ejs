@@ -75,7 +75,7 @@
           var position = 1;
           if (isMatch) {
             var randomPic = Math.floor(Math.random() * <%= theme.post.random_pics %> + 1);
-            str += '<div class="theme-posts__post"><article class="mdui-card">';
+            str += '<div class="theme-posts__post"><article class="mdui-card <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">';
             str += '<section class="mdui-card-media theme-posts__post__media" style="background-image: url(\'<%= config.root %>images/random/' + randomPic + '.png\' %>)">';
             str += '<img src="<%= config.root%>images/random/' + randomPic + '.png" class="theme-posts__post__media__image" />';
             str += '<div class="mdui-card-media-covered theme-posts__post__media-covered"><div class="mdui-card-primary mdui-typo">';

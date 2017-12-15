@@ -2,8 +2,8 @@
 style:
   primary_color: "indigo"
   accent_color: "pink"
-  random:
   bg_color: "#eeeeee"
+  hoverable: true
 
 info:
   bg_image: /images/bg.png
