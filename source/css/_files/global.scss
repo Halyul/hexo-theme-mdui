@@ -1,5 +1,15 @@
-/* 添加在<a>中 */
+.theme-ls-loaded {
+  #spinner {
+    opacity: 0;
+    display: none;
+  }
+  main {
+    display: block;
+    opacity: 1;
+  }
+}
 
+/* 添加在<a>中 */
 .theme-menu-badge-fix {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
