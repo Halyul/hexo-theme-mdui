@@ -1,8 +1,17 @@
 <script type="text/javascript">
+  themeRuntime.scriptsMap.post = [];
   var tocFabMenu = document.querySelector('.theme-post__toc-fab__menu .toc')
   var tocCard = document.querySelector('.theme-post__toc .toc')
   if (tocFabMenu !== null && tocCard !== null) {
-    window.addEventListener("load", function() {
+    window.addEventListener("load", tocHighlight);
+    var listener = {
+      function:  tocHighlight,
+      event: 'load',
+      el: window,
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
+    function tocHighlight() {
       var timer;
       function doWork() {
         listens.forEach(function(value, index) {
@@ -56,7 +65,14 @@
       })
       doWork();
       window.addEventListener("scroll", doWork)
-    });
+      var listener = {
+        function:  doWork,
+        event: 'scroll',
+        el: window,
+        removed: false
+      }
+      themeRuntime.scriptsMap.post.push(listener)
+    }
   }
 </script>
 
@@ -71,10 +87,18 @@
     }
   })();
 </script>
+
 <script type="text/javascript">
   /*var images = document.querySelectorAll('.theme-post__card__content img')
   for (i = 0; i < images.length; i++) {
     images[i].addEventListener("click", openLG);
+    var listener = {
+      function:  openLG,
+      event: 'click',
+      el: images[i],
+      removed: false
+    }
+    themeRuntime.scriptsMap.post.push(listener)
   }
   function openLG() {
     var img_src = this.getAttribute('src');
