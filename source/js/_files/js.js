@@ -54,7 +54,6 @@ function initPages() {
   themeRuntime.init.status = true;
 }
 
-themeRuntime.init = {};
 themeRuntime.init.status = false;
 themeRuntime.init.posts = Barba.BaseView.extend({
   namespace: 'posts',
@@ -65,7 +64,7 @@ themeRuntime.init.posts = Barba.BaseView.extend({
 
   },
   onLeave: function() {
-    
+
   },
   onLeaveCompleted: function() {
 

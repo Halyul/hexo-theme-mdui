@@ -1,11 +1,5 @@
 <!-- import js -->
-<%- js("js/mdui") %>
-<%- js("js/barba") %>
-<%- js("js/smooth-scroll") %>
-<%- js("js/es6-promise") %>
-<%- js("js/fetch") %>
-<%- js("js/js") %>
-<%/*- js("js/js.min") */%>
+<%- jsLsload({path:(config.root + 'js/js.min'),key:'main_js'}) %>
 <!-- theme js -->
 <%-partial('js/appbar')%>
 
