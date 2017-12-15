@@ -1,6 +1,6 @@
 .DS_Store
-comment.ejs
-head.ejs
-js.ejs
+_custom/comment.ejs
+_custom/head.ejs
+_custom/js.ejs
 pace-style.css
 node_modules

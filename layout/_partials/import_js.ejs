@@ -9,6 +9,14 @@
 <!-- theme js -->
 <%-partial('js/appbar')%>
 
+<% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
+  <script>
+    if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('<%= config.root + 'sw.js' %>');
+    }
+  </script>
+<% } %>
+
 <% if (theme.vendors.custom_js === true) { %>
   <!-- Custom JS -->
   <%-partial('../_custom/import_js')%>

@@ -89,6 +89,9 @@ footer:
   image:
   last_updated:
 
+# Service Worker
+service_worker:
+
 # scss
 node_sass:
   debug: false
