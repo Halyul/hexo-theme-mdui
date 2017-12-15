@@ -17,6 +17,9 @@ head:
   apple_touch_icon: /images/favicon.png
   keywords: blog, hexo, mdui
 
+# Search
+search: true
+
 # Post
 post:
   entry_excerpt: 80

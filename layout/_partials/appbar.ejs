@@ -16,9 +16,11 @@
   </div>
   <div class="mdui-toolbar theme-toolbar-bottom">
     <span class="theme-toolbar-bottom__title"><%= config.title %></span>
-    <a href="/search.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
-      <i class="mdui-icon material-icons">&#xe8b6;</i>
-    </a>
+    <% if (theme.search === true) { %>
+      <a href="/search.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
+        <i class="mdui-icon material-icons">&#xe8b6;</i>
+      </a>
+    <% } %>
   </div>
   <div class="mdui-progress theme-appbar__progress" id="progressBar">
     <div class="mdui-progress-indeterminate"></div>
