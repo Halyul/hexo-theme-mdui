@@ -21,3 +21,5 @@ hexo.extend.renderer.register('sass', 'css', renderer);
 hexo.extend.helper.register('tocContentHelper', function(){
   return require("./lib/toc/content.js").call(hexo,...arguments);
 });
+
+hexo.extend.generator.register('exportMD', require('./lib/export_md.js'));
