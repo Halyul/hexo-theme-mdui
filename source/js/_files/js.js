@@ -54,7 +54,6 @@ function initPages() {
   themeRuntime.init.status = true;
 }
 
-themeRuntime.init.status = false;
 themeRuntime.init.posts = Barba.BaseView.extend({
   namespace: 'posts',
   onEnter: function() {
