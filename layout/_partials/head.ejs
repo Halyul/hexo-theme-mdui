@@ -26,6 +26,7 @@ pageTitle += ' - ' + config.title;
         }
       }
     };
+    console.info("%cCopyright © 2017 Halyul\n"+'Theme Version: 2.0.0'+'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
   </script>
   <!--
         © HEXO MDUI Theme
@@ -87,5 +88,10 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <%- cssLsload({path:(config.root + 'css/mdui'),key:'theme_css'}) %>
+
+  <% if (theme.vendors.custom_head === true) { %>
+    <!-- Custom Head -->
+    <%-partial('../_custom/head')%>
+  <% } %>
 
 </head>

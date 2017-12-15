@@ -9,6 +9,11 @@
 <!-- theme js -->
 <%-partial('js/appbar')%>
 
+<% if (theme.vendors.custom_js === true) { %>
+  <!-- Custom JS -->
+  <%-partial('../_custom/import_js')%>
+<% } %>
+
 <script type="text/javascript">
   document.querySelector('body').classList.add('theme-ls-loaded')
 </script>

@@ -95,3 +95,8 @@ node_sass:
   outputStyle: compressed
   precision: 5
   sourceComments: false
+
+# Vendors
+vendors:
+  custom_head:
+  custom_js:
