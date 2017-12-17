@@ -15,11 +15,11 @@ body {
           justify-content: center;
   & .#{$sub-class}__title {
     overflow: visible;
-    font-size: 60px;
+    font-size: 56px;
     font-weight: 800;
-    padding-bottom: 40px;
+    padding-bottom: 36px;
     @media (max-width: 599px) {
-      font-size: 40px;
+      font-size: 42px;
       padding-bottom: 16px;
     }
   }
