@@ -56,93 +56,30 @@ function initPages() {
 
 themeRuntime.init.posts = Barba.BaseView.extend({
   namespace: 'posts',
-  onEnter: function() {
-
-  },
-  onEnterCompleted: function() {
-
-  },
-  onLeave: function() {
-
-  },
-  onLeaveCompleted: function() {
-
-  }
 });
 themeRuntime.init.post = Barba.BaseView.extend({
   namespace: 'post',
-  onEnter: function() {
-    commentSystemReset()
-  },
-  onEnterCompleted: function() {
-
-  },
-  onLeave: function() {
-
-  },
-   onLeaveCompleted: function() {
-
-  }
 });
 themeRuntime.init.archive = Barba.BaseView.extend({
   namespace: 'archive',
+});
+themeRuntime.init.archive = Barba.BaseView.extend({
+  namespace: 'archives',
   onEnter: function() {
-
-  },
-  onEnterCompleted: function() {
-
+    document.body.classList.add('theme-archive--style-change', 'theme-archive--style');
   },
   onLeave: function() {
-
+    document.body.classList.remove('theme-archive--style-change', 'theme-archive--style');
   },
-  onLeaveCompleted: function() {
-
-  }
 });
 themeRuntime.init.galleries = Barba.BaseView.extend({
   namespace: 'galleries',
-  onEnter: function() {
-
-  },
-  onEnterCompleted: function() {
-
-  },
-  onLeave: function() {
-
-  },
-  onLeaveCompleted: function() {
-
-  }
 });
 themeRuntime.init.gallery = Barba.BaseView.extend({
   namespace: 'gallery',
-  onEnter: function() {
-
-  },
-  onEnterCompleted: function() {
-
-  },
-  onLeave: function() {
-
-  },
-  onLeaveCompleted: function() {
-
-  }
 });
 themeRuntime.init.search = Barba.BaseView.extend({
   namespace: 'search',
-  onEnter: function() {
-
-  },
-  onEnterCompleted: function() {
-
-  },
-  onLeave: function() {
-
-  },
-  onLeaveCompleted: function() {
-
-  }
 });
 
 // equal to onEnter
@@ -180,7 +117,7 @@ themeRuntime.scrollMap = {};
 var pageTransition = Barba.BaseTransition.extend({
   start: function() {
     loadProgress(false)
-    if (document.querySelector('body').clientWidth < 1024) {
+    if (document.body.clientWidth < 1024) {
       drawer.close()
     }
     this.newContainerLoading.then(this.finish.bind(this));
@@ -234,7 +171,7 @@ function burgerChanging(page) {
     if (pageStatus === true) {
       burger.classList.remove('theme-appbar__burger--menu');
       burger.classList.add('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
-      burger.setAttribute('href', 'javascript:history.go(-1)')
+      burger.setAttribute('href', '/')
       burger.removeEventListener('click', drawerToggle)
     }
     drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--menu')

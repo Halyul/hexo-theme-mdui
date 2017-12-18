@@ -1,5 +1,268 @@
 $main-class: theme-archive;
 
+body.#{$main-class}--style {
+  @media (max-width: 860px) {
+    padding-top: 0;
+    padding-left: 0;
+    .mdui-color-white,
+    .theme-toolbar-top,
+    .theme-toolbar-bottom {
+      -webkit-transition: color .3s cubic-bezier(0,0,.2,1);
+      transition: color .3s cubic-bezier(0,0,.2,1);
+      -webkit-transition: background-color .3s cubic-bezier(0,0,.2,1);
+      transition: background-color .3s cubic-bezier(0,0,.2,1);
+    }
+    .theme-toolbar-bottom__title {
+      opacity: 1;
+      -webkit-transition: opacity .3s cubic-bezier(0,0,.2,1);
+      transition: opacity .3s cubic-bezier(0,0,.2,1);
+    }
+  }
+}
+
+body.#{$main-class}--style-change {
+  @media (max-width: 860px) {
+    .mdui-color-white,
+    .theme-toolbar-top,
+    .theme-toolbar-bottom {
+      color: #000 !important;
+      background-color: rgba(0, 0, 0, .1) !important;
+    }
+    .theme-toolbar-bottom__title {
+      opacity: 0;
+    }
+  }
+}
+
 .#{$main-class} {
   min-height: calc(100vh - 128px);
+  .theme-posts {
+    @media (min-width: 860px) {
+      padding-left: 30%;
+    }
+    @media (min-width: 1024px) {
+      padding-left: 0;
+    }
+  }
+}
+
+.#{$main-class}__side-content {
+  $sub-class: #{$main-class}__side-content;
+  position: fixed;
+  top: 128px;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  z-index: 99;
+  @media (max-width: 860px) {
+    position: inherit;
+    width: 100%;
+    height: auto;
+  }
+  @media (min-width: 1024px) {
+    display: none;
+  }
+  .#{$sub-class}__bg {
+    @media (min-width: 370px) and (max-width: 859px) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      overflow: hidden;
+      height: 30%;
+      height: 30vw;
+      min-height: 200px;
+      max-height: 250px;
+      -webkit-box-align: center;
+      box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+  }
+  .#{$sub-class}__content {
+    margin: 0 32px;
+    padding-bottom: 24px;
+    text-align: center;
+    @media (min-width: 660px) and (max-width: 859px) {
+      width: 80%;
+      margin: 0 auto;
+    }
+    @media (min-width: 860px) {
+      margin: 0 24px;
+      text-align: left;
+    }
+  }
+  .#{$sub-class}__avatar {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin-top: -25px;
+    border: #fff 1px solid;
+  }
+  .#{$sub-class}__author {
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    @media (min-width: 860px) {
+      width: 50px;
+    }
+  }
+  .#{$sub-class}__name {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36px;
+    max-height: 105px;
+    margin-bottom: -6px;
+  }
+  .#{$sub-class}__length {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 14px;
+    opacity: .54;
+  }
+}
+
+.#{$main-class}__index {
+  max-width: 530px;
+  text-align: center;
+  @media (min-width: 440px) {
+    width: 95%;
+    margin: 0 auto;
+  }
+  @media (min-width: 650px) {
+    width: 85%;
+  }
+  @media (min-width: 1024px) {
+    max-width: 1084px;
+  }
+}
+
+.#{$main-class}__header {
+  $sub-class: #{$main-class}__header;
+  @media (min-width: 1024px) {
+    border-radius: 2px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .14);
+    overflow: hidden;
+  }
+  .#{$sub-class}__bg {
+    overflow: hidden;
+  }
+  .#{$sub-class}__content {
+    position: relative;
+    z-index: 1;
+    @media (min-width: 1024px) {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      margin-top: -108px;
+      padding: 24px;
+      background-color: rgba(0, 0, 0, 0);
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .46));
+      -webkit-box-flex: auto;
+      -ms-flex: auto;
+      flex: auto;
+      -webkit-box-orient: horizontal;
+      box-orient: horizontal;
+      -ms-flex-direction: row;
+      background-color: transparent !important;
+    }
+  }
+  .#{$sub-class}__info {
+    @media (min-width: 1024px) {
+      margin-left: 24px;
+    }
+  }
+  .#{$sub-class}__avatar {
+    width: 60px;
+    margin-top: -30px;
+    @media (min-width: 1024px) {
+      margin-top: 0;
+    }
+  }
+  .#{$sub-class}__name {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 16px;
+    word-break: break-word;
+    @media (min-width: 1024px) {
+      margin-top: 0;
+      color: #fff;
+      text-align: left;
+    }
+  }
+  .#{$sub-class}__slogan {
+    font-size: 14px;
+    margin-top: 16px;
+    @media (min-width: 1024px) {
+      margin-top: 8px;
+      color: #fff;
+      text-align: left;
+    }
+  }
+  .#{$sub-class}__button {
+    margin-top: 24px;
+  }
+}
+
+.#{$main-class}__items {
+  $sub-class: #{$main-class}__items;
+  .mdui-card-media {
+    height: 16vh;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-origin: padding-box;
+    background-attachment: scroll;
+  }
+  .#{$sub-class}__item {
+    margin-bottom: 16px;
+  }
+  .#{$sub-class}__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 32px 16px 16px;
+    text-align: left;
+    @media (min-width: 440px) {
+      margin: 32px 0 16px 0;
+    }
+    @media (min-width: 1024px) {
+      margin: 32px 0 24px 0;
+    }
+  }
+  .#{$sub-class}__content {
+    $sub-sub-class: #{$sub-class}__content;
+    height: 80px;
+    padding: 0 16px 16px;
+    text-align: left;
+    &.#{$sub-sub-class}--no-length {
+      height: 63px;
+      padding: 0 16px 16px;
+      text-align: left;
+    }
+  }
+  .#{$sub-class}__avatar {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+  }
+  .#{$sub-class}__text-title {
+    font-size: 16px;
+    line-height: 20px;
+    max-height: 40px;
+    margin-top: 4px;
+    word-break: break-word;
+  }
+  .#{$sub-class}__length {
+    font-size: 12px;
+    overflow: hidden;
+    margin-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
 }

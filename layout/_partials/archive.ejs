@@ -1,4 +1,152 @@
+<%
+var years = {};
+site.posts.sort('date').reverse().forEach(function(post){
+  var year = post.date.year()
+  if(years[year]===undefined){
+    years[year] = [];
+  }
+  years[year].push(post);
+});
+%>
 <div class="theme-archive">
-
+  <div class="theme-archive__index">
+    <div class="theme-archive__header">
+      <div class="theme-archive__header__bg">
+        <img class="mdui-img-fluid mdui-img-rounded" src="<%= theme.info.bg_image %>"/>
+      </div>
+      <div class="theme-archive__header__content" style="background-color:<%= theme.style.bg_color %>">
+        <img class="mdui-img-circle theme-archive__header__avatar" src="<%= theme.info.avatar %>"/>
+        <div class="theme-archive__header__info">
+          <div class="theme-archive__header__name">
+            <%= config.author %>
+          </div>
+          <div class="theme-archive__header__slogan">
+            <%= theme.info.slogan %>
+          </div>
+        </div>
+        <div class="theme-spacer mdui-hidden-sm-down"></div>
+        <% if (theme.info.sns !== null) { %>
+          <button class="theme-archive__header__button mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-raised" mdui-dialog="{target: '#contactDialog'}"><%= __('userview.contact_me') %></button>
+        <% } %>
+      </div>
+    </div>
+    <div class="theme-archive__items mdui-container-fluid">
+      <div class="theme-archive__items__title mdui-text-color-theme-secondary">
+        <%= __('global.categories') %>
+      </div>
+      <div class="mdui-row">
+        <% site.categories.map(function(category){  %>
+          <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+            var num = Math.floor(Math.random() * color.length);
+            var randomPic = Math.floor(Math.random() * theme.post.random_pics + 1);
+          %>
+          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
+            <a href="/<%= category.path %>" target="_self" class="theme-link--no-style">
+              <div class="mdui-card mdui-color-<%= color[num] %>">
+                <div class="mdui-card-media" style="background-image: url(<%= config.root + 'images/random/' + randomPic + '.png' %>)"></div>
+                <div class="theme-archive__items__content">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="<%= theme.info.avatar %>" />
+                  <div class="theme-archive__items__text-title"><%= category.name %></div>
+                  <div class="theme-archive__items__length">
+                    <% if (category.length === 1) { %>
+                      <%= category.length + ' ' + __('archive.post') %>
+                    <% } else { %>
+                      <%= category.length + ' ' + __('archive.post') %>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    <div class="theme-archive__items mdui-container-fluid">
+      <div class="theme-archive__items__title mdui-text-color-theme-secondary">
+        <%= __('global.tags') %>
+      </div>
+      <div class="mdui-row">
+        <% site.tags.map(function(tag){  %>
+          <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+            var num = Math.floor(Math.random() * color.length);
+            var randomPic = Math.floor(Math.random() * theme.post.random_pics + 1);
+          %>
+          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
+            <a href="/<%= tag.path %>" target="_self" class="theme-link--no-style">
+              <div class="mdui-card mdui-color-<%= color[num] %>">
+                <div class="mdui-card-media" style="background-image: url(<%= config.root + 'images/random/' + randomPic + '.png' %>)"></div>
+                <div class="theme-archive__items__content">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="<%= theme.info.avatar %>" />
+                  <div class="theme-archive__items__text-title"><%= tag.name %></div>
+                  <div class="theme-archive__items__length">
+                    <% if (tag.length === 1) { %>
+                      <%= tag.length + ' ' + __('archive.post') %>
+                    <% } else { %>
+                      <%= tag.length + ' ' + __('archive.posts') %>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    <div class="theme-archive__items mdui-container-fluid">
+      <div class="theme-archive__items__title mdui-text-color-theme-secondary">
+        <%= __('global.years') %>
+      </div>
+      <div class="mdui-row">
+        <% Object.keys(years).reverse().forEach(function(year){ %>
+          <% var color = ['red','pink','purple','deep-purple','indigo','blue','light-blue','cyan','teal','green','light-green','lime','yellow','amber','orange','deep-orange','brown','grey','blue-grey'];
+            var num = Math.floor(Math.random() * color.length);
+            var randomPic = Math.floor(Math.random() * theme.post.random_pics + 1);
+          %>
+          <div class="mdui-col-xs-6 mdui-col-md-3 theme-archive__items__item">
+            <a href="<%= config.root %>archives/<%= year %>/" target="_self" class="theme-link--no-style">
+              <div class="mdui-card mdui-color-<%= color[num] %>">
+                <div class="mdui-card-media" style="background-image: url(<%= config.root + 'images/random/' + randomPic + '.png' %>)"></div>
+                <div class="theme-archive__items__content theme-archive__items__content--no-length">
+                  <img class="mdui-img-circle theme-archive__items__avatar" src="<%= theme.info.avatar %>" />
+                  <div class="theme-archive__items__text-title"><%= year %></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  <% if (theme.info.sns !== null) { %>
+    <div class="mdui-dialog" id="contactDialog">
+      <div class="mdui-dialog-title">
+        <%= __('userview.how_to_contact_me') %>
+      </div>
+      <div class="mdui-dialog-content">
+        <div class="mdui-list">
+          <% for (var i in theme.info.sns){ %>
+            <a href="<%= theme.info.sns[i].link %>" title="<%= i %>" class="mdui-list-item mdui-ripple" target="_blank">
+              <% if (theme.info.sns[i].fa) { %>
+                <i class="mdui-list-item-icon mdui-icon fa <%= theme.info.sns[i].fa %> mdui-text-center"></i>&emsp;
+              <% } %>
+              <% if (theme.info.sns[i].md) { %>
+                <i class="mdui-list-item-icon mdui-icon material-icons"><%- theme.info.sns[i].md %></i>&emsp;
+              <% } %>
+              <% if (theme.info.sns[i].null_icon === true) { %>
+                <i class="mdui-list-item-icon"></i>&emsp;
+              <% } %>
+              <%= i %>
+            </a>
+          <% } %>
+        </div>
+      </div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close>
+          <%= __('userview.close') %>
+        </button>
+      </div>
+    </div>
+  <% } %>
+  <%-partial('_partials/fab/index')%>
 </div>
 <%-partial('_partials/js/archive')%>

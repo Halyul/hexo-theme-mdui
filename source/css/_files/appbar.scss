@@ -16,7 +16,6 @@ $main-class: theme-appbar;
 
 .#{$main-class} {
   width: auto;
-  border-bottom: 1px solid #ddd;
   -webkit-transition: padding .3s cubic-bezier(0,0,.2,1);
   transition: padding .3s cubic-bezier(0,0,.2,1);
   @media (min-width: 1024px) {

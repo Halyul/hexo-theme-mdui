@@ -9,6 +9,13 @@ info:
   bg_image: /images/bg.png
   avatar: /images/avatar.png
   slogan: "I'm your slogan!"
+  sns:
+    Twitter:
+      link: https://twitter.com
+      fa: 'fa-twitter'
+    Facebook:
+      link: https://facebook.com
+      null_icon: true
 
 # HTML head
 head:

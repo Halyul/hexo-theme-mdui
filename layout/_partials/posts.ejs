@@ -1,7 +1,5 @@
 <%
-  if (theme.post.random_pics !== false && theme.post.random_pics) {
-    var randomPic = Math.floor(Math.random() * theme.post.random_pics + 1);
-  }
+  var randomPic = Math.floor(Math.random() * theme.post.random_pics + 1);
 %>
 
 <% if (site.posts.length > 0) { %>

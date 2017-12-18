@@ -1,10 +1,10 @@
 <script type="text/javascript">
-  //index fab
+  themeRuntime.scriptsMap.archive = [];
   (function() {
     var fabTopFlag = false;
     var fabEl = document.getElementById('index-fab');
     function fabShowHide() {
-      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
       if (bodyScrolled > 0 && !fabTopFlag) {
         fabEl.classList.remove('mdui-fab-hide');
         fabTopFlag = true;
@@ -14,5 +14,28 @@
       }
     }
     fabShowHide()
+    window.addEventListener('scroll', fabShowHide);
+    var listener = {
+      function: fabShowHide,
+      event: 'scroll',
+      el: window,
+      removed: false
+    }
+    themeRuntime.scriptsMap.archive.push(listener)
   })();
+</script>
+<script>
+    window.addEventListener("scroll", parallaxImg)
+    function parallaxImg(){
+      var bodyScrolled = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      document.querySelector('.theme-archive__header__bg img')
+        .style.transform = 'translateY(' + bodyScrolled * 0.4 + 'px)';
+    }
+    var listener = {
+      function: parallaxImg,
+      event: 'scroll',
+      el: window,
+      removed: false
+    }
+    themeRuntime.scriptsMap.archive.push(listener)
 </script>

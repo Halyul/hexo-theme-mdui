@@ -1,5 +1,6 @@
 <% if (is_year()) { %>
   <div class="theme-archive">
+    <%-partial('_partials/archives')%>
     <div class="theme-posts">
       <%
           var position = 0;
@@ -29,7 +30,7 @@
     </div>
     <%-partial('_partials/fab/index')%>
   </div>
-  <%-partial('_partials/js/index')%>
+  <%-partial('_partials/js/archives')%>
 <% } else if (is_archive() && !is_year()) { %>
   <%-partial('_partials/archive')%>
 <% } %>
