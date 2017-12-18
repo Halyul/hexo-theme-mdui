@@ -1,8 +1,6 @@
 <script type="text/javascript">
   themeRuntime.scriptsMap.post = [];
-  var tocFabMenu = document.querySelector('.theme-post__toc-fab__menu .toc')
-  var tocCard = document.querySelector('.theme-post__toc .toc')
-  if (tocFabMenu !== null && tocCard !== null) {
+  if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
     window.addEventListener("load", tocHighlight);
     var listener = {
       function:  tocHighlight,
@@ -47,10 +45,10 @@
       }
       var listens = [];
       var cardToc = document.querySelector('.theme-post__toc');
-      var links = document.querySelectorAll("a.theme-post__toc__content__link");
-      var toclist = document.querySelector(".theme-post__toc ol.toc");
+      var links = document.querySelectorAll(".theme-post__toc__content__link");
+      var toclist = document.querySelector(".theme-post__toc > ol");
       Array.prototype.forEach.call(links, function(value, index) {
-        var id = (value.getAttribute("data-href") || "#").slice(1);
+        var id = (value.getAttribute("href") || "#").slice(1);
         var element = document.getElementById(id);
         listens.push([value, function() {
           var readed = false;
