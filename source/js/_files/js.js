@@ -186,8 +186,8 @@ function runScript() {
   if (themeRuntime.init.status === true) {
     var main = document.querySelector('main')
     var scripts = main.querySelectorAll('script')
-    for (var i = 0; i < scripts.length; ++i) {
-      eval(scripts[i].innerHTML)
+    for (var eval_count = 0; eval_count < scripts.length; ++eval_count) {
+      eval(scripts[eval_count].innerHTML)
     }
   }
 }
