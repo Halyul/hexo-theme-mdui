@@ -1,6 +1,6 @@
 /* hexo-prism-plugin
-* author: ele828
-* license: unknown
+ * author: ele828
+ * license: unknown
  */
 
  'use strict';
