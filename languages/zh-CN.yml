@@ -65,7 +65,7 @@ userview:
 friends:
   visit: '参观'
 outdated_browser:
-  title: '你的浏览器一直过气辣！'
+  title: '你的浏览器已经过气辣！'
   line_one: '赶紧升级浏览器来访问本站吧！'
   link: '现在就去'
   close: '关闭'
