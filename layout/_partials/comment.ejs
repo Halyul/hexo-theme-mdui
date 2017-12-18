@@ -6,15 +6,15 @@
   <div id="disqus_thread"></div>
   <script>
     themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                this.page.identifier = newIdentifier;
-                this.page.url = newUrl;
-                this.page.title = newTitle;
-            }
-        });
-      }
+      DISQUS.reset({
+        reload: true,
+        config: function () {
+          this.page.identifier = newIdentifier;
+          this.page.url = newUrl;
+          this.page.title = newTitle;
+        }
+      });
+    }
     var disqus_config = function () {
       this.page.url = '<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable

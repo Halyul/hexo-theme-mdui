@@ -155,9 +155,6 @@ $main-class: theme-post;
   $sub-class: #{$main-class}__card;
   padding: 16px;
   display: inline-block;
-  img {
-    cursor: pointer;
-  }
   @media (min-width: 771px) {
     padding: 32px;
   }
@@ -208,6 +205,9 @@ $main-class: theme-post;
     line-height: 20px;
     margin: 16px 0;
     word-wrap: break-word;
+    img {
+      cursor: pointer;
+    }
   }
   .#{$sub-class}__license {
     @include info-boxes;

@@ -59,6 +59,9 @@ themeRuntime.init.posts = Barba.BaseView.extend({
 });
 themeRuntime.init.post = Barba.BaseView.extend({
   namespace: 'post',
+  onEnter: function() {
+    commentSystemReset()
+  }
 });
 themeRuntime.init.archive = Barba.BaseView.extend({
   namespace: 'archive',
