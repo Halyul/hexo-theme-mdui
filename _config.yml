@@ -1,4 +1,6 @@
 # Theme config
+router: false
+
 style:
   primary_color: "indigo"
   accent_color: "pink"

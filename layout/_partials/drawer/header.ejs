@@ -1,11 +1,19 @@
 <div class="theme-drawer__header">
   <div class="theme-drawer__header__layer-1">
     <div class="mdui-toolbar theme-toolbar-top">
-      <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--drawer" id="drawer-back">
-        <i class="mdui-icon">
-          <span></span>
-        </i>
-      </a>
+      <% if (is_home()) { %>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--drawer"  id="drawer-back">
+          <i class="mdui-icon">
+            <span></span>
+          </i>
+        </a>
+      <% } else { %>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--drawer theme-appbar__burger--arrow" id="drawer-back">
+          <i class="mdui-icon">
+            <span></span>
+          </i>
+        </a>
+      <% } %>
     </div>
     <div class="mdui-toolbar theme-toolbar-bottom">
       <span class="theme-toolbar-bottom__title"><%= config.title %></span>

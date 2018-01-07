@@ -9,7 +9,11 @@
 <% if(theme.vendors.js_min_js) { %>
   <script src="<%= theme.vendors.js_min_js %>" type="text/javascript"></script>
 <% } else { %>
+  <% if (theme.router === true) { %>
     <%- js('js/js.barba.min') %>
+  <% } else { %>
+    <%- js('js/js.pure.min') %>
+  <% } %>
 <% } %>
 
 <!-- theme js -->

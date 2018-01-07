@@ -1,37 +1,3 @@
-var links = document.querySelectorAll('a[href]');
-var cbk = function(e) {
- if(e.currentTarget.href === window.location.href) {
-   e.preventDefault();
-   e.stopPropagation();
- }
-};
-
-for(var i = 0; i < links.length; i++) {
-  links[i].addEventListener('click', cbk);
-}
-
-var drawer = new mdui.Drawer('#drawer', {swipe: true});
-var drawerEl = document.getElementById('drawer')
-document.querySelector('#drawer-back').addEventListener('click', function() {
-  drawer.close()
-})
-drawerEl.addEventListener('open.mdui.drawer', function() {
-  document.getElementById('drawer-back').classList.remove('theme-appbar__burger--menu');
-  document.getElementById('drawer-back').classList.add('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
-});
-drawerEl.addEventListener('close.mdui.drawer', function() {
-  var namespace = Barba.HistoryManager.currentStatus().namespace
-  if (namespace === "posts") {
-    document.getElementById('drawer-back').classList.remove('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
-    document.getElementById('drawer-back').classList.add('theme-appbar__burger--menu');
-  }
-});
-
-/* smooth scroll */
-var smoothScroll = new SmoothScroll('a.theme-post__toc__content__link', {
-	offset: 128
-});
-
 /* init pages
  * for barbajs
  */
@@ -121,7 +87,7 @@ var pageTransition = Barba.BaseTransition.extend({
   start: function() {
     loadProgress(false)
     if (document.body.clientWidth < 1024) {
-      drawer.close()
+      themeRuntime.el.drawer.close()
     }
     this.newContainerLoading.then(this.finish.bind(this));
   },
@@ -168,8 +134,8 @@ function burgerChanging(page) {
       burger.setAttribute('href', 'javascript:;')
     }
     burger.addEventListener('click', drawerToggle)
-    drawerEl.querySelector('#drawer-back').classList.add('theme-appbar__burger--menu')
-    drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--arrow')
+    themeRuntime.el.drawerEl.querySelector('#drawer-back').classList.add('theme-appbar__burger--menu')
+    themeRuntime.el.drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--arrow')
   } else {
     if (pageStatus === true) {
       burger.classList.remove('theme-appbar__burger--menu');
@@ -177,12 +143,12 @@ function burgerChanging(page) {
       burger.setAttribute('href', '/')
       burger.removeEventListener('click', drawerToggle)
     }
-    drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--menu')
-    drawerEl.querySelector('#drawer-back').classList.add('theme-appbar__burger--arrow')
+    themeRuntime.el.drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--menu')
+    themeRuntime.el.drawerEl.querySelector('#drawer-back').classList.add('theme-appbar__burger--arrow')
   }
 }
 function drawerToggle() {
-  drawer.toggle()
+  themeRuntime.el.drawer.toggle()
 }
 
 function runScript() {
@@ -265,23 +231,6 @@ function itemHightlight() {
       collapseItem(item)
     }
   }
-}
-
-document.body.addEventListener('touchmove', drawerAppbarMove);
-document.body.addEventListener('touchend', drawerAppbarEnd);
-function drawerAppbarMove(event) {
-  var translate = drawerEl.style.transform
-  var transition = drawerEl.style.transition
-  translate = translate.replace(/\s+/g,"")
-  translate = translate.replace(/translate\(/g,"")
-  translate = translate.replace(/px,0px\)/g,"")
-  translate = Math.abs(translate)
-  drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transform", "translateX(" + translate + "px)", "important");
-  drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transition", transition, "important");
-}
-function drawerAppbarEnd(event) {
-  drawerEl.querySelector('.theme-drawer__header__layer-1').style.transform = null
-  drawerEl.querySelector('.theme-drawer__header__layer-1').style.transition = null
 }
 
 function commentSystemReset() {

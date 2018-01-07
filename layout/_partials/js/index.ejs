@@ -36,7 +36,7 @@
       var loadStatus = pageNext - themeRuntime.temp.index
       if (screenHeight >= compareHeight && loadStatus === 1) {
         if (pageNext <= pageTotal) {
-          loadProgress(false)
+          loadProgressInline(false)
           var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext
           themeRuntime.temp.index = pageNext;
           console.log(pageTotal, url)
@@ -52,13 +52,21 @@
             fakeDom.innerHTML = HTML
             var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
             var postsArea = document.querySelector(".theme-posts")
-            loadProgress(true)
+            loadProgressInline(true)
             postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
             pageNext++;
           }).catch(function(error) {
             mdui.alert(error, "<%= __('error.title') %>");
           })
         }
+      }
+    }
+    function loadProgressInline(state) {
+      var progressEl = document.getElementById('progressBar')
+      if (state === true) {
+        progressEl.classList.add('theme-appbar__progress--hidden')
+      } else if (state === false) {
+        progressEl.classList.remove('theme-appbar__progress--hidden')
       }
     }
     window.addEventListener('scroll', morePosts);
