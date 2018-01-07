@@ -139,14 +139,17 @@ $main-class: theme-post;
       margin: 0 auto;
       padding-left: 8px;
       text-align: left;
-      width: calc(100%-8px);
+      width: calc(100% - 8px);
+    }
+    &.#{$sub-class}--center .#{$sub-class}__container {
+      width: 832px;
     }
   }
   @media (min-width: 1351px) {
     margin-left: 128px;
     .#{$sub-class}__container {
       padding-left: 0px;
-      width: initial;
+      width: 100%;
     }
   }
 }
@@ -159,11 +162,17 @@ $main-class: theme-post;
     padding: 32px;
   }
   @media (min-width: 1024px) {
-    width: 640px;
+    width: calc(100% - 222px - 16px - 16px);
+    max-width: 832px;
+    .#{$main-class}__warpper--center & {
+      width: 100%;
+    }
   }
   @media (min-width: 1186px) {
-    width: 832px;
     padding: 64px;
+  }
+  @media (min-width: 1351px) {
+    width: calc(100% - 222px - 64px - 16px);
   }
   @media (max-width: 1023px) {
     width: 100%;

@@ -1,6 +1,6 @@
 #!/bin/bash
 CSS_FILES=$PWD/source/css/_files
-JS_FILES=$PWD/source/js/_files
+JS_FILES=$PWD/source/js/files
 
 cd $CSS_FILES/prism
 
