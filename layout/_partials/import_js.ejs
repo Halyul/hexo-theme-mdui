@@ -1,6 +1,16 @@
 <!-- import js -->
-<%- js('js/outdatedbrowser.min') %>
-<%- js('js/js.barba.min') %>
+
+<% if(theme.vendors.outdatedbrowser_min_js) { %>
+  <script src="<%= theme.vendors.outdatedbrowser_min_js %>" type="text/javascript"></script>
+<% } else { %>
+  <%- js('js/outdatedbrowser.min') %>
+<% } %>
+
+<% if(theme.vendors.js_min_js) { %>
+  <script src="<%= theme.vendors.js_min_js %>" type="text/javascript"></script>
+<% } else { %>
+    <%- js('js/js.barba.min') %>
+<% } %>
 
 <!-- theme js -->
 <%-partial('js/appbar')%>

@@ -45,6 +45,8 @@ pageTitle += ' - ' + config.title;
   <meta http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+  <meta name="theme-color" content="#fff">
+
   <meta name="author" content="<%= config.author %>">
   <% if(page.description) { %>
       <meta name="description" itemprop="description" content="<%= page.description %>">
@@ -88,7 +90,11 @@ pageTitle += ' - ' + config.title;
   <% } %>
 
   <!-- Import CSS -->
-  <%- css('css/mdui') %>
+  <% if(theme.vendors.style_min_css) { %>
+    <link href="<%= theme.vendors.style_min_css %>" rel="stylesheet">
+  <% } else { %>
+    <%- css('css/mdui') %>
+  <% } %>
 
   <% if (theme.vendors.custom_head === true) { %>
     <!-- Custom Head -->
