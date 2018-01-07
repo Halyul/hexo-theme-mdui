@@ -1,73 +1,71 @@
 global:
-  archives: 'Archives'
-  category: 'Category'
-  categories: 'Categories'
-  index: 'Index'
-  pages: 'Pages'
-  tag: 'Tag'
-  tags: 'Tags'
-  years: 'Years'
-  busuanzi_views: 'Views: '
-  last_updated: 'Last Updated: '
-  multiple: 'Multiple '
-  pgnf_button: 'Return to homepage'
+  archives: "Archives"
+  category: "Category"
+  categories: "Categories"
+  index: "Index"
+  pages: "Pages"
+  tag: "Tag"
+  tags: "Tags"
+  years: "Years"
+  last_updated: "Last Updated: "
+  multiple: "Multiple "
+  pgnf_button: "Return to homepage"
 archive:
-  post: 'Post'
-  posts: 'Posts'
-  about: 'About'
-  more: 'MORE'
-  less: 'LESS'
+  post: "Post"
+  posts: "Posts"
+  about: "About"
+  more: "MORE"
+  less: "LESS"
 posts:
-  posted: 'Posted: '
-  edited: 'Last Modified: '
-  header: 'Something that I have posted'
-  public: 'Public'
+  posted: "Posted: "
+  edited: "Last Modified: "
+  header: "Something that I have posted"
   qr_code: "Article QR Code"
-  pinned: 'Pinned'
-  license: 'Article License: '
-  permalink: 'Article Permalink: '
-  markdown: 'Article Markdown: '
+  pinned: "Pinned"
+  license: "Article License: "
+  permalink: "Article Permalink: "
+  markdown: "Article Markdown: "
   donate:
-    button: 'Buy me a beer?'
-    close: 'cancel'
+    button: "Buy me a beer?"
+    close: "Cancel"
   disqus_no_script: 'Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>'
   pagination:
-    newer: 'Newer Post'
-    older: 'Older Post'
+    newer: "Newer Post"
+    older: "Older Post"
   modified:
-    head: 'This article was last modified'
-    foot: 'days ago.'
-    content: 'The content of this post may be outdated!'
+    head: "This article was last modified"
+    foot: "days ago."
+    content: "The content of this post may be outdated!"
   count:
     words:
-      head: 'There are '
-      foot: ' words in this article.'
+      head: "There are "
+      foot: " words in this article."
     time:
-      head: 'Reading it needs about '
-      foot: ' minutes.'
+      head: "Reading it needs about "
+      foot: " minutes."
 search:
-  text: 'Search something...'
-  explore: 'Explore'
+  text: "Search"
+  explore: "Explore"
   footer: "It looks like you've reached the end."
 share_menu:
-  rss: 'Article RSS'
-  facebook: 'Share to Facebook'
-  googleplus: 'Share to Google+'
-  linkedin: 'Share to Linkedin'
-  qq: 'Share to QQ'
-  telegram: 'Share to Telegram'
-  twitter: 'Share to Twitter'
-  weibo: 'Share to Weibo'
+  rss: "Article RSS"
+  facebook: "Share to Facebook"
+  googleplus: "Share to Google+"
+  linkedin: "Share to Linkedin"
+  qq: "Share to QQ"
+  telegram: "Share to Telegram"
+  twitter: "Share to Twitter"
+  weibo: "Share to Weibo"
 userview:
-  contact_me: 'Contact me'
-  how_to_contact_me: 'How to contact me'
-  close: 'Close'
+  contact_me: "Contact me"
+  how_to_contact_me: "How to contact me"
+  close: "Close"
 friends:
-  visit: 'Visit'
+  visit: "Visit"
 outdated_browser:
-  title: 'Your browser is out-of-date!'
-  line_one: 'Update your browser to view this website correctly. '
-  link: 'Update my browser now '
-  close: 'Close'
+  title: "Your browser is out-of-date!"
+  line_one: "Update your browser to view this website correctly. "
+  link: "Update my browser now "
+  close: "Close"
 error:
   title: "ERROR!"

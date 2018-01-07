@@ -1,73 +1,71 @@
 global:
-  archives: '归档'
-  category: '分类'
-  categories: '分类'
-  index: '首页'
-  pages: '页面'
-  tag: '标签'
-  tags: '标签'
-  years: '年份'
-  busuanzi_views: '浏览量: '
-  last_updated: '最后更新于: '
-  multiple: '多个'
-  pgnf_button: '返回首页'
+  archives: "归档"
+  category: "分类"
+  categories: "分类"
+  index: "首页"
+  pages: "页面"
+  tag: "标签"
+  tags: "标签"
+  years: "年份"
+  last_updated: "最后更新于: "
+  multiple: "多个"
+  pgnf_button: "返回首页"
 archive:
-  post: '篇文章'
-  posts: '篇文章'
-  about: '关于'
-  more: '更多'
-  less: '更少'
+  post: "篇文章"
+  posts: "篇文章"
+  about: "关于"
+  more: "更多"
+  less: "更少"
 posts:
-  posted: '编写时间：'
-  edited: '最后修改时间：'
-  header: '我的文章'
-  public: '公开'
+  posted: "编写时间："
+  edited: "最后修改时间："
+  header: "我的文章"
   qr_code: "文章二维码"
-  pinned: '置顶'
-  license: '本文许可协议：'
-  permalink: '本文永久链接：'
-  markdown: '本文Markdown：'
+  pinned: "置顶"
+  license: "本文许可协议："
+  permalink: "本文永久链接："
+  markdown: "本文Markdown："
   donate:
-    button: '打赏我一个吧'
-    close: '才不呢'
+    button: "打赏"
+    close: "不要"
   disqus_no_script: '请启用JavaScript以查看<a href="https://disqus.com/?ref_noscript">来自Disqus的评论</a>'
   pagination:
-    newer: '新的文章'
-    older: '旧的文章'
+    newer: "新的文章"
+    older: "旧的文章"
   modified:
-    head: '这篇文章最后修改于'
-    foot: '天之前。'
-    content: '本页内容可能已经过时！'
+    head: "这篇文章最后修改于"
+    foot: "天之前。"
+    content: "本页内容可能已经过时！"
   count:
     words:
-      head: '本文共'
-      foot: '字。'
+      head: "本文共"
+      foot: "字。"
     time:
-      head: '阅读大约需要'
-      foot: '分钟。'
+      head: "阅读大约需要"
+      foot: "分钟。"
 search:
-  text: '搜索什么...'
-  explore: '探索'
-  footer: '看起来已经没有了'
+  text: "搜索"
+  explore: "探索"
+  footer: "看起来已经没有了"
 share_menu:
-  rss: '文章RSS'
-  facebook: '分享到Facebook'
-  googleplus: '分享到Google+'
-  linkedin: '分享到Linkedin'
-  qq: '分享到QQ'
-  telegram: '分享到Telegram'
-  twitter: '分享到Twitter'
-  weibo: '分享到微博'
+  rss: "文章RSS"
+  facebook: "分享到Facebook"
+  googleplus: "分享到Google+"
+  linkedin: "分享到Linkedin"
+  qq: "分享到QQ"
+  telegram: "分享到Telegram"
+  twitter: "分享到Twitter"
+  weibo: "分享到微博"
 userview:
-  contact_me: '联系我'
-  how_to_contact_me: '如何联系我'
-  close: '关闭'
+  contact_me: "联系我"
+  how_to_contact_me: "如何联系我"
+  close: "关闭"
 friends:
-  visit: '参观'
+  visit: "参观"
 outdated_browser:
-  title: '你的浏览器已经过气辣！'
-  line_one: '赶紧升级浏览器来访问本站吧！'
-  link: '现在就去'
-  close: '关闭'
+  title: "你的浏览器已经过气辣！"
+  line_one: "赶紧升级浏览器来访问本站吧！"
+  link: "现在就去"
+  close: "关闭"
 error:
   title: "错误！"

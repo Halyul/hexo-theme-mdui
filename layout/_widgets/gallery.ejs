@@ -10,7 +10,7 @@
       <% if (page.descr) { %>
         <div class="mdui-valign"><%= page.descr %></div>
       <% } else { %>
-        <div class="mdui-valign"><%= date(page.date, 'MMM DD, YYYY') + ' • ' + __('posts.public') %></div>
+        <div class="mdui-valign"><%= date(page.date, 'MMM DD, YYYY') %></div>
       <% } %>
     </div>
   </div>

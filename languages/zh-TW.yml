@@ -1,0 +1,71 @@
+global:
+  archives: "歸檔"
+  category: "分類"
+  categories: "分類"
+  index: "首頁"
+  pages: "頁面"
+  tag: "標籤"
+  tags: "標籤"
+  years: "年"
+  last_updated: "最後更改："
+  multiple: "Multiple "
+  pgnf_button: "Return to homepage"
+archive:
+  post: "篇文章"
+  posts: "篇文章"
+  about: "關於"
+  more: "更多"
+  less: "更少"
+posts:
+  posted: "創建日期："
+  edited: "最後更改："
+  header: "文章列表"
+  qr_code: "文章QRCode"
+  pinned: "置頂"
+  license: "許可協議："
+  permalink: "文章鏈接："
+  markdown: "文章Markdown："
+  donate:
+    button: "捐款"
+    close: "取消"
+  disqus_no_script: 'JavaScript被禁用,請啟用以查閱<a href="https://disqus.com/?ref_noscript">來自Disqus的評論</a>'
+  pagination:
+    newer: "新文章"
+    older: "舊文章"
+  modified:
+    head: "最後更改:"
+    foot: "天前."
+    content: "本文可能已經失效!"
+  count:
+    words:
+      head: "本文共"
+      foot: "字."
+    time:
+      head: "閱讀完畢需要"
+      foot: "分鐘."
+search:
+  text: "搜索"
+  explore: "探索"
+  footer: "It looks like you've reached the end."
+share_menu:
+  rss: "文章RSS"
+  facebook: "分享至Facebook"
+  googleplus: "分享至Google+"
+  linkedin: "分享至Linkedin"
+  qq: "分享至QQ"
+  telegram: "分享至Telegram"
+  twitter: "分享至Twitter"
+  weibo: "分享至微博"
+userview:
+  contact_me: "聯繫我"
+  how_to_contact_me: "如何聯繫我"
+  close: "關閉"
+friends:
+  visit: "拜訪"
+outdated_browser:
+  title: "瀏覽器已無法正常顯示網頁內容."
+  line_one: "Update your browser to view this website correctly. "
+  link: "現在就開始"
+  close: "關閉"
+error:
+  title: "ERROR!"
