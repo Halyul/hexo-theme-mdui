@@ -15,10 +15,10 @@ Once you have finished clone, copy the folder to hexo `theme` foler , and rename
 ## Enable the theme
 Then open hexo's `_config.yml`, find `theme` and change to folloing name to `mdui`(or the one you have set just now.)
 
-!> Then run the following code to install `prismjs` in the `hexo` folder to prevent from getting errors when you run hexo
+!> Then run the following code to install in the `hexo` folder to prevent from getting errors when you run hexo
 
 ```` bash
-$ npm install prismjs --save
+$ npm install prismjs node-sass-magic-importer node-sass node-prismjs --save
 ````
 
 !> Check HEXO's `_config.yml` `highlight` option. Make sure that

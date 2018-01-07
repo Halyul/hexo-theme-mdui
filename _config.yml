@@ -33,15 +33,15 @@ search: true
 post:
   entry_excerpt: 80
   random_pics: 44
-  qr_code: true
+  qr_code: false
   prism:
     theme: darcula
     line_number: true
   license:
     name: 'CC BY-NC-SA 4.0'
     link:  'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh'
-  word_count: true
-  read_time: true
+  word_count: false
+  read_time: false
   donate:
     wechat:
       link: /img/avatar.png
@@ -88,8 +88,8 @@ pages:
 
 # comment
 comment:
-    use: disqus
-    shortname: halyul
+    use:
+    shortname:
 
 # footer
 footer:

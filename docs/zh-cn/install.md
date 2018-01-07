@@ -15,10 +15,10 @@ clone完成后请将本文件夹复制到站点`themes`文件夹下，并修改�
 ## 启用本主题
 然后打开**站点配置文件**，找到`theme`字段，并将其值更改为`mdui`。
 
-!> **并在`站点目录`执行以下代码安装`prismjs`避免报错**
+!> **并在`站点目录`执行以下代码安装避免报错**
 
 ```` bash
-$ npm install prismjs --save
+$ npm install prismjs node-sass-magic-importer node-sass node-prismjs --save
 ````
 
 !> **并将`站点配置`中的`highlight`项修改为以下配置**
