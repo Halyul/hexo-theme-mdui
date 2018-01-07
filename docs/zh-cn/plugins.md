@@ -1,33 +1,5 @@
-## 不蒜子
-如果您不需要使用不蒜子，请删掉以下内容并设置为`busuanzi: false`
-- all_site_uv: 全站独立访客统计
-- post_pv: 文章阅读人数统计
-- busuanzi_pure_mini_js: 不蒜子js地址，默认不用修改
-
-## 搜索
-请安装`hexo-generator-search`以使用此功能
-
-```` bash
-$ npm install hexo-generator-search --save
-````
-
-具体配置选项请点击[这里](https://github.com/PaicHyperionDev/hexo-generator-search)
-
-!> 搜索文件需要使用`json`格式
-
 ## Mathjax
 如果您的文章需要使用`Mathjax`，请在`font-matter`中加入`mathjax: true`。
-
-## Pace加载指示器
-Pace是一个网页加载进度指示器，默认不启用，如果您需要此功能，请将
-
-```` yaml
-pace: false
-````
-
-改为`pace: true`进行启用
-
-同时将您的样式代码放入主题目录中的`source/css/pace-style.css`文件中。
 
 ## RSS
 如果您需要RSS，请安装`hexo-generator-feed`

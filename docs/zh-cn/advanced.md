@@ -153,3 +153,12 @@ accent_color: red
 ### customComment
 请打开主题文件夹中的`layout/_custom/custom_comment.ejs`，将您的评论服务代码粘贴进去即可使用。
 如果评论服务要求设置`source id或其他类似的`，请填入`<%- config.url + config.root + page.path %>`
+
+## random_pics
+此为文章随机图片的设置，当文章不带有缩略图时，HEXO会随机将主题目录中的`source/img/random`内的一张图片作为文章缩略图。
+
+如果您不需要此功能，请将此处留空或设为`false`
+
+目前内置了44张图片，如果您需要添加缩略图，请确认文件格式为`png`，且命名为`picHD_ + 数字`的格式，同时修改此处的数量，否则缩略图无法显示同时控制台会输出404错误。
+
+!> 无论是添加还是去除缩略图，请确认数字编号时从`1`开始，按照顺序直到结束
