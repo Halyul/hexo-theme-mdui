@@ -7,13 +7,15 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 
 ## Notice 须知
 
-这是一个基于[navigo](https://github.com/krasimir/navigo)(一个js路由)的版本，所以这是一个SPA的版本，但其特性，会导致部分问题，例如：
+这是一个基于[barba](http://http://barbajs.org)(一个js路由)的版本，所以这是一个SPA的版本，但其特性，会导致部分问题，例如：
 
 - 统计服务可能无法正常使用
 - 页面卡顿
 - JS报错
 
 使用此版本请三思！
+
+不过你可以使用无路由版本或者使用1.x版本
 
 This is a version which is based on [navigo](https://github.com/krasimir/navigo)(a js router), so it is a SPA, but beause of feature, it leads to many problems, for example:
 
@@ -22,6 +24,8 @@ This is a version which is based on [navigo](https://github.com/krasimir/navigo)
 - JS may get errors
 
 Please think carefully before you use this version
+
+But you can use non-router version! Or just stay in 1.x version.
 
 ## Contents 目录
 
