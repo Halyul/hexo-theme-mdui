@@ -126,10 +126,6 @@ Test1:
 
 若使用自定义评论服务，具体配置步骤请点击[这里](/zh-cn/advanced?id=customcomment)
 
-## pagination
-分页器设置
-- show: 多少个页面后自动收缩，例如页面指示器`1 2 3 4 5 6`设置`show: 2`后变成`1 2 ... 5 6`
-
 ## footer
 - since: 博客起始年份
 
