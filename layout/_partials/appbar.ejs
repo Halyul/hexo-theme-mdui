@@ -7,7 +7,7 @@
         </i>
       </a>
     <% } else { %>
-      <a href="/" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--arrow">
+      <a href="<%= config.root %>" class="mdui-btn mdui-btn-icon mdui-ripple theme-appbar__burger theme-appbar__burger--arrow">
         <i class="mdui-icon">
           <span></span>
         </i>
@@ -17,7 +17,7 @@
   <div class="mdui-toolbar theme-toolbar-bottom">
     <span class="theme-toolbar-bottom__title"><%= config.title %></span>
     <% if (theme.search === true) { %>
-      <a href="/search.html" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
+      <a href="<%= url_for('search.html') %>" class="mdui-textfield-icon mdui-btn mdui-btn-icon theme-toolbar-bottom__search">
         <i class="mdui-icon material-icons">&#xe8b6;</i>
       </a>
     <% } %>

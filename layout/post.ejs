@@ -13,10 +13,10 @@
 %>
 
 <% if (theme.post.prism.theme) { %>
-  <%- css(config.root + 'css/prism/' + theme.post.prism.theme + '.min') %>
+  <%- css('css/prism/' + theme.post.prism.theme + '.min') %>
 <% } %>
 <% if (theme.post.prism.line_number === true) { %>
-  <%- css(config.root + 'css/prism/line-number.min') %>
+  <%- css('css/prism/line-number.min') %>
 <% } %>
 
 <div class="theme-post">
@@ -111,7 +111,7 @@
               </div>
               <div class="mdui-typo">
                 <% page.categories.map(function(category){  %>
-                  <a href="/<%= category.path %>">
+                  <a href="<%= url_for(category.path) %>">
                     <span><%= category.name %></span>
                   </a>
                 <% }) %>
@@ -123,7 +123,7 @@
               </div>
               <div class="mdui-typo">
                 <% page.tags.map(function(tag){  %>
-                  <a href="/<%= tag.path %>">
+                  <a href="<%= url_for(tag.path) %>">
                     <span><%= tag.name %></span>
                   </a>
                 <% }) %>

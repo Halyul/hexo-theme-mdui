@@ -1,10 +1,10 @@
 <div class="theme-drawer__warpper__content">
   <ul class="mdui-list">
-    <a href="/" class="mdui-list-item mdui-ripple mdui-ripple-white">
+    <a href="<%= config.root %>" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
       <div class="mdui-list-item-content"><%= __('global.index') %></div>
     </a>
-    <a href="/archives/" class="mdui-list-item mdui-ripple mdui-ripple-white">
+    <a href="<%= url_for('archives') %>" class="mdui-list-item mdui-ripple mdui-ripple-white">
       <i class="mdui-list-item-icon mdui-icon material-icons">&#xe149;</i>
       <div class="mdui-list-item-content"><%= __('global.archives') %></div>
     </a>
@@ -19,7 +19,7 @@
           <div class="mdui-collapse-item-body mdui-list">
             <% site.categories.map(function(category){
               %>
-              <a href="/<%= category.path %>" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+              <a href="<%= url_for(category.path) %>" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= category.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= category.length %></span>
@@ -37,7 +37,7 @@
           </div>
           <div class="mdui-collapse-item-body mdui-list">
             <% site.tags.map(function(tag){  %>
-              <a href="/tags/<%= tag.name %>/" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
+              <a href="<%= url_for(tag.path) %>" class="mdui-list-item mdui-ripple mdui-ripple-white" style="display: flex">
                 <%= tag.name %>
                 <div style="flex-grow: 1;"></div>
                 <span class="theme-menu-badge new mdui-color-theme-accent" data-badge-caption=""><%= tag.length %></span>
@@ -64,7 +64,7 @@
           });
           %>
           <% Object.keys(years).reverse().forEach(function(year){  %>
-            <a href="/archives/<%= year %>/" class="mdui-list-item mdui-ripple">
+            <a href="<%= url_for('/archives/' + year + '/') %>" class="mdui-list-item mdui-ripple">
               <%= year %>
             </a>
           <% }) %>

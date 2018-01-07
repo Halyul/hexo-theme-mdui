@@ -1,5 +1,5 @@
 # Theme config
-router: false
+router: true
 
 style:
   primary_color: "indigo"
@@ -33,7 +33,7 @@ search: true
 post:
   entry_excerpt: 80
   random_pics: 44
-  qr_code: false
+  qr_code: true
   prism:
     theme: darcula
     line_number: true

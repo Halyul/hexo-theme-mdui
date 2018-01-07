@@ -19,8 +19,8 @@
       <span class="theme-toolbar-bottom__title"><%= config.title %></span>
     </div>
   </div>
-  <div class="theme-drawer__header__layer-2" style="background-image: url(<%= theme.info.bg_image %>)">
-    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="<%= theme.info.avatar %>"/>
+  <div class="theme-drawer__header__layer-2" style="background-image: url(<%= url_for(theme.info.bg_image) %>)">
+    <img class="mdui-img-circle theme-drawer__header__layer-2__user__avatar" src="<%= url_for(theme.info.avatar) %>"/>
     <div class="theme-drawer__header__layer-2__user__info">
       <div class="theme-drawer__header__layer-2__user__info__author mdui-text-color-white-text">
         <%= config.author %>
