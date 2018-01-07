@@ -57,6 +57,6 @@ A=xonokai
 uglifycss $A.css --output ../../prism/$A.min.css
 
 cd $JS_FILES
-uglifyjs barba.js es6-promise.js fetch.js mdui.js smooth-scroll.js js.js --output ../js.min.js
-
+uglifyjs barba.js es6-promise.js fetch.js mdui.js smooth-scroll.js js.js --output ../js.barba.min.js
+uglifyjs es6-promise.js fetch.js mdui.js smooth-scroll.js js.js --output ../js.pure.min.js
 uglifyjs lightgallery.js lg-zoom.js lg-fullscreen.js lg-autoplay.js --output ../lightgallery.min.js
