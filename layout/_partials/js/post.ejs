@@ -45,7 +45,7 @@
       }
       var listens = [];
       var cardToc = document.querySelector('.theme-post__toc');
-      var links = document.querySelectorAll(".theme-post__toc__content__link");
+      var links = cardToc.querySelectorAll(".theme-post__toc__content__link");
       var toclist = document.querySelector(".theme-post__toc > ol");
       Array.prototype.forEach.call(links, function(value, index) {
         var id = (value.getAttribute("href") || "#").slice(1);
