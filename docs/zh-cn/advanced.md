@@ -36,9 +36,33 @@
 ### 文章置顶
 您需要置顶文章的`front-matter`中，添加`pinned: true`即可置顶。
 
-### customComment
+### 自定义评论
 请打开主题文件夹中的`layout/_custom/custom_comment.ejs`，将您的评论服务代码粘贴进去即可使用。
 如果评论服务要求设置`source id或其他类似的`，请填入`<%- config.url + config.root + page.path %>`
+
+如果您使用的是前端路由版本，请查询您使用的评论服务是否提供`reset()`方法，否则会导致所有评论出现在同一个页面下面。
+例如，Disqus有提供`reset()`方法:
+```` javascript
+DISQUS.reset({
+        reload: true,
+        config: function () {
+          this.page.identifier = newIdentifier;
+          this.page.url = newUrl;
+          this.page.title = newTitle;
+        }
+      });
+````
+如果您的第三方评论服务有提供`reset()`方法，请在添加评论服务代码时添加:
+```` javascript
+themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+     example.reset({...})
+   }
+````
+其中`example.reset({...})`为您的评论服务的`reset()`方法，如果该方法要求更新标识器，请自行填入以下:
+- `newIdentifier`为当前页面的URL
+- `newUrl`同上
+- `newTitle`为页面标题
+
 
 ## random_pics
 此为文章随机图片的设置，当文章不带有缩略图时，HEXO会随机将主题目录中的`source/img/random`内的一张图片作为文章缩略图。
