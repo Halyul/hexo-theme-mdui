@@ -133,14 +133,26 @@
         <% } %>
 
         <% if (page.comment !== false) { %>
-          <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom') { %>
+          <% if (theme.comment.use === 'disqus' || theme.comment.use === 'custom' || theme.comment.use === 'valine') { %>
             <section>
               <div class="mdui-divider"></div>
             </section>
             <section class="theme-post__card__comment">
               <%- partial('_partials/comment') %>
             </section>
+          <% } else { %>
+            <script type="text/javascript">
+              themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+                return
+              }
+            </script>
           <% } %>
+        <% } else { %>
+          <script type="text/javascript">
+            themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
+              return
+            }
+          </script>
         <% } %>
       </article>
       <% if (pageToc.length > 0) { %>

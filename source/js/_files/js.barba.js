@@ -1,7 +1,6 @@
 /* init pages
  * for barbajs
  */
-Barba.Utils.errorPageUrl = '/404.html';
 if (document.readyState === 'complete' || document.readyState !== 'loading') {
   initPages();
 } else {

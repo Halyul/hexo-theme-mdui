@@ -1,8 +1,6 @@
 <% if(theme.comment.use === 'custom') { %>
   <%-partial('../_custom/custom_comment')%>
-<% } %>
-
-<% if(theme.comment.use === 'disqus') { %>
+<% } else if (theme.comment.use === 'disqus') { %>
   <div id="disqus_thread"></div>
   <script>
     themeRuntime.commentRest.function = function (newIdentifier, newUrl, newTitle) {
@@ -27,9 +25,7 @@
     })();
   </script>
   <noscript><%- __('posts.disqus_no_script') %></noscript>
-<% } %>
-
-<% if(theme.comment.use === 'valine') { %>
+<% } else if (theme.comment.use === 'valine') { %>
   <div id="comments"></div>
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="//unpkg.com/valine/dist/Valine.min.js"></script>

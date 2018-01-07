@@ -11,6 +11,9 @@
 <% } else { %>
   <% if (theme.router === true) { %>
     <%- js('js/js.barba.min') %>
+    <script type="text/javascript">
+      Barba.Utils.errorPageUrl = '<%= url_for('/404.html') %>';
+    </script>
   <% } else { %>
     <%- js('js/js.pure.min') %>
   <% } %>
