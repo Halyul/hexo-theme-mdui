@@ -139,7 +139,7 @@ function burgerChanging(page) {
     if (pageStatus === true) {
       burger.classList.remove('theme-appbar__burger--menu');
       burger.classList.add('theme-appbar__burger--arrow', 'theme-appbar__burger--arrow-animate');
-      burger.setAttribute('href', '/')
+      burger.setAttribute('href', themeRuntime.root)
       burger.removeEventListener('click', drawerToggle)
     }
     themeRuntime.el.drawerEl.querySelector('#drawer-back').classList.remove('theme-appbar__burger--menu')
