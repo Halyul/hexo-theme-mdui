@@ -4,6 +4,9 @@ $main-class: theme-friends;
   min-height: calc(100vh - 128px);
   max-width: 530px;
   margin: 0 auto 16px auto;
+  @media (min-width: 1024px) {
+    max-width: 1084px;
+  }
 }
 
 .#{$main-class}__title {
