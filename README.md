@@ -57,12 +57,11 @@ But you can use non-router version! Or just stay in 1.x version.
 
 ## Docs 文档
 
-[MDUI Theme Docs English Version](https://halyul.github.io/theme-mdui-docs/#/)
+[MDUI Theme Docs English Version](https://halyul.github.io/hexo-theme-mdui/#/)
 
-[MDUI 主题中文文档](https://halyul.github.io/theme-mdui-docs/#/zh-cn/)
+[MDUI 主题中文文档](https://halyul.github.io/hexo-theme-mdui/#/zh-cn/)
 
->[Docs Markdown Files](https://github.com/Halyul/theme-mdui-docs)
-
+>[Docs Markdown Files](https://github.com/Halyul/hexo-theme-mdui/docs)
 
 ## Contributing 贡献
 
