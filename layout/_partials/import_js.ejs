@@ -22,7 +22,7 @@
 <!-- theme js -->
 <%-partial('js/appbar')%>
 
-<% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
+<% if (theme.service_worker === true || theme.service_worker === 'pwa') { %>
   <script>
     if ('serviceWorker' in navigator) {
      navigator.serviceWorker.register('<%= config.root + 'sw.js' %>');
