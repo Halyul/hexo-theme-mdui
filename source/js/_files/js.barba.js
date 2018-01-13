@@ -26,6 +26,9 @@ themeRuntime.init.post = Barba.BaseView.extend({
   namespace: 'post',
   onEnter: function() {
     commentSystemReset()
+  },
+  onLeave: function() {
+    tooltipremove()
   }
 });
 themeRuntime.init.archive = Barba.BaseView.extend({
@@ -237,5 +240,14 @@ function commentSystemReset() {
     themeRuntime.commentRest.function(Barba.HistoryManager.currentStatus().url, Barba.HistoryManager.currentStatus().url, document.title)
   } else {
     themeRuntime.commentRest.status = true
+  }
+}
+
+function tooltipremove() {
+  var tooltips = document.querySelectorAll('.mdui-tooltip[id ^="mdui-tooltip-mdui-tooltip-"]')
+  if (tooltips.length !== 0) {
+    for (var i = 0; i < tooltips.length; ++i) {
+      document.body.removeChild(tooltips[i])
+    }
   }
 }
