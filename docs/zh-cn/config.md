@@ -111,6 +111,7 @@ search: 博客搜索，可选`true`或`false`，详细信息请点击[这里](/z
 ```` yaml
 Test1:
   link: "/test1"
+  type: 'internal' //如果为外链，则填入'external'
   md: "`&#xe84d;`"
 ````
 

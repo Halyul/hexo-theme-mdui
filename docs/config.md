@@ -110,6 +110,7 @@ Custom pages setting, please follow format which is left in the `_config.yml` or
 ```` yaml
 - Test1:
   - link: "/test1"
+  - type: 'internal' //If it is a external site，use 'external'
   - icon: "`&#xe84d;`"
 ````
 These lines will generate an entrance of a link called `Test1`, links to `yoursite.com/test1`, and the icon is `&#xe84d;`.
