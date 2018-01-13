@@ -56,7 +56,7 @@ themeRuntime.init.search = Barba.BaseView.extend({
 // equal to onEnter
 Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
   const namespace = currentStatus.namespace
-  console.log('enter', namespace)
+  //console.log('enter', namespace)
   burgerChanging(namespace)
   itemHightlight()
 });
@@ -73,7 +73,7 @@ Barba.Dispatcher.on('initStateChange', function() {
   const prevStatus = Barba.HistoryManager.prevStatus()
   if (prevStatus !== null) {
     const namespace = prevStatus.namespace
-    console.log('leave', namespace)
+    //console.log('leave', namespace)
     fireListeners(namespace)
     currentToPrev()
     scrollPositionStore()

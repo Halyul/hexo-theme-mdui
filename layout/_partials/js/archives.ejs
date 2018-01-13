@@ -39,7 +39,7 @@
           loadProgress(false)
           var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext
           themeRuntime.temp.index = pageNext;
-          console.log(pageTotal, url)
+          //console.log(pageTotal, url)
           fetch(url, {
               method:'GET',
               mode:'cors',

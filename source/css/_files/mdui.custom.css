@@ -1,7 +1,13 @@
 /*!
- * mdui v0.3.0 (https://mdui.org)
- * Copyright 2016-2017 zdhxiong
+ * mdui v0.4.0 (https://mdui.org) - Custom Build
+ * Copyright 2016-2018 zdhxiong
  * Licensed under MIT
+ * 
+ * Included modules:          material-icons,roboto,typo,headroom,collapse,table,divider,media,ripple,textfield,button,fab,grid,toolbar,appbar,card,subheader,grid_list,list,drawer,dialog,shadow,tooltip,chip,progress,panel,menu,checkbox
+ * Included primary colors:   amber,blue,blue-grey,brown,cyan,deep-orange,deep-purple,green,grey,indigo,light-blue,light-green,lime,orange,pink,purple,red,teal,yellow
+ * Included accent colors:    amber,blue,cyan,deep-orange,deep-purple,green,indigo,light-blue,light-green,lime,orange,pink,purple,red,teal,yellow
+ * Included color degrees:    50,100,200,300,400,500,600,700,800,900,a100,a200,a400,a700
+ * Included layout:           
  */
 /**
  * =============================================================================
@@ -57,7 +63,7 @@
   background-color: #ff6f00 !important;
 }
 .mdui-theme-primary-blue .mdui-color-theme {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #2196f3 !important;
 }
 .mdui-theme-primary-blue .mdui-color-theme-50 {
@@ -81,7 +87,7 @@
   background-color: #42a5f5 !important;
 }
 .mdui-theme-primary-blue .mdui-color-theme-500 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #2196f3 !important;
 }
 .mdui-theme-primary-blue .mdui-color-theme-600 {
@@ -233,7 +239,7 @@
   background-color: #006064 !important;
 }
 .mdui-theme-primary-deep-orange .mdui-color-theme {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #ff5722 !important;
 }
 .mdui-theme-primary-deep-orange .mdui-color-theme-50 {
@@ -257,7 +263,7 @@
   background-color: #ff7043 !important;
 }
 .mdui-theme-primary-deep-orange .mdui-color-theme-500 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #ff5722 !important;
 }
 .mdui-theme-primary-deep-orange .mdui-color-theme-600 {
@@ -481,7 +487,7 @@
   background-color: #03a9f4 !important;
 }
 .mdui-theme-primary-light-blue .mdui-color-theme-600 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #039be5 !important;
 }
 .mdui-theme-primary-light-blue .mdui-color-theme-700 {
@@ -529,7 +535,7 @@
   background-color: #7cb342 !important;
 }
 .mdui-theme-primary-light-green .mdui-color-theme-700 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #689f38 !important;
 }
 .mdui-theme-primary-light-green .mdui-color-theme-800 {
@@ -621,7 +627,7 @@
   background-color: #f57c00 !important;
 }
 .mdui-theme-primary-orange .mdui-color-theme-800 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #ef6c00 !important;
 }
 .mdui-theme-primary-orange .mdui-color-theme-900 {
@@ -645,7 +651,7 @@
   background-color: #f48fb1 !important;
 }
 .mdui-theme-primary-pink .mdui-color-theme-300 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #f06292 !important;
 }
 .mdui-theme-primary-pink .mdui-color-theme-400 {
@@ -1221,7 +1227,7 @@
   background-color: #ff6f00 !important;
 }
 .mdui-color-blue {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #2196f3 !important;
 }
 .mdui-color-blue-50 {
@@ -1245,7 +1251,7 @@
   background-color: #42a5f5 !important;
 }
 .mdui-color-blue-500 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #2196f3 !important;
 }
 .mdui-color-blue-600 {
@@ -1397,7 +1403,7 @@
   background-color: #006064 !important;
 }
 .mdui-color-deep-orange {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #ff5722 !important;
 }
 .mdui-color-deep-orange-50 {
@@ -1421,7 +1427,7 @@
   background-color: #ff7043 !important;
 }
 .mdui-color-deep-orange-500 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #ff5722 !important;
 }
 .mdui-color-deep-orange-600 {
@@ -1645,7 +1651,7 @@
   background-color: #03a9f4 !important;
 }
 .mdui-color-light-blue-600 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #039be5 !important;
 }
 .mdui-color-light-blue-700 {
@@ -1693,7 +1699,7 @@
   background-color: #7cb342 !important;
 }
 .mdui-color-light-green-700 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #689f38 !important;
 }
 .mdui-color-light-green-800 {
@@ -1785,7 +1791,7 @@
   background-color: #f57c00 !important;
 }
 .mdui-color-orange-800 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #ef6c00 !important;
 }
 .mdui-color-orange-900 {
@@ -1809,7 +1815,7 @@
   background-color: #f48fb1 !important;
 }
 .mdui-color-pink-300 {
-  color: #fff !important;
+  color: rgba(0, 0, 0, .87) !important;
   background-color: #f06292 !important;
 }
 .mdui-color-pink-400 {
@@ -4162,24 +4168,6 @@
 /**
  * .mdui-text-color-theme-[] 深色主题
  */
-.mdui-theme-layout-dark .mdui-text-color-theme-text {
-  color: #fff !important;
-}
-.mdui-theme-layout-dark .mdui-text-color-theme-secondary {
-  color: rgba(255, 255, 255, .7) !important;
-}
-.mdui-theme-layout-dark .mdui-text-color-theme-disabled {
-  color: rgba(255, 255, 255, .5) !important;
-}
-.mdui-theme-layout-dark .mdui-text-color-theme-divider {
-  color: rgba(255, 255, 255, .12) !important;
-}
-.mdui-theme-layout-dark .mdui-text-color-theme-icon {
-  color: #fff !important;
-}
-.mdui-theme-layout-dark .mdui-text-color-theme-icon-disabled {
-  color: rgba(255, 255, 255, .3) !important;
-}
 /**
  * =============================================================================
  * ************   Helper 辅助类   ************
@@ -4741,10 +4729,13 @@ a {
  */
 abbr[title] {
   /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
+          text-decoration: underline;
+          text-decoration: underline dotted;
   border-bottom: none;
+  /* 2 */
+
+  -webkit-text-decoration: underline dotted;
+     -moz-text-decoration: underline dotted;
   /* 2 */
 }
 /**
@@ -5110,10 +5101,6 @@ body.mdui-locked {
  * ************   Global dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark {
-  color: #fff;
-  background-color: #303030;
-}
 /**
  * =============================================================================
  * ************   Icon 图标   ************
@@ -5121,8 +5108,6 @@ body.mdui-locked {
  */
 .mdui-icon,
 .mdui-icon::before {
-  /* Preferred icon size */
-  display: inline-block;
   font-size: 24px;
   font-style: normal;
   font-weight: normal;
@@ -5132,9 +5117,19 @@ body.mdui-locked {
   letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
+  /* Preferred icon size */
   vertical-align: middle;
 
   direction: ltr;
+}
+.mdui-icon {
+  display: inline-block;
+  text-align: center;
+}
+.mdui-icon::before {
+  display: block !important;
+  width: 24px;
+  height: 24px;
 }
 /**
  * =============================================================================
@@ -5689,41 +5684,6 @@ body.mdui-locked {
  * ************   Typo dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-typo blockquote {
-  border-left-color: rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-typo blockquote footer {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-typo figcaption {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-typo mark {
-  background: #aaa;
-  border-bottom-color: #bbb;
-}
-.mdui-theme-layout-dark .mdui-typo h1 small,
-.mdui-theme-layout-dark .mdui-typo h2 small,
-.mdui-theme-layout-dark .mdui-typo h3 small,
-.mdui-theme-layout-dark .mdui-typo h4 small,
-.mdui-theme-layout-dark .mdui-typo h5 small,
-.mdui-theme-layout-dark .mdui-typo h6 small {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-typo code {
-  color: #ffcdd2;
-  background-color: #424242;
-}
-.mdui-theme-layout-dark .mdui-typo pre {
-  background: #424242;
-  border-color: rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-typo kbd {
-  background: #424242;
-}
-.mdui-theme-layout-dark .mdui-typo hr {
-  border-color: rgba(255, 255, 255, .12);
-}
 /**
  * =============================================================================
  * ************   Headroom   ************
@@ -5924,36 +5884,6 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
  * ************   Table dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-table {
-  background-color: #303030;
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-top: none;
-}
-.mdui-theme-layout-dark .mdui-table th,
-.mdui-theme-layout-dark .mdui-table td {
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-table th {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-table td {
-  color: #fff;
-}
-.mdui-theme-layout-dark .mdui-table-hoverable tbody tr:hover {
-  background-color: #616161;
-}
-.mdui-theme-layout-dark .mdui-table-fluid {
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-top: none;
-}
-.mdui-theme-layout-dark .mdui-table-fluid .mdui-table {
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-.mdui-theme-layout-dark .mdui-table-row-selected {
-  background-color: #424242;
-}
 /**
  * =============================================================================
  * ************   Divider 分割线   ************
@@ -6145,9 +6075,6 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
  * ************   Ripple dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-ripple-wave {
-  background-color: rgba(255, 255, 255, .3);
-}
 /**
  * =============================================================================
  * ************   Text Field 文本框   ************
@@ -6160,6 +6087,9 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
   padding-bottom: 8px;
   overflow: hidden;
 }
+.mdui-textfield-has-bottom {
+  padding-bottom: 28px;
+}
 /* 输入框 */
 .mdui-textfield-input {
   display: block;
@@ -6168,18 +6098,18 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-appearance: none;
-  padding: 8px 0 8px 0;
+  padding: 8px 0;
   margin: 0;
   overflow: hidden;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
-  color: inherit;
+  color: rgba(0, 0, 0, .87);
   resize: none;
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .12);
-  border-radius: 0 0 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .42);
+  border-radius: 0;
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -6187,25 +6117,34 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
           transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
-  -webkit-transition-property: border-bottom-color, padding-right;
-          transition-property: border-bottom-color, padding-right;
+  -webkit-transition-property: border-bottom-color, padding-right, -webkit-box-shadow;
+          transition-property: border-bottom-color, padding-right, -webkit-box-shadow;
+          transition-property: border-bottom-color, padding-right, box-shadow;
+          transition-property: border-bottom-color, padding-right, box-shadow, -webkit-box-shadow;
 
      -moz-appearance: none;
           appearance: none;
 }
 .mdui-textfield-input::-webkit-input-placeholder {
   color: inherit;
-  opacity: .35;
+  opacity: .42;
 }
-.mdui-textfield-input[disabled] {
-  color: rgba(0, 0, 0, .38);
+.mdui-textfield-input:not([disabled]):hover {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, .87);
+  -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, .87);
+          box-shadow: 0 1px 0 0 rgba(0, 0, 0, .87);
+}
+.mdui-textfield-input[rows] {
+  height: auto !important;
+  overflow: auto;
 }
 /* 文本框 label */
 .mdui-textfield-label {
   display: block;
   width: 100%;
   font-size: 16px;
-  color: rgba(0, 0, 0, .65);
+  color: rgba(0, 0, 0, .54);
   pointer-events: none;
   -webkit-transition: all .2s;
           transition: all .2s;
@@ -6214,17 +6153,24 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
   -webkit-transform-origin: left;
           transform-origin: left;
 }
-/* 表单验证错误提示 */
-.mdui-textfield-error {
+/* 表单验证错误提示、帮助文本提示 */
+.mdui-textfield-error,
+.mdui-textfield-helper {
+  position: absolute;
+  bottom: 8px;
   height: 12px;
-  margin-top: 8px;
   overflow: hidden;
   font-size: 12px;
   line-height: 12px;
-  color: #f44336;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.mdui-textfield-error {
+  color: rgba(255, 23, 68, .87);
   visibility: hidden;
+}
+.mdui-textfield-helper {
+  color: rgba(0, 0, 0, .54);
 }
 /* 表单中的图标
    ========== */
@@ -6237,22 +6183,25 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
 .mdui-textfield .mdui-icon ~ .mdui-textfield-label,
 .mdui-textfield .mdui-icon ~ .mdui-textfield-input,
 .mdui-textfield .mdui-icon ~ .mdui-textfield-error,
+.mdui-textfield .mdui-icon ~ .mdui-textfield-helper,
 .mdui-textfield .mdui-icon ~ .mdui-textfield-flex-wrap {
   width: calc(100% - 56px);
   margin-left: 56px;
 }
+.mdui-textfield-has-bottom .mdui-icon {
+  bottom: 28px;
+}
 /* 聚焦状态的文本框
    ============= */
-.mdui-textfield-focus .mdui-textfield-input {
-  border-bottom: 1px solid #ff4081;
-  -webkit-box-shadow: 0 1px 0 0 #ff4081;
-          box-shadow: 0 1px 0 0 #ff4081;
+.mdui-textfield-focus .mdui-textfield-input,
+.mdui-textfield-focus .mdui-textfield-input:hover {
+  border-bottom-color: #c51162;
+  -webkit-box-shadow: 0 1px 0 0 #c51162;
+          box-shadow: 0 1px 0 0 #c51162;
 }
-.mdui-textfield-focus .mdui-textfield-label {
-  color: #ff4081;
-}
+.mdui-textfield-focus .mdui-textfield-label,
 .mdui-textfield-focus .mdui-icon {
-  color: #ff4081;
+  color: rgba(197, 17, 98, .87);
 }
 /* 含有浮动标签的文本框
    ================ */
@@ -6313,44 +6262,47 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
 /* 表单验证不通过
    =========== */
 .mdui-textfield-invalid .mdui-textfield-input,
-.mdui-textfield-invalid-html5 .mdui-textfield-input {
-  border-bottom: 1px solid #f44336 !important;
-  -webkit-box-shadow: 0 1px 0 0 #f44336 !important;
-          box-shadow: 0 1px 0 0 #f44336 !important;
-}
+.mdui-textfield-invalid-html5 .mdui-textfield-input,
 .mdui-textfield-invalid.mdui-textfield-focus .mdui-textfield-input,
 .mdui-textfield-invalid-html5.mdui-textfield-focus .mdui-textfield-input {
-  border-bottom: 1px solid #f44336 !important;
-  -webkit-box-shadow: 0 1px 0 0 #f44336 !important;
-          box-shadow: 0 1px 0 0 #f44336 !important;
+  border-bottom-color: #ff1744 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ff1744 !important;
+          box-shadow: 0 1px 0 0 #ff1744 !important;
 }
 .mdui-textfield-invalid .mdui-textfield-label,
 .mdui-textfield-invalid-html5 .mdui-textfield-label {
-  color: #f44336 !important;
+  color: #ff1744 !important;
 }
 .mdui-textfield-invalid.mdui-textfield-floating-label .mdui-textfield-label,
 .mdui-textfield-invalid-html5.mdui-textfield-floating-label .mdui-textfield-label {
-  color: rgba(244, 67, 54, .35) !important;
+  color: rgba(255, 23, 68, .35) !important;
 }
 .mdui-textfield-invalid.mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-textfield-invalid-html5.mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-textfield-invalid.mdui-textfield-floating-label.mdui-textfield-not-empty .mdui-textfield-label,
 .mdui-textfield-invalid-html5.mdui-textfield-floating-label.mdui-textfield-not-empty .mdui-textfield-label {
-  color: #f44336 !important;
+  color: #ff1744 !important;
 }
 .mdui-textfield-invalid .mdui-textfield-error,
 .mdui-textfield-invalid-html5 .mdui-textfield-error {
   visibility: visible;
 }
+.mdui-textfield-invalid .mdui-textfield-error + .mdui-textfield-helper,
+.mdui-textfield-invalid-html5 .mdui-textfield-error + .mdui-textfield-helper {
+  visibility: hidden;
+}
 /* 禁用表单
    ====== */
 .mdui-textfield-disabled .mdui-textfield-label,
-.mdui-textfield-disabled .mdui-textfield-input,
 .mdui-textfield-disabled .mdui-textfield-input::-webkit-input-placeholder {
   color: rgba(0, 0, 0, .38);
 }
 .mdui-textfield-disabled .mdui-textfield-input {
-  border-bottom: 1px dotted rgba(0, 0, 0, .38);
+  color: rgba(0, 0, 0, .42);
+  cursor: default;
+}
+.mdui-textfield-disabled .mdui-textfield-input {
+  border-bottom: 1px dashed rgba(0, 0, 0, .42);
 }
 /* 字数统计
    ====== */
@@ -6363,263 +6315,175 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
   line-height: 12px;
   color: rgba(0, 0, 0, .54);
 }
-.mdui-textfield-has-counter {
-  padding-bottom: 28px;
-}
+/**
+ * =============================================================================
+ * ************   Textfield dark   ************
+ * =============================================================================
+ */
 /**
  * =============================================================================
  * ************   Textfield 强调色   ************
  * =============================================================================
  */
 .mdui-theme-accent-amber .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #ffd740;
-  -webkit-box-shadow: 0 1px 0 0 #ffd740;
-          box-shadow: 0 1px 0 0 #ffd740;
+  border-bottom-color: #ffab00;
+  -webkit-box-shadow: 0 1px 0 0 #ffab00;
+          box-shadow: 0 1px 0 0 #ffab00;
 }
-.mdui-theme-accent-amber .mdui-textfield-focus .mdui-textfield-label {
-  color: #ffd740;
-}
+.mdui-theme-accent-amber .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-amber .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-amber .mdui-textfield-focus .mdui-icon {
-  color: #ffd740 !important;
-}
-.mdui-theme-accent-amber .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #ffd740;
+  color: rgba(255, 171, 0, .87);
 }
 .mdui-theme-accent-blue .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #448aff;
-  -webkit-box-shadow: 0 1px 0 0 #448aff;
-          box-shadow: 0 1px 0 0 #448aff;
+  border-bottom-color: #2962ff;
+  -webkit-box-shadow: 0 1px 0 0 #2962ff;
+          box-shadow: 0 1px 0 0 #2962ff;
 }
-.mdui-theme-accent-blue .mdui-textfield-focus .mdui-textfield-label {
-  color: #448aff;
-}
+.mdui-theme-accent-blue .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-blue .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-blue .mdui-textfield-focus .mdui-icon {
-  color: #448aff !important;
-}
-.mdui-theme-accent-blue .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #448aff;
+  color: rgba(41, 98, 255, .87);
 }
 .mdui-theme-accent-cyan .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #18ffff;
-  -webkit-box-shadow: 0 1px 0 0 #18ffff;
-          box-shadow: 0 1px 0 0 #18ffff;
+  border-bottom-color: #00b8d4;
+  -webkit-box-shadow: 0 1px 0 0 #00b8d4;
+          box-shadow: 0 1px 0 0 #00b8d4;
 }
-.mdui-theme-accent-cyan .mdui-textfield-focus .mdui-textfield-label {
-  color: #18ffff;
-}
+.mdui-theme-accent-cyan .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-cyan .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-cyan .mdui-textfield-focus .mdui-icon {
-  color: #18ffff !important;
-}
-.mdui-theme-accent-cyan .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #18ffff;
+  color: rgba(0, 184, 212, .87);
 }
 .mdui-theme-accent-deep-orange .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #ff6e40;
-  -webkit-box-shadow: 0 1px 0 0 #ff6e40;
-          box-shadow: 0 1px 0 0 #ff6e40;
+  border-bottom-color: #dd2c00;
+  -webkit-box-shadow: 0 1px 0 0 #dd2c00;
+          box-shadow: 0 1px 0 0 #dd2c00;
 }
-.mdui-theme-accent-deep-orange .mdui-textfield-focus .mdui-textfield-label {
-  color: #ff6e40;
-}
+.mdui-theme-accent-deep-orange .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-deep-orange .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-deep-orange .mdui-textfield-focus .mdui-icon {
-  color: #ff6e40 !important;
-}
-.mdui-theme-accent-deep-orange .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #ff6e40;
+  color: rgba(221, 44, 0, .87);
 }
 .mdui-theme-accent-deep-purple .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #7c4dff;
-  -webkit-box-shadow: 0 1px 0 0 #7c4dff;
-          box-shadow: 0 1px 0 0 #7c4dff;
+  border-bottom-color: #6200ea;
+  -webkit-box-shadow: 0 1px 0 0 #6200ea;
+          box-shadow: 0 1px 0 0 #6200ea;
 }
-.mdui-theme-accent-deep-purple .mdui-textfield-focus .mdui-textfield-label {
-  color: #7c4dff;
-}
+.mdui-theme-accent-deep-purple .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-deep-purple .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-deep-purple .mdui-textfield-focus .mdui-icon {
-  color: #7c4dff !important;
-}
-.mdui-theme-accent-deep-purple .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #7c4dff;
+  color: rgba(98, 0, 234, .87);
 }
 .mdui-theme-accent-green .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #69f0ae;
-  -webkit-box-shadow: 0 1px 0 0 #69f0ae;
-          box-shadow: 0 1px 0 0 #69f0ae;
+  border-bottom-color: #00c853;
+  -webkit-box-shadow: 0 1px 0 0 #00c853;
+          box-shadow: 0 1px 0 0 #00c853;
 }
-.mdui-theme-accent-green .mdui-textfield-focus .mdui-textfield-label {
-  color: #69f0ae;
-}
+.mdui-theme-accent-green .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-green .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-green .mdui-textfield-focus .mdui-icon {
-  color: #69f0ae !important;
-}
-.mdui-theme-accent-green .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #69f0ae;
+  color: rgba(0, 200, 83, .87);
 }
 .mdui-theme-accent-indigo .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #536dfe;
-  -webkit-box-shadow: 0 1px 0 0 #536dfe;
-          box-shadow: 0 1px 0 0 #536dfe;
+  border-bottom-color: #304ffe;
+  -webkit-box-shadow: 0 1px 0 0 #304ffe;
+          box-shadow: 0 1px 0 0 #304ffe;
 }
-.mdui-theme-accent-indigo .mdui-textfield-focus .mdui-textfield-label {
-  color: #536dfe;
-}
+.mdui-theme-accent-indigo .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-indigo .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-indigo .mdui-textfield-focus .mdui-icon {
-  color: #536dfe !important;
-}
-.mdui-theme-accent-indigo .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #536dfe;
+  color: rgba(48, 79, 254, .87);
 }
 .mdui-theme-accent-light-blue .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #40c4ff;
-  -webkit-box-shadow: 0 1px 0 0 #40c4ff;
-          box-shadow: 0 1px 0 0 #40c4ff;
+  border-bottom-color: #0091ea;
+  -webkit-box-shadow: 0 1px 0 0 #0091ea;
+          box-shadow: 0 1px 0 0 #0091ea;
 }
-.mdui-theme-accent-light-blue .mdui-textfield-focus .mdui-textfield-label {
-  color: #40c4ff;
-}
+.mdui-theme-accent-light-blue .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-light-blue .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-light-blue .mdui-textfield-focus .mdui-icon {
-  color: #40c4ff !important;
-}
-.mdui-theme-accent-light-blue .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #40c4ff;
+  color: rgba(0, 145, 234, .87);
 }
 .mdui-theme-accent-light-green .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #b2ff59;
-  -webkit-box-shadow: 0 1px 0 0 #b2ff59;
-          box-shadow: 0 1px 0 0 #b2ff59;
+  border-bottom-color: #64dd17;
+  -webkit-box-shadow: 0 1px 0 0 #64dd17;
+          box-shadow: 0 1px 0 0 #64dd17;
 }
-.mdui-theme-accent-light-green .mdui-textfield-focus .mdui-textfield-label {
-  color: #b2ff59;
-}
+.mdui-theme-accent-light-green .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-light-green .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-light-green .mdui-textfield-focus .mdui-icon {
-  color: #b2ff59 !important;
-}
-.mdui-theme-accent-light-green .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #b2ff59;
+  color: rgba(100, 221, 23, .87);
 }
 .mdui-theme-accent-lime .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #eeff41;
-  -webkit-box-shadow: 0 1px 0 0 #eeff41;
-          box-shadow: 0 1px 0 0 #eeff41;
+  border-bottom-color: #aeea00;
+  -webkit-box-shadow: 0 1px 0 0 #aeea00;
+          box-shadow: 0 1px 0 0 #aeea00;
 }
-.mdui-theme-accent-lime .mdui-textfield-focus .mdui-textfield-label {
-  color: #eeff41;
-}
+.mdui-theme-accent-lime .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-lime .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-lime .mdui-textfield-focus .mdui-icon {
-  color: #eeff41 !important;
-}
-.mdui-theme-accent-lime .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #eeff41;
+  color: rgba(174, 234, 0, .87);
 }
 .mdui-theme-accent-orange .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #ffab40;
-  -webkit-box-shadow: 0 1px 0 0 #ffab40;
-          box-shadow: 0 1px 0 0 #ffab40;
+  border-bottom-color: #ff6d00;
+  -webkit-box-shadow: 0 1px 0 0 #ff6d00;
+          box-shadow: 0 1px 0 0 #ff6d00;
 }
-.mdui-theme-accent-orange .mdui-textfield-focus .mdui-textfield-label {
-  color: #ffab40;
-}
+.mdui-theme-accent-orange .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-orange .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-orange .mdui-textfield-focus .mdui-icon {
-  color: #ffab40 !important;
-}
-.mdui-theme-accent-orange .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #ffab40;
+  color: rgba(255, 109, 0, .87);
 }
 .mdui-theme-accent-pink .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #ff4081;
-  -webkit-box-shadow: 0 1px 0 0 #ff4081;
-          box-shadow: 0 1px 0 0 #ff4081;
+  border-bottom-color: #c51162;
+  -webkit-box-shadow: 0 1px 0 0 #c51162;
+          box-shadow: 0 1px 0 0 #c51162;
 }
-.mdui-theme-accent-pink .mdui-textfield-focus .mdui-textfield-label {
-  color: #ff4081;
-}
+.mdui-theme-accent-pink .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-pink .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-pink .mdui-textfield-focus .mdui-icon {
-  color: #ff4081 !important;
-}
-.mdui-theme-accent-pink .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #ff4081;
+  color: rgba(197, 17, 98, .87);
 }
 .mdui-theme-accent-purple .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #e040fb;
-  -webkit-box-shadow: 0 1px 0 0 #e040fb;
-          box-shadow: 0 1px 0 0 #e040fb;
+  border-bottom-color: #a0f;
+  -webkit-box-shadow: 0 1px 0 0 #a0f;
+          box-shadow: 0 1px 0 0 #a0f;
 }
-.mdui-theme-accent-purple .mdui-textfield-focus .mdui-textfield-label {
-  color: #e040fb;
-}
+.mdui-theme-accent-purple .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-purple .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-purple .mdui-textfield-focus .mdui-icon {
-  color: #e040fb !important;
-}
-.mdui-theme-accent-purple .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #e040fb;
+  color: rgba(170, 0, 255, .87);
 }
 .mdui-theme-accent-red .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #ff5252;
-  -webkit-box-shadow: 0 1px 0 0 #ff5252;
-          box-shadow: 0 1px 0 0 #ff5252;
+  border-bottom-color: #d50000;
+  -webkit-box-shadow: 0 1px 0 0 #d50000;
+          box-shadow: 0 1px 0 0 #d50000;
 }
-.mdui-theme-accent-red .mdui-textfield-focus .mdui-textfield-label {
-  color: #ff5252;
-}
+.mdui-theme-accent-red .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-red .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-red .mdui-textfield-focus .mdui-icon {
-  color: #ff5252 !important;
-}
-.mdui-theme-accent-red .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #ff5252;
+  color: rgba(213, 0, 0, .87);
 }
 .mdui-theme-accent-teal .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #64ffda;
-  -webkit-box-shadow: 0 1px 0 0 #64ffda;
-          box-shadow: 0 1px 0 0 #64ffda;
+  border-bottom-color: #00bfa5;
+  -webkit-box-shadow: 0 1px 0 0 #00bfa5;
+          box-shadow: 0 1px 0 0 #00bfa5;
 }
-.mdui-theme-accent-teal .mdui-textfield-focus .mdui-textfield-label {
-  color: #64ffda;
-}
+.mdui-theme-accent-teal .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-teal .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-teal .mdui-textfield-focus .mdui-icon {
-  color: #64ffda !important;
-}
-.mdui-theme-accent-teal .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #64ffda;
+  color: rgba(0, 191, 165, .87);
 }
 .mdui-theme-accent-yellow .mdui-textfield-focus .mdui-textfield-input {
-  border-bottom-color: #ff0;
-  -webkit-box-shadow: 0 1px 0 0 #ff0;
-          box-shadow: 0 1px 0 0 #ff0;
+  border-bottom-color: #ffd600;
+  -webkit-box-shadow: 0 1px 0 0 #ffd600;
+          box-shadow: 0 1px 0 0 #ffd600;
 }
-.mdui-theme-accent-yellow .mdui-textfield-focus .mdui-textfield-label {
-  color: #ff0;
-}
+.mdui-theme-accent-yellow .mdui-textfield-focus .mdui-textfield-label,
+.mdui-theme-accent-yellow .mdui-textfield-focus .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label,
 .mdui-theme-accent-yellow .mdui-textfield-focus .mdui-icon {
-  color: #ff0 !important;
-}
-.mdui-theme-accent-yellow .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label {
-  color: #ff0;
-}
-/**
- * =============================================================================
- * ************   Textfield dark   ************
- * =============================================================================
- */
-.mdui-theme-layout-dark .mdui-textfield .mdui-icon {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-textfield-input {
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-textfield-input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, .35);
-}
-.mdui-theme-layout-dark .mdui-textfield-input[disabled] {
-  color: rgba(255, 255, 255, .5);
-}
-.mdui-theme-layout-dark .mdui-textfield-label {
-  color: rgba(255, 255, 255, .65);
-}
-.mdui-theme-layout-dark .mdui-textfield-floating-label .mdui-textfield-label {
-  color: rgba(255, 255, 255, .35);
-}
-.mdui-theme-layout-dark .mdui-textfield-counter {
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 214, 0, .87);
 }
 /**
  * =============================================================================
@@ -6864,967 +6728,6 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
  * ************   Checkbox dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-checkbox-icon:after {
-  border-color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-checkbox-icon:before {
-  border-right-color: #303030;
-  border-bottom-color: #303030;
-}
-.mdui-theme-layout-dark .mdui-checkbox input[type="checkbox"]:disabled + .mdui-checkbox-icon:after {
-  border-color: rgba(255, 255, 255, .3);
-}
-.mdui-theme-layout-dark .mdui-checkbox input[type="checkbox"]:disabled:checked + .mdui-checkbox-icon:after {
-  background-color: rgba(255, 255, 255, .3) !important;
-  border-color: transparent !important;
-}
-.mdui-theme-layout-dark .mdui-checkbox:active input[type="checkbox"] + .mdui-checkbox-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 255, 255, .1);
-          box-shadow: 0 0 0 15px rgba(255, 255, 255, .1);
-}
-/**
- * =============================================================================
- * ************   Radio 单选框   ************
- * =============================================================================
- */
-.mdui-radio {
-  position: relative;
-  display: inline-block;
-  height: 36px;
-  padding-left: 36px;
-  line-height: 36px;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.mdui-radio input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-/* 图标外圈 */
-.mdui-radio-icon {
-  position: absolute;
-  top: 9px;
-  left: 0;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  vertical-align: middle;
-  border: 2px solid rgba(0, 0, 0, .54);
-  border-radius: 18px;
-  -webkit-transition: all .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-          transition: all .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-          transition: all .3s cubic-bezier(.4, 0, .2, 1), box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-          transition: all .3s cubic-bezier(.4, 0, .2, 1), box-shadow .14s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-}
-.mdui-radio-icon:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 14px;
-  content: ' ';
-  background-color: #ff4081;
-  border-radius: 14px;
-  opacity: 0;
-  -webkit-transition: all .3s cubic-bezier(.4, 0, .2, 1);
-          transition: all .3s cubic-bezier(.4, 0, .2, 1);
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-/* 选中状态的图标 */
-.mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ff4081;
-}
-.mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  opacity: 1;
-  -webkit-transform: scale(.68);
-          transform: scale(.68);
-}
-/* 禁用状态的图标 */
-.mdui-radio input[type="radio"]:disabled + .mdui-radio-icon {
-  border-color: rgba(0, 0, 0, .26) !important;
-}
-/* 禁用且选中状态的图标 */
-.mdui-radio input[type="radio"]:disabled:checked + .mdui-radio-icon:before {
-  background-color: rgba(0, 0, 0, .26) !important;
-}
-/* 未选中、禁用时 按下的阴影 */
-.mdui-radio:active input[type="radio"] + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(0, 0, 0, .1);
-          box-shadow: 0 0 0 15px rgba(0, 0, 0, .1);
-}
-/* 已选中时按下的阴影 */
-.mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 64, 129, .16);
-          box-shadow: 0 0 0 15px rgba(255, 64, 129, .16);
-}
-/**
- * =============================================================================
- * ************   Radio 强调色   ************
- * =============================================================================
- */
-.mdui-theme-accent-amber .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ffd740;
-}
-.mdui-theme-accent-amber .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #ffd740;
-}
-.mdui-theme-accent-amber .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 215, 64, .16);
-          box-shadow: 0 0 0 15px rgba(255, 215, 64, .16);
-}
-.mdui-theme-accent-blue .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #448aff;
-}
-.mdui-theme-accent-blue .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #448aff;
-}
-.mdui-theme-accent-blue .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(68, 138, 255, .16);
-          box-shadow: 0 0 0 15px rgba(68, 138, 255, .16);
-}
-.mdui-theme-accent-cyan .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #18ffff;
-}
-.mdui-theme-accent-cyan .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #18ffff;
-}
-.mdui-theme-accent-cyan .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(24, 255, 255, .16);
-          box-shadow: 0 0 0 15px rgba(24, 255, 255, .16);
-}
-.mdui-theme-accent-deep-orange .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ff6e40;
-}
-.mdui-theme-accent-deep-orange .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #ff6e40;
-}
-.mdui-theme-accent-deep-orange .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 110, 64, .16);
-          box-shadow: 0 0 0 15px rgba(255, 110, 64, .16);
-}
-.mdui-theme-accent-deep-purple .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #7c4dff;
-}
-.mdui-theme-accent-deep-purple .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #7c4dff;
-}
-.mdui-theme-accent-deep-purple .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(124, 77, 255, .16);
-          box-shadow: 0 0 0 15px rgba(124, 77, 255, .16);
-}
-.mdui-theme-accent-green .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #69f0ae;
-}
-.mdui-theme-accent-green .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #69f0ae;
-}
-.mdui-theme-accent-green .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(105, 240, 174, .16);
-          box-shadow: 0 0 0 15px rgba(105, 240, 174, .16);
-}
-.mdui-theme-accent-indigo .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #536dfe;
-}
-.mdui-theme-accent-indigo .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #536dfe;
-}
-.mdui-theme-accent-indigo .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(83, 109, 254, .16);
-          box-shadow: 0 0 0 15px rgba(83, 109, 254, .16);
-}
-.mdui-theme-accent-light-blue .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #40c4ff;
-}
-.mdui-theme-accent-light-blue .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #40c4ff;
-}
-.mdui-theme-accent-light-blue .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(64, 196, 255, .16);
-          box-shadow: 0 0 0 15px rgba(64, 196, 255, .16);
-}
-.mdui-theme-accent-light-green .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #b2ff59;
-}
-.mdui-theme-accent-light-green .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #b2ff59;
-}
-.mdui-theme-accent-light-green .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(178, 255, 89, .16);
-          box-shadow: 0 0 0 15px rgba(178, 255, 89, .16);
-}
-.mdui-theme-accent-lime .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #eeff41;
-}
-.mdui-theme-accent-lime .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #eeff41;
-}
-.mdui-theme-accent-lime .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(238, 255, 65, .16);
-          box-shadow: 0 0 0 15px rgba(238, 255, 65, .16);
-}
-.mdui-theme-accent-orange .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ffab40;
-}
-.mdui-theme-accent-orange .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #ffab40;
-}
-.mdui-theme-accent-orange .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 171, 64, .16);
-          box-shadow: 0 0 0 15px rgba(255, 171, 64, .16);
-}
-.mdui-theme-accent-pink .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ff4081;
-}
-.mdui-theme-accent-pink .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #ff4081;
-}
-.mdui-theme-accent-pink .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 64, 129, .16);
-          box-shadow: 0 0 0 15px rgba(255, 64, 129, .16);
-}
-.mdui-theme-accent-purple .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #e040fb;
-}
-.mdui-theme-accent-purple .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #e040fb;
-}
-.mdui-theme-accent-purple .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(224, 64, 251, .16);
-          box-shadow: 0 0 0 15px rgba(224, 64, 251, .16);
-}
-.mdui-theme-accent-red .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ff5252;
-}
-.mdui-theme-accent-red .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #ff5252;
-}
-.mdui-theme-accent-red .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 82, 82, .16);
-          box-shadow: 0 0 0 15px rgba(255, 82, 82, .16);
-}
-.mdui-theme-accent-teal .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #64ffda;
-}
-.mdui-theme-accent-teal .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #64ffda;
-}
-.mdui-theme-accent-teal .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(100, 255, 218, .16);
-          box-shadow: 0 0 0 15px rgba(100, 255, 218, .16);
-}
-.mdui-theme-accent-yellow .mdui-radio input[type="radio"]:checked + .mdui-radio-icon {
-  border-color: #ff0;
-}
-.mdui-theme-accent-yellow .mdui-radio input[type="radio"]:checked + .mdui-radio-icon:before {
-  background-color: #ff0;
-}
-.mdui-theme-accent-yellow .mdui-radio:active input[type="radio"]:checked:not(:disabled) + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 255, 0, .16);
-          box-shadow: 0 0 0 15px rgba(255, 255, 0, .16);
-}
-/**
- * =============================================================================
- * ************   Radio dark   ************
- * =============================================================================
- */
-.mdui-theme-layout-dark .mdui-radio-icon {
-  border-color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-radio input[type="radio"]:disabled + .mdui-radio-icon {
-  border-color: rgba(255, 255, 255, .3) !important;
-}
-.mdui-theme-layout-dark .mdui-radio input[type="radio"]:disabled:checked + .mdui-radio-icon:before {
-  background-color: rgba(255, 255, 255, .3) !important;
-}
-.mdui-theme-layout-dark .mdui-radio:active input[type="radio"] + .mdui-radio-icon {
-  -webkit-box-shadow: 0 0 0 15px rgba(255, 255, 255, .1);
-          box-shadow: 0 0 0 15px rgba(255, 255, 255, .1);
-}
-/**
- * =============================================================================
- * ************   Switch 单选框   ************
- * =============================================================================
- */
-.mdui-switch {
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.mdui-switch input {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-/* 图标轨道 */
-.mdui-switch-icon {
-  position: relative;
-  display: inline-block;
-  width: 36px;
-  height: 14px;
-  vertical-align: middle;
-  background-color: rgba(0, 0, 0, .38);
-  border-radius: 14px;
-  -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
-          transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
-}
-.mdui-switch-icon:before {
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  content: ' ';
-  background-color: #fafafa;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
-  -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1), left .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-          transition: background-color .3s cubic-bezier(.4, 0, .2, 1), left .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-          transition: box-shadow .14s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), left .3s cubic-bezier(.4, 0, .2, 1);
-          transition: box-shadow .14s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), left .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .14s cubic-bezier(.4, 0, .2, 1);
-}
-/* 选中状态的图标 */
-.mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 64, 129, .5);
-}
-.mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  left: 20px;
-  background-color: #ff4081;
-}
-/* 未选中时或禁用时 按下的阴影 */
-.mdui-switch:active input[type="checkbox"] + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(0, 0, 0, .1);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(0, 0, 0, .1);
-}
-/* 已选中时按下的阴影 */
-.mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 64, 129, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 64, 129, .16);
-}
-/* 禁用状态 */
-.mdui-switch input[type="checkbox"]:disabled + .mdui-switch-icon {
-  background-color: rgba(0, 0, 0, .12) !important;
-}
-.mdui-switch input[type="checkbox"]:disabled + .mdui-switch-icon:before {
-  background-color: #bdbdbd !important;
-}
-/**
- * =============================================================================
- * ************   Switch 强调色   ************
- * =============================================================================
- */
-.mdui-theme-accent-amber .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 215, 64, .5);
-}
-.mdui-theme-accent-amber .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ffd740;
-}
-.mdui-theme-accent-amber .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 215, 64, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 215, 64, .16);
-}
-.mdui-theme-accent-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(68, 138, 255, .5);
-}
-.mdui-theme-accent-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #448aff;
-}
-.mdui-theme-accent-blue .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(68, 138, 255, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(68, 138, 255, .16);
-}
-.mdui-theme-accent-cyan .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(24, 255, 255, .5);
-}
-.mdui-theme-accent-cyan .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #18ffff;
-}
-.mdui-theme-accent-cyan .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(24, 255, 255, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(24, 255, 255, .16);
-}
-.mdui-theme-accent-deep-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 110, 64, .5);
-}
-.mdui-theme-accent-deep-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff6e40;
-}
-.mdui-theme-accent-deep-orange .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 110, 64, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 110, 64, .16);
-}
-.mdui-theme-accent-deep-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(124, 77, 255, .5);
-}
-.mdui-theme-accent-deep-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #7c4dff;
-}
-.mdui-theme-accent-deep-purple .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(124, 77, 255, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(124, 77, 255, .16);
-}
-.mdui-theme-accent-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(105, 240, 174, .5);
-}
-.mdui-theme-accent-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #69f0ae;
-}
-.mdui-theme-accent-green .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(105, 240, 174, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(105, 240, 174, .16);
-}
-.mdui-theme-accent-indigo .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(83, 109, 254, .5);
-}
-.mdui-theme-accent-indigo .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #536dfe;
-}
-.mdui-theme-accent-indigo .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(83, 109, 254, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(83, 109, 254, .16);
-}
-.mdui-theme-accent-light-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(64, 196, 255, .5);
-}
-.mdui-theme-accent-light-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #40c4ff;
-}
-.mdui-theme-accent-light-blue .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(64, 196, 255, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(64, 196, 255, .16);
-}
-.mdui-theme-accent-light-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(178, 255, 89, .5);
-}
-.mdui-theme-accent-light-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #b2ff59;
-}
-.mdui-theme-accent-light-green .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(178, 255, 89, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(178, 255, 89, .16);
-}
-.mdui-theme-accent-lime .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(238, 255, 65, .5);
-}
-.mdui-theme-accent-lime .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #eeff41;
-}
-.mdui-theme-accent-lime .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(238, 255, 65, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(238, 255, 65, .16);
-}
-.mdui-theme-accent-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 171, 64, .5);
-}
-.mdui-theme-accent-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ffab40;
-}
-.mdui-theme-accent-orange .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 171, 64, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 171, 64, .16);
-}
-.mdui-theme-accent-pink .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 64, 129, .5);
-}
-.mdui-theme-accent-pink .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff4081;
-}
-.mdui-theme-accent-pink .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 64, 129, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 64, 129, .16);
-}
-.mdui-theme-accent-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(224, 64, 251, .5);
-}
-.mdui-theme-accent-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #e040fb;
-}
-.mdui-theme-accent-purple .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(224, 64, 251, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(224, 64, 251, .16);
-}
-.mdui-theme-accent-red .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 82, 82, .5);
-}
-.mdui-theme-accent-red .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff5252;
-}
-.mdui-theme-accent-red .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 82, 82, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 82, 82, .16);
-}
-.mdui-theme-accent-teal .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(100, 255, 218, .5);
-}
-.mdui-theme-accent-teal .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #64ffda;
-}
-.mdui-theme-accent-teal .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(100, 255, 218, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(100, 255, 218, .16);
-}
-.mdui-theme-accent-yellow .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 255, 0, .5);
-}
-.mdui-theme-accent-yellow .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff0;
-}
-.mdui-theme-accent-yellow .mdui-switch:active input[type="checkbox"]:checked:not(:disabled) + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 255, 0, .16);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 255, 0, .16);
-}
-/**
- * =============================================================================
- * ************   Radio dark   ************
- * =============================================================================
- */
-.mdui-theme-layout-dark .mdui-switch-icon {
-  background-color: rgba(255, 255, 255, .3);
-}
-.mdui-theme-layout-dark .mdui-switch-icon:before {
-  background-color: #bdbdbd;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-amber .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 229, 127, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-amber .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ffe57f;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(130, 177, 255, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #82b1ff;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-cyan .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(132, 255, 255, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-cyan .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #84ffff;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-deep-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 158, 128, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-deep-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff9e80;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-deep-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(179, 136, 255, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-deep-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #b388ff;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(185, 246, 202, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #b9f6ca;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-indigo .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(140, 158, 255, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-indigo .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #8c9eff;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-light-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(128, 216, 255, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-light-blue .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #80d8ff;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-light-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(204, 255, 144, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-light-green .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ccff90;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-lime .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(244, 255, 129, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-lime .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #f4ff81;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 209, 128, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-orange .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ffd180;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-pink .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 128, 171, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-pink .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff80ab;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(234, 128, 252, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-purple .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ea80fc;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-red .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 138, 128, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-red .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ff8a80;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-teal .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(167, 255, 235, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-teal .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #a7ffeb;
-}
-.mdui-theme-layout-dark.mdui-theme-accent-yellow .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon {
-  background-color: rgba(255, 255, 141, .5);
-}
-.mdui-theme-layout-dark.mdui-theme-accent-yellow .mdui-switch input[type="checkbox"]:checked + .mdui-switch-icon:before {
-  background-color: #ffff8d;
-}
-.mdui-theme-layout-dark .mdui-switch:active input[type="checkbox"] + .mdui-switch-icon:before {
-  -webkit-box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 255, 255, .1);
-          box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12), 0 0 0 15px rgba(255, 255, 255, .1);
-}
-.mdui-theme-layout-dark .mdui-switch input[type="checkbox"]:disabled + .mdui-switch-icon {
-  background-color: rgba(255, 255, 255, .1) !important;
-}
-.mdui-theme-layout-dark .mdui-switch input[type="checkbox"]:disabled + .mdui-switch-icon:before {
-  background-color: #424242 !important;
-}
-/**
- * =============================================================================
- * ************   Slider 滑块   ************
- * =============================================================================
- */
-.mdui-slider {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 36px;
-}
-.mdui-slider input[type="range"] {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  width: 100%;
-  height: 20px;
-  -webkit-appearance: none;
-  margin-top: -10px;
-  cursor: pointer;
-  opacity: 0;
-
-     -moz-appearance: none;
-          appearance: none;
-}
-.mdui-slider-track,
-.mdui-slider-fill {
-  position: absolute;
-  top: 50%;
-  height: 2px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-top: -1px;
-}
-.mdui-slider-track:before,
-.mdui-slider-fill:before {
-  display: block;
-  width: 100%;
-  height: 100%;
-  content: ' ';
-}
-/* 轨道 */
-.mdui-slider-track {
-  right: 0;
-}
-.mdui-slider-track:before {
-  background-color: #bdbdbd;
-  -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
-          transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
-}
-/* 已滑动部分 */
-.mdui-slider-fill {
-  left: 0;
-}
-.mdui-slider-fill:before {
-  background-color: #ff4081;
-}
-/* 滑块 */
-.mdui-slider-thumb {
-  position: absolute;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-top: -6px;
-  background-color: #ff4081;
-  border: 2px solid #ff4081;
-  border-radius: 50%;
-  -webkit-transition: background .45s cubic-bezier(.4, 0, .2, 1), border-color .45s cubic-bezier(.4, 0, .2, 1), border-radius .2s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
-          transition: background .45s cubic-bezier(.4, 0, .2, 1), border-color .45s cubic-bezier(.4, 0, .2, 1), border-radius .2s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
-          transition: background .45s cubic-bezier(.4, 0, .2, 1), border-color .45s cubic-bezier(.4, 0, .2, 1), transform .2s cubic-bezier(.4, 0, .2, 1), border-radius .2s cubic-bezier(.4, 0, .2, 1);
-          transition: background .45s cubic-bezier(.4, 0, .2, 1), border-color .45s cubic-bezier(.4, 0, .2, 1), transform .2s cubic-bezier(.4, 0, .2, 1), border-radius .2s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
-
-  will-change: background, border-color, transform, border-radius;
-}
-/**
- * =============================================================================
- * ************   Slider 强调色   ************
- * =============================================================================
- */
-.mdui-theme-accent-amber .mdui-slider-fill:before {
-  background-color: #ffd740;
-}
-.mdui-theme-accent-amber .mdui-slider-thumb {
-  background-color: #ffd740;
-  border: 2px solid #ffd740;
-}
-.mdui-theme-accent-blue .mdui-slider-fill:before {
-  background-color: #448aff;
-}
-.mdui-theme-accent-blue .mdui-slider-thumb {
-  background-color: #448aff;
-  border: 2px solid #448aff;
-}
-.mdui-theme-accent-cyan .mdui-slider-fill:before {
-  background-color: #18ffff;
-}
-.mdui-theme-accent-cyan .mdui-slider-thumb {
-  background-color: #18ffff;
-  border: 2px solid #18ffff;
-}
-.mdui-theme-accent-deep-orange .mdui-slider-fill:before {
-  background-color: #ff6e40;
-}
-.mdui-theme-accent-deep-orange .mdui-slider-thumb {
-  background-color: #ff6e40;
-  border: 2px solid #ff6e40;
-}
-.mdui-theme-accent-deep-purple .mdui-slider-fill:before {
-  background-color: #7c4dff;
-}
-.mdui-theme-accent-deep-purple .mdui-slider-thumb {
-  background-color: #7c4dff;
-  border: 2px solid #7c4dff;
-}
-.mdui-theme-accent-green .mdui-slider-fill:before {
-  background-color: #69f0ae;
-}
-.mdui-theme-accent-green .mdui-slider-thumb {
-  background-color: #69f0ae;
-  border: 2px solid #69f0ae;
-}
-.mdui-theme-accent-indigo .mdui-slider-fill:before {
-  background-color: #536dfe;
-}
-.mdui-theme-accent-indigo .mdui-slider-thumb {
-  background-color: #536dfe;
-  border: 2px solid #536dfe;
-}
-.mdui-theme-accent-light-blue .mdui-slider-fill:before {
-  background-color: #40c4ff;
-}
-.mdui-theme-accent-light-blue .mdui-slider-thumb {
-  background-color: #40c4ff;
-  border: 2px solid #40c4ff;
-}
-.mdui-theme-accent-light-green .mdui-slider-fill:before {
-  background-color: #b2ff59;
-}
-.mdui-theme-accent-light-green .mdui-slider-thumb {
-  background-color: #b2ff59;
-  border: 2px solid #b2ff59;
-}
-.mdui-theme-accent-lime .mdui-slider-fill:before {
-  background-color: #eeff41;
-}
-.mdui-theme-accent-lime .mdui-slider-thumb {
-  background-color: #eeff41;
-  border: 2px solid #eeff41;
-}
-.mdui-theme-accent-orange .mdui-slider-fill:before {
-  background-color: #ffab40;
-}
-.mdui-theme-accent-orange .mdui-slider-thumb {
-  background-color: #ffab40;
-  border: 2px solid #ffab40;
-}
-.mdui-theme-accent-pink .mdui-slider-fill:before {
-  background-color: #ff4081;
-}
-.mdui-theme-accent-pink .mdui-slider-thumb {
-  background-color: #ff4081;
-  border: 2px solid #ff4081;
-}
-.mdui-theme-accent-purple .mdui-slider-fill:before {
-  background-color: #e040fb;
-}
-.mdui-theme-accent-purple .mdui-slider-thumb {
-  background-color: #e040fb;
-  border: 2px solid #e040fb;
-}
-.mdui-theme-accent-red .mdui-slider-fill:before {
-  background-color: #ff5252;
-}
-.mdui-theme-accent-red .mdui-slider-thumb {
-  background-color: #ff5252;
-  border: 2px solid #ff5252;
-}
-.mdui-theme-accent-teal .mdui-slider-fill:before {
-  background-color: #64ffda;
-}
-.mdui-theme-accent-teal .mdui-slider-thumb {
-  background-color: #64ffda;
-  border: 2px solid #64ffda;
-}
-.mdui-theme-accent-yellow .mdui-slider-fill:before {
-  background-color: #ff0;
-}
-.mdui-theme-accent-yellow .mdui-slider-thumb {
-  background-color: #ff0;
-  border: 2px solid #ff0;
-}
-/**
- * =============================================================================
- * ============   Slider 的不同状态   ============
- * =============================================================================
- */
-/* 鼠标按下状态 */
-.mdui-slider-focus .mdui-slider-track:before {
-  background-color: #9e9e9e;
-}
-.mdui-slider-focus .mdui-slider-thumb {
-  -webkit-transform: translate(-50%) scale(1.6);
-          transform: translate(-50%) scale(1.6);
-}
-/* 滑块值为 0 */
-.mdui-slider-zero .mdui-slider-thumb {
-  background-color: #fff;
-  border-color: #bdbdbd;
-}
-/* 滑块值为 0，且鼠标按下 */
-.mdui-slider-zero.mdui-slider-focus .mdui-slider-thumb {
-  border-color: #9e9e9e;
-}
-/* 禁用状态 */
-.mdui-slider-disabled input[type="range"] {
-  cursor: default;
-}
-.mdui-slider-disabled .mdui-slider-track:before {
-  background-color: #bdbdbd;
-}
-.mdui-slider-disabled .mdui-slider-fill:before {
-  background-color: #bdbdbd;
-}
-.mdui-slider-disabled .mdui-slider-thumb {
-  background-color: #bdbdbd;
-  border-color: transparent !important;
-  -webkit-transform: translate(-50%) scale(.72);
-          transform: translate(-50%) scale(.72);
-}
-/**
- * =============================================================================
- * ============   间续型滑块   ============
- * =============================================================================
- */
-.mdui-slider-discrete .mdui-slider-thumb {
-  width: 30px;
-  height: 30px;
-  margin-top: -15px;
-  margin-left: -15px;
-  border: none;
-  -webkit-transform: rotate(-45deg) scale(.4);
-          transform: rotate(-45deg) scale(.4);
-}
-.mdui-slider-discrete .mdui-slider-thumb span {
-  position: absolute;
-  top: 9px;
-  left: -1px;
-  width: 100%;
-  font-size: 12px;
-  color: #fff;
-  text-align: center;
-  opacity: 0;
-  -webkit-transition: opacity .25s cubic-bezier(.4, 0, .2, 1);
-          transition: opacity .25s cubic-bezier(.4, 0, .2, 1);
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.mdui-slider-discrete.mdui-slider-focus .mdui-slider-thumb {
-  border-radius: 15px 15px 15px 0;
-  -webkit-transform: rotate(-45deg) scale(1) translate(22px, -22px);
-          transform: rotate(-45deg) scale(1) translate(22px, -22px);
-}
-.mdui-slider-discrete.mdui-slider-focus .mdui-slider-thumb span {
-  opacity: 1;
-}
-.mdui-slider-discrete.mdui-slider-zero .mdui-slider-thumb {
-  background-color: #323232;
-}
-.mdui-slider-discrete.mdui-slider-zero.mdui-slider-focus .mdui-slider-thumb {
-  background-color: #bdbdbd;
-}
-.mdui-slider-discrete.mdui-slider-disabled .mdui-slider-thumb {
-  -webkit-transform: rotate(-45deg) scale(.288);
-          transform: rotate(-45deg) scale(.288);
-}
-.mdui-slider-discrete.mdui-slider-zero.mdui-slider-disabled .mdui-slider-thumb {
-  background-color: #bdbdbd;
-}
-/**
- * =============================================================================
- * ************   Slider dark   ************
- * =============================================================================
- */
-.mdui-theme-layout-dark .mdui-slider-track:before {
-  background-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-focus .mdui-slider-track:before {
-  background-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-zero .mdui-slider-thumb {
-  background-color: #303030;
-  border-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-zero.mdui-slider-focus .mdui-slider-thumb {
-  border-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-disabled .mdui-slider-track:before {
-  background-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-disabled .mdui-slider-fill:before {
-  background-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-disabled .mdui-slider-thumb {
-  background-color: #4c4c4c;
-}
-.mdui-theme-layout-dark .mdui-slider-discrete.mdui-slider-zero .mdui-slider-thumb {
-  background-color: #fefefe;
-}
-.mdui-theme-layout-dark .mdui-slider-discrete.mdui-slider-zero.mdui-slider-focus .mdui-slider-thumb {
-  background-color: #5c5c5c;
-}
-.mdui-theme-layout-dark .mdui-slider-discrete.mdui-slider-zero.mdui-slider-disabled .mdui-slider-thumb {
-  background-color: #4c4c4c;
-}
 /**
  * =============================================================================
  * ************   Button 按钮   ************
@@ -7942,6 +6845,7 @@ input.mdui-btn[type="submit"] {
   background-color: transparent !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+  opacity: 1 !important;
 }
 .mdui-btn[disabled] .mdui-icon,
 .mdui-fab[disabled] .mdui-icon,
@@ -8055,53 +6959,6 @@ input.mdui-btn[type="submit"] {
  * ************   Button dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-btn:hover,
-.mdui-theme-layout-dark .mdui-fab:hover {
-  background-color: rgba(255, 255, 255, .1);
-}
-.mdui-theme-layout-dark .mdui-btn:not(.mdui-ripple):active,
-.mdui-theme-layout-dark .mdui-fab:not(.mdui-ripple):active {
-  background-color: rgba(255, 255, 255, .165);
-}
-.mdui-theme-layout-dark .mdui-btn[class*="mdui-color-"]:hover,
-.mdui-theme-layout-dark .mdui-fab[class*="mdui-color-"]:hover {
-  opacity: .87;
-}
-.mdui-theme-layout-dark .mdui-btn:not(.mdui-ripple)[class*="mdui-color-"]:active,
-.mdui-theme-layout-dark .mdui-fab:not(.mdui-ripple)[class*="mdui-color-"]:active {
-  opacity: .76;
-}
-.mdui-theme-layout-dark .mdui-btn[disabled],
-.mdui-theme-layout-dark .mdui-fab[disabled],
-.mdui-theme-layout-dark .mdui-btn[disabled]:hover,
-.mdui-theme-layout-dark .mdui-fab[disabled]:hover,
-.mdui-theme-layout-dark .mdui-btn[disabled]:active,
-.mdui-theme-layout-dark .mdui-fab[disabled]:active,
-.mdui-theme-layout-dark .mdui-btn[disabled]:focus,
-.mdui-theme-layout-dark .mdui-fab[disabled]:focus {
-  color: rgba(255, 255, 255, .3) !important;
-  background-color: transparent !important;
-}
-.mdui-theme-layout-dark .mdui-btn[disabled] .mdui-icon,
-.mdui-theme-layout-dark .mdui-fab[disabled] .mdui-icon,
-.mdui-theme-layout-dark .mdui-btn[disabled]:hover .mdui-icon,
-.mdui-theme-layout-dark .mdui-fab[disabled]:hover .mdui-icon,
-.mdui-theme-layout-dark .mdui-btn[disabled]:active .mdui-icon,
-.mdui-theme-layout-dark .mdui-fab[disabled]:active .mdui-icon,
-.mdui-theme-layout-dark .mdui-btn[disabled]:focus .mdui-icon,
-.mdui-theme-layout-dark .mdui-fab[disabled]:focus .mdui-icon {
-  color: rgba(255, 255, 255, .3) !important;
-}
-.mdui-theme-layout-dark .mdui-btn-raised[disabled],
-.mdui-theme-layout-dark .mdui-fab[disabled],
-.mdui-theme-layout-dark .mdui-btn-raised[disabled]:hover,
-.mdui-theme-layout-dark .mdui-fab[disabled]:hover,
-.mdui-theme-layout-dark .mdui-btn-raised[disabled]:active,
-.mdui-theme-layout-dark .mdui-fab[disabled]:active,
-.mdui-theme-layout-dark .mdui-btn-raised[disabled]:focus,
-.mdui-theme-layout-dark .mdui-fab[disabled]:focus {
-  background-color: rgba(255, 255, 255, .12) !important;
-}
 /**
  * =============================================================================
  * ************   Fab 浮动操作按钮   ************
@@ -8240,341 +7097,6 @@ input.mdui-btn[type="submit"] {
 .mdui-fab-wrapper.mdui-fab-hide {
   -webkit-transform: scale(0) translateZ(0);
           transform: scale(0) translateZ(0);
-}
-/**
- * =============================================================================
- * ************   Select 下拉选择   ************
- * =============================================================================
- */
-.mdui-select {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-  height: 36px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-appearance: none;
-  padding-right: 24px;
-  padding-left: 0;
-  font-family: Roboto, Noto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%3E%3Cpath%20d%3D%22m-0.00254%2C2.5l5%2C5l5%2C-5l-10%2C0z%22%20fill%3D%22%23000000%22%20opacity%3D%220.54%22%2F%3E%3C%2Fsvg%3E%0A");
-  background-repeat: no-repeat;
-  background-position: right center;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .12);
-  outline: none;
-  -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-          transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-transition-property: background-color, background-position-x, -webkit-box-shadow;
-          transition-property: background-color, background-position-x, -webkit-box-shadow;
-          transition-property: background-color, box-shadow, background-position-x;
-          transition-property: background-color, box-shadow, background-position-x, -webkit-box-shadow;
-
-     -moz-appearance: none;
-          appearance: none;
-  will-change: background-color, box-shadow, background-position-x;
-}
-.mdui-select.mdui-select-open {
-  border-bottom: none;
-}
-.mdui-select-position-top {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%3E%3Cpath%20d%3D%22m-0.00254%2C2.5l5%2C5l5%2C-5l-10%2C0z%22%20fill%3D%22%23000000%22%20opacity%3D%220.54%22%20transform%3D%22rotate(-180%205%2C5)%22%2F%3E%3C%2Fsvg%3E%0A");
-}
-/* 底部和顶部菜单的样式 */
-.mdui-select-open.mdui-select-position-top,
-.mdui-select-open.mdui-select-position-bottom {
-  z-index: 99999;
-  background-color: #fff;
-  background-position-x: calc(100% - 12px);
-  border-radius: 2px;
-}
-.mdui-select-open.mdui-select-position-top {
-  border-top: 1px solid rgba(0, 0, 0, .12);
-  border-bottom: 2px solid transparent;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-box-shadow: 0 10px 10px -3px rgba(0, 0, 0, .2), 0 0 14px 1px rgba(0, 0, 0, .14), 0 -7px 24px 2px rgba(0, 0, 0, .12);
-          box-shadow: 0 10px 10px -3px rgba(0, 0, 0, .2), 0 0 14px 1px rgba(0, 0, 0, .14), 0 -7px 24px 2px rgba(0, 0, 0, .12);
-}
-.mdui-select-open.mdui-select-position-top .mdui-select-menu {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  -webkit-box-shadow: 0 -4px 4px -2px rgba(0, 0, 0, .06), 8px 0 8px -4px rgba(0, 0, 0, .12), -8px 0 8px -4px rgba(0, 0, 0, .12);
-          box-shadow: 0 -4px 4px -2px rgba(0, 0, 0, .06), 8px 0 8px -4px rgba(0, 0, 0, .12), -8px 0 8px -4px rgba(0, 0, 0, .12);
-}
-.mdui-select-open.mdui-select-position-bottom {
-  border-bottom: 1px solid rgba(0, 0, 0, .12);
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-          box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-}
-.mdui-select-open.mdui-select-position-bottom .mdui-select-menu {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 9px 9px 1px rgba(0, 0, 0, .14), 0 8px 8px 2px rgba(0, 0, 0, .06);
-          box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 9px 9px 1px rgba(0, 0, 0, .14), 0 8px 8px 2px rgba(0, 0, 0, .06);
-}
-/* 当前选中项文本 */
-.mdui-select-selected {
-  position: absolute;
-  top: 50%;
-  right: 24px;
-  left: 0;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  -webkit-transition: left .2s cubic-bezier(0, 0, .2, 1);
-          transition: left .2s cubic-bezier(0, 0, .2, 1);
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.mdui-select-open .mdui-select-selected {
-  right: 32px;
-  left: 16px;
-}
-.mdui-select-open.mdui-select-position-auto .mdui-select-selected {
-  visibility: hidden;
-}
-/* 菜单 */
-.mdui-select-menu {
-  position: relative;
-  z-index: 99999;
-  height: 36px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0 -24px 0 0;
-  overflow-y: scroll;
-  color: rgba(0, 0, 0, .87);
-  cursor: default;
-  visibility: hidden;
-  background-color: #fff;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-          box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-  opacity: 0;
-  -webkit-transition-timing-function: cubic-bezier(0, 0, .2, 1);
-          transition-timing-function: cubic-bezier(0, 0, .2, 1);
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-transition-property: opacity, visibility, -webkit-transform;
-          transition-property: opacity, visibility, -webkit-transform;
-          transition-property: transform, opacity, visibility;
-          transition-property: transform, opacity, visibility, -webkit-transform;
-  -webkit-transform: scale(1, 0);
-          transform: scale(1, 0);
-
-  will-change: transform, opacity, visibility;
-}
-.mdui-select-open .mdui-select-menu {
-  overflow-y: hidden;
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-}
-.mdui-select-closing .mdui-select-menu {
-  overflow-y: hidden;
-  visibility: visible;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  opacity: 0;
-  -webkit-transform: scale(1, 1);
-          transform: scale(1, 1);
-}
-/* 菜单项 */
-.mdui-select-menu-item {
-  height: 48px;
-  padding: 0 16px;
-  overflow: hidden;
-  line-height: 48px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.mdui-select-menu-item:hover {
-  background-color: #eee;
-}
-.mdui-select-menu-item:first-child {
-  margin-top: 8px;
-}
-.mdui-select-menu-item:last-child {
-  margin-bottom: 8px;
-}
-.mdui-select-menu-item[disabled] {
-  color: rgba(0, 0, 0, .38) !important;
-  cursor: default;
-}
-.mdui-select-menu-item[disabled]:hover {
-  background-color: inherit !important;
-}
-.mdui-select-menu-item[selected] {
-  color: #ff4081;
-}
-/* 原生 select 组件 */
-select.mdui-select {
-  background-color: transparent;
-}
-select.mdui-select option {
-  color: rgba(0, 0, 0, .87);
-}
-select.mdui-select::-ms-expand {
-  display: none;
-}
-/* 原生多选 select 组件 */
-select.mdui-select[multiple] {
-  height: auto;
-  padding: 0;
-  font-size: 15px;
-  cursor: default;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid rgba(0, 0, 0, .38);
-}
-select.mdui-select[multiple] optgroup {
-  padding: 0 0 0 16px;
-  margin: 8px 0 0 0;
-  color: rgba(0, 0, 0, .38);
-}
-select.mdui-select[multiple] optgroup:last-child {
-  margin-bottom: 8px;
-}
-select.mdui-select[multiple] optgroup:not(:first-child) {
-  padding-top: 8px;
-  border-top: 1px solid rgba(0, 0, 0, .12);
-}
-select.mdui-select[multiple] option {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  height: 32px;
-  padding: 0 16px;
-  margin: 0 0 0 -16px;
-  color: rgba(0, 0, 0, .87);
-
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-}
-select.mdui-select[multiple] option:first-child {
-  margin-top: 8px;
-}
-select.mdui-select[multiple] option:last-child {
-  margin-bottom: 8px;
-}
-/**
- * =============================================================================
- * ************   Select 强调色   ************
- * =============================================================================
- */
-.mdui-theme-accent-amber .mdui-select-menu-item[selected] {
-  color: #ffc107;
-}
-.mdui-theme-accent-blue .mdui-select-menu-item[selected] {
-  color: #2196f3;
-}
-.mdui-theme-accent-cyan .mdui-select-menu-item[selected] {
-  color: #00bcd4;
-}
-.mdui-theme-accent-deep-orange .mdui-select-menu-item[selected] {
-  color: #ff5722;
-}
-.mdui-theme-accent-deep-purple .mdui-select-menu-item[selected] {
-  color: #673ab7;
-}
-.mdui-theme-accent-green .mdui-select-menu-item[selected] {
-  color: #4caf50;
-}
-.mdui-theme-accent-indigo .mdui-select-menu-item[selected] {
-  color: #3f51b5;
-}
-.mdui-theme-accent-light-blue .mdui-select-menu-item[selected] {
-  color: #03a9f4;
-}
-.mdui-theme-accent-light-green .mdui-select-menu-item[selected] {
-  color: #8bc34a;
-}
-.mdui-theme-accent-lime .mdui-select-menu-item[selected] {
-  color: #cddc39;
-}
-.mdui-theme-accent-orange .mdui-select-menu-item[selected] {
-  color: #ff9800;
-}
-.mdui-theme-accent-pink .mdui-select-menu-item[selected] {
-  color: #e91e63;
-}
-.mdui-theme-accent-purple .mdui-select-menu-item[selected] {
-  color: #9c27b0;
-}
-.mdui-theme-accent-red .mdui-select-menu-item[selected] {
-  color: #f44336;
-}
-.mdui-theme-accent-teal .mdui-select-menu-item[selected] {
-  color: #009688;
-}
-.mdui-theme-accent-yellow .mdui-select-menu-item[selected] {
-  color: #ffeb3b;
-}
-/**
- * =============================================================================
- * ************   Select dark   ************
- * =============================================================================
- */
-.mdui-theme-layout-dark .mdui-select {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%3E%3Cpath%20d%3D%22m-0.00254%2C2.5l5%2C5l5%2C-5l-10%2C0z%22%20fill%3D%22%23FFFFFF%22%2F%3E%3C%2Fsvg%3E%0A");
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-select-position-top {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%3E%3Cpath%20d%3D%22m-0.00254%2C2.5l5%2C5l5%2C-5l-10%2C0z%22%20fill%3D%22%23FFFFFF%22%20transform%3D%22rotate(-180%205%2C5)%22%2F%3E%3C%2Fsvg%3E%0A");
-}
-.mdui-theme-layout-dark .mdui-select-open.mdui-select-position-top,
-.mdui-theme-layout-dark .mdui-select-open.mdui-select-position-bottom {
-  background-color: #424242;
-}
-.mdui-theme-layout-dark .mdui-select-open.mdui-select-position-top {
-  border-top: 1px solid rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-select-open.mdui-select-position-bottom {
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-select-menu {
-  color: #fff;
-  background-color: #424242;
-}
-.mdui-theme-layout-dark .mdui-select-menu-item:hover {
-  background-color: #616161;
-}
-.mdui-theme-layout-dark .mdui-select-menu-item[disabled] {
-  color: rgba(255, 255, 255, .5) !important;
-}
-.mdui-theme-layout-dark select.mdui-select {
-  color: #fff;
-  background-color: #303030;
-}
-.mdui-theme-layout-dark select.mdui-select option {
-  color: #fff;
-  background-color: #303030;
-}
-.mdui-theme-layout-dark select.mdui-select[multiple] {
-  border: 1px solid rgba(255, 255, 255, .5);
-}
-.mdui-theme-layout-dark select.mdui-select[multiple] optgroup {
-  color: rgba(255, 255, 255, .5);
-}
-.mdui-theme-layout-dark select.mdui-select[multiple] optgroup:not(:first-child) {
-  border-top: 1px solid rgba(255, 255, 255, .12);
 }
 /**
  * =============================================================================
@@ -9491,10 +8013,6 @@ select.mdui-select[multiple] option:last-child {
  * ************   Appbar dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-appbar > [class*="mdui-color-"]:not(.mdui-color-transparent) {
-  color: #fff !important;
-  background-color: #212121 !important;
-}
 /**
  * =============================================================================
  * ************   Card 卡片   ************
@@ -9690,327 +8208,6 @@ select.mdui-select[multiple] option:last-child {
  * ************   Card dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-card {
-  color: #fff;
-  background-color: #424242;
-}
-/**
- * =============================================================================
- * ************   Tab   ************
- * =============================================================================
- *
- * 在手机上选项卡始终平分或可滚动，在平板以上的设备上默认左对齐，可以选择居中对齐，或全宽等分
- */
-/* 选项卡，默认的选项卡为全宽 */
-.mdui-tab {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  min-height: 48px;
-  max-height: 72px;
-  padding: 0;
-  margin: 0 auto;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-}
-.mdui-tab a {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  min-width: 72px;
-  min-height: 48px;
-  max-height: 72px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 12px;
-  overflow: hidden;
-  font-size: 14px;
-  color: inherit;
-  text-align: center;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  cursor: pointer;
-          flex-direction: column;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  opacity: .7;
-
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-}
-.mdui-tab a .mdui-icon {
-  opacity: .7;
-}
-@media (min-width: 600px) {
-  .mdui-tab a {
-    min-width: 99px;
-    max-width: 264px;
-    padding: 12px 24px;
-
-    -webkit-box-flex: 0;
-    -webkit-flex: none;
-        -ms-flex: none;
-            flex: none;
-  }
-}
-@media (min-width: 1024px) {
-  .mdui-tab a {
-    min-width: 112px;
-  }
-}
-@media (min-width: 1440px) {
-  .mdui-tab a {
-    min-width: 136px;
-  }
-}
-@media (min-width: 1920px) {
-  .mdui-tab a {
-    min-width: 160px;
-  }
-}
-.mdui-tab a label {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-}
-.mdui-tab a .mdui-icon + label {
-  margin-top: 8px;
-}
-.mdui-tab a[disabled] {
-  cursor: default;
-  opacity: .38;
-}
-.mdui-tab a[disabled] label {
-  cursor: default;
-}
-.mdui-tab .mdui-tab-active {
-  color: #3f51b5;
-  opacity: 1;
-}
-.mdui-tab .mdui-tab-active .mdui-icon {
-  opacity: 1;
-}
-/* 选项卡居中 */
-@media (min-width: 600px) {
-  .mdui-tab-centered:before {
-    content: ' ';
-
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .mdui-tab-centered:after {
-    content: ' ';
-
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .mdui-tab-centered a {
-    -webkit-box-flex: 0;
-    -webkit-flex: none;
-        -ms-flex: none;
-            flex: none;
-  }
-}
-/* 选项卡始终全宽等分 */
-.mdui-tab-full-width a {
-  max-width: none;
-
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-/* 可横向滚动的选项卡 */
-.mdui-tab-scrollable {
-  padding-left: 56px;
-}
-.mdui-tab-scrollable a {
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-      -ms-flex: none;
-          flex: none;
-}
-@media (max-width: 599px) {
-  .mdui-tab-scrollable {
-    padding-left: 60px;
-  }
-}
-/* 下划线指示器 */
-.mdui-tab-indicator {
-  position: absolute;
-  bottom: 0;
-  height: 2px;
-  background-color: #3f51b5;
-  -webkit-transition: all .35s cubic-bezier(.4, 0, .2, 1);
-          transition: all .35s cubic-bezier(.4, 0, .2, 1);
-
-  will-change: left, width;
-}
-/**
- * =============================================================================
- * ************   Tab 主色   ************
- * =============================================================================
- */
-.mdui-theme-primary-amber .mdui-tab .mdui-tab-active {
-  color: #ffc107;
-}
-.mdui-theme-primary-amber .mdui-tab-indicator {
-  background-color: #ffc107;
-}
-.mdui-theme-primary-blue .mdui-tab .mdui-tab-active {
-  color: #2196f3;
-}
-.mdui-theme-primary-blue .mdui-tab-indicator {
-  background-color: #2196f3;
-}
-.mdui-theme-primary-blue-grey .mdui-tab .mdui-tab-active {
-  color: #607d8b;
-}
-.mdui-theme-primary-blue-grey .mdui-tab-indicator {
-  background-color: #607d8b;
-}
-.mdui-theme-primary-brown .mdui-tab .mdui-tab-active {
-  color: #795548;
-}
-.mdui-theme-primary-brown .mdui-tab-indicator {
-  background-color: #795548;
-}
-.mdui-theme-primary-cyan .mdui-tab .mdui-tab-active {
-  color: #00bcd4;
-}
-.mdui-theme-primary-cyan .mdui-tab-indicator {
-  background-color: #00bcd4;
-}
-.mdui-theme-primary-deep-orange .mdui-tab .mdui-tab-active {
-  color: #ff5722;
-}
-.mdui-theme-primary-deep-orange .mdui-tab-indicator {
-  background-color: #ff5722;
-}
-.mdui-theme-primary-deep-purple .mdui-tab .mdui-tab-active {
-  color: #673ab7;
-}
-.mdui-theme-primary-deep-purple .mdui-tab-indicator {
-  background-color: #673ab7;
-}
-.mdui-theme-primary-green .mdui-tab .mdui-tab-active {
-  color: #4caf50;
-}
-.mdui-theme-primary-green .mdui-tab-indicator {
-  background-color: #4caf50;
-}
-.mdui-theme-primary-grey .mdui-tab .mdui-tab-active {
-  color: #9e9e9e;
-}
-.mdui-theme-primary-grey .mdui-tab-indicator {
-  background-color: #9e9e9e;
-}
-.mdui-theme-primary-indigo .mdui-tab .mdui-tab-active {
-  color: #3f51b5;
-}
-.mdui-theme-primary-indigo .mdui-tab-indicator {
-  background-color: #3f51b5;
-}
-.mdui-theme-primary-light-blue .mdui-tab .mdui-tab-active {
-  color: #03a9f4;
-}
-.mdui-theme-primary-light-blue .mdui-tab-indicator {
-  background-color: #03a9f4;
-}
-.mdui-theme-primary-light-green .mdui-tab .mdui-tab-active {
-  color: #8bc34a;
-}
-.mdui-theme-primary-light-green .mdui-tab-indicator {
-  background-color: #8bc34a;
-}
-.mdui-theme-primary-lime .mdui-tab .mdui-tab-active {
-  color: #cddc39;
-}
-.mdui-theme-primary-lime .mdui-tab-indicator {
-  background-color: #cddc39;
-}
-.mdui-theme-primary-orange .mdui-tab .mdui-tab-active {
-  color: #ff9800;
-}
-.mdui-theme-primary-orange .mdui-tab-indicator {
-  background-color: #ff9800;
-}
-.mdui-theme-primary-pink .mdui-tab .mdui-tab-active {
-  color: #e91e63;
-}
-.mdui-theme-primary-pink .mdui-tab-indicator {
-  background-color: #e91e63;
-}
-.mdui-theme-primary-purple .mdui-tab .mdui-tab-active {
-  color: #9c27b0;
-}
-.mdui-theme-primary-purple .mdui-tab-indicator {
-  background-color: #9c27b0;
-}
-.mdui-theme-primary-red .mdui-tab .mdui-tab-active {
-  color: #f44336;
-}
-.mdui-theme-primary-red .mdui-tab-indicator {
-  background-color: #f44336;
-}
-.mdui-theme-primary-teal .mdui-tab .mdui-tab-active {
-  color: #009688;
-}
-.mdui-theme-primary-teal .mdui-tab-indicator {
-  background-color: #009688;
-}
-.mdui-theme-primary-yellow .mdui-tab .mdui-tab-active {
-  color: #ffeb3b;
-}
-.mdui-theme-primary-yellow .mdui-tab-indicator {
-  background-color: #ffeb3b;
-}
-/* 带背景色的选项卡 */
-.mdui-tab[class*="mdui-color-"]:not(.mdui-color-white) .mdui-tab-active {
-  color: inherit;
-}
-.mdui-tab[class*="mdui-color-"]:not(.mdui-color-white) .mdui-tab-indicator {
-  background-color: #fff;
-}
-.mdui-tab[class*="mdui-color-"]:not(.mdui-color-white)::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-  background: transparent;
-}
-@media (min-width: 1024px) {
-  .mdui-tab[class*="mdui-color-"]:not(.mdui-color-white)::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-}
-.mdui-tab[class*="mdui-color-"]:not(.mdui-color-white)::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, .3);
-}
 /**
  * =============================================================================
  * ************   Subheader 副标题   ************
@@ -10043,10 +8240,6 @@ select.mdui-select[multiple] option:last-child {
  * ************   Subheader dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-subheader,
-.mdui-theme-layout-dark .mdui-subheader-inset {
-  color: rgba(255, 255, 255, .7);
-}
 /**
  * =============================================================================
  * ************   Grid List 网格列表   ************
@@ -10431,29 +8624,6 @@ select.mdui-select[multiple] option:last-child {
  * ************   List dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-list .mdui-subheader:before,
-.mdui-theme-layout-dark .mdui-list .mdui-subheader-inset:before {
-  background-color: rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-list .mdui-subheader:first-child:before,
-.mdui-theme-layout-dark .mdui-list .mdui-subheader-inset:first-child:before {
-  background-color: transparent;
-}
-.mdui-theme-layout-dark .mdui-list-item {
-  color: #fff;
-}
-.mdui-theme-layout-dark .mdui-list-item:hover {
-  background-color: rgba(255, 255, 255, .08);
-}
-.mdui-theme-layout-dark .mdui-list-item-icon {
-  color: #fff;
-}
-.mdui-theme-layout-dark .mdui-list-item-text {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-list-item-active {
-  background-color: rgba(255, 255, 255, .08);
-}
 /**
  * ==============================================================================
  * ************   List inner theme   ************
@@ -10616,11 +8786,6 @@ body.mdui-loaded .mdui-drawer {
  * ************   Drawer dark   ************
  * =============================================================================
  */
-@media (max-width: 1023px) {
-  .mdui-theme-layout-dark .mdui-drawer {
-    background-color: #424242;
-  }
-}
 /**
  * =============================================================================
  * ************   Dialog 提示框   ************
@@ -10795,13 +8960,6 @@ body.mdui-loaded .mdui-drawer {
  * ************   Dialog dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-dialog {
-  color: #fff;
-  background-color: #424242;
-}
-.mdui-theme-layout-dark .mdui-dialog-content {
-  color: rgba(255, 255, 255, .7);
-}
 /**
  * =============================================================================
  * ************   Dialog alert   ************
@@ -11000,165 +9158,6 @@ body.mdui-loaded .mdui-drawer {
 }
 /**
  * =============================================================================
- * ************   Snackbar   ************
- * =============================================================================
- */
-.mdui-snackbar {
-  position: fixed;
-  z-index: 7000;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  width: 100%;
-  min-height: 48px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0 24px 0 24px;
-  font-size: 14px;
-  line-height: 20px;
-  color: #fff;
-  background-color: #323232;
-
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-          justify-content: space-between;
-  will-change: transform;
-}
-@media (min-width: 600px) {
-  .mdui-snackbar {
-    width: auto;
-    min-width: 288px;
-    max-width: 568px;
-    border-radius: 2px;
-  }
-}
-.mdui-snackbar-bottom,
-.mdui-snackbar-top,
-.mdui-snackbar-left-top,
-.mdui-snackbar-left-bottom,
-.mdui-snackbar-right-top,
-.mdui-snackbar-right-bottom {
-  -webkit-transition: -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
-          transition: -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
-          transition:         transform .3s cubic-bezier(.4, 0, .2, 1);
-          transition:         transform .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
-}
-/* 位置 */
-.mdui-snackbar-bottom,
-.mdui-snackbar-left-bottom,
-.mdui-snackbar-right-bottom {
-  bottom: 0;
-}
-.mdui-snackbar-top,
-.mdui-snackbar-left-top,
-.mdui-snackbar-right-top {
-  top: 0;
-}
-.mdui-snackbar-top,
-.mdui-snackbar-bottom {
-  left: 50%;
-}
-@media (min-width: 600px) {
-  .mdui-snackbar-left-top {
-    top: 24px;
-    left: 24px;
-  }
-  .mdui-snackbar-left-bottom {
-    bottom: 24px;
-    left: 24px;
-  }
-  .mdui-snackbar-right-top {
-    top: 24px;
-    right: 24px;
-  }
-  .mdui-snackbar-right-bottom {
-    right: 24px;
-    bottom: 24px;
-  }
-}
-/* 文本 */
-.mdui-snackbar-text {
-  position: relative;
-  max-width: 100%;
-  padding: 14px 0 14px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-/* 按钮 */
-.mdui-snackbar-action {
-  margin-right: -16px;
-  color: #ff80ab;
-  white-space: nowrap;
-}
-/**
- * =============================================================================
- * ************   Snackbar 强调色   ************
- * =============================================================================
- */
-.mdui-theme-accent-amber .mdui-snackbar-action {
-  color: #ffe57f;
-}
-.mdui-theme-accent-blue .mdui-snackbar-action {
-  color: #82b1ff;
-}
-.mdui-theme-accent-cyan .mdui-snackbar-action {
-  color: #84ffff;
-}
-.mdui-theme-accent-deep-orange .mdui-snackbar-action {
-  color: #ff9e80;
-}
-.mdui-theme-accent-deep-purple .mdui-snackbar-action {
-  color: #b388ff;
-}
-.mdui-theme-accent-green .mdui-snackbar-action {
-  color: #b9f6ca;
-}
-.mdui-theme-accent-indigo .mdui-snackbar-action {
-  color: #8c9eff;
-}
-.mdui-theme-accent-light-blue .mdui-snackbar-action {
-  color: #80d8ff;
-}
-.mdui-theme-accent-light-green .mdui-snackbar-action {
-  color: #ccff90;
-}
-.mdui-theme-accent-lime .mdui-snackbar-action {
-  color: #f4ff81;
-}
-.mdui-theme-accent-orange .mdui-snackbar-action {
-  color: #ffd180;
-}
-.mdui-theme-accent-pink .mdui-snackbar-action {
-  color: #ff80ab;
-}
-.mdui-theme-accent-purple .mdui-snackbar-action {
-  color: #ea80fc;
-}
-.mdui-theme-accent-red .mdui-snackbar-action {
-  color: #ff8a80;
-}
-.mdui-theme-accent-teal .mdui-snackbar-action {
-  color: #a7ffeb;
-}
-.mdui-theme-accent-yellow .mdui-snackbar-action {
-  color: #ffff8d;
-}
-/**
- * =============================================================================
- * ************   Snackbar dark   ************
- * =============================================================================
- */
-.mdui-theme-layout-dark .mdui-snackbar {
-  background-color: #5d5d5d;
-}
-/**
- * =============================================================================
  * ************   Chip 纸片   ************
  * =============================================================================
  */
@@ -11193,6 +9192,7 @@ body.mdui-loaded .mdui-drawer {
 }
 /* 左侧的图标 */
 .mdui-chip-icon {
+  position: relative;
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -11207,6 +9207,9 @@ body.mdui-loaded .mdui-drawer {
   border-radius: 50%;
 }
 .mdui-chip-icon .mdui-icon {
+  position: absolute;
+  top: 4px;
+  left: 4px;
   color: #fff;
 }
 /* 文本 */
@@ -11247,228 +9250,6 @@ body.mdui-loaded .mdui-drawer {
  * ************   Chip dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-chip {
-  background-color: #484848;
-}
-.mdui-theme-layout-dark .mdui-chip:active {
-  background-color: #5d5d5d;
-}
-/**
- * =============================================================================
- * ************   Bottom navigation 底部导航栏   ************
- * =============================================================================
- */
-.mdui-bottom-nav {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  height: 56px;
-  padding: 0;
-  margin: 0 auto;
-  overflow: hidden;
-  white-space: nowrap;
-}
-@media (min-width: 600px) {
-  .mdui-bottom-nav:before {
-    content: ' ';
-
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-  .mdui-bottom-nav:after {
-    content: ' ';
-
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-}
-.mdui-bottom-nav a {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
-  min-width: 32px;
-  max-width: none;
-  padding: 8px 12px 10px 12px;
-  overflow: hidden;
-  font-size: 12px;
-  color: inherit;
-  text-align: center;
-  text-decoration: none;
-  text-overflow: ellipsis;
-  cursor: pointer;
-          flex-direction: column;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  opacity: .7;
-  -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1);
-          transition: all .2s cubic-bezier(.4, 0, .2, 1);
-
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
-  will-change: padding;
-}
-@media (min-width: 600px) {
-  .mdui-bottom-nav a {
-    max-width: 144px;
-  }
-}
-.mdui-bottom-nav a .mdui-icon {
-  opacity: .7;
-}
-.mdui-bottom-nav a label {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  -webkit-transition: -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
-          transition: -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
-          transition:         transform .2s cubic-bezier(.4, 0, .2, 1);
-          transition:         transform .2s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s cubic-bezier(.4, 0, .2, 1);
-
-  will-change: font-size;
-}
-.mdui-bottom-nav a .mdui-icon + label {
-  margin-top: 6px;
-}
-.mdui-bottom-nav a.mdui-bottom-nav-active {
-  font-size: 14px;
-  color: #3f51b5;
-  opacity: 1;
-}
-.mdui-bottom-nav a.mdui-bottom-nav-active .mdui-icon {
-  opacity: 1;
-}
-/* 只在激活时显示文本 */
-.mdui-bottom-nav-text-auto a {
-  min-width: 32px;
-  padding-right: 0;
-  padding-left: 0;
-}
-@media (min-width: 600px) {
-  .mdui-bottom-nav-text-auto a {
-    max-width: 156px;
-  }
-}
-.mdui-bottom-nav-text-auto a .mdui-icon {
-  padding-top: 16px;
-  -webkit-transition: padding-top .2s cubic-bezier(.4, 0, .2, 1);
-          transition: padding-top .2s cubic-bezier(.4, 0, .2, 1);
-
-  will-change: padding-top;
-}
-.mdui-bottom-nav-text-auto a label {
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-.mdui-bottom-nav-text-auto a.mdui-bottom-nav-active {
-  padding-right: 18px;
-  padding-left: 18px;
-}
-.mdui-bottom-nav-text-auto a.mdui-bottom-nav-active .mdui-icon {
-  padding-top: 0;
-}
-.mdui-bottom-nav-text-auto a.mdui-bottom-nav-active label {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-/* 固定到页面底部 */
-body.mdui-bottom-nav-fixed {
-  padding-bottom: 56px;
-}
-body.mdui-bottom-nav-fixed .mdui-bottom-nav {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-/**
- * =============================================================================
- * ************   Bottom Nav 主色   ************
- * =============================================================================
- */
-.mdui-theme-primary-amber .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #ffc107;
-}
-.mdui-theme-primary-blue .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #2196f3;
-}
-.mdui-theme-primary-blue-grey .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #607d8b;
-}
-.mdui-theme-primary-brown .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #795548;
-}
-.mdui-theme-primary-cyan .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #00bcd4;
-}
-.mdui-theme-primary-deep-orange .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #ff5722;
-}
-.mdui-theme-primary-deep-purple .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #673ab7;
-}
-.mdui-theme-primary-green .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #4caf50;
-}
-.mdui-theme-primary-grey .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #9e9e9e;
-}
-.mdui-theme-primary-indigo .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #3f51b5;
-}
-.mdui-theme-primary-light-blue .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #03a9f4;
-}
-.mdui-theme-primary-light-green .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #8bc34a;
-}
-.mdui-theme-primary-lime .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #cddc39;
-}
-.mdui-theme-primary-orange .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #ff9800;
-}
-.mdui-theme-primary-pink .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #e91e63;
-}
-.mdui-theme-primary-purple .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #9c27b0;
-}
-.mdui-theme-primary-red .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #f44336;
-}
-.mdui-theme-primary-teal .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #009688;
-}
-.mdui-theme-primary-yellow .mdui-bottom-nav a.mdui-bottom-nav-active {
-  color: #ffeb3b;
-}
-/* 带背景色的底部导航栏 */
-.mdui-bottom-nav[class*="mdui-color-"] .mdui-bottom-nav-active {
-  color: inherit !important;
-}
 /**
  * =============================================================================
  * ************   Progress Linear 线性进度条   ************
@@ -12357,26 +10138,6 @@ body.mdui-bottom-nav-fixed .mdui-bottom-nav {
  * ************   Expansion panel dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-panel-item {
-  color: #fff;
-  background-color: #303030;
-  border-bottom: 1px solid rgba(255, 255, 255, .12);
-}
-.mdui-theme-layout-dark .mdui-panel-item:last-child {
-  border-bottom: none;
-}
-.mdui-theme-layout-dark .mdui-panel-item-header:active {
-  background-color: #424242;
-}
-.mdui-theme-layout-dark .mdui-panel-item-summary {
-  color: rgba(255, 255, 255, .7);
-}
-.mdui-theme-layout-dark .mdui-panel-item-arrow {
-  color: #fff;
-}
-.mdui-theme-layout-dark .mdui-panel-item-actions {
-  border-top: 1px solid rgba(255, 255, 255, .12);
-}
 /**
  * =============================================================================
  * ************   Menu 菜单   ************
@@ -12478,7 +10239,10 @@ body.mdui-bottom-nav-fixed .mdui-bottom-nav {
 /* 菜单中的图标 */
 .mdui-menu-item-icon {
   display: inline-block;
-  width: 42px;
+  width: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: 16px;
   color: rgba(0, 0, 0, .54);
 }
 /* 菜单中的辅助文本或图标 */
@@ -12491,7 +10255,7 @@ body.mdui-bottom-nav-fixed .mdui-bottom-nav {
   width: 24px;
   height: 24px;
   margin: 4px 0;
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%20opacity%3D%220.54%22%20transform%3D%22rotate(-90%2012%2C12.5)%22%20fill%3D%22%23000000%22%2F%3E%3C%2Fsvg%3E%0A");
+  background-image: url('menu/svg/arrow_right_dark.svg');
 }
 /* 级联菜单 */
 .mdui-menu-cascade {
@@ -12505,33 +10269,8 @@ body.mdui-bottom-nav-fixed .mdui-bottom-nav {
   padding: 0 24px;
   line-height: 32px;
 }
-.mdui-menu-cascade > .mdui-menu-item .mdui-menu-item-icon {
-  width: 40px;
-}
 /**
  * =============================================================================
  * ************   Menu dark   ************
  * =============================================================================
  */
-.mdui-theme-layout-dark .mdui-menu {
-  color: #fff;
-  background-color: #424242;
-}
-.mdui-theme-layout-dark .mdui-menu-item > a:hover {
-  background-color: #616161;
-}
-.mdui-theme-layout-dark .mdui-menu-item[disabled] > a {
-  color: rgba(255, 255, 255, .5) !important;
-}
-.mdui-theme-layout-dark .mdui-menu-item[disabled] > a .mdui-icon {
-  color: rgba(255, 255, 255, .3);
-}
-.mdui-theme-layout-dark .mdui-menu-item-active {
-  background-color: #616161;
-}
-.mdui-theme-layout-dark .mdui-menu-item-icon {
-  color: #fff;
-}
-.mdui-theme-layout-dark .mdui-menu-item-more {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%20transform%3D%22rotate(-90%2012%2C12.5)%22%20fill%3D%22%23FFFFFF%22%2F%3E%3C%2Fsvg%3E%0A");
-}
