@@ -3,7 +3,7 @@
     var prevTitle = page.prev.title;
     %>
     <div class="theme-post__pagination__prev mdui-ripple mdui-valign">
-      <a href="/posts/<%=url_for(page.prev.path)%>" class="theme-post__pagination__prev__content mdui-text-left">
+      <a href="<%=url_for(page.prev.path)%>" class="theme-post__pagination__prev__content mdui-text-left">
         <div>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cb;</i>
           <span class="mdui-typo-body-2-opacity mdui-text-center"><%= __('posts.pagination.newer') %></span>
@@ -21,7 +21,7 @@
     var nextTitle = page.next.title;
     %>
     <div class="theme-post__pagination__next mdui-ripple mdui-valign">
-      <a href="/posts/<%=url_for(page.next.path)%>" class="theme-post__pagination__next__content mdui-text-right">
+      <a href="<%=url_for(page.next.path)%>" class="theme-post__pagination__next__content mdui-text-right">
         <div>
           <span class="mdui-typo-body-2-opacity mdui-text-center"><%= __('posts.pagination.older') %></span>
           <i class="mdui-icon material-icons mdui-text-center">&#xe5cc;</i>

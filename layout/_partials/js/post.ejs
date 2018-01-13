@@ -1,14 +1,7 @@
 <script type="text/javascript">
   themeRuntime.scriptsMap.post = [];
   if (document.querySelector('.theme-post__toc-fab__menu > ol') !== null && document.querySelector('.theme-post__toc > ol') !== null) {
-    window.addEventListener("load", tocHighlight);
-    var listener = {
-      function:  tocHighlight,
-      event: 'load',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.post.push(listener)
+    tocHighlight()
     function tocHighlight() {
       var timer;
       function doWork() {
