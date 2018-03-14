@@ -4881,15 +4881,6 @@ button::-moz-focus-inner,
   border-style: none;
 }
 /**
- * Restore the focus styles unset by the previous rule.
- */
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-/**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
@@ -5417,15 +5408,17 @@ body.mdui-locked {
 }
 .mdui-typo a {
   position: relative;
+  display: inline-block;
   overflow: hidden;
   color: #ff4081;
   text-decoration: none;
+  vertical-align: top;
   outline: none;
 }
 .mdui-typo a:before {
   position: absolute;
   top: auto;
-  bottom: -2px;
+  bottom: 1px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -5790,7 +5783,7 @@ body.mdui-locked {
   border-collapse: separate;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, .12);
-  border-top: none;
+  border-bottom: none;
   -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
           box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
@@ -5807,7 +5800,7 @@ body.mdui-locked {
   padding: 12px 28px;
   text-align: left;
   vertical-align: middle;
-  border-top: 1px solid rgba(0, 0, 0, .12);
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
 }
 .mdui-table th:last-child,
 .mdui-table td:last-child {
@@ -5860,8 +5853,9 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
 .mdui-table-fluid {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(0, 0, 0, .12);
-  border-top: none;
+  border-bottom: none;
   -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
           box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
@@ -6138,6 +6132,7 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
 .mdui-textfield-input[rows] {
   height: auto !important;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 /* 文本框 label */
 .mdui-textfield-label {
@@ -6774,10 +6769,6 @@ th.mdui-table-cell-checkbox .mdui-checkbox {
 
   will-change: box-shadow;
   -webkit-user-drag: none;
-}
-.mdui-btn::-moz-focus-inner,
-.mdui-fab::-moz-focus-inner {
-  border: 0;
 }
 .mdui-btn:hover,
 .mdui-fab:hover {
@@ -7951,7 +7942,7 @@ input.mdui-btn[type="submit"] {
   -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
           box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
 }
-/* appbar 固定在顶部时，为 body 添加 padding-top，避免 appbar 覆盖页面内容 */
+/* appbar 固定在顶部 */
 .mdui-appbar-fixed {
   position: fixed;
   top: 0;
@@ -8663,9 +8654,16 @@ body.mdui-loaded .mdui-drawer {
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
 
   will-change: transform;
+}
+@media (max-width: 1023px) {
+  .mdui-drawer:not(.mdui-drawer-open) {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
 }
 @media (min-width: 600px) {
   .mdui-drawer {
@@ -8677,6 +8675,10 @@ body.mdui-loaded .mdui-drawer {
   .mdui-drawer {
     width: 240px;
     max-width: none;
+  }
+  .mdui-drawer.mdui-drawer-close {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
   }
 }
 /* 出现在右侧的抽屉栏 */
@@ -8748,11 +8750,11 @@ body.mdui-loaded .mdui-drawer {
 }
 /* PC 上的样式 */
 @media (min-width: 1024px) {
-  /* 使 body 获得 padding-left 或 padding-right，避免被抽屉栏覆盖住页面 */
-  body.mdui-drawer-body-left {
+  /* 使该类所在元素获得 padding-left 或 padding-right，避免被抽屉栏覆盖住页面 */
+  .mdui-drawer-body-left {
     padding-left: 240px;
   }
-  body.mdui-drawer-body-right {
+  .mdui-drawer-body-right {
     padding-right: 240px;
   }
   /* PC 上默认有上边距 */
@@ -8859,6 +8861,7 @@ body.mdui-loaded .mdui-drawer {
           box-sizing: border-box;
   padding: 24px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   font-size: 15px;
   line-height: 1.5;
   color: rgba(0, 0, 0, .7);
@@ -10154,6 +10157,7 @@ body.mdui-loaded .mdui-drawer {
   padding: 8px 0;
   margin: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   font-size: 16px;
   color: rgba(0, 0, 0, .87);
   list-style: none;
