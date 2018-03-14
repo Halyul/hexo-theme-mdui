@@ -4497,10 +4497,13 @@
    */
 
   $(function () {
-    $document.on('click', '[mdui-drawer]', function () {
+    mdui.mutation('[mdui-drawer]', function () {
       var $this = $(this);
       var options = parseOptions($this.attr('mdui-drawer'));
-      var $drawer = $(options.target).eq(0);
+      var selector = options.target;
+      delete options.target;
+
+      var $drawer = $(selector).eq(0);
 
       var inst = $drawer.data('mdui.drawer');
       if (!inst) {
@@ -4508,7 +4511,10 @@
         $drawer.data('mdui.drawer', inst);
       }
 
-      inst.toggle();
+      $this.on('click', function () {
+        inst.toggle();
+      });
+
     });
   });
 
