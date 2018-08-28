@@ -1,3 +1,7 @@
+/* hexo-renderer-scss
+ * author: mamboer
+ * license: MIT
+ */
 var sass   = require('node-sass'),
     extend = require('util')._extend,
     magicImporter = require('node-sass-magic-importer');
