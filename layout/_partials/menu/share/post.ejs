@@ -40,7 +40,7 @@
 
       <% if(theme.share_menu.telegram === true) { %>
         <li class="mdui-menu-item">
-            <a href="https://telegram.me/url?url=<%- config.url + config.root + url_for(path) %>&text=<%= page.title %>" target="_blank" class="mdui-ripple">
+            <a href="https://telegram.me/share/url?url=<%- config.url + config.root + url_for(path) %>&text=<%= page.title %>" target="_blank" class="mdui-ripple">
                 <%= __('share_menu.telegram') %>
             </a>
         </li>
