@@ -16,6 +16,7 @@ $main-class: theme-posts;
   padding-bottom: 16px;
   * {
     overflow: visible;
+    white-space: normal;
   }
   .#{$sub-class}__media {
     $sub-sub-class: #{$sub-class}__media;
