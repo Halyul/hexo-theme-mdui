@@ -11,10 +11,10 @@ pageTitle += ' - ' + config.title;
 
 <head>
   <script>
-    window.mduiVersion = "2.0.1"
+    window.mduiVersion = "2.0.2"
     window.oldVersion = [
+     '2.0.1',
      '2.0.0',
-     '1.4.5',
      'unknownVersion'
     ]
     window.themeRuntime = {
@@ -27,20 +27,20 @@ pageTitle += ' - ' + config.title;
         status: false
       }
     };
-    console.info("%cCopyright © 2018 Halyul\n"+'Theme Version: 2.0.1'+'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
+    console.info("%cCopyright © 2018 Halyul\n"+'Theme Version: 2.0.2'+'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
   </script>
   <!--
         © HEXO MDUI Theme
         https://github.com/Halyul/hexo-theme-mdui
-        Version: 2.0.1 -->
+        Version: 2.0.2 -->
 
   <meta charset="UTF-8">
   <title><%= pageTitle %></title>
 
   <!-- Favicons -->
-  <link rel="icon shortcut" type="image/ico" href="<%= theme.head.favicon %>">
-  <link rel="icon" sizes="192x192" href="<%= theme.head.high_res_favicon %>">
-  <link rel="apple-touch-icon" href="<%= theme.head.apple_touch_icon %>">
+  <link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
+  <link rel="icon" sizes="192x192" href="<%= url_for(theme.head.high_res_favicon) %>">
+  <link rel="apple-touch-icon" href="<%= url_for(theme.head.apple_touch_icon) %>">
 
   <!-- Meta & Info -->
   <meta http-equiv="X-UA-Compatible">
@@ -87,7 +87,7 @@ pageTitle += ' - ' + config.title;
 
   <% if (theme.service_worker === 'pwa') { %>
     <!-- PWA -->
-    <link rel="manifest" href="<%= config.root + 'manifest.json' %>">
+    <link rel="manifest" href="<%= url_for('manifest.json') %>">
   <% } %>
 
   <!-- Import CSS -->

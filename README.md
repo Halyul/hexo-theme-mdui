@@ -43,7 +43,7 @@ But you can use non-router version! Or just stay in 1.x version.
 ## General 概括
 
 [![Author](https://img.shields.io/badge/author-Halyul-blue.svg?style=flat-square)](https://halyul.com)
-![Version](https://img.shields.io/badge/version-2.0.1-green.svg?style=flat-square)
+![Version](https://img.shields.io/badge/version-2.0.2-green.svg?style=flat-square)
 [![Hexo](https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square)](https://hexo.io)
 ![Travis CI](https://travis-ci.org/Halyul/hexo-theme-mdui.svg?branch=master)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
