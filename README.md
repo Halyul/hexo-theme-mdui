@@ -53,8 +53,6 @@ But you can use non-router version! Or just stay in 1.x version.
 
 [Halyul's Blog in US](https://blog.halyul.com)
 
-[Halyul's Blog in China](https://blog.halyul.cc)
-
 ## Docs 文档
 
 [MDUI Theme Docs English Version](https://halyul.github.io/hexo-theme-mdui/#/)
