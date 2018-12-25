@@ -31,7 +31,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         <%= pageTitle %>
       </span>
       <% if (theme.appbar.search === true) { %>
-        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= url_for('search') %>', '_self');">
           <div class="icon">
             <i class="mdui-icon material-icons">&#xe8b6;</i>
           </div>
@@ -46,11 +46,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         <% } %>
       ></div>
       <% if (theme.appbar.search === true) { %>
-        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <a href="<%= url_for('search') %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-md-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
       <%- partial('../menu/index_more') %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= url_for(theme.style.avatar) %>"/>
       </div>
       <%- partial('../menu/userview') %>
       <% if (is_category() || is_tag() || is_year()) { %>
@@ -72,7 +72,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         </a>
       <% } %>
       <% if (theme.appbar.search === true) { %>
-        <div class="search mdui-hidden-xs" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <div class="search mdui-hidden-xs" onclick="window.open('<%= url_for('search') %>', '_self');">
           <div class="icon">
             <i class="mdui-icon material-icons">&#xe8b6;</i>
           </div>
@@ -83,11 +83,11 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% } %>
       <div class="mdui-toolbar-spacer"></div>
       <% if (theme.appbar.search === true) { %>
-        <a href="<%= config.root + 'search' %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <a href="<%= url_for('search') %>" class="mdui-btn mdui-ripple mdui-btn-icon mdui-hidden-sm-up search-button" target="_self"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
       <% } %>
       <%- partial('../menu/index_more') %>
       <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= url_for(theme.style.avatar) %>"/>
       </div>
       <%- partial('../menu/userview') %>
     </div>
@@ -111,7 +111,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% } %>
       <span class="mdui-typo-title"><%= config.author %></span>
       <% if (theme.appbar.search === true) { %>
-        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= config.root + 'search' %>', '_self');">
+        <div class="search mdui-hidden-sm-down" onclick="window.open('<%= url_for('search') %>', '_self');">
           <div class="icon">
             <i class="mdui-icon material-icons">&#xe8b6;</i>
           </div>
@@ -126,7 +126,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% } %>
       <%- partial('../menu/index_more') %>
       <div class="appbar-userview mdui-valign mdui-hidden-sm-down" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= url_for(theme.style.avatar) %>"/>
       </div>
       <%- partial('../menu/userview') %>
     </div>
@@ -156,7 +156,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       </div>
       <div class="mdui-toolbar-spacer"></div>
       <div class="appbar-userview mdui-valign mdui-hidden-xs" mdui-menu="{target: '#menu-userview', covered: false}">
-        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+        <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= url_for(theme.style.avatar) %>"/>
       </div>
       <%- partial('../menu/userview') %>
     </div>
@@ -172,7 +172,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
         </button>
       <% } %>
       <a class="logo no-text-decoration mdui-hidden-sm-up" href="<%= config.root %>" target="_self">
-        <img class="mdui-img-circle mdui-img-fluid mdui-center" src="<%= theme.head.high_res_favicon %>"/>
+        <img class="mdui-img-circle mdui-img-fluid mdui-center" src="<%= url_for(theme.head.high_res_favicon) %>"/>
       </a>
       <a href="<%= config.root %>" target="_self" class="mdui-typo-headline mdui-hidden-xs">
         <%= theme.appbar.title %>
@@ -185,7 +185,7 @@ if (page.path === 'search/index.html') pageTitle = __('search.text');
       <% if (page.layout !== 'gallery') { %>
         <span class="appbar-border-line mdui-hidden-xs"></span>
         <div class="appbar-userview mdui-valign" mdui-menu="{target: '#menu-userview', covered: false}">
-          <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= theme.style.avatar %>"/>
+          <img class="mdui-img-circle appbar-userview-avatar mdui-center" src="<%= url_for(theme.style.avatar) %>"/>
         </div>
         <%- partial('../menu/userview') %>
       <% } %>

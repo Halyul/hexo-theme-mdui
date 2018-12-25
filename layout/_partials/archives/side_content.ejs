@@ -3,14 +3,14 @@
   var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
 %>
 <% if (theme.style.scheme === 'now') { %>
-  <%- cssLsload({path:(config.root + 'css/src/now/side_content.min'),key:'side_content_css'}) %>
+  <%- cssLsload({path:('css/src/now/side_content.min'),key:'side_content_css'}) %>
 <% } else { %>
-  <%- cssLsload({path:(config.root + 'css/src/plus/side_content.min'),key:'side_content_css'}) %>
+  <%- cssLsload({path:('css/src/plus/side_content.min'),key:'side_content_css'}) %>
 <% } %>
 <div id="side-content" class="mdui-color-<%= color[num] %> animate-drawer">
   <div class="mdui-grid-tile" style="overflow: visible;">
     <div class="bg">
-      <img src="<%= config.root + 'img/random/picHD_' + randomPic + '.png' %>" />
+      <img src="<%= url_for('img/random/picHD_' + randomPic + '.png') %>" />
     </div>
     <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
       <div class="flex-spacer"></div>

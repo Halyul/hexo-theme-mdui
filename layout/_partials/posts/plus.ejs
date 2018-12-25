@@ -3,7 +3,7 @@
     var randomPic = Math.floor(Math.random() * theme.random_pics + 1);
   }
 %>
-<%- cssLsload({path:(config.root + 'css/src/plus/index.min'),key:'index_css'}) %>
+<%- cssLsload({path:('css/src/plus/index.min'),key:'index_css'}) %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %> mdui-center">
   <div class="posts-title mdui-typo">
     <a href="<%= url_for(post.path) %>" target="_self">
@@ -21,7 +21,7 @@
   </div>
   <% if (theme.random_pics !== false && theme.random_pics) { %>
     <div class="mdui-card-media">
-      <img src="<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>"/>
+      <img src="<%= post.thumbnail || url_for('img/random/picHD_' + randomPic + '.png') %>"/>
     </div>
   <% } %>
   <div class="posts-bottom">

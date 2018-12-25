@@ -135,7 +135,7 @@
     document.addEventListener('DOMContentLoaded', searchCall);
   }
   function searchCall() {
-    var path = '<%= config.root + config.search.path %>';
+    var path = '<%= url_for(config.search.path) %>';
     searchFunc(path, 'search-input');
   };
 </script>

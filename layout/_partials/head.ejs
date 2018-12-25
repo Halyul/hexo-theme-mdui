@@ -26,9 +26,9 @@ pageTitle += ' - ' + config.title;
   <title><%= pageTitle %></title>
 
   <!-- Favicons -->
-  <link rel="icon shortcut" type="image/ico" href="<%= theme.head.favicon %>">
-  <link rel="icon" sizes="192x192" href="<%= theme.head.high_res_favicon %>">
-  <link rel="apple-touch-icon" href="<%= theme.head.apple_touch_icon %>">
+  <link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
+  <link rel="icon" sizes="192x192" href="<%= url_for(theme.head.high_res_favicon) %>">
+  <link rel="apple-touch-icon" href="<%= url_for(theme.head.apple_touch_icon) %>">
 
   <!-- Meta & Info -->
   <meta http-equiv="X-UA-Compatible">
@@ -77,7 +77,7 @@ pageTitle += ' - ' + config.title;
 
   <% if (theme.service_woker === 'pwa') { %>
     <!-- PWA -->
-    <link rel="manifest" href="<%= config.root + 'manifest.json' %>">
+    <link rel="manifest" href="<%= url_for(manifest.json) %>">
   <% } %>
 
   <script>
@@ -86,17 +86,19 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= theme.vendors.fonts_min_css %>" />
+    <link type="text/css" rel="stylesheet" href="<%= url_for(theme.vendors.fonts_min_css) %>" />
   <% } else { %>
-    <%- css("css/fonts.min") %>
+    <style>
+      @import url('https://fonts.googleapis.com/icon?family=Material+Icons');@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:local('Material Icons'),local('MaterialIcons-Regular'),url(<%= url_for("/icons/material-icons/MaterialIcons-Regular.woff2") %>) format('woff2'),url(<%= url_for("/icons/material-icons/MaterialIcons-Regular.woff") %>) format('woff')}@font-face{font-family:'FontAwesome';font-weight:normal;font-style:normal;src:url(<%= url_for('/fonts/fontawesome-webfont.eot?v=4.7.0') %>);src:url(<%= url_for('/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') %>) format('embedded-opentype'),url(<%= url_for('/fonts/fontawesome-webfont.woff2?v=4.7.0') %>) format('woff2'),url(<%= url_for('/fonts/fontawesome-webfont.woff?v=4.7.0') %>) format('woff'),url(<%= url_for('/fonts/fontawesome-webfont.ttf?v=4.7.0') %>) format('truetype'),url(<%= url_for('/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') %>) format('svg')}  
+    </style>
   <% } %>
   <% if(theme.vendors.style_min_css) { %>
     <%- cssLsload({path:(theme.vendors.style_min_css),key:'style_css'}) %>
   <% } else { %>
     <% if (theme.style.scheme === 'now') { %>
-      <%- cssLsload({path:(config.root + 'css/style-now.min'),key:'style_css'}) %>
+      <%- cssLsload({path:('css/style-now.min'),key:'style_css'}) %>
     <% } else { %>
-      <%- cssLsload({path:(config.root + 'css/style-plus.min'),key:'style_css'}) %>
+      <%- cssLsload({path:('css/style-plus.min'),key:'style_css'}) %>
     <% } %>
   <% } %>
 
@@ -112,12 +114,12 @@ pageTitle += ' - ' + config.title;
     <% if(theme.vendors.pace_style_css) { %>
       <%- cssLsload({path:(theme.vendors.pace_style_css),key:'pace_css'}) %>
     <% } else { %>
-      <%- cssLsload({path:(config.root + 'css/pace-style'),key:'pace_css'}) %>
+      <%- cssLsload({path:('css/pace-style'),key:'pace_css'}) %>
     <% } %>
     <% if(theme.vendors.pace_min_js) { %>
       <%- jsLsload({path:(theme.vendors.pace_min_js),key:'pace_js'}) %>
     <% } else { %>
-      <%- jsLsload({path:(config.root + 'js/pace.min'),key:'pace_js'}) %>
+      <%- jsLsload({path:('js/pace.min'),key:'pace_js'}) %>
     <% } %>
   <% } %>
 

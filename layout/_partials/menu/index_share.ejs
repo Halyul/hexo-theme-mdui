@@ -5,7 +5,7 @@
 
     <% if(theme.share_menu.rss === true) { %>
       <li class="mdui-menu-item">
-          <a href="<%= config.root + config.feed.path %>" target="_blank" class="mdui-ripple">
+          <a href="<%= url_for(config.feed.path) %>" target="_blank" class="mdui-ripple">
               <%= __('share_menu.rss') %>
           </a>
       </li>
@@ -13,7 +13,7 @@
 
     <% if(theme.share_menu.facebook === true) { %>
       <li class="mdui-menu-item">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=<%= config.url + config.root + url_for(path) %>" target="_blank" class="mdui-ripple">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=<%= url_for(path) %>" target="_blank" class="mdui-ripple">
               <%= __('share_menu.facebook') %>
           </a>
       </li>

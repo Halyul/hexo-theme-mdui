@@ -5,7 +5,7 @@
 %>
 <div class="mdui-card card-bottom-fix <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
   <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="<%= theme.style.avatar %>"/>
+    <img class="mdui-card-header-avatar" src="<%= url_for(theme.style.avatar) %>"/>
     <div class="content mdui-valign">
       <div class="mdui-typo-body-1-opacity mdui-typo">
         <span><%= config.author %></span>
@@ -30,7 +30,7 @@
     </div>
     <div class="flex-spacer"></div>
     <% if (theme.random_pics !== false && theme.random_pics) { %>
-      <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || config.root + 'img/random/picHD_' + randomPic + '.png' %>)"></div>
+      <div class="posts-thumbnail" style="background-image: url(<%= post.thumbnail || url_for('img/random/picHD_' + randomPic + '.png') %>)"></div>
     <% } %>
   </div>
   <% if ((post.categories && post.categories.length) || (post.tags && post.tags.length)) { %>

@@ -8,7 +8,7 @@ site.posts.sort('date').reverse().forEach(function(post){
   years[year].push(post);
 });
 %>
-<%- cssLsload({path:(config.root + 'css/src/shared/archives.min'),key:'archives_css'}) %>
+<%- cssLsload({path:('css/src/shared/archives.min'),key:'archives_css'}) %>
 <div id="archives" class="animate-post">
   <div class="header">
     <div class="bg">
@@ -53,7 +53,7 @@ site.posts.sort('date').reverse().forEach(function(post){
         <div class="mdui-col-xs-6 mdui-col-md-3 item">
           <a href="<%= config.root %>categories/<%= category.name %>/" target="_self" class="no-text-decoration">
             <div class="mdui-card card-bottom-fix mdui-color-<%= color[num] %>">
-              <div class="mdui-card-media" style="background-image: url(<%= config.root + 'img/random/picHD_' + randomPic + '.png' %>)">
+              <div class="mdui-card-media" style="background-image: url(<%=  url_for('img/random/picHD_' + randomPic + '.png') %>)">
               </div>
               <div class="content">
                 <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
@@ -85,7 +85,7 @@ site.posts.sort('date').reverse().forEach(function(post){
         <div class="mdui-col-xs-6 mdui-col-md-3 item">
           <a href="<%= config.root %>tags/<%= tag.name %>/" target="_self" class="no-text-decoration">
             <div class="mdui-card card-bottom-fix mdui-color-<%= color[num] %>">
-              <div class="mdui-card-media" style="background-image: url(<%= config.root + 'img/random/picHD_' + randomPic + '.png' %>)">
+              <div class="mdui-card-media" style="background-image: url(<%= url_for('img/random/picHD_' + randomPic + '.png') %>)">
               </div>
               <div class="content">
                 <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />
@@ -117,7 +117,7 @@ site.posts.sort('date').reverse().forEach(function(post){
         <div class="mdui-col-xs-6 mdui-col-md-3 item">
           <a href="<%= config.root %>archives/<%= year %>/" target="_self" class="no-text-decoration">
             <div class="mdui-card card-bottom-fix mdui-color-<%= color[num] %>">
-              <div class="mdui-card-media" style="background-image: url(<%= config.root + 'img/random/picHD_' + randomPic + '.png' %>)">
+              <div class="mdui-card-media" style="background-image: url(<%= url_for('img/random/picHD_' + randomPic + '.png') %>)">
               </div>
               <div class="content no-length">
                 <img class="mdui-img-circle avatar" src="<%= theme.style.avatar %>" />

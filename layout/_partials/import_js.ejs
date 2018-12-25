@@ -2,19 +2,19 @@
 <% if(theme.vendors.outdatedbrowser_min_js) { %>
   <%- jsLsload({path:(theme.vendors.outdatedbrowser_min_js),key:'outdatedbrowser_js'}) %>
 <% } else { %>
-  <%- jsLsload({path:(config.root + 'js/outdatedbrowser.min'),key:'outdatedbrowser_js'}) %>
+  <%- jsLsload({path:('js/outdatedbrowser.min'),key:'outdatedbrowser_js'}) %>
 <% } %>
 
 <% if(theme.vendors.js_min_js) { %>
   <%- jsLsload({path:(theme.vendors.js_min_js),key:'main_js'}) %>
 <% } else { %>
-    <%- jsLsload({path:(config.root + 'js/js.min'),key:'main_js'}) %>
+    <%- jsLsload({path:('js/js.min'),key:'main_js'}) %>
 <% } %>
 
 <% if (theme.service_woker === true || theme.service_woker === 'pwa') { %>
   <script>
     if ('serviceWorker' in navigator) {
-     navigator.serviceWorker.register('<%= config.root + 'sw.js' %>');
+     navigator.serviceWorker.register('<%= url_for('sw.js') %>');
     }
   </script>
 <% } %>
@@ -30,7 +30,7 @@
 <% // lightgallery in post, custom page and gallery page
   if ((!is_home() && !is_archive() && !is_year() && !is_month() && !is_category() && !is_tag() && page.path !== 'search/index.html' && page.layout !== 'galleries' && page.layout !== 'friends') || page.layout === 'gallery')
 { %>
-  <%- jsLsload({path:(config.root + 'js/lightgallery.min'),key:'lightgallery_js'}) %>
+  <%- jsLsload({path:('js/lightgallery.min'),key:'lightgallery_js'}) %>
 <% } %>
 
 <% if (page.layout === 'galleries') { %>
