@@ -75,10 +75,6 @@ pageTitle += ' - ' + config.title;
 
     <% if(page.tags && page.tags.each) { page.tags.each(function(tag){ %><meta property="og:article:tag" content="<%= tag.name %>"> <% })} %>
 
-  <!-- Cache -->
-  <meta http-equiv="Cache-Control" content="max-age=7200" />
-  <meta http-equiv="Expires" content="Fri, 29 Dec 2017 23:00:00 GMT" />
-
   <% if (theme.service_woker === 'pwa') { %>
     <!-- PWA -->
     <link rel="manifest" href="<%= config.root + 'manifest.json' %>">
