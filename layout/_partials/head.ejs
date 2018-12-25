@@ -86,7 +86,7 @@ pageTitle += ' - ' + config.title;
 
   <!-- Import CSS -->
   <% if(theme.vendors.fonts_min_css) { %>
-    <link type="text/css" rel="stylesheet" href="<%= url_for(theme.vendors.fonts_min_css) %>" />
+    <link type="text/css" rel="stylesheet" href="<%= heme.vendors.fonts_min_css %>" />
   <% } else { %>
     <style>
       @import url('https://fonts.googleapis.com/icon?family=Material+Icons');@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:local('Material Icons'),local('MaterialIcons-Regular'),url(<%= url_for("/icons/material-icons/MaterialIcons-Regular.woff2") %>) format('woff2'),url(<%= url_for("/icons/material-icons/MaterialIcons-Regular.woff") %>) format('woff')}@font-face{font-family:'FontAwesome';font-weight:normal;font-style:normal;src:url(<%= url_for('/fonts/fontawesome-webfont.eot?v=4.7.0') %>);src:url(<%= url_for('/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') %>) format('embedded-opentype'),url(<%= url_for('/fonts/fontawesome-webfont.woff2?v=4.7.0') %>) format('woff2'),url(<%= url_for('/fonts/fontawesome-webfont.woff?v=4.7.0') %>) format('woff'),url(<%= url_for('/fonts/fontawesome-webfont.ttf?v=4.7.0') %>) format('truetype'),url(<%= url_for('/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') %>) format('svg')}  

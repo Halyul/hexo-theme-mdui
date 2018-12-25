@@ -24,8 +24,6 @@ Inspired by [hexo-theme-material](https://github.com/viosey/hexo-theme-material)
 
 [Halyul's Blog in US](https://blog.halyul.com)
 
-[Halyul's Blog in China](https://blog.halyul.cc)
-
 ## Docs 文档
 
 [MDUI Theme Docs English Version](https://halyul.github.io/hexo-theme-mdui/#/)
