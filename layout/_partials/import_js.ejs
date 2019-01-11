@@ -38,3 +38,10 @@
 <script type="text/javascript">
   document.querySelector('body').classList.add('theme-loaded')
 </script>
+
+<% if (process.env.npm_config_demo === "true") { %>
+  <script type="text/javascript">
+    mdui.alert("This site and its content are for demo only! If the site reloaded, you will see this alert again.", "Demo Alert", function(){},{history:false})
+    console.warn("This site is for demo only!")
+  </script>
+<% } %>
