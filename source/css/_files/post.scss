@@ -278,6 +278,9 @@ $main-class: theme-post;
   @include toc-clear;
   width: auto;
   max-height: 48vh !important;
+  .#{$main-class}__toc__content__link:before {
+    content: initial
+  }
   @media (min-width: 600px) {
     max-width: 36vh;
   }
