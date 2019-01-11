@@ -51,7 +51,7 @@ But you can use non-router version! Or just stay in 1.x version.
 
 ## Demo 演示
 
-[Halyul's Blog in US](https://blog.halyul.com)
+[Demo](https://theme.halyul.com)
 
 ## Docs 文档
 

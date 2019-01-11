@@ -115,3 +115,5 @@ vendors:
   js_min_js:
   custom_head:
   custom_js:
+
+debug: false

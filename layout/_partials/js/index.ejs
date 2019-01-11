@@ -27,6 +27,7 @@
   (function() {
     var pageTotal = <%= page.total %>
     var pageNext = 2
+    var pageLoad = false
     themeRuntime.temp = {
       index: 1
     }
@@ -34,12 +35,13 @@
       var screenHeight = window.innerHeight;
       var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
       var loadStatus = pageNext - themeRuntime.temp.index
-      if (screenHeight >= compareHeight && loadStatus === 1) {
+      if (screenHeight >= compareHeight - 1 && loadStatus === 1 && pageLoad === false) {
         if (pageNext <= pageTotal) {
           loadProgressInline(false)
-          var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext
+          var url = window.location.href + "<%= config.pagination_dir %>/" + pageNext + "/"
           themeRuntime.temp.index = pageNext;
           //console.log(pageTotal, url)
+          pageLoad = true;
           fetch(url, {
               method:'GET',
               mode:'cors',
@@ -55,8 +57,10 @@
             loadProgressInline(true)
             postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
             pageNext++;
+            pageLoad = false;
           }).catch(function(error) {
             mdui.alert(error, "<%= __('error.title') %>");
+            pageLoad = false;
           })
         }
       }

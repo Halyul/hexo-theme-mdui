@@ -6,4 +6,5 @@
 - [自定义页面](/zh-cn/custom_pages.md)
 - [已知问题](/zh-cn/issues.md)
 - [其他](/zh-cn/other.md)
+- [提交Issue](/zh-cn/submit_issues.md)
 - [捐助](/zh-cn/donate.md)

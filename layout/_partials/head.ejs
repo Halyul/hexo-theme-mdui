@@ -11,12 +11,6 @@ pageTitle += ' - ' + config.title;
 
 <head>
   <script>
-    window.mduiVersion = "2.0.2"
-    window.oldVersion = [
-     '2.0.1',
-     '2.0.0',
-     'unknownVersion'
-    ]
     window.themeRuntime = {
       root: "<%= config.root %>",
       scriptsMap: {},
@@ -25,14 +19,29 @@ pageTitle += ' - ' + config.title;
       },
       commentRest: {
         status: false
+      },
+      versions: {
+        theme: "2.0.3",
+        mdui: "0.4.0",
+        fetch: "3.0.0",
+        es6promise: "4.2.5+7f2b526d",
+        lightgallery: "1.0.1",
+        smoothscroll: "15.2.0"
       }
+      <% if (theme.debug === true) { %>
+        ,debug: {
+          hexo: "<%= env.version %>",
+          node: "<%= process.versions.node %>",
+          platform: "<%= process.platform %>"
+        }
+      <% } %>
     };
-    console.info("%cCopyright © 2018 Halyul\n"+'Theme Version: 2.0.2'+'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
+    console.info("%cCopyright © 2018 - " + new Date().getFullYear() +" Halyul\n"+'Theme Version: ' + themeRuntime.versions.theme +'%c\nhttps://github.com/Halyul/hexo-theme-mdui',"font-size: 14px;color: #3F51B5;","color: #448AFF;text-decoration: none");
   </script>
   <!--
         © HEXO MDUI Theme
         https://github.com/Halyul/hexo-theme-mdui
-        Version: 2.0.2 -->
+        -->
 
   <meta charset="UTF-8">
   <title><%= pageTitle %></title>

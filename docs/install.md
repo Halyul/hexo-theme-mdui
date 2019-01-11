@@ -13,7 +13,7 @@ Once you have finished clone, copy the folder to hexo `theme` foler , and rename
 > The folder name can be changed to whatever you want, but needs to match the name below.
 
 ## Enable the theme
-Then open hexo's `_config.yml`, find `theme` and change to folloing name to `mdui`(or the one you have set just now.)
+Then open hexo's `_config.yml`, find `theme` and change to `mdui`(or the one you have set just now.)
 
 !> Then run the following code to install in the `hexo` folder to prevent from getting errors when you run hexo
 

@@ -1,3 +1,6 @@
+/* add version */
+themeRuntime.versions.barba = Barba.version
+
 /* init pages
  * for barbajs
  */

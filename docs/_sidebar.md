@@ -6,4 +6,5 @@
 - [Custom Pages](/custom_pages.md)
 - [Known Issues](/issues.md)
 - [Other](/other.md)
+- [Submit Issues](/submit_issues.md)
 - [Donate](/donate.md)
