@@ -37,10 +37,10 @@
             <% }) %>
           <% } else { %>
             <div class="theme-posts__post__footer__categories mdui-valign">
-              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-categories-<%= position %>'}">
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-categories-<%= page.current %>-<%= position %>'}">
                 <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
               </button>
-              <ul class="mdui-menu" id="post-categories-<%= position %>">
+              <ul class="mdui-menu" id="post-categories-<%= page.current %>-<%= position %>">
                 <% post.categories.map(function(category){ %>
                   <li class="mdui-menu-item">
                     <a href="<%= url_for(category.path) %>" class="mdui-ripple">
@@ -66,10 +66,10 @@
             <% }) %>
           <% } else { %>
             <div class="theme-posts__post__footer__tags mdui-valign">
-              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-tags-<%= position %>'}">
+              <button class="mdui-btn mdui-btn-icon mdui-btn-dense mdui-ripple" mdui-menu="{target: '#post-tags-<%= page.current %>-<%= position %>'}">
                 <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
               </button>
-              <ul class="mdui-menu" id="post-tags-<%= position %>">
+              <ul class="mdui-menu" id="post-tags-<%= page.current %>-<%= position %>">
                 <% post.tags.map(function(tag){ %>
                   <li class="mdui-menu-item">
                     <a href="<%= url_for(tag.path) %>" class="mdui-ripple">
