@@ -5,8 +5,8 @@
 <% if (site.posts.length > 0) { %>
   <div class="theme-posts__post">
     <article class="mdui-card <% if (theme.style.hoverable === true) { %>mdui-hoverable<% } %>">
-      <section class="mdui-card-media theme-posts__post__media" style="background-image: url(<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>)">
-        <img src="<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>" class="theme-posts__post__media__image" />
+        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>)">
+        <% if(post.title !== '') { %>
         <div class="mdui-card-media-covered theme-posts__post__media-covered">
           <div class="mdui-card-primary mdui-typo">
             <% if (post.link === '') { %>
@@ -17,11 +17,23 @@
               <% if (post.pinned === true) { %>
                 <span style="color: #D50000"><%= '['+ __('posts.pinned') + '] ' %></span>
               <% } %>
-              <%console.log(post.title) %>
-              <%= post.title %>
+                <%= post.title %>
             </a>
           </div>
         </div>
+        <% } else { %>
+          <% if (post.link === '') { %>
+            <a href="<%= url_for(post.path) %>" target="_self" class="mdui-card-primary-title mdui-text-truncate">
+          <% } else { %>
+            <a href="<%= post.link %>" target="_blank" class="mdui-card-primary-title mdui-text-truncate">
+          <% } %>
+            <div class="mdui-card-media-covered theme-posts__post__media-covered">
+              <div class="mdui-card-primary mdui-typo" style="line-height: 36px;">
+                &#x200b;
+              </div>
+            </div>
+          </a>
+        <% } %>
       </section>
       <section class="mdui-card-content">
         <%- strip_html(truncate(post.content,{length: theme.post.entry_excerpt })) %>
