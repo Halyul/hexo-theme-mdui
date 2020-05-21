@@ -21,14 +21,17 @@
       // true for dark mode, false for bright mode
       if(modeFlag === "true"){
         document.querySelector('body').classList.add('mdui-theme-layout-dark')
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
         return true
       } else if(!window.matchMedia) {
           return false;
       } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.querySelector('body').classList.add('mdui-theme-layout-dark')
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
           return true;
       } else if(window.matchMedia("(prefers-color-scheme: light)").matches) {
         document.querySelector('body').classList.remove('mdui-theme-layout-dark')
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff")
           return false;
       } else {
         return false;
@@ -40,11 +43,13 @@
       if (!modeFlag) {
         // default bright mode, switch to dark mode
         document.querySelector('body').classList.add('mdui-theme-layout-dark');
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#212121")
         localStorage.setItem('darkMode', true);
         modeFlag = true;
       } else {
         // dark mode, switch to bright mode
         document.querySelector('body').classList.remove('mdui-theme-layout-dark');
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff")
         localStorage.setItem('darkMode', false);
         modeFlag = false;
       }
