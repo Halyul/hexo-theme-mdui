@@ -348,3 +348,11 @@ $main-class: theme-post;
     background-color:  #607D8B;
   }
 }
+
+.pullquote.right {
+  text-align: right !important;
+  border-right: 4px solid rgba(0,0,0,0.12);
+  padding-left: 0em !important;
+  border-left: 0px !important;
+  padding-right: 1em;
+}
