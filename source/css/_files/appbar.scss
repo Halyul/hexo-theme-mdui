@@ -266,3 +266,26 @@ $main-class: theme-appbar;
   }
   100% { }
 }
+
+.mdui-theme-layout-dark {
+  .theme-appbar {
+    background-color: #212121 !important;
+    color: #fff !important;
+  }
+  .theme-appbar__bright-mode {
+    display: none;
+  }
+  .theme-appbar__dark-mode {
+    display: inherit !important;
+  }
+  .theme-appbar__burger span {
+    color: #fff !important;
+    background-color: #fff !important;
+  }
+  .theme-appbar__burger span::before {
+    background-color: #fff !important;
+  }
+  .theme-appbar__burger span::after {
+    background-color: #fff !important;
+  }
+}
