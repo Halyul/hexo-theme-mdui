@@ -9,7 +9,11 @@
         <img src="<%= post.thumbnail || config.root + 'images/random/' + randomPic + '.png' %>" class="theme-posts__post__media__image" />
         <div class="mdui-card-media-covered theme-posts__post__media-covered">
           <div class="mdui-card-primary mdui-typo">
-            <a href="<%= url_for(post.path) %>" target="_self" class="mdui-card-primary-title mdui-text-truncate">
+            <% if (post.link === '') { %>
+              <a href="<%= url_for(post.path) %>" target="_self" class="mdui-card-primary-title mdui-text-truncate">
+            <% } else { %>
+              <a href="<%= post.link %>" target="_blank" class="mdui-card-primary-title mdui-text-truncate">
+            <% } %>
               <% if (post.pinned === true) { %>
                 <span style="color: #D50000"><%= '['+ __('posts.pinned') + '] ' %></span>
               <% } %>
