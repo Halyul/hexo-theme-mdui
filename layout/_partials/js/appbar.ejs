@@ -19,7 +19,7 @@
     function detechTheme() {
       var modeFlag = localStorage.getItem('darkMode');
       // true for dark mode, false for bright mode
-      if(modeFlag){
+      if(modeFlag === "true"){
         document.querySelector('body').classList.add('mdui-theme-layout-dark')
         return true
       } else if(!window.matchMedia) {
