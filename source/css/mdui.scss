@@ -3,7 +3,7 @@ $primary-color: primary- + hexo-theme-config('style.primary_color');
 $accent-color: accent- + hexo-theme-config('style.accent_color');
 
 @import './_files/outdatedbrowser';
-@import './_files/mdui.custom';
+@import './_files/mdui.min';
 @import './_files/font-awesome';
 @import './_files/global';
 @import './_files/color';
