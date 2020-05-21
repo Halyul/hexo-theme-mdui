@@ -36,7 +36,6 @@ $main-class: theme-post;
   }
 }
 @mixin info-boxes {
-  background-color: #f8f8f8;
   border-left-width: 4px;
   border-left-style: solid;
   border-bottom-right-radius: 2px;
@@ -186,6 +185,7 @@ $main-class: theme-post;
   }
   .#{$sub-class}__warning {
     @include info-boxes;
+    background-color: #f8f8f8;
     display: none;
     margin-bottom: 16px;
     border-left-color: #D50000;
@@ -207,6 +207,7 @@ $main-class: theme-post;
   }
   .#{$sub-class}__count {
     @include info-boxes;
+    background-color: #f8f8f8;
     margin-bottom: 16px;
   }
   .#{$sub-class}__content {
@@ -220,6 +221,7 @@ $main-class: theme-post;
   }
   .#{$sub-class}__license {
     @include info-boxes;
+    background-color: #f8f8f8;
     border-left-color: #D50000;
   }
   .#{$sub-class}__actions {
@@ -332,4 +334,25 @@ $main-class: theme-post;
       text-align: left !important;
     }
   }
+}
+
+.mdui-theme-layout-dark {
+  $sub-class: #{$main-class}__card;
+  .#{$sub-class}__warning {
+    background-color:  #607D8B;
+  }
+  .#{$sub-class}__count {
+    background-color:  #607D8B;
+  }
+  .#{$sub-class}__license {
+    background-color:  #607D8B;
+  }
+}
+
+.pullquote.right {
+  text-align: right !important;
+  border-right: 4px solid rgba(0,0,0,0.12);
+  padding-left: 0em !important;
+  border-left: 0px !important;
+  padding-right: 1em;
 }

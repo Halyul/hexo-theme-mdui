@@ -35,19 +35,3 @@ var smoothScroll = new SmoothScroll('a.theme-post__toc__content__link', {
 	offset: 128
 });
 
-document.body.addEventListener('touchmove', drawerAppbarMove);
-document.body.addEventListener('touchend', drawerAppbarEnd);
-function drawerAppbarMove(event) {
-  var translate = themeRuntime.el.drawerEl.style.transform
-  var transition = themeRuntime.el.drawerEl.style.transition
-  translate = translate.replace(/\s+/g,"")
-  translate = translate.replace(/translate\(/g,"")
-  translate = translate.replace(/px,0px\)/g,"")
-  translate = Math.abs(translate)
-  themeRuntime.el.drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transform", "translateX(" + translate + "px)", "important");
-  themeRuntime.el.drawerEl.querySelector('.theme-drawer__header__layer-1').style.setProperty("transition", transition, "important");
-}
-function drawerAppbarEnd(event) {
-  themeRuntime.el.drawerEl.querySelector('.theme-drawer__header__layer-1').style.transform = null
-  themeRuntime.el.drawerEl.querySelector('.theme-drawer__header__layer-1').style.transition = null
-}

@@ -1,4 +1,4 @@
-# hexo-theme-mdui <small>2.0.3</small>
+# hexo-theme-mdui <small>2.1.0</small>
 
 > A Material Design hexo theme.
 

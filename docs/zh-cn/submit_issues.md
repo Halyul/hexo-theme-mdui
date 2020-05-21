@@ -22,7 +22,7 @@ fetch: "3.0.0"
 lightgallery: "1.0.1"
 mdui: "0.4.0"
 smoothscroll: "15.2.0"
-theme: "2.0.2"
+theme: "2.1.0"
 ```
 
 ``` js

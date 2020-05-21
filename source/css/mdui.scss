@@ -3,8 +3,9 @@ $primary-color: primary- + hexo-theme-config('style.primary_color');
 $accent-color: accent- + hexo-theme-config('style.accent_color');
 
 @import './_files/outdatedbrowser';
-@import './_files/mdui.custom';
 @import './_files/font-awesome';
+@import './_files/lightgallery';
+@import './_files/mdui.min';
 @import './_files/global';
 @import './_files/color';
 @import './_files/appbar';
@@ -19,7 +20,6 @@ $accent-color: accent- + hexo-theme-config('style.accent_color');
 @import './_files/friends';
 @import './_files/galleries';
 @import './_files/gallery';
-@import './_files/lightgallery';
 @import './_files/lg-rewrite';
 @import './_files/lg-transitions';
 
