@@ -25,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/Halyul/hexo-theme-mdui/issues"
   },
-  "homepage": "https://github.com/Halyul/hexo-theme-mdui#readme"
+  "homepage": "https://github.com/Halyul/hexo-theme-mdui#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "3.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
