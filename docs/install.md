@@ -9,7 +9,7 @@ The theme just supports `git clone`, `npm install` will be supported later (or n
 $ git clone https://github.com/Halyul/hexo-theme-mdui.git
 ````
 
-Once you have finished clone, copy the folder to hexo `theme` foler , and rename to `mdui`
+Once you have finished clone, copy the folder to hexo `theme` folder , and rename to `mdui`
 > The folder name can be changed to whatever you want, but needs to match the name below.
 
 ## Enable the theme
