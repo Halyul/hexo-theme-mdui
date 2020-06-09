@@ -1,15 +1,14 @@
 # Install
 ## Install the theme
 You need following things：
-- a hexo
+- hexo
 - my theme
 
-The theme just supports `git clone`, `npm install` will be supported later (or not supported).
+The theme just supports `git clone`. `npm install` is not yet supported.
 ```` bash
-$ git clone https://github.com/Halyul/hexo-theme-mdui.git
+$ git clone https://github.com/Halyul/hexo-theme-mdui.git themes/mdui
 ````
 
-Once you have finished clone, copy the folder to hexo `theme` folder , and rename to `mdui`
 > The folder name can be changed to whatever you want, but needs to match the name below.
 
 ## Enable the theme
