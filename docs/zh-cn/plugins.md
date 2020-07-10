@@ -10,6 +10,15 @@ $ npm install hexo-generator-feed --save
 
 具体设置参阅[hexo-generator-feed 插件文档](https://github.com/hexojs/hexo-generator-feed)
 
+## Search
+如果您启用了搜索，请在HEXO的`_config.yml`添加以下代码
+
+```` yaml
+search:
+  path: search.json
+  field: all
+````
+
 ## QR_CODE
 如果您需要生成文章的二维码，您需要执行
 

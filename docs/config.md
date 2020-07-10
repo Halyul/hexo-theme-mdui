@@ -37,7 +37,7 @@ Here you can set HTML head information.
 - keywords: website keywords.
 
 ## Search
-- search: blog search, available options are `true` and `false`, more details click [here](/plugins?id=search)
+- search: blog search, available options are `true` and `false`, more details click [here](/plugins?id=Search)
 
 ## post
 - entry_excerpt: how many posts summary words will be displayed in the index page.
