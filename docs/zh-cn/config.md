@@ -37,7 +37,7 @@ Twitter:
 - keywords: 网站关键词
 
 ## Search
-search: 博客搜索，可选`true`或`false`，详细信息请点击[这里](/zh-cn/plugins?id=搜索)
+search: 博客搜索，可选`true`或`false`，详细信息请点击[这里](/zh-cn/plugins?id=Search)
 
 ## post
 - entry_excerpt: 首页文章摘要字数

@@ -3,6 +3,15 @@
 ## Mathjax
 If your post or page needs `Mathjax`, please add `mathjax: true` in the `font-matter`.
 
+## Search
+If you enabled search, add following code to HEXO's `_config.yml`
+
+```` yaml
+search:
+  path: search.json
+  field: all
+````
+
 ## RSS
 If you need rss, please install `hexo-generator-feed`
 
