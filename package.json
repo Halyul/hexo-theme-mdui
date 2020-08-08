@@ -20,7 +20,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "hexo-renderer-scss": "^1.0.3",
-    "prismjs": "^1.6.0",
+    "prismjs": "^1.21.0",
     "uglify-js": "^3.9.3",
     "uglifycss": "^0.0.29"
   },
