@@ -31,18 +31,9 @@ Please think carefully before you use this version
 
 But you can use non-router version! Or just stay in 1.x version.
 
-## Contents 目录
-
-- [General 概括](#general-概括)
-- [Demo 演示](#demo-演示)
-- [Quick start 快速开始](#quick-start-快速开始)
-- [Docs 文档](#docs-文档)
-- [Contributing 贡献](#contributing-贡献)
-- [License 许可证](#license-许可证)
-
 ## General 概括
 
-[![Author](https://img.shields.io/badge/author-Halyul-blue.svg?style=flat-square)](https://halyul.com)
+[![Author](https://img.shields.io/badge/author-Halyul-blue.svg?style=flat-square)](https://xhy.ch)
 ![Version](https://img.shields.io/badge/version-2.1.0-green.svg?style=flat-square)
 [![Hexo](https://img.shields.io/badge/hexo-3.0+-green.svg?style=flat-square)](https://hexo.io)
 ![Travis CI](https://travis-ci.org/Halyul/hexo-theme-mdui.svg?branch=master)
@@ -50,15 +41,13 @@ But you can use non-router version! Or just stay in 1.x version.
 
 ## Demo 演示
 
-[Demo](https://htm.halyul.dev)
+[Demo](https://gura.ch/htm-demo)
 
 ## Docs 文档
 
-[MDUI Theme Docs English Version](https://halyul.github.io/hexo-theme-mdui/#/)
+[MDUI Theme Docs English Version](https://gura.ch/htm-docs)
 
-[MDUI 主题中文文档](https://halyul.github.io/hexo-theme-mdui/#/zh-cn/)
-
->[Docs Markdown Files](https://github.com/Halyul/hexo-theme-mdui/docs)
+>[Docs Markdown Files](https://github.com/Halyul/hexo-theme-mdui/tree/gh-pages/docs)
 
 ## Contributing 贡献
 
